@@ -2,288 +2,301 @@
 
 ## Introduction
 ### What is GIMP?
-### History and Evolution of GIMP
-### Understanding Open Source and the GNU License
-### Who This Course is For
-### Structure and Learning Objectives
-### How to Use This Guide Effectively
-### Navigating the GIMP Ecosystem and Community
-### How GIMP Compares to Other Software
+### Brief History and Evolution of GIMP
+### GIMP as Free and Open Source Software
+### Understanding the GNU General Public License
+### Core Capabilities and Use Cases of GIMP
+### Who Uses GIMP: Artists, Designers, Photographers
+### Course Overview and Objectives
+### Learning Outcomes
+### Structure of the Guide and Navigation Tips
+### How to Set Up a Productive Learning Environment
+### Recommended Hardware and Software Setup
+### How to Contribute to GIMP Development
+
+## Installation and Initial Setup
+### Downloading GIMP from Official Sources
+### Verifying Installer Integrity (Checksums and Signatures)
 ### Installing GIMP on Windows
 ### Installing GIMP on macOS
-### Installing GIMP on Linux
-### Installing GIMP via Flatpak, Snap, or Source
-### Setting Up GIMP After Installation
-### Installing Brushes, Plug-ins, Fonts, and Resources
-### Backing Up and Syncing GIMP Configurations
+### Installing GIMP on Linux (APT, DNF, Flatpak, Snap)
+### Building GIMP from Source
+### First Launch and Initial Configuration
+### Interface Language and Locale Settings
+### Configuring Folders for Plug-ins, Brushes, Fonts
+### Backing Up GIMP Settings and Preferences
+### Installing Additional Resources (Brushes, Gradients, Plug-ins)
 
-## User Interface Deep Dive
-### Introduction to the Interface Layout
+## User Interface In-Depth
+### Understanding the Default Workspace
 ### Single-Window vs Multi-Window Mode
-### Toolbox Overview and Tool Categories
-### Dockable Dialogs and Tab Management
-### Customizing the Interface: Themes and Icons
-### Navigating Menus: File, Edit, Select, View, Image, etc.
-### Understanding the Image Window and Tabs
-### Overview of the Status Bar
-### Configuring Input Devices (Graphics Tablet, Mouse)
-### Resetting the Interface to Defaults
+### Toolbox Overview and Primary Tools
+### Dockable Dialogs: Layers, Channels, Paths, Undo
+### Tab and Dialog Customization
+### Changing Themes and Icon Sets
+### Using the Status Bar and Navigation Bar
+### Menu Overview: File, Edit, Select, View, Image, Layer, etc.
+### Setting Up and Managing Custom Workspaces
+### Keyboard Shortcuts: Customizing and Using Efficiently
 
 ## Canvas and File Operations
-### Creating a New Project
-### Choosing Dimensions and Resolution
-### Understanding DPI and Image Size
-### Background Fill Options
-### Opening Single and Multiple Files
-### Working with GIMP’s XCF Format
-### Saving Projects and Incremental Versions
-### Importing PSD, PDF, SVG, and RAW Files
-### Exporting to PNG, JPG, GIF, WebP, PSD
-### Exporting for Print vs Web
-### Image Metadata and Color Profiles
+### Creating a New Image: Dimensions, Resolution, Fill
+### Choosing Color Space and Precision
+### Using Templates and Presets
+### Opening Files in Different Formats (JPEG, PNG, XCF, PSD, SVG, etc.)
+### Importing Vector and RAW Images
+### Exporting Images with Specific Settings (Web, Print, Animation)
+### Understanding the XCF Format: Pros and Use Cases
+### Saving for Compatibility: Flattening and Merging Layers
+### File Metadata: Viewing and Editing
+### Image Properties Dialog
+### Undo History and Image Recovery
 
-## Navigation and Canvas Management
-### Zooming and Panning Tools
-### Rotating the Canvas View
-### Using the Navigation Dialog
-### Rulers and Units: Pixels, Inches, mm, Percent
-### Adding and Managing Guides
-### Using Snap to Grid and Snap to Guides
-### Setting Up Grids: Line Spacing, Subdivisions
-### Enabling and Disabling View Overlays
-### Multiple Views of the Same Image
-### Split View and Comparison Tools
+## Navigation and Canvas Tools
+### Zoom Tool: Zoom In, Out, Fit Image
+### Navigation Dialog and Navigator Preview
+### Panning and Scroll Shortcuts
+### Rotating the Canvas for Drawing Comfort
+### Using Rulers, Guides, and Snapping Options
+### Customizing Grid Display and Units
+### Enabling and Using the Pointer and Cursor Coordinates
+### Creating and Managing Multiple Views of the Same Image
+### Fullscreen Mode and Distraction-Free Editing
 
-## Color Management
-### Understanding RGB, CMYK, Grayscale, and Indexed Modes
-### Color Management Settings in GIMP
-### Soft-Proofing for Print
-### Assigning and Converting Color Profiles
-### Importing ICC Profiles
-### Working with Palettes
-### Creating and Saving Custom Palettes
-### Using the Color Picker
-### Using the Sample Points Tool
-### Swatches and History Panel
+## Color Management and Accuracy
+### Understanding RGB, Grayscale, Indexed Color Modes
+### Introduction to Color Profiles (ICC)
+### Assigning, Converting, and Managing Color Profiles
+### Using sRGB, Adobe RGB, CMYK Workflows
+### Viewing Gamut Warnings and Soft Proofing for Print
+### Monitor Calibration and Why It Matters
+### Importing and Exporting ICC Profiles
+### Configuring Color Management Preferences
 
-## Selections and Advanced Masking
-### Why Selections Matter
-### Rectangle Select Tool
-### Ellipse Select Tool
-### Free Select Tool (Lasso)
-### Polygonal Selection Techniques
-### Fuzzy Select Tool (Magic Wand)
-### Select by Color Tool
-### Foreground Select Tool
-### Quick Mask Mode and Manual Painting Selections
-### Using Paths to Create Selections
-### Selection Operations: Add, Subtract, Intersect
-### Grow, Shrink, Feather, and Border Selection
-### Save and Load Selections as Channels
+## Palettes, Swatches, and Color Picking
+### Using the Color Picker Tool (Sample Size, Modes)
+### Swatches Dialog and Color History
+### Creating and Saving Custom Swatches
+### Editing Colors with the Color Editor Dialog
+### Importing Palettes from Images
+### Exporting and Sharing Custom Palettes
+### Converting Colors Between Modes (HEX, RGB, HSV)
 
-## Layers and Layer Management
-### Introduction to the Layer Stack
-### Creating and Organizing Layers
-### Layer Groups and Nesting
-### Visibility and Alpha Channel
-### Adjusting Opacity and Lock Options
-### Layer Modes and Blending Concepts
-### Previewing and Understanding All Blend Modes
-### Transforming Layers: Move, Scale, Rotate, Flip, Shear
-### Aligning and Distributing Layers
-### Layer Boundary vs Canvas Boundary
-### Linking Layers for Synchronized Editing
+## Selections and Masking Tools
+### Why Selections Are Essential in GIMP
+### Rectangle Select Tool: Properties and Use Cases
+### Ellipse Select Tool: Feathering and Fixed Ratios
+### Free Select (Lasso) Tool and Polygonal Mode
+### Fuzzy Select (Magic Wand) and Threshold Adjustment
+### Select by Color Tool: Sampling and Threshold
+### Foreground Select Tool: Interactive Selection Process
+### Quick Mask Mode: Creating Selections with Painting
+### Using Paths for Precise Selections
+### Selection Operations: Add, Subtract, Intersect, Invert
+### Modifying Selections: Grow, Shrink, Feather, Border
+### Saving and Restoring Selections as Channels
+### Transforming Selections Independently
 
-## Channels and Alpha Manipulation
-### What Are Channels?
+## Layers and Composition Techniques
+### What Are Layers and Why They Matter
+### Creating, Duplicating, Deleting Layers
+### Adjusting Layer Opacity and Locking Options
+### Layer Visibility and Alpha Channel Concepts
+### Understanding Layer Boundaries vs Canvas Size
+### Layer Stacking Order and Its Impact
+### Using Layer Groups to Organize Projects
+### Understanding and Using Blending Modes
+### Practical Examples of Each Blend Mode
+### Linked Layers: Moving and Transforming Together
+### Layer Attributes: Naming, Color Tagging
+### Transforming Layers: Move, Rotate, Scale, Flip, Shear
+### Align and Distribute Tool
+### Layer to Image Size and Crop to Content
+### Merging and Flattening Layers
+
+## Channels and Advanced Masking
+### Introduction to Channels in GIMP
 ### RGB and Alpha Channels Explained
-### Viewing and Editing Channels
-### Creating New Channels for Masking
-### Creating Selections from Channels
-### Using Channels for Advanced Transparency
-### Using Channels to Isolate Elements by Color or Tone
+### Viewing and Editing Individual Channels
+### Creating Custom Channels for Storage or Selections
+### Converting Channels to Selections
+### Using Channels for Precise Cut-Outs
+### Saving Selections to Channels for Reuse
+### Using Channels for Luminosity and Tone Masking
 
-## Masks and Non-Destructive Editing
-### Introduction to Layer Masks
-### Creating and Applying Layer Masks
-### Painting on Masks: Black, White, Gray
-### Using Masks with Gradients and Selections
-### Inverting, Duplicating, and Disabling Masks
-### Channel Masks vs Layer Masks
-### Group Masks and Masking with Layer Groups
-### Applying a Mask vs Keeping it Editable
+## Layer Masks and Non-Destructive Editing
+### What is a Layer Mask and Why Use It
+### Creating and Applying a Mask
+### Editing Masks with Brushes and Gradients
+### Disabling and Inverting Layer Masks
+### Copying, Duplicating, and Moving Masks
+### Linking Masks to Layers
+### Applying vs Removing a Layer Mask
+### Creating Masks from Selections
+### Using Masks in Layer Groups
+### Visualizing and Debugging Mask Issues
 
 ## Painting and Drawing Tools
 ### Overview of Brush-Based Tools
-### Paintbrush Tool
-### Pencil Tool
-### Ink Tool and Line Stabilization
-### Airbrush Tool for Smooth Shading
-### Eraser Tool and Transparency Control
-### Smudge Tool for Blending
-### Blur and Sharpen Tools
-### Using the MyPaint Brush Engine
-### Brush Dynamics and Pressure Sensitivity
-### Creating and Managing Custom Brushes
-### Importing ABR and GPL Brushes
-### Adjusting Brush Settings: Size, Spacing, Angle, Hardness
+### Paintbrush, Pencil, and Ink Tools
+### Airbrush and Smudge Tools
+### Using the Eraser Tool with Transparency
+### Blur and Sharpen Tool Applications
+### Clone, Heal, and Perspective Clone Tool
+### Using Symmetry Painting Mode
+### Brush Settings: Size, Hardness, Angle, Spacing
+### Dynamics: Pressure, Tilt, Velocity, Random
+### Creating Custom Brushes from Scratch
+### Importing ABR (Photoshop) and GPL Brushes
+### Saving and Organizing Brushes in Folders
 
 ## Fill and Gradient Tools
-### Bucket Fill Tool
-### Filling with Solid Colors vs Patterns
-### Gradient Tool Overview
-### Creating and Customizing Gradients
-### Using Gradients with Selections
-### Gradient Shapes: Linear, Radial, Spiral, etc.
-### Transparency in Gradients
+### Bucket Fill Tool: Modes, Thresholds, Options
+### Pattern Fill and Custom Patterns
+### Gradient Tool: Linear, Radial, Conical, Spiral
+### Editing and Creating Gradients
+### Using Gradients for Shading and Masking
 ### Saving Custom Gradients
+### Transparent to Color and Multi-Stop Gradients
 
-## Paths and Vector Editing
-### What Are Paths?
-### Creating Paths with the Path Tool
-### Editing Control Points and Handles
-### Converting Selections to Paths
-### Converting Paths to Selections
-### Stroking Paths with Custom Brushes
-### Filling Paths with Color or Patterns
-### Saving and Managing Paths
-### Text on Path and Path on Text Techniques
+## Vector Paths and Precision Tools
+### Using the Path Tool (Bézier Tool)
+### Editing Anchor Points and Handles
+### Stroke Path with Brush or Line Style
+### Fill Path with Color, Gradient, or Pattern
+### Convert Selections to Paths and Vice Versa
+### Text Along Path Technique
+### Saving and Organizing Paths
+### Exporting Paths to SVG
 
-## Text and Typography
-### Creating and Editing Text Layers
-### Adjusting Font, Size, Color
-### Kerning, Tracking, and Line Spacing
-### Aligning and Justifying Text
-### Text on a Path and Curved Text
-### Mixing Fonts in Compositions
-### Rasterizing and Stylizing Text Layers
-### Creating Custom Font Effects
-### Working with Unicode and Multilingual Text
+## Typography and Text Tools
+### Creating a Text Layer
+### Changing Font, Size, Color, Style
+### Kerning, Tracking, Line Spacing Adjustments
+### Aligning Text: Left, Center, Right, Justify
+### Text Along Path and Path Along Text
+### Using Text with Masks and Paths
+### Rasterizing Text for Manual Editing
+### Combining Text with Effects and Filters
+### Multilingual and Special Character Support
 
-## Transform and Alignment Tools
-### Move Tool (Layer, Path, Selection)
-### Alignment Tool and Snap Controls
-### Scale Tool: Aspect Ratio, Guides
-### Rotate Tool: Fixed Angle, Arbitrary
-### Shear Tool and Perspective Tool
-### Flip Tool: Horizontal, Vertical
-### Unified Transform Tool
-### Handle Transform Tool
-### Cage Transform and Warp Transform
+## Transformation Tools
+### Move Tool with Layer, Path, Selection Modes
+### Scale Tool: Keep Aspect, Scale From Center
+### Rotate Tool: Fixed Angle and Interactive
+### Shear Tool Use Cases
+### Perspective Tool and Grid Overlay
+### Flip Tool and Mirror Effects
+### Unified Transform Tool Overview
+### Handle Transform Tool for Free Deformations
+### Cage Transform Tool for Mesh-Like Warping
 
 ## Image Adjustments and Corrections
-### Brightness-Contrast
-### Levels: Input, Output, and Auto
-### Curves: Channel-Based Corrections
-### Hue-Saturation
-### Color Balance and Selective Color
-### Threshold and Posterize
-### Invert, Desaturate, and Colorize
-### Channel Mixer
-### Auto White Balance and Equalize
-### Shadows-Highlights Tool
+### Brightness and Contrast Tool
+### Levels: Histogram, Input/Output Sliders
+### Curves: Tone and Color Control
+### Hue, Saturation, Lightness (HSL)
+### Color Balance for Shadows, Midtones, Highlights
+### Threshold and Posterize for Stylized Effects
+### Invert and Value Inversion
+### Channel Mixer for Creative Adjustments
+### Auto Adjustments: White Balance, Equalize, Stretch Contrast
+### Shadows-Highlights Recovery
+### Selective Color Correction
+### Using Sample Points for Accuracy
 
-## Retouching and Healing
-### Clone Tool and Alignment Modes
-### Heal Tool: Sample and Blend
-### Perspective Clone Tool
-### Red-Eye Removal
-### Dodge and Burn
-### Spot Healing and Texture Fixing
-### Frequency Separation Technique
-### Portrait Retouching Workflow
-### Skin Smoothing and Light Enhancements
+## Retouching and Restoration
+### Using Clone Tool for Removal and Duplication
+### Heal Tool for Seamless Patching
+### Red Eye Removal Tool
+### Dodge and Burn for Light Painting
+### Frequency Separation for Portrait Retouching
+### Skin Smoothing Techniques
+### Blemish and Wrinkle Removal
+### Teeth Whitening and Eye Enhancement
+### Color Correction on Specific Facial Features
+### Restoring Old Photographs
 
-## Filters and Effects
-### Understanding Filter Types
-### Blur Filters: Gaussian, Motion, Lens
-### Enhance Filters: Sharpen, Unsharp Mask
-### Light and Shadow: Drop Shadow, Supernova, Lens Flare
-### Distort Filters: Ripple, Whirl & Pinch, IWarp
-### Edge Detection and Artistic Filters
-### Using Map Filters: Bump Map, Displace
-### Applying Multiple Filters with Repeat Last
-### Previewing Filters in Real-Time
+## Filters, Effects, and Artistic Rendering
+### Using Filters in Destructive vs Non-Destructive Ways
+### Blur Filters: Gaussian, Motion, Pixelize
+### Sharpen Filters: Unsharp Mask, High Pass
+### Light and Shadow Filters: Drop Shadow, Lens Flare
+### Distortion Filters: Ripple, Whirl, Lens Distortion
+### Artistic Filters: Cartoon, Oilify, Cubism
+### Map Filters: Bump Map, Displace, Small Tiles
+### Edge Detection and Enhancement Filters
+### Rendering Clouds, Plasma, Noise
+### Combining Filters with Masks and Layers
 
-## Plug-ins and Extensions
-### Overview of Plug-in System
-### Installing Plug-ins Manually
-### Using the GIMP Plug-in Registry
-### Installing and Using G'MIC
-### G'MIC Filter Categories and Key Features
-### Installing Resynthesizer
-### Inpainting, Heal Selection, and Seamless Cloning
-### Script-Fu vs Python-Fu: Differences
-### Running and Debugging Scripts
-### Batch Processing with Plug-ins
+## Plug-ins and Extensibility
+### Introduction to GIMP Plug-ins
+### Installing Plug-ins on Windows, macOS, Linux
+### G'MIC: Installation and Use
+### Overview of G'MIC Filters and Categories
+### Using Resynthesizer for Content-Aware Fill
+### Healing Selection and Smart Inpainting
+### Script-Fu vs Python-Fu: Overview
+### Creating and Editing Script-Fu Scripts
+### Python Plug-ins: Writing and Using Scripts
+### Automating Tasks with Plug-ins
+### Using Shell Commands and External Tools
 
-## Compositing and Photo Manipulation
-### Removing Backgrounds Manually
-### Using Selections and Masks for Cutouts
-### Using Paths for Smooth Isolation
-### Color Matching Between Layers
-### Lighting Integration for Composites
-### Drop Shadows and Fake Light Sources
-### Merging Multiple Photos into One Scene
-### Sky Replacement Techniques
-### Depth of Field and Focus Effects
-### Matching Resolution and Perspective
-
-## Animation and Frame Workflows
-### Introduction to GIMP Animation Options
-### Layers as Frames Concept
-### Creating Frame-by-Frame GIFs
+## Animation and Time-Based Editing
+### Creating Frame-by-Frame GIFs in Layers
 ### Using GAP (GIMP Animation Package)
-### Onion Skinning Simulation
-### Optimizing Animation for Web
-### Frame Timing and Tweens
-### Exporting as GIF and APNG
-### Using G'MIC for Animated Transitions
+### Setting Frame Delay in Layer Names
+### Onion Skin Simulation Techniques
+### Creating Animations with G'MIC
+### Exporting GIF and APNG with Frame Optimization
+### Timeline Considerations and Testing in Browsers
 
-## Digital Art and Painting Projects
-### Setting Up a Digital Art Canvas
-### Sketching Techniques in GIMP
-### Inking with Stabilization
-### Using Custom Brushes for Texture
+## Digital Art Projects and Illustration
+### Setting Up Canvas and Reference Layers
+### Sketching with Stabilization
+### Inking with Hard Brushes
 ### Coloring with Multiply and Overlay
-### Lighting Effects with Soft Brushes
-### Painting Fur, Hair, and Skin
-### Using Layer Groups for Stages
-### Finishing and Exporting Artwork
+### Adding Highlights and Shadows
+### Using Texture Brushes
+### Creating Stylized Line Art
+### Full Illustration Workflow Walkthrough
+### Exporting for Web, Print, and Merch
 
-## Design and Print Projects
+## Design Projects and Print Layouts
+### Designing a Logo: Shape, Text, Vector, Export
 ### Creating Social Media Banners
-### Designing a Logo from Scratch
-### Making Posters and Flyers
-### Creating an Album Cover
-### Creating a UI Mockup
-### T-Shirt and Merchandise Design
-### Exporting for Print Shops
-### Working with Bleed and Trim Areas
-### Exporting Print-Ready PDFs
+### Designing a Flyer or Poster for Print
+### Creating an Album Cover or Book Jacket
+### Using Guides and Print Margins
+### Working with Bleed and Trim
+### Exporting to PDF for Print Shops
+### CMYK Simulation and Output Considerations
 
-## Automation and Scripting
-### Introduction to Script-Fu
-### Creating Simple Automation Scripts
-### Understanding Python-Fu in GIMP
-### Writing Custom Python Plug-ins
-### Batch Resize and Rename Scripts
-### Generating Thumbnails Automatically
-### Creating Custom Menus and Actions
+## Scripting and Automation
+### Introduction to Scripting in GIMP
+### Writing Script-Fu Procedures
+### Writing Python Plug-ins
+### Registering Functions with Menus
+### Running Scripts from Console and UI
+### Automating Batch Image Processing
+### Creating Custom Tools with Scripts
 
-## Workflow Optimization and Productivity
-### Keyboard Shortcuts Cheat Sheet
-### Creating Your Own Shortcuts
-### Managing Custom Workspaces
-### Using Templates for Frequent Projects
-### Backup and Versioning Strategies
-### GIMP Portable and Cloud-Sync Setup
+## Productivity and Workflow Optimization
+### Customizing Keyboard Shortcuts
+### Creating and Saving Workspaces
+### Using Templates for Reusable Layouts
+### Version Control and Backup Strategies
+### Cloud Sync for Portable Setups
+### Using External Editors with GIMP
+### Reducing Lag and Improving Performance
 
 ## Appendices
-### Glossary of Terms
-### GIMP Tools Icon Reference
-### File Format Comparison Chart
-### Best Free GIMP Resources
-### Troubleshooting Guide
-### Recommended Practice Projects
-### GIMP vs Photoshop Cheat Sheet
+### Glossary of GIMP Terms
+### Tool Icon Reference Guide
+### Comparison of File Formats
+### Useful GIMP Resource Websites
+### Community and Learning Forums
+### FAQ and Troubleshooting
+### Example Projects and Practice Assignments
+### GIMP vs Photoshop Quick Reference Guide
+
