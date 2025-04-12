@@ -1,154 +1,221 @@
-# awesome-gimp
-
 # Mastering GIMP: From Fundamentals to Professional Workflow
 
 ## Introduction
-### Welcome to the Course
-### Who This Book is For
-### What is GIMP? History and Development
-### Comparing GIMP to Other Editors
-### Overview of the Book Structure
-### Installing GIMP on Different Platforms
-### Downloading and Organizing Resources
-### Customizing GIMP
+### Welcome and What to Expect
+### How to Use This Book or Course
+### Who This Course is Designed For
+### A Brief History of GIMP
+### How GIMP Compares to Other Tools (Photoshop, Krita, Affinity, etc.)
+### Installing GIMP on Windows, macOS, Linux
+### Navigating the GIMP Website and Download Resources
+### Understanding GIMP Licensing and Open Source Philosophy
+### Setting Up for the First Time
+### Downloading and Installing Plug-ins, Brushes, Fonts
+### Introduction to GIMP’s Community and Ecosystem
 
-## The GIMP Interface & Essentials
-### Understanding the Single-Window vs Multi-Window Mode
-### Navigating the Toolbox
-### Panels and Docks: Customizing Your Workspace
-### Image Tabs and Multi-document Management
-### Understanding the Status Bar and Ruler
+## Getting to Know the Interface
+### Understanding the GIMP UI Philosophy
+### Exploring the Toolbox Layout
+### Single Window vs Multi-Window Modes
+### Understanding the Main Menu Bar
+### Docks, Tabs, and Dialogs
+### Managing Tool Options
+### Customizing the Interface
+### Using Themes and Icon Sets
+### Resetting the UI to Default
+### Setting Up Your First Workspace Layout
 
-### Creating a New Project
-### Opening and Closing Images
-### Importing Files
-### Exporting Files
-### Understanding GIMP’s Native Format
-### Image Templates and Presets
+## Canvas Management and Image Basics
+### Creating a New Project: Templates, Sizes, and DPI
+### Opening Existing Files
+### Working with XCF (Native GIMP Format)
+### Importing PDFs, SVGs, RAW, PSD Files
+### Exporting Files: PNG, JPG, GIF, TIFF, WebP, PSD
+### Understanding Image Modes: RGB, Grayscale, Indexed
+### Changing Canvas Size vs Scaling Image
+### Image Properties: Resolution, Metadata, and Orientation
 
-### Zooming, Panning, and Rotating the View
+## Navigation and View Control
+### Zooming and Panning the Canvas
+### Rotating and Flipping the View
 ### Using the Navigation Panel
-### Guides, Rulers, and Grids
-### Snapping and Alignment
-### Fullscreen and Presentation Modes
+### Working with Multiple Views of the Same Image
+### Using Guides, Grids, and Snap Options
+### Configuring Rulers and Units
+### Fullscreen and Tabbed Modes for Focused Work
 
-## Core Tools and Their Mastery
-### Rectangle and Ellipse Select
-### Freehand and Polygonal Select
-### Fuzzy Select
+## Mastering Selections
+### Introduction to Selections and Why They Matter
+### Rectangle Select Tool
+### Ellipse Select Tool
+### Free Select (Lasso) Tool
+### Fuzzy Select (Magic Wand)
 ### Select by Color
-### Foreground Select Tool
-### Quick Mask Mode
-### Refine Edges: Feather, Grow, Shrink, Invert, Border
-### Saving, Loading, and Reusing Selections
+### Foreground Select Tool for Complex Isolation
+### Using Quick Mask Mode
+### Grow, Shrink, Feather, and Border Operations
+### Inverting, Saving, and Loading Selections
+### Combining Selections with Add, Subtract, Intersect
 
-### Understanding Layers and Layer Hierarchy
-### Creating, Duplicating, and Deleting Layers
-### Layer Opacity, Locking, and Visibility
-### Layer Modes Explained
-### Working with Layer Groups
-### Understanding Channels
-### Layer Masks vs Channel Masks
-### Non-destructive Editing with Masks
-### Using Layer Masks for Effects and Compositing
+## Understanding Layers and Composition
+### What Are Layers?
+### Creating, Duplicating, Deleting Layers
+### Layer Visibility, Locking, and Opacity
+### Moving, Scaling, Rotating Layers
+### Layer Stacking Order and Reordering
+### Introduction to Layer Groups
+### Organizing with Layer Naming Conventions
+### Using Layer Masks
+### Layer Modes: Blend Modes Explained in Detail
+### Alpha Channel and Transparency Concepts
+### Linked Layers for Synchronized Transforms
 
-## Paint Tools and Digital Brushwork
-### Paintbrush vs Pencil Tool
-### Using the Airbrush Tool
-### Ink Tool and Pen Pressure Control
-### Customizing Brushes and Creating New Ones
-### Brush Dynamics
-### Using the Smudge and Blur Tools
-### The Eraser Tool and Transparency
+## Channels and Masks
+### Understanding the RGB and Alpha Channels
+### Working with Channel Masks
+### Channel Operations and Selections from Channels
+### Using Quick Mask with Channels
+### Storing Selections as Channels
+### Creating Advanced Transparency Effects with Masks
 
-### Clone Tool: Basic to Advanced Usage
-### Healing Tool for Skin and Textures
-### Perspective Clone Tool
-### Dodge and Burn Tools
-### Red-Eye Removal Tool
-### Using GEGL-based Tools
+## Painting and Drawing Tools
+### Paintbrush Tool: Options and Dynamics
+### Pencil Tool and Pixel-Perfect Line Work
+### Ink Tool for Line Art and Stylus Use
+### Airbrush Tool for Gradual Shading
+### Eraser Tool and Transparent Background Control
+### Bucket Fill Tool: Solid and Pattern Fills
+### Gradient Tool: Linear, Radial, Spiral, and Custom Gradients
+### Smudge, Blur, and Sharpen Tools
+### Using the Color Picker Tool
+### Managing Foreground and Background Colors
+### Swatches and Color History
 
-## Color Theory and Image Adjustment
-### RGB vs Grayscale vs Indexed Modes
-### Color Profiles and Color Management
-### Sampling Colors with the Eyedropper
-### Working with Color Palettes
+## Brushes and Dynamics
+### Brush Presets: Using, Importing, Creating
+### Customizing Existing Brushes
+### Creating Your Own GIMP Brushes
+### Brush Spacing, Size, Angle, and Hardness
+### Pressure Sensitivity and Stylus Dynamics
+### Brush Dynamics Editor: Fade, Tilt, Velocity
+### Using Brush Tool with Dynamics Presets
 
-### Adjusting Brightness, Contrast, and Exposure
-### Levels: Histogram-Based Adjustments
-### Curves: Mastering Tonal Range
-### Hue-Saturation and Color Balance
-### Posterize and Threshold
-### Channel Mixer and Selective Color Adjustments
-### Using Auto Tools Effectively
-
-## Creative Design and Composition
-### Adding and Formatting Text Layers
-### Adjusting Kerning, Spacing, and Alignment
-### Applying Text Effects
-### Text on a Path and Circular Text
-### Creating Font Compositions
-
+## Paths and Vector-like Control
 ### Introduction to the Path Tool
-### Editing Paths and Bezier Curves
-### Stroking Paths with Brushes or Lines
-### Using Paths for Selection and Vector Tracing
-### Shape Creation Techniques
+### Drawing and Editing Bezier Curves
+### Creating Shapes with Paths
+### Converting Paths to Selections
+### Stroking Paths with Brushes or Paint Tools
+### Saving and Managing Paths
 
-### Using the Alignment Tool
-### Guides and Smart Guides
-### Exporting for Web
-### DPI and Print Resolution Explained
+## Working with Text
+### Adding Text to Your Canvas
+### Editing Text Inline and from the Tool Options
+### Font Selection and Installation
+### Kerning, Line Spacing, Justification, and Size
+### Text Layers and Layer Integration
+### Converting Text to Paths
+### Text on a Path Techniques
+### Applying Effects to Text: Shadows, Glow, Stroke
 
-## Filters, Effects, and Plugins
-### Using Filters Safely
-### Blur Filters
-### Artistic Filters
-### Distort Filters
-### Light and Shadow Filters
-### Edge Detection and Halftones
+## Color Management and Correction
+### Understanding RGB and Color Channels
+### GIMP Color Profiles and ICC Management
+### Brightness and Contrast Adjustments
+### Levels Adjustment with Histogram
+### Curves: Precision Color Correction
+### Hue-Saturation and Color Balance
+### Posterize and Threshold Tools
+### Channel Mixer for Color Stylization
+### Using the Color Picker and Color Palettes
 
-### Installing G'MIC and Overview
-### Best G'MIC Filters
-### Using Resynthesizer
-### Adding and Managing External Plug-ins
-### Troubleshooting Plug-ins
+## Photo Retouching and Restoration
+### Removing Blemishes and Dust with the Heal Tool
+### Cloning for Complex Repairs
+### Removing Red-Eye
+### Dodge and Burn Techniques for Enhancing Highlights and Shadows
+### Whitening Teeth and Eyes
+### Frequency Separation Technique (Manual)
+### Skin Smoothing and Portrait Cleanup
+### Content-Aware Fill with Resynthesizer Plug-in
 
-## Advanced Techniques and Real Projects
-### Background Removal
-### Complex Selections and Cutouts
-### Composite Imagery
-### Color Grading and Scene Matching
-### Lens Corrections and Perspective Fixes
+## Filters and Effects
+### Understanding the Filter System
+### Blur Filters: Gaussian, Lens, Motion
+### Enhance Filters: Sharpen, Unsharp Mask, Noise Reduction
+### Artistic Filters: Cartoon, Oilify, Cubism
+### Distorts: Ripple, Whirl & Pinch, IWarp
+### Light and Shadow: Drop Shadow, Long Shadow, Supernova
+### Edge Detection and Stylization
+### Using GEGL Filters for High-Bit Depth Editing
 
-### Setting Up a Digital Painting Template
-### Sketching and Inking in GIMP
-### Using MyPaint Brush Engine
-### Custom Texture Brushes and Stamps
+## Plug-ins and Extensions
+### Introduction to Plug-ins in GIMP
+### How to Install Third-Party Plug-ins
+### Best Plug-ins for Photographers
+### Best Plug-ins for Designers and Digital Artists
+### Using G'MIC with GIMP
+### Exploring the G'MIC Filter Categories
+### Custom Scripts and Automation Tools
+
+## Drawing and Digital Art Techniques
+### Setting Up a Digital Art Canvas
+### Sketching with the Pencil Tool
+### Inking with the Ink Tool and Stabilizers
+### Creating Custom Brushes for Texture and Pattern
+### Using the MyPaint Brush Engine in GIMP
+### Digital Painting Workflow from Start to Finish
+### Coloring Line Art with Multiply Mode
 ### Painting Light and Atmosphere
 
-### Introduction to Frame-by-Frame Animation
-### Layers as Frames Technique
-### Using GAP
-### Creating Seamless GIF Loops
-### Exporting and Optimizing Animated Files
+## Photo Manipulation and Compositing
+### Isolating Subjects with Selections and Masks
+### Swapping Backgrounds and Sky Replacement
+### Combining Multiple Photos into One Scene
+### Matching Color and Lighting Across Layers
+### Creating Surreal Compositions
+### Lens Correction and Perspective Tools
+### Using Shadows and Lighting to Sell the Composite
 
-## Automation and Professional Workflow
-### Introduction to Script-Fu
-### Python-Fu Basics
-### Writing Simple Automation Scripts
-### Batch Resizing and Watermarking
-### Debugging and Sharing Scripts
+## Working with Animation
+### Frame-by-Frame Animation in GIMP
+### Layers as Frames: The Basic Method
+### Introduction to GAP (GIMP Animation Package)
+### Onion Skinning for Animation
+### Exporting GIFs and Animated PNGs
+### Creating Seamless Loops and Effects
 
-### Creating a Movie Poster
+## Project-Based Learning
+### Designing a Business Logo from Scratch
+### Creating a Social Media Banner
+### Making a Poster with Text Effects
 ### Designing an Album Cover
-### Making a Comic Panel or Webtoon
-### UI Mockup and Web Banner Design
-### Logo Design and Brand Board Creation
+### Making a Comic or Webtoon Panel
+### Creating a UI Mockup
+### Photo Collage and Print Layout
+### Designing Custom T-Shirts or Merch
+
+## Automation and Scripting
+### Introduction to Script-Fu
+### Using Python-Fu in GIMP
+### Writing a Simple Script to Resize Images
+### Automating Batch Exports
+### Creating Custom Menus or Actions
+### Debugging and Logging Scripts
+
+## Preparing for Print and Web
+### Understanding DPI and Resolution
+### CMYK and RGB for Print and Web
+### Exporting for Web Optimization
+### Slicing Images for UI or Websites
+### Color Profiles for Printing
+### Setting Up Print Bleeds and Margins
 
 ## Appendices
-### Essential GIMP Keyboard Shortcuts
-### Glossary of Terms and Icons
-### Practice Projects and Exercises
-### Useful External Resources
-### GIMP vs Photoshop: Tool Equivalency Cheat Sheet
+### Essential Keyboard Shortcuts
+### Glossary of GIMP Terms and Tools
+### File Format Guide: When to Use What
+### Brush and Plug-in Resource List
+### GIMP vs Photoshop: Tool Equivalents
+### Troubleshooting Common GIMP Issues
+### Practice Projects Index
