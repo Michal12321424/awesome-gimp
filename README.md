@@ -14,12 +14,12 @@ GIMP (GNU Image Manipulation Program) is a powerful, free, and open-source image
 | Platform | Cross-platform | Windows/Mac | Windows/Mac/iOS | Cross-platform | Cross-platform |
 | Learning Curve | Moderate | Steep | Moderate | Moderate | Steep |
 | Community Support | Strong | Strong | Growing | Strong | Strong |
-| Color Management | Full ICC | Full ICC | Full ICC | Basic | Advanced |
+| Color Management | Full `ICC` | Full `ICC` | Full `ICC` | Basic | Advanced |
 | Non-destructive Editing | Limited | Extensive | Extensive | Basic | Full |
 | Vector Tools | Basic | Advanced | Advanced | Basic | None |
-| RAW Processing | Basic | Advanced | Advanced | Basic | Advanced |
+| `RAW` Processing | Basic | Advanced | Advanced | Basic | Advanced |
 | Performance | Good | Excellent | Good | Good | Good |
-| Automation | Script-Fu/Python | Actions/JS | Macros | Python | Lua |
+| Automation | `Script-Fu`/`Python` | `Actions`/`JS` | `Macros` | `Python` | `Lua` |
 
 #### Professional Use Cases
 
@@ -28,7 +28,7 @@ GIMP (GNU Image Manipulation Program) is a powerful, free, and open-source image
   - Matte painting
   - Color grading
   - Title sequence design
-  - Texture creation for 3D models
+  - Texture creation for `3D` models
 
 - **Publishing**:
   - Book cover design
@@ -38,7 +38,7 @@ GIMP (GNU Image Manipulation Program) is a powerful, free, and open-source image
   - Typography and text effects
 
 - **Web Development**:
-  - UI/UX design
+  - `UI`/`UX` design
   - Web graphics optimization
   - Responsive design elements
   - Icon and button creation
@@ -54,65 +54,65 @@ GIMP (GNU Image Manipulation Program) is a powerful, free, and open-source image
 - **Game Development**:
   - Texture creation
   - Sprite design
-  - UI elements
+  - `UI` elements
   - Concept art
   - Asset optimization
 
 #### File Format Support
 
 - **Native Formats**:
-  - XCF (GIMP's native format)
+  - `XCF` (GIMP's native format)
     - Supports layers, channels, paths
     - Preserves all editing capabilities
     - Large file size
     - Not suitable for web/print
 
 - **Raster Formats**:
-  - JPEG - Best for photos and web
-  - PNG - Best for graphics with transparency
-  - TIFF - Best for print and archiving
-  - BMP - Windows native format
-  - GIF - Best for simple animations
-  - WebP - Best for modern web graphics
+  - `JPEG` - Best for photos and web
+  - `PNG` - Best for graphics with transparency
+  - `TIFF` - Best for print and archiving
+  - `BMP` - Windows native format
+  - `GIF` - Best for simple animations
+  - `WebP` - Best for modern web graphics
 
 - **Vector Formats**:
-  - SVG - Import/export support
-  - PDF - Multi-page support
+  - `SVG` - Import/export support
+  - `PDF` - Multi-page support
 
 - **Raw Formats**:
-  - Camera-specific formats (CR2, NEF, ARW, DNG)
+  - Camera-specific formats (`CR2`, `NEF`, `ARW`, `DNG`)
   - Basic development tools
 
 #### System Requirements
 
 - **Minimum Requirements**:
   - Any modern computer
-  - 4 GB RAM
-  - 2 GB free space
-  - 1024x768 display
+  - `4 GB` `RAM`
+  - `2 GB` free space
+  - `1024x768` display
 
 - **Recommended Requirements**:
-  - 8 GB RAM or more
-  - SSD storage
-  - 1920x1080 display
+  - `8 GB` `RAM` or more
+  - `SSD` storage
+  - `1920x1080` display
   - Graphics tablet (for digital art)
 
 ### Brief History and Evolution of GIMP
 
-GIMP's journey began in 1995 when Spencer Kimball and Peter Mattis started developing it as a semester project at the University of California, Berkeley. The first public release (version 0.54) came in 1996, and since then, GIMP has evolved through numerous versions, each bringing significant improvements in functionality, performance, and user experience.
+GIMP's journey began in 1995 when Spencer Kimball and Peter Mattis started developing it as a semester project at the University of California, Berkeley. The first public release (version `0.54`) came in 1996, and since then, GIMP has evolved through numerous versions, each bringing significant improvements in functionality, performance, and user experience.
 
 Key milestones in GIMP's development include:
 
 - 1996: First public release
-- 1998: Version 1.0 release
-- 2004: Version 2.0 with major interface improvements
-- 2012: Version 2.8 introducing single-window mode
-- 2018: Version 2.10 with significant performance improvements
-- 2022: Version 2.99 leading to 3.0 with GTK3 support
+- 1998: Version `1.0` release
+- 2004: Version `2.0` with major interface improvements
+- 2012: Version `2.8` introducing single-window mode
+- 2018: Version `2.10` with significant performance improvements
+- 2022: Version `2.99` leading to `3.0` with `GTK3` support
 
 ### GIMP as Free and Open Source Software
 
-GIMP is developed under the GNU General Public License (GPL), which means it's not just free in terms of cost but also in terms of freedom. This open-source nature provides several benefits:
+GIMP is developed under the `GNU General Public License` (`GPL`), which means it's not just free in terms of cost but also in terms of freedom. This open-source nature provides several benefits:
 
 - Complete freedom to use, study, modify, and distribute the software
 - No licensing fees or subscription costs
@@ -127,8 +127,8 @@ GIMP excels in several key areas:
 1. Photo Editing and Retouching
    - Color correction and enhancement
    - Blemish removal and portrait retouching
-   - HDR and tone mapping
-   - RAW image processing
+   - `HDR` and tone mapping
+   - `RAW` image processing
 
 2. Digital Art and Illustration
    - Digital painting and drawing
@@ -207,11 +207,11 @@ By the end of this guide, you will be able to:
 #### Industry-Specific Techniques
 
 - **Photography**:
-  - RAW processing
+  - `RAW` processing
   - Color grading
   - Portrait retouching
   - Landscape enhancement
-  - HDR processing
+  - `HDR` processing
   - Focus stacking
   - Noise reduction
   - Lens correction
@@ -237,7 +237,7 @@ By the end of this guide, you will be able to:
   - Visual effects
 
 - **Web**:
-  - UI/UX design
+  - `UI`/`UX` design
   - Responsive graphics
   - Icon design
   - Web optimization
@@ -292,16 +292,16 @@ To get the most out of this guide:
 
 Minimum Requirements:
 
-- 4GB RAM (8GB recommended)
-- 2GB free disk space
-- 1024x768 display resolution
-- Modern operating system (Windows 7+, macOS 10.12+, Linux)
+- `4GB` `RAM` (`8GB` recommended)
+- `2GB` free disk space
+- `1024x768` display resolution
+- Modern operating system (`Windows 7+`, `macOS 10.12+`, `Linux`)
 
 Recommended Setup:
 
-- 16GB RAM or more
-- SSD storage
-- 1920x1080 or higher display resolution
+- `16GB` `RAM` or more
+- `SSD` storage
+- `1920x1080` or higher display resolution
 - Graphics tablet for digital art
 - Color-calibrated monitor
 - Backup solution
@@ -318,7 +318,7 @@ There are many ways to contribute to GIMP's development:
 2. Documentation
    - User guides
    - Tutorials
-   - API documentation
+   - `API` documentation
 
 3. Community Support
    - Forum participation
@@ -331,13 +331,13 @@ There are many ways to contribute to GIMP's development:
    - Performance testing
 
 5. Translation
-   - UI translation
+   - `UI` translation
    - Documentation translation
    - Tutorial translation
 
 6. Art and Design
    - Icon design
-   - UI/UX improvements
+   - `UI`/`UX` improvements
    - Example artwork
 
 ## Installation and Initial Setup
