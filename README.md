@@ -349,119 +349,363 @@ GIMP can be downloaded from several official sources:
 1. **Official GIMP Website**: Visit [gimp.org](https://www.gimp.org) for the latest stable version
    - Choose between stable and development versions
      - Stable: Recommended for production use
+       - Latest stable release (2.10.x)
+       - Security updates
+       - Bug fixes
+       - Performance improvements
      - Development: For testing new features
+       - Nightly builds
+       - Development snapshots
+       - Release candidates
+       - Feature previews
      - Release candidates: Pre-release testing
+       - Beta versions
+       - Performance testing
+       - Compatibility testing
+       - Bug reporting
    - Select the appropriate version for your operating system
      - Windows: 32-bit or 64-bit
+       - 32-bit: Legacy support
+       - 64-bit: Modern systems
+       - ARM64: Windows 11
      - macOS: Intel or Apple Silicon
+       - Intel: x86_64 architecture
+       - Apple Silicon: ARM architecture
+       - Universal binary: Both architectures
      - Linux: Distribution-specific packages
+       - Debian/Ubuntu packages
+       - Fedora/RHEL packages
+       - Arch Linux packages
+       - Source code
    - Check system requirements before downloading
      - Minimum hardware specifications
+       - CPU: 1.6 GHz or faster
+       - RAM: 2GB minimum
+       - Storage: 500MB free space
+       - Graphics: DirectX 9 compatible
      - Required system libraries
+       - GTK+ 3.0 or later
+       - GLib 2.0 or later
+       - Cairo 1.0 or later
+       - Pango 1.0 or later
      - Graphics card compatibility
+       - OpenGL support
+       - Hardware acceleration
+       - Display drivers
    - Note the download size (typically 100-200MB)
      - Core application: ~100MB
+       - Main executable
+       - Core libraries
+       - Basic resources
      - Additional resources: ~50MB
+       - Brushes
+       - Patterns
+       - Gradients
      - Documentation: ~20MB
+       - User manual
+       - Help files
+       - Tutorials
    - Download options:
      - Direct download
+       - HTTP/HTTPS
+       - FTP
+       - SFTP
      - Torrent download
+       - Peer-to-peer
+       - Multiple sources
+       - Resume support
      - Mirror selection
+       - Geographic location
+       - Download speed
+       - Server load
    - Version history:
      - Current stable: 2.10.x
+       - Latest features
+       - Security updates
+       - Bug fixes
      - Development: 2.99.x
+       - New features
+       - Experimental tools
+       - Performance improvements
      - Legacy: 2.8.x
+       - Older systems
+       - Legacy support
+       - Compatibility
 
 2. **GIMP Development Releases**: Access development builds at [gimp.org/downloads](https://www.gimp.org/downloads)
    - Nightly builds for testing new features
      - Automatic daily builds
+       - Latest code changes
+       - Continuous integration
+       - Build automation
      - Latest code changes
+       - Git repository
+       - Commit history
+       - Change logs
      - Experimental features
+       - New tools
+       - Interface changes
+       - Performance improvements
    - Development snapshots for bug testing
      - Weekly builds
+       - Regular updates
+       - Feature integration
+       - Bug fixes
      - Feature previews
+       - Upcoming features
+       - UI changes
+       - Tool improvements
      - Bug fixes
+       - Issue tracking
+       - Bug reports
+       - Fix verification
    - Release candidates for upcoming versions
      - Beta testing
+       - Feature testing
+       - Performance testing
+       - Compatibility testing
      - Performance testing
+       - Speed optimization
+       - Memory usage
+       - Resource management
      - Compatibility testing
+       - OS compatibility
+       - Hardware compatibility
+       - Software compatibility
    - Warning: Development versions may be unstable
      - Backup your data
+       - Project files
+       - Settings
+       - Resources
      - Test in separate environment
+       - Virtual machine
+       - Test system
+       - Isolated installation
      - Report bugs to developers
+       - Bug tracker
+       - Forums
+       - Mailing lists
    - Development version features:
      - New tools and filters
+       - Advanced tools
+       - Special effects
+       - Image processing
      - Interface improvements
+       - UI updates
+       - Workflow changes
+       - Accessibility
      - Performance enhancements
+       - Speed improvements
+       - Memory optimization
+       - Resource usage
      - Bug fixes and patches
+       - Security fixes
+       - Stability improvements
+       - Compatibility updates
 
 3. **Alternative Download Mirrors**: 
    - [SourceForge](https://sourceforge.net/projects/gimp/)
      - Multiple download locations
        - Geographic distribution
+         - North America
+         - Europe
+         - Asia
+         - Australia
        - Load balancing
+         - Server distribution
+         - Traffic management
+         - Failover systems
        - Failover options
+         - Backup servers
+         - Redundancy
+         - Recovery systems
      - Faster download speeds
        - CDN integration
+         - Content delivery
+         - Edge servers
+         - Caching
        - Bandwidth optimization
+         - Compression
+         - Protocol optimization
+         - Connection management
        - Connection management
+         - Resume support
+         - Multiple connections
+         - Speed control
      - Mirror selection options
        - Automatic selection
+         - Location-based
+         - Speed-based
+         - Load-based
        - Manual override
+         - Server selection
+         - Protocol choice
+         - Connection settings
        - Speed testing
+         - Ping test
+         - Download test
+         - Server response
      - Additional features:
        - Download resume
+         - Partial downloads
+         - Connection recovery
+         - Progress tracking
        - Checksum verification
+         - MD5
+         - SHA256
+         - GPG signatures
        - Version history
+         - Release archive
+         - Change logs
+         - Documentation
    - [FTP Server](ftp://ftp.gimp.org/pub/gimp/)
      - Direct file access
        - Raw file transfer
+         - Binary mode
+         - ASCII mode
+         - Auto mode
        - Directory browsing
+         - File listing
+         - Directory structure
+         - Navigation
        - File listing
+         - Size information
+         - Date modified
+         - Permissions
      - Historical versions
        - Archive access
+         - Old releases
+         - Development versions
+         - Source code
        - Version history
+         - Release notes
+         - Change logs
+         - Documentation
        - Release notes
+         - Features
+         - Bug fixes
+         - Known issues
      - Source code archives
        - Complete source
+         - Source code
+         - Build files
+         - Documentation
        - Patches
+         - Bug fixes
+         - Feature additions
+         - Security updates
        - Documentation
+         - API docs
+         - Developer guides
+         - User manuals
      - FTP features:
        - Resume support
+         - Partial downloads
+         - Connection recovery
+         - Progress tracking
        - Directory mirroring
+         - Full mirror
+         - Incremental sync
+         - Change detection
        - Batch downloads
+         - Multiple files
+         - Directory recursion
+         - Pattern matching
 
 4. **Version Selection Guide**:
    - Stable version: Recommended for most users
      - Production use
+       - Professional work
+       - Regular projects
+       - Critical systems
      - Regular updates
+       - Security patches
+       - Bug fixes
+       - Minor improvements
      - Security patches
+       - Vulnerability fixes
+       - Security updates
+       - System protection
    - Development version: For testing and development
      - Feature testing
+       - New tools
+       - Interface changes
+       - Performance improvements
      - Bug reporting
+       - Issue tracking
+       - Error reporting
+       - Feedback
      - Development work
+       - Code contribution
+       - Plugin development
+       - Customization
    - Source code: For custom builds and modifications
      - Custom compilation
+       - Platform-specific
+       - Feature selection
+       - Optimization
      - Feature modification
+       - Code changes
+       - Tool customization
+       - Interface adaptation
      - Platform adaptation
+       - OS compatibility
+       - Hardware support
+       - System integration
    - Portable version: For USB drives and temporary installations
      - No installation required
+       - Direct execution
+       - No system changes
+       - Easy removal
      - Portable settings
+       - Configuration files
+       - User preferences
+       - Resource paths
      - Temporary use
+       - Quick access
+       - System independence
+       - Easy cleanup
 
 5. **Download Verification**:
    - File integrity checks
      - MD5 checksums
+       - File verification
+       - Integrity check
+       - Corruption detection
      - SHA256 verification
+       - Strong verification
+       - Security check
+       - File validation
      - GPG signatures
+       - Digital signatures
+       - Authentication
+       - Trust verification
    - Download verification tools
      - Checksum calculators
+       - Hash generation
+       - File comparison
+       - Batch processing
      - Signature verifiers
+       - GPG verification
+       - Certificate check
+       - Trust validation
      - Download managers
+       - Progress tracking
+       - Resume support
+       - Speed control
    - Security considerations
      - SSL/TLS verification
+       - Secure connection
+       - Certificate validation
+       - Encryption
      - Certificate validation
+       - Chain verification
+       - Trust check
+       - Expiration check
      - Source authentication
+       - Server verification
+       - Domain validation
+       - Reputation check
 
 Always download from official sources to ensure security and stability.
 
