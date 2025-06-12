@@ -348,31 +348,120 @@ GIMP can be downloaded from several official sources:
 
 1. **Official GIMP Website**: Visit [gimp.org](https://www.gimp.org) for the latest stable version
    - Choose between stable and development versions
+     - Stable: Recommended for production use
+     - Development: For testing new features
+     - Release candidates: Pre-release testing
    - Select the appropriate version for your operating system
+     - Windows: 32-bit or 64-bit
+     - macOS: Intel or Apple Silicon
+     - Linux: Distribution-specific packages
    - Check system requirements before downloading
+     - Minimum hardware specifications
+     - Required system libraries
+     - Graphics card compatibility
    - Note the download size (typically 100-200MB)
+     - Core application: ~100MB
+     - Additional resources: ~50MB
+     - Documentation: ~20MB
+   - Download options:
+     - Direct download
+     - Torrent download
+     - Mirror selection
+   - Version history:
+     - Current stable: 2.10.x
+     - Development: 2.99.x
+     - Legacy: 2.8.x
 
 2. **GIMP Development Releases**: Access development builds at [gimp.org/downloads](https://www.gimp.org/downloads)
    - Nightly builds for testing new features
+     - Automatic daily builds
+     - Latest code changes
+     - Experimental features
    - Development snapshots for bug testing
+     - Weekly builds
+     - Feature previews
+     - Bug fixes
    - Release candidates for upcoming versions
+     - Beta testing
+     - Performance testing
+     - Compatibility testing
    - Warning: Development versions may be unstable
+     - Backup your data
+     - Test in separate environment
+     - Report bugs to developers
+   - Development version features:
+     - New tools and filters
+     - Interface improvements
+     - Performance enhancements
+     - Bug fixes and patches
 
 3. **Alternative Download Mirrors**: 
    - [SourceForge](https://sourceforge.net/projects/gimp/)
      - Multiple download locations
+       - Geographic distribution
+       - Load balancing
+       - Failover options
      - Faster download speeds
+       - CDN integration
+       - Bandwidth optimization
+       - Connection management
      - Mirror selection options
+       - Automatic selection
+       - Manual override
+       - Speed testing
+     - Additional features:
+       - Download resume
+       - Checksum verification
+       - Version history
    - [FTP Server](ftp://ftp.gimp.org/pub/gimp/)
      - Direct file access
+       - Raw file transfer
+       - Directory browsing
+       - File listing
      - Historical versions
+       - Archive access
+       - Version history
+       - Release notes
      - Source code archives
+       - Complete source
+       - Patches
+       - Documentation
+     - FTP features:
+       - Resume support
+       - Directory mirroring
+       - Batch downloads
 
 4. **Version Selection Guide**:
    - Stable version: Recommended for most users
+     - Production use
+     - Regular updates
+     - Security patches
    - Development version: For testing and development
+     - Feature testing
+     - Bug reporting
+     - Development work
    - Source code: For custom builds and modifications
+     - Custom compilation
+     - Feature modification
+     - Platform adaptation
    - Portable version: For USB drives and temporary installations
+     - No installation required
+     - Portable settings
+     - Temporary use
+
+5. **Download Verification**:
+   - File integrity checks
+     - MD5 checksums
+     - SHA256 verification
+     - GPG signatures
+   - Download verification tools
+     - Checksum calculators
+     - Signature verifiers
+     - Download managers
+   - Security considerations
+     - SSL/TLS verification
+     - Certificate validation
+     - Source authentication
 
 Always download from official sources to ensure security and stability.
 
@@ -381,8 +470,17 @@ Always download from official sources to ensure security and stability.
 #### Windows Installer Verification
 1. Download the SHA256 checksum file from the official website
    - Look for files named `gimp-*-setup.exe.sha256`
+     - Version-specific checksums
+     - Architecture-specific files
+     - Language-specific packages
    - Save both installer and checksum in the same directory
+     - Create dedicated folder
+     - Maintain file organization
+     - Track versions
    - Note the expected checksum value
+     - Copy to secure location
+     - Verify format
+     - Compare with download
 
 2. Use PowerShell to verify:
    ```powershell
@@ -393,13 +491,72 @@ Always download from official sources to ensure security and stability.
    $hash = Get-FileHash -Algorithm SHA256 gimp-installer.exe
    $expected = Get-Content checksum.txt
    if ($hash.Hash -eq $expected) { Write-Host "Verification successful" }
+
+   # Method 3: Batch verification
+   $files = Get-ChildItem -Path ".\" -Filter "*.exe"
+   foreach ($file in $files) {
+       $hash = Get-FileHash -Algorithm SHA256 $file.FullName
+       Write-Host "$($file.Name): $($hash.Hash)"
+   }
+
+   # Method 4: Automated verification script
+   $installer = "gimp-installer.exe"
+   $checksum = "checksum.txt"
+   $hash = Get-FileHash -Algorithm SHA256 $installer
+   $expected = Get-Content $checksum
+   if ($hash.Hash -eq $expected) {
+       Write-Host "Verification successful" -ForegroundColor Green
+   } else {
+       Write-Host "Verification failed" -ForegroundColor Red
+       Write-Host "Expected: $expected"
+       Write-Host "Actual: $($hash.Hash)"
+   }
    ```
 
 3. Troubleshooting:
    - If checksums don't match, download the file again
+     - Clear browser cache
+     - Use different download method
+     - Try alternative mirror
    - Check for download interruptions
+     - Verify file size
+     - Check download logs
+     - Monitor network connection
    - Verify you're using the correct checksum file
+     - Check file version
+     - Verify file format
+     - Compare file names
    - Ensure file wasn't modified during download
+     - Check file permissions
+     - Verify file attributes
+     - Monitor file changes
+
+4. Advanced Verification:
+   - Digital signature verification
+     ```powershell
+     # Verify digital signature
+     Get-AuthenticodeSignature gimp-installer.exe
+     
+     # Check certificate chain
+     certutil -verify gimp-installer.exe
+     ```
+   - File integrity monitoring
+     ```powershell
+     # Monitor file changes
+     $watcher = New-Object System.IO.FileSystemWatcher
+     $watcher.Path = "."
+     $watcher.Filter = "gimp-installer.exe"
+     $watcher.EnableRaisingEvents = $true
+     ```
+   - Automated verification system
+     ```powershell
+     # Create verification script
+     $config = @{
+         Installer = "gimp-installer.exe"
+         Checksum = "checksum.txt"
+         LogFile = "verification.log"
+     }
+     ```
 
 #### macOS Package Verification
 1. Check the package signature:
@@ -409,6 +566,15 @@ Always download from official sources to ensure security and stability.
 
    # Check the certificate
    security find-certificate -a -c "GIMP" -Z
+
+   # Verify certificate chain
+   security verify-cert -c /path/to/certificate
+
+   # Check code signing
+   codesign -vv -d GIMP.pkg
+
+   # Verify notarization
+   xcrun stapler validate GIMP.pkg
    ```
 
 2. Verify SHA256 checksum:
@@ -418,13 +584,82 @@ Always download from official sources to ensure security and stability.
 
    # Compare with provided checksum
    echo "expected_checksum GIMP.pkg" | shasum -a 256 -c
+
+   # Automated verification
+   #!/bin/bash
+   EXPECTED=$(cat checksum.txt)
+   ACTUAL=$(shasum -a 256 GIMP.pkg | cut -d' ' -f1)
+   if [ "$EXPECTED" = "$ACTUAL" ]; then
+       echo "Verification successful"
+   else
+       echo "Verification failed"
+   fi
+
+   # Batch verification
+   for pkg in *.pkg; do
+       shasum -a 256 "$pkg"
+   done
    ```
 
 3. Additional Security Checks:
    - Verify the developer certificate
+     ```bash
+     # Check certificate validity
+     security verify-cert -c /path/to/certificate
+     
+     # Verify certificate chain
+     security verify-cert -k /path/to/keychain
+     ```
    - Check Gatekeeper settings
+     ```bash
+     # Check Gatekeeper status
+     spctl --status
+     
+     # Verify app notarization
+     xcrun stapler validate GIMP.pkg
+     ```
    - Review security permissions
+     ```bash
+     # Check file permissions
+     ls -l GIMP.pkg
+     
+     # Verify ACLs
+     ls -le GIMP.pkg
+     ```
    - Scan for malware (optional)
+     ```bash
+     # Use built-in scanner
+     xattr -l GIMP.pkg
+     
+     # Check quarantine status
+     xattr -d com.apple.quarantine GIMP.pkg
+     ```
+
+4. Advanced Security Features:
+   - System Integrity Protection
+     ```bash
+     # Check SIP status
+     csrutil status
+     
+     # Verify system integrity
+     /usr/libexec/repair_packages --verify --standard-pkgs /
+     ```
+   - File System Permissions
+     ```bash
+     # Check file system permissions
+     find /usr/bin/gimp -type f -exec sha256sum {} \;
+     
+     # Verify file permissions
+     find /usr/bin/gimp -type f -exec ls -l {} \;
+     ```
+   - Security Context
+     ```bash
+     # Check security context
+     ls -Z /Applications/GIMP.app
+     
+     # Verify security attributes
+     xattr -l /Applications/GIMP.app
+     ```
 
 #### Linux Package Verification
 1. Verify GPG signature:
@@ -437,6 +672,25 @@ Always download from official sources to ensure security and stability.
 
    # Check the key fingerprint
    gpg --fingerprint 0x7B44D54E
+
+   # Advanced key management
+   #!/bin/bash
+   KEY_ID="0x7B44D54E"
+   KEYSERVER="keys.gnupg.net"
+   
+   # Import key
+   gpg --keyserver $KEYSERVER --recv-keys $KEY_ID
+   
+   # Verify key
+   gpg --fingerprint $KEY_ID
+   
+   # Check key trust
+   gpg --check-trustdb
+   
+   # Verify signature
+   for file in *.tar.bz2; do
+       gpg --verify "${file}.sig" "$file"
+   done
    ```
 
 2. Check SHA256 checksum:
@@ -446,6 +700,20 @@ Always download from official sources to ensure security and stability.
 
    # Manual verification
    sha256sum gimp-*.tar.bz2
+
+   # Automated verification script
+   #!/bin/bash
+   for file in *.tar.bz2; do
+       if [ -f "${file}.sha256" ]; then
+           sha256sum -c "${file}.sha256"
+       else
+           echo "No checksum file for $file"
+       fi
+   done
+
+   # Batch verification
+   find . -name "*.tar.bz2" -exec sha256sum {} \; > checksums.txt
+   diff checksums.txt original_checksums.txt
    ```
 
 3. Package Manager Verification:
@@ -455,108 +723,355 @@ Always download from official sources to ensure security and stability.
    
    # Fedora
    rpm -qa | grep gpg-pubkey
+
+   # Advanced package verification
+   #!/bin/bash
+   # Check package integrity
+   if command -v dpkg &> /dev/null; then
+       # Debian/Ubuntu
+       dpkg -V gimp
+   elif command -v rpm &> /dev/null; then
+       # Fedora/RHEL
+       rpm -V gimp
+   fi
+
+   # Verify package signatures
+   if command -v apt &> /dev/null; then
+       apt-key verify /path/to/release.gpg
+   elif command -v dnf &> /dev/null; then
+       rpm --checksig gimp-*.rpm
+   fi
    ```
+
+4. Advanced Security Features:
+   - System Security
+     ```bash
+     # Check system security
+     auditctl -l
+     
+     # Verify system integrity
+     aide --check
+     ```
+   - Package Security
+     ```bash
+     # Check package security
+     debian-goodies
+     rpm -qa --qf '%{SIGPGP:pgpsig}\n'
+     ```
+   - File System Security
+     ```bash
+     # Check file system security
+     find /usr/bin/gimp -type f -exec sha256sum {} \;
+     
+     # Verify file permissions
+     find /usr/bin/gimp -type f -exec ls -l {} \;
+     ```
 
 ### Installing GIMP on Windows
 
 1. **System Requirements**:
    - Windows 7 or later (32-bit or 64-bit)
+     - Windows 7 SP1
+     - Windows 8.1
+     - Windows 10
+     - Windows 11
    - 64-bit processor recommended
+     - Intel Core i3 or better
+     - AMD Ryzen 3 or better
+     - ARM64 support (Windows 11)
    - 2GB RAM minimum (4GB recommended)
+     - Physical memory
+     - Virtual memory
+     - Page file size
    - 500MB free disk space
+     - Installation directory
+     - User data
+     - Temporary files
    - DirectX 9 compatible graphics card
+     - Hardware acceleration
+     - OpenGL support
+     - Display drivers
    - Internet connection for updates
+     - Windows Update
+     - GIMP updates
+     - Resource downloads
    - Administrator privileges
+     - Installation rights
+     - System modifications
+     - File associations
 
 2. **Installation Steps**:
    - Download the installer from gimp.org
      - Choose the correct architecture (32/64-bit)
+       - Check system type
+       - Verify compatibility
+       - Select appropriate version
      - Select the appropriate language
+       - Interface language
+       - Documentation language
+       - Help files
      - Note the download location
+       - Default download folder
+       - Custom location
+       - Network path
    
    - Run the installer as administrator
      - Right-click the installer
+       - Context menu
+       - Run as administrator
+       - UAC prompt
      - Select "Run as administrator"
+       - Security warning
+       - Permission request
+       - User account control
      - Accept the UAC prompt
+       - Security verification
+       - Permission grant
+       - Installation start
    
    - Follow the installation wizard
      - Accept the license agreement
+       - Read terms
+       - Accept conditions
+       - Proceed with installation
      - Choose installation location
        - Default: `C:\Program Files\GIMP 2`
+         - System drive
+         - Program files
+         - Application directory
        - Custom: Select your preferred directory
+         - Different drive
+         - Custom path
+         - Network location
      - Select components to install
        - Core application
+         - Main program
+         - Required libraries
+         - System components
        - Python support
+         - Python interpreter
+         - Required modules
+         - Script support
        - Documentation
+         - User manual
+         - Help files
+         - Tutorials
        - Desktop shortcuts
+         - Start menu
+         - Desktop
+         - Quick launch
        - File associations
+         - Image formats
+         - Project files
+         - Export formats
      - Choose start menu folder
+       - Default location
+       - Custom folder
+       - Shortcut creation
      - Review installation summary
+       - Component list
+       - Space requirements
+       - Installation path
      - Complete the installation
+       - Progress bar
+       - Status updates
+       - Completion message
 
 3. **Post-Installation**:
    - Create desktop shortcut
      - Right-click desktop
+       - Context menu
+       - New shortcut
+       - Location selection
      - New > Shortcut
+       - Shortcut wizard
+       - Target location
+       - Shortcut name
      - Browse to GIMP executable
+       - Program files
+       - Application directory
+       - Executable file
      - Name the shortcut
+       - Default name
+       - Custom name
+       - Icon selection
    
    - Associate file types
      - Open GIMP
+       - Start menu
+       - Desktop shortcut
+       - Run command
      - Edit > Preferences > File Associations
+       - Settings dialog
+       - File types
+       - Default programs
      - Select file types to associate
+       - Image formats
+       - Project files
+       - Export formats
      - Apply changes
+       - Save settings
+       - Update registry
+       - Refresh associations
    
    - Set up file associations
      - Control Panel > Default Programs
+       - System settings
+       - Default apps
+       - File associations
      - Set GIMP as default for supported formats
+       - Image formats
+       - Project files
+       - Export formats
      - Configure file type associations
+       - File extensions
+       - MIME types
+       - Program defaults
 
 4. **Troubleshooting**:
    - Installation fails
      - Check system requirements
+       - Hardware compatibility
+       - Software requirements
+       - System updates
      - Verify administrator rights
+       - User account type
+       - Permission levels
+       - Security settings
      - Clear temporary files
+       - Temp directory
+       - Download cache
+       - Installation logs
      - Disable antivirus temporarily
+       - Security software
+       - Real-time protection
+       - Firewall settings
    
    - Missing components
      - Run installer repair
+       - Control Panel
+       - Programs and Features
+       - Repair option
      - Check installation logs
+       - Error messages
+       - Warning signs
+       - Status codes
      - Verify disk space
+       - Free space
+       - Partition size
+       - System requirements
    
    - Performance issues
      - Update graphics drivers
+       - Device Manager
+       - Driver updates
+       - Hardware acceleration
      - Adjust memory settings
+       - Virtual memory
+       - Page file
+       - System cache
      - Check system resources
+       - CPU usage
+       - Memory usage
+       - Disk space
+
+5. **Advanced Configuration**:
+   - System Integration
+     - Registry settings
+     - Environment variables
+     - System paths
+   - Performance Tuning
+     - Memory allocation
+     - Cache settings
+     - Thread management
+   - Security Settings
+     - File permissions
+     - Access control
+     - Security policies
 
 ### Installing GIMP on macOS
 
 1. **System Requirements**:
    - macOS 10.12 or later
+     - Sierra
+     - High Sierra
+     - Mojave
+     - Catalina
+     - Big Sur
+     - Monterey
+     - Ventura
    - 64-bit processor
+     - Intel Core series
+     - Apple Silicon
+     - ARM architecture
    - 2GB RAM minimum
+     - Physical memory
+     - Virtual memory
+     - Memory management
    - 500MB free disk space
+     - System drive
+     - Application support
+     - User data
    - Metal-compatible graphics card
+     - Hardware acceleration
+     - OpenGL support
+     - Display drivers
    - Internet connection for updates
+     - App Store
+     - System updates
+     - Resource downloads
    - Administrator privileges
+     - Installation rights
+     - System modifications
+     - File associations
 
 2. **Installation Methods**:
    - **DMG Package**:
      - Download the .dmg file
        - Choose the correct version
+         - Intel
+         - Apple Silicon
+         - Universal binary
        - Verify the download
+         - Checksum
+         - Signature
+         - File integrity
        - Note the file location
+         - Downloads folder
+         - Custom location
+         - Network path
      
      - Mount the disk image
        - Double-click the .dmg file
+         - Finder integration
+         - Mount process
+         - Volume creation
        - Wait for verification
+         - Security check
+         - File scan
+         - Integrity verification
        - Accept security warnings
+         - Gatekeeper
+         - Security settings
+         - Permission requests
      
      - Drag GIMP to Applications folder
        - Open Applications folder
+         - Finder window
+         - Applications view
+         - System location
        - Drag GIMP icon
+         - Copy process
+         - File transfer
+         - Progress indicator
        - Wait for copy to complete
+         - Transfer speed
+         - File size
+         - Completion status
        - Eject the disk image
+         - Unmount process
+         - Cleanup
+         - Resource release
    
    - **Homebrew**:
      ```bash
@@ -571,41 +1086,129 @@ Always download from official sources to ensure security and stability.
      
      # Remove GIMP
      brew uninstall gimp
+     
+     # Advanced Homebrew commands
+     #!/bin/bash
+     # Check GIMP status
+     brew info gimp
+     
+     # Verify installation
+     brew doctor
+     
+     # Clean up old versions
+     brew cleanup
+     
+     # Update all packages
+     brew update && brew upgrade
      ```
 
 3. **Post-Installation**:
    - First launch security settings
      - Open System Preferences
+       - System settings
+       - Security options
+       - Privacy controls
      - Security & Privacy
+       - General settings
+       - Security options
+       - Privacy settings
      - Allow GIMP to run
+       - Gatekeeper
+       - Security exceptions
+       - App permissions
      - Grant necessary permissions
+       - File access
+       - System integration
+       - Resource usage
    
    - Gatekeeper permissions
      - Check app signature
+       - Developer certificate
+       - Code signing
+       - Notarization
      - Verify developer certificate
+       - Certificate chain
+       - Trust status
+       - Validity period
      - Allow from identified developer
+       - Security settings
+       - App permissions
+       - System integration
    
    - File associations
      - Finder > Preferences
+       - View options
+       - File types
+       - Default apps
      - Set default applications
+       - Image formats
+       - Project files
+       - Export formats
      - Configure file types
+       - File extensions
+       - MIME types
+       - Program defaults
      - Set GIMP as default
+       - System settings
+       - File associations
+       - Default programs
 
 4. **Troubleshooting**:
    - App won't open
      - Check security settings
+       - Gatekeeper
+       - Security preferences
+       - Privacy settings
      - Verify file permissions
+       - File attributes
+       - Access rights
+       - Ownership
      - Clear quarantine attributes
+       - Extended attributes
+       - Security flags
+       - File metadata
    
    - Missing features
      - Check installation logs
+       - System logs
+       - App logs
+       - Error messages
      - Verify component installation
+       - Required files
+       - Dependencies
+       - Resources
      - Reinstall if necessary
+       - Clean removal
+       - Fresh installation
+       - Component verification
    
    - Performance issues
      - Update macOS
+       - System updates
+       - Security patches
+       - Feature updates
      - Check system resources
+       - CPU usage
+       - Memory usage
+       - Disk space
      - Adjust memory allocation
+       - Virtual memory
+       - Swap space
+       - Cache settings
+
+5. **Advanced Configuration**:
+   - System Integration
+     - Launch Services
+     - File type handlers
+     - URL schemes
+   - Performance Tuning
+     - Memory management
+     - Cache settings
+     - Thread optimization
+   - Security Settings
+     - File permissions
+     - Access control
+     - Security policies
 
 ### Installing GIMP on Linux (APT, DNF, Flatpak, Snap)
 
@@ -626,6 +1229,21 @@ sudo apt upgrade gimp
 # Remove GIMP
 sudo apt remove gimp
 sudo apt autoremove
+
+# Advanced APT commands
+#!/bin/bash
+# Check GIMP status
+dpkg -l | grep gimp
+
+# Verify installation
+dpkg -V gimp
+
+# Clean up old versions
+sudo apt clean
+sudo apt autoremove
+
+# Update all packages
+sudo apt update && sudo apt upgrade
 ```
 
 #### DNF (Fedora)
@@ -644,6 +1262,21 @@ sudo dnf upgrade gimp
 
 # Remove GIMP
 sudo dnf remove gimp
+
+# Advanced DNF commands
+#!/bin/bash
+# Check GIMP status
+rpm -qa | grep gimp
+
+# Verify installation
+rpm -V gimp
+
+# Clean up old versions
+sudo dnf clean all
+sudo dnf autoremove
+
+# Update all packages
+sudo dnf update
 ```
 
 #### Flatpak
@@ -663,6 +1296,20 @@ flatpak update org.gimp.GIMP
 
 # Remove GIMP
 flatpak uninstall org.gimp.GIMP
+
+# Advanced Flatpak commands
+#!/bin/bash
+# Check GIMP status
+flatpak list | grep gimp
+
+# Verify installation
+flatpak verify org.gimp.GIMP
+
+# Clean up old versions
+flatpak uninstall --unused
+
+# Update all packages
+flatpak update
 ```
 
 #### Snap
@@ -678,6 +1325,20 @@ sudo snap refresh gimp
 
 # Remove GIMP
 sudo snap remove gimp
+
+# Advanced Snap commands
+#!/bin/bash
+# Check GIMP status
+snap list | grep gimp
+
+# Verify installation
+snap verify gimp
+
+# Clean up old versions
+snap list --all | grep gimp
+
+# Update all packages
+sudo snap refresh
 ```
 
 ### Building GIMP from Source
