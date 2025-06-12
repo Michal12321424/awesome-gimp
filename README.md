@@ -344,25 +344,232 @@ There are many ways to contribute to GIMP's development:
 
 ### Downloading GIMP from Official Sources
 
+GIMP can be downloaded from several official sources:
+
+1. **Official GIMP Website**: Visit [gimp.org](https://www.gimp.org) for the latest stable version
+2. **GIMP Development Releases**: Access development builds at [gimp.org/downloads](https://www.gimp.org/downloads)
+3. **Alternative Download Mirrors**: 
+   - [SourceForge](https://sourceforge.net/projects/gimp/)
+   - [FTP Server](ftp://ftp.gimp.org/pub/gimp/)
+
+Always download from official sources to ensure security and stability.
+
 ### Verifying Installer Integrity (Checksums and Signatures)
+
+#### Windows Installer Verification
+1. Download the SHA256 checksum file from the official website
+2. Use PowerShell to verify:
+   ```powershell
+   Get-FileHash -Algorithm SHA256 gimp-installer.exe | Compare-Object (Get-Content checksum.txt)
+   ```
+
+#### macOS Package Verification
+1. Check the package signature:
+   ```bash
+   pkgutil --check-signature GIMP.pkg
+   ```
+2. Verify SHA256 checksum:
+   ```bash
+   shasum -a 256 GIMP.pkg
+   ```
+
+#### Linux Package Verification
+1. Verify GPG signature:
+   ```bash
+   gpg --verify gimp-*.tar.bz2.sig
+   ```
+2. Check SHA256 checksum:
+   ```bash
+   sha256sum -c gimp-*.tar.bz2.sha256
+   ```
 
 ### Installing GIMP on Windows
 
+1. **System Requirements**:
+   - Windows 7 or later
+   - 64-bit processor
+   - 2GB RAM minimum (4GB recommended)
+   - 500MB free disk space
+
+2. **Installation Steps**:
+   - Download the installer from gimp.org
+   - Run the installer as administrator
+   - Follow the installation wizard
+   - Choose installation location
+   - Select components to install
+   - Complete the installation
+
+3. **Post-Installation**:
+   - Create desktop shortcut
+   - Associate file types
+   - Set up file associations
+
 ### Installing GIMP on macOS
+
+1. **System Requirements**:
+   - macOS 10.12 or later
+   - 64-bit processor
+   - 2GB RAM minimum
+   - 500MB free disk space
+
+2. **Installation Methods**:
+   - **DMG Package**:
+     - Download the .dmg file
+     - Mount the disk image
+     - Drag GIMP to Applications folder
+   - **Homebrew**:
+     ```bash
+     brew install gimp
+     ```
+
+3. **Post-Installation**:
+   - First launch security settings
+   - Gatekeeper permissions
+   - File associations
 
 ### Installing GIMP on Linux (APT, DNF, Flatpak, Snap)
 
+#### APT (Debian/Ubuntu)
+```bash
+sudo apt update
+sudo apt install gimp
+```
+
+#### DNF (Fedora)
+```bash
+sudo dnf install gimp
+```
+
+#### Flatpak
+```bash
+flatpak install flathub org.gimp.GIMP
+```
+
+#### Snap
+```bash
+sudo snap install gimp
+```
+
 ### Building GIMP from Source
+
+1. **Prerequisites**:
+   - Build tools (gcc, make)
+   - Development libraries
+   - GTK+ development files
+   - Python development files
+
+2. **Build Steps**:
+   ```bash
+   ./configure
+   make
+   sudo make install
+   ```
+
+3. **Common Build Issues**:
+   - Missing dependencies
+   - Version conflicts
+   - Build environment setup
 
 ### First Launch and Initial Configuration
 
+1. **Welcome Screen**:
+   - Choose workspace layout
+   - Select default settings
+   - Configure preferences
+
+2. **Basic Setup**:
+   - Set up color management
+   - Configure input devices
+   - Adjust performance settings
+
+3. **Workspace Customization**:
+   - Dock positions
+   - Tool options
+   - Default tools
+
 ### Interface Language and Locale Settings
+
+1. **Changing Language**:
+   - Edit preferences file
+   - Set environment variables
+   - Use language packs
+
+2. **Locale Configuration**:
+   - Date formats
+   - Number formats
+   - Measurement units
+
+3. **Font Settings**:
+   - Interface font
+   - Text tool font
+   - Font rendering
 
 ### Configuring Folders for Plug-ins, Brushes, Fonts
 
+1. **Default Locations**:
+   - Windows: `%APPDATA%\GIMP\2.10`
+   - macOS: `~/Library/Application Support/GIMP/2.10`
+   - Linux: `~/.config/GIMP/2.10`
+
+2. **Custom Folders**:
+   - Edit preferences
+   - Set environment variables
+   - Create symbolic links
+
+3. **Resource Types**:
+   - Plug-ins
+   - Scripts
+   - Brushes
+   - Patterns
+   - Gradients
+   - Palettes
+   - Fonts
+
 ### Backing Up GIMP Settings and Preferences
 
+1. **Backup Locations**:
+   - Preferences file
+   - Custom brushes
+   - Scripts
+   - Plug-ins
+
+2. **Backup Methods**:
+   - Manual copy
+   - Script automation
+   - Version control
+
+3. **Restore Process**:
+   - File replacement
+   - Preference import
+   - Resource installation
+
 ### Installing Additional Resources (Brushes, Gradients, Plug-ins)
+
+1. **Brushes**:
+   - Download .gbr files
+   - Place in brushes folder
+   - Refresh brush list
+
+2. **Gradients**:
+   - Download .ggr files
+   - Place in gradients folder
+   - Refresh gradient list
+
+3. **Plug-ins**:
+   - Download compatible versions
+   - Install dependencies
+   - Place in plug-ins folder
+   - Restart GIMP
+
+4. **Scripts**:
+   - Download .scm files
+   - Place in scripts folder
+   - Refresh script list
+
+5. **Resource Management**:
+   - Organize resources
+   - Update regularly
+   - Remove unused items
 
 ## User Interface In-Depth
 
