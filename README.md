@@ -5287,27 +5287,1738 @@ Keyboard shortcuts are essential for efficient GIMP usage, allowing you to perfo
 
 ## Canvas and File Operations
 
+Working with canvas and file operations forms the foundation of every GIMP project. Understanding how to create, open, save, and manage image files efficiently is crucial for productive image editing. This chapter covers everything from creating new images with proper settings to managing file formats, metadata, and recovery options.
+
 ### Creating a New Image: Dimensions, Resolution, Fill
+
+Creating a new image in GIMP requires careful consideration of dimensions, resolution, and initial fill options. These settings determine the canvas size, print quality, and starting point for your work. The New Image dialog (Ctrl+N) provides comprehensive options for configuring your canvas before you begin editing.
+
+**Image Dimensions**:
+- **Width and Height**: Set canvas size in pixels, inches, centimeters, millimeters, points, picas, or other units
+  - **Pixel Units**: Most common for digital work, absolute size regardless of resolution
+  - **Physical Units**: Inches, centimeters useful for print work with specific dimensions
+  - **Unit Selection**: Choose unit from dropdown menu in New Image dialog
+  - **Unit Conversion**: GIMP automatically converts between units when you switch
+  - **Maximum Dimensions**: GIMP supports images up to 300,000 pixels in each dimension
+  - **Memory Considerations**: Larger dimensions require more RAM and processing power
+- **Aspect Ratio**: Maintain specific aspect ratios for consistent proportions
+  - **Lock Aspect Ratio**: Click chain icon to lock width/height ratio
+  - **Common Ratios**: 16:9 (widescreen), 4:3 (standard), 1:1 (square), 3:2 (photo)
+  - **Custom Ratios**: Enter specific aspect ratios for specialized projects
+  - **Ratio Preservation**: Prevents accidental distortion when resizing
+  - **Print Ratios**: Standard print ratios like 8.5:11 (Letter) or A4 proportions
+- **Preset Sizes**: Choose from common presets (A4, Letter, Web sizes, etc.)
+  - **Paper Sizes**: A4 (210×297mm), Letter (8.5×11"), Legal (8.5×14"), Tabloid (11×17")
+  - **Web Presets**: Common banner sizes (728×90, 300×250, 468×60), social media sizes
+  - **Screen Presets**: HD (1920×1080), Full HD, 4K, common monitor resolutions
+  - **Photo Presets**: Standard photo sizes (4×6", 5×7", 8×10") with print resolution
+  - **Custom Presets**: Save your own frequently used dimensions as presets
+- **Custom Dimensions**: Enter exact dimensions for specific requirements
+  - **Direct Input**: Type exact values in width and height fields
+  - **Mathematical Expressions**: Use calculations (e.g., 1920/2 for half width)
+  - **Precision**: Enter dimensions with decimal precision for physical units
+  - **Validation**: GIMP validates dimensions and warns about extreme values
+- **Unit Conversion**: Switch between units to match your workflow needs
+  - **Real-time Conversion**: Values update automatically when changing units
+  - **Precision Loss**: Some conversions may result in slight rounding
+  - **Workflow Matching**: Use units that match your project requirements
+
+**Resolution Settings**:
+- **DPI/PPI**: Set dots per inch or pixels per inch for print quality
+  - **DPI vs PPI**: DPI (dots per inch) for print, PPI (pixels per inch) for digital
+  - **Resolution Impact**: Determines how many pixels represent one inch of output
+  - **Print Quality**: Higher DPI means sharper print output but larger files
+  - **Standard Values**: 72 DPI (web), 150 DPI (draft print), 300 DPI (quality print)
+  - **High-End Print**: 600 DPI or higher for fine art and professional printing
+- **Web Resolution**: Standard 72 DPI for web graphics
+  - **Screen Display**: 72-96 DPI is standard for computer displays
+  - **File Size**: Lower resolution means smaller file sizes for web
+  - **Pixel Dimensions**: For web, pixel dimensions matter more than DPI
+  - **Retina Displays**: Modern high-DPI displays may benefit from 2x resolution
+- **Print Resolution**: 300 DPI or higher for professional printing
+  - **Quality Standard**: 300 DPI is industry standard for quality printing
+  - **Large Format**: Lower DPI acceptable for large format (billboards, banners)
+  - **Photo Printing**: 300-600 DPI for photo prints depending on viewing distance
+  - **Magazine/Book**: 300 DPI standard, 600 DPI for high-quality publications
+- **Resolution Impact**: Higher resolution means larger file sizes and more detail
+  - **File Size Calculation**: Resolution directly affects pixel count and file size
+  - **Memory Usage**: Higher resolution images consume more RAM
+  - **Processing Speed**: Larger images take longer to process and edit
+  - **Quality Trade-off**: Balance resolution with file size and performance needs
+- **Resolution Conversion**: Change resolution without resizing canvas
+  - **Image Scale Dialog**: Use Image > Scale Image to change resolution
+  - **Quality Interpolation**: Choose interpolation method (Cubic, Lanczos, etc.)
+  - **Downsampling**: Reducing resolution may cause quality loss
+  - **Upsampling**: Increasing resolution doesn't add real detail
+
+**Fill Options**:
+- **Foreground Color**: Fill with current foreground color
+  - **Color Picker**: Set foreground color before creating image
+  - **Quick Access**: Fast way to start with specific color
+  - **Color Consistency**: Maintains color consistency across new images
+- **Background Color**: Fill with current background color
+  - **Default White**: Usually white, but can be customized
+  - **Print Work**: Common for print projects requiring white background
+  - **Color Matching**: Match background to existing design elements
+- **White**: Start with white background (common for print work)
+  - **Standard Choice**: Most common fill option for new images
+  - **Print Compatibility**: White background works well for most print projects
+  - **Opacity**: Fully opaque white (no transparency)
+- **Transparent**: Start with transparent background (alpha channel)
+  - **Alpha Channel**: Creates transparency channel for compositing
+  - **Web Graphics**: Essential for logos, icons, and web graphics
+  - **Layer Compositing**: Allows layering over other images
+  - **File Formats**: Requires formats supporting transparency (PNG, XCF, TIFF)
+- **Pattern**: Fill with selected pattern
+  - **Pattern Selection**: Choose from GIMP's pattern library
+  - **Custom Patterns**: Use your own custom patterns
+  - **Tiling**: Pattern tiles across entire canvas
+  - **Creative Starts**: Useful for textured backgrounds and design work
+- **No Fill**: Create completely transparent canvas
+  - **Empty Canvas**: Starts with no fill, completely transparent
+  - **Manual Fill**: Add fill later using Fill tool or layers
+  - **Flexibility**: Maximum flexibility for compositing work
+
+**Advanced Options**:
+- **Color Space**: Choose RGB, Grayscale, or Indexed color mode
+  - **RGB**: Full color for digital displays and most editing work
+  - **Grayscale**: Single channel for black and white images
+  - **Indexed**: Limited color palette (256 colors) for GIF and specialized formats
+  - **Color Profile**: Assign specific ICC profiles for color management
+- **Precision**: Select 8-bit, 16-bit, or 32-bit floating point precision
+  - **8-bit Integer**: 256 levels per channel, standard precision, smaller files
+  - **16-bit Integer**: 65,536 levels per channel, professional photography
+  - **32-bit Floating Point**: Maximum precision, HDR support, scientific imaging
+  - **Performance Impact**: Higher precision requires more memory and processing
+  - **Workflow Matching**: Choose precision based on editing needs
+- **Comment**: Add initial image comment or description
+  - **Metadata**: Stored in image metadata for future reference
+  - **Organization**: Helps organize and identify images
+  - **Workflow**: Useful for project notes and descriptions
+- **Template Selection**: Start from existing template designs
+  - **Template Library**: Access built-in and custom templates
+  - **Quick Start**: Begin projects with predefined settings
+  - **Consistency**: Maintain consistent dimensions and settings
 
 ### Choosing Color Space and Precision
 
+Color space and precision settings determine how colors are represented and the quality of color information in your image. These choices affect color accuracy, file size, and compatibility with other applications. Making the right choices at the start of your project ensures optimal quality and workflow efficiency.
+
+**Color Space Options**:
+- **RGB**: Standard color space for digital displays and web graphics
+  - **Three Channels**: Red, Green, Blue channels for full color representation
+  - **Digital Standard**: Universal standard for computer displays and digital cameras
+  - **Color Gamut**: Wide color gamut covering most visible colors
+  - **Web Standard**: Default for web graphics and digital photography
+  - **Editing Flexibility**: Maximum editing flexibility and tool support
+  - **File Formats**: Supported by all major image formats
+- **Grayscale**: Single-channel grayscale for black and white images
+  - **Single Channel**: One channel representing brightness values
+  - **File Size**: Smaller file sizes (1/3 of RGB for same dimensions)
+  - **Black and White**: Ideal for black and white photography and graphics
+  - **Conversion**: Can convert RGB to grayscale, but not reversible
+  - **Print Work**: Common for black and white printing
+  - **Artistic Effects**: Useful for artistic and stylistic effects
+- **Indexed**: Limited color palette for GIF and other indexed formats
+  - **Color Palette**: Limited to 256 colors maximum
+  - **File Optimization**: Significantly smaller file sizes
+  - **GIF Format**: Required for animated GIFs and some web graphics
+  - **Color Reduction**: Automatic or manual color palette optimization
+  - **Dithering**: Options for color dithering to simulate more colors
+  - **Limitations**: Limited editing capabilities compared to RGB
+- **Color Profile**: Assign specific ICC color profiles for accurate color management
+  - **ICC Profiles**: Industry-standard color profiles for consistent color
+  - **sRGB**: Standard RGB, most common for web and digital displays
+  - **Adobe RGB**: Wider gamut for professional photography and print
+  - **ProPhoto RGB**: Extremely wide gamut for high-end photography
+  - **Custom Profiles**: Use custom profiles for specific devices or workflows
+  - **Profile Assignment**: Assign profiles without converting colors
+  - **Profile Conversion**: Convert between color spaces when needed
+- **Working Space**: Choose sRGB, Adobe RGB, or custom working spaces
+  - **sRGB**: Standard for web, most displays, and general photography
+  - **Adobe RGB**: Better for print workflows and professional photography
+  - **ProPhoto RGB**: Maximum color gamut for high-end work
+  - **Device-Specific**: Match working space to output device
+  - **Workflow Consistency**: Maintain consistent color space throughout workflow
+
+**Precision Levels**:
+- **8-bit Integer**: Standard precision, 256 levels per channel, smaller file size
+  - **Levels per Channel**: 256 discrete levels (0-255) for each color channel
+  - **Total Colors**: 16.7 million colors (256³) in RGB mode
+  - **File Size**: Smallest file sizes, fastest processing
+  - **Memory Usage**: Lowest memory requirements
+  - **Compatibility**: Universal compatibility with all applications
+  - **Quality**: Sufficient for most photography and graphics work
+  - **Limitations**: May show banding in smooth gradients
+  - **Editing Headroom**: Less headroom for extensive editing
+- **16-bit Integer**: Higher precision, 65,536 levels per channel, better quality
+  - **Levels per Channel**: 65,536 discrete levels for each color channel
+  - **Total Colors**: 281 trillion colors in RGB mode
+  - **File Size**: Larger files (approximately 2x file size)
+  - **Memory Usage**: Higher memory requirements
+  - **Quality**: Eliminates banding, smoother gradients
+  - **Editing Headroom**: More headroom for extensive editing without quality loss
+  - **Professional Work**: Standard for professional photography and print
+  - **Format Support**: Supported by TIFF, PNG, and XCF formats
+- **32-bit Floating Point**: Maximum precision, HDR support, largest file size
+  - **Floating Point**: Continuous values, not discrete levels
+  - **HDR Support**: Supports high dynamic range imaging
+  - **File Size**: Largest file sizes (4x file size compared to 8-bit)
+  - **Memory Usage**: Highest memory requirements
+  - **Quality**: Maximum quality, no quantization artifacts
+  - **Advanced Editing**: Required for advanced compositing and effects
+  - **Scientific Use**: Used in scientific and technical imaging
+  - **Format Support**: Limited format support (EXR, HDR, XCF)
+- **Precision Impact**: Higher precision preserves more color information
+  - **Color Accuracy**: More accurate color representation
+  - **Gradient Smoothness**: Smoother gradients without banding
+  - **Editing Flexibility**: More flexibility for color adjustments
+  - **Quality Preservation**: Better quality preservation through editing
+- **Performance**: Higher precision requires more memory and processing power
+  - **RAM Requirements**: 16-bit uses 2x RAM, 32-bit uses 4x RAM
+  - **Processing Speed**: Slower processing for higher precision
+  - **Filter Performance**: Filters and effects take longer to apply
+  - **System Resources**: Consider system capabilities when choosing precision
+
+**When to Use Each Precision**:
+- **8-bit**: Web graphics, standard photography, most common use cases
+  - **Web Work**: Perfect for web graphics and online display
+  - **Standard Photography**: Sufficient for most photography needs
+  - **General Graphics**: Ideal for general graphics and design work
+  - **File Size**: When file size is a concern
+  - **Performance**: When performance is critical
+  - **Compatibility**: When maximum compatibility is needed
+- **16-bit**: Professional photography, extensive editing, print work
+  - **Professional Photography**: Standard for professional photography
+  - **Extensive Editing**: When doing extensive color and tone adjustments
+  - **Print Work**: Recommended for high-quality print output
+  - **Gradient Work**: When working with smooth gradients
+  - **Quality Critical**: When maximum quality is essential
+  - **RAW Processing**: When processing RAW camera files
+- **32-bit**: HDR imaging, advanced compositing, scientific imaging
+  - **HDR Imaging**: Required for high dynamic range images
+  - **Advanced Compositing**: Complex multi-image compositing
+  - **Scientific Imaging**: Technical and scientific applications
+  - **Extreme Editing**: When doing extreme color manipulations
+  - **Future-Proofing**: Maximum quality for archival purposes
+- **Compatibility**: Consider target application and format requirements
+  - **Format Support**: Check if target format supports chosen precision
+  - **Application Support**: Verify target applications can handle precision
+  - **Workflow Integration**: Ensure precision matches workflow requirements
+- **Workflow**: Match precision to your editing workflow needs
+  - **Start High**: Start with higher precision for extensive editing
+  - **Export Lower**: Export to lower precision for final output if needed
+  - **Workflow Consistency**: Maintain precision throughout editing workflow
+
+**Color Space Considerations**:
+- **Display Compatibility**: RGB works best for screen display
+  - **Monitor Display**: RGB matches how monitors display colors
+  - **Web Browsers**: All web browsers use RGB color space
+  - **Digital Cameras**: Most digital cameras capture in RGB
+  - **Editing Tools**: All GIMP tools work optimally with RGB
+- **Print Workflows**: Consider CMYK conversion for print projects
+  - **CMYK Conversion**: Convert to CMYK for professional printing
+  - **Color Gamut**: CMYK has smaller color gamut than RGB
+  - **Conversion Timing**: Convert at end of workflow, not at start
+  - **Soft Proofing**: Use soft proofing to preview CMYK output
+  - **Print Service**: Check print service requirements
+- **Color Accuracy**: Use color profiles for accurate color representation
+  - **Profile Assignment**: Assign correct profiles to images
+  - **Profile Conversion**: Convert between profiles when needed
+  - **Color Management**: Enable color management in GIMP preferences
+  - **Monitor Calibration**: Calibrate monitor for accurate color display
+- **File Size**: Different color spaces affect file size differently
+  - **RGB**: Standard file size (3 channels)
+  - **Grayscale**: Smaller files (1 channel, 1/3 size)
+  - **Indexed**: Smallest files (1 channel, optimized palette)
+  - **Precision Impact**: Precision also affects file size significantly
+- **Application Compatibility**: Ensure target applications support chosen color space
+  - **Format Support**: Check format specifications
+  - **Application Testing**: Test compatibility with target applications
+  - **Workflow Testing**: Verify entire workflow compatibility
+
 ### Using Templates and Presets
+
+Templates and presets allow you to start new projects with predefined settings, saving time and ensuring consistency across your work. GIMP provides built-in templates and allows you to create custom ones. Templates can include not just dimensions and settings, but also guides, layers, and initial design elements.
+
+**Built-in Templates**:
+- **Standard Sizes**: Common paper sizes (A4, Letter, Legal, etc.)
+  - **A4**: 210×297mm (8.27×11.69"), standard international paper size
+  - **Letter**: 8.5×11" (216×279mm), standard US paper size
+  - **Legal**: 8.5×14" (216×356mm), US legal document size
+  - **Tabloid**: 11×17" (279×432mm), US tabloid size
+  - **A3**: 297×420mm (11.69×16.54"), larger international size
+  - **Print Resolution**: Templates include appropriate print resolution (usually 300 DPI)
+- **Web Templates**: Standard web banner and social media sizes
+  - **Banner Sizes**: 728×90 (leaderboard), 300×250 (medium rectangle), 468×60 (banner)
+  - **Social Media**: Facebook cover (851×315), Twitter header (1500×500), Instagram (1080×1080)
+  - **Web Resolution**: 72 DPI standard for web templates
+  - **Transparent Background**: Many web templates use transparent backgrounds
+  - **Optimized Settings**: Pre-configured for web optimization
+- **Print Templates**: Common print dimensions with appropriate resolution
+  - **Photo Sizes**: 4×6", 5×7", 8×10" with 300 DPI resolution
+  - **Poster Sizes**: Common poster dimensions with print resolution
+  - **Business Cards**: Standard business card dimensions (3.5×2")
+  - **Print Margins**: Some templates include margin guides
+  - **Color Profiles**: May include appropriate print color profiles
+- **Screen Templates**: Common screen resolutions and display sizes
+  - **HD**: 1920×1080 (Full HD, 1080p)
+  - **4K**: 3840×2160 (Ultra HD, 2160p)
+  - **Common Resolutions**: 1280×720, 1366×768, 2560×1440
+  - **Mobile Sizes**: Common mobile device screen dimensions
+  - **Web Resolution**: 72-96 DPI for screen display
+- **Custom Templates**: User-created templates for specific projects
+  - **Project-Specific**: Templates tailored to specific project types
+  - **Brand Templates**: Templates with brand colors, logos, and guidelines
+  - **Workflow Templates**: Templates optimized for specific workflows
+  - **Team Templates**: Shared templates for team consistency
+
+**Creating Custom Templates**:
+- **Template Design**: Create template with desired dimensions and settings
+  - **New Image Setup**: Create new image with desired dimensions and settings
+  - **Resolution**: Set appropriate resolution for template purpose
+  - **Color Space**: Choose appropriate color space and precision
+  - **Background**: Set appropriate fill option (white, transparent, color)
+  - **Initial Setup**: Configure all initial settings before saving
+- **Template Elements**: Include guides, layers, or initial design elements
+  - **Guides**: Add horizontal and vertical guides for layout
+  - **Grid Setup**: Configure grid settings if needed
+  - **Base Layers**: Include base layers with common elements
+  - **Text Layers**: Add placeholder text layers with formatting
+  - **Shape Layers**: Include common shapes or design elements
+  - **Color Swatches**: Add color palette layers or swatches
+  - **Brand Elements**: Include logos, watermarks, or brand elements
+- **Template Saving**: Save as XCF template file in templates directory
+  - **Save Location**: Save to GIMP templates directory (usually ~/.gimp-2.10/templates/)
+  - **File Format**: Save as XCF format to preserve all elements
+  - **File Naming**: Use descriptive names for easy identification
+  - **Template Preview**: Create thumbnail preview if possible
+  - **Template Metadata**: Add comments and descriptions to template
+- **Template Organization**: Organize templates by project type or purpose
+  - **Folder Structure**: Organize templates in subfolders by category
+  - **Naming Convention**: Use consistent naming conventions
+  - **Documentation**: Document template purpose and usage
+  - **Version Control**: Keep track of template versions
+- **Template Sharing**: Share templates with team members or community
+  - **Export Templates**: Export templates for sharing
+  - **Documentation**: Provide documentation for template usage
+  - **Community Sharing**: Share templates with GIMP community
+  - **Team Distribution**: Distribute templates to team members
+
+**Template Management**:
+- **Template Location**: Access templates from New Image dialog
+  - **Dialog Access**: Templates appear in New Image dialog template list
+  - **File System**: Access templates directly from file system
+  - **Template Directory**: Default location in user GIMP directory
+  - **Custom Locations**: Add custom template directories in preferences
+- **Template Preview**: Preview templates before selection
+  - **Thumbnail View**: See template thumbnails in dialog
+  - **Template Info**: View template dimensions and properties
+  - **Quick Preview**: Preview template settings before creating
+- **Template Editing**: Modify existing templates as needed
+  - **Open Template**: Open template file directly in GIMP
+  - **Make Changes**: Modify dimensions, settings, or elements
+  - **Resave**: Save changes back to template file
+  - **Version Control**: Keep track of template modifications
+- **Template Backup**: Keep backups of important templates
+  - **Regular Backups**: Backup templates regularly
+  - **Version History**: Keep multiple versions of templates
+  - **Cloud Backup**: Store templates in cloud storage
+  - **Recovery**: Maintain ability to recover templates
+- **Template Updates**: Update templates to match current standards
+  - **Standards Changes**: Update templates when standards change
+  - **GIMP Updates**: Update templates for new GIMP versions
+  - **Best Practices**: Incorporate new best practices into templates
+  - **Regular Review**: Periodically review and update templates
+
+**Preset Workflows**:
+- **Quick Start**: Use presets for rapid project initialization
+  - **Time Saving**: Eliminate repetitive setup tasks
+  - **Consistency**: Ensure consistent starting point
+  - **Efficiency**: Start projects immediately with correct settings
+- **Consistency**: Maintain consistent dimensions across projects
+  - **Brand Consistency**: Maintain brand standards across projects
+  - **Format Standards**: Follow industry format standards
+  - **Team Consistency**: Ensure team uses same templates
+- **Efficiency**: Save time on repetitive setup tasks
+  - **Workflow Speed**: Accelerate project start times
+  - **Reduced Errors**: Minimize setup errors
+  - **Focus on Work**: Spend more time on creative work
+- **Standards**: Follow industry-standard dimensions and settings
+  - **Industry Standards**: Use recognized industry standards
+  - **Best Practices**: Incorporate best practices into presets
+  - **Compatibility**: Ensure compatibility with industry tools
+- **Customization**: Adapt presets to specific project requirements
+  - **Template Modification**: Modify templates for specific needs
+  - **Project Variations**: Create variations of base templates
+  - **Flexibility**: Maintain flexibility while using presets
 
 ### Opening Files in Different Formats (JPEG, PNG, XCF, PSD, SVG, etc.)
 
+GIMP supports a wide variety of image formats, each with specific characteristics and use cases. Understanding format differences helps you choose the right format for opening and working with images. GIMP can open over 50 different file formats through built-in support and plugins.
+
+**Raster Formats**:
+- **JPEG**: Lossy compression, good for photographs, smaller file sizes
+  - **Compression**: Lossy compression reduces file size significantly
+  - **Quality Settings**: Adjustable quality (1-100) balancing size and quality
+  - **Photography**: Ideal for photographs with smooth color gradients
+  - **File Size**: Typically 10-20% of original uncompressed size
+  - **Limitations**: No transparency support, lossy compression artifacts
+  - **Use Cases**: Web photos, digital photography, general image sharing
+  - **Color Modes**: RGB and Grayscale support
+  - **Metadata**: Supports EXIF, IPTC metadata
+- **PNG**: Lossless compression, supports transparency, good for web graphics
+  - **Compression**: Lossless compression maintains image quality
+  - **Transparency**: Full alpha channel transparency support
+  - **Web Graphics**: Standard for web graphics requiring transparency
+  - **File Size**: Larger than JPEG but smaller than uncompressed formats
+  - **Color Modes**: RGB, Grayscale, Indexed color modes
+  - **Interlacing**: Optional interlacing for progressive loading
+  - **Use Cases**: Logos, icons, graphics with transparency, screenshots
+  - **PNG-24 vs PNG-8**: 24-bit for full color, 8-bit for indexed color
+- **TIFF**: High quality, supports layers, common in professional workflows
+  - **Quality**: Lossless or lossy compression options
+  - **Layer Support**: Can preserve layers (GIMP layers saved as TIFF layers)
+  - **Professional Use**: Standard in professional photography and print
+  - **Color Modes**: RGB, Grayscale, CMYK support
+  - **Bit Depth**: Supports 8-bit, 16-bit, and 32-bit per channel
+  - **Metadata**: Extensive metadata support (EXIF, IPTC, XMP)
+  - **Compression**: LZW, ZIP, or JPEG compression options
+  - **Use Cases**: Professional photography, print work, archival storage
+- **BMP**: Uncompressed Windows bitmap format
+  - **Uncompressed**: No compression, largest file sizes
+  - **Windows Standard**: Native Windows bitmap format
+  - **Color Modes**: RGB and Indexed color support
+  - **Simple Format**: Simple, widely supported format
+  - **File Size**: Very large files due to no compression
+  - **Use Cases**: Legacy Windows applications, simple graphics
+- **GIF**: Supports animation, limited color palette, web-friendly
+  - **Animation**: Supports animated sequences
+  - **Color Palette**: Limited to 256 colors maximum
+  - **Transparency**: Single-color transparency (no alpha channel)
+  - **Compression**: LZW compression, good for graphics with flat colors
+  - **File Size**: Small file sizes for graphics with limited colors
+  - **Use Cases**: Animated graphics, simple web graphics, icons
+  - **Interlacing**: Optional interlacing for progressive display
+
+**GIMP Native Format**:
+- **XCF**: GIMP's native format, preserves all layers and editing information
+  - **Complete Preservation**: Saves everything about your image
+  - **Layer Structure**: Maintains complete layer hierarchy
+  - **Layer Properties**: Preserves layer modes, opacity, masks, and effects
+  - **Channels**: Saves all channels including alpha channels
+  - **Paths**: Preserves vector paths for future editing
+  - **Selections**: Can save selection masks
+  - **Text Layers**: Preserves editable text with formatting
+  - **Guides and Grids**: Saves guide positions and grid settings
+  - **Undo History**: Option to save undo history in file
+  - **Metadata**: Preserves all metadata and image properties
+- **Layer Preservation**: Maintains complete layer structure and properties
+  - **Layer Order**: Exact layer stacking order preserved
+  - **Layer Names**: All layer names and organization maintained
+  - **Layer Groups**: Layer groups and structure preserved
+  - **Layer Masks**: All layer masks saved and editable
+  - **Layer Modes**: All blending modes preserved
+- **Metadata**: Preserves all image metadata and settings
+  - **EXIF Data**: Camera and image metadata
+  - **IPTC Data**: Copyright and description information
+  - **Color Profiles**: Embedded ICC color profiles
+  - **Image Properties**: All image settings and properties
+- **Non-Destructive**: Allows full editing without quality loss
+  - **Reversible**: All edits can be undone or modified
+  - **Quality**: No quality loss from saving and reopening
+  - **Flexibility**: Complete editing flexibility maintained
+- **File Size**: Larger file sizes due to complete information storage
+  - **Size Factors**: File size depends on image dimensions, layers, and precision
+  - **Compression**: XCF uses compression to reduce file size
+  - **Optimization**: Can optimize XCF files to reduce size
+  - **Storage**: Requires adequate storage space for complex projects
+
+**Adobe Formats**:
+- **PSD**: Adobe Photoshop format, supports layers and many features
+  - **Layer Support**: Can preserve Photoshop layers
+  - **Layer Groups**: Photoshop layer groups supported
+  - **Layer Masks**: Layer masks preserved when possible
+  - **Text Layers**: Text layers may be preserved or rasterized
+  - **Smart Objects**: Smart objects are rasterized
+  - **Adjustment Layers**: Some adjustment layers may not be fully supported
+  - **Blending Modes**: Most blending modes supported
+- **PSD Compatibility**: GIMP can open and edit many PSD files
+  - **Opening PSD**: File > Open, select PSD file
+  - **Layer Preservation**: Layers preserved when format allows
+  - **Compatibility Level**: Good compatibility with most PSD files
+  - **Version Support**: Works with PSD files from various Photoshop versions
+  - **Limitations**: Some advanced Photoshop features not supported
+- **Layer Support**: Preserves layers when possible
+  - **Layer Structure**: Maintains layer hierarchy when possible
+  - **Layer Names**: Layer names preserved
+  - **Layer Visibility**: Layer visibility states preserved
+  - **Rasterization**: Some layer types may be rasterized
+- **Feature Limitations**: Some advanced PSD features may not be fully supported
+  - **Smart Objects**: Converted to raster layers
+  - **3D Layers**: Not supported, may be rasterized
+  - **Video Layers**: Not supported
+  - **Advanced Filters**: Some Photoshop-specific filters not available
+  - **Layer Styles**: Some layer style effects may be simplified
+- **Export Options**: Export to PSD format for Photoshop compatibility
+  - **Export as PSD**: File > Export As, choose PSD format
+  - **Layer Preservation**: Layers exported as PSD layers
+  - **Compatibility**: Exported PSD files readable by Photoshop
+  - **Limitations**: Some GIMP features may not translate to PSD
+
+**Vector Formats**:
+- **SVG**: Scalable vector graphics, opens as rasterized image in GIMP
+  - **Vector Format**: Scalable vector format, resolution-independent
+  - **Rasterization**: Converted to raster image when opened in GIMP
+  - **Import Resolution**: Set resolution for rasterization (default 90 DPI)
+  - **Path Preservation**: Some paths may be preserved as GIMP paths
+  - **Quality**: Higher import resolution preserves more detail
+  - **File Size**: Vector files typically small, rasterized versions larger
+  - **Use Cases**: Logos, icons, illustrations (as starting point)
+- **PDF**: Portable document format, opens pages as images
+  - **Multi-page**: Can import multiple pages from PDF
+  - **Page Selection**: Choose which pages to import
+  - **Resolution**: Set import resolution (default 100 DPI)
+  - **Rasterization**: PDF pages converted to raster images
+  - **Text Handling**: Text is rasterized, not editable
+  - **Vector Elements**: Vector graphics rasterized at chosen resolution
+  - **Use Cases**: Extracting images from PDFs, working with PDF pages
+- **EPS**: Encapsulated PostScript, opens as rasterized image
+  - **PostScript Format**: Vector PostScript format
+  - **Rasterization**: Converted to raster when opened
+  - **Import Resolution**: Set resolution for rasterization
+  - **Print Quality**: Often used for print graphics
+  - **Compatibility**: Good compatibility with EPS files
+- **Vector Import**: Vector files are rasterized when opened in GIMP
+  - **Resolution Choice**: Choose appropriate resolution for import
+  - **Quality vs Size**: Higher resolution = better quality but larger files
+  - **Final Size**: Consider final output size when choosing resolution
+  - **Irreversible**: Once rasterized, vector benefits are lost
+- **Resolution**: Set import resolution for vector-to-raster conversion
+  - **Default Resolution**: Usually 90-100 DPI for vector imports
+  - **Web Resolution**: 72-96 DPI sufficient for web use
+  - **Print Resolution**: 300 DPI or higher for print quality
+  - **High Resolution**: Higher resolutions for detailed work
+  - **File Size Impact**: Resolution directly affects file size
+
+**Specialized Formats**:
+- **RAW**: Camera raw formats (CR2, NEF, ARW, etc.) via plugins
+  - **Camera Formats**: Support for major camera RAW formats
+  - **Plugins Required**: May need UFRaw or other RAW plugins
+  - **Built-in Support**: GIMP 2.10+ has improved RAW support
+  - **RAW Processing**: Adjust exposure, white balance, etc. before import
+  - **Quality**: Maximum quality from camera sensor
+  - **File Size**: RAW files are large, processed images also large
+  - **Workflow**: RAW → Process → Import to GIMP for editing
+- **WebP**: Modern web format with excellent compression
+  - **Compression**: Superior compression compared to JPEG and PNG
+  - **Features**: Supports lossy and lossless compression
+  - **Transparency**: Supports transparency like PNG
+  - **Animation**: Supports animation like GIF
+  - **Browser Support**: Good modern browser support
+  - **File Size**: Significantly smaller than JPEG/PNG
+  - **Use Cases**: Modern web graphics, optimized image delivery
+- **HEIF/HEIC**: High efficiency image format, modern standard
+  - **Modern Format**: Newer format with excellent compression
+  - **Apple Support**: Native support on Apple devices
+  - **Compression**: Better compression than JPEG
+  - **Features**: Supports transparency, multiple images, metadata
+  - **Compatibility**: Growing support, may need plugins
+  - **Use Cases**: Modern photography, mobile photography
+- **EXR**: High dynamic range format for professional imaging
+  - **HDR Support**: Designed for high dynamic range imaging
+  - **32-bit Float**: Typically 32-bit floating point precision
+  - **Professional Use**: Used in film, VFX, and professional imaging
+  - **File Size**: Very large files due to precision
+  - **Features**: Supports multiple layers and channels
+  - **Use Cases**: HDR photography, professional compositing
+- **HDR**: High dynamic range formats for advanced imaging
+  - **Dynamic Range**: Captures wider range of brightness values
+  - **Precision**: High precision formats (16-bit or 32-bit)
+  - **Tone Mapping**: Requires tone mapping for display
+  - **File Formats**: Various HDR formats (Radiance .hdr, OpenEXR, etc.)
+  - **Use Cases**: HDR photography, advanced imaging workflows
+
+**Opening Options**:
+- **File Browser**: Standard file selection dialog
+  - **Dialog Access**: File > Open or Ctrl+O
+  - **File Navigation**: Standard file system navigation
+  - **Format Filtering**: Filter by file format if desired
+  - **Preview**: Preview images before opening
+  - **Multiple Selection**: Select multiple files to open
+- **Recent Files**: Quick access to recently opened files
+  - **Recent Files Menu**: File > Open Recent
+  - **Quick Access**: Fast access to recently worked files
+  - **History**: Maintains history of recently opened files
+  - **Convenience**: Saves time navigating to frequently used files
+- **Drag and Drop**: Drag files directly into GIMP window
+  - **Direct Opening**: Drag files from file manager to GIMP
+  - **Multiple Files**: Drag multiple files to open all
+  - **Convenience**: Fastest way to open files
+  - **Supported**: Works with most supported formats
+- **Multiple Files**: Open multiple images simultaneously
+  - **Batch Opening**: Select multiple files in file dialog
+  - **Tab Management**: Each image opens in separate tab (single-window mode)
+  - **Window Management**: Multiple windows in multi-window mode
+  - **Resource Management**: Consider system resources when opening many files
+- **Format Detection**: Automatic format detection and handling
+  - **Auto-Detection**: GIMP automatically detects file format
+  - **Extension-Based**: Uses file extension as primary indicator
+  - **Content Analysis**: May analyze file content for format detection
+  - **Plugin Loading**: Automatically loads appropriate plugins
+  - **Error Handling**: Handles unsupported or corrupted files gracefully
+
 ### Importing Vector and RAW Images
+
+Importing vector graphics and RAW camera files requires special handling in GIMP, as these formats need conversion or processing before editing. Understanding the import process and options ensures you get the best quality and workflow efficiency.
+
+**Vector Image Import**:
+- **SVG Import**: Import SVG files as rasterized images
+  - **File > Open**: Open SVG file like any other image file
+  - **Import Dialog**: SVG import dialog appears with options
+  - **Rasterization**: SVG is converted to raster image during import
+  - **Resolution Setting**: Set resolution for rasterization (default 90 DPI)
+  - **Quality**: Higher resolution = better quality but larger file size
+  - **Path Preservation**: Some SVG paths may be imported as GIMP paths
+  - **Text Handling**: SVG text is rasterized, not editable
+  - **Use Cases**: Logos, icons, illustrations as starting point for editing
+- **Import Resolution**: Set resolution for vector-to-raster conversion
+  - **Default Resolution**: 90 DPI is default for SVG imports
+  - **Web Resolution**: 72-96 DPI sufficient for web graphics
+  - **Print Resolution**: 300 DPI or higher for print quality
+  - **High Resolution**: 600+ DPI for detailed work or large output
+  - **File Size Impact**: Resolution directly affects file size (2x resolution = 4x file size)
+  - **Quality Balance**: Balance resolution with file size and performance needs
+- **Scale Options**: Choose how vector graphics are scaled
+  - **Original Size**: Import at original vector size
+  - **Custom Size**: Specify custom dimensions for import
+  - **Aspect Ratio**: Maintain aspect ratio when scaling
+  - **Scale Calculation**: GIMP calculates pixel dimensions from resolution
+- **Path Preservation**: Some vector paths may be preserved as GIMP paths
+  - **Path Import**: SVG paths may be imported as editable GIMP paths
+  - **Path Editing**: Imported paths can be edited with Path tool
+  - **Path Usage**: Use paths for selections, strokes, or masks
+  - **Not Guaranteed**: Path preservation depends on SVG structure
+- **Quality Settings**: Higher resolution preserves more vector detail
+  - **Detail Preservation**: Higher resolution captures more fine details
+  - **Smooth Curves**: Better representation of smooth curves and gradients
+  - **Text Quality**: Higher resolution improves text rendering quality
+  - **Sharp Edges**: Maintains sharp edges better at higher resolutions
+
+**PDF Import**:
+- **Page Selection**: Choose which PDF pages to import
+  - **Page Dialog**: PDF import dialog shows available pages
+  - **Single Page**: Import one page at a time
+  - **Page Navigation**: Navigate through PDF pages in dialog
+  - **Page Preview**: Preview pages before importing
+  - **Page Range**: Some PDFs allow selecting page ranges
+- **Resolution Settings**: Set import resolution for PDF pages
+  - **Default Resolution**: 100 DPI default for PDF imports
+  - **Resolution Options**: Adjust resolution based on PDF content
+  - **Text Documents**: Lower resolution (100-150 DPI) often sufficient
+  - **Graphics/Photos**: Higher resolution (300+ DPI) for quality
+  - **File Size**: Resolution affects file size significantly
+- **Text Handling**: Text is rasterized during import
+  - **Text Rasterization**: All text becomes part of raster image
+  - **Not Editable**: Text cannot be edited after import
+  - **Font Rendering**: Text rendered with fonts available on system
+  - **Missing Fonts**: Missing fonts may render differently
+  - **Text Quality**: Higher resolution improves text rendering
+- **Multi-page Support**: Import multiple pages as separate images
+  - **Sequential Import**: Import pages one at a time
+  - **Multiple Windows**: Each page opens in separate window/tab
+  - **Batch Import**: Can import multiple pages in sequence
+  - **Organization**: Organize imported pages for your workflow
+- **Vector Elements**: Vector elements are rasterized at chosen resolution
+  - **Vector Graphics**: All vector graphics become raster
+  - **Quality**: Resolution determines quality of rasterized vectors
+  - **Scalability Lost**: Once rasterized, scalability is lost
+  - **High Resolution**: Use high resolution for detailed vector graphics
+
+**RAW Image Import**:
+- **RAW Support**: Import via UFRaw plugin or GIMP's built-in support
+  - **Built-in Support**: GIMP 2.10+ has improved built-in RAW support
+  - **UFRaw Plugin**: Alternative RAW processing plugin
+  - **Darktable Integration**: Can use Darktable for RAW processing
+  - **Format Support**: Support depends on GIMP version and plugins
+  - **Plugin Installation**: May need to install RAW support plugins
+- **Camera Formats**: Support for CR2, NEF, ARW, ORF, and other RAW formats
+  - **Canon CR2**: Canon camera RAW format
+  - **Nikon NEF**: Nikon camera RAW format
+  - **Sony ARW**: Sony camera RAW format
+  - **Olympus ORF**: Olympus camera RAW format
+  - **Other Formats**: Support for many other camera RAW formats
+  - **Format Updates**: Support may vary with GIMP and plugin versions
+- **RAW Processing**: Adjust exposure, white balance, and other RAW settings
+  - **Exposure Adjustment**: Adjust exposure before importing
+  - **White Balance**: Set white balance for accurate colors
+  - **Color Temperature**: Adjust color temperature
+  - **Contrast/Saturation**: Adjust contrast and saturation
+  - **Noise Reduction**: Apply noise reduction if available
+  - **Lens Correction**: Apply lens distortion correction
+  - **Non-Destructive**: Adjustments don't affect original RAW file
+- **Non-Destructive**: RAW processing doesn't affect original file
+  - **Original Preserved**: Original RAW file remains unchanged
+  - **Processing Settings**: Processing settings saved separately
+  - **Re-processing**: Can re-process RAW with different settings
+  - **Workflow Flexibility**: Maximum flexibility in processing
+- **Quality Preservation**: Maintain maximum image quality from camera sensor
+  - **Full Quality**: No quality loss from compression
+  - **Bit Depth**: Maintains full bit depth from camera
+  - **Color Information**: Preserves maximum color information
+  - **Dynamic Range**: Maintains full dynamic range from sensor
+
+**RAW Import Workflow**:
+- **File Selection**: Choose RAW file from camera or storage
+  - **File > Open**: Open RAW file like any image file
+  - **RAW Dialog**: RAW processing dialog appears
+  - **File Browser**: Navigate to RAW file location
+  - **Format Recognition**: GIMP recognizes RAW format automatically
+- **Preview**: Preview RAW image with current settings
+  - **Live Preview**: See effect of adjustments in real-time
+  - **Zoom Preview**: Zoom in to check detail and quality
+  - **Histogram**: View histogram for exposure analysis
+  - **Before/After**: Compare original and processed versions
+- **Adjustments**: Adjust exposure, color temperature, and other parameters
+  - **Exposure Slider**: Adjust overall exposure
+  - **White Balance**: Set white balance (auto or manual)
+  - **Color Temperature**: Fine-tune color temperature
+  - **Tint**: Adjust color tint if needed
+  - **Contrast**: Adjust contrast
+  - **Saturation**: Adjust color saturation
+  - **Highlights/Shadows**: Recover highlights and shadows
+- **Import Settings**: Configure color space, bit depth, and resolution
+  - **Color Space**: Choose RGB color space (sRGB, Adobe RGB, etc.)
+  - **Bit Depth**: Choose 8-bit or 16-bit precision
+  - **Resolution**: Set output resolution (usually matches camera resolution)
+  - **Color Profile**: Assign color profile
+  - **Output Format**: Choose output format for processed image
+- **Import**: Convert and import RAW file as editable image
+  - **Process and Import**: Click OK to process and import
+  - **Processing Time**: Processing may take time depending on file size
+  - **Memory Usage**: Large RAW files require significant memory
+  - **Result**: Processed image opens in GIMP for editing
+
+**Vector Import Considerations**:
+- **Resolution Choice**: Higher resolution preserves more detail but increases file size
+  - **Detail vs Size**: Balance between quality and file size
+  - **Final Output**: Consider final output size when choosing resolution
+  - **Memory Impact**: Higher resolution requires more RAM
+  - **Processing Speed**: Larger images process slower
+  - **Storage**: Larger files require more storage space
+- **Scale Factors**: Consider final output size when choosing import resolution
+  - **Output Size**: Match resolution to final output size
+  - **Upscaling**: Lower resolution may require upscaling later
+  - **Downscaling**: Higher resolution allows downscaling without quality loss
+  - **Print vs Web**: Different resolution needs for print vs web
+- **Color Management**: Vector colors are converted to image color space
+  - **Color Conversion**: Colors converted to image's color space
+  - **Color Accuracy**: Color accuracy depends on color space match
+  - **Profile Assignment**: May assign color profile during import
+  - **Color Shifts**: Some color shifts may occur during conversion
+- **Transparency**: Vector transparency is preserved in imported image
+  - **Alpha Channel**: Vector transparency becomes alpha channel
+  - **Transparency Quality**: Higher resolution improves transparency edges
+  - **Format Support**: Requires format supporting transparency (PNG, XCF, TIFF)
+  - **Compositing**: Transparency useful for compositing work
+- **Edit Limitations**: Once rasterized, vector benefits are lost
+  - **Scalability Lost**: Cannot scale without quality loss
+  - **Path Editing**: Limited path editing compared to vector editors
+  - **File Size**: Raster files typically larger than vector originals
+  - **Workflow Consideration**: Consider keeping vector original for future edits
 
 ### Exporting Images with Specific Settings (Web, Print, Animation)
 
+Exporting images requires choosing appropriate formats and settings based on intended use. Different output types require different optimization strategies. GIMP's export dialog (File > Export As) provides comprehensive options for configuring export settings.
+
+**Web Export Settings**:
+- **Format Selection**: PNG for transparency, JPEG for photographs, WebP for modern browsers
+  - **PNG**: Use for graphics requiring transparency, logos, icons, graphics with text
+  - **JPEG**: Use for photographs and images with many colors, no transparency needed
+  - **WebP**: Modern format with superior compression, good browser support
+  - **GIF**: Use for simple graphics with few colors or animations
+  - **Format Considerations**: Consider browser support and file size
+- **Compression**: Balance file size with image quality
+  - **JPEG Quality**: Adjust quality (1-100), typically 80-90 for web
+  - **PNG Compression**: PNG compression levels (0-9), higher = smaller but slower
+  - **WebP Quality**: Adjust WebP quality settings
+  - **File Size Target**: Aim for file sizes under 200-500KB for web
+  - **Quality Testing**: Test different quality settings to find optimal balance
+- **Color Optimization**: Reduce color palette for smaller file sizes
+  - **Indexed Color**: Convert to indexed color for GIF and some PNG
+  - **Color Reduction**: Reduce color palette while maintaining visual quality
+  - **Dithering**: Use dithering to simulate more colors with fewer palette colors
+  - **Palette Optimization**: Optimize color palette for best results
+  - **Transparency Handling**: Optimize transparency for web display
+- **Metadata Removal**: Remove unnecessary metadata to reduce file size
+  - **EXIF Removal**: Remove camera EXIF data (often not needed for web)
+  - **IPTC Removal**: Remove IPTC metadata if not needed
+  - **Color Profile**: May remove color profiles for web (saves space)
+  - **Comments**: Remove image comments
+  - **Privacy**: Removing metadata also protects privacy
+- **Progressive Loading**: Enable progressive JPEG for faster perceived loading
+  - **Progressive JPEG**: Image loads in multiple passes, shows low-res first
+  - **Perceived Speed**: Faster perceived loading time
+  - **File Size**: Slightly larger file size
+  - **Browser Support**: Good modern browser support
+  - **User Experience**: Better user experience on slow connections
+- **Image Dimensions**: Optimize dimensions for web display
+  - **Target Size**: Resize to target display size (don't use oversized images)
+  - **Responsive Images**: Consider multiple sizes for responsive design
+  - **Aspect Ratio**: Maintain aspect ratio when resizing
+  - **Interpolation**: Use good interpolation method (Lanczos) for resizing
+
+**Print Export Settings**:
+- **High Resolution**: Export at 300 DPI or higher for print quality
+  - **Standard Resolution**: 300 DPI is industry standard for quality printing
+  - **Large Format**: Lower DPI acceptable for large format (billboards, banners)
+  - **Fine Art**: 600 DPI or higher for fine art printing
+  - **Magazine/Book**: 300 DPI standard, 600 DPI for high-quality publications
+  - **Resolution Calculation**: Calculate required pixel dimensions from print size
+- **Color Space**: Use CMYK or appropriate print color space
+  - **CMYK Conversion**: Convert RGB to CMYK for professional printing
+  - **Color Gamut**: CMYK has smaller gamut, some colors may shift
+  - **Soft Proofing**: Use soft proofing to preview CMYK output before export
+  - **Print Service**: Check print service color space requirements
+  - **RGB Printing**: Some modern printers accept RGB (check with printer)
+- **Format Selection**: TIFF or high-quality JPEG for print
+  - **TIFF**: Preferred format for professional printing, lossless quality
+  - **High-Quality JPEG**: Acceptable for many print applications (quality 90-100)
+  - **PDF**: Some print services accept PDF format
+  - **Format Requirements**: Check print service format requirements
+- **Color Profile**: Embed appropriate ICC color profile
+  - **Profile Embedding**: Embed color profile in exported file
+  - **Print Profile**: Use print service's recommended color profile
+  - **Color Accuracy**: Profiles ensure accurate color reproduction
+  - **Profile Matching**: Match profile to print service requirements
+- **Bleed and Margins**: Include bleed areas if required by printer
+  - **Bleed Area**: Extra area beyond final print size (typically 3-5mm)
+  - **Safe Area**: Keep important content within safe area (away from edges)
+  - **Crop Marks**: Add crop marks if required by printer
+  - **Print Specifications**: Follow print service specifications exactly
+- **Bit Depth**: Use appropriate bit depth for print
+  - **8-bit**: Sufficient for most print applications
+  - **16-bit**: Better for high-end printing and extensive editing
+  - **Print Service**: Check print service bit depth requirements
+
+**Animation Export**:
+- **GIF Format**: Export animated GIFs with frame optimization
+  - **Frame Export**: Export image with multiple layers as animation frames
+  - **Frame Order**: Ensure layers are in correct order for animation
+  - **Frame Optimization**: Optimize frames to reduce file size
+  - **Color Optimization**: Optimize color palette across all frames
+  - **File Size**: Animated GIFs can be large, optimize carefully
+- **Frame Timing**: Set delay between animation frames
+  - **Frame Delay**: Set delay in milliseconds (typically 50-200ms)
+  - **Animation Speed**: Adjust delay to control animation speed
+  - **Frame-Specific Delays**: Some GIF formats support per-frame delays
+  - **Smooth Animation**: Appropriate delays create smooth animation
+- **Loop Settings**: Configure animation loop behavior
+  - **Loop Count**: Set number of times animation loops (0 = infinite)
+  - **Single Play**: Set to play once if desired
+  - **Infinite Loop**: Most common setting for web animations
+  - **Loop Control**: Control how animation repeats
+- **Color Optimization**: Optimize color palette for smaller file sizes
+  - **Global Palette**: Create optimized palette for all frames
+  - **Color Reduction**: Reduce colors while maintaining quality
+  - **Dithering**: Use dithering for smoother color transitions
+  - **Palette Optimization**: Optimize palette for animation
+- **Frame Disposal**: Choose how frames are disposed in animation
+  - **Disposal Methods**: Choose how previous frame is handled
+  - **Frame Overlay**: Frames overlay previous frames
+  - **Frame Replacement**: Frames replace previous frames
+  - **Optimization**: Proper disposal can reduce file size
+
+**Export Optimization**:
+- **File Size**: Balance quality with file size requirements
+  - **Target Size**: Set target file size if needed
+  - **Quality Adjustment**: Adjust quality to meet size requirements
+  - **Compression**: Use appropriate compression settings
+  - **Format Choice**: Choose format that balances quality and size
+- **Quality Settings**: Adjust compression and quality parameters
+  - **JPEG Quality**: Fine-tune JPEG quality (1-100)
+  - **PNG Compression**: Adjust PNG compression level
+  - **WebP Quality**: Adjust WebP quality settings
+  - **TIFF Compression**: Choose TIFF compression method
+  - **Quality Testing**: Test different settings to find optimal quality
+- **Format-Specific Options**: Configure options specific to chosen format
+  - **JPEG Options**: Progressive, optimize, subsampling options
+  - **PNG Options**: Compression level, interlacing, transparency options
+  - **TIFF Options**: Compression method, bit depth, color space options
+  - **WebP Options**: Quality, lossless, animation options
+  - **Format Documentation**: Refer to format-specific documentation
+- **Preview**: Preview export result before final export
+  - **Export Preview**: Some formats show preview of export result
+  - **File Size Estimate**: See estimated file size before exporting
+  - **Quality Check**: Check quality before final export
+  - **Settings Adjustment**: Adjust settings based on preview
+- **Batch Export**: Export multiple images with same settings
+  - **Batch Processing**: Use scripts or plugins for batch export
+  - **Consistent Settings**: Apply same settings to multiple images
+  - **Workflow Efficiency**: Save time on repetitive exports
+  - **Automation**: Automate export workflow when possible
+
+**Export Workflows**:
+- **Web Workflow**: Optimize for fast loading and good visual quality
+  - **Format Selection**: Choose appropriate web format (JPEG, PNG, WebP)
+  - **File Size**: Target file sizes under 200-500KB
+  - **Dimensions**: Resize to target display dimensions
+  - **Quality Balance**: Balance quality with file size
+  - **Testing**: Test on different devices and connections
+- **Print Workflow**: Maximize quality and color accuracy
+  - **High Resolution**: Export at 300+ DPI
+  - **Color Management**: Proper color space and profile handling
+  - **Format Selection**: Use TIFF or high-quality JPEG
+  - **Quality First**: Prioritize quality over file size
+  - **Print Service**: Follow print service specifications
+- **Social Media**: Use platform-specific dimensions and settings
+  - **Platform Requirements**: Check each platform's image requirements
+  - **Dimensions**: Use exact dimensions required by platform
+  - **Format**: Usually JPEG, sometimes PNG
+  - **File Size Limits**: Respect platform file size limits
+  - **Quality**: Balance quality with platform requirements
+- **Email**: Balance quality with attachment size limits
+  - **File Size**: Keep files under email size limits (typically 5-10MB)
+  - **Format**: JPEG usually best for email
+  - **Dimensions**: Resize to reasonable dimensions
+  - **Quality**: Good quality but optimized for size
+- **Archive**: Use lossless formats for long-term storage
+  - **Lossless Formats**: Use TIFF, PNG, or XCF for archiving
+  - **Quality Preservation**: Maintain maximum quality
+  - **Metadata**: Preserve all metadata
+  - **Color Profiles**: Embed color profiles
+  - **Future Compatibility**: Choose formats with good long-term support
+
 ### Understanding the XCF Format: Pros and Use Cases
+
+XCF (eXperimental Computing Facility) is GIMP's native file format, designed to preserve all editing information and maintain complete project state. Understanding XCF format characteristics helps you make informed decisions about when to use it and how to optimize your workflow.
+
+**XCF Format Advantages**:
+- **Complete Preservation**: Saves all layers, channels, paths, and selections
+  - **Everything Saved**: Every aspect of your project is preserved
+  - **No Information Loss**: Nothing is lost when saving and reopening
+  - **Complete State**: Project state is completely maintained
+  - **Editing Continuity**: Resume editing exactly where you left off
+  - **Full Fidelity**: Maximum fidelity preservation
+- **Non-Destructive**: Maintains full editing capabilities without quality loss
+  - **Reversible Edits**: All edits remain reversible
+  - **Layer Flexibility**: Can modify, reorder, or delete layers anytime
+  - **Quality Preservation**: No quality loss from saving and reopening
+  - **Edit History**: Maintains ability to modify previous edits
+  - **Workflow Freedom**: Complete freedom to experiment and change
+- **Metadata**: Preserves all image metadata and properties
+  - **EXIF Data**: All camera and image metadata preserved
+  - **IPTC Data**: Copyright and description information maintained
+  - **Color Profiles**: Embedded color profiles preserved
+  - **Image Properties**: All image settings and properties saved
+  - **Custom Metadata**: GIMP-specific metadata preserved
+- **Undo History**: Can preserve undo history in saved files
+  - **History Option**: Option to save undo history in XCF file
+  - **Extended Undo**: Access undo history even after reopening file
+  - **Edit Recovery**: Recover from mistakes even after saving
+  - **File Size Impact**: Saving history increases file size
+  - **Workflow Benefit**: Useful for complex projects with many edits
+- **Layer Structure**: Maintains complete layer hierarchy and properties
+  - **Layer Organization**: Complete layer organization preserved
+  - **Layer Groups**: Layer groups and nesting maintained
+  - **Layer Names**: All layer names and labels preserved
+  - **Layer Properties**: All layer properties (opacity, modes, etc.) saved
+  - **Layer Relationships**: Layer relationships and dependencies maintained
+
+**XCF Features**:
+- **Layer Support**: Unlimited layers with full layer properties
+  - **Unlimited Layers**: No practical limit on number of layers
+  - **Layer Types**: Supports all layer types (image, text, etc.)
+  - **Layer Properties**: All properties (opacity, mode, visibility) preserved
+  - **Layer Masks**: Layer masks fully supported and editable
+  - **Layer Effects**: Layer effects and filters preserved
+  - **Layer Linking**: Layer linking relationships maintained
+- **Channel Support**: Saves alpha channels and additional channels
+  - **Alpha Channels**: Transparency channels fully preserved
+  - **Additional Channels**: Custom channels saved and editable
+  - **Channel Names**: Channel names and organization maintained
+  - **Channel Properties**: All channel properties preserved
+- **Path Support**: Preserves vector paths for future editing
+  - **Vector Paths**: All vector paths saved as editable paths
+  - **Path Editing**: Paths can be edited with Path tool after reopening
+  - **Path Usage**: Paths can be used for selections, strokes, masks
+  - **Path Organization**: Path names and organization preserved
+- **Selection Support**: Can save selection masks
+  - **Selection Masks**: Selection masks can be saved in XCF
+  - **Selection Channels**: Selections saved as channels
+  - **Selection Reuse**: Reuse selections after reopening file
+- **Text Layers**: Preserves editable text layers
+  - **Text Content**: Text content fully editable after reopening
+  - **Text Formatting**: Font, size, color, and formatting preserved
+  - **Text Properties**: All text layer properties maintained
+  - **Text Editing**: Can edit text without rasterization
+- **Layer Modes**: Maintains all layer blending modes and effects
+  - **Blending Modes**: All blending modes preserved
+  - **Mode Settings**: Mode-specific settings maintained
+  - **Effect Layers**: Effect layers and filters preserved
+  - **Composite Modes**: Complex composite modes maintained
+
+**When to Use XCF**:
+- **Work in Progress**: Save projects you're actively editing
+  - **Active Projects**: Use XCF for all active editing work
+  - **Frequent Saves**: Save frequently to prevent work loss
+  - **Edit Flexibility**: Maintain maximum editing flexibility
+  - **Project Development**: Essential during project development phase
+- **Master Files**: Keep XCF as master file for all projects
+  - **Source Files**: XCF as source/master file for projects
+  - **Export Source**: Export to other formats from XCF master
+  - **Version Control**: Keep XCF as version-controlled master
+  - **Archive**: Archive XCF files for long-term storage
+- **Complex Projects**: Essential for multi-layer complex compositions
+  - **Multi-layer Work**: Projects with many layers require XCF
+  - **Complex Compositions**: Complex image compositions need XCF
+  - **Layer-heavy Projects**: Projects with extensive layer structure
+  - **Professional Work**: Professional projects typically use XCF
+- **Future Editing**: When you need to edit project later
+  - **Re-editing**: Projects you may need to edit again
+  - **Client Revisions**: Projects that may need client revisions
+  - **Template Projects**: Projects used as templates for future work
+  - **Iterative Work**: Projects with iterative development
+- **Backup**: Use XCF for complete project backups
+  - **Complete Backup**: XCF provides complete project backup
+  - **Recovery**: Can recover complete project state from XCF
+  - **Archive Backup**: Archive XCF files for long-term backup
+  - **Version Backup**: Keep XCF versions for version control
+
+**XCF Limitations**:
+- **File Size**: Larger file sizes compared to compressed formats
+  - **Size Factors**: File size depends on dimensions, layers, precision
+  - **Compression**: XCF uses compression but still larger than JPEG/PNG
+  - **Storage Requirements**: Requires adequate storage space
+  - **Transfer Time**: Larger files take longer to transfer
+  - **Memory Usage**: Larger files require more RAM to open
+- **Compatibility**: Only fully supported by GIMP
+  - **GIMP Only**: XCF format specific to GIMP
+  - **Other Applications**: Limited or no support in other applications
+  - **Format Lock-in**: Creates dependency on GIMP
+  - **Conversion Needed**: Must export to other formats for compatibility
+- **Sharing**: Not suitable for sharing with non-GIMP users
+  - **User Requirements**: Recipients need GIMP to open XCF files
+  - **Format Barriers**: Not suitable for general file sharing
+  - **Export Required**: Must export to compatible format for sharing
+  - **Workflow Consideration**: Consider sharing needs in workflow
+- **Web Use**: Cannot be used directly on web pages
+  - **No Web Support**: Web browsers cannot display XCF files
+  - **Export Required**: Must export to web-compatible format
+  - **Web Workflow**: XCF not part of web delivery workflow
+- **Print**: Not accepted by most print services
+  - **Print Services**: Print services don't accept XCF format
+  - **Export Required**: Must export to print-compatible format (TIFF, JPEG)
+  - **Print Workflow**: XCF not part of print delivery workflow
+
+**XCF Best Practices**:
+- **Regular Saving**: Save XCF files frequently during work
+  - **Save Frequency**: Save every 10-15 minutes or after major changes
+  - **Auto-save**: Enable auto-save if available
+  - **Save Before Major Changes**: Save before major transformations
+  - **Save Before Experiments**: Save before experimental edits
+  - **Work Loss Prevention**: Frequent saves prevent work loss
+- **Version Control**: Keep multiple versions of important projects
+  - **Version Naming**: Use version numbers or dates in filenames
+  - **Version History**: Maintain history of project versions
+  - **Milestone Versions**: Save versions at project milestones
+  - **Backup Versions**: Keep backup versions of important projects
+- **Organization**: Organize XCF files in dedicated project folders
+  - **Project Folders**: Organize XCF files by project
+  - **Folder Structure**: Use consistent folder structure
+  - **File Naming**: Use descriptive, consistent file naming
+  - **Project Management**: Good organization aids project management
+- **Backup Strategy**: Include XCF files in backup routines
+  - **Regular Backups**: Include XCF in regular backup schedule
+  - **Multiple Locations**: Backup to multiple locations
+  - **Cloud Backup**: Consider cloud backup for XCF files
+  - **Backup Testing**: Test backup recovery procedures
+- **Export Strategy**: Export to other formats for sharing and distribution
+  - **Export Workflow**: Establish export workflow for deliverables
+  - **Format Selection**: Choose appropriate export formats
+  - **Quality Settings**: Configure export quality settings
+  - **Batch Export**: Use batch export for multiple files
+  - **Export Documentation**: Document export procedures
 
 ### Saving for Compatibility: Flattening and Merging Layers
 
+When sharing images or exporting to formats that don't support layers, you need to flatten or merge layers. Understanding the difference and when to use each approach is important for maintaining workflow flexibility. Both operations combine layers but with different levels of permanence and flexibility.
+
+**Flattening Images**:
+- **Complete Merge**: Merges all visible layers into single background layer
+  - **All Layers**: Combines all visible layers into one
+  - **Background Layer**: Result is single background layer
+  - **Layer Structure**: Complete layer structure is lost
+  - **Visible Only**: Only visible layers are included in flattening
+  - **Layer Order**: Final result reflects layer stacking order
+- **Layer Loss**: Permanently combines all layers, losing layer structure
+  - **Irreversible**: Cannot separate layers after flattening
+  - **Structure Lost**: All layer organization is lost
+  - **Properties Lost**: Layer properties (modes, opacity) are lost
+  - **Masks Lost**: Layer masks are applied and lost
+  - **Edit Limitations**: Cannot edit individual elements separately
+- **File Size**: Significantly reduces file size
+  - **Size Reduction**: File size dramatically reduced
+  - **Single Layer**: Only one layer instead of many
+  - **Compression**: Better compression with single layer
+  - **Storage Savings**: Significant storage space savings
+  - **Transfer Speed**: Faster file transfer due to smaller size
+- **Compatibility**: Required for formats that don't support layers
+  - **JPEG**: JPEG doesn't support layers, requires flattening
+  - **PNG**: Standard PNG doesn't support layers (GIMP can save PNG with layers but not standard)
+  - **Web Formats**: Most web formats don't support layers
+  - **Print Formats**: Some print formats don't support layers
+  - **Universal Compatibility**: Flattened images work everywhere
+- **Irreversible**: Cannot undo flattening after saving
+  - **Save Required**: Must save XCF before flattening to preserve layers
+  - **Undo Limitation**: Undo only works before saving
+  - **Backup Essential**: Always backup XCF before flattening
+  - **Permanent Change**: Flattening is permanent after save
+- **Command Location**: Image > Flatten Image
+  - **Menu Access**: Access via Image menu
+  - **Quick Operation**: Fast operation for simple flattening
+  - **Confirmation**: May ask for confirmation before flattening
+  - **Result**: Immediately creates flattened version
+
+**Merging Layers**:
+- **Selective Merge**: Merge specific layers while keeping others separate
+  - **Layer Choice**: Choose which layers to merge
+  - **Selective Control**: More control than flattening
+  - **Partial Merge**: Merge some layers while keeping others
+  - **Flexibility**: Maintains flexibility for future edits
+- **Layer Preservation**: Maintains some layer structure
+  - **Structure Maintained**: Some layers remain separate
+  - **Organization Preserved**: Layer organization partially maintained
+  - **Edit Capability**: Can still edit unmerged layers separately
+  - **Workflow Continuity**: Workflow can continue with remaining layers
+- **Flexibility**: More flexible than complete flattening
+  - **Selective Control**: Choose exactly what to merge
+  - **Incremental Merging**: Merge layers incrementally
+  - **Workflow Adaptation**: Adapt to workflow needs
+  - **Reversible to Extent**: Can undo merge before saving
+- **Workflow Control**: Choose which layers to merge
+  - **Manual Selection**: Manually select layers to merge
+  - **Layer Groups**: Can merge entire layer groups
+  - **Strategic Merging**: Merge strategically for workflow
+  - **Organization**: Merge to organize layer structure
+- **Partial Structure**: Retains some editing capabilities
+  - **Remaining Layers**: Unmerged layers remain editable
+  - **Selective Editing**: Can edit unmerged layers
+  - **Future Flexibility**: Maintains future editing options
+  - **Workflow Continuity**: Workflow continues with remaining structure
+
+**When to Flatten**:
+- **Final Export**: When exporting final version for distribution
+  - **Delivery**: When delivering final product to client
+  - **Distribution**: When distributing images to others
+  - **Publication**: When publishing images online or in print
+  - **Final Version**: When creating final, non-editable version
+- **Format Limitations**: For formats that don't support layers (JPEG, PNG without layers)
+  - **Format Requirements**: Format doesn't support layers
+  - **Compatibility Needs**: Need maximum format compatibility
+  - **Universal Access**: Need files accessible by all applications
+  - **Standard Formats**: Exporting to standard image formats
+- **File Size**: When file size is critical concern
+  - **Storage Limits**: Limited storage space available
+  - **Transfer Speed**: Need faster file transfer
+  - **Web Optimization**: Optimizing for web delivery
+  - **Email Attachments**: Sending via email with size limits
+- **Sharing**: When sharing with users who don't need layer access
+  - **End Users**: Sharing with end users who don't edit
+  - **Viewing Only**: Recipients only need to view, not edit
+  - **Simplified Sharing**: Simplified file for sharing
+  - **Universal Access**: Files accessible without GIMP
+- **Print Preparation**: When preparing files for print services
+  - **Print Services**: Print services don't need layers
+  - **Print Formats**: Print formats typically don't support layers
+  - **Simplified Files**: Simplified files for printing
+  - **Print Compatibility**: Maximum print service compatibility
+
+**When to Merge**:
+- **Layer Organization**: Reduce layer count while maintaining some structure
+  - **Too Many Layers**: Project has too many layers
+  - **Organization**: Organize layers by merging related ones
+  - **Structure Simplification**: Simplify structure while maintaining flexibility
+  - **Workflow Efficiency**: Improve workflow efficiency
+- **Selective Export**: Export specific layer groups
+  - **Partial Export**: Export only certain layers
+  - **Layer Groups**: Export specific layer groups
+  - **Selective Delivery**: Deliver specific layer combinations
+  - **Workflow Flexibility**: Maintain workflow flexibility
+- **Workflow Optimization**: Simplify complex layer structures
+  - **Complex Projects**: Projects with very complex layer structures
+  - **Performance**: Improve performance with fewer layers
+  - **Memory Management**: Reduce memory usage
+  - **Workflow Speed**: Speed up workflow operations
+- **Partial Flattening**: Combine related layers while keeping others separate
+  - **Related Layers**: Merge layers that belong together
+  - **Logical Grouping**: Group layers logically
+  - **Selective Combination**: Combine selectively
+  - **Structure Maintenance**: Maintain overall structure
+- **Memory Management**: Reduce memory usage without complete flattening
+  - **Memory Constraints**: System has memory constraints
+  - **Performance Issues**: Experiencing performance issues
+  - **Large Projects**: Working with very large projects
+  - **Selective Reduction**: Reduce layers selectively
+
+**Flattening Workflow**:
+- **Backup**: Save XCF version before flattening
+  - **Essential Step**: Always save XCF before flattening
+  - **Work Preservation**: Preserves all editing work
+  - **Recovery Option**: Allows recovery if needed
+  - **Version Control**: Maintains version with layers
+  - **Best Practice**: Critical best practice
+- **Layer Visibility**: Ensure all desired layers are visible
+  - **Visibility Check**: Check layer visibility before flattening
+  - **Hidden Layers**: Hidden layers won't be included
+  - **Desired Result**: Ensure desired layers are visible
+  - **Final Check**: Final check before flattening
+- **Layer Order**: Verify layer order is correct
+  - **Stacking Order**: Verify layer stacking order
+  - **Final Appearance**: Order affects final appearance
+  - **Blending**: Layer order affects blending
+  - **Verification**: Verify before flattening
+- **Flatten Command**: Use Image > Flatten Image command
+  - **Menu Access**: Access via Image menu
+  - **Command Execution**: Execute flatten command
+  - **Processing**: GIMP processes flattening
+  - **Result**: Flattened image created
+- **Save As**: Save flattened version with new name or format
+  - **New Name**: Save with new name to preserve original
+  - **Format Selection**: Choose export format
+  - **Export Settings**: Configure export settings
+  - **Final Save**: Save flattened version
+
+**Merging Workflow**:
+- **Layer Selection**: Select layers to merge
+  - **Manual Selection**: Click to select layers
+  - **Multiple Selection**: Select multiple layers (Ctrl+Click)
+  - **Layer Groups**: Select entire layer groups
+  - **Strategic Selection**: Select strategically
+- **Merge Options**: Choose merge down or merge visible
+  - **Merge Down**: Merge selected layer with layer below
+  - **Merge Visible**: Merge all visible layers
+  - **Merge Layer Groups**: Merge entire layer groups
+  - **Option Selection**: Choose appropriate merge option
+- **Layer Order**: Arrange layers in desired order before merging
+  - **Order Matters**: Layer order affects merge result
+  - **Reordering**: Reorder layers before merging
+  - **Final Arrangement**: Arrange in final desired order
+  - **Verification**: Verify order before merging
+- **Merge Command**: Use appropriate merge command
+  - **Right-Click Menu**: Right-click layers for merge options
+  - **Layer Menu**: Use Layer menu merge commands
+  - **Keyboard Shortcuts**: Use keyboard shortcuts if available
+  - **Command Execution**: Execute merge command
+- **Verification**: Verify merged result meets requirements
+  - **Result Check**: Check merge result
+  - **Quality Verification**: Verify quality is maintained
+  - **Appearance Check**: Verify appearance is correct
+  - **Workflow Continuation**: Continue workflow if satisfied
+
 ### File Metadata: Viewing and Editing
+
+Image metadata contains valuable information about images, including camera settings, creation dates, copyright information, and more. GIMP allows you to view and edit this metadata, which is essential for organization, copyright protection, and workflow management.
+
+**Metadata Types**:
+- **EXIF Data**: Camera settings, exposure, ISO, focal length, etc.
+  - **Camera Information**: Camera make, model, serial number
+  - **Exposure Settings**: Aperture, shutter speed, ISO, exposure compensation
+  - **Lens Information**: Focal length, lens make and model
+  - **Date and Time**: Date and time image was taken
+  - **GPS Data**: Geographic location where image was taken (if available)
+  - **Image Properties**: Image dimensions, orientation, color space
+  - **Software**: Software used to process image
+  - **Technical Data**: Various technical camera and image settings
+- **IPTC Data**: Copyright, keywords, description, location information
+  - **Copyright Information**: Copyright holder, copyright notice, rights usage terms
+  - **Creator Information**: Photographer/artist name, contact information
+  - **Description**: Image title, description, caption
+  - **Keywords**: Keywords for organization and search
+  - **Location**: Geographic location, city, state, country
+  - **Category**: Image category and subject matter
+  - **Date Created**: Creation date and time
+  - **Instructions**: Special instructions for image use
+- **XMP Data**: Extended metadata in XML format
+  - **Extended Information**: Additional metadata in XML format
+  - **Adobe Support**: Widely used in Adobe applications
+  - **Rich Metadata**: Supports rich, structured metadata
+  - **Cross-Application**: Works across different applications
+  - **Extensibility**: Extensible format for custom metadata
+- **GIMP Metadata**: GIMP-specific metadata and settings
+  - **GIMP Settings**: GIMP-specific settings and information
+  - **Edit History**: Information about editing operations
+  - **Tool Usage**: Information about tools used
+  - **Custom Data**: Custom GIMP-specific data
+- **Color Profile**: Embedded ICC color profile information
+  - **Color Space**: Color space information
+  - **Profile Name**: Name of embedded color profile
+  - **Profile Data**: Complete color profile data
+  - **Color Management**: Essential for color management
+
+**Viewing Metadata**:
+- **Properties Dialog**: Access via Image > Properties
+  - **Dialog Access**: Image > Properties or right-click image > Properties
+  - **Metadata Tabs**: Different tabs for different metadata types
+  - **Comprehensive View**: Complete view of all metadata
+  - **Read-Only Sections**: Some metadata is read-only (EXIF from camera)
+  - **Editable Sections**: Some metadata can be edited (IPTC)
+- **Metadata Sections**: Browse different metadata categories
+  - **General Tab**: Basic image information
+  - **EXIF Tab**: Camera and technical EXIF data
+  - **IPTC Tab**: Copyright and descriptive IPTC data
+  - **Color Profile Tab**: Color profile information
+  - **Comment Tab**: Image comments and notes
+  - **Advanced Tab**: Advanced and technical information
+- **Search Function**: Search for specific metadata entries
+  - **Metadata Search**: Search within metadata
+  - **Quick Find**: Quickly find specific information
+  - **Filtering**: Filter metadata by category
+  - **Navigation**: Navigate through metadata efficiently
+- **Export Options**: Export metadata to external files
+  - **Metadata Export**: Export metadata to separate files
+  - **Backup**: Backup metadata separately
+  - **Sharing**: Share metadata information
+  - **Documentation**: Document metadata for records
+- **Print Metadata**: Print metadata information for records
+  - **Print Function**: Print metadata for documentation
+  - **Records Keeping**: Keep records of image metadata
+  - **Documentation**: Document image information
+  - **Reference**: Reference for future use
+
+**Editing Metadata**:
+- **IPTC Editing**: Edit copyright, keywords, and description fields
+  - **Copyright Fields**: Edit copyright holder, notice, usage terms
+  - **Creator Fields**: Edit photographer/artist name and contact
+  - **Description Fields**: Edit title, description, caption
+  - **Keyword Fields**: Add, edit, or remove keywords
+  - **Location Fields**: Edit geographic location information
+  - **Category Fields**: Edit category and subject matter
+  - **Instructions**: Add special instructions
+- **Comment Editing**: Add or modify image comments
+  - **Image Comments**: Add comments about image
+  - **Notes**: Add notes for personal reference
+  - **Workflow Notes**: Add workflow-related notes
+  - **Edit History**: Document editing history in comments
+- **Copyright Information**: Add copyright and creator information
+  - **Copyright Holder**: Name of copyright holder
+  - **Copyright Notice**: Copyright notice text
+  - **Rights Usage**: Terms of usage rights
+  - **Creator Name**: Photographer or artist name
+  - **Contact Information**: Contact information for creator
+  - **Protection**: Protects your intellectual property
+- **Keywords**: Add keywords for organization and search
+  - **Keyword Entry**: Add multiple keywords
+  - **Organization**: Organize images with keywords
+  - **Searchability**: Make images searchable
+  - **Categorization**: Categorize images with keywords
+  - **Workflow**: Use keywords in workflow organization
+- **Location Data**: Add geographic location information
+  - **Location Fields**: City, state, country, location name
+  - **GPS Coordinates**: Add GPS coordinates if available
+  - **Location Description**: Describe location context
+  - **Travel Documentation**: Document travel and location
+  - **Organization**: Organize by location
+
+**Metadata Preservation**:
+- **Format Support**: Some formats preserve metadata better than others
+  - **TIFF**: Excellent metadata preservation
+  - **JPEG**: Good metadata preservation
+  - **PNG**: Limited metadata support
+  - **XCF**: Complete metadata preservation
+  - **Format Choice**: Choose formats that preserve metadata
+- **Export Settings**: Configure metadata preservation in export dialogs
+  - **Metadata Options**: Options to preserve or remove metadata
+  - **Selective Preservation**: Choose which metadata to preserve
+  - **Privacy Options**: Options to remove sensitive metadata
+  - **Export Configuration**: Configure metadata in export settings
+- **Metadata Loss**: Some operations may remove or modify metadata
+  - **Format Conversion**: Some conversions may lose metadata
+  - **Editing Operations**: Some operations may modify metadata
+  - **Copy/Paste**: Copying may not preserve all metadata
+  - **Awareness**: Be aware of operations that affect metadata
+- **Backup Strategy**: Keep original files with complete metadata
+  - **Original Preservation**: Keep originals with full metadata
+  - **Metadata Backup**: Backup metadata separately if needed
+  - **Version Control**: Maintain versions with metadata
+  - **Recovery**: Ability to recover metadata if lost
+- **Workflow Considerations**: Consider metadata in export workflows
+  - **Workflow Planning**: Plan metadata handling in workflow
+  - **Export Workflows**: Consider metadata in export processes
+  - **Sharing Workflows**: Consider metadata when sharing
+  - **Archive Workflows**: Preserve metadata in archives
+
+**Metadata Best Practices**:
+- **Copyright**: Always add copyright information to your work
+  - **Protection**: Protects intellectual property
+  - **Legal**: Legal protection for your work
+  - **Professional**: Professional practice
+  - **Consistency**: Consistent copyright information
+- **Keywords**: Use keywords for better organization and searchability
+  - **Organization**: Organize images effectively
+  - **Search**: Make images easily searchable
+  - **Workflow**: Improve workflow efficiency
+  - **Consistency**: Use consistent keyword vocabulary
+- **Descriptions**: Add meaningful descriptions for future reference
+  - **Documentation**: Document image content
+  - **Future Reference**: Helpful for future reference
+  - **Context**: Provide context for images
+  - **Clarity**: Clear, meaningful descriptions
+- **Consistency**: Maintain consistent metadata across projects
+  - **Standards**: Use consistent metadata standards
+  - **Templates**: Use metadata templates
+  - **Workflow**: Consistent workflow for metadata
+  - **Quality**: Maintain quality and consistency
+- **Privacy**: Remove sensitive metadata before sharing images
+  - **GPS Data**: Remove GPS data if privacy concern
+  - **Personal Information**: Remove personal information
+  - **Location Data**: Remove location if privacy concern
+  - **Sensitive Data**: Remove any sensitive metadata
+  - **Sharing Safety**: Safe sharing practices
 
 ### Image Properties Dialog
 
+The Image Properties dialog provides comprehensive information about your image and allows you to modify various image settings and metadata. It's a central hub for viewing and managing all aspects of your image, from basic dimensions to advanced color management settings.
+
+**Properties Overview**:
+- **Basic Information**: Dimensions, resolution, color mode, file size
+  - **Dimensions**: Current image dimensions in pixels
+  - **Resolution**: Current resolution (DPI/PPI)
+  - **Color Mode**: Current color mode (RGB, Grayscale, Indexed)
+  - **Precision**: Current bit depth (8-bit, 16-bit, 32-bit)
+  - **File Size**: Current file size on disk
+  - **Memory Size**: Size of image in memory
+  - **Aspect Ratio**: Current aspect ratio
+  - **Unit Display**: Dimensions displayed in selected units
+- **Color Information**: Color space, precision, color profile
+  - **Color Space**: Current color space (RGB, Grayscale, Indexed)
+  - **Color Profile**: Embedded color profile information
+  - **Precision**: Bit depth and precision level
+  - **Color Channels**: Number of color channels
+  - **Alpha Channel**: Alpha channel presence and information
+- **Layer Information**: Number of layers, layer structure overview
+  - **Layer Count**: Total number of layers
+  - **Layer Structure**: Overview of layer organization
+  - **Layer Types**: Types of layers in image
+  - **Layer Groups**: Number of layer groups
+  - **Complexity**: Overall layer complexity indicator
+- **File Information**: File path, format, creation and modification dates
+  - **File Path**: Complete file path
+  - **File Format**: Current file format
+  - **Creation Date**: When file was created
+  - **Modification Date**: Last modification date
+  - **File Status**: Whether file is saved or unsaved
+- **Memory Usage**: Current memory usage and resource information
+  - **Memory Size**: Amount of memory used by image
+  - **Resource Usage**: System resource usage
+  - **Performance Indicators**: Performance-related information
+  - **System Impact**: Impact on system resources
+
+**Modifying Properties**:
+- **Image Size**: Change canvas dimensions and resolution
+  - **Dimension Editing**: Edit width and height directly
+  - **Resolution Editing**: Change resolution (DPI/PPI)
+  - **Unit Selection**: Choose units for dimensions
+  - **Aspect Ratio Lock**: Lock aspect ratio when resizing
+  - **Scale Image**: Access to scale image dialog
+  - **Canvas Size**: Access to canvas size dialog
+  - **Print Size**: View and modify print size
+- **Color Mode**: Convert between RGB, Grayscale, and Indexed modes
+  - **Mode Conversion**: Convert between color modes
+  - **Conversion Options**: Options for color mode conversion
+  - **Color Loss Warning**: Warnings about potential color loss
+  - **Conversion Quality**: Quality settings for conversion
+  - **Preview**: Preview conversion before applying
+- **Precision**: Change bit depth (8-bit, 16-bit, 32-bit)
+  - **Precision Conversion**: Convert between precision levels
+  - **Conversion Options**: Options for precision conversion
+  - **Quality Impact**: Information about quality impact
+  - **File Size Impact**: Information about file size impact
+  - **Performance Impact**: Information about performance impact
+- **Color Profile**: Assign or convert color profiles
+  - **Profile Assignment**: Assign color profile to image
+  - **Profile Conversion**: Convert between color profiles
+  - **Profile Information**: View current profile information
+  - **Profile Management**: Manage color profiles
+  - **Color Management**: Access color management settings
+- **Comments**: Add or edit image comments and descriptions
+  - **Comment Editing**: Edit image comments directly
+  - **Description Editing**: Edit image descriptions
+  - **Notes**: Add personal notes and reminders
+  - **Workflow Notes**: Add workflow-related notes
+  - **Documentation**: Document image information
+
+**Advanced Properties**:
+- **Unit Settings**: Change measurement units for dimensions
+  - **Unit Selection**: Choose from various units (pixels, inches, cm, etc.)
+  - **Unit Conversion**: Automatic conversion between units
+  - **Display Units**: Choose units for display
+  - **Print Units**: Choose units for print size
+- **Aspect Ratio**: View and maintain aspect ratio information
+  - **Current Ratio**: Display current aspect ratio
+  - **Ratio Lock**: Lock aspect ratio for resizing
+  - **Common Ratios**: Quick access to common aspect ratios
+  - **Custom Ratios**: Set custom aspect ratios
+- **Pixel Density**: View and modify pixel density settings
+  - **Current Density**: Display current pixel density
+  - **Density Editing**: Edit pixel density
+  - **Print Size**: Calculate print size from density
+  - **Density Impact**: Information about density impact
+- **Color Management**: Access color management settings
+  - **Color Profile**: Access color profile settings
+  - **Color Space**: Access color space settings
+  - **Color Conversion**: Access color conversion options
+  - **Soft Proofing**: Access soft proofing settings
+- **History Information**: View image editing history
+  - **Edit History**: View history of edits
+  - **Operation History**: History of operations performed
+  - **Time Stamps**: Time stamps for operations
+  - **History Navigation**: Navigate through edit history
+
+**Property Categories**:
+- **General**: Basic image information and settings
+  - **Basic Info**: Dimensions, resolution, file size
+  - **Image Properties**: Basic image properties
+  - **File Information**: File-related information
+  - **Quick Overview**: Quick overview of image
+- **Color**: Color space and profile information
+  - **Color Space**: Color space information
+  - **Color Profile**: Color profile information
+  - **Color Management**: Color management settings
+  - **Color Conversion**: Color conversion options
+- **Metadata**: EXIF, IPTC, and other metadata
+  - **EXIF Data**: Camera and technical EXIF data
+  - **IPTC Data**: Copyright and descriptive IPTC data
+  - **XMP Data**: Extended XMP metadata
+  - **GIMP Metadata**: GIMP-specific metadata
+- **Advanced**: Advanced settings and technical information
+  - **Technical Info**: Technical image information
+  - **Advanced Settings**: Advanced image settings
+  - **System Information**: System-related information
+  - **Performance Info**: Performance-related information
+- **Statistics**: Image statistics and analysis
+  - **Image Statistics**: Statistical analysis of image
+  - **Color Statistics**: Color distribution statistics
+  - **Histogram**: Image histogram information
+  - **Analysis Data**: Various analysis data
+
+**Using Properties Dialog**:
+- **Quick Access**: Access via Image > Properties or right-click menu
+  - **Menu Access**: Image > Properties menu item
+  - **Right-Click**: Right-click image > Properties
+  - **Keyboard Shortcut**: May have keyboard shortcut
+  - **Quick Reference**: Quick access to image information
+- **Information Reference**: Use as reference for image specifications
+  - **Specifications**: Reference for image specifications
+  - **Technical Details**: Technical details about image
+  - **Settings Reference**: Reference for current settings
+  - **Documentation**: Document image properties
+- **Settings Modification**: Change image settings as needed
+  - **Direct Editing**: Edit settings directly in dialog
+  - **Quick Changes**: Make quick changes to settings
+  - **Property Management**: Manage image properties
+  - **Workflow Integration**: Integrate into workflow
+- **Metadata Management**: Manage image metadata from single location
+  - **Centralized Management**: Manage all metadata in one place
+  - **Metadata Editing**: Edit metadata from dialog
+  - **Metadata Viewing**: View all metadata types
+  - **Metadata Organization**: Organize metadata efficiently
+- **Troubleshooting**: Use for diagnosing image issues
+  - **Problem Diagnosis**: Diagnose image problems
+  - **Settings Verification**: Verify image settings
+  - **Configuration Check**: Check image configuration
+  - **Technical Analysis**: Analyze technical image properties
+
 ### Undo History and Image Recovery
+
+GIMP's undo system allows you to reverse changes and recover from mistakes. Understanding undo history and recovery options helps you work confidently and recover from unexpected situations. A robust undo system and recovery strategy are essential for productive and safe image editing.
+
+**Undo System**:
+- **Undo Levels**: Configurable number of undo levels (default varies)
+  - **Default Levels**: Default number varies by GIMP version and system
+  - **Configurable**: Can be configured in preferences
+  - **Maximum Levels**: Practical maximum depends on system memory
+  - **Level Setting**: Set in Edit > Preferences > Environment
+  - **System Dependent**: Optimal levels depend on system capabilities
+- **Memory Management**: Undo history uses system memory
+  - **Memory Usage**: Each undo level uses memory
+  - **Memory Impact**: More levels = more memory usage
+  - **System Resources**: Consumes system RAM
+  - **Memory Monitoring**: Monitor memory usage with many undo levels
+  - **Balance**: Balance undo levels with available memory
+- **Undo Stack**: Linear undo/redo stack of operations
+  - **Stack Structure**: Operations stored in linear stack
+  - **Sequential Undo**: Undo operations in reverse order
+  - **Sequential Redo**: Redo operations in forward order
+  - **Stack Navigation**: Navigate through undo stack
+  - **Stack Limitations**: Cannot skip operations in stack
+- **Operation Tracking**: Tracks all editing operations
+  - **All Operations**: Tracks virtually all editing operations
+  - **Operation Types**: Tracks tools, filters, transformations, etc.
+  - **Operation Details**: Stores details of each operation
+  - **Operation History**: Complete history of operations
+- **Performance Impact**: More undo levels use more memory
+  - **Memory Consumption**: Higher memory consumption
+  - **Processing Impact**: May impact processing speed
+  - **System Performance**: Can affect overall system performance
+  - **Balance Needed**: Balance between undo capability and performance
+
+**Using Undo/Redo**:
+- **Ctrl+Z**: Undo last operation
+  - **Quick Undo**: Fastest way to undo last operation
+  - **Repeated Undo**: Press multiple times to undo multiple operations
+  - **Undo Chain**: Undo operations in sequence
+  - **Most Common**: Most commonly used undo method
+- **Ctrl+Shift+Z**: Redo last undone operation
+  - **Quick Redo**: Fastest way to redo operation
+  - **Repeated Redo**: Press multiple times to redo multiple operations
+  - **Redo Chain**: Redo operations in sequence
+  - **Undo/Redo Toggle**: Toggle between undo and redo
+- **Undo History**: Access complete undo history via Edit menu
+  - **History Dialog**: Access via Edit > Undo History
+  - **History View**: See complete history of operations
+  - **History Navigation**: Navigate through history
+  - **Selective Undo**: Jump to specific point in history
+  - **History Information**: See details of each operation
+- **Selective Undo**: Jump to specific point in history
+  - **History Selection**: Select specific point in history
+  - **Jump to Point**: Jump directly to selected point
+  - **Partial Undo**: Undo to specific point without affecting later operations
+  - **History Navigation**: Navigate history efficiently
+- **Undo Limitations**: Some operations cannot be undone
+  - **File Operations**: Some file operations may not be undoable
+  - **System Operations**: Some system-level operations
+  - **External Operations**: Operations outside GIMP
+  - **Irreversible Operations**: Some operations are inherently irreversible
+  - **Awareness**: Be aware of operations that cannot be undone
+
+**Undo History Management**:
+- **History Depth**: Configure maximum undo levels in preferences
+  - **Preference Setting**: Edit > Preferences > Environment
+  - **Level Configuration**: Set maximum number of undo levels
+  - **System Considerations**: Consider system memory when setting
+  - **Workflow Considerations**: Consider workflow needs
+  - **Optimal Setting**: Find optimal setting for your system
+- **Memory Considerations**: Balance undo levels with available memory
+  - **Available Memory**: Consider available system memory
+  - **Memory Usage**: Each level uses memory
+  - **System Impact**: More levels impact system performance
+  - **Balance**: Find balance between capability and performance
+  - **System Monitoring**: Monitor system performance
+- **History Clearing**: Clear undo history to free memory
+  - **Clear Command**: Clear undo history when needed
+  - **Memory Freeing**: Frees memory used by history
+  - **Performance Improvement**: Can improve performance
+  - **Irreversible**: Cannot undo after clearing history
+  - **Use Cases**: Useful when memory is constrained
+- **History Preservation**: Undo history can be saved in XCF files
+  - **XCF Option**: Option to save undo history in XCF
+  - **History Persistence**: History persists across sessions
+  - **File Size Impact**: Increases XCF file size
+  - **Recovery Option**: Allows recovery of undo history
+  - **Workflow Benefit**: Useful for complex projects
+- **Performance Optimization**: Adjust undo levels for optimal performance
+  - **Performance Testing**: Test different undo levels
+  - **Optimal Levels**: Find optimal number of levels
+  - **System Tuning**: Tune for your system
+  - **Workflow Optimization**: Optimize for your workflow
+  - **Regular Review**: Periodically review and adjust
+
+**Image Recovery**:
+- **Auto-Save**: GIMP can auto-save work in progress
+  - **Auto-Save Feature**: Automatic saving of work
+  - **Save Interval**: Configurable save interval
+  - **Work Protection**: Protects against work loss
+  - **Recovery Files**: Creates recovery files
+  - **Configuration**: Configure in preferences
+- **Recovery Files**: Access recovery files after unexpected shutdown
+  - **Recovery Location**: Recovery files in GIMP recovery directory
+  - **File Naming**: Recovery files have specific naming
+  - **Recovery Access**: Access on next GIMP startup
+  - **Recovery Dialog**: GIMP offers to recover files on startup
+  - **Manual Access**: Can manually access recovery files
+- **Session Recovery**: Recover previous session on startup
+  - **Session State**: GIMP can save session state
+  - **Auto-Recovery**: Automatic recovery of session
+  - **Open Images**: Recover open images from session
+  - **Work Continuity**: Continue work from previous session
+  - **Recovery Options**: Options for session recovery
+- **Backup Files**: Keep backup copies of important work
+  - **Manual Backups**: Manually create backup copies
+  - **Backup Strategy**: Develop backup strategy
+  - **Version Backups**: Keep multiple versions
+  - **External Backups**: Backup to external storage
+  - **Cloud Backups**: Consider cloud backup
+- **XCF Preservation**: XCF format preserves complete editing state
+  - **Complete State**: XCF preserves complete project state
+  - **Full Recovery**: Can recover complete project
+  - **State Preservation**: All editing state preserved
+  - **Recovery Capability**: Maximum recovery capability
+  - **Best Practice**: Use XCF for maximum recovery
+
+**Recovery Workflows**:
+- **Unexpected Shutdown**: Access recovery files on next startup
+  - **Startup Recovery**: GIMP offers recovery on startup
+  - **Recovery Dialog**: Dialog appears with recovery options
+  - **File Selection**: Select files to recover
+  - **Recovery Process**: Recover files automatically
+  - **Work Continuation**: Continue work from recovery
+- **Crash Recovery**: Automatic recovery of unsaved work
+  - **Crash Detection**: GIMP detects crashes
+  - **Auto-Recovery**: Automatic recovery attempt
+  - **Recovery Files**: Uses recovery files
+  - **Work Protection**: Protects unsaved work
+  - **Recovery Success**: High success rate for recovery
+- **Version Control**: Keep multiple versions for recovery options
+  - **Version Strategy**: Maintain version strategy
+  - **Version Naming**: Use version numbers or dates
+  - **Version History**: Keep history of versions
+  - **Recovery Options**: Multiple recovery options
+  - **Version Management**: Manage versions effectively
+- **Backup Strategy**: Regular backups prevent data loss
+  - **Regular Schedule**: Regular backup schedule
+  - **Backup Frequency**: Frequency based on work importance
+  - **Multiple Locations**: Backup to multiple locations
+  - **Backup Testing**: Test backup recovery
+  - **Backup Automation**: Automate backups when possible
+- **Recovery Testing**: Test recovery procedures to ensure they work
+  - **Procedure Testing**: Test recovery procedures
+  - **Recovery Verification**: Verify recovery works
+  - **Practice Recovery**: Practice recovery process
+  - **Confidence**: Build confidence in recovery
+  - **Preparation**: Prepare for recovery scenarios
+
+**Best Practices**:
+- **Regular Saving**: Save work frequently to prevent loss
+  - **Save Frequency**: Save every 10-15 minutes or after major changes
+  - **Save Before Changes**: Save before major transformations
+  - **Save Before Experiments**: Save before experimental edits
+  - **Work Protection**: Protect work with frequent saves
+  - **Habit Formation**: Form habit of regular saving
+- **Undo Configuration**: Set appropriate undo levels for your workflow
+  - **Workflow Matching**: Match undo levels to workflow
+  - **System Matching**: Match to system capabilities
+  - **Optimal Setting**: Find optimal setting
+  - **Regular Review**: Review and adjust as needed
+  - **Performance Balance**: Balance capability and performance
+- **Recovery Awareness**: Know where recovery files are stored
+  - **Recovery Location**: Know GIMP recovery directory
+  - **File Access**: Know how to access recovery files
+  - **Recovery Process**: Understand recovery process
+  - **Preparation**: Prepare for recovery scenarios
+  - **Documentation**: Document recovery procedures
+- **Backup Routine**: Maintain regular backup routine
+  - **Consistent Schedule**: Maintain consistent backup schedule
+  - **Multiple Backups**: Use multiple backup methods
+  - **Backup Verification**: Verify backups regularly
+  - **Backup Testing**: Test backup recovery
+  - **Automation**: Automate when possible
+- **Version Management**: Keep multiple versions of important projects
+  - **Version Strategy**: Develop version strategy
+  - **Version Naming**: Use consistent version naming
+  - **Version History**: Maintain version history
+  - **Version Organization**: Organize versions effectively
+  - **Version Recovery**: Use versions for recovery
 
 ## Navigation and Canvas Tools
 
