@@ -14457,19 +14457,5153 @@ The true power of GIMP's navigation system lies not in individual tools, but in 
 
 ### Understanding RGB, Grayscale, Indexed Color Modes
 
+- **Color Mode Fundamentals**: Understanding color modes is essential for professional work
+  - **RGB Mode**: Red, Green, Blue color mode for digital displays and web
+    - **Channel Structure**: Three channels (Red, Green, Blue) with 8-bit (256 levels) or 16-bit (65536 levels) per channel
+      - **8-bit Per Channel**: Each channel stores values from 0-255 (256 possible values)
+      - **16-bit Per Channel**: Each channel stores values from 0-65535 (65536 possible values)
+      - **Total Combinations**: 8-bit = 256³ = 16,777,216 colors, 16-bit = 65536³ = 281,474,976,710,656 colors
+      - **Memory Usage**: 8-bit RGB = 3 bytes per pixel, 16-bit RGB = 6 bytes per pixel (without alpha)
+      - **Alpha Channel**: Additional channel for transparency (8-bit or 16-bit), adds 1-2 bytes per pixel
+      - **Bit Depth Impact**: Higher bit depth provides smoother gradients and prevents banding in edits
+    - **Color Depth**: 8-bit RGB = 16.7 million colors, 16-bit RGB = 281 trillion colors
+      - **Perceptual Difference**: Human eye can distinguish ~10 million colors, so 8-bit is often sufficient for display
+      - **Editing Advantage**: 16-bit provides headroom for extensive editing without visible banding
+      - **File Size Impact**: 16-bit images are exactly 2x larger than 8-bit (per channel)
+      - **Storage Consideration**: 16-bit requires more storage and processing power
+      - **Professional Standard**: 16-bit workflow standard for professional photography editing
+    - **RGB Color Model**: Additive color model where colors are created by adding light
+      - **Primary Colors**: Red, Green, Blue are primary colors of light
+        - **Light Primaries**: RGB are primary colors of light (not pigments)
+        - **Additive Mixing**: Colors created by adding light together
+        - **Screen Technology**: All screens use RGB light primaries
+        - **Professional Practice**: Understanding RGB model is fundamental
+      - **Color Mixing**: Combining all three at maximum (255,255,255) creates white
+        - **White Creation**: Maximum values in all channels = white light
+        - **Brightness**: Higher values = brighter colors
+        - **Mathematical**: (255,255,255) = maximum brightness = white
+        - **Professional Practice**: Understanding color mixing is essential
+      - **Black Creation**: All channels at minimum (0,0,0) creates black
+        - **Black Creation**: Minimum values in all channels = no light = black
+        - **Darkness**: Lower values = darker colors
+        - **Mathematical**: (0,0,0) = no light = black
+        - **Professional Practice**: Understanding black creation is fundamental
+      - **Color Range**: Each channel independently controls intensity of that color component
+        - **Independent Control**: Each channel (R, G, B) controlled independently
+        - **Intensity Control**: Channel value controls intensity of that color
+        - **Combination**: Combined channels create final color
+        - **Professional Practice**: Understanding channel independence is essential
+      - **Mathematical Model**: Colors represented as (R, G, B) tuples with values 0-255 or 0-65535
+        - **8-bit Model**: (R, G, B) where each value is 0-255
+        - **16-bit Model**: (R, G, B) where each value is 0-65535
+        - **Color Space**: RGB values define position in 3D color space
+        - **Professional Practice**: Understanding mathematical model helps with color work
+      - **Color Space Dimensions**: RGB defines 3D color space
+        - **3 Dimensions**: Red, Green, Blue are three dimensions
+        - **Color Cube**: RGB color space can be visualized as cube
+        - **Color Position**: Each (R,G,B) tuple defines position in color cube
+        - **Professional Practice**: Understanding color space helps with color work
+    - **Use Cases**: Digital photography, web graphics, screen displays, digital art
+      - **Digital Photography**: All digital cameras capture in RGB, most output sRGB or Adobe RGB
+      - **Web Graphics**: All web browsers display RGB images, sRGB is web standard
+      - **Screen Displays**: All monitors, phones, tablets use RGB color model
+      - **Digital Art**: RGB provides full color range for digital painting and illustration
+      - **Video Production**: RGB is standard for video editing and color grading
+    - **Professional Standard**: RGB is the standard for all digital display work
+      - **Industry Standard**: RGB is universal standard for all digital media
+      - **Color Management**: RGB workspaces (sRGB, Adobe RGB, ProPhoto RGB) define color gamuts
+      - **Workflow Integration**: RGB integrates with all digital workflows
+      - **Future-Proof**: RGB will remain standard for foreseeable future
+    - **GIMP Support**: Full support for 8-bit and 16-bit RGB with alpha channel
+      - **8-bit RGB**: Full editing support, all filters and tools available
+      - **16-bit RGB**: Full editing support with higher precision, prevents banding
+      - **Alpha Channel**: Full transparency support in both bit depths
+      - **Conversion**: Easy conversion between 8-bit and 16-bit (Image → Precision → 8/16-bit Integer)
+      - **Performance**: 16-bit operations are slower but provide quality benefits
+  - **Grayscale Mode**: Single-channel mode representing brightness values
+    - **Channel Structure**: One channel representing luminance (brightness)
+      - **Single Channel**: Only one channel stores brightness information
+      - **Luminance Calculation**: Grayscale conversion uses formula: L = 0.299R + 0.587G + 0.114B (ITU-R BT.601)
+        - **Formula**: L = 0.299R + 0.587G + 0.114B (ITU-R BT.601 standard)
+        - **Coefficients**: Red=0.299, Green=0.587, Blue=0.114 (sum to 1.0)
+        - **Standard**: ITU-R BT.601 is international standard for luminance calculation
+        - **Perceptual Accuracy**: Formula matches human eye sensitivity
+        - **Professional Practice**: This formula provides most accurate grayscale conversion
+      - **Perceptual Weighting**: Green weighted highest (0.587) because human eye most sensitive to green
+        - **Green Sensitivity**: Human eye most sensitive to green light (58.7% weight)
+        - **Red Sensitivity**: Human eye moderately sensitive to red (29.9% weight)
+        - **Blue Sensitivity**: Human eye least sensitive to blue (11.4% weight)
+        - **Biological Basis**: Based on human eye cone cell sensitivity
+        - **Professional Practice**: Understanding weighting helps understand conversion
+      - **Alternative Formulas**: Other luminance formulas exist
+        - **BT.709**: L = 0.2126R + 0.7152G + 0.0722B (HDTV standard)
+        - **Average**: L = (R + G + B) / 3 (simple average, less accurate)
+        - **Luminance Only**: L = Y channel from YUV color space
+        - **Professional Practice**: BT.601 is standard for most applications
+      - **Memory Efficiency**: Grayscale uses 1/3 memory of RGB (1 byte vs 3 bytes per pixel at 8-bit)
+        - **8-bit**: 1 byte per pixel vs 3 bytes for RGB (67% reduction)
+        - **16-bit**: 2 bytes per pixel vs 6 bytes for RGB (67% reduction)
+        - **File Size**: Significantly smaller file sizes
+        - **Processing**: Faster processing with single channel
+        - **Professional Practice**: Memory efficiency is significant advantage
+      - **Alpha Support**: Can have alpha channel for transparency (adds 1 byte per pixel at 8-bit)
+        - **Alpha Channel**: Additional channel for transparency
+        - **8-bit Alpha**: 1 byte per pixel for alpha (8-bit grayscale + alpha = 2 bytes/pixel)
+        - **16-bit Alpha**: 2 bytes per pixel for alpha (16-bit grayscale + alpha = 4 bytes/pixel)
+        - **Transparency**: Full transparency support in grayscale
+        - **Professional Practice**: Alpha support enables transparency in grayscale
+      - **Mathematical Model**: Single value 0-255 (8-bit) or 0-65535 (16-bit) represents brightness
+        - **8-bit Model**: Single value 0-255 represents brightness
+        - **16-bit Model**: Single value 0-65535 represents brightness
+        - **Linear Scale**: Value directly represents brightness level
+        - **Professional Practice**: Understanding model helps with grayscale work
+    - **Color Depth**: 8-bit grayscale = 256 shades, 16-bit grayscale = 65536 shades
+      - **Shade Range**: 0 = black, 255 (or 65535) = white, intermediate values = gray shades
+      - **Perceptual Steps**: Human eye can distinguish ~200-250 gray levels in ideal conditions
+      - **8-bit Sufficiency**: 256 shades usually sufficient for most applications
+      - **16-bit Advantage**: 16-bit provides smooth gradients and editing headroom
+      - **Print Consideration**: Many printers can reproduce 256+ gray levels effectively
+    - **Use Cases**: Black and white photography, artistic effects, print preparation
+      - **B&W Photography**: Converting color photos to black and white for artistic effect
+      - **Artistic Effects**: Creating dramatic monochrome compositions
+      - **Print Preparation**: Preparing images for black and white printing (reduces ink usage)
+      - **Document Scanning**: Scanned documents often stored as grayscale
+      - **Medical Imaging**: X-rays and medical scans often displayed as grayscale
+      - **Scientific Visualization**: Many scientific visualizations use grayscale
+    - **Conversion Benefits**: Reduces file size, simplifies editing, creates classic aesthetic
+      - **File Size Reduction**: 1/3 file size compared to RGB (significant for large images)
+      - **Simplified Editing**: Single channel easier to adjust (brightness/contrast)
+      - **Classic Aesthetic**: Black and white photography has timeless appeal
+      - **Print Efficiency**: Grayscale printing uses only black ink (or single color)
+      - **Processing Speed**: Single channel processes faster than three channels
+    - **Professional Practice**: Grayscale is essential for monochrome print workflows
+      - **Print Workflow**: Many professional B&W photographers work in grayscale
+      - **Toning Effects**: Can add color tints after grayscale conversion
+      - **Archival Quality**: Grayscale images often considered more archival
+      - **Artistic Choice**: Many photographers prefer grayscale for artistic expression
+  - **Indexed Color Mode**: Palette-based color mode with limited color count
+    - **Color Limit**: Maximum 256 colors per image (8-bit palette)
+      - **Palette Size**: Exactly 256 colors maximum (0-255 index values)
+      - **Color Selection**: Each pixel references palette index, not actual color value
+      - **Memory Efficiency**: 1 byte per pixel (stores index, not color)
+      - **Palette Storage**: Color palette stored separately (256 × 3 bytes = 768 bytes for RGB palette)
+      - **Total Memory**: Image data (width × height bytes) + palette (768 bytes)
+      - **File Size Advantage**: Very small file sizes for images with limited colors
+    - **Palette Types**: Optimized, Web-safe, Custom palettes
+      - **Optimized Palette**: GIMP analyzes image and creates optimal 256-color palette
+        - **Color Quantization**: Reduces millions of colors to 256 most important colors
+          - **Quantization Process**: Analyzes all colors in image
+          - **Color Selection**: Selects 256 most representative colors
+          - **Algorithm**: Uses color quantization algorithm (median cut, octree, etc.)
+          - **Quality**: Best quality for images with many colors
+          - **Professional Practice**: Optimized palette provides best quality
+        - **Algorithm**: Uses median cut or similar algorithm to select representative colors
+          - **Median Cut**: Divides color space into 256 regions, selects representative color from each
+          - **Octree**: Builds octree structure, selects colors from tree
+          - **Quality**: Median cut usually provides good quality
+          - **Performance**: Algorithm balances quality and performance
+          - **Professional Practice**: Understanding algorithm helps predict results
+        - **Quality**: Best quality for photographic images with many colors
+          - **Photographic Images**: Best for photos with many colors
+          - **Color Preservation**: Preserves most important colors
+          - **Quality Trade-off**: Some color loss inevitable but minimized
+          - **Professional Practice**: Optimized palette is best choice for photos
+        - **Use Case**: Converting photos to GIF format
+          - **GIF Format**: GIF requires indexed color mode
+          - **Photo Conversion**: Converting photos to GIF
+          - **Professional Practice**: Optimized palette standard for photo-to-GIF conversion
+      - **Web-Safe Palette**: Uses standard 216-color web-safe palette (plus 40 system colors)
+        - **Browser Compatibility**: Ensures consistent colors across old browsers
+        - **Limited Colors**: Only 216 colors, lower quality but maximum compatibility
+        - **Modern Relevance**: Less important with modern browsers, but still used
+        - **Use Case**: Maximum compatibility for web graphics
+      - **Custom Palette**: Use existing palette file or create custom palette
+        - **Palette Files**: Load .gpl (GIMP palette) or .act (Photoshop) files
+        - **Custom Creation**: Create palette manually or extract from image
+        - **Use Case**: Matching specific color scheme or brand colors
+    - **Dithering Algorithms**: Methods to simulate more colors with limited palette
+      - **No Dithering**: No dithering, uses nearest palette color (fastest, may cause banding)
+        - **Method**: Each pixel uses nearest palette color (no error distribution)
+        - **Speed**: Fastest method (no computation needed)
+        - **Quality**: May cause visible banding in gradients
+        - **Use Case**: Images with few colors, graphics with solid colors
+        - **Professional Practice**: Use only when banding is acceptable
+      - **Floyd-Steinberg**: Error diffusion dithering, distributes quantization error to neighbors
+        - **Algorithm**: Error diffusion algorithm developed by Floyd and Steinberg (1976)
+          - **Error Calculation**: Calculates difference between original color and nearest palette color
+          - **Error Distribution**: Distributes error to neighboring pixels (right, down, down-left, down-right)
+          - **Distribution Weights**: 7/16 right, 3/16 down-left, 5/16 down, 1/16 down-right
+          - **Professional Practice**: Understanding algorithm helps predict results
+        - **Quality**: High quality, smooth gradients, natural appearance
+          - **Smooth Gradients**: Creates smooth-appearing gradients
+          - **Natural Look**: Natural-looking, not obviously dithered
+          - **Quality**: Best quality dithering method
+          - **Professional Practice**: Floyd-Steinberg is best choice for photos
+        - **Pattern**: Creates natural-looking patterns, not obvious dithering
+          - **Pattern Type**: Creates natural, organic-looking patterns
+          - **Visibility**: Dithering pattern not obviously visible
+          - **Appearance**: Looks like natural image texture
+          - **Professional Practice**: Natural appearance is major advantage
+        - **Performance**: Slower than no dithering but acceptable
+          - **Computation**: Requires computation for each pixel
+          - **Speed**: Slower than no dithering but usually acceptable
+          - **Professional Practice**: Performance trade-off is worth it for quality
+        - **Use Case**: Photographic images, smooth gradients
+          - **Photos**: Ideal for photographic images
+          - **Gradients**: Best for smooth gradients
+          - **Professional Practice**: Standard choice for photo-to-indexed conversion
+      - **Positioned**: Ordered dithering using fixed pattern
+        - **Pattern**: Uses fixed dithering pattern (Bayer matrix)
+          - **Bayer Matrix**: Fixed dithering matrix pattern
+          - **Pattern Type**: Structured, geometric pattern
+          - **Visibility**: More visible pattern than Floyd-Steinberg
+          - **Professional Practice**: Pattern is more visible but acceptable
+        - **Appearance**: More visible pattern than Floyd-Steinberg
+          - **Pattern Visibility**: Dithering pattern more visible
+          - **Structured Look**: More structured, geometric appearance
+          - **Professional Practice**: Acceptable when Floyd-Steinberg not suitable
+        - **Performance**: Faster than Floyd-Steinberg
+          - **Speed**: Faster computation than Floyd-Steinberg
+          - **Use Case**: When Floyd-Steinberg too slow
+          - **Professional Practice**: Good alternative when speed is priority
+        - **Use Case**: When Floyd-Steinberg too slow or creates artifacts
+          - **Speed Alternative**: Use when Floyd-Steinberg too slow
+          - **Artifact Alternative**: Use when Floyd-Steinberg creates artifacts
+          - **Professional Practice**: Good alternative when needed
+      - **Random**: Random dithering pattern
+        - **Pattern**: Random dithering, different each time
+          - **Randomness**: Completely random dithering pattern
+          - **Inconsistency**: Different each time (not reproducible)
+          - **Professional Practice**: Random dithering rarely used
+        - **Quality**: Lower quality, noisy appearance
+          - **Noise**: Creates noisy, grainy appearance
+          - **Quality**: Lower quality than other methods
+          - **Professional Practice**: Not recommended for most uses
+        - **Use Case**: Rarely used, mainly for special effects
+          - **Special Effects**: May be used for special artistic effects
+          - **Rare Use**: Very rarely used in professional work
+          - **Professional Practice**: Avoid unless special effect desired
+    - **Use Cases**: GIF images, retro graphics, pixel art, web animations
+      - **GIF Format**: GIF format requires indexed color mode (supports animation)
+      - **Retro Graphics**: Creating retro-style graphics with limited color palette
+      - **Pixel Art**: Pixel art often uses small, carefully chosen palettes
+      - **Web Animations**: Animated GIFs require indexed color mode
+      - **File Size Optimization**: Very small file sizes for simple graphics
+    - **File Size**: Significantly smaller file sizes compared to RGB
+      - **Size Comparison**: Indexed typically 1/3 to 1/10 size of RGB depending on image
+      - **Compression**: GIF compression works well with indexed color (fewer unique colors)
+      - **Web Optimization**: Ideal for web graphics where file size matters
+      - **Storage Efficiency**: Maximum efficiency for images with limited color range
+    - **Limitations**: Limited color accuracy, no smooth gradients, editing restrictions
+      - **Color Accuracy**: Only 256 colors, cannot represent full color range
+      - **Gradient Issues**: Smooth gradients become banded or dithered
+      - **Editing Restrictions**: Many filters and tools not available in indexed mode
+      - **Conversion Required**: Must convert to RGB for most advanced editing
+      - **Quality Trade-off**: Quality sacrificed for file size
+    - **Professional Insight**: Indexed mode requires careful palette selection for quality results
+      - **Palette Quality**: Quality depends heavily on palette selection
+      - **Dithering Choice**: Dithering algorithm significantly affects appearance
+      - **Color Count**: More colors in palette = better quality but larger file
+      - **Testing Required**: Test different palette and dithering options for best results
+      - **Workflow**: Often convert to indexed as final step after all editing complete
+- **Color Mode Selection Guide**: Choosing the right color mode for your project
+  - **RGB Selection Criteria**: Use RGB for full-color digital work
+    - **Digital Display**: All work intended for screens (monitors, phones, tablets)
+      - **Screen Output**: All screen-based output requires RGB
+      - **Devices**: Monitors, phones, tablets, projectors all use RGB
+      - **Universal**: RGB is universal for digital display
+      - **Professional Practice**: RGB is standard for all digital display work
+    - **Full Color Range**: When you need access to millions of colors
+      - **Color Range**: RGB provides access to millions (8-bit) or trillions (16-bit) of colors
+      - **Color Accuracy**: Full color accuracy and range
+      - **Professional Practice**: RGB provides maximum color range
+    - **Gradient Work**: Smooth gradients and color transitions
+      - **Smooth Gradients**: RGB provides smooth, continuous gradients
+      - **No Banding**: No visible banding in gradients (especially 16-bit)
+      - **Professional Practice**: RGB essential for smooth gradients
+    - **Photo Editing**: Color photography and retouching
+      - **Photo Work**: All color photography work requires RGB
+      - **Editing Tools**: All photo editing tools work in RGB
+      - **Professional Practice**: RGB is standard for photo editing
+    - **Video Work**: Video editing and color grading
+      - **Video Standard**: RGB is standard for video work
+      - **Color Grading**: Color grading requires RGB
+      - **Professional Practice**: RGB is standard for video work
+    - **Professional Standard**: RGB is default for most professional digital work
+      - **Industry Standard**: RGB is industry standard
+      - **Default Choice**: RGB is default for most professional work
+      - **Professional Practice**: RGB is standard choice
+  - **Grayscale Selection Criteria**: Use Grayscale for monochrome work
+    - **Black and White Photography**: Converting color photos to black and white
+      - **B&W Work**: All black and white photography work
+      - **Conversion**: Convert color photos to grayscale
+      - **Professional Practice**: Grayscale is standard for B&W photography
+    - **Artistic Effects**: Creating dramatic monochrome compositions
+      - **Artistic Use**: Grayscale for artistic monochrome effects
+      - **Composition**: Monochrome compositions
+      - **Professional Practice**: Grayscale for artistic work
+    - **Print Preparation**: Preparing images for black and white printing
+      - **B&W Printing**: Preparing for black and white printing
+      - **Ink Efficiency**: Grayscale printing uses only black ink
+      - **Professional Practice**: Grayscale standard for B&W printing
+    - **File Size Optimization**: Reducing file size while maintaining quality
+      - **Size Reduction**: 1/3 file size compared to RGB
+      - **Quality Preservation**: Maintains quality while reducing size
+      - **Professional Practice**: Grayscale for size optimization
+    - **Document Work**: Scanned documents and text
+      - **Documents**: Scanned documents often stored as grayscale
+      - **Text**: Text documents often grayscale
+      - **Professional Practice**: Grayscale for document work
+    - **Professional Practice**: Grayscale conversion is often final step in B&W workflow
+      - **Workflow Position**: Usually final step in B&W workflow
+      - **Professional Practice**: Grayscale is standard for B&W work
+  - **Indexed Selection Criteria**: Use Indexed for specific requirements
+    - **GIF Creation**: Creating animated or static GIF images
+      - **GIF Format**: GIF format requires indexed color mode
+      - **Animation**: Animated GIFs require indexed mode
+      - **Professional Practice**: Indexed required for GIF format
+    - **Web Optimization**: Very small file sizes for web graphics
+      - **File Size**: Very small file sizes for web
+      - **Web Graphics**: Simple web graphics benefit from indexed mode
+      - **Professional Practice**: Indexed for web optimization
+    - **Pixel Art**: Creating retro-style pixel art graphics
+      - **Pixel Art**: Pixel art often uses indexed mode
+      - **Limited Colors**: Pixel art uses limited color palettes
+      - **Professional Practice**: Indexed for pixel art
+    - **Color Limitation**: When limited color palette is acceptable or desired
+      - **Limited Palette**: When limited colors are acceptable
+      - **Artistic Choice**: Sometimes artistic choice
+      - **Professional Practice**: Indexed when color limitation acceptable
+    - **Retro Graphics**: Creating retro-style graphics
+      - **Retro Style**: Retro graphics often use indexed mode
+      - **Limited Colors**: Retro style uses limited color palettes
+      - **Professional Practice**: Indexed for retro graphics
+    - **Professional Insight**: Indexed mode requires understanding of color quantization
+      - **Quantization**: Understanding color quantization is essential
+      - **Algorithm Knowledge**: Understanding algorithms helps
+      - **Professional Practice**: Indexed mode requires technical understanding
+- **Color Mode Conversion**: Converting between color modes in GIMP
+  - **RGB to Grayscale**: Converting color images to grayscale
+    - **Method**: Image → Mode → Grayscale
+      - **Menu Location**: Main menu → Image → Mode → Grayscale
+      - **Keyboard Shortcut**: No direct shortcut, must use menu
+      - **Dialog**: No dialog appears, conversion happens immediately
+      - **Undo**: Can undo conversion (Edit → Undo) if done immediately
+      - **Warning**: GIMP may warn if image has multiple layers (converts all layers)
+    - **Conversion Algorithm**: Luminance-based conversion (preserves perceived brightness)
+      - **Formula**: L = 0.299R + 0.587G + 0.114B (ITU-R BT.601 standard)
+        - **Mathematical Formula**: Linear combination of RGB channels
+        - **Coefficients**: Red=0.299, Green=0.587, Blue=0.114 (sum to 1.0)
+        - **Standard**: ITU-R BT.601 is international standard
+        - **Calculation**: For each pixel: L = 0.299×R + 0.587×G + 0.114×B
+        - **Professional Practice**: This formula is industry standard
+      - **Perceptual Weighting**: Green weighted 58.7%, Red 29.9%, Blue 11.4%
+        - **Green Weight**: 58.7% (highest) - human eye most sensitive to green
+        - **Red Weight**: 29.9% (moderate) - human eye moderately sensitive to red
+        - **Blue Weight**: 11.4% (lowest) - human eye least sensitive to blue
+        - **Biological Basis**: Based on human eye cone cell sensitivity distribution
+        - **Professional Practice**: Understanding weighting explains formula
+      - **Why This Formula**: Matches human eye sensitivity to different colors
+        - **Perceptual Accuracy**: Formula matches how human eye perceives brightness
+        - **Color Sensitivity**: Accounts for different sensitivity to different colors
+        - **Result**: Grayscale that matches perceived brightness
+        - **Professional Practice**: Perceptual accuracy is key advantage
+      - **Alternative Methods**: Could use average (R+G+B)/3, but less accurate perceptually
+        - **Simple Average**: L = (R + G + B) / 3 (equal weighting)
+        - **Problem**: Doesn't account for human eye sensitivity
+        - **Result**: Less accurate perceived brightness
+        - **Professional Practice**: BT.601 formula is better choice
+      - **BT.709 Alternative**: L = 0.2126R + 0.7152G + 0.0722B (HDTV standard)
+        - **HDTV Standard**: ITU-R BT.709 for HDTV/HD content
+        - **Different Weights**: Slightly different coefficients
+        - **Use Case**: Sometimes used for HD video content
+        - **Professional Practice**: BT.601 is standard for most applications
+      - **16-bit Precision**: Formula applied with full precision in 16-bit mode
+        - **Precision**: Formula calculated with full 16-bit precision
+        - **Accuracy**: Higher precision improves accuracy
+        - **Quality**: Better quality in 16-bit mode
+        - **Professional Practice**: 16-bit provides best quality
+      - **Quality**: This method preserves perceived brightness best
+        - **Perceptual Preservation**: Best preserves perceived brightness
+        - **Quality**: Highest quality grayscale conversion
+        - **Professional Practice**: BT.601 formula is best choice
+    - **Quality Preservation**: Maintains detail and contrast in grayscale conversion
+      - **Detail Preservation**: All image detail preserved, only color information removed
+        - **Spatial Detail**: All spatial detail (edges, textures) preserved
+        - **Color Removal**: Only color information removed, not detail
+        - **No Blurring**: No blurring or detail loss in conversion
+        - **Professional Practice**: Detail preservation is key advantage
+      - **Contrast Preservation**: Contrast relationships maintained in grayscale
+        - **Relative Contrast**: Relative contrast between areas maintained
+        - **Contrast Ratios**: Contrast ratios preserved
+        - **Dynamic Range**: Full dynamic range maintained
+        - **Professional Practice**: Contrast preservation maintains image impact
+      - **Dynamic Range**: Full dynamic range preserved (0-255 or 0-65535)
+        - **8-bit Range**: Full 0-255 range preserved
+        - **16-bit Range**: Full 0-65535 range preserved
+        - **No Clipping**: No clipping of highlights or shadows
+        - **Professional Practice**: Full dynamic range is essential
+      - **No Information Loss**: All brightness information preserved
+        - **Brightness Preservation**: All brightness information preserved
+        - **No Compression**: No compression or loss of brightness data
+        - **Information Retention**: All brightness information retained
+        - **Professional Practice**: No information loss is key advantage
+      - **Bit Depth**: Maintains original bit depth (8-bit stays 8-bit, 16-bit stays 16-bit)
+        - **8-bit Input**: 8-bit RGB → 8-bit Grayscale
+        - **16-bit Input**: 16-bit RGB → 16-bit Grayscale
+        - **No Bit Reduction**: Bit depth not reduced in conversion
+        - **Professional Practice**: Bit depth preservation maintains quality
+      - **Mathematical Precision**: Conversion uses full mathematical precision
+        - **Precision**: Formula calculated with full precision
+        - **8-bit Precision**: Full 8-bit precision in 8-bit mode
+        - **16-bit Precision**: Full 16-bit precision in 16-bit mode
+        - **Professional Practice**: Full precision maintains quality
+      - **No Artifacts**: Conversion doesn't introduce artifacts
+        - **No Banding**: No banding introduced by conversion
+        - **No Posterization**: No posterization introduced
+        - **No Noise**: No noise introduced
+        - **Professional Practice**: Clean conversion without artifacts
+    - **Reversibility**: Conversion is destructive (cannot restore original colors)
+      - **Color Loss**: Original color information permanently lost
+        - **Information Loss**: Color information (hue, saturation) permanently lost
+        - **Mathematical**: Cannot recover R, G, B from single L value
+        - **Irreversible**: Conversion is mathematically irreversible
+        - **Professional Practice**: Understanding irreversibility is essential
+      - **No Recovery**: Cannot recover original colors from grayscale
+        - **Mathematical Impossibility**: Cannot recover 3 values (R,G,B) from 1 value (L)
+        - **Information Theory**: Information lost cannot be recovered
+        - **No Algorithm**: No algorithm can recover lost color information
+        - **Professional Practice**: Recovery is impossible, backup is essential
+      - **Backup Essential**: Always work on copy, preserve RGB original
+        - **Copy First**: Always create copy before converting
+        - **Original Preservation**: Preserve original RGB file
+        - **Master File**: Keep RGB master file for future use
+        - **Professional Practice**: Backup is non-negotiable
+      - **Undo Limitation**: Undo only works if done immediately, not after save
+        - **Immediate Undo**: Undo works immediately after conversion
+        - **After Save**: Cannot undo after saving file
+        - **Permanent**: After save, conversion is permanent
+        - **Professional Practice**: Test before saving
+      - **Workflow Safety**: Safe workflow practices
+        - **Copy Workflow**: Always work on copy, never original
+        - **Save Original**: Save original before any conversion
+        - **Version Control**: Use version control or naming to track versions
+        - **Professional Practice**: Safe workflow prevents data loss
+      - **Professional Practice**: Never convert original, always work on copy
+        - **Golden Rule**: Never convert original file
+        - **Copy Rule**: Always work on copy
+        - **Professional Practice**: This is fundamental rule
+    - **Best Practice**: Work on RGB copy, convert to grayscale as final step
+      - **Workflow**: Complete all color editing in RGB first
+        - **Color Adjustments**: Make all color adjustments in RGB
+        - **Exposure Adjustments**: Make exposure adjustments in RGB
+        - **Color Grading**: Complete color grading in RGB
+        - **Professional Practice**: Complete all color work before conversion
+      - **Conversion Timing**: Convert to grayscale as final step before output
+        - **Timing**: Convert just before final output
+        - **After Editing**: After all editing is complete
+        - **Before Output**: Just before saving/outputting final image
+        - **Professional Practice**: Late conversion maintains flexibility
+      - **Master File**: Keep RGB master file for future use
+        - **Master Preservation**: Always preserve RGB master file
+        - **Future Use**: Master file allows future re-editing
+        - **Different Outputs**: Master allows different output versions
+        - **Professional Practice**: Master file is valuable asset
+      - **Flexibility**: RGB master allows re-editing and different conversions
+        - **Re-editing**: Can re-edit master file if needed
+        - **Different Conversions**: Can create different grayscale versions
+        - **Future Options**: Keeps future options open
+        - **Professional Practice**: Flexibility is key advantage
+      - **Professional Standard**: Industry standard workflow for B&W photography
+        - **Industry Standard**: This workflow is industry standard
+        - **Best Practice**: Recognized as best practice
+        - **Professional Practice**: Follow industry standard workflow
+    - **Professional Workflow**: Professional photographers often convert in post-processing
+      - **Capture**: Photograph in color (captures maximum information)
+        - **Color Capture**: Always capture in color (even for B&W work)
+        - **Information Preservation**: Color capture preserves maximum information
+        - **Flexibility**: Color capture provides maximum flexibility
+        - **Professional Practice**: Always capture in color
+      - **Edit in Color**: Edit in RGB for maximum flexibility
+        - **Color Editing**: Edit colors, exposure, etc. in RGB
+        - **Full Toolset**: All editing tools available in RGB
+        - **Flexibility**: Maximum editing flexibility in RGB
+        - **Professional Practice**: Edit entirely in RGB
+      - **Convert Late**: Convert to grayscale late in workflow
+        - **Late Conversion**: Convert as late as possible in workflow
+        - **After Editing**: Convert after all editing complete
+        - **Before Output**: Convert just before output
+        - **Professional Practice**: Late conversion is standard
+      - **Fine-tune**: Adjust contrast/brightness after conversion if needed
+        - **Post-Conversion**: Can adjust contrast/brightness after conversion
+        - **Fine-tuning**: Fine-tune grayscale appearance
+        - **Professional Practice**: Fine-tuning is common step
+      - **Output**: Output grayscale version, keep RGB master
+        - **Output Version**: Create grayscale output version
+        - **Master Preservation**: Keep RGB master unchanged
+        - **Version Management**: Manage multiple versions
+        - **Professional Practice**: Output version, preserve master
+      - **Workflow Benefits**: Benefits of this workflow
+        - **Maximum Flexibility**: Maximum flexibility throughout workflow
+        - **Quality Preservation**: Preserves maximum quality
+        - **Future Options**: Keeps future options open
+        - **Professional Practice**: Workflow benefits are significant
+  - **RGB to Indexed**: Converting to indexed color mode
+    - **Method**: Image → Mode → Indexed
+      - **Menu Location**: Main menu → Image → Mode → Indexed
+        - **Menu Path**: Main menu → Image → Mode → Indexed
+        - **Access**: Only available when image is in RGB mode
+        - **Availability**: Grayed out if image already indexed or in other mode
+        - **Professional Practice**: Convert from RGB to Indexed
+      - **Dialog**: Indexed Color Conversion dialog appears
+        - **Dialog Name**: "Indexed Color Conversion" dialog
+        - **Dialog Sections**: Palette options, dithering options, color count
+        - **Settings**: Configure all conversion settings in dialog
+        - **Professional Practice**: Review all settings before converting
+      - **Options**: Multiple options for palette and dithering
+        - **Palette Section**: Choose palette type (Optimized, Web-safe, Custom, etc.)
+        - **Dithering Section**: Choose dithering algorithm (None, Floyd-Steinberg, etc.)
+        - **Color Count**: Set number of colors (1-256)
+        - **Professional Practice**: Configure all options carefully
+      - **Preview**: Can preview result before applying
+        - **Preview Button**: Preview button shows conversion result
+        - **Comparison**: Compare original and preview
+        - **Quality Check**: Check quality before applying
+        - **Professional Practice**: Always preview before applying
+      - **Undo**: Can undo if done immediately
+        - **Undo Support**: Can undo conversion immediately after
+        - **Limitation**: Undo only works if done immediately
+        - **After Save**: Cannot undo after saving file
+        - **Professional Practice**: Test conversion before finalizing
+    - **Palette Options**: Optimized palette, Web-safe palette, Custom palette
+      - **Generate Optimum Palette**: GIMP analyzes image and creates optimal palette
+        - **Algorithm**: Uses median cut or similar color quantization algorithm
+          - **Median Cut Algorithm**: Divides RGB color space into 256 boxes
+            - **Process**: Recursively divides color space into smaller boxes
+              - **Initial Box**: Start with single box containing all colors
+              - **Recursive Division**: Recursively divide boxes until 256 boxes
+              - **Division Criteria**: Divide along longest dimension (R, G, or B)
+              - **Median Split**: Split at median value of longest dimension
+              - **Professional Practice**: Understanding process helps predict results
+            - **Selection**: Selects representative color from each box
+              - **Representative Color**: Average color of all pixels in box
+              - **Color Calculation**: Calculate mean R, G, B values for box
+              - **Palette Entry**: Add representative color to palette
+              - **Professional Practice**: Representative selection is key to quality
+            - **Quality**: Provides good quality color selection
+              - **Quality Level**: Good quality for most images
+              - **Color Preservation**: Preserves important colors well
+              - **Professional Practice**: Median cut provides good quality
+            - **Performance**: Good balance of quality and performance
+              - **Speed**: Reasonably fast for most images
+              - **Memory**: Moderate memory usage
+              - **Balance**: Good balance between quality and speed
+              - **Professional Practice**: Good performance for most uses
+            - **Algorithm Complexity**: O(n log n) where n is number of pixels
+              - **Time Complexity**: O(n log n) time complexity
+              - **Space Complexity**: O(n) space complexity
+              - **Efficiency**: Efficient for large images
+              - **Professional Practice**: Efficient algorithm for practical use
+            - **Professional Practice**: Median cut is standard algorithm
+              - **Industry Standard**: Median cut is industry standard
+              - **Widely Used**: Used in many image processing applications
+              - **Professional Practice**: Median cut is standard choice
+          - **Octree Algorithm**: Alternative algorithm using octree data structure
+            - **Process**: Builds octree structure of colors
+              - **Octree Structure**: Builds 8-ary tree structure
+              - **Color Space Division**: Divides RGB cube into 8 sub-cubes
+              - **Recursive Building**: Recursively builds tree structure
+              - **Professional Practice**: Octree provides alternative approach
+            - **Selection**: Selects colors from octree nodes
+              - **Node Selection**: Selects colors from octree nodes
+              - **Color Extraction**: Extracts representative colors from nodes
+              - **Palette Creation**: Creates palette from selected colors
+              - **Professional Practice**: Node selection determines quality
+            - **Quality**: Can provide good quality
+              - **Quality Level**: Can match median cut quality
+              - **Color Preservation**: Good color preservation
+              - **Professional Practice**: Octree can provide good quality
+            - **Performance**: May be faster for some images
+              - **Speed**: May be faster for certain image types
+              - **Memory**: May use more memory than median cut
+              - **Professional Practice**: Performance depends on image
+            - **Algorithm Complexity**: O(n log n) similar to median cut
+              - **Time Complexity**: O(n log n) time complexity
+              - **Space Complexity**: O(n) space complexity
+              - **Professional Practice**: Similar complexity to median cut
+            - **Professional Practice**: Alternative to median cut
+              - **Alternative**: Good alternative to median cut
+              - **Use Case**: May be better for certain image types
+              - **Professional Practice**: Consider octree as alternative
+          - **K-Means Clustering**: Alternative algorithm using clustering
+            - **Process**: Clusters colors using k-means algorithm
+              - **Initialization**: Initialize k cluster centers (k=256)
+              - **Iteration**: Iteratively assign pixels to nearest cluster
+              - **Update**: Update cluster centers based on assigned pixels
+              - **Convergence**: Repeat until convergence
+              - **Professional Practice**: K-means provides clustering approach
+            - **Selection**: Selects cluster centers as palette colors
+              - **Cluster Centers**: Final cluster centers become palette colors
+              - **Color Selection**: 256 cluster centers = 256 palette colors
+              - **Professional Practice**: Cluster centers represent colors well
+            - **Quality**: Can provide good quality
+              - **Quality Level**: Can provide good quality
+              - **Convergence**: Quality depends on convergence
+              - **Professional Practice**: Quality depends on algorithm parameters
+            - **Algorithm Complexity**: O(n × k × i) where i is iterations
+              - **Time Complexity**: O(n × k × i) - can be slower
+              - **Iterations**: Number of iterations affects performance
+              - **Professional Practice**: May be slower than median cut
+            - **Professional Practice**: Alternative algorithm
+              - **Alternative**: Alternative to median cut and octree
+              - **Use Case**: May be useful for specific cases
+              - **Professional Practice**: Consider k-means as alternative
+        - **Color Selection**: Selects 256 most representative colors from image
+          - **Representative Colors**: Colors that best represent image
+          - **Color Distribution**: Considers color distribution in image
+          - **Importance**: Prioritizes frequently used colors
+          - **Professional Practice**: Representative selection is key to quality
+        - **Quality**: Best quality for photographic images
+          - **Photo Quality**: Best quality for photos with many colors
+          - **Color Preservation**: Preserves most important colors
+          - **Professional Practice**: Optimized palette is best for photos
+        - **Use Case**: Converting photos to GIF format
+          - **GIF Conversion**: Standard method for photo-to-GIF conversion
+          - **Professional Practice**: Optimized palette standard for GIF conversion
+      - **Use Web-optimized Palette**: Uses standard 216-color web-safe palette
+        - **Colors**: 216 web-safe colors + 40 system colors = 256 total
+          - **Web-Safe Colors**: 216 colors that display consistently on 8-bit displays
+          - **Color Values**: Colors with RGB values: 0, 51, 102, 153, 204, 255 (6 values per channel)
+          - **Total Combinations**: 6³ = 216 web-safe colors
+          - **System Colors**: Additional 40 system colors for total of 256
+          - **Professional Practice**: Web-safe palette ensures maximum compatibility
+        - **Web-Safe Color Definition**: What makes colors "web-safe"
+          - **8-bit Display**: Colors that display correctly on 8-bit color displays
+          - **Color Values**: RGB values must be multiples of 51 (0, 51, 102, 153, 204, 255)
+          - **Consistency**: Ensures consistent appearance across different systems
+          - **Historical Context**: Important when 8-bit displays were common
+          - **Professional Practice**: Less important now but still used for compatibility
+        - **Compatibility**: Maximum browser compatibility
+          - **Old Browsers**: Ensures compatibility with very old browsers
+          - **8-bit Displays**: Works correctly on 8-bit color displays
+          - **Consistency**: Consistent colors across all systems
+          - **Professional Practice**: Maximum compatibility for web graphics
+        - **Quality**: Lower quality, limited color range
+          - **Limited Colors**: Only 216 colors available
+          - **Quality Impact**: Lower quality than optimized palette
+          - **Color Accuracy**: Limited color accuracy
+          - **Professional Practice**: Quality trade-off for compatibility
+        - **Modern Relevance**: Less important with modern browsers
+          - **Modern Browsers**: Modern browsers support full color
+          - **Modern Displays**: Modern displays support millions of colors
+          - **Still Used**: Still used for maximum compatibility
+          - **Professional Practice**: Less critical now but still useful
+        - **Use Case**: Maximum compatibility for web graphics
+          - **Maximum Compatibility**: When maximum compatibility is required
+          - **Old Systems**: For graphics that must work on old systems
+          - **Professional Practice**: Use when maximum compatibility needed
+      - **Use Black and White (1-bit) Palette**: Pure black and white only
+        - **Colors**: Only 2 colors (black and white)
+          - **Color Count**: Exactly 2 colors (minimum possible)
+          - **Color Values**: Black (0,0,0) and White (255,255,255) or (0,0,0) and (1,1,1) in 1-bit
+          - **No Grays**: No intermediate gray values
+          - **Professional Practice**: Pure black and white only
+        - **Bit Depth**: 1 bit per pixel
+          - **1-bit**: 1 bit per pixel (can store 2 values: 0 or 1)
+          - **Memory**: Smallest possible memory usage
+          - **File Size**: Smallest possible file size
+          - **Professional Practice**: 1-bit provides maximum compression
+        - **Use Case**: Line art, text, high-contrast graphics
+          - **Line Art**: Line art with pure black lines on white
+          - **Text**: Text graphics (black text on white)
+          - **High Contrast**: High-contrast graphics with no grays
+          - **Scanned Text**: Scanned text documents
+          - **Professional Practice**: 1-bit for high-contrast graphics only
+        - **File Size**: Smallest possible file size
+          - **Size**: 1/8 size of 8-bit grayscale (1 bit vs 8 bits per pixel)
+          - **Compression**: Excellent compression with 1-bit data
+          - **Professional Practice**: Maximum file size reduction
+        - **Limitations**: Limitations of 1-bit palette
+          - **No Grays**: Cannot represent any gray values
+          - **Threshold**: Must use threshold to convert grays to black/white
+          - **Detail Loss**: May lose detail in conversion
+          - **Professional Practice**: Understand limitations before using
+        - **Conversion Process**: How 1-bit conversion works
+          - **Threshold**: Apply threshold to convert grays to black/white
+          - **Threshold Value**: Typically 50% (128 for 8-bit)
+          - **Above Threshold**: Values above threshold become white
+          - **Below Threshold**: Values below threshold become black
+          - **Professional Practice**: Threshold selection affects result
+        - **When to Use**: Guidelines for using 1-bit palette
+          - **Line Art**: Pure line art with no grays
+          - **Text**: Text documents and graphics
+          - **High Contrast**: High-contrast images with no grays
+          - **Professional Practice**: Use only for appropriate images
+      - **Use Custom Palette**: Load existing palette file
+        - **Formats**: .gpl (GIMP palette), .act (Photoshop), .pal (Paint Shop Pro)
+          - **GPL Format**: GIMP Palette format (.gpl)
+            - **GIMP Native**: Native GIMP palette format
+            - **Text Format**: Plain text format, human-readable
+            - **Structure**: Contains palette name, colors, comments
+            - **Professional Practice**: GPL is standard GIMP format
+          - **ACT Format**: Adobe Color Table format (.act)
+            - **Photoshop Format**: Photoshop palette format
+            - **Binary Format**: Binary format
+            - **Compatibility**: GIMP can import ACT files
+            - **Professional Practice**: ACT for Photoshop compatibility
+          - **PAL Format**: Paint Shop Pro palette format (.pal)
+            - **PSP Format**: Paint Shop Pro format
+            - **Compatibility**: GIMP can import PAL files
+            - **Professional Practice**: PAL for PSP compatibility
+        - **Palette Creation**: How to create custom palettes
+          - **Manual Creation**: Create palette manually in GIMP
+          - **Extract from Image**: Extract palette from existing image
+          - **Import from File**: Import palette from file
+          - **Professional Practice**: Create palettes for specific needs
+        - **Use Case**: Matching specific color scheme
+          - **Brand Colors**: Match brand color scheme
+          - **Artistic Style**: Match artistic color style
+          - **Consistency**: Ensure color consistency across images
+          - **Professional Practice**: Custom palettes for specific requirements
+        - **Quality**: Depends on palette quality and image content
+          - **Palette Quality**: Quality depends on how well palette matches image
+          - **Image Content**: Quality depends on image content
+          - **Match Quality**: Better match = better quality
+          - **Professional Practice**: Test palette quality before use
+        - **Palette Optimization**: Optimizing custom palettes
+          - **Color Selection**: Select colors that match image content
+          - **Color Distribution**: Ensure good color distribution
+          - **Professional Practice**: Optimize palettes for best results
+      - **Remove Unused Colors from Palette**: Removes unused colors from palette
+        - **Optimization**: Reduces palette size if fewer than 256 colors used
+          - **Process**: Analyzes image to find which palette colors are actually used
+          - **Removal**: Removes unused colors from palette
+          - **Size Reduction**: Reduces palette from 256 to actual number of colors used
+          - **Professional Practice**: Optimization improves efficiency
+        - **File Size**: Slightly smaller file size
+          - **Size Reduction**: Smaller palette = slightly smaller file
+          - **Palette Size**: Palette size reduced (fewer colors to store)
+          - **Overall Impact**: Small but measurable file size reduction
+          - **Professional Practice**: Every byte counts for web optimization
+        - **Use Case**: When image uses fewer than 256 colors
+          - **Limited Colors**: When image naturally uses fewer than 256 colors
+          - **Optimization**: Optimize palette to match actual usage
+          - **Efficiency**: More efficient use of palette space
+          - **Professional Practice**: Use when image has limited colors
+        - **Algorithm**: How unused color removal works
+          - **Color Analysis**: Analyze image to find used colors
+          - **Palette Comparison**: Compare palette colors to used colors
+          - **Removal**: Remove colors not found in image
+          - **Professional Practice**: Understanding process helps predict results
+        - **Benefits**: Benefits of removing unused colors
+          - **Efficiency**: More efficient palette usage
+          - **File Size**: Slightly smaller file size
+          - **Clarity**: Cleaner palette with only used colors
+          - **Professional Practice**: Benefits are worth it when applicable
+    - **Dithering Options**: None, Floyd-Steinberg, Positioned, Random
+      - **No Dithering**: Uses nearest palette color for each pixel
+        - **Algorithm**: Simple nearest-neighbor color matching
+          - **Process**: For each pixel, find nearest palette color using Euclidean distance
+          - **Distance Calculation**: Calculate distance = √((R₁-R₂)² + (G₁-G₂)² + (B₁-B₂)²)
+          - **Selection**: Select palette color with minimum distance
+          - **No Error Distribution**: No error distribution to neighbors
+          - **Professional Practice**: Understanding algorithm helps predict results
+        - **Speed**: Fastest option
+          - **Computation**: Minimal computation required (just distance calculation)
+          - **Time Complexity**: O(n × m) where n=pixels, m=palette colors
+          - **Performance**: Fastest of all dithering options
+          - **No Neighbor Processing**: No processing of neighboring pixels
+          - **Professional Practice**: Fastest but lowest quality
+        - **Quality**: May cause visible banding in gradients
+          - **Banding**: Visible color bands in smooth gradients
+          - **Posterization**: May cause posterization effect
+          - **Quality Impact**: Significant quality reduction in gradients
+          - **Color Steps**: Visible color steps instead of smooth transitions
+          - **Professional Practice**: Acceptable only when banding is acceptable
+        - **Use Case**: Images with few colors, graphics with solid colors
+          - **Few Colors**: Images that naturally have few colors
+          - **Solid Colors**: Graphics with solid color areas
+          - **No Gradients**: Images without smooth gradients
+          - **Line Art**: Line art and text graphics
+          - **Professional Practice**: Use only when banding is acceptable
+        - **When to Use**: Guidelines for using no dithering
+          - **Line Art**: Line art with solid colors (no gradients)
+          - **Text Graphics**: Text-based graphics
+          - **Pixel Art**: Pixel art (may want no dithering for clean look)
+          - **High Contrast**: High-contrast graphics without gradients
+          - **Professional Practice**: Use when banding is not a problem
+        - **When to Avoid**: When not to use no dithering
+          - **Photos**: Never use for photos (causes severe banding)
+          - **Gradients**: Never use for images with smooth gradients
+          - **Quality Work**: Avoid for quality-critical work
+          - **Professional Practice**: Avoid when quality is important
+      - **Floyd-Steinberg Dithering**: Error diffusion dithering
+        - **Algorithm**: Distributes quantization error to neighboring pixels
+          - **Error Calculation**: Calculate error = original_color - nearest_palette_color
+          - **Error Distribution**: Distribute error to neighboring pixels
+          - **Distribution Pattern**: Distribute to right, down-left, down, down-right
+          - **Distribution Weights**: 7/16 right, 3/16 down-left, 5/16 down, 1/16 down-right
+          - **Mathematical**: error_right = error × 7/16, error_down_left = error × 3/16, etc.
+          - **Professional Practice**: Understanding algorithm helps predict results
+        - **Algorithm Details**: Step-by-step Floyd-Steinberg process
+          - **Step 1**: For each pixel, find nearest palette color
+          - **Step 2**: Calculate quantization error (difference)
+          - **Step 3**: Distribute error to neighboring pixels using weights
+          - **Step 4**: Move to next pixel (left-to-right, top-to-bottom)
+          - **Step 5**: Repeat for all pixels
+          - **Professional Practice**: Sequential processing from top-left to bottom-right
+        - **Error Distribution Weights**: Specific weights for error distribution
+          - **Right Pixel (7/16)**: 43.75% of error to pixel immediately right
+          - **Down-Left Pixel (3/16)**: 18.75% of error to pixel down-left
+          - **Down Pixel (5/16)**: 31.25% of error to pixel directly below
+          - **Down-Right Pixel (1/16)**: 6.25% of error to pixel down-right
+          - **Total**: Weights sum to 16/16 = 1.0 (all error distributed)
+          - **Professional Practice**: Weights designed for optimal visual result
+        - **Quality**: Highest quality, smooth gradients
+          - **Smooth Gradients**: Creates smooth-appearing gradients
+          - **Natural Look**: Natural-looking, not obviously dithered
+          - **Quality**: Best quality dithering method
+          - **Professional Practice**: Floyd-Steinberg is best choice for photos
+        - **Appearance**: Natural-looking, not obviously dithered
+          - **Pattern Type**: Creates natural, organic-looking patterns
+          - **Visibility**: Dithering pattern not obviously visible
+          - **Appearance**: Looks like natural image texture or grain
+          - **Professional Practice**: Natural appearance is major advantage
+        - **Performance**: Slower than no dithering but acceptable
+          - **Computation**: Requires computation for each pixel
+          - **Speed**: Slower than no dithering but usually acceptable
+          - **Time Complexity**: O(n) where n is number of pixels
+          - **Professional Practice**: Performance trade-off is worth it for quality
+        - **Use Case**: Photographic images, smooth gradients
+          - **Photos**: Ideal for photographic images
+          - **Gradients**: Best for smooth gradients
+          - **Professional Practice**: Standard choice for photo-to-indexed conversion
+        - **Algorithm History**: Developed by Floyd and Steinberg in 1976
+          - **Year**: 1976
+          - **Authors**: Robert W. Floyd and Louis Steinberg
+          - **Publication**: "An adaptive algorithm for spatial grayscale"
+          - **Impact**: Became standard error diffusion algorithm
+          - **Professional Practice**: Understanding history provides context
+      - **Positioned Dithering**: Ordered dithering using fixed pattern
+        - **Pattern**: Uses Bayer matrix or similar fixed pattern
+          - **Bayer Matrix**: Fixed dithering matrix (typically 4×4 or 8×8)
+          - **Matrix Values**: Matrix contains threshold values
+          - **Pattern Application**: Matrix pattern repeated across image
+          - **Professional Practice**: Bayer matrix is standard ordered dithering pattern
+        - **Bayer Matrix Details**: How Bayer matrix works
+          - **Matrix Size**: Typically 4×4 or 8×8 matrix
+          - **Threshold Values**: Matrix contains threshold values (0-15 for 4×4)
+          - **Pattern Repeat**: Matrix pattern repeats across image
+          - **Threshold Comparison**: Compare pixel value to matrix threshold
+          - **Professional Practice**: Understanding matrix helps predict results
+        - **Algorithm Process**: How positioned dithering works
+          - **Step 1**: For each pixel, get corresponding matrix threshold
+          - **Step 2**: Compare pixel value to threshold
+          - **Step 3**: If pixel value > threshold, use lighter palette color
+          - **Step 4**: If pixel value ≤ threshold, use darker palette color
+          - **Step 5**: Repeat for all pixels using matrix pattern
+          - **Professional Practice**: Fixed pattern creates structured appearance
+        - **Quality**: Good quality, more visible pattern than Floyd-Steinberg
+          - **Quality Level**: Good quality but lower than Floyd-Steinberg
+          - **Pattern Visibility**: Dithering pattern more visible
+          - **Professional Practice**: Acceptable quality when Floyd-Steinberg not suitable
+        - **Appearance**: More structured dithering pattern
+          - **Pattern Type**: Structured, geometric pattern
+          - **Visibility**: More visible than Floyd-Steinberg
+          - **Appearance**: More obvious dithering pattern
+          - **Professional Practice**: Structured appearance is trade-off
+        - **Speed**: Faster than Floyd-Steinberg
+          - **Computation**: Simpler computation than Floyd-Steinberg
+          - **Speed**: Faster processing
+          - **Time Complexity**: O(n) but faster constant factor
+          - **Professional Practice**: Speed advantage over Floyd-Steinberg
+        - **Use Case**: When Floyd-Steinberg too slow or creates artifacts
+          - **Speed Alternative**: Use when Floyd-Steinberg too slow
+          - **Artifact Alternative**: Use when Floyd-Steinberg creates artifacts
+          - **Professional Practice**: Good alternative when needed
+        - **Bayer Matrix Example**: Example 4×4 Bayer matrix
+          - **Matrix**: [0, 8, 2, 10; 12, 4, 14, 6; 3, 11, 1, 9; 15, 7, 13, 5]
+          - **Values**: Threshold values from 0-15
+          - **Pattern**: Creates specific dithering pattern
+          - **Professional Practice**: Matrix values determine pattern appearance
+      - **Random Dithering**: Random dithering pattern
+        - **Pattern**: Random pattern, different each time
+          - **Randomness**: Completely random dithering pattern
+          - **Non-Deterministic**: Different result each time (not reproducible)
+          - **No Pattern**: No fixed pattern structure
+          - **Random Selection**: Random selection creates noise
+          - **Professional Practice**: Randomness creates unpredictable results
+        - **Algorithm**: How random dithering works
+          - **Process**: For each pixel, randomly choose between nearest palette colors
+          - **Probability**: Probability based on distance to palette colors
+          - **Random Selection**: Random selection creates noise pattern
+          - **No Structure**: No structured pattern like other methods
+          - **Professional Practice**: Understanding algorithm explains noisy result
+        - **Quality**: Lower quality, noisy appearance
+          - **Noise**: Creates noisy, grainy appearance
+          - **Quality Level**: Lower quality than other methods
+          - **Appearance**: Unpleasant noisy appearance
+          - **Unpredictable**: Unpredictable quality due to randomness
+          - **Professional Practice**: Not recommended for most uses
+        - **Use Case**: Rarely used, mainly for special effects
+          - **Special Effects**: May be used for special artistic effects
+          - **Rare Use**: Very rarely used in professional work
+          - **Artistic**: Sometimes used for artistic noise effect
+          - **Experimental**: Mainly for experimental work
+          - **Professional Practice**: Avoid unless special effect desired
+        - **When to Avoid**: When not to use random dithering
+          - **Photos**: Never use for photos (creates unacceptable noise)
+          - **Quality Work**: Never use for quality-critical work
+          - **Professional Work**: Avoid in all professional work
+          - **Gradients**: Never use for images with gradients
+          - **Professional Practice**: Avoid random dithering in professional work
+        - **Performance**: Performance characteristics
+          - **Speed**: Similar speed to other dithering methods
+          - **Random Generation**: Requires random number generation
+          - **Professional Practice**: Performance not a reason to use this method
+    - **Color Count**: Choose number of colors (1-256)
+      - **Range**: Can choose any number from 1 to 256 colors
+        - **Minimum**: 1 color (monochrome, rarely used)
+        - **Maximum**: 256 colors (8-bit palette limit)
+        - **Selection**: Choose based on image content and quality requirements
+        - **Professional Practice**: Test different values to find optimal
+      - **Quality vs Size**: More colors = better quality but larger file
+        - **Quality Curve**: Quality improves with more colors, but with diminishing returns
+        - **File Size**: File size increases with more colors
+        - **Balance**: Find balance between quality and file size
+        - **Professional Practice**: Balance quality and file size for intended use
+      - **Testing**: Test different color counts to find optimal balance
+        - **Test Values**: Test common values (32, 64, 128, 256)
+        - **Visual Comparison**: Compare quality visually
+        - **File Size Comparison**: Compare file sizes
+        - **Professional Practice**: Testing is essential for optimal results
+      - **Common Values**: 128, 256 colors common for photos
+        - **256 Colors**: Maximum quality, largest file size
+        - **128 Colors**: Good quality, smaller file size (often sufficient)
+        - **64 Colors**: Acceptable quality for simple images
+        - **Professional Practice**: 128-256 colors common for photos
+      - **Minimum**: 2 colors minimum (black and white)
+        - **1-bit**: 2 colors (black and white) for line art
+        - **Use Case**: High-contrast graphics, line art
+        - **Professional Practice**: 2 colors for specific use cases
+      - **Color Count Selection Guide**: Guidelines for choosing color count
+        - **Photos with Many Colors**: Use 128-256 colors
+        - **Photos with Few Colors**: Use 64-128 colors
+        - **Simple Graphics**: Use 32-64 colors
+        - **Line Art**: Use 2 colors
+        - **Professional Practice**: Match color count to image content
+    - **Quality Trade-offs**: More colors = better quality but larger file size
+      - **256 Colors**: Best quality, largest file size
+        - **Quality**: Maximum quality, minimal color loss
+        - **File Size**: Largest file size (full palette)
+        - **Use Case**: When maximum quality is required
+        - **Professional Practice**: Use 256 colors for maximum quality
+      - **128 Colors**: Good quality, smaller file size
+        - **Quality**: Good quality, acceptable color loss
+        - **File Size**: Smaller file size (half palette)
+        - **Use Case**: Good balance for most photos
+        - **Professional Practice**: 128 colors often sufficient
+      - **64 Colors**: Acceptable quality for simple images
+        - **Quality**: Acceptable quality, noticeable color loss
+        - **File Size**: Smaller file size
+        - **Use Case**: Simple images with limited colors
+        - **Professional Practice**: 64 colors for simple images
+      - **32 Colors**: Lower quality, very small file size
+        - **Quality**: Lower quality, significant color loss
+        - **File Size**: Very small file size
+        - **Use Case**: Simple graphics, maximum file size reduction
+        - **Professional Practice**: 32 colors for simple graphics
+      - **Quality Curve Analysis**: Understanding quality vs color count relationship
+        - **Diminishing Returns**: Quality improvement decreases as color count increases
+        - **Sweet Spot**: Often 128 colors provides good balance
+        - **Testing**: Test to find optimal point for each image
+        - **Professional Practice**: Understand quality curve for optimal selection
+      - **File Size Analysis**: Understanding file size vs color count relationship
+        - **Linear Relationship**: File size increases roughly linearly with color count
+        - **Palette Size**: Palette size = color_count × 3 bytes (RGB)
+        - **Image Data**: Image data size depends on dithering
+        - **Professional Practice**: Understand file size relationship
+      - **Testing Required**: Test different values for each image
+        - **Image-Specific**: Optimal color count depends on image
+        - **Testing Process**: Test multiple values to find optimal
+        - **Professional Practice**: Always test for optimal results
+    - **Professional Practice**: Test different palette and dithering options for best results
+      - **Experimentation**: Try different combinations to find best result
+        - **Combination Testing**: Test different palette + dithering combinations
+        - **Systematic Approach**: Test systematically (all combinations)
+        - **Documentation**: Document which combinations work best
+        - **Professional Practice**: Systematic testing finds best results
+      - **Preview**: Use preview to compare options before applying
+        - **Preview Feature**: Use preview feature in conversion dialog
+        - **Comparison**: Compare different options side-by-side
+        - **Visual Assessment**: Visually assess quality of each option
+        - **Professional Practice**: Preview saves time and improves results
+      - **Quality Check**: Check result at 100% zoom to see dithering quality
+        - **100% Zoom**: Always check at 100% zoom (1:1 pixel view)
+        - **Dithering Visibility**: Dithering more visible at 100% zoom
+        - **Quality Assessment**: Assess quality at actual viewing size
+        - **Professional Practice**: 100% zoom check is essential
+      - **File Size**: Balance quality and file size for intended use
+        - **Intended Use**: Consider how image will be used
+        - **Web Use**: For web, balance quality and file size
+        - **Quality Use**: For quality work, prioritize quality
+        - **Professional Practice**: Match quality to intended use
+      - **Workflow**: Convert to indexed as final step after all editing
+        - **Final Step**: Convert only after all editing complete
+        - **No Editing After**: Indexed mode has limited editing options
+        - **Workflow Position**: Final step in workflow
+        - **Professional Practice**: Convert as final step only
+      - **Testing Methodology**: Systematic testing approach
+        - **Test Matrix**: Create test matrix of all combinations
+        - **Documentation**: Document results of each test
+        - **Comparison**: Compare results systematically
+        - **Professional Practice**: Systematic testing is most effective
+      - **Quality Metrics**: How to assess quality
+        - **Visual Assessment**: Primary method is visual assessment
+        - **Banding Check**: Check for visible banding
+        - **Dithering Check**: Check dithering appearance
+        - **Color Accuracy**: Check color accuracy
+        - **Professional Practice**: Multiple quality metrics ensure best results
+  - **Grayscale to RGB**: Converting grayscale to RGB
+    - **Method**: Image → Mode → RGB
+      - **Menu Location**: Main menu → Image → Mode → RGB
+        - **Menu Path**: Main menu → Image → Mode → RGB
+        - **Availability**: Available when image is in Grayscale mode
+        - **Access**: Only available for grayscale images
+        - **Professional Practice**: Convert from Grayscale to RGB
+      - **Dialog**: No dialog, conversion immediate
+        - **No Dialog**: No dialog appears, conversion happens immediately
+        - **Instant**: Conversion is instant (no processing needed)
+        - **Professional Practice**: Conversion is immediate
+      - **Result**: Creates three identical channels from single grayscale channel
+        - **Channel Creation**: Creates three new channels (R, G, B)
+        - **Value Copy**: Copies grayscale value to all three channels
+        - **Mathematical**: For each pixel: R = G = B = Grayscale_value
+        - **Professional Practice**: Understanding result helps with workflow
+      - **Undo**: Can undo if done immediately
+        - **Undo Support**: Can undo conversion immediately after
+        - **Limitation**: Undo only works if done immediately
+        - **After Save**: Cannot undo after saving file
+        - **Professional Practice**: Can safely test conversion
+    - **Result**: Three identical channels (R=G=B for each pixel)
+      - **Channel Duplication**: Grayscale value copied to all three RGB channels
+        - **Process**: For each pixel, grayscale value copied to R, G, and B channels
+        - **Mathematical**: R[pixel] = G[pixel] = B[pixel] = Grayscale[pixel]
+        - **Result**: Three identical channels
+        - **Professional Practice**: Understanding duplication helps with workflow
+      - **Color Information**: No new color information created
+        - **No Color Added**: No color information is added
+        - **Same Appearance**: Image appears identical (still grayscale)
+        - **Data Only**: Only data structure changes, not appearance
+        - **Professional Practice**: Conversion doesn't add color information
+      - **Appearance**: Image appears identical (still grayscale visually)
+        - **Visual Result**: Image looks exactly the same
+        - **No Change**: No visual change in image appearance
+        - **Data Change**: Only data structure changes
+        - **Professional Practice**: Appearance unchanged, structure changed
+      - **Data Structure**: Now has three channels instead of one
+        - **Before**: Single grayscale channel
+        - **After**: Three RGB channels (all identical)
+        - **Structure Change**: Data structure changes from 1 to 3 channels
+        - **Professional Practice**: Structure change enables RGB operations
+      - **Memory Usage**: File size increases 3x (one channel to three channels)
+        - **8-bit**: 1 byte/pixel → 3 bytes/pixel (3x increase)
+        - **16-bit**: 2 bytes/pixel → 6 bytes/pixel (3x increase)
+        - **File Size**: File size triples
+        - **Professional Practice**: Memory usage increase is trade-off
+    - **Use Cases**: Adding color to grayscale images, applying RGB-only filters
+      - **Colorization**: Can now add color to grayscale images (tinting, colorizing)
+      - **RGB Filters**: Many filters only work in RGB mode
+      - **Color Adjustments**: Can make color adjustments (even if image is grayscale)
+      - **Layer Blending**: RGB mode required for some blending modes
+      - **Professional Use**: Converting B&W photos to color, or adding color effects
+    - **Quality**: No quality loss (grayscale information preserved in all channels)
+      - **Information Preservation**: All grayscale information preserved
+      - **No Degradation**: No quality loss in conversion
+      - **Reversibility**: Can convert back to grayscale without loss
+      - **Bit Depth**: Maintains original bit depth
+      - **Professional Practice**: Safe conversion, no information loss
+    - **Professional Insight**: Useful for colorizing black and white photos
+      - **Historical Photos**: Colorizing historical black and white photographs
+      - **Artistic Effect**: Adding selective color to B&W images
+      - **Tinting**: Adding color tints to grayscale images
+      - **Workflow**: Convert to RGB, then use color tools to add color
+      - **Technique**: Use layer masks to selectively colorize areas
+- **Color Mode Best Practices**: Professional color mode management
+  - **Mode Selection**: Choose color mode based on final output destination
+    - **Digital Display**: Always use RGB for screen-based work
+      - **Reason**: All digital displays use RGB color model
+        - **Display Technology**: All displays (LCD, OLED, etc.) use RGB
+        - **Native Format**: RGB is native format for displays
+        - **No Conversion**: No conversion needed for display
+        - **Professional Practice**: RGB is natural choice for displays
+      - **Compatibility**: RGB works with all digital devices
+        - **Universal Support**: All digital devices support RGB
+        - **No Compatibility Issues**: No compatibility problems
+        - **Professional Practice**: RGB ensures maximum compatibility
+      - **Quality**: Full color range available
+        - **Color Range**: Full color range (millions or trillions of colors)
+        - **No Limitations**: No color limitations
+        - **Professional Practice**: RGB provides maximum quality
+      - **Workflow**: No conversion needed for digital output
+        - **Direct Output**: Can output directly without conversion
+        - **Workflow Efficiency**: Simplifies workflow
+        - **Professional Practice**: No conversion saves time
+      - **Professional Standard**: RGB is universal for digital work
+        - **Industry Standard**: RGB is industry standard
+        - **Universal Adoption**: Universally adopted for digital work
+        - **Professional Practice**: RGB is standard choice
+    - **Print Monochrome**: Use Grayscale for black and white printing
+      - **Reason**: Grayscale printing uses only black ink (or single color)
+        - **Ink Efficiency**: Uses only black ink, not color inks
+        - **Cost Efficiency**: More cost-efficient for B&W printing
+        - **Professional Practice**: Grayscale is efficient for B&W printing
+      - **Efficiency**: More efficient than RGB printing for B&W
+        - **Ink Usage**: Uses less ink than RGB printing
+        - **Processing**: Simpler processing for printer
+        - **Professional Practice**: More efficient workflow
+      - **Quality**: Better quality for monochrome prints
+        - **Print Quality**: Better quality for B&W prints
+        - **Tone Reproduction**: Better tone reproduction
+        - **Professional Practice**: Better quality for B&W
+      - **File Size**: Smaller files for printing
+        - **Size Reduction**: 1/3 file size compared to RGB
+        - **Transfer Speed**: Faster file transfer
+        - **Professional Practice**: Smaller files are more efficient
+      - **Professional Practice**: Standard for B&W print workflows
+        - **Industry Standard**: Standard for B&W printing
+        - **Best Practice**: Recognized best practice
+        - **Professional Practice**: Follow standard practice
+    - **Web Graphics**: RGB for photos, Indexed for simple graphics/GIFs
+      - **Photos**: RGB provides full color range for photographs
+        - **Photo Quality**: Full color range for photos
+        - **Quality Requirement**: Photos need full color range
+        - **Professional Practice**: RGB for all photos
+      - **Simple Graphics**: Indexed provides small file sizes for simple graphics
+        - **File Size**: Very small file sizes
+        - **Simple Graphics**: Works well for simple graphics
+        - **Professional Practice**: Indexed for simple graphics
+      - **GIF Format**: Indexed required for GIF format (supports animation)
+        - **Format Requirement**: GIF format requires indexed mode
+        - **Animation Support**: GIF supports animation (requires indexed)
+        - **Professional Practice**: Indexed required for GIF
+      - **File Size**: Balance quality and file size for web
+        - **Web Optimization**: Balance quality and file size
+        - **Loading Speed**: Smaller files load faster
+        - **Professional Practice**: Balance for web use
+      - **Professional Practice**: Match format to content type
+        - **Content Matching**: Match format to content
+        - **Quality vs Size**: Balance quality and size
+        - **Professional Practice**: Match format appropriately
+    - **Professional Standard**: Match color mode to output requirements
+      - **Workflow Planning**: Plan workflow based on final output
+        - **Output Analysis**: Analyze final output requirements
+        - **Workflow Design**: Design workflow around output
+        - **Professional Practice**: Plan workflow carefully
+      - **Mode Selection**: Choose mode that matches output device
+        - **Device Matching**: Match mode to output device
+        - **Optimal Choice**: Choose optimal mode for device
+        - **Professional Practice**: Match mode to device
+      - **Quality Optimization**: Optimize for intended output
+        - **Output Optimization**: Optimize for specific output
+        - **Quality Matching**: Match quality to output requirements
+        - **Professional Practice**: Optimize for output
+      - **Professional Practice**: Always consider output when selecting mode
+        - **Output First**: Always consider output first
+        - **Mode Selection**: Select mode based on output
+        - **Professional Practice**: Output determines mode
+  - **Conversion Timing**: Convert color modes at appropriate workflow stages
+    - **Early Conversion**: Convert early if mode is final (e.g., Grayscale for B&W print)
+      - **When**: When you know final output mode from start
+      - **Advantage**: Work in final mode throughout workflow
+      - **Example**: B&W photography project destined for grayscale print
+      - **Consideration**: Less flexibility if requirements change
+      - **Professional Practice**: Only convert early if certain of final output
+    - **Late Conversion**: Keep RGB until final step for maximum editing flexibility
+      - **When**: When output requirements may change
+      - **Advantage**: Maximum editing flexibility
+      - **Example**: Photo that may be used for both web and print
+      - **Workflow**: Edit in RGB, convert at end for specific output
+      - **Professional Practice**: Standard practice for maximum flexibility
+    - **Backup Preservation**: Always keep RGB copy before destructive conversions
+      - **Why**: Destructive conversions cannot be reversed
+      - **Method**: Duplicate image before converting
+      - **Storage**: Keep RGB master file for future use
+      - **Flexibility**: Allows re-editing and different conversions
+      - **Professional Standard**: Never convert original, always work on copy
+    - **Professional Practice**: Maintain RGB master files, convert for specific outputs
+      - **Master File**: Keep RGB master as source of truth
+      - **Output Versions**: Create converted versions for specific outputs
+      - **Naming**: Use clear naming to distinguish master from output versions
+      - **Archival**: RGB master preserves maximum information
+      - **Professional Standard**: Industry standard workflow
+  - **Quality Preservation**: Maintain quality during conversions
+    - **16-bit Workflow**: Use 16-bit RGB for professional photography (prevents banding)
+      - **Banding Prevention**: 16-bit provides smooth gradients, prevents banding
+        - **Bit Depth**: 16-bit provides 65,536 levels per channel vs 256 in 8-bit
+        - **Gradient Smoothness**: Much smoother gradients in 16-bit
+        - **Banding Elimination**: Eliminates visible banding in gradients
+        - **Professional Practice**: 16-bit essential for smooth gradients
+      - **Editing Headroom**: More headroom for extensive editing
+        - **Data Headroom**: More data headroom for editing operations
+        - **Round-off Errors**: Reduces round-off errors during editing
+        - **Multiple Operations**: Can perform more editing operations without degradation
+        - **Professional Practice**: 16-bit provides editing headroom
+      - **Quality**: Higher quality throughout editing process
+        - **Quality Maintenance**: Maintains higher quality throughout editing
+        - **Quality Loss**: Less quality loss during editing operations
+        - **Professional Practice**: Higher quality maintained
+      - **Storage**: Requires more storage but worth it for quality
+        - **File Size**: 16-bit files are 2x larger than 8-bit
+        - **Storage Cost**: Higher storage cost but worth it
+        - **Professional Practice**: Storage cost is acceptable trade-off
+      - **Professional Standard**: 16-bit workflow standard for professional photography
+        - **Industry Standard**: 16-bit is industry standard
+        - **Best Practice**: Recognized best practice
+        - **Professional Practice**: Follow industry standard
+      - **16-bit vs 8-bit Comparison**: Technical comparison
+        - **Levels**: 65,536 levels (16-bit) vs 256 levels (8-bit)
+        - **Dynamic Range**: Better dynamic range in 16-bit
+        - **Quality Difference**: Significant quality difference
+        - **Professional Practice**: Understand quality difference
+      - **When to Use 16-bit**: Guidelines for when to use 16-bit
+        - **Professional Photography**: Always use for professional photography
+        - **Extensive Editing**: Use when extensive editing planned
+        - **Gradients**: Essential for images with gradients
+        - **Professional Practice**: Use 16-bit for quality work
+    - **Grayscale Quality**: Grayscale conversion preserves luminance information
+      - **Algorithm**: Uses perceptual luminance formula (preserves perceived brightness)
+        - **Formula**: Uses ITU-R BT.601 formula: Y = 0.299R + 0.587G + 0.114B
+        - **Perceptual Weighting**: Weights colors based on human perception
+        - **Brightness Preservation**: Preserves perceived brightness
+        - **Professional Practice**: Algorithm preserves perceived brightness
+      - **Detail**: All detail preserved, only color removed
+        - **Detail Preservation**: All image detail preserved
+        - **Color Removal**: Only color information removed
+        - **Professional Practice**: Detail fully preserved
+      - **Quality**: High quality conversion, no visible degradation
+        - **Quality Level**: High quality conversion
+        - **No Degradation**: No visible quality degradation
+        - **Professional Practice**: High quality conversion
+      - **Professional Practice**: Grayscale conversion is high quality
+        - **Quality Assurance**: High quality assured
+        - **Best Practice**: Recognized best practice
+        - **Professional Practice**: Trust quality of conversion
+      - **Luminance Formula Details**: Technical details of formula
+        - **Coefficients**: R=0.299, G=0.587, B=0.114 (sum to 1.0)
+        - **Perceptual Basis**: Based on human eye sensitivity
+        - **Standard**: ITU-R BT.601 standard
+        - **Professional Practice**: Understand formula basis
+      - **Quality Verification**: How to verify quality
+        - **Visual Inspection**: Visually inspect conversion
+        - **Detail Check**: Check that all detail preserved
+        - **Professional Practice**: Always verify quality
+    - **Indexed Quality**: Test different palette sizes and dithering for optimal quality
+      - **Testing**: Test different combinations to find best result
+        - **Systematic Testing**: Test systematically
+        - **Combination Testing**: Test different palette + dithering combinations
+        - **Professional Practice**: Systematic testing essential
+      - **Palette Size**: More colors = better quality but larger file
+        - **Quality Curve**: Quality improves with more colors
+        - **File Size Trade-off**: File size increases with more colors
+        - **Professional Practice**: Balance quality and file size
+      - **Dithering**: Floyd-Steinberg usually best for photos
+        - **Algorithm Quality**: Floyd-Steinberg provides best quality
+        - **Photo Suitability**: Best for photographic images
+        - **Professional Practice**: Use Floyd-Steinberg for photos
+      - **Balance**: Find balance between quality and file size
+        - **Quality vs Size**: Balance quality and file size
+        - **Testing**: Test to find optimal balance
+        - **Professional Practice**: Find optimal balance
+      - **Professional Practice**: Always test indexed conversions
+        - **Always Test**: Always test before finalizing
+        - **Best Practice**: Recognized best practice
+        - **Professional Practice**: Never skip testing
+      - **Quality Assessment Methods**: How to assess indexed quality
+        - **Visual Inspection**: Primary method is visual inspection
+        - **Banding Check**: Check for visible banding
+        - **Dithering Check**: Check dithering appearance
+        - **Professional Practice**: Multiple assessment methods
+      - **Quality Optimization Process**: Step-by-step optimization
+        - **Step 1**: Start with 256 colors, Floyd-Steinberg
+        - **Step 2**: Reduce colors if file size too large
+        - **Step 3**: Test different dithering if needed
+        - **Step 4**: Compare results visually
+        - **Professional Practice**: Follow systematic process
+    - **Professional Insight**: Quality preservation requires understanding conversion algorithms
+      - **Algorithm Knowledge**: Understanding algorithms helps predict results
+        - **Prediction**: Understanding helps predict conversion results
+        - **Workflow Planning**: Helps plan workflow
+        - **Professional Practice**: Knowledge improves workflow
+      - **Testing**: Test conversions to verify quality
+        - **Verification**: Always verify quality
+        - **Testing Process**: Follow testing process
+        - **Professional Practice**: Testing is essential
+      - **Workflow**: Plan workflow to minimize quality loss
+        - **Workflow Planning**: Plan workflow carefully
+        - **Quality Minimization**: Minimize quality loss
+        - **Professional Practice**: Plan workflow for quality
+      - **Professional Practice**: Quality preservation is ongoing consideration
+        - **Ongoing**: Quality preservation is ongoing
+        - **Consideration**: Always consider quality
+        - **Professional Practice**: Quality is always priority
+      - **Quality Metrics**: How to measure quality
+        - **Visual Metrics**: Visual inspection is primary metric
+        - **Technical Metrics**: Technical metrics (bit depth, etc.)
+        - **Professional Practice**: Use multiple metrics
+      - **Quality Workflow**: Workflow for maintaining quality
+        - **Workflow Steps**: Follow quality workflow steps
+        - **Quality Checks**: Include quality checks
+        - **Professional Practice**: Follow quality workflow
+
 ### Introduction to Color Profiles (ICC)
+
+- **Color Profile Fundamentals**: Understanding ICC color profiles
+  - **What Are Color Profiles**: ICC profiles define color characteristics of devices and images
+    - **Purpose**: Ensure consistent color appearance across different devices
+      - **Problem Solved**: Different devices interpret RGB values differently
+      - **Solution**: Profiles define how each device interprets color values
+      - **Result**: Same RGB values appear consistent across calibrated devices
+      - **Workflow**: Profiles enable color-managed workflow from capture to output
+      - **Professional Essential**: Without profiles, colors are unpredictable
+    - **Standard**: ICC (International Color Consortium) standard for color management
+      - **Organization**: ICC is international organization that created color management standard
+      - **Version History**: ICC v2 (1996), ICC v4 (2010) - current standard
+      - **Compatibility**: ICC v4 profiles backward compatible with v2
+      - **Adoption**: Widely adopted by industry (Adobe, Apple, Microsoft, etc.)
+      - **File Format**: Profiles stored as .icc or .icm files
+      - **Professional Standard**: ICC is industry standard for color management
+    - **Device Profiles**: Describe how devices (monitors, printers, cameras) reproduce color
+      - **Monitor Profiles**: Define how monitor displays RGB values
+        - **Measurement**: Created by measuring monitor with colorimeter
+          - **Colorimeter Device**: Specialized device measures monitor color output
+          - **Measurement Process**: Measures color patches displayed on monitor
+          - **Data Collection**: Collects color data for profile generation
+          - **Software**: Profile generation software creates profile from measurements
+          - **Professional Practice**: Hardware calibration provides most accurate profiles
+        - **Characteristics**: Defines monitor's color gamut, gamma, white point
+          - **Color Gamut**: Defines range of colors monitor can display
+          - **Gamma Curve**: Defines how monitor interprets brightness values
+          - **White Point**: Defines monitor's white color (D65, D50, etc.)
+          - **Color Matrix**: Defines RGB to XYZ color transformation
+          - **Professional Practice**: All characteristics essential for accuracy
+        - **Calibration**: Used to calibrate monitor for accurate display
+          - **Calibration Process**: Profile used to adjust monitor display
+          - **LUT Creation**: Creates Look-Up Table for color correction
+          - **Display Adjustment**: Adjusts monitor to match profile
+          - **Professional Practice**: Calibration ensures accurate display
+        - **Accuracy**: Essential for seeing accurate colors on screen
+          - **Color Accuracy**: Accurate colors on screen
+          - **Print Matching**: Screen colors match print colors
+          - **Professional Practice**: Accuracy is essential
+        - **Profile Structure**: Technical structure of monitor profiles
+          - **Tag Structure**: ICC profiles contain multiple tags
+          - **Color Tags**: Tags define color transformations
+          - **Metadata Tags**: Tags contain device information
+          - **Professional Practice**: Understand profile structure
+        - **Profile Types**: Different types of monitor profiles
+          - **Matrix Profiles**: Simple profiles using 3x3 matrix
+          - **LUT Profiles**: Complex profiles using Look-Up Tables
+          - **Hybrid Profiles**: Combination of matrix and LUT
+          - **Professional Practice**: LUT profiles more accurate
+      - **Printer Profiles**: Define how printer reproduces colors on specific paper
+        - **Measurement**: Created by printing and measuring color targets
+          - **Color Target**: Standard color target printed (e.g., IT8.7/3)
+          - **Spectrophotometer**: Device measures printed colors
+          - **Measurement Process**: Measures all color patches in target
+          - **Data Collection**: Collects color data for profile generation
+          - **Software**: Profile generation software creates profile from measurements
+          - **Professional Practice**: Hardware measurement provides most accurate profiles
+        - **Paper Specific**: Each paper type needs separate profile
+          - **Paper Characteristics**: Different papers have different color characteristics
+          - **Absorption**: Different papers absorb ink differently
+          - **Whiteness**: Different papers have different whiteness
+          - **Texture**: Paper texture affects color appearance
+          - **Professional Practice**: Always use paper-specific profiles
+        - **Ink Specific**: Profile specific to printer/ink combination
+          - **Ink Characteristics**: Different inks have different color characteristics
+          - **Printer Model**: Different printer models have different characteristics
+          - **Ink Set**: Different ink sets (e.g., photo vs. matte) need different profiles
+          - **Professional Practice**: Always use printer/ink-specific profiles
+        - **Accuracy**: Essential for accurate print reproduction
+          - **Color Accuracy**: Accurate colors in print
+          - **Screen Matching**: Print colors match screen colors
+          - **Professional Practice**: Accuracy is essential
+        - **Profile Structure**: Technical structure of printer profiles
+          - **Tag Structure**: ICC profiles contain multiple tags
+          - **Color Tags**: Tags define color transformations
+          - **Gamut Tags**: Tags define printer color gamut
+          - **Professional Practice**: Understand profile structure
+        - **Profile Types**: Different types of printer profiles
+          - **Matrix Profiles**: Simple profiles using 3x3 matrix (rare for printers)
+          - **LUT Profiles**: Complex profiles using Look-Up Tables (standard)
+          - **Gamut Mapping**: Profiles include gamut mapping information
+          - **Professional Practice**: LUT profiles standard for printers
+      - **Camera Profiles**: Define how camera captures colors
+        - **Measurement**: Created using color targets or standard scenes
+          - **Color Target**: Standard color target photographed (e.g., ColorChecker)
+          - **Standard Scene**: Standard scene with known colors
+          - **Measurement Process**: Measures captured colors vs. known colors
+          - **Data Collection**: Collects color data for profile generation
+          - **Software**: Profile generation software creates profile from measurements
+          - **Professional Practice**: Hardware measurement provides most accurate profiles
+        - **Raw Processing**: Used in raw file processing
+          - **Raw Conversion**: Profile used during raw file conversion
+          - **Color Interpretation**: Profile interprets camera's color data
+          - **White Balance**: Profile affects white balance interpretation
+          - **Professional Practice**: Profiles essential for raw processing
+        - **Accuracy**: Improves color accuracy in captured images
+          - **Color Accuracy**: Accurate colors in captured images
+          - **Skin Tones**: Accurate skin tones
+          - **Professional Practice**: Accuracy is essential
+        - **Profile Structure**: Technical structure of camera profiles
+          - **Tag Structure**: ICC profiles contain multiple tags
+          - **Color Tags**: Tags define color transformations
+          - **Metadata Tags**: Tags contain camera information
+          - **Professional Practice**: Understand profile structure
+        - **Profile Types**: Different types of camera profiles
+          - **Matrix Profiles**: Simple profiles using 3x3 matrix
+          - **LUT Profiles**: Complex profiles using Look-Up Tables
+          - **DNG Profiles**: Adobe DNG format profiles
+          - **Professional Practice**: LUT profiles more accurate
+    - **Working Profiles**: Define color space for image editing (sRGB, Adobe RGB, ProPhoto RGB)
+      - **Color Space Definition**: Defines range of colors (gamut) available for editing
+        - **Gamut Definition**: Defines mathematical color gamut
+        - **Color Coordinates**: Defines color coordinate system
+        - **White Point**: Defines white point of color space
+        - **Gamma**: Defines gamma curve of color space
+        - **Professional Practice**: Understanding definition helps workflow
+      - **Standard Spaces**: sRGB, Adobe RGB, ProPhoto RGB are standard working spaces
+        - **sRGB**: Standard RGB, most common working space
+        - **Adobe RGB**: Extended gamut for photography
+        - **ProPhoto RGB**: Largest gamut for maximum color range
+        - **CMYK**: CMYK working spaces for print workflows
+        - **Professional Practice**: Standard spaces ensure compatibility
+      - **Gamut Size**: Different spaces have different color gamuts
+        - **Gamut Comparison**: sRGB < Adobe RGB < ProPhoto RGB
+        - **Color Coverage**: Larger gamuts cover more colors
+        - **Device Matching**: Match gamut to output device capabilities
+        - **Professional Practice**: Choose gamut appropriate for workflow
+      - **Selection**: Choose based on workflow requirements
+        - **Output Requirements**: Choose based on final output
+        - **Device Capabilities**: Consider device capabilities
+        - **Workflow Needs**: Consider workflow needs
+        - **Professional Practice**: Selection is critical decision
+      - **Embedding**: Working space profile embedded in image files
+        - **Profile Embedding**: Profile stored in image file
+        - **File Format Support**: Supported by TIFF, PNG, JPEG, PSD
+        - **Color Interpretation**: Profile tells software how to interpret colors
+        - **Professional Practice**: Always embed profiles
+      - **Working Space Characteristics**: Technical characteristics
+        - **Primaries**: Color primaries (red, green, blue) defined
+        - **White Point**: White point defined (D50, D65)
+        - **Gamma**: Gamma curve defined (1.8, 2.2)
+        - **Transfer Function**: Transfer function defined
+        - **Professional Practice**: Understand characteristics
+      - **Working Space Selection Guide**: Guidelines for selection
+        - **Web/Digital**: Use sRGB for web and digital display
+        - **Photography**: Use Adobe RGB for photography
+        - **Maximum Gamut**: Use ProPhoto RGB for maximum gamut
+        - **Print**: Use CMYK for print workflows
+        - **Professional Practice**: Follow selection guidelines
+      - **Profile Embedding Methods**: How profiles are embedded
+        - **File Header**: Profile stored in file header
+        - **Metadata**: Profile stored in metadata
+        - **Format Specific**: Different formats store profiles differently
+        - **Professional Practice**: Understand embedding methods
+      - **Profile Verification**: How to verify embedded profiles
+        - **Image Properties**: Check image properties in GIMP
+        - **File Inspection**: Use file inspection tools
+        - **Profile Info**: View profile information
+        - **Professional Practice**: Always verify embedded profiles
+    - **Professional Essential**: Color profiles are essential for professional color accuracy
+      - **Without Profiles**: Colors unpredictable, inconsistent across devices
+      - **With Profiles**: Colors accurate, consistent, predictable
+      - **Industry Standard**: Professional workflows require color management
+      - **Client Expectation**: Clients expect accurate, consistent colors
+      - **Cost of Errors**: Incorrect colors lead to costly reprints and client dissatisfaction
+  - **Why Color Profiles Matter**: Importance of color management
+    - **Color Consistency**: Same image looks consistent across different monitors and printers
+      - **Problem**: Same RGB values look different on different devices
+        - **Device Variation**: Different devices interpret RGB values differently
+        - **Monitor Differences**: Different monitors display same RGB values differently
+        - **Printer Differences**: Different printers print same RGB values differently
+        - **Color Shift**: Colors shift unpredictably without profiles
+        - **Professional Practice**: Understand problem to appreciate solution
+      - **Solution**: Profiles ensure consistent interpretation of color values
+        - **Profile Function**: Profiles define how each device interprets colors
+        - **Color Transformation**: Profiles transform colors to device-independent space
+        - **Consistent Interpretation**: All devices interpret colors consistently
+        - **Professional Practice**: Profiles solve consistency problem
+      - **Result**: Image looks same (within device capabilities) on all calibrated devices
+        - **Visual Consistency**: Image looks visually consistent across devices
+        - **Device Limitations**: Consistency within device capabilities
+        - **Gamut Limitations**: Some colors may not be reproducible on all devices
+        - **Professional Practice**: Understand limitations
+      - **Workflow**: Essential for collaborative workflows
+        - **Team Collaboration**: Multiple people working on same project
+        - **Client Review**: Clients reviewing work on different devices
+        - **Consistency Requirement**: Consistency essential for collaboration
+        - **Professional Practice**: Consistency enables collaboration
+      - **Professional Practice**: Consistency is fundamental requirement
+        - **Fundamental**: Consistency is fundamental, not optional
+        - **Quality Standard**: Consistency is quality standard
+        - **Professional Practice**: Consistency is non-negotiable
+      - **Technical Mechanism**: How profiles ensure consistency
+        - **Color Space Transformation**: Profiles transform to device-independent color space
+        - **PCS (Profile Connection Space)**: Device-independent color space (XYZ or Lab)
+        - **Transformation Chain**: Input → PCS → Output transformation chain
+        - **Professional Practice**: Understand technical mechanism
+      - **Consistency Metrics**: How to measure consistency
+        - **Delta E**: Color difference metric (Delta E)
+        - **Visual Inspection**: Visual comparison across devices
+        - **Measurement**: Hardware measurement for verification
+        - **Professional Practice**: Use metrics to verify consistency
+    - **Predictable Results**: Know how colors will appear in final output
+      - **Screen to Print**: Know how screen colors will appear in print
+        - **Soft Proofing**: Use soft proofing to preview print appearance
+        - **Gamut Mapping**: Profiles enable accurate gamut mapping
+        - **Color Matching**: Screen colors match print colors
+        - **Professional Practice**: Screen-to-print matching is essential
+      - **Client Approval**: Clients can approve colors knowing they'll match final output
+        - **Approval Confidence**: Clients can approve with confidence
+        - **Expectation Management**: Clients know what to expect
+        - **Quality Assurance**: Profiles ensure quality standards
+        - **Professional Practice**: Client approval depends on predictability
+      - **Workflow Efficiency**: Reduces need for test prints
+        - **Test Print Reduction**: Fewer test prints needed
+        - **Time Savings**: Saves time in workflow
+        - **Cost Savings**: Saves money on test prints
+        - **Professional Practice**: Efficiency improves workflow
+      - **Cost Savings**: Saves time and money on reprints
+        - **Reprint Reduction**: Fewer reprints needed
+        - **Material Savings**: Saves printing materials
+        - **Time Savings**: Saves time on reprints
+        - **Professional Practice**: Cost savings are significant
+      - **Professional Practice**: Predictability is essential for professional work
+        - **Essential**: Predictability is essential, not optional
+        - **Quality Standard**: Predictability is quality standard
+        - **Professional Practice**: Predictability is non-negotiable
+      - **Predictability Mechanism**: How profiles enable predictability
+        - **Color Transformation**: Profiles transform colors predictably
+        - **Gamut Mapping**: Profiles map colors to output gamut predictably
+        - **Rendering Intent**: Rendering intents control how colors are mapped
+        - **Professional Practice**: Understand predictability mechanism
+      - **Predictability Verification**: How to verify predictability
+        - **Soft Proofing**: Use soft proofing to verify
+        - **Test Prints**: Use test prints to verify
+        - **Measurement**: Use hardware measurement to verify
+        - **Professional Practice**: Always verify predictability
+    - **Professional Standard**: Industry-standard color management workflow
+      - **Industry Adoption**: All professional software supports ICC profiles
+      - **Workflow Integration**: Profiles integrate throughout professional workflow
+      - **Client Expectation**: Clients expect color-managed workflows
+      - **Quality Standard**: Color management is quality standard
+      - **Professional Requirement**: Color management is non-negotiable requirement
+    - **Print Accuracy**: Essential for accurate print reproduction
+      - **Gamut Mapping**: Profiles enable accurate gamut mapping from RGB to CMYK
+        - **Gamut Difference**: RGB and CMYK have different color gamuts
+        - **Mapping Process**: Profiles map RGB colors to CMYK gamut
+        - **Rendering Intent**: Rendering intents control mapping method
+        - **Professional Practice**: Accurate mapping is essential
+      - **Color Matching**: Profiles ensure print colors match screen colors
+        - **Screen-to-Print Matching**: Print colors match screen colors
+        - **Soft Proofing**: Use soft proofing to preview print appearance
+        - **Calibration**: Monitor calibration ensures accurate screen display
+        - **Professional Practice**: Matching is essential
+      - **Paper Matching**: Profiles account for paper characteristics
+        - **Paper Characteristics**: Different papers have different characteristics
+        - **Profile Specificity**: Profiles are paper-specific
+        - **Color Reproduction**: Profiles account for paper color reproduction
+        - **Professional Practice**: Paper-specific profiles essential
+      - **Professional Practice**: Print accuracy requires proper profiles
+        - **Profile Requirement**: Proper profiles are required
+        - **Quality Standard**: Print accuracy is quality standard
+        - **Professional Practice**: Print accuracy is non-negotiable
+      - **Print Accuracy Mechanism**: How profiles ensure print accuracy
+        - **Color Transformation**: Profiles transform colors accurately
+        - **Gamut Mapping**: Profiles map colors to print gamut accurately
+        - **Paper Compensation**: Profiles compensate for paper characteristics
+        - **Professional Practice**: Understand accuracy mechanism
+      - **Print Accuracy Verification**: How to verify print accuracy
+        - **Test Prints**: Use test prints to verify
+        - **Measurement**: Use hardware measurement to verify
+        - **Visual Inspection**: Visual comparison with screen
+        - **Professional Practice**: Always verify print accuracy
+      - **Print Accuracy Metrics**: How to measure print accuracy
+        - **Delta E**: Color difference metric (Delta E)
+        - **Gamut Coverage**: Measure gamut coverage
+        - **Color Accuracy**: Measure color accuracy
+        - **Professional Practice**: Use metrics to measure accuracy
+    - **Client Satisfaction**: Ensures colors match client expectations
+      - **Approval Process**: Clients can approve colors with confidence
+        - **Approval Confidence**: Clients can approve with confidence
+        - **Predictability**: Colors are predictable
+        - **Quality Assurance**: Quality is assured
+        - **Professional Practice**: Approval process depends on accuracy
+      - **Expectation Management**: Clients know what to expect
+        - **Clear Expectations**: Clients have clear expectations
+        - **Predictability**: Colors are predictable
+        - **Communication**: Clear communication about colors
+        - **Professional Practice**: Manage expectations effectively
+      - **Quality Assurance**: Profiles ensure quality standards
+        - **Quality Standards**: Profiles ensure quality standards
+        - **Consistency**: Profiles ensure consistency
+        - **Accuracy**: Profiles ensure accuracy
+        - **Professional Practice**: Quality assurance is essential
+      - **Professional Practice**: Client satisfaction depends on color accuracy
+        - **Dependency**: Client satisfaction depends on accuracy
+        - **Quality Requirement**: Accuracy is quality requirement
+        - **Professional Practice**: Client satisfaction is priority
+      - **Client Satisfaction Mechanism**: How profiles ensure client satisfaction
+        - **Color Accuracy**: Profiles ensure color accuracy
+        - **Predictability**: Profiles ensure predictability
+        - **Consistency**: Profiles ensure consistency
+        - **Professional Practice**: Understand satisfaction mechanism
+      - **Client Satisfaction Metrics**: How to measure client satisfaction
+        - **Approval Rate**: Measure approval rate
+        - **Reprint Rate**: Measure reprint rate
+        - **Client Feedback**: Collect client feedback
+        - **Professional Practice**: Measure satisfaction metrics
+    - **Professional Practice**: Color profiles are non-negotiable in professional workflows
+      - **Standard Practice**: All professional workflows use color management
+      - **Quality Requirement**: Color management is quality requirement
+      - **Industry Standard**: Industry standard for professional work
+      - **Non-Negotiable**: Cannot skip color management in professional work
+  - **Profile Types**: Different types of ICC profiles
+    - **Input Profiles**: Camera and scanner profiles (define how device captures color)
+      - **Camera Profiles**: Define how camera sensor captures colors
+        - **Raw Processing**: Used when processing raw camera files
+        - **Color Accuracy**: Improves color accuracy in captured images
+        - **Camera Specific**: Each camera model may need different profile
+        - **Lighting**: Some profiles specific to lighting conditions
+      - **Scanner Profiles**: Define how scanner captures colors
+        - **Film Scanning**: Used when scanning film or prints
+        - **Color Accuracy**: Improves color accuracy in scanned images
+        - **Scanner Specific**: Each scanner needs its own profile
+      - **Use Case**: Improve color accuracy at capture/input stage
+    - **Display Profiles**: Monitor profiles (define how monitor displays color)
+      - **Calibration Profiles**: Created during monitor calibration
+      - **Color Accuracy**: Ensures monitor displays colors accurately
+      - **Gamut Definition**: Defines monitor's color gamut
+      - **Gamma Definition**: Defines monitor's gamma curve
+      - **White Point**: Defines monitor's white point
+      - **Use Case**: Essential for seeing accurate colors on screen
+    - **Working Space Profiles**: Editing space profiles (sRGB, Adobe RGB, ProPhoto RGB, CMYK)
+      - **Editing Environment**: Defines color space for image editing
+      - **Gamut Definition**: Defines range of colors available for editing
+      - **Standard Spaces**: sRGB, Adobe RGB, ProPhoto RGB are standard
+      - **Selection**: Choose based on workflow requirements
+      - **Embedding**: Embedded in image files to preserve color information
+      - **Use Case**: Define color space for editing and archiving
+    - **Output Profiles**: Printer and paper profiles (define how printer reproduces color)
+      - **Printer Specific**: Each printer model needs its own profile
+      - **Paper Specific**: Each paper type needs separate profile
+      - **Ink Specific**: Profile specific to printer/ink combination
+      - **Gamut Mapping**: Used for gamut mapping from RGB to printer gamut
+      - **Accuracy**: Essential for accurate print reproduction
+      - **Use Case**: Ensure accurate print reproduction
+    - **Professional Insight**: Each profile type serves specific purpose in color workflow
+      - **Workflow Integration**: Profiles work together throughout workflow
+      - **Input to Output**: Profiles connect input to output
+      - **Quality Chain**: Profiles maintain quality throughout workflow
+      - **Professional Practice**: Understanding profile types essential for workflow
+- **Common Color Spaces**: Understanding standard color spaces
+  - **sRGB Color Space**: Standard RGB for web and general use
+    - **Gamut**: Smallest standard RGB gamut (covers ~35% of visible color spectrum)
+      - **Gamut Size**: Smallest of standard RGB color spaces
+      - **Color Coverage**: Covers approximately 35% of colors visible to human eye
+      - **Green Coverage**: Good coverage of greens, limited in cyans and oranges
+      - **Comparison**: Smaller than Adobe RGB and ProPhoto RGB
+      - **Adequacy**: Adequate for most digital display work
+    - **Technical Specifications**: sRGB technical details
+      - **White Point**: D65 (6500K) - daylight white point
+        - **CIE Standard**: D65 is CIE standard illuminant
+        - **Color Temperature**: 6500K color temperature
+        - **XYZ Coordinates**: x=0.3127, y=0.3290 (CIE 1931)
+        - **Daylight**: Represents average daylight
+        - **Professional Practice**: D65 is standard for digital displays
+      - **Gamma**: 2.2 - standard gamma for digital displays
+        - **Gamma Curve**: Gamma 2.2 transfer function
+        - **Perceptual Uniformity**: Provides perceptual uniformity
+        - **Display Standard**: Standard for digital displays
+        - **Mathematical**: V_out = V_in^(1/2.2) for encoding
+        - **Professional Practice**: Gamma 2.2 is display standard
+      - **Primaries**: Defined by ITU-R BT.709 standard
+        - **Red Primary**: x=0.640, y=0.330 (CIE 1931)
+        - **Green Primary**: x=0.300, y=0.600 (CIE 1931)
+        - **Blue Primary**: x=0.150, y=0.060 (CIE 1931)
+        - **Standard**: ITU-R BT.709 (HDTV standard)
+        - **Professional Practice**: Primaries match HDTV standard
+      - **Standard**: IEC 61966-2-1 international standard
+        - **Organization**: International Electrotechnical Commission
+        - **Standard Number**: IEC 61966-2-1
+        - **Year**: Published 1999
+        - **Adoption**: Widely adopted internationally
+        - **Professional Practice**: sRGB is international standard
+      - **Adoption**: Widely adopted as default for digital displays
+        - **Industry Adoption**: Adopted by entire industry
+        - **Default Standard**: Default for digital displays
+        - **Universal Support**: Universal support across devices
+        - **Professional Practice**: Universal adoption ensures compatibility
+      - **Transfer Function**: Mathematical transfer function
+        - **Encoding Function**: V_encoded = 12.92 × V_linear (V ≤ 0.0031308)
+        - **Encoding Function**: V_encoded = 1.055 × V_linear^(1/2.4) - 0.055 (V > 0.0031308)
+        - **Decoding Function**: V_linear = V_encoded / 12.92 (V ≤ 0.04045)
+        - **Decoding Function**: V_linear = ((V_encoded + 0.055) / 1.055)^2.4 (V > 0.04045)
+        - **Professional Practice**: Understand transfer function
+      - **Color Matrix**: RGB to XYZ transformation matrix
+        - **Matrix**: 3×3 transformation matrix
+        - **XYZ Calculation**: XYZ = Matrix × RGB
+        - **Standard Matrix**: Defined by ITU-R BT.709
+        - **Professional Practice**: Matrix enables color transformations
+      - **Bit Depth Support**: Bit depth support
+        - **8-bit**: Standard 8-bit per channel (24-bit total)
+        - **16-bit**: 16-bit per channel support (48-bit total)
+        - **Professional Practice**: 16-bit provides better quality
+    - **Use Cases**: Web graphics, social media, general digital photography
+      - **Web Graphics**: Standard for all web graphics and images
+      - **Social Media**: Ensures consistent appearance across platforms
+      - **Digital Photography**: Default for most consumer cameras
+      - **Screen Display**: Standard for all screen-based work
+      - **General Use**: Safe default for most digital work
+    - **Standard**: Default for most digital cameras and web browsers
+      - **Camera Default**: Most cameras default to sRGB
+      - **Browser Support**: All browsers support sRGB
+      - **Universal Compatibility**: Works everywhere without conversion
+      - **No Conversion Needed**: No conversion needed for web output
+      - **Professional Practice**: Safe default for digital-only work
+    - **Limitations**: Cannot represent all printable colors, limited for professional print
+      - **Print Limitation**: Cannot represent all colors printable with CMYK inks
+        - **Gamut Mismatch**: sRGB gamut smaller than CMYK printable gamut
+        - **Color Loss**: Some printable colors cannot be represented in sRGB
+        - **Cyan/Orange**: Limited in cyans and oranges
+        - **Professional Practice**: Understand limitation for print work
+      - **Gamut Restriction**: Limited gamut restricts color range
+        - **Color Range**: Limited color range compared to larger gamuts
+        - **Restriction Impact**: Restriction affects color editing
+        - **Professional Practice**: Consider gamut restriction
+      - **Print Quality**: May lose color information when converting to print
+        - **Information Loss**: Color information may be lost
+        - **Conversion Impact**: Conversion to print may lose colors
+        - **Professional Practice**: Consider information loss
+      - **Professional Print**: Not ideal for high-quality professional printing
+        - **Quality Limitation**: Quality limitation for professional print
+        - **Color Accuracy**: May not provide sufficient color accuracy
+        - **Professional Practice**: Use larger gamut for professional print
+      - **Workaround**: Use larger gamut (Adobe RGB) for print work
+        - **Adobe RGB**: Use Adobe RGB for print work
+        - **ProPhoto RGB**: Use ProPhoto RGB for maximum gamut
+        - **Professional Practice**: Use appropriate gamut for print
+      - **Gamut Comparison**: sRGB vs larger gamuts
+        - **sRGB vs Adobe RGB**: Adobe RGB ~50% larger gamut
+        - **sRGB vs ProPhoto RGB**: ProPhoto RGB ~2x larger gamut
+        - **Color Coverage**: Larger gamuts cover more colors
+        - **Professional Practice**: Understand gamut differences
+      - **When sRGB is Limiting**: When sRGB limitations matter
+        - **Professional Print**: When printing professionally
+        - **Wide-Gamut Displays**: When using wide-gamut displays
+        - **Color-Critical Work**: When color accuracy is critical
+        - **Professional Practice**: Recognize when sRGB is limiting
+    - **Professional Practice**: sRGB is safe default for web and screen display
+      - **Web Work**: Standard for all web-based work
+        - **Web Standard**: sRGB is web standard
+        - **Browser Support**: All browsers support sRGB
+        - **Consistency**: Ensures consistent appearance
+        - **Professional Practice**: Always use sRGB for web
+      - **Screen Display**: Standard for all screen-based work
+        - **Display Standard**: sRGB is display standard
+        - **Monitor Compatibility**: Works with all monitors
+        - **Consistency**: Ensures consistent appearance
+        - **Professional Practice**: Use sRGB for screen display
+      - **Universal Compatibility**: Works everywhere
+        - **Device Support**: Works on all devices
+        - **Software Support**: Works in all software
+        - **No Conversion**: No conversion needed
+        - **Professional Practice**: Universal compatibility is advantage
+      - **Safe Choice**: Safe default when output is uncertain
+        - **Uncertainty**: When output is uncertain
+        - **Default Choice**: Safe default choice
+        - **Flexibility**: Provides flexibility
+        - **Professional Practice**: Use sRGB when uncertain
+      - **Professional Standard**: Standard for web graphics and social media
+        - **Industry Standard**: Industry standard for web
+        - **Social Media**: Standard for social media
+        - **Best Practice**: Recognized best practice
+        - **Professional Practice**: Follow industry standard
+      - **Workflow Integration**: How sRGB integrates into workflow
+        - **Capture**: Most cameras default to sRGB
+        - **Editing**: Edit in sRGB for web work
+        - **Output**: Output directly without conversion
+        - **Professional Practice**: Integrate sRGB throughout workflow
+      - **Conversion Considerations**: When to convert from sRGB
+        - **Print Work**: Convert to Adobe RGB for print work
+        - **Wide-Gamut**: Convert to larger gamut for wide-gamut displays
+        - **Professional Practice**: Convert when appropriate
+    - **GIMP Default**: GIMP uses sRGB as default working space
+      - **New Images**: New images created in sRGB by default
+      - **Configuration**: Can be changed in Preferences → Color Management
+      - **Recommendation**: Keep sRGB default for general work
+      - **Change When Needed**: Change to Adobe RGB for photography work
+  - **Adobe RGB (1998) Color Space**: Extended gamut for professional photography
+    - **Gamut**: Larger than sRGB (covers ~50% of visible color spectrum)
+      - **Gamut Size**: Approximately 50% larger than sRGB
+      - **Color Coverage**: Covers approximately 50% of colors visible to human eye
+      - **Extended Greens**: Better coverage of greens and cyans than sRGB
+      - **Print Colors**: Better coverage of colors printable with CMYK inks
+      - **Comparison**: Significantly larger than sRGB, smaller than ProPhoto RGB
+    - **Technical Specifications**: Adobe RGB technical details
+      - **White Point**: D65 (6500K) - same as sRGB
+        - **CIE Standard**: D65 is CIE standard illuminant
+        - **Color Temperature**: 6500K color temperature
+        - **XYZ Coordinates**: x=0.3127, y=0.3290 (CIE 1931)
+        - **Daylight**: Represents average daylight
+        - **Professional Practice**: D65 matches sRGB for consistency
+      - **Gamma**: 2.2 - same as sRGB
+        - **Gamma Curve**: Gamma 2.2 transfer function
+        - **Perceptual Uniformity**: Provides perceptual uniformity
+        - **Display Standard**: Standard for digital displays
+        - **Mathematical**: V_out = V_in^(1/2.2) for encoding
+        - **Professional Practice**: Gamma 2.2 matches sRGB
+      - **Primaries**: Extended primaries compared to sRGB
+        - **Red Primary**: x=0.6400, y=0.3300 (CIE 1931) - same as sRGB
+        - **Green Primary**: x=0.2100, y=0.7100 (CIE 1931) - extended vs sRGB
+        - **Blue Primary**: x=0.1500, y=0.0600 (CIE 1931) - same as sRGB
+        - **Green Extension**: Extended green primary provides larger gamut
+        - **Professional Practice**: Extended green enables better color coverage
+      - **Standard**: Adobe Systems standard (1998)
+        - **Organization**: Adobe Systems
+        - **Year**: Published 1998
+        - **Purpose**: Extended gamut for professional photography
+        - **Adoption**: Widely adopted by industry
+        - **Professional Practice**: Adobe RGB is industry standard
+      - **Adoption**: Widely adopted by professional photography industry
+        - **Industry Adoption**: Adopted by professional photography industry
+        - **Camera Support**: Most professional cameras support Adobe RGB
+        - **Software Support**: All professional software supports Adobe RGB
+        - **Professional Practice**: Universal adoption ensures compatibility
+      - **Transfer Function**: Mathematical transfer function
+        - **Encoding Function**: V_encoded = 12.92 × V_linear (V ≤ 0.0031308)
+        - **Encoding Function**: V_encoded = 1.055 × V_linear^(1/2.4) - 0.055 (V > 0.0031308)
+        - **Decoding Function**: V_linear = V_encoded / 12.92 (V ≤ 0.04045)
+        - **Decoding Function**: V_linear = ((V_encoded + 0.055) / 1.055)^2.4 (V > 0.04045)
+        - **Professional Practice**: Same transfer function as sRGB
+      - **Color Matrix**: RGB to XYZ transformation matrix
+        - **Matrix**: 3×3 transformation matrix (different from sRGB)
+        - **XYZ Calculation**: XYZ = Matrix × RGB
+        - **Extended Gamut**: Matrix enables extended gamut
+        - **Professional Practice**: Matrix enables color transformations
+      - **Bit Depth Support**: Bit depth support
+        - **8-bit**: 8-bit per channel (24-bit total)
+        - **16-bit**: 16-bit per channel support (48-bit total) - recommended
+        - **Professional Practice**: 16-bit recommended for Adobe RGB
+      - **Gamut Volume**: Mathematical gamut volume
+        - **Volume Calculation**: Gamut volume in Lab color space
+        - **sRGB Comparison**: ~50% larger volume than sRGB
+        - **ProPhoto Comparison**: Smaller than ProPhoto RGB
+        - **Professional Practice**: Understand gamut volume
+    - **Use Cases**: Professional photography, print preparation, high-quality digital work
+      - **Professional Photography**: Industry standard for professional photography
+      - **Print Preparation**: Better for preparing images for print
+      - **High-Quality Work**: Standard for high-quality digital work
+      - **Color Preservation**: Preserves more colors from modern cameras
+      - **Future-Proofing**: Preserves colors for future display technologies
+    - **Advantages**: Captures more colors than sRGB, better for print conversion
+      - **More Colors**: Captures significantly more colors than sRGB
+        - **Color Count**: Approximately 50% more colors than sRGB
+        - **Gamut Coverage**: Better coverage of visible color spectrum
+        - **Green/Cyan**: Better coverage of greens and cyans
+        - **Professional Practice**: More colors enable better quality
+      - **Print Conversion**: Better conversion to CMYK for printing
+        - **Gamut Overlap**: Better overlap with CMYK gamut
+        - **Color Preservation**: Preserves more printable colors
+        - **Conversion Quality**: Better quality when converting to CMYK
+        - **Professional Practice**: Essential for print work
+      - **Color Preservation**: Preserves more colors from camera sensors
+        - **Sensor Colors**: Modern sensors capture more colors than sRGB
+        - **Preservation**: Adobe RGB preserves more sensor colors
+        - **Information Loss**: Less information loss than sRGB
+        - **Professional Practice**: Preserve sensor colors
+      - **Quality**: Higher quality for professional work
+        - **Quality Level**: Higher quality for professional work
+        - **Color Accuracy**: Better color accuracy
+        - **Professional Practice**: Quality is essential
+      - **Future-Proof**: Preserves colors for future technologies
+        - **Technology Evolution**: Display technologies evolving
+        - **Color Preservation**: Preserves colors for future displays
+        - **Investment**: Investment in future compatibility
+        - **Professional Practice**: Future-proof workflow
+      - **Gamut Comparison**: Detailed gamut comparison
+        - **vs sRGB**: ~50% larger gamut than sRGB
+        - **vs ProPhoto**: Smaller than ProPhoto RGB
+        - **vs CMYK**: Better overlap with CMYK than sRGB
+        - **Professional Practice**: Understand gamut relationships
+      - **Color Accuracy**: Better color accuracy
+        - **Accuracy Level**: Better color accuracy than sRGB
+        - **Color Fidelity**: Better color fidelity
+        - **Professional Practice**: Accuracy is essential
+    - **Requirements**: Requires color-managed workflow and calibrated monitor
+      - **Color Management**: Requires color-managed workflow
+        - **Workflow Requirement**: Color-managed workflow required
+        - **Software Support**: Software must support color management
+        - **Profile Embedding**: Profiles must be embedded
+        - **Professional Practice**: Color management is essential
+      - **Monitor Calibration**: Requires calibrated monitor to see accurate colors
+        - **Calibration Requirement**: Monitor calibration required
+        - **Accuracy**: Calibration ensures accurate display
+        - **Regular Calibration**: Regular calibration needed
+        - **Professional Practice**: Calibration is essential
+      - **Wide-Gamut Monitor**: Benefits from wide-gamut monitor (not required but recommended)
+        - **Benefit**: Wide-gamut monitor shows more colors
+        - **Not Required**: Not strictly required but recommended
+        - **sRGB Monitor**: sRGB monitor can display Adobe RGB (with conversion)
+        - **Professional Practice**: Wide-gamut monitor recommended
+      - **Workflow Setup**: Requires proper workflow setup
+        - **Setup Steps**: Proper workflow setup required
+        - **Configuration**: Software configuration needed
+        - **Profile Management**: Profile management needed
+        - **Professional Practice**: Proper setup is essential
+      - **Professional Practice**: Standard setup for professional work
+        - **Standard Setup**: Standard setup for professionals
+        - **Best Practice**: Recognized best practice
+        - **Professional Practice**: Follow standard setup
+      - **Workflow Components**: Components of color-managed workflow
+        - **Monitor Calibration**: Calibrated monitor
+        - **Color Management**: Color-managed software
+        - **Profile Embedding**: Profile embedding in files
+        - **Professional Practice**: All components needed
+      - **Setup Process**: Step-by-step setup process
+        - **Step 1**: Calibrate monitor
+        - **Step 2**: Configure software color management
+        - **Step 3**: Set working space to Adobe RGB
+        - **Step 4**: Verify workflow
+        - **Professional Practice**: Follow setup process
+    - **Professional Standard**: Adobe RGB is standard for professional photography
+      - **Industry Standard**: Industry standard for professional photography
+      - **Camera Support**: Most professional cameras support Adobe RGB
+      - **Workflow Integration**: Integrates with professional workflows
+      - **Quality Standard**: Quality standard for professional work
+      - **Professional Practice**: Standard practice for professional photography
+    - **Print Advantage**: Better conversion to CMYK for printing
+      - **Gamut Overlap**: Better overlap with CMYK gamut than sRGB
+      - **Color Preservation**: Preserves more printable colors
+      - **Conversion Quality**: Better quality when converting to CMYK
+      - **Print Accuracy**: More accurate print reproduction
+      - **Professional Practice**: Essential for professional print work
+  - **ProPhoto RGB Color Space**: Largest RGB gamut for maximum color capture
+    - **Gamut**: Largest standard RGB gamut (covers ~90% of visible color spectrum)
+      - **Gamut Size**: Largest of standard RGB color spaces
+      - **Color Coverage**: Covers approximately 90% of colors visible to human eye
+      - **Maximum Coverage**: Maximum coverage of visible colors
+      - **Extended Range**: Extended range in all color areas
+      - **Comparison**: Significantly larger than sRGB and Adobe RGB
+    - **Technical Specifications**: ProPhoto RGB technical details
+      - **White Point**: D50 (5000K) - print viewing standard
+        - **CIE Standard**: D50 is CIE standard illuminant
+        - **Color Temperature**: 5000K color temperature
+        - **XYZ Coordinates**: x=0.3457, y=0.3585 (CIE 1931)
+        - **Print Viewing**: Standard for print viewing conditions
+        - **Professional Practice**: D50 matches print viewing standard
+      - **Gamma**: 1.8 - different from sRGB/Adobe RGB
+        - **Gamma Curve**: Gamma 1.8 transfer function
+        - **Print Standard**: Gamma 1.8 is print standard
+        - **Different from Display**: Different from display gamma (2.2)
+        - **Mathematical**: V_out = V_in^(1/1.8) for encoding
+        - **Professional Practice**: Gamma 1.8 matches print standard
+      - **Primaries**: Very extended primaries (some outside visible spectrum)
+        - **Red Primary**: x=0.7347, y=0.2653 (CIE 1931) - outside visible spectrum
+        - **Green Primary**: x=0.1596, y=0.8404 (CIE 1931) - outside visible spectrum
+        - **Blue Primary**: x=0.0366, y=0.0001 (CIE 1931) - outside visible spectrum
+        - **Imaginary Colors**: Some primaries represent imaginary colors
+        - **Maximum Gamut**: Enables maximum possible gamut
+        - **Professional Practice**: Extended primaries enable maximum gamut
+      - **Standard**: Kodak standard (later adopted by others)
+        - **Organization**: Originally Kodak, later adopted by others
+        - **Year**: Published 1998 (same year as Adobe RGB)
+        - **Purpose**: Maximum gamut for professional photography
+        - **Adoption**: Used by high-end workflows
+        - **Professional Practice**: ProPhoto RGB is high-end standard
+      - **Adoption**: Used by high-end photography workflows
+        - **High-End Adoption**: Used by high-end photography workflows
+        - **Camera Support**: Some high-end cameras support ProPhoto RGB
+        - **Software Support**: All professional software supports ProPhoto RGB
+        - **Professional Practice**: High-end workflows use ProPhoto RGB
+      - **Transfer Function**: Mathematical transfer function
+        - **Encoding Function**: V_encoded = 16 × V_linear (V ≤ 0.001953125)
+        - **Encoding Function**: V_encoded = 1.055 × V_linear^(1/1.8) - 0.055 (V > 0.001953125)
+        - **Decoding Function**: V_linear = V_encoded / 16 (V ≤ 0.03125)
+        - **Decoding Function**: V_linear = ((V_encoded + 0.055) / 1.055)^1.8 (V > 0.03125)
+        - **Professional Practice**: Different transfer function from sRGB/Adobe RGB
+      - **Color Matrix**: RGB to XYZ transformation matrix
+        - **Matrix**: 3×3 transformation matrix (different from sRGB/Adobe RGB)
+        - **XYZ Calculation**: XYZ = Matrix × RGB
+        - **Maximum Gamut**: Matrix enables maximum gamut
+        - **Professional Practice**: Matrix enables color transformations
+      - **Bit Depth Support**: Bit depth support
+        - **8-bit**: 8-bit per channel (24-bit total) - NOT recommended
+        - **16-bit**: 16-bit per channel support (48-bit total) - REQUIRED
+        - **Professional Practice**: 16-bit REQUIRED for ProPhoto RGB
+      - **Gamut Volume**: Mathematical gamut volume
+        - **Volume Calculation**: Gamut volume in Lab color space
+        - **sRGB Comparison**: ~2x larger volume than sRGB
+        - **Adobe RGB Comparison**: Larger than Adobe RGB
+        - **Maximum Coverage**: Maximum coverage of visible colors
+        - **Professional Practice**: Understand gamut volume
+      - **Imaginary Colors**: Understanding imaginary colors
+        - **Definition**: Colors outside visible spectrum
+        - **Purpose**: Enable maximum gamut representation
+        - **Handling**: Software handles imaginary colors appropriately
+        - **Professional Practice**: Understand imaginary colors
+    - **Use Cases**: High-end photography, maximum color preservation, archival work
+      - **High-End Photography**: Used in high-end photography workflows
+        - **Professional Work**: Used in high-end professional photography
+        - **Quality Requirement**: When maximum quality is required
+        - **Color-Critical Work**: When color accuracy is critical
+        - **Professional Practice**: Use for high-end work
+      - **Maximum Preservation**: Preserves maximum color information
+        - **Information Preservation**: Preserves maximum color information
+        - **Sensor Colors**: Preserves all colors from modern sensors
+        - **No Loss**: No color information loss
+        - **Professional Practice**: Maximum preservation is essential
+      - **Archival Work**: Used for archival work requiring maximum preservation
+        - **Archival Purpose**: Used for archival purposes
+        - **Long-Term Storage**: Long-term color information storage
+        - **Future Access**: Future access to maximum color information
+        - **Professional Practice**: Use for archival work
+      - **Raw Processing**: Often used in raw file processing
+        - **Raw Conversion**: Used during raw file conversion
+        - **Color Preservation**: Preserves all raw color information
+        - **Workflow Integration**: Integrates with raw processing workflows
+        - **Professional Practice**: Use in raw processing
+      - **Future-Proofing**: Maximum future-proofing for color information
+        - **Technology Evolution**: Future display technologies
+        - **Color Preservation**: Preserves colors for future
+        - **Investment**: Investment in future compatibility
+        - **Professional Practice**: Future-proof workflow
+      - **Master File Creation**: Creating master files
+        - **Master Files**: Use for master file creation
+        - **Archive Files**: Use for archive files
+        - **Source Files**: Use as source files
+        - **Professional Practice**: Use for master files
+    - **Advantages**: Preserves maximum color information from modern cameras
+      - **Maximum Preservation**: Preserves maximum color information from cameras
+        - **Color Count**: Preserves maximum number of colors
+        - **Sensor Colors**: Preserves all sensor colors
+        - **Information Loss**: No information loss
+        - **Professional Practice**: Maximum preservation is advantage
+      - **Future Technologies**: Preserves colors for future display technologies
+        - **Technology Evolution**: Display technologies evolving
+        - **Color Preservation**: Preserves colors for future displays
+        - **Investment**: Investment in future compatibility
+        - **Professional Practice**: Future-proof advantage
+      - **Editing Headroom**: Maximum headroom for editing
+        - **Headroom**: Maximum editing headroom
+        - **Multiple Operations**: Can perform many editing operations
+        - **Quality Maintenance**: Maintains quality through editing
+        - **Professional Practice**: Maximum headroom is advantage
+      - **Quality**: Highest quality color preservation
+        - **Quality Level**: Highest quality level
+        - **Color Accuracy**: Maximum color accuracy
+        - **Professional Practice**: Quality is advantage
+      - **Archival**: Best for archival purposes
+        - **Archival Quality**: Best archival quality
+        - **Long-Term**: Best for long-term storage
+        - **Professional Practice**: Archival quality is advantage
+      - **Gamut Coverage**: Maximum gamut coverage
+        - **Coverage**: Maximum coverage of visible colors
+        - **Color Range**: Maximum color range
+        - **Professional Practice**: Maximum coverage is advantage
+      - **Color Fidelity**: Maximum color fidelity
+        - **Fidelity**: Maximum color fidelity
+        - **Accuracy**: Maximum color accuracy
+        - **Professional Practice**: Fidelity is advantage
+    - **Requirements**: Requires 16-bit workflow and color-managed environment
+      - **16-bit Required**: Requires 16-bit workflow (8-bit insufficient)
+        - **8-bit Limitation**: 8-bit insufficient for ProPhoto RGB
+        - **Banding Risk**: 8-bit causes banding in ProPhoto RGB
+        - **Quality Requirement**: 16-bit required for quality
+        - **Professional Practice**: 16-bit is mandatory
+      - **Color Management**: Requires full color-managed workflow
+        - **Workflow Requirement**: Full color-managed workflow required
+        - **Software Support**: Software must fully support color management
+        - **Profile Embedding**: Profiles must be embedded
+        - **Professional Practice**: Full color management is essential
+      - **Wide-Gamut Monitor**: Benefits from wide-gamut monitor
+        - **Benefit**: Wide-gamut monitor shows more colors
+        - **Recommended**: Highly recommended for ProPhoto RGB
+        - **sRGB Monitor**: sRGB monitor can display (with conversion)
+        - **Professional Practice**: Wide-gamut monitor recommended
+      - **Workflow Setup**: Requires proper workflow setup
+        - **Setup Steps**: Proper workflow setup required
+        - **Configuration**: Software configuration needed
+        - **Profile Management**: Profile management needed
+        - **Professional Practice**: Proper setup is essential
+      - **Professional Practice**: Advanced workflow requirement
+        - **Advanced Workflow**: Requires advanced workflow
+        - **Complexity**: More complex than sRGB/Adobe RGB
+        - **Professional Practice**: Advanced workflow needed
+      - **Workflow Components**: Components of ProPhoto RGB workflow
+        - **16-bit Workflow**: 16-bit workflow required
+        - **Color Management**: Full color management
+        - **Monitor Calibration**: Calibrated monitor
+        - **Wide-Gamut Monitor**: Wide-gamut monitor recommended
+        - **Professional Practice**: All components needed
+      - **Setup Process**: Step-by-step setup process
+        - **Step 1**: Calibrate monitor (wide-gamut recommended)
+        - **Step 2**: Configure software for 16-bit workflow
+        - **Step 3**: Set working space to ProPhoto RGB
+        - **Step 4**: Verify workflow
+        - **Professional Practice**: Follow setup process
+      - **Workflow Complexity**: Understanding workflow complexity
+        - **Complexity Level**: More complex than other workflows
+        - **Requirements**: More requirements than other workflows
+        - **Professional Practice**: Understand complexity
+    - **Professional Practice**: ProPhoto RGB used for maximum quality workflows
+      - **High-End Work**: Used in high-end professional workflows
+      - **Maximum Quality**: Maximum quality color preservation
+      - **Workflow Complexity**: More complex workflow
+      - **Professional Use**: Used by professionals requiring maximum quality
+    - **Workflow Note**: Often converted to smaller gamut for final output
+      - **Conversion Required**: Usually converted to sRGB or Adobe RGB for output
+      - **Final Step**: Conversion is final step in workflow
+      - **Master File**: Keep ProPhoto RGB master, convert for output
+      - **Professional Practice**: Standard practice for ProPhoto RGB workflows
+  - **CMYK Color Spaces**: Color spaces for print reproduction
+    - **Gamut**: Smaller than RGB (covers printable colors on specific paper/ink combinations)
+      - **Gamut Size**: Smaller than RGB gamuts
+      - **Paper Specific**: Gamut depends on paper type
+      - **Ink Specific**: Gamut depends on ink type
+      - **Printable Colors**: Covers colors printable on specific paper/ink
+      - **Professional Practice**: Understand CMYK gamut limitations
+      - **Gamut Comparison**: CMYK vs RGB gamut comparison
+        - **vs sRGB**: CMYK gamut overlaps with sRGB but smaller
+        - **vs Adobe RGB**: CMYK gamut overlaps better with Adobe RGB
+        - **vs ProPhoto**: CMYK gamut much smaller than ProPhoto
+        - **Professional Practice**: Understand gamut relationships
+      - **Gamut Characteristics**: Characteristics of CMYK gamut
+        - **Paper Dependent**: Gamut depends on paper whiteness
+        - **Ink Dependent**: Gamut depends on ink characteristics
+        - **Printing Method**: Gamut depends on printing method
+        - **Professional Practice**: Understand gamut characteristics
+    - **Use Cases**: Professional printing, commercial printing, publication work
+      - **Professional Printing**: Used in professional printing workflows
+        - **Print Shops**: Used by professional print shops
+        - **Quality Requirement**: When quality is required
+        - **Professional Practice**: Standard for professional printing
+      - **Commercial Printing**: Used in commercial printing
+        - **Commercial Work**: Used in commercial printing work
+        - **Large Runs**: Used for large print runs
+        - **Professional Practice**: Standard for commercial printing
+      - **Publication Work**: Used in publication work
+        - **Magazines**: Used in magazine printing
+        - **Books**: Used in book printing
+        - **Professional Practice**: Standard for publication work
+      - **Offset Printing**: Used in offset printing
+        - **Offset Method**: Used in offset printing method
+        - **Quality**: High quality printing
+        - **Professional Practice**: Standard for offset printing
+      - **Digital Printing**: Used in digital printing
+        - **Digital Method**: Used in digital printing method
+        - **Quality**: High quality digital printing
+        - **Professional Practice**: Standard for digital printing
+    - **Profile Types**: Coated, Uncoated, Newsprint, specific printer/paper combinations
+      - **Coated Paper Profiles**: Profiles for coated papers
+        - **Paper Type**: Coated paper (glossy, matte)
+        - **Characteristics**: Higher color saturation, better color reproduction
+        - **Use Case**: High-quality printing on coated paper
+        - **Professional Practice**: Use coated profiles for coated paper
+      - **Uncoated Paper Profiles**: Profiles for uncoated papers
+        - **Paper Type**: Uncoated paper
+        - **Characteristics**: Lower color saturation, different color reproduction
+        - **Use Case**: Printing on uncoated paper
+        - **Professional Practice**: Use uncoated profiles for uncoated paper
+      - **Newsprint Profiles**: Profiles for newsprint
+        - **Paper Type**: Newsprint paper
+        - **Characteristics**: Very limited color gamut, low quality paper
+        - **Use Case**: Newspaper printing
+        - **Professional Practice**: Use newsprint profiles for newsprint
+      - **Printer/Paper Specific**: Profiles for specific printer/paper combinations
+        - **Specificity**: Profiles specific to printer and paper
+        - **Accuracy**: Most accurate profiles
+        - **Custom Profiles**: Often custom-created profiles
+        - **Professional Practice**: Use specific profiles when available
+      - **Profile Selection**: How to select CMYK profile
+        - **Paper Type**: Select based on paper type
+        - **Printer Type**: Select based on printer type
+        - **Print Shop**: Consult with print shop
+        - **Professional Practice**: Select appropriate profile
+    - **Conversion**: RGB images converted to CMYK for printing
+      - **Conversion Process**: RGB to CMYK conversion process
+        - **Gamut Mapping**: Colors mapped to CMYK gamut
+        - **Rendering Intent**: Rendering intent controls mapping
+        - **Quality**: Conversion quality depends on profiles
+        - **Professional Practice**: Understand conversion process
+      - **Conversion Timing**: When to convert to CMYK
+        - **Final Step**: Convert as final step in workflow
+        - **After Editing**: Convert after all editing complete
+        - **Professional Practice**: Convert at end of workflow
+      - **Conversion Quality**: Quality of RGB to CMYK conversion
+        - **Profile Quality**: Quality depends on profile quality
+        - **Gamut Mapping**: Gamut mapping affects quality
+        - **Rendering Intent**: Rendering intent affects quality
+        - **Professional Practice**: Quality depends on conversion settings
+      - **Conversion Best Practices**: Best practices for conversion
+        - **Soft Proofing**: Use soft proofing before conversion
+        - **Gamut Warning**: Check gamut warnings
+        - **Test Prints**: Use test prints to verify
+        - **Professional Practice**: Follow best practices
+    - **Professional Essential**: CMYK profiles essential for accurate print reproduction
+      - **Essential Requirement**: CMYK profiles are essential
+      - **Print Accuracy**: Essential for print accuracy
+      - **Color Matching**: Essential for color matching
+      - **Professional Practice**: CMYK profiles are non-negotiable
+      - **Quality Standard**: CMYK profiles are quality standard
+        - **Quality Requirement**: Quality requirement for printing
+        - **Standard Practice**: Standard practice in industry
+        - **Professional Practice**: Follow quality standard
+    - **GIMP Support**: GIMP supports CMYK workflows with proper profiles
+      - **CMYK Support**: GIMP supports CMYK color management
+      - **Profile Support**: GIMP supports CMYK profiles
+      - **Conversion Support**: GIMP supports RGB to CMYK conversion
+      - **Professional Practice**: GIMP can handle CMYK workflows
+      - **Workflow Integration**: How GIMP integrates CMYK workflows
+        - **Profile Assignment**: Can assign CMYK profiles
+        - **Profile Conversion**: Can convert to CMYK
+        - **Soft Proofing**: Can soft proof CMYK
+        - **Professional Practice**: GIMP fully supports CMYK
+- **Color Profile Workflow**: How color profiles work in practice
+  - **Profile Embedding**: Embedding profiles in image files
+    - **Purpose**: Preserve color information when sharing or archiving images
+      - **Color Preservation**: Preserves color information in files
+      - **Sharing**: Enables correct color display when sharing
+      - **Archiving**: Preserves color information for archiving
+      - **Professional Practice**: Essential for color preservation
+    - **File Formats**: JPEG, TIFF, PNG support profile embedding
+      - **JPEG**: Supports profile embedding (EXIF metadata)
+      - **TIFF**: Supports profile embedding (TIFF tags)
+      - **PNG**: Supports profile embedding (iCCP chunk)
+      - **PSD**: Supports profile embedding (Photoshop format)
+      - **Professional Practice**: Use formats that support embedding
+      - **Format Comparison**: Different formats store profiles differently
+        - **JPEG**: Profile in EXIF metadata
+        - **TIFF**: Profile in TIFF tags
+        - **PNG**: Profile in iCCP chunk
+        - **Professional Practice**: Understand format differences
+    - **Benefits**: Images display correctly in color-managed applications
+      - **Correct Display**: Images display correctly in color-managed apps
+      - **Color Accuracy**: Ensures color accuracy
+      - **Consistency**: Ensures consistency across applications
+      - **Professional Practice**: Benefits are essential
+      - **Application Support**: Color-managed application support
+        - **GIMP**: Fully supports embedded profiles
+        - **Photoshop**: Fully supports embedded profiles
+        - **Lightroom**: Fully supports embedded profiles
+        - **Professional Practice**: Use color-managed applications
+    - **Professional Practice**: Always embed profiles in professional work
+      - **Always Embed**: Always embed profiles in professional work
+      - **Quality Standard**: Embedding is quality standard
+      - **Best Practice**: Recognized best practice
+      - **Professional Practice**: Non-negotiable requirement
+      - **Embedding Workflow**: Workflow for embedding profiles
+        - **Automatic**: Most software embeds automatically
+        - **Verification**: Always verify profile is embedded
+        - **Professional Practice**: Verify embedding
+    - **GIMP Behavior**: GIMP embeds working space profile by default
+      - **Default Behavior**: GIMP embeds working space profile automatically
+      - **Working Space**: Uses current working space profile
+      - **Configuration**: Can be configured in preferences
+      - **Professional Practice**: Understand GIMP behavior
+      - **GIMP Settings**: GIMP embedding settings
+        - **Preferences**: Configure in Preferences → Color Management
+        - **Embedding Option**: Option to always embed profiles
+        - **Professional Practice**: Configure appropriately
+  - **Profile Assignment**: Assigning profiles to images
+    - **When Needed**: Images without profiles or incorrectly tagged images
+      - **Untagged Images**: Images without profiles
+      - **Incorrect Tags**: Images with wrong profiles
+      - **Unknown Source**: Images from unknown sources
+      - **Professional Practice**: Assign when needed
+    - **Method**: Colors → Color Management → Assign Color Profile
+      - **Menu Path**: Colors → Color Management → Assign Color Profile
+      - **Dialog**: Profile assignment dialog appears
+      - **Profile Selection**: Select appropriate profile
+      - **Professional Practice**: Use correct method
+      - **GIMP Dialog**: GIMP assignment dialog details
+        - **Profile List**: List of available profiles
+        - **Profile Preview**: Preview of profile
+        - **Assignment**: Assign button
+        - **Professional Practice**: Understand dialog
+    - **Use Cases**: Correcting incorrectly tagged images, working with untagged images
+      - **Correction**: Correcting incorrect tags
+      - **Untagged**: Working with untagged images
+      - **Verification**: Verifying profile assignments
+      - **Professional Practice**: Use appropriately
+    - **Professional Practice**: Always verify and correct profile assignments
+      - **Verification**: Always verify assignments
+      - **Correction**: Correct when needed
+      - **Quality Standard**: Verification is quality standard
+      - **Professional Practice**: Always verify
+    - **Important**: Assignment doesn't change pixel values, only interpretation
+      - **No Pixel Change**: Pixel values don't change
+      - **Interpretation Change**: Only interpretation changes
+      - **Visual Change**: Visual appearance may change
+      - **Professional Practice**: Understand assignment behavior
+      - **Assignment vs Conversion**: Difference between assignment and conversion
+        - **Assignment**: Changes interpretation, not pixels
+        - **Conversion**: Changes pixels, not interpretation
+        - **Professional Practice**: Understand difference
+  - **Profile Conversion**: Converting images between color spaces
+    - **When Needed**: Converting for different output destinations
+      - **Output Requirements**: Different output destinations
+      - **Device Matching**: Matching device capabilities
+      - **Workflow Requirements**: Workflow requirements
+      - **Professional Practice**: Convert when needed
+    - **Method**: Colors → Color Management → Convert to Color Profile
+      - **Menu Path**: Colors → Color Management → Convert to Color Profile
+      - **Dialog**: Profile conversion dialog appears
+      - **Profile Selection**: Select destination profile
+      - **Rendering Intent**: Select rendering intent
+      - **Professional Practice**: Use correct method
+      - **GIMP Dialog**: GIMP conversion dialog details
+        - **Source Profile**: Source profile (current)
+        - **Destination Profile**: Destination profile selection
+        - **Rendering Intent**: Rendering intent selection
+        - **Black Point Compensation**: Black point compensation option
+        - **Professional Practice**: Understand dialog
+    - **Rendering Intent**: Perceptual, Relative Colorimetric, Absolute Colorimetric, Saturation
+      - **Perceptual**: Perceptual rendering intent
+      - **Relative Colorimetric**: Relative colorimetric intent
+      - **Absolute Colorimetric**: Absolute colorimetric intent
+      - **Saturation**: Saturation rendering intent
+      - **Professional Practice**: Select appropriate intent
+      - **Intent Selection Guide**: Guide for selecting rendering intent
+        - **Photos**: Use Perceptual for photos
+        - **Graphics**: Use Saturation for graphics
+        - **Proofing**: Use Relative Colorimetric for proofing
+        - **Professional Practice**: Follow selection guide
+    - **Quality**: Conversion may cause slight color shifts (especially gamut mapping)
+      - **Color Shifts**: Conversion may cause color shifts
+      - **Gamut Mapping**: Gamut mapping causes shifts
+      - **Quality Impact**: Quality impact depends on conversion
+      - **Professional Practice**: Understand quality impact
+      - **Quality Factors**: Factors affecting conversion quality
+        - **Profile Quality**: Profile quality affects conversion quality
+        - **Rendering Intent**: Rendering intent affects quality
+        - **Gamut Difference**: Gamut difference affects quality
+        - **Professional Practice**: Understand quality factors
+    - **Professional Practice**: Convert copies, preserve original in working space
+      - **Copy First**: Always convert copies
+      - **Preserve Original**: Preserve original in working space
+      - **Best Practice**: Recognized best practice
+      - **Professional Practice**: Always preserve original
+      - **Workflow Safety**: Workflow safety practices
+        - **Backup**: Always backup before conversion
+        - **Verification**: Verify conversion quality
+        - **Professional Practice**: Follow safety practices
+    - **Best Practice**: Convert at end of workflow for specific output
+      - **End of Workflow**: Convert at end of workflow
+      - **Specific Output**: Convert for specific output
+      - **Best Practice**: Recognized best practice
+      - **Professional Practice**: Follow best practice
+      - **Conversion Workflow**: Workflow for conversion
+        - **Step 1**: Complete all editing
+        - **Step 2**: Determine output requirements
+        - **Step 3**: Convert for specific output
+        - **Step 4**: Verify conversion
+        - **Professional Practice**: Follow workflow
 
 ### Assigning, Converting, and Managing Color Profiles
 
+- **Profile Assignment Workflow**: Assigning color profiles to images
+  - **When to Assign Profiles**: Situations requiring profile assignment
+    - **Untagged Images**: Images without embedded color profiles
+      - **Problem**: Image has no color profile embedded
+      - **Symptom**: GIMP may prompt "Image has no color profile" or colors look wrong
+      - **Common Sources**: Images from older cameras, scanned images, downloaded images
+      - **Solution**: Assign appropriate profile based on image source
+      - **Professional Practice**: Always assign profile before editing
+      - **Workflow Impact**: Untagged images can cause color shifts if wrong profile assumed
+    - **Incorrect Tags**: Images with wrong profile assignments
+      - **Problem**: Image has profile but it's incorrect (e.g., sRGB assigned to Adobe RGB image)
+      - **Symptom**: Colors look wrong, image appears too saturated or desaturated
+      - **Common Causes**: Profile assigned incorrectly at capture or processing
+      - **Solution**: Reassign correct profile or convert to correct space
+      - **Professional Practice**: Always verify profile assignments from image sources
+      - **Workflow Impact**: Incorrect profile causes color inaccuracy throughout workflow
+    - **Unknown Source**: Images from unknown or uncalibrated sources
+      - **Problem**: Don't know what color space image is in
+      - **Symptom**: Colors unpredictable, may look wrong
+      - **Common Sources**: Downloaded images, images from unknown cameras
+      - **Solution**: Assign most likely profile (usually sRGB) and verify visually
+      - **Professional Practice**: When uncertain, assign sRGB as safe default
+      - **Workflow Impact**: Unknown source requires careful verification
+    - **Legacy Images**: Older images without modern color management
+      - **Problem**: Older images created before color management was standard
+      - **Symptom**: No profile embedded, colors may look different than expected
+      - **Common Era**: Images from pre-2000 era often lack profiles
+      - **Solution**: Assign appropriate profile (usually sRGB) based on image characteristics
+      - **Professional Practice**: Treat legacy images as untagged
+      - **Workflow Impact**: Legacy images require profile assignment
+    - **Professional Practice**: Always verify profile assignments before editing
+      - **Verification Step**: Check profile assignment as first step
+      - **Visual Check**: Verify colors look correct after assignment
+      - **Source Verification**: Verify profile matches image source when possible
+      - **Workflow Integration**: Profile verification is standard workflow step
+  - **Assignment Methods**: How to assign profiles in GIMP
+    - **Menu Method**: Colors → Color Management → Assign Color Profile
+      - **Menu Path**: Main menu → Colors → Color Management → Assign Color Profile
+        - **Access**: Main menu → Colors → Color Management → Assign Color Profile
+        - **Availability**: Available when image is open
+        - **Professional Practice**: Use menu method for profile assignment
+      - **Dialog**: Assign Color Profile dialog appears
+        - **Dialog Appearance**: Dialog appears after selecting menu item
+        - **Dialog Elements**: Profile list, selection, OK/Cancel buttons
+        - **Professional Practice**: Understand dialog structure
+      - **Profile List**: Shows all available ICC profiles
+        - **List Display**: Shows all installed ICC profiles
+        - **Profile Names**: Displays profile names
+        - **Profile Types**: Shows profile types (RGB, CMYK, Grayscale)
+        - **Professional Practice**: Use list to select profile
+      - **Selection**: Click to select profile from list
+        - **Selection Method**: Click to select profile
+        - **Highlight**: Selected profile is highlighted
+        - **Professional Practice**: Select appropriate profile
+      - **Apply**: Click OK to assign profile
+        - **OK Button**: Click OK to apply assignment
+        - **Assignment**: Profile is assigned to image
+        - **Professional Practice**: Click OK to complete assignment
+      - **Cancel**: Click Cancel to abort assignment
+        - **Cancel Button**: Click Cancel to abort
+        - **No Change**: No changes made to image
+        - **Professional Practice**: Use Cancel to abort if needed
+      - **Dialog Details**: Detailed dialog information
+        - **Profile Information**: Shows profile information in dialog
+        - **Profile Preview**: May show profile preview
+        - **Professional Practice**: Review profile information
+    - **Profile Selection**: Choose appropriate profile from available profiles
+      - **Profile List**: GIMP shows all installed ICC profiles
+        - **System Profiles**: Shows system-installed profiles
+        - **User Profiles**: Shows user-installed profiles
+        - **Profile Location**: Profiles from standard locations
+        - **Professional Practice**: Understand profile sources
+      - **Organization**: Profiles organized by type (RGB, CMYK, Grayscale)
+        - **Type Organization**: Profiles organized by color space type
+        - **RGB Profiles**: RGB profiles grouped together
+        - **CMYK Profiles**: CMYK profiles grouped together
+        - **Grayscale Profiles**: Grayscale profiles grouped together
+        - **Professional Practice**: Use organization to find profiles
+      - **Search**: Can search/filter profiles in list
+        - **Search Function**: Can search for profiles by name
+        - **Filter Function**: Can filter profiles by type
+        - **Professional Practice**: Use search to find profiles quickly
+      - **Common Profiles**: sRGB, Adobe RGB (1998) usually at top of list
+        - **Default Order**: Common profiles often at top
+        - **sRGB**: sRGB profile usually visible
+        - **Adobe RGB**: Adobe RGB profile usually visible
+        - **Professional Practice**: Common profiles easy to find
+      - **Selection Criteria**: Choose profile that matches image source
+        - **Source Matching**: Match profile to image source
+        - **Camera Profiles**: Use camera profile if known
+        - **Default Profiles**: Use default profile if source unknown
+        - **Professional Practice**: Match profile to source
+      - **Professional Practice**: Select profile based on image source and intended use
+        - **Source-Based**: Select based on image source
+        - **Use-Based**: Consider intended use
+        - **Best Practice**: Recognized best practice
+        - **Professional Practice**: Follow best practice
+      - **Profile Verification**: Verify selected profile
+        - **Profile Info**: Review profile information
+        - **Profile Type**: Verify profile type matches image
+        - **Professional Practice**: Verify before assigning
+      - **Profile Installation**: Installing additional profiles
+        - **System Installation**: Install profiles system-wide
+        - **User Installation**: Install profiles for user
+        - **Profile Sources**: Get profiles from manufacturers
+        - **Professional Practice**: Install profiles as needed
+    - **Common Assignments**: sRGB for web images, Adobe RGB for photography
+      - **sRGB Assignment**: Assign sRGB to web images, general photography, unknown sources
+        - **When**: Web images, social media images, general photography
+        - **Why**: sRGB is safe default, works everywhere
+        - **Result**: Image displays correctly in sRGB color space
+        - **Professional Practice**: sRGB is safe default for most images
+      - **Adobe RGB Assignment**: Assign Adobe RGB to professional photography
+        - **When**: Professional photography, images from Adobe RGB cameras
+        - **Why**: Preserves more colors, better for print
+        - **Result**: Image displays correctly in Adobe RGB color space
+        - **Professional Practice**: Adobe RGB for professional photography
+      - **ProPhoto RGB Assignment**: Assign ProPhoto RGB to high-end photography
+        - **When**: High-end photography, maximum color preservation
+        - **Why**: Maximum color preservation
+        - **Result**: Image displays correctly in ProPhoto RGB color space
+        - **Professional Practice**: ProPhoto RGB for maximum quality workflows
+    - **Verification**: Check image properties to confirm assignment
+      - **Image Properties**: Right-click image → Image → Properties
+        - **Access Method**: Right-click image → Image → Properties
+        - **Properties Dialog**: Image properties dialog appears
+        - **Professional Practice**: Use properties to verify
+      - **Color Profile**: Check "Color Profile" field in properties
+        - **Profile Field**: "Color Profile" field in properties
+        - **Profile Display**: Shows assigned profile name
+        - **Professional Practice**: Check profile field
+      - **Profile Name**: Verify profile name matches assigned profile
+        - **Name Matching**: Verify name matches assigned profile
+        - **Exact Match**: Should be exact match
+        - **Professional Practice**: Verify exact match
+      - **Visual Check**: Verify colors look correct after assignment
+        - **Visual Inspection**: Visually inspect image
+        - **Color Appearance**: Colors should look correct
+        - **Professional Practice**: Visual check is essential
+      - **Professional Practice**: Always verify profile assignment
+        - **Always Verify**: Always verify after assignment
+        - **Quality Standard**: Verification is quality standard
+        - **Professional Practice**: Non-negotiable requirement
+      - **Verification Methods**: Multiple verification methods
+        - **Properties Check**: Check image properties
+        - **Visual Check**: Visual inspection
+        - **Color Check**: Check specific colors
+        - **Professional Practice**: Use multiple methods
+      - **Verification Workflow**: Step-by-step verification
+        - **Step 1**: Check image properties
+        - **Step 2**: Verify profile name
+        - **Step 3**: Visual inspection
+        - **Step 4**: Verify colors look correct
+        - **Professional Practice**: Follow verification workflow
+    - **Professional Workflow**: Assign profile as first step in color workflow
+      - **Workflow Order**: 1. Open image, 2. Assign profile, 3. Verify, 4. Edit
+        - **Step 1**: Open image in GIMP
+        - **Step 2**: Assign appropriate profile
+        - **Step 3**: Verify profile assignment
+        - **Step 4**: Begin editing
+        - **Professional Practice**: Follow workflow order
+      - **Early Assignment**: Assign profile before any color adjustments
+        - **Timing**: Assign before any color adjustments
+        - **Reason**: Ensures correct color interpretation
+        - **Professional Practice**: Assign early in workflow
+      - **Workflow Integration**: Profile assignment is standard first step
+        - **Standard Step**: Standard first step in workflow
+        - **Workflow Integration**: Integrated into workflow
+        - **Professional Practice**: Standard practice
+      - **Professional Practice**: Never edit without proper profile assignment
+        - **Never Edit**: Never edit without profile
+        - **Quality Requirement**: Quality requirement
+        - **Professional Practice**: Non-negotiable requirement
+      - **Workflow Benefits**: Benefits of proper workflow
+        - **Color Accuracy**: Ensures color accuracy
+        - **Consistency**: Ensures consistency
+        - **Quality**: Ensures quality
+        - **Professional Practice**: Benefits are essential
+      - **Workflow Documentation**: Documenting workflow
+        - **Document Steps**: Document workflow steps
+        - **Profile Records**: Record profile assignments
+        - **Professional Practice**: Document workflow
+      - **Workflow Automation**: Automating workflow steps
+        - **Scripts**: Use scripts for automation
+        - **Batch Processing**: Batch process profile assignments
+        - **Professional Practice**: Automate when possible
+  - **Assignment vs Conversion**: Understanding the difference
+    - **Assignment**: Changes interpretation of existing pixel values (no pixel change)
+      - **What It Does**: Tells GIMP how to interpret existing pixel values
+      - **Pixel Values**: Pixel RGB values remain unchanged
+      - **Visual Effect**: Image appearance may change (if wrong profile was assumed)
+      - **Reversibility**: Can reassign different profile (non-destructive)
+      - **Use Case**: When image is in correct color space but untagged
+      - **Example**: Image is actually sRGB but has no profile - assign sRGB profile
+      - **Professional Practice**: Assignment is non-destructive operation
+    - **Conversion**: Changes actual pixel values to match new color space
+      - **What It Does**: Actually changes pixel RGB values to match new color space
+      - **Pixel Values**: Pixel RGB values are modified
+      - **Visual Effect**: Image appearance changes to match new color space
+      - **Reversibility**: Cannot perfectly reverse (some information may be lost)
+      - **Use Case**: When image needs to be in different color space
+      - **Example**: Image is sRGB but needs to be Adobe RGB - convert to Adobe RGB
+      - **Professional Practice**: Conversion is destructive operation
+    - **When to Assign**: When image is already in correct color space but untagged
+      - **Situation**: Image colors are correct, just missing profile tag
+      - **Action**: Assign profile that matches current color space
+      - **Result**: Image looks same, now has correct profile
+      - **Professional Practice**: Assign when image is correct but untagged
+    - **When to Convert**: When image needs to be in different color space
+      - **Situation**: Image needs to be in different color space (e.g., sRGB to Adobe RGB)
+      - **Action**: Convert to target color space
+      - **Result**: Image colors adjusted to match new color space
+      - **Professional Practice**: Convert when changing color space
+    - **Professional Insight**: Assignment is non-destructive, conversion changes pixels
+      - **Assignment Safety**: Assignment is safe, can be undone
+      - **Conversion Caution**: Conversion changes pixels, work on copy
+      - **Workflow**: Assign first, convert only when necessary
+      - **Professional Practice**: Understand difference to avoid mistakes
+- **Profile Conversion Workflow**: Converting images between color spaces
+  - **Conversion Process**: Step-by-step profile conversion
+    - **Source Profile**: Current image color space (embedded or assigned)
+      - **Profile Identification**: GIMP identifies current image color space
+      - **Embedded Profile**: Uses embedded profile if present
+      - **Assigned Profile**: Uses assigned profile if no embedded profile
+      - **Working Space**: Uses working space if no profile
+      - **Professional Practice**: Understand source profile identification
+      - **Source Profile Verification**: Verify source profile before conversion
+        - **Check Properties**: Check image properties for source profile
+        - **Verify Correctness**: Verify source profile is correct
+        - **Professional Practice**: Always verify source profile
+    - **Destination Profile**: Target color space for conversion
+      - **Profile Selection**: Select destination profile from available profiles
+      - **Profile Matching**: Match destination profile to output requirements
+      - **Profile Verification**: Verify destination profile is appropriate
+      - **Professional Practice**: Select appropriate destination profile
+      - **Destination Profile Selection**: How to select destination profile
+        - **Output Requirements**: Select based on output requirements
+        - **Device Capabilities**: Consider device capabilities
+        - **Workflow Requirements**: Consider workflow requirements
+        - **Professional Practice**: Select based on requirements
+    - **Rendering Intent**: How to handle out-of-gamut colors
+      - **Intent Selection**: Select appropriate rendering intent
+      - **Intent Types**: Four types of rendering intents
+      - **Intent Impact**: Rendering intent significantly affects result
+      - **Professional Practice**: Select appropriate rendering intent
+      - **Rendering Intent Details**: Detailed rendering intent information
+        - **Perceptual**: For photos with many out-of-gamut colors
+        - **Relative Colorimetric**: For photos with few out-of-gamut colors
+        - **Absolute Colorimetric**: For proofing and matching
+        - **Saturation**: For graphics and charts
+        - **Professional Practice**: Understand intent details
+    - **Conversion Engine**: GIMP uses LittleCMS for color conversion
+      - **LittleCMS**: LittleCMS color management engine
+      - **Engine Quality**: High-quality color conversion engine
+      - **Engine Features**: Supports all ICC profile features
+      - **Professional Practice**: Trust LittleCMS engine
+      - **LittleCMS Details**: Technical details about LittleCMS
+        - **Version**: GIMP uses LittleCMS 2.x
+        - **Features**: Full ICC v4 support
+        - **Performance**: High-performance conversion
+        - **Quality**: High-quality conversion
+        - **Professional Practice**: Understand engine capabilities
+    - **Quality**: High-quality conversion preserves color relationships
+      - **Quality Level**: High-quality conversion
+      - **Color Preservation**: Preserves color relationships
+      - **Detail Preservation**: Preserves image detail
+      - **Professional Practice**: Quality is essential
+      - **Quality Factors**: Factors affecting conversion quality
+        - **Profile Quality**: Profile quality affects conversion quality
+        - **Rendering Intent**: Rendering intent affects quality
+        - **Gamut Difference**: Gamut difference affects quality
+        - **Bit Depth**: Bit depth affects quality
+        - **Professional Practice**: Understand quality factors
+    - **Professional Practice**: Always preview conversion before applying
+      - **Preview First**: Always preview before applying
+      - **Quality Check**: Check quality in preview
+      - **Best Practice**: Recognized best practice
+      - **Professional Practice**: Always preview
+      - **Preview Methods**: Methods for previewing conversion
+        - **Soft Proofing**: Use soft proofing to preview
+        - **Gamut Warning**: Check gamut warnings
+        - **Visual Inspection**: Visually inspect preview
+        - **Professional Practice**: Use multiple preview methods
+  - **Rendering Intent Selection**: Choosing appropriate rendering intent
+    - **What Are Rendering Intents**: Algorithms that determine how out-of-gamut colors are handled
+      - **Problem**: Source color space may have colors outside destination gamut
+      - **Solution**: Rendering intent determines how to map out-of-gamut colors
+      - **Four Types**: Perceptual, Relative Colorimetric, Absolute Colorimetric, Saturation
+      - **Selection**: Choose based on image content and intended use
+      - **Professional Practice**: Rendering intent significantly affects conversion quality
+    - **Perceptual**: Preserves color relationships, good for photos with many out-of-gamut colors
+      - **Algorithm**: Compresses entire gamut to fit destination, preserving color relationships
+        - **How It Works**: Scales entire color gamut to fit destination gamut
+          - **Gamut Scaling**: Entire source gamut is scaled to fit destination gamut
+          - **Proportional Scaling**: Scaling is proportional across all colors
+          - **Mathematical Model**: Uses mathematical scaling function
+          - **Professional Practice**: Understand scaling mechanism
+        - **Color Relationships**: Preserves relative relationships between colors
+          - **Relative Preservation**: Relative relationships between colors preserved
+          - **Color Ratios**: Color ratios maintained
+          - **Perceptual Uniformity**: Maintains perceptual uniformity
+          - **Professional Practice**: Relationships preservation is key
+        - **Gamut Mapping**: All colors shifted proportionally to fit gamut
+          - **Proportional Shift**: All colors shifted proportionally
+          - **Uniform Compression**: Uniform compression of gamut
+          - **No Clipping**: No colors are clipped
+          - **Professional Practice**: Understand mapping mechanism
+        - **Result**: Natural-looking colors, smooth transitions
+          - **Natural Appearance**: Natural-looking colors
+          - **Smooth Transitions**: Smooth color transitions
+          - **Professional Practice**: Result is natural appearance
+        - **Mathematical Details**: Mathematical details of algorithm
+          - **Scaling Function**: Uses scaling function to compress gamut
+          - **Color Space**: Works in perceptual color space (Lab)
+          - **Compression Ratio**: Compression ratio based on gamut sizes
+          - **Professional Practice**: Understand mathematical basis
+      - **Use Cases**: Photographs, images with wide color gamut
+        - **Photographs**: Ideal for photographic images with many colors
+          - **Photo Suitability**: Best for photographic images
+          - **Color Variety**: Handles wide variety of colors
+          - **Professional Practice**: Standard for photos
+        - **Wide Gamut**: Best when many colors are out-of-gamut
+          - **Out-of-Gamut Count**: Best when many colors out-of-gamut
+          - **Gamut Mismatch**: Handles large gamut mismatches
+          - **Professional Practice**: Use when many colors out-of-gamut
+        - **Natural Scenes**: Best for natural scenes with smooth color transitions
+          - **Natural Content**: Best for natural content
+          - **Smooth Transitions**: Handles smooth color transitions
+          - **Professional Practice**: Use for natural scenes
+        - **Professional Photography**: Standard for professional photography
+          - **Industry Standard**: Industry standard for photography
+          - **Best Practice**: Recognized best practice
+          - **Professional Practice**: Follow industry standard
+      - **Result**: Smooth color transitions, natural appearance
+        - **Appearance**: Natural-looking, smooth color transitions
+          - **Natural Look**: Natural-looking colors
+          - **Smooth Gradients**: Smooth color gradients
+          - **Professional Practice**: Natural appearance is result
+        - **Color Accuracy**: May shift all colors slightly to fit gamut
+          - **Color Shift**: All colors may shift slightly
+          - **Shift Amount**: Shift amount depends on gamut difference
+          - **Professional Practice**: Understand color shift
+        - **Detail Preservation**: Preserves detail in all areas
+          - **Detail Maintained**: Detail preserved in all areas
+          - **No Clipping**: No detail lost to clipping
+          - **Professional Practice**: Detail preservation is advantage
+        - **Professional Practice**: Best choice for most photographic work
+          - **Best Choice**: Best choice for most photos
+          - **Standard Practice**: Standard practice
+          - **Professional Practice**: Follow standard practice
+      - **Trade-off**: May shift all colors slightly to fit gamut
+        - **Color Shift**: All colors may shift slightly (even in-gamut colors)
+          - **Shift Mechanism**: All colors shifted proportionally
+          - **In-Gamut Shift**: Even in-gamut colors may shift
+          - **Shift Amount**: Shift amount depends on gamut difference
+          - **Professional Practice**: Understand shift mechanism
+        - **Acceptable Trade-off**: Usually acceptable for natural appearance
+          - **Acceptability**: Usually acceptable
+          - **Natural Appearance**: Natural appearance compensates
+          - **Professional Practice**: Acceptable trade-off
+        - **Professional Practice**: Acceptable trade-off for photographic work
+          - **Photo Work**: Acceptable for photographic work
+          - **Standard Practice**: Standard practice accepts trade-off
+          - **Professional Practice**: Follow standard practice
+      - **When to Use**: Use for photographs, natural scenes, images with many out-of-gamut colors
+        - **Photo Use**: Use for photographs
+        - **Natural Scenes**: Use for natural scenes
+        - **Many Out-of-Gamut**: Use when many colors out-of-gamut
+        - **Professional Practice**: Use appropriately
+      - **Professional Recommendation**: Perceptual is standard for photographic work
+        - **Standard**: Standard for photographic work
+        - **Recommendation**: Recommended for photos
+        - **Professional Practice**: Follow recommendation
+      - **Algorithm Complexity**: Technical complexity of algorithm
+        - **Complexity Level**: Moderate complexity
+        - **Processing Time**: Moderate processing time
+        - **Quality**: High quality result
+        - **Professional Practice**: Understand complexity
+      - **Gamut Compression Details**: Details of gamut compression
+        - **Compression Method**: Uniform compression method
+        - **Compression Ratio**: Ratio based on gamut sizes
+        - **Color Preservation**: Color relationships preserved
+        - **Professional Practice**: Understand compression
+    - **Relative Colorimetric**: Preserves in-gamut colors exactly, clips out-of-gamut colors
+      - **Algorithm**: Preserves in-gamut colors exactly, clips out-of-gamut to nearest edge
+        - **How It Works**: In-gamut colors unchanged, out-of-gamut colors clipped to gamut edge
+          - **In-Gamut Handling**: In-gamut colors pass through unchanged
+          - **Out-of-Gamut Handling**: Out-of-gamut colors clipped to gamut edge
+          - **Clipping Method**: Clips to nearest printable color
+          - **Professional Practice**: Understand clipping mechanism
+        - **Color Accuracy**: In-gamut colors are exactly accurate
+          - **Exact Accuracy**: In-gamut colors are exactly accurate
+          - **No Shift**: No color shift for in-gamut colors
+          - **Professional Practice**: Accuracy is advantage
+        - **Gamut Mapping**: Out-of-gamut colors mapped to nearest printable color
+          - **Nearest Color**: Maps to nearest printable color
+          - **Clipping**: Clips to gamut boundary
+          - **Professional Practice**: Understand mapping
+        - **White Point**: Adjusts white point to match destination
+          - **White Point Adjustment**: Adjusts white point to destination
+          - **Relative Adjustment**: Relative to white point
+          - **Professional Practice**: Understand white point adjustment
+        - **Result**: Accurate in-gamut colors, clipped out-of-gamut areas
+          - **Accurate Colors**: In-gamut colors accurate
+          - **Clipped Areas**: Out-of-gamut areas clipped
+          - **Professional Practice**: Understand result
+        - **Mathematical Details**: Mathematical details of algorithm
+          - **Gamut Boundary**: Uses gamut boundary for clipping
+          - **Color Space**: Works in device-independent color space
+          - **Clipping Function**: Uses clipping function for out-of-gamut colors
+          - **Professional Practice**: Understand mathematical basis
+      - **Use Cases**: Images with few out-of-gamut colors, logos, graphics
+        - **Few Out-of-Gamut**: Best when few colors are out-of-gamut
+          - **Out-of-Gamut Count**: Best when few colors out-of-gamut
+          - **Minimal Clipping**: Minimal clipping when few out-of-gamut
+          - **Professional Practice**: Use when few out-of-gamut
+        - **Logos**: Ideal for logos and graphics with specific colors
+          - **Logo Suitability**: Ideal for logos
+          - **Color Specificity**: Handles specific colors well
+          - **Professional Practice**: Use for logos
+        - **Color Accuracy**: When color accuracy is critical
+          - **Accuracy Requirement**: When accuracy is critical
+          - **In-Gamut Accuracy**: Provides in-gamut accuracy
+          - **Professional Practice**: Use when accuracy critical
+        - **Graphics**: Best for graphics with solid colors
+          - **Graphics Suitability**: Best for graphics
+          - **Solid Colors**: Handles solid colors well
+          - **Professional Practice**: Use for graphics
+      - **Result**: Accurate colors for in-gamut areas, clipped highlights/shadows
+        - **In-Gamut Accuracy**: In-gamut colors are exactly accurate
+          - **Exact Match**: In-gamut colors exactly match
+          - **No Shift**: No color shift
+          - **Professional Practice**: Accuracy is advantage
+        - **Out-of-Gamut Clipping**: Out-of-gamut colors clipped to nearest printable color
+          - **Clipping Method**: Clips to nearest printable color
+          - **Boundary Clipping**: Clips to gamut boundary
+          - **Professional Practice**: Understand clipping
+        - **Detail Loss**: May lose detail in out-of-gamut areas (highlights/shadows)
+          - **Detail Loss**: Detail lost in out-of-gamut areas
+          - **Highlight/Shadow Loss**: Highlights/shadows may lose detail
+          - **Professional Practice**: Understand detail loss
+        - **Professional Practice**: Best when color accuracy is critical
+          - **Accuracy Priority**: Best when accuracy is priority
+          - **Standard Practice**: Standard practice for accuracy
+          - **Professional Practice**: Follow standard practice
+      - **Trade-off**: May lose detail in out-of-gamut areas
+        - **Detail Loss**: Out-of-gamut areas may lose detail (clipped)
+          - **Clipping Loss**: Clipping causes detail loss
+          - **Highlight/Shadow Loss**: Highlights/shadows lose detail
+          - **Professional Practice**: Understand loss
+        - **Acceptable Trade-off**: Usually acceptable when few colors out-of-gamut
+          - **Acceptability**: Acceptable when few out-of-gamut
+          - **Minimal Loss**: Minimal loss when few out-of-gamut
+          - **Professional Practice**: Acceptable trade-off
+        - **Professional Practice**: Acceptable when color accuracy is priority
+          - **Accuracy Priority**: Acceptable when accuracy priority
+          - **Standard Practice**: Standard practice accepts trade-off
+          - **Professional Practice**: Follow standard practice
+      - **Algorithm Complexity**: Technical complexity of algorithm
+        - **Complexity Level**: Lower complexity than Perceptual
+        - **Processing Time**: Faster processing than Perceptual
+        - **Quality**: High quality for in-gamut colors
+        - **Professional Practice**: Understand complexity
+      - **Clipping Details**: Details of clipping mechanism
+        - **Clipping Method**: Clips to gamut boundary
+        - **Nearest Color**: Maps to nearest printable color
+        - **Boundary Detection**: Detects gamut boundary
+        - **Professional Practice**: Understand clipping
+      - **When to Use**: Use for graphics, logos, images with few out-of-gamut colors
+      - **Professional Recommendation**: Relative Colorimetric for graphics and logos
+    - **Absolute Colorimetric**: Preserves colors exactly, no white point adjustment
+      - **Algorithm**: Preserves colors exactly, no white point adjustment
+        - **How It Works**: Colors preserved exactly, white point not adjusted
+          - **Color Preservation**: Colors preserved exactly
+          - **No White Point Adjustment**: White point not adjusted
+          - **Exact Matching**: Exact color matching
+          - **Professional Practice**: Understand exact matching mechanism
+        - **Color Accuracy**: Maximum color accuracy
+          - **Maximum Accuracy**: Maximum possible color accuracy
+          - **Exact Match**: Exact color match
+          - **Professional Practice**: Accuracy is advantage
+        - **White Point**: Source white point preserved (not adjusted to destination)
+          - **White Point Preservation**: Source white point preserved
+          - **No Adjustment**: No adjustment to destination white point
+          - **Professional Practice**: Understand white point preservation
+        - **Result**: Exact color matching, may look incorrect on different displays
+          - **Exact Match**: Exact color matching
+          - **Display Issues**: May look incorrect on different displays
+          - **Professional Practice**: Understand result
+        - **Mathematical Details**: Mathematical details of algorithm
+          - **No White Point Transform**: No white point transformation
+          - **Exact Color Match**: Exact color matching algorithm
+          - **Color Space**: Works in device-independent color space
+          - **Professional Practice**: Understand mathematical basis
+      - **Use Cases**: Proofing, specific color matching requirements
+        - **Proofing**: Used for proofing workflows
+          - **Proofing Workflows**: Used in proofing workflows
+          - **Color Matching**: Exact color matching for proofing
+          - **Professional Practice**: Use for proofing
+        - **Color Matching**: When exact color matching is required
+          - **Exact Requirements**: When exact color matching required
+          - **Special Cases**: Special color matching cases
+          - **Professional Practice**: Use when exact matching required
+        - **Special Requirements**: For special color matching requirements
+          - **Special Cases**: Special requirements
+          - **Specific Needs**: Specific color matching needs
+          - **Professional Practice**: Use for special requirements
+        - **Rare Use**: Rarely used in normal workflows
+          - **Limited Use**: Very limited use
+          - **Normal Workflows**: Not used in normal workflows
+          - **Professional Practice**: Rarely used
+      - **Result**: Exact color matching, may look incorrect on different displays
+        - **Color Accuracy**: Maximum color accuracy
+          - **Maximum Accuracy**: Maximum possible accuracy
+          - **Exact Match**: Exact color match
+          - **Professional Practice**: Accuracy is advantage
+        - **Display Issues**: May look incorrect on different displays (white point not adjusted)
+          - **White Point Issue**: White point not adjusted causes display issues
+          - **Different Displays**: May look incorrect on different displays
+          - **Professional Practice**: Understand display issues
+        - **Proofing**: Used mainly for proofing workflows
+          - **Proofing Use**: Mainly for proofing
+          - **Workflow Integration**: Integrates with proofing workflows
+          - **Professional Practice**: Use for proofing
+        - **Professional Practice**: Rarely used, mainly for proofing
+          - **Limited Use**: Rarely used
+          - **Proofing Focus**: Mainly for proofing
+          - **Professional Practice**: Follow practice
+      - **Trade-off**: Rarely used, mainly for proofing workflows
+        - **Limited Use**: Very limited use cases
+          - **Use Limitation**: Very limited use
+          - **Specific Cases**: Only specific cases
+          - **Professional Practice**: Understand limitation
+        - **Proofing Only**: Mainly for proofing workflows
+          - **Proofing Focus**: Mainly for proofing
+          - **Limited Application**: Limited application
+          - **Professional Practice**: Use for proofing only
+        - **Professional Practice**: Avoid unless specifically needed for proofing
+          - **Avoidance**: Avoid unless needed
+          - **Specific Need**: Only when specifically needed
+          - **Professional Practice**: Follow practice
+      - **When to Use**: Use only for proofing or specific color matching requirements
+        - **Proofing Use**: Use for proofing
+        - **Specific Requirements**: Use for specific requirements
+        - **Professional Practice**: Use appropriately
+      - **Professional Recommendation**: Avoid unless specifically needed
+        - **Avoidance**: Avoid unless needed
+        - **Specific Need**: Only when specifically needed
+        - **Professional Practice**: Follow recommendation
+      - **Algorithm Complexity**: Technical complexity of algorithm
+        - **Complexity Level**: Lower complexity
+        - **Processing Time**: Fast processing
+        - **Quality**: High quality for exact matching
+        - **Professional Practice**: Understand complexity
+      - **White Point Details**: Details of white point handling
+        - **No Adjustment**: White point not adjusted
+        - **Source Preservation**: Source white point preserved
+        - **Display Impact**: Impact on display appearance
+        - **Professional Practice**: Understand white point handling
+    - **Saturation**: Maximizes color saturation, good for graphics
+      - **Algorithm**: Maximizes color saturation, may sacrifice color accuracy
+        - **How It Works**: Maximizes saturation of colors, may shift hues
+          - **Saturation Maximization**: Maximizes color saturation
+          - **Hue Shifting**: May shift hues to maximize saturation
+          - **Gamut Mapping**: Maps colors to maximize saturation
+          - **Professional Practice**: Understand saturation maximization
+        - **Color Accuracy**: May sacrifice color accuracy for saturation
+          - **Accuracy Trade-off**: May sacrifice accuracy for saturation
+          - **Saturation Priority**: Saturation is priority
+          - **Professional Practice**: Understand trade-off
+        - **Gamut Mapping**: Maps colors to maximize saturation
+          - **Saturation Mapping**: Maps to maximize saturation
+          - **Gamut Utilization**: Utilizes full gamut for saturation
+          - **Professional Practice**: Understand mapping
+        - **Result**: Vibrant colors, may sacrifice accuracy
+          - **Vibrant Result**: Very vibrant colors
+          - **Accuracy Sacrifice**: May sacrifice accuracy
+          - **Professional Practice**: Understand result
+        - **Mathematical Details**: Mathematical details of algorithm
+          - **Saturation Function**: Uses saturation maximization function
+          - **Color Space**: Works in perceptual color space
+          - **Saturation Calculation**: Calculates maximum saturation
+          - **Professional Practice**: Understand mathematical basis
+      - **Use Cases**: Business graphics, charts, diagrams
+        - **Business Graphics**: Ideal for business graphics requiring vibrant colors
+          - **Graphics Suitability**: Ideal for business graphics
+          - **Vibrant Requirement**: When vibrant colors required
+          - **Professional Practice**: Use for business graphics
+        - **Charts**: Good for charts and diagrams
+          - **Chart Suitability**: Good for charts
+          - **Diagram Suitability**: Good for diagrams
+          - **Professional Practice**: Use for charts/diagrams
+        - **Presentations**: Good for presentation graphics
+          - **Presentation Use**: Good for presentations
+          - **Visual Impact**: Creates visual impact
+          - **Professional Practice**: Use for presentations
+        - **Not Photos**: Not suitable for photographic work
+          - **Photo Unsuitability**: Not suitable for photos
+          - **Natural Appearance**: Not for natural appearance
+          - **Professional Practice**: Avoid for photos
+      - **Result**: Vibrant colors, may sacrifice color accuracy
+        - **Vibrant Colors**: Colors are very vibrant and saturated
+          - **High Saturation**: Very high saturation
+          - **Vibrant Appearance**: Vibrant appearance
+          - **Professional Practice**: Vibrant colors are result
+        - **Color Accuracy**: May sacrifice color accuracy
+          - **Accuracy Loss**: May lose color accuracy
+          - **Hue Shifts**: Hues may shift
+          - **Professional Practice**: Understand accuracy loss
+        - **Appearance**: May look unnatural for photographs
+          - **Unnatural Look**: May look unnatural for photos
+          - **Graphics Look**: Appropriate for graphics
+          - **Professional Practice**: Understand appearance
+        - **Professional Practice**: Use only for graphics, not photographs
+          - **Graphics Only**: Use only for graphics
+          - **Photo Avoidance**: Avoid for photos
+          - **Professional Practice**: Follow practice
+      - **Trade-off**: Not suitable for photographic work
+        - **Photo Quality**: Not suitable for photographic work
+          - **Quality Issue**: Not suitable for photo quality
+          - **Natural Appearance**: Not for natural appearance
+          - **Professional Practice**: Avoid for photos
+        - **Color Accuracy**: Sacrifices color accuracy
+          - **Accuracy Sacrifice**: Sacrifices accuracy
+          - **Saturation Priority**: Saturation prioritized over accuracy
+          - **Professional Practice**: Understand sacrifice
+        - **Professional Practice**: Avoid for photographic work
+          - **Avoidance**: Avoid for photos
+          - **Graphics Only**: Use for graphics only
+          - **Professional Practice**: Follow practice
+      - **When to Use**: Use only for business graphics, charts, diagrams
+        - **Graphics Use**: Use for graphics
+        - **Charts Use**: Use for charts
+        - **Diagrams Use**: Use for diagrams
+        - **Professional Practice**: Use appropriately
+      - **Professional Recommendation**: Use only for graphics requiring vibrant colors
+        - **Graphics Recommendation**: Use for graphics
+        - **Vibrant Requirement**: When vibrant colors required
+        - **Professional Practice**: Follow recommendation
+      - **Algorithm Complexity**: Technical complexity of algorithm
+        - **Complexity Level**: Moderate complexity
+        - **Processing Time**: Moderate processing time
+        - **Quality**: High saturation quality
+        - **Professional Practice**: Understand complexity
+      - **Saturation Details**: Details of saturation maximization
+        - **Maximization Method**: Method for maximizing saturation
+        - **Gamut Utilization**: Utilizes full gamut
+        - **Color Enhancement**: Enhances color saturation
+        - **Professional Practice**: Understand saturation
+    - **Professional Recommendation**: Perceptual for photos, Relative Colorimetric for graphics
+      - **Photographs**: Use Perceptual for all photographic work
+      - **Graphics**: Use Relative Colorimetric for graphics and logos
+      - **Testing**: Test both if uncertain which is better
+      - **Professional Practice**: These are standard recommendations
+  - **Conversion Best Practices**: Professional conversion techniques
+    - **Work in Large Gamut**: Edit in large gamut (Adobe RGB or ProPhoto RGB)
+      - **Why**: Large gamut preserves more color information during editing
+        - **Information Preservation**: Preserves more color information
+        - **Color Range**: Larger color range available
+        - **Professional Practice**: Understand preservation benefit
+      - **Adobe RGB**: Standard choice for professional photography (50% larger than sRGB)
+        - **Standard Choice**: Standard for professional photography
+        - **Gamut Size**: 50% larger than sRGB
+        - **Professional Practice**: Use Adobe RGB for photography
+      - **ProPhoto RGB**: Maximum color preservation (90% of visible spectrum)
+        - **Maximum Preservation**: Maximum color preservation
+        - **Gamut Coverage**: 90% of visible spectrum
+        - **Professional Practice**: Use ProPhoto RGB for maximum quality
+      - **Editing Headroom**: Large gamut provides more headroom for color adjustments
+        - **Headroom**: More editing headroom
+        - **Color Adjustments**: More room for color adjustments
+        - **Professional Practice**: Headroom is advantage
+      - **Future-Proofing**: Preserves colors for future display technologies
+        - **Technology Evolution**: Future display technologies
+        - **Color Preservation**: Preserves colors for future
+        - **Professional Practice**: Future-proof workflow
+      - **Professional Practice**: Edit in large gamut, convert for specific output
+        - **Edit Large**: Edit in large gamut
+        - **Convert Output**: Convert for specific output
+        - **Best Practice**: Recognized best practice
+        - **Professional Practice**: Follow best practice
+      - **Gamut Selection Guide**: Guide for selecting working gamut
+        - **Adobe RGB**: For professional photography
+        - **ProPhoto RGB**: For maximum quality
+        - **Selection Criteria**: Select based on requirements
+        - **Professional Practice**: Follow selection guide
+      - **Workflow Integration**: How large gamut integrates into workflow
+        - **Capture**: Capture in large gamut when possible
+        - **Editing**: Edit in large gamut
+        - **Output**: Convert for specific output
+        - **Professional Practice**: Integrate throughout workflow
+    - **Convert for Output**: Convert to destination profile at end of workflow
+      - **Timing**: Convert at very end of workflow, after all editing complete
+        - **End Timing**: Convert at very end
+        - **After Editing**: After all editing complete
+        - **Professional Practice**: Follow timing
+      - **Flexibility**: Keeps image in working space for maximum editing flexibility
+        - **Flexibility Benefit**: Maximum editing flexibility
+        - **Working Space**: Keeps in working space
+        - **Professional Practice**: Flexibility is advantage
+      - **Multiple Outputs**: Can create multiple output versions from same master
+        - **Multiple Versions**: Create multiple versions
+        - **Same Master**: From same master file
+        - **Professional Practice**: Multiple outputs from master
+      - **Workflow Efficiency**: Single master file, multiple output versions
+        - **Efficiency**: Single master, multiple outputs
+        - **Workflow Benefit**: Workflow efficiency benefit
+        - **Professional Practice**: Efficiency is advantage
+      - **Professional Practice**: Convert as final step for specific output destination
+        - **Final Step**: Convert as final step
+        - **Output Destination**: For specific output destination
+        - **Best Practice**: Recognized best practice
+        - **Professional Practice**: Follow best practice
+      - **Conversion Workflow**: Step-by-step conversion workflow
+        - **Step 1**: Complete all editing
+        - **Step 2**: Determine output requirements
+        - **Step 3**: Select destination profile
+        - **Step 4**: Preview conversion
+        - **Step 5**: Convert for output
+        - **Professional Practice**: Follow workflow
+      - **Output Requirements Analysis**: How to analyze output requirements
+        - **Output Device**: Identify output device
+        - **Output Medium**: Identify output medium
+        - **Color Requirements**: Identify color requirements
+        - **Professional Practice**: Analyze requirements
+    - **Preserve Originals**: Always keep original in working space
+      - **Master File**: Keep original in working space as master file
+        - **Master Preservation**: Keep as master file
+        - **Working Space**: In working space
+        - **Professional Practice**: Preserve master
+      - **Output Versions**: Create converted versions for specific outputs
+        - **Version Creation**: Create converted versions
+        - **Specific Outputs**: For specific outputs
+        - **Professional Practice**: Create versions
+      - **Naming Convention**: Use clear naming (e.g., "image_master.psd", "image_web.jpg", "image_print.tif")
+        - **Clear Naming**: Use clear naming convention
+        - **Naming Examples**: "image_master.psd", "image_web.jpg", "image_print.tif"
+        - **Professional Practice**: Follow naming convention
+      - **Archival Value**: Master file preserves maximum information
+        - **Maximum Information**: Preserves maximum information
+        - **Archival Quality**: Archival quality
+        - **Professional Practice**: Archival value is important
+      - **Re-editing**: Master file allows re-editing and different conversions
+        - **Re-editing Capability**: Allows re-editing
+        - **Different Conversions**: Allows different conversions
+        - **Professional Practice**: Re-editing is advantage
+      - **Professional Standard**: Never convert original, always work on copy
+        - **Never Convert Original**: Never convert original
+        - **Work on Copy**: Always work on copy
+        - **Industry Standard**: Industry standard
+        - **Professional Practice**: Follow standard
+      - **Master File Management**: How to manage master files
+        - **Storage**: Store master files securely
+        - **Backup**: Backup master files
+        - **Organization**: Organize master files
+        - **Professional Practice**: Manage masters properly
+      - **Version Control**: How to control versions
+        - **Version Tracking**: Track versions
+        - **Version Naming**: Name versions clearly
+        - **Version Management**: Manage versions
+        - **Professional Practice**: Control versions
+    - **16-bit Workflow**: Use 16-bit for conversions to prevent banding
+      - **Banding Prevention**: 16-bit provides smooth gradients, prevents visible banding
+        - **Smooth Gradients**: Smooth gradients in 16-bit
+        - **Banding Prevention**: Prevents visible banding
+        - **Professional Practice**: Banding prevention is essential
+      - **Conversion Quality**: Higher quality conversion with 16-bit precision
+        - **Higher Quality**: Higher quality conversion
+        - **16-bit Precision**: 16-bit precision
+        - **Professional Practice**: Quality is essential
+      - **Gamut Mapping**: Smoother gamut mapping with 16-bit
+        - **Smooth Mapping**: Smoother gamut mapping
+        - **16-bit Advantage**: 16-bit advantage for mapping
+        - **Professional Practice**: Smooth mapping is advantage
+      - **Editing Headroom**: More headroom for color adjustments
+        - **More Headroom**: More editing headroom
+        - **Color Adjustments**: More room for adjustments
+        - **Professional Practice**: Headroom is advantage
+      - **Professional Standard**: 16-bit workflow is standard for professional work
+        - **Industry Standard**: Industry standard
+        - **Professional Work**: Standard for professional work
+        - **Professional Practice**: Follow standard
+      - **Storage Trade-off**: 16-bit requires 2x storage but worth it for quality
+        - **Storage Cost**: 2x storage required
+        - **Quality Benefit**: Worth it for quality
+        - **Professional Practice**: Accept trade-off
+      - **16-bit vs 8-bit Comparison**: Technical comparison
+        - **Levels**: 65,536 levels (16-bit) vs 256 levels (8-bit)
+        - **Quality Difference**: Significant quality difference
+        - **Storage Difference**: 2x storage difference
+        - **Professional Practice**: Understand comparison
+      - **16-bit Workflow Setup**: How to set up 16-bit workflow
+        - **Capture**: Capture in 16-bit when possible
+        - **Editing**: Edit in 16-bit
+        - **Conversion**: Convert in 16-bit
+        - **Professional Practice**: Set up properly
+    - **Preview Before Convert**: Use soft proofing to preview conversion results
+      - **Soft Proofing**: Enable soft proofing to preview conversion on screen
+        - **Enable Soft Proofing**: Enable soft proofing
+        - **Screen Preview**: Preview on screen
+        - **Professional Practice**: Use soft proofing
+      - **Visual Check**: Visually check conversion result before applying
+        - **Visual Inspection**: Visually inspect preview
+        - **Quality Check**: Check quality in preview
+        - **Professional Practice**: Visual check is essential
+      - **Gamut Warning**: Use gamut warning to identify problem areas
+        - **Gamut Warning Tool**: Use gamut warning tool
+        - **Problem Identification**: Identify problem areas
+        - **Professional Practice**: Use gamut warning
+      - **Adjustments**: Make adjustments based on soft proof preview
+        - **Adjustment Based on Preview**: Make adjustments based on preview
+        - **Quality Improvement**: Improve quality based on preview
+        - **Professional Practice**: Adjust based on preview
+      - **Workflow Integration**: Preview is essential step before final conversion
+        - **Essential Step**: Preview is essential step
+        - **Before Conversion**: Before final conversion
+        - **Professional Practice**: Integrate preview
+      - **Professional Practice**: Always preview before final conversion
+        - **Always Preview**: Always preview
+        - **Before Final**: Before final conversion
+        - **Best Practice**: Recognized best practice
+        - **Professional Practice**: Follow best practice
+      - **Preview Methods**: Different methods for previewing
+        - **Soft Proofing**: Use soft proofing
+        - **Gamut Warning**: Use gamut warning
+        - **Visual Inspection**: Visual inspection
+        - **Professional Practice**: Use multiple methods
+      - **Preview Workflow**: Step-by-step preview workflow
+        - **Step 1**: Enable soft proofing
+        - **Step 2**: Check gamut warnings
+        - **Step 3**: Visually inspect
+        - **Step 4**: Make adjustments if needed
+        - **Professional Practice**: Follow workflow
+    - **Professional Practice**: Convert copies, never convert originals
+      - **Safety First**: Always work on copy, never convert original
+        - **Safety Priority**: Safety is priority
+        - **Work on Copy**: Always work on copy
+        - **Professional Practice**: Safety first
+      - **Master Preservation**: Preserve master file in working space unchanged
+        - **Preserve Master**: Preserve master file
+        - **Unchanged**: Keep unchanged
+        - **Professional Practice**: Preserve master
+      - **Workflow**: Convert copy for output, keep master unchanged
+        - **Convert Copy**: Convert copy for output
+        - **Keep Master**: Keep master unchanged
+        - **Professional Practice**: Follow workflow
+      - **Reversibility**: Master file allows re-conversion if needed
+        - **Re-conversion Capability**: Allows re-conversion
+        - **Master Benefit**: Master file benefit
+        - **Professional Practice**: Reversibility is advantage
+      - **Professional Standard**: Industry standard practice for all professional work
+        - **Industry Standard**: Industry standard
+        - **All Professional Work**: For all professional work
+        - **Professional Practice**: Follow standard
+      - **Safety Workflow**: Step-by-step safety workflow
+        - **Step 1**: Create copy of master
+        - **Step 2**: Work on copy
+        - **Step 3**: Convert copy for output
+        - **Step 4**: Keep master unchanged
+        - **Professional Practice**: Follow safety workflow
+      - **Backup Strategy**: How to backup master files
+        - **Regular Backup**: Regular backup of masters
+        - **Multiple Locations**: Backup in multiple locations
+        - **Version Control**: Version control for backups
+        - **Professional Practice**: Backup strategy is essential
+- **Profile Management**: Managing color profiles in GIMP
+  - **Profile Storage**: Where GIMP stores color profiles
+    - **System Profiles**: System-wide ICC profile directory
+      - **Windows System**: C:\Windows\System32\spool\drivers\color\
+        - **Access**: Requires administrator privileges to install
+        - **Visibility**: Available to all users and applications
+        - **Standard Location**: Windows standard ICC profile location
+        - **Installation**: Copy .icc or .icm files to this directory
+        - **Professional Practice**: Install standard profiles system-wide
+      - **macOS System**: /Library/ColorSync/Profiles/
+        - **Access**: Requires administrator privileges to install
+        - **Visibility**: Available to all users and applications
+        - **Standard Location**: macOS standard ColorSync profile location
+        - **Installation**: Copy .icc files to this directory
+        - **Professional Practice**: Install standard profiles system-wide
+      - **Linux System**: /usr/share/color/icc/ or /usr/local/share/color/icc/
+        - **Access**: Requires root/sudo privileges to install
+        - **Visibility**: Available to all users and applications
+        - **Standard Location**: Linux standard ICC profile location (varies by distribution)
+        - **Installation**: Copy .icc files to this directory
+        - **Professional Practice**: Install standard profiles system-wide
+    - **User Profiles**: User-specific profile directory
+      - **Windows User**: C:\Users\[Username]\AppData\Local\Microsoft\Windows\Color\
+        - **Access**: User can install without administrator privileges
+        - **Visibility**: Available only to current user
+        - **Standard Location**: Windows user-specific profile location
+        - **Installation**: Copy .icc or .icm files to this directory
+        - **Professional Practice**: Use for user-specific custom profiles
+      - **macOS User**: ~/Library/ColorSync/Profiles/
+        - **Access**: User can install without administrator privileges
+        - **Visibility**: Available only to current user
+        - **Standard Location**: macOS user-specific ColorSync profile location
+        - **Installation**: Copy .icc files to this directory
+        - **Professional Practice**: Use for user-specific custom profiles
+      - **Linux User**: ~/.local/share/color/icc/ or ~/.color/icc/
+        - **Access**: User can install without root privileges
+        - **Visibility**: Available only to current user
+        - **Standard Location**: Linux user-specific profile location (varies by distribution)
+        - **Installation**: Copy .icc files to this directory
+        - **Professional Practice**: Use for user-specific custom profiles
+    - **Profile Location**: Varies by operating system (Windows, macOS, Linux)
+      - **Detection**: GIMP automatically detects profiles in standard locations
+        - **Automatic Scanning**: GIMP automatically scans standard locations
+        - **Startup Scan**: Scans on GIMP startup
+        - **Professional Practice**: Understand detection mechanism
+      - **Priority**: System profiles take precedence, then user profiles
+        - **Priority Order**: System profiles first, then user profiles
+        - **Conflict Resolution**: System profiles override user profiles
+        - **Professional Practice**: Understand priority order
+      - **Multiple Locations**: GIMP searches both system and user locations
+        - **Search Order**: Searches system then user locations
+        - **All Profiles**: Finds profiles in all standard locations
+        - **Professional Practice**: Understand search mechanism
+      - **Professional Practice**: Know profile locations for your operating system
+        - **OS Knowledge**: Know locations for your OS
+        - **Installation**: Know where to install profiles
+        - **Professional Practice**: Know your OS locations
+      - **Location Details**: Detailed location information
+        - **Windows Details**: Windows-specific location details
+        - **macOS Details**: macOS-specific location details
+        - **Linux Details**: Linux-specific location details
+        - **Professional Practice**: Understand location details
+      - **Profile Discovery**: How GIMP discovers profiles
+        - **Discovery Process**: Process of discovering profiles
+        - **Scanning Algorithm**: Algorithm for scanning directories
+        - **Profile Recognition**: How profiles are recognized
+        - **Professional Practice**: Understand discovery process
+    - **Profile Access**: GIMP automatically detects installed profiles
+      - **Automatic Detection**: GIMP scans standard profile directories on startup
+        - **Startup Scan**: Scans on GIMP startup
+        - **Directory Scanning**: Scans standard directories
+        - **Professional Practice**: Understand detection mechanism
+      - **Profile List**: All detected profiles appear in profile selection dialogs
+        - **Dialog Display**: Profiles appear in selection dialogs
+        - **List Organization**: Profiles organized in list
+        - **Professional Practice**: Understand list display
+      - **Refresh**: GIMP may need restart to detect newly installed profiles
+        - **Restart Requirement**: May need restart for new profiles
+        - **Refresh Mechanism**: Refresh mechanism for profiles
+        - **Professional Practice**: Restart after installing profiles
+      - **Verification**: Check profile list in GIMP to verify profiles are detected
+        - **List Check**: Check profile list in GIMP
+        - **Verification Method**: Method for verifying detection
+        - **Professional Practice**: Always verify detection
+      - **Professional Practice**: Verify profiles are detected after installation
+        - **Always Verify**: Always verify after installation
+        - **Detection Check**: Check detection after installation
+        - **Professional Practice**: Follow practice
+      - **Profile Detection Details**: Technical details of detection
+        - **Detection Algorithm**: Algorithm for detecting profiles
+        - **Profile Validation**: How profiles are validated
+        - **Error Handling**: Error handling in detection
+        - **Professional Practice**: Understand detection details
+      - **Profile Caching**: How GIMP caches profile information
+        - **Cache Mechanism**: Mechanism for caching profiles
+        - **Cache Benefits**: Benefits of caching
+        - **Cache Refresh**: When cache is refreshed
+        - **Professional Practice**: Understand caching
+    - **Professional Practice**: Install standard profiles (sRGB, Adobe RGB) system-wide
+      - **Standard Profiles**: Install sRGB, Adobe RGB (1998) system-wide
+      - **Benefits**: Available to all applications and users
+      - **Consistency**: Ensures consistent profiles across applications
+      - **Professional Practice**: System-wide installation is standard practice
+  - **Profile Verification**: Verifying profile assignments
+    - **Image Properties**: Check embedded profile in image properties
+      - **Method**: Right-click image → Image → Properties (or Image → Properties from menu)
+        - **Access Method**: Right-click or menu access
+        - **Properties Dialog**: Properties dialog appears
+        - **Professional Practice**: Use properties to verify
+      - **Location**: Look for "Color Profile" or "ICC Profile" field
+        - **Field Location**: "Color Profile" or "ICC Profile" field
+        - **Field Display**: Field displays profile information
+        - **Professional Practice**: Check field location
+      - **Information**: Shows profile name, color space type, version
+        - **Profile Name**: Shows profile name
+        - **Color Space**: Shows color space type
+        - **Version**: Shows ICC version
+        - **Professional Practice**: Review all information
+      - **Verification**: Verify profile name matches expected profile
+        - **Name Matching**: Verify name matches expected
+        - **Exact Match**: Should be exact match
+        - **Professional Practice**: Verify exact match
+      - **Professional Practice**: Check properties as first step in workflow
+        - **First Step**: Check as first step
+        - **Workflow Integration**: Integrate into workflow
+        - **Professional Practice**: Follow practice
+      - **Properties Dialog Details**: Detailed information about properties dialog
+        - **Dialog Structure**: Structure of properties dialog
+        - **Information Display**: How information is displayed
+        - **Navigation**: How to navigate dialog
+        - **Professional Practice**: Understand dialog details
+      - **Profile Information Display**: How profile information is displayed
+        - **Display Format**: Format of profile information
+        - **Information Completeness**: Completeness of information
+        - **Professional Practice**: Understand display
+    - **Color Management Dialog**: View current profile assignment
+      - **Method**: Colors → Color Management → Assign Color Profile (shows current profile)
+        - **Menu Path**: Colors → Color Management → Assign Color Profile
+        - **Dialog Display**: Dialog shows current profile
+        - **Professional Practice**: Use dialog to verify
+      - **Information**: Dialog shows currently assigned profile
+        - **Current Profile**: Shows currently assigned profile
+        - **Profile Details**: Shows profile details
+        - **Professional Practice**: Review information
+      - **Change**: Can change profile from this dialog
+        - **Change Capability**: Can change profile from dialog
+        - **Change Method**: Method for changing profile
+        - **Professional Practice**: Understand change capability
+      - **Verification**: Verify profile is correct before editing
+        - **Pre-Edit Verification**: Verify before editing
+        - **Correctness Check**: Check profile is correct
+        - **Professional Practice**: Always verify before editing
+      - **Professional Practice**: Verify profile in color management dialog
+        - **Dialog Verification**: Verify in dialog
+        - **Standard Practice**: Standard practice
+        - **Professional Practice**: Follow practice
+      - **Dialog Details**: Detailed information about color management dialog
+        - **Dialog Structure**: Structure of dialog
+        - **Profile Display**: How profile is displayed
+        - **Change Interface**: Interface for changing profile
+        - **Professional Practice**: Understand dialog details
+    - **Profile Info**: Verify profile name, color space, and version
+      - **Profile Name**: Verify profile name is correct (e.g., "sRGB IEC61966-2.1")
+        - **Name Verification**: Verify profile name
+        - **Name Format**: Check name format
+        - **Professional Practice**: Verify name exactly
+      - **Color Space**: Verify color space type (RGB, CMYK, Grayscale)
+        - **Space Type**: Verify color space type
+        - **Type Matching**: Match type to image
+        - **Professional Practice**: Verify type
+      - **Version**: Check ICC version (v2 or v4)
+        - **Version Check**: Check ICC version
+        - **Version Compatibility**: Verify version compatibility
+        - **Professional Practice**: Check version
+      - **Compatibility**: Verify profile is compatible with GIMP
+        - **Compatibility Check**: Check GIMP compatibility
+        - **Compatibility Requirements**: Requirements for compatibility
+        - **Professional Practice**: Verify compatibility
+      - **Professional Practice**: Verify all profile information is correct
+        - **Complete Verification**: Verify all information
+        - **Information Accuracy**: Ensure information is accurate
+        - **Professional Practice**: Complete verification
+      - **Profile Information Details**: Detailed profile information
+        - **Information Components**: Components of profile information
+        - **Information Accuracy**: Accuracy of information
+        - **Professional Practice**: Understand information details
+    - **Professional Workflow**: Verify profile at start of every project
+      - **Workflow Step**: Profile verification is first step in color workflow
+        - **First Step**: Verification is first step
+        - **Workflow Position**: Position in workflow
+        - **Professional Practice**: Follow workflow position
+      - **Checklist**: Verify profile name, type, version
+        - **Verification Checklist**: Checklist for verification
+        - **Checklist Items**: Name, type, version
+        - **Professional Practice**: Follow checklist
+      - **Visual Check**: Verify colors look correct after profile assignment
+        - **Visual Inspection**: Visually inspect colors
+        - **Color Correctness**: Check colors look correct
+        - **Professional Practice**: Visual check is essential
+      - **Documentation**: Document profile assignments for project
+        - **Documentation Requirement**: Document assignments
+        - **Documentation Method**: Method for documentation
+        - **Professional Practice**: Document assignments
+      - **Professional Practice**: Never skip profile verification step
+        - **Never Skip**: Never skip verification
+        - **Essential Step**: Verification is essential
+        - **Professional Practice**: Follow practice
+      - **Verification Workflow**: Step-by-step verification workflow
+        - **Step 1**: Check image properties
+        - **Step 2**: Verify profile name
+        - **Step 3**: Verify color space type
+        - **Step 4**: Verify ICC version
+        - **Step 5**: Visual check
+        - **Step 6**: Document assignment
+        - **Professional Practice**: Follow workflow
+      - **Verification Tools**: Tools for profile verification
+        - **Properties Dialog**: Use properties dialog
+        - **Color Management Dialog**: Use color management dialog
+        - **Visual Inspection**: Use visual inspection
+        - **Professional Practice**: Use multiple tools
+  - **Profile Troubleshooting**: Common profile issues and solutions
+    - **Missing Profiles**: Images without embedded profiles
+      - **Problem**: Image has no embedded color profile
+      - **Symptom**: GIMP may prompt "Image has no color profile" or colors look wrong
+      - **Solution**: Assign appropriate profile based on image source
+        - **Identify Source**: Determine image source (camera, scanner, web, etc.)
+        - **Assign Profile**: Assign most likely profile (usually sRGB)
+        - **Verify Visually**: Check colors look correct after assignment
+        - **Professional Practice**: Assign profile as first step
+      - **Prevention**: Always embed profiles when saving images
+        - **Save Settings**: Enable "Embed Color Profile" in save dialogs
+        - **File Formats**: JPEG, TIFF, PNG support profile embedding
+        - **Professional Practice**: Always embed profiles in saved images
+      - **Workflow Impact**: Missing profiles cause color uncertainty
+    - **Wrong Profiles**: Incorrectly assigned profiles
+      - **Problem**: Image has wrong profile assigned (e.g., sRGB assigned to Adobe RGB image)
+      - **Symptom**: Colors look wrong (too saturated, desaturated, or shifted)
+      - **Solution**: Reassign correct profile or convert to correct space
+        - **Identify Correct Profile**: Determine correct profile for image
+        - **Reassign**: Assign correct profile if image is already in that space
+        - **Convert**: Convert to correct space if image needs conversion
+        - **Verify**: Verify colors look correct after correction
+        - **Professional Practice**: Correct wrong profiles immediately
+      - **Prevention**: Verify profile assignments from image sources
+        - **Camera Settings**: Verify camera color space settings
+        - **Source Verification**: Verify profile from image source when possible
+        - **Professional Practice**: Verify profiles from source
+      - **Workflow Impact**: Wrong profiles cause color inaccuracy
+    - **Profile Mismatches**: Profile doesn't match image content
+      - **Problem**: Profile assigned but doesn't match actual image content
+      - **Symptom**: Colors look wrong even with profile assigned
+      - **Solution**: Convert to correct profile or reassign
+        - **Identify Issue**: Determine if profile is wrong or image needs conversion
+        - **Convert**: Convert to correct profile if image needs conversion
+        - **Reassign**: Reassign correct profile if image is already in that space
+        - **Verify**: Verify colors look correct after correction
+        - **Professional Practice**: Fix profile mismatches immediately
+      - **Prevention**: Use color-managed workflow from capture to output
+        - **Workflow Integration**: Use color management throughout workflow
+        - **Profile Preservation**: Preserve profiles from capture to output
+        - **Professional Practice**: Maintain color-managed workflow
+      - **Workflow Impact**: Profile mismatches cause color inaccuracy
+    - **Profile Not Found**: GIMP cannot find required profile
+      - **Problem**: Image references profile that is not installed
+      - **Symptom**: GIMP may prompt "Profile not found" or use default profile
+      - **Solution**: Install missing profile or assign alternative profile
+        - **Identify Profile**: Identify which profile is missing
+        - **Install Profile**: Install missing profile from source
+        - **Alternative**: Assign similar profile if original unavailable
+        - **Professional Practice**: Install all required profiles
+      - **Prevention**: Install all standard profiles system-wide
+        - **Standard Profiles**: Install sRGB, Adobe RGB system-wide
+        - **Custom Profiles**: Install custom profiles when needed
+        - **Professional Practice**: Maintain complete profile library
+    - **Professional Practice**: Profile issues are common, always verify and correct
+      - **Common Issues**: Profile issues are common in workflows
+        - **Issue Frequency**: Profile issues occur frequently
+        - **Issue Types**: Various types of profile issues
+        - **Professional Practice**: Understand issue frequency
+      - **Verification**: Always verify profiles at start of workflow
+        - **Always Verify**: Always verify at start
+        - **Verification Timing**: Timing of verification
+        - **Professional Practice**: Follow verification practice
+      - **Correction**: Correct profile issues immediately
+        - **Immediate Correction**: Correct immediately
+        - **Correction Priority**: Priority of correction
+        - **Professional Practice**: Correct immediately
+      - **Workflow Integration**: Profile verification is standard workflow step
+        - **Standard Step**: Verification is standard step
+        - **Workflow Integration**: Integrated into workflow
+        - **Professional Practice**: Follow workflow
+      - **Professional Practice**: Profile management is ongoing process
+        - **Ongoing Process**: Management is ongoing
+        - **Continuous Attention**: Requires continuous attention
+        - **Professional Practice**: Follow ongoing practice
+      - **Issue Prevention**: How to prevent profile issues
+        - **Prevention Methods**: Methods for preventing issues
+        - **Best Practices**: Best practices for prevention
+        - **Professional Practice**: Follow prevention methods
+      - **Issue Resolution**: How to resolve profile issues
+        - **Resolution Process**: Process for resolving issues
+        - **Resolution Methods**: Methods for resolution
+        - **Professional Practice**: Follow resolution process
+      - **Profile Maintenance**: Ongoing profile maintenance
+        - **Maintenance Tasks**: Tasks for maintenance
+        - **Maintenance Schedule**: Schedule for maintenance
+        - **Professional Practice**: Maintain profiles regularly
+
 ### Using sRGB, Adobe RGB, CMYK Workflows
+
+- **sRGB Workflow**: Standard RGB workflow for web and general use
+  - **Workflow Overview**: Complete sRGB workflow from capture to output
+    - **Capture**: Most cameras default to sRGB
+      - **Camera Settings**: Most consumer cameras default to sRGB color space
+      - **JPEG Output**: JPEG files from cameras typically embedded with sRGB profile
+      - **Raw Files**: Raw files may need sRGB assignment during processing
+      - **Verification**: Verify camera is set to sRGB if using JPEG mode
+      - **Professional Practice**: Check camera color space settings
+    - **Editing**: Edit in sRGB color space in GIMP
+      - **Working Space**: Set GIMP working space to sRGB (Edit → Preferences → Color Management)
+      - **Profile Assignment**: Ensure images have sRGB profile assigned
+      - **Editing Tools**: All GIMP editing tools work in sRGB
+      - **Color Accuracy**: Colors accurate within sRGB gamut
+      - **Professional Practice**: Edit in sRGB for web/digital output
+    - **Output**: sRGB is standard for web and digital display
+      - **Web**: sRGB is standard for all web graphics and images
+      - **Digital Display**: sRGB is standard for all digital displays
+      - **No Conversion**: No conversion needed for web/digital output
+      - **Compatibility**: Works with all browsers and digital devices
+      - **Professional Practice**: sRGB is standard for digital output
+    - **Advantages**: Universal compatibility, no conversion needed for web
+      - **Universal Compatibility**: Works everywhere (browsers, devices, applications)
+      - **No Conversion**: No conversion needed for web/digital output
+      - **File Size**: Standard file sizes, no overhead
+      - **Workflow Simplicity**: Simplest workflow, no conversion steps
+      - **Professional Practice**: sRGB is simplest workflow for digital-only work
+    - **Limitations**: Limited color gamut, not ideal for high-quality print
+      - **Gamut Limitation**: Cannot represent all printable colors
+      - **Print Quality**: May lose color information when converting to print
+      - **Color Range**: Limited color range compared to larger gamuts
+      - **Professional Print**: Not ideal for high-quality professional printing
+      - **Professional Practice**: sRGB sufficient for digital, insufficient for print
+    - **Professional Use**: sRGB is standard for web graphics and social media
+      - **Web Graphics**: Standard for all web graphics and images
+      - **Social Media**: Ensures consistent appearance across platforms
+      - **Digital Marketing**: Standard for digital marketing materials
+      - **Professional Practice**: sRGB is standard for digital-only work
+  - **sRGB Best Practices**: Optimizing sRGB workflow
+    - **Monitor Calibration**: Calibrate monitor to sRGB standard
+      - **Calibration Target**: Calibrate monitor to sRGB standard (D65, gamma 2.2)
+      - **Colorimeter**: Use colorimeter for accurate calibration
+      - **Regular Calibration**: Recalibrate monthly for consistent results
+      - **Verification**: Verify calibration with test images
+      - **Professional Practice**: Calibrated monitor essential for sRGB workflow
+    - **Profile Embedding**: Always embed sRGB profile in saved images
+      - **Save Settings**: Enable "Embed Color Profile" in save dialogs
+      - **File Formats**: JPEG, TIFF, PNG support profile embedding
+      - **Benefits**: Images display correctly in color-managed applications
+      - **Professional Practice**: Always embed sRGB profile in saved images
+    - **Web Optimization**: sRGB images display correctly in all browsers
+      - **Browser Support**: All modern browsers support sRGB
+      - **Color Accuracy**: sRGB images display accurately in browsers
+      - **Consistency**: Consistent appearance across different browsers
+      - **Professional Practice**: sRGB ensures web compatibility
+    - **Social Media**: sRGB ensures consistent appearance across platforms
+      - **Platform Consistency**: sRGB ensures consistent appearance on all platforms
+      - **Color Accuracy**: Colors appear as intended on social media
+      - **Professional Practice**: sRGB is standard for social media
+    - **Professional Practice**: sRGB is safe default for digital-only work
+      - **Safe Default**: sRGB is safe default when output is uncertain
+      - **Digital Work**: Perfect for all digital-only work
+      - **Professional Practice**: Use sRGB for digital-only workflows
+  - **sRGB Limitations**: Understanding sRGB constraints
+    - **Gamut Limitation**: Cannot represent all printable colors
+      - **Gamut Size**: sRGB covers only ~35% of visible color spectrum
+      - **Print Colors**: Cannot represent all colors printable with CMYK inks
+      - **Color Loss**: May lose color information when converting to print
+      - **Professional Practice**: Use larger gamut (Adobe RGB) for print work
+    - **Print Quality**: May lose color information when converting to print
+      - **Conversion Loss**: Some colors lost during RGB to CMYK conversion
+      - **Quality Impact**: May affect print quality for color-critical work
+      - **Professional Practice**: Use Adobe RGB for print preparation
+    - **High-End Work**: Not suitable for high-end photography requiring wide gamut
+      - **Color Range**: Limited color range for high-end photography
+      - **Color Preservation**: May not preserve all colors from modern cameras
+      - **Professional Practice**: Use Adobe RGB or ProPhoto RGB for high-end work
+    - **Professional Insight**: sRGB is sufficient for most digital work, insufficient for print
+      - **Digital Sufficiency**: sRGB is sufficient for all digital work
+      - **Print Insufficiency**: sRGB insufficient for high-quality print work
+      - **Workflow Selection**: Choose sRGB for digital, Adobe RGB for print
+      - **Professional Practice**: Match color space to output requirements
+- **Adobe RGB Workflow**: Extended gamut workflow for professional photography
+  - **Workflow Overview**: Complete Adobe RGB workflow
+    - **Capture**: Set camera to Adobe RGB mode (if available)
+      - **Camera Settings**: Set camera color space to Adobe RGB (1998)
+      - **JPEG Output**: JPEG files will be embedded with Adobe RGB profile
+      - **Raw Files**: Raw files processed with Adobe RGB working space
+      - **Verification**: Verify camera is set to Adobe RGB mode
+      - **Professional Practice**: Use Adobe RGB for all professional photography
+    - **Editing**: Edit in Adobe RGB color space in GIMP
+      - **Working Space**: Set GIMP working space to Adobe RGB (1998)
+      - **Profile Assignment**: Ensure images have Adobe RGB profile assigned
+      - **Editing Tools**: All GIMP editing tools work in Adobe RGB
+      - **Color Accuracy**: Colors accurate within Adobe RGB gamut
+      - **Professional Practice**: Edit in Adobe RGB for professional photography
+    - **Archive**: Save master files in Adobe RGB
+      - **Master Files**: Save all master files in Adobe RGB color space
+      - **Profile Embedding**: Always embed Adobe RGB profile in master files
+      - **File Formats**: Use TIFF or PSD for master files (preserve quality)
+      - **Archival Value**: Adobe RGB masters preserve maximum color information
+      - **Professional Practice**: Adobe RGB masters are industry standard
+    - **Output**: Convert to sRGB for web, CMYK for print
+      - **Web Output**: Convert to sRGB for web/digital output
+        - **Conversion Method**: Colors → Color Management → Convert to Color Profile
+        - **Destination**: Select sRGB profile
+        - **Rendering Intent**: Use Perceptual for photos
+        - **Quality**: High-quality conversion preserves color relationships
+        - **Professional Practice**: Convert copy for web, keep Adobe RGB master
+      - **Print Output**: Convert to CMYK for print
+        - **Conversion Method**: Colors → Color Management → Convert to Color Profile
+        - **Destination**: Select appropriate CMYK profile
+        - **Rendering Intent**: Use Perceptual for photos
+        - **Soft Proofing**: Use soft proofing before conversion
+        - **Professional Practice**: Convert copy for print, keep Adobe RGB master
+    - **Advantages**: Captures more colors, better print conversion
+      - **Color Range**: Captures ~50% of visible color spectrum (vs 35% for sRGB)
+      - **Print Conversion**: Better conversion to CMYK than sRGB
+      - **Color Preservation**: Preserves more colors from modern cameras
+      - **Professional Practice**: Adobe RGB provides significant advantages
+    - **Professional Standard**: Adobe RGB is industry standard for photography
+      - **Industry Adoption**: Widely adopted by professional photography industry
+      - **Camera Support**: Most professional cameras support Adobe RGB
+      - **Workflow Integration**: Integrates with professional workflows
+      - **Professional Practice**: Adobe RGB is standard for professional photography
+  - **Adobe RGB Best Practices**: Professional Adobe RGB techniques
+    - **Monitor Requirements**: Requires wide-gamut monitor for accurate editing
+      - **Wide-Gamut Monitor**: Requires monitor that covers Adobe RGB gamut
+      - **Standard Monitors**: Standard sRGB monitors cannot display full Adobe RGB gamut
+      - **Color Accuracy**: Wide-gamut monitor essential for accurate editing
+      - **Investment**: Wide-gamut monitor is essential professional investment
+      - **Professional Practice**: Wide-gamut monitor required for Adobe RGB workflow
+    - **Calibration Essential**: Monitor calibration critical for Adobe RGB workflow
+      - **Calibration Target**: Calibrate monitor to Adobe RGB standard
+      - **Colorimeter**: Use colorimeter for accurate calibration
+      - **Regular Calibration**: Recalibrate monthly for consistent results
+      - **Verification**: Verify calibration with test images
+      - **Professional Practice**: Calibrated wide-gamut monitor essential
+    - **16-bit Workflow**: Use 16-bit depth to preserve color information
+      - **Bit Depth**: Use 16-bit per channel for Adobe RGB workflow
+      - **Color Preservation**: 16-bit preserves more color information
+      - **Editing Headroom**: More headroom for color adjustments
+      - **Banding Prevention**: Prevents banding in gradients
+      - **Professional Practice**: 16-bit workflow standard for Adobe RGB
+    - **Master Files**: Keep Adobe RGB masters, convert for output
+      - **Master Preservation**: Always keep Adobe RGB master files
+      - **Output Versions**: Create converted versions for specific outputs
+      - **Naming Convention**: Use clear naming to distinguish masters from outputs
+      - **Archival Value**: Adobe RGB masters preserve maximum information
+      - **Professional Practice**: Never convert Adobe RGB masters
+    - **Print Preparation**: Adobe RGB converts better to CMYK than sRGB
+      - **Gamut Overlap**: Better overlap with CMYK gamut than sRGB
+      - **Color Preservation**: Preserves more printable colors
+      - **Conversion Quality**: Better quality when converting to CMYK
+      - **Professional Practice**: Adobe RGB essential for print preparation
+    - **Professional Practice**: Adobe RGB is standard for professional photography
+      - **Industry Standard**: Adobe RGB is industry standard
+      - **Workflow Integration**: Integrates with professional workflows
+      - **Quality Standard**: Quality standard for professional photography
+      - **Professional Practice**: Adobe RGB is standard practice
+  - **Adobe RGB Advantages**: Benefits of Adobe RGB workflow
+    - **Color Preservation**: Preserves more colors from modern cameras
+      - **Camera Sensors**: Modern cameras capture more colors than sRGB can represent
+      - **Color Range**: Adobe RGB preserves ~50% of visible spectrum (vs 35% for sRGB)
+      - **Color Information**: Preserves more color information from camera
+      - **Professional Practice**: Adobe RGB preserves more camera colors
+    - **Print Quality**: Better color accuracy when converting to print
+      - **CMYK Conversion**: Better conversion to CMYK than sRGB
+      - **Color Accuracy**: More accurate colors in print
+      - **Gamut Mapping**: Better gamut mapping for print
+      - **Professional Practice**: Adobe RGB essential for print quality
+    - **Future-Proofing**: Preserves colors for future display technologies
+      - **Future Displays**: Future displays may support wider gamuts
+      - **Color Preservation**: Adobe RGB preserves colors for future technologies
+      - **Archival Value**: Better archival value than sRGB
+      - **Professional Practice**: Adobe RGB future-proofs color information
+    - **Professional Workflow**: Industry-standard for professional work
+      - **Industry Standard**: Adobe RGB is industry standard
+      - **Workflow Integration**: Integrates with professional workflows
+      - **Quality Standard**: Quality standard for professional work
+      - **Professional Practice**: Adobe RGB is standard for professional work
+    - **Professional Insight**: Adobe RGB provides significant quality improvement over sRGB
+      - **Quality Improvement**: Significant quality improvement over sRGB
+      - **Color Range**: 50% larger gamut than sRGB
+      - **Print Quality**: Better print quality than sRGB
+      - **Professional Practice**: Adobe RGB provides significant advantages
+- **CMYK Workflow**: Color workflow for professional printing
+  - **Workflow Overview**: Complete CMYK print workflow
+    - **Edit in RGB**: Edit in RGB (Adobe RGB or ProPhoto RGB) for maximum flexibility
+      - **Why RGB**: RGB provides maximum editing flexibility
+      - **Color Space**: Use Adobe RGB or ProPhoto RGB for editing
+      - **Editing Tools**: All editing tools work better in RGB
+      - **Color Adjustments**: RGB allows more color adjustments
+      - **Professional Practice**: Always edit in RGB, convert to CMYK at end
+    - **Soft Proof**: Use soft proofing to preview print appearance
+      - **Enable Soft Proofing**: View → Show Color Management → Soft Proofing
+      - **Profile Selection**: Select printer/paper profile for proofing
+      - **Rendering Intent**: Choose rendering intent (usually Perceptual)
+      - **Visual Preview**: Preview how image will look when printed
+      - **Professional Practice**: Soft proof throughout print preparation
+    - **Convert to CMYK**: Convert to CMYK at end of workflow
+      - **Timing**: Convert at very end, after all editing and soft proofing
+      - **Method**: Colors → Color Management → Convert to Color Profile
+      - **Profile Selection**: Select appropriate CMYK profile
+      - **Rendering Intent**: Use Perceptual for photos
+      - **Professional Practice**: Convert as final step only
+    - **Output**: Send CMYK file to printer
+      - **File Format**: Use TIFF for CMYK output (preserves quality)
+      - **Profile Embedding**: Embed CMYK profile in output file
+      - **File Delivery**: Send CMYK file to printer
+      - **Professional Practice**: CMYK file is final output for printing
+    - **Advantages**: Accurate print reproduction, predictable results
+      - **Color Accuracy**: Accurate color reproduction in print
+      - **Predictability**: Predictable results with proper profiles
+      - **Quality**: High-quality print reproduction
+      - **Professional Practice**: CMYK workflow ensures print quality
+    - **Professional Essential**: CMYK workflow essential for professional printing
+      - **Industry Standard**: CMYK is standard for professional printing
+      - **Print Requirement**: Printers require CMYK files
+      - **Quality Standard**: CMYK workflow is quality standard
+      - **Professional Practice**: CMYK workflow is essential
+  - **CMYK Conversion Process**: Converting RGB to CMYK
+    - **Profile Selection**: Choose appropriate CMYK profile (paper type, printer)
+      - **Printer Profiles**: Use printer-specific profiles when available
+      - **Paper Profiles**: Each paper type needs separate profile
+      - **Profile Types**: Coated, Uncoated, Newsprint, Custom
+      - **Selection Criteria**: Choose profile that matches printer and paper
+      - **Professional Practice**: Use printer-provided profiles for best results
+    - **Rendering Intent**: Use Perceptual for photos, Relative Colorimetric for graphics
+      - **Perceptual**: Use for photographs (preserves color relationships)
+      - **Relative Colorimetric**: Use for graphics (preserves in-gamut colors)
+      - **Selection**: Choose based on image content
+      - **Testing**: Test both intents to find best result
+      - **Professional Practice**: Perceptual standard for photos
+    - **Gamut Warning**: Check for out-of-gamut colors before conversion
+      - **Enable Gamut Warning**: View → Show Color Management → Gamut Warning
+      - **Visual Indicator**: Out-of-gamut colors shown in warning color
+      - **Problem Areas**: Identify areas that will shift during conversion
+      - **Adjustments**: Adjust out-of-gamut colors before conversion
+      - **Professional Practice**: Check gamut warning before conversion
+    - **Conversion Quality**: 16-bit conversion provides best quality
+      - **Bit Depth**: Use 16-bit for CMYK conversion
+      - **Quality**: Higher quality conversion with 16-bit
+      - **Gamut Mapping**: Smoother gamut mapping with 16-bit
+      - **Professional Practice**: Always use 16-bit for CMYK conversion
+    - **Professional Practice**: Always soft proof before final conversion
+      - **Soft Proof First**: Always soft proof before converting
+      - **Visual Check**: Verify soft proof looks correct
+      - **Adjustments**: Make adjustments based on soft proof
+      - **Then Convert**: Convert only after soft proof is satisfactory
+      - **Professional Practice**: Soft proof is essential step
+  - **CMYK Best Practices**: Professional CMYK techniques
+    - **Edit in RGB**: Maintain RGB workflow until final conversion
+      - **Workflow**: Edit entirely in RGB, convert only at end
+      - **Flexibility**: RGB provides maximum editing flexibility
+      - **Tools**: All editing tools work better in RGB
+      - **Professional Practice**: Never edit in CMYK, always edit in RGB
+    - **Soft Proofing**: Use soft proofing to preview print appearance
+      - **Enable**: Enable soft proofing during print preparation
+      - **Profile**: Use exact printer/paper profile for proofing
+      - **Comparison**: Toggle soft proofing on/off to see differences
+      - **Adjustments**: Make adjustments based on soft proof
+      - **Professional Practice**: Soft proof throughout print preparation
+    - **Gamut Management**: Adjust out-of-gamut colors before conversion
+      - **Identify**: Use gamut warning to identify out-of-gamut colors
+      - **Adjust**: Adjust out-of-gamut colors before conversion
+      - **Techniques**: Desaturate, adjust hue, adjust brightness
+      - **Professional Practice**: Manage gamut before conversion
+    - **Profile Matching**: Use printer-provided profiles for best results
+      - **Printer Profiles**: Use profiles provided by printer
+      - **Paper Profiles**: Use profiles for specific paper types
+      - **Custom Profiles**: Use custom profiles when available
+      - **Professional Practice**: Printer-provided profiles are best
+    - **Test Prints**: Make test prints to verify color accuracy
+      - **Test Print**: Make test print before final print
+      - **Verification**: Verify colors match expectations
+      - **Adjustments**: Make adjustments if needed
+      - **Professional Practice**: Test prints verify color accuracy
+    - **Professional Practice**: CMYK conversion is final step, not editing step
+      - **Final Step**: CMYK conversion is final step only
+      - **No Editing**: Do not edit in CMYK, edit in RGB
+      - **Workflow**: Edit in RGB, convert to CMYK at end
+      - **Professional Practice**: CMYK conversion is output step, not editing step
+  - **CMYK Profile Selection**: Choosing appropriate CMYK profiles
+    - **Coated Paper**: Profiles for glossy or matte coated papers
+      - **Glossy Coated**: Profiles for glossy coated papers
+      - **Matte Coated**: Profiles for matte coated papers
+      - **Characteristics**: Coated papers have wider gamut than uncoated
+      - **Use Case**: High-quality printing on coated papers
+      - **Professional Practice**: Use coated profiles for coated papers
+    - **Uncoated Paper**: Profiles for uncoated papers (newspaper, book paper)
+      - **Uncoated**: Profiles for uncoated papers
+      - **Characteristics**: Uncoated papers have smaller gamut than coated
+      - **Use Case**: Printing on uncoated papers (books, newspapers)
+      - **Professional Practice**: Use uncoated profiles for uncoated papers
+    - **Newsprint**: Profiles for newspaper printing
+      - **Newsprint**: Profiles specifically for newsprint
+      - **Characteristics**: Newsprint has smallest gamut
+      - **Use Case**: Newspaper printing
+      - **Professional Practice**: Use newsprint profiles for newspapers
+    - **Custom Profiles**: Printer-specific profiles for best results
+      - **Printer-Specific**: Profiles created for specific printer/paper combinations
+      - **Best Results**: Custom profiles provide best color accuracy
+      - **Creation**: Created by printing and measuring color targets
+      - **Professional Practice**: Use custom profiles when available
+    - **Professional Practice**: Use printer-provided profiles when available
+      - **Printer Profiles**: Always use printer-provided profiles when available
+      - **Best Accuracy**: Printer-provided profiles provide best accuracy
+      - **Professional Practice**: Printer-provided profiles are standard practice
+- **Workflow Selection Guide**: Choosing the right workflow
+  - **Web/Digital Only**: Use sRGB workflow
+    - **Simplest workflow**: No conversion needed
+    - **Universal compatibility**: Works everywhere
+    - **Professional Use**: Standard for web graphics and social media
+  - **Photography/Print**: Use Adobe RGB workflow
+    - **Better quality**: Captures more colors
+    - **Print preparation**: Better conversion to CMYK
+    - **Professional Use**: Industry standard for photography
+  - **Professional Printing**: Use RGB-to-CMYK workflow
+    - **Edit in RGB**: Maximum editing flexibility
+    - **Convert to CMYK**: Final step for printing
+    - **Professional Use**: Essential for commercial printing
+  - **Professional Recommendation**: Match workflow to output destination
 
 ### Viewing Gamut Warnings and Soft Proofing for Print
 
+- **Gamut Warning Fundamentals**: Understanding color gamut
+  - **What Is Gamut**: Range of colors that can be reproduced by device or color space
+    - **RGB Gamut**: Colors displayable on RGB monitors (larger than CMYK)
+    - **CMYK Gamut**: Colors printable with CMYK inks (smaller than RGB)
+    - **Gamut Mismatch**: Some RGB colors cannot be printed in CMYK
+    - **Out-of-Gamut Colors**: Colors that cannot be reproduced in target color space
+    - **Professional Essential**: Understanding gamut is essential for print work
+  - **Why Gamut Matters**: Importance of gamut awareness
+    - **Print Accuracy**: Ensures printable colors are used
+    - **Predictable Results**: Know which colors will print correctly
+    - **Color Shifts**: Out-of-gamut colors shift during conversion
+    - **Professional Practice**: Gamut awareness prevents print surprises
+- **Gamut Warning Tool**: Using gamut warnings in GIMP
+  - **Enabling Gamut Warning**: Activating gamut warning display
+    - **Method**: View → Show Color Management → Gamut Warning
+      - **Menu Path**: Main menu → View → Show Color Management → Gamut Warning
+      - **Keyboard Shortcut**: No direct shortcut, must use menu
+      - **Toggle**: Can toggle gamut warning on/off
+      - **Visual Feedback**: Warning appears immediately when enabled
+      - **Professional Practice**: Enable gamut warning early in print preparation
+    - **Visual Indicator**: Out-of-gamut colors displayed with warning color (default: gray)
+      - **Default Color**: Gray is default warning color
+      - **Overlay**: Warning color overlays out-of-gamut areas
+      - **Visibility**: Warning color makes out-of-gamut areas clearly visible
+      - **Customization**: Can change warning color in preferences
+      - **Professional Practice**: Use visible but not distracting warning color
+    - **Real-time Display**: Warning updates as you edit image
+      - **Live Update**: Warning updates in real-time as you edit
+      - **Immediate Feedback**: See gamut issues immediately
+      - **Editing Aid**: Helps make gamut-aware editing decisions
+      - **Professional Practice**: Keep gamut warning enabled during print preparation
+    - **Professional Workflow**: Enable gamut warning when preparing for print
+      - **Workflow Step**: Enable gamut warning early in print preparation
+      - **Continuous Use**: Keep enabled throughout print preparation
+      - **Problem Identification**: Helps identify problem areas early
+      - **Professional Practice**: Gamut warning is essential workflow tool
+  - **Gamut Warning Configuration**: Configuring gamut warning display
+    - **Warning Color**: Choose color to indicate out-of-gamut areas (typically gray or cyan)
+      - **Color Selection**: Choose color that is visible but not distracting
+      - **Common Choices**: Gray (default), cyan, magenta
+      - **Visibility**: Color should be clearly visible against image
+      - **Distraction**: Should not be too distracting from image
+      - **Professional Practice**: Gray is good default, cyan also works well
+    - **Profile Selection**: Select target profile for gamut checking (CMYK profile)
+      - **Profile Dialog**: Select profile in gamut warning configuration
+      - **Printer Profile**: Use exact printer/paper profile for checking
+      - **Accuracy**: More accurate profile = more accurate warnings
+      - **Professional Practice**: Use printer-specific profile for best accuracy
+    - **Rendering Intent**: Choose rendering intent for gamut checking
+      - **Intent Selection**: Choose rendering intent (Perceptual, Relative Colorimetric, etc.)
+      - **Impact**: Rendering intent affects which colors are considered out-of-gamut
+      - **Matching**: Use same intent as will be used for conversion
+      - **Professional Practice**: Match rendering intent to conversion intent
+    - **Professional Practice**: Use printer-specific profile for accurate warnings
+      - **Profile Accuracy**: Printer-specific profiles provide most accurate warnings
+      - **Paper Matching**: Use profile for exact paper type
+      - **Professional Practice**: Always use printer-specific profile when available
+  - **Interpreting Gamut Warnings**: Understanding warning display
+    - **Warning Areas**: Areas shown in warning color are out-of-gamut
+      - **Visual Identification**: Warning color clearly identifies out-of-gamut areas
+      - **Area Coverage**: More warning color = more out-of-gamut colors
+      - **Location**: Warning shows exact location of problem areas
+      - **Professional Practice**: Identify all warning areas before conversion
+    - **Color Shifts**: These colors will shift during CMYK conversion
+      - **Shift Prediction**: Warning predicts which colors will shift
+      - **Shift Amount**: More saturated warning = larger shift expected
+      - **Shift Direction**: Colors shift toward nearest printable color
+      - **Professional Practice**: Understand that warning predicts color shifts
+    - **Severity**: More warning color = more color shift expected
+      - **Severity Levels**: More warning color indicates more severe issues
+      - **Problem Assessment**: Assess severity of gamut issues
+      - **Adjustment Priority**: Prioritize adjustments based on severity
+      - **Professional Practice**: Address severe warnings first
+    - **Common Problem Colors**: Colors commonly out-of-gamut
+      - **Bright Colors**: Very bright colors often out-of-gamut
+      - **Saturated Colors**: Highly saturated colors often out-of-gamut
+      - **Specific Hues**: Cyan, orange, bright greens often problematic
+      - **Professional Practice**: Be aware of commonly problematic colors
+    - **Professional Insight**: Gamut warnings help identify problem areas before conversion
+      - **Early Identification**: Identify problems before conversion
+      - **Preventive Action**: Take action to fix problems before conversion
+      - **Workflow Efficiency**: Saves time by identifying issues early
+      - **Professional Practice**: Use gamut warnings proactively
+- **Soft Proofing Workflow**: Previewing print appearance on screen
+  - **What Is Soft Proofing**: Simulating print appearance on monitor
+    - **Purpose**: Preview how image will look when printed
+      - **Print Preview**: See how image will appear in print before printing
+      - **Color Accuracy**: Preview color accuracy on screen
+      - **Gamut Preview**: Preview how gamut mapping will affect image
+      - **Workflow Efficiency**: Saves time and money on test prints
+      - **Professional Practice**: Soft proofing is essential workflow step
+    - **Method**: View → Show Color Management → Soft Proofing
+      - **Menu Path**: Main menu → View → Show Color Management → Soft Proofing
+      - **Keyboard Shortcut**: No direct shortcut, must use menu
+      - **Toggle**: Can toggle soft proofing on/off
+      - **Visual Feedback**: Image appearance changes when soft proofing enabled
+      - **Professional Practice**: Enable soft proofing during print preparation
+    - **Profile Selection**: Choose printer/paper profile for proofing
+      - **Profile Dialog**: Select profile in soft proofing configuration
+      - **Printer Profile**: Use exact printer/paper profile
+      - **Accuracy**: More accurate profile = more accurate proofing
+      - **Professional Practice**: Use printer-specific profile for best accuracy
+    - **Rendering Intent**: Select rendering intent for proofing
+      - **Intent Selection**: Choose rendering intent (Perceptual, Relative Colorimetric, etc.)
+      - **Impact**: Rendering intent significantly affects proof appearance
+      - **Matching**: Use same intent as will be used for conversion
+      - **Testing**: Test different intents to see which looks best
+      - **Professional Practice**: Match rendering intent to conversion intent
+    - **Professional Essential**: Soft proofing is essential for print preparation
+      - **Workflow Requirement**: Soft proofing is required for professional print work
+      - **Quality Assurance**: Ensures print quality before printing
+      - **Cost Savings**: Saves money on test prints
+      - **Professional Practice**: Soft proofing is non-negotiable
+  - **Soft Proofing Setup**: Configuring soft proofing
+    - **Proof Profile**: Select target printer/paper profile
+      - **Profile Selection**: Choose exact printer/paper profile
+      - **Profile Accuracy**: Profile must match printer and paper exactly
+      - **Custom Profiles**: Use custom profiles when available
+      - **Professional Practice**: Use most accurate profile available
+    - **Rendering Intent**: Choose how out-of-gamut colors are handled
+      - **Perceptual**: Preserves color relationships (recommended for photos)
+      - **Relative Colorimetric**: Preserves in-gamut colors exactly (for graphics)
+      - **Selection**: Choose based on image content
+      - **Professional Practice**: Perceptual standard for photos
+    - **Gamut Warning**: Enable gamut warning with soft proofing
+      - **Combined Use**: Use gamut warning together with soft proofing
+      - **Visual Aid**: Gamut warning helps identify problem areas
+      - **Workflow Integration**: Both tools work together
+      - **Professional Practice**: Always use gamut warning with soft proofing
+    - **Monitor Calibration**: Requires calibrated monitor for accuracy
+      - **Calibration Essential**: Calibrated monitor essential for accurate soft proofing
+      - **Calibration Target**: Calibrate to sRGB or Adobe RGB standard
+      - **Regular Calibration**: Recalibrate monthly
+      - **Professional Practice**: Uncalibrated monitor makes soft proofing inaccurate
+    - **Professional Practice**: Use exact printer profile for accurate proofing
+      - **Profile Matching**: Profile must match printer and paper exactly
+      - **Accuracy**: Exact profile provides most accurate proofing
+      - **Professional Practice**: Always use most accurate profile available
+  - **Soft Proofing Best Practices**: Professional soft proofing techniques
+    - **Calibrated Monitor**: Essential for accurate soft proofing
+      - **Calibration Requirement**: Monitor must be calibrated for accurate soft proofing
+      - **Calibration Quality**: High-quality calibration essential
+      - **Regular Maintenance**: Recalibrate regularly (monthly)
+      - **Professional Practice**: Calibrated monitor is non-negotiable
+    - **Proper Lighting**: View in consistent, appropriate lighting
+      - **Lighting Conditions**: View in consistent lighting conditions
+      - **Ambient Light**: Control ambient light in viewing environment
+      - **Consistency**: Maintain consistent lighting for accurate viewing
+      - **Professional Practice**: Proper lighting essential for accurate soft proofing
+    - **Profile Accuracy**: Use accurate printer/paper profiles
+      - **Profile Quality**: Use highest quality profiles available
+      - **Printer Profiles**: Use printer-provided profiles when available
+      - **Custom Profiles**: Use custom profiles for best accuracy
+      - **Professional Practice**: Profile accuracy directly affects proofing accuracy
+    - **Comparison**: Toggle soft proofing on/off to see differences
+      - **Toggle Method**: Toggle soft proofing on/off to compare
+      - **Visual Comparison**: Compare original and proofed versions
+      - **Difference Assessment**: Assess differences between versions
+      - **Professional Practice**: Regular comparison helps identify issues
+    - **Adjustments**: Make adjustments based on soft proof preview
+      - **Adjustment Process**: Make adjustments based on soft proof
+      - **Iterative Process**: Adjust, soft proof, adjust again
+      - **Professional Practice**: Use soft proofing to guide adjustments
+    - **Professional Workflow**: Soft proof throughout print preparation process
+      - **Continuous Use**: Use soft proofing throughout print preparation
+      - **Workflow Integration**: Integrate soft proofing into workflow
+      - **Professional Practice**: Soft proofing is ongoing process, not one-time check
+- **Gamut Management**: Managing out-of-gamut colors
+  - **Identifying Problem Colors**: Finding out-of-gamut areas
+    - **Gamut Warning**: Use gamut warning to identify problem areas
+      - **Enable Warning**: Enable gamut warning to see problem areas
+      - **Visual Identification**: Warning color clearly shows problem areas
+      - **Area Analysis**: Analyze which areas have most problems
+      - **Professional Practice**: Use gamut warning to identify all problem areas
+    - **Common Areas**: Bright colors, saturated colors, specific hues (cyan, orange)
+      - **Bright Colors**: Very bright colors often out-of-gamut
+      - **Saturated Colors**: Highly saturated colors often out-of-gamut
+      - **Cyan Hues**: Cyan colors often problematic for CMYK
+      - **Orange Hues**: Orange colors often problematic for CMYK
+      - **Bright Greens**: Bright greens often problematic
+      - **Professional Practice**: Be aware of commonly problematic colors
+    - **Color Analysis**: Analyze which colors are problematic
+      - **Color Identification**: Identify specific colors that are out-of-gamut
+      - **Severity Assessment**: Assess severity of gamut issues
+      - **Priority Setting**: Set priorities for which colors to fix
+      - **Professional Practice**: Systematic analysis helps manage gamut issues
+    - **Professional Practice**: Identify and address gamut issues early
+      - **Early Identification**: Identify issues early in workflow
+      - **Early Correction**: Correct issues before final conversion
+      - **Workflow Efficiency**: Early correction saves time
+      - **Professional Practice**: Address gamut issues proactively
+  - **Gamut Correction Techniques**: Fixing out-of-gamut colors
+    - **Desaturation**: Reduce saturation of out-of-gamut colors
+      - **Method**: Use Hue-Saturation tool to reduce saturation
+      - **Target**: Target out-of-gamut colors specifically
+      - **Amount**: Reduce saturation just enough to bring into gamut
+      - **Selective**: Use masks to target specific areas
+      - **Professional Practice**: Subtle desaturation usually sufficient
+    - **Hue Shifts**: Slight hue adjustments to bring colors into gamut
+      - **Method**: Use Hue-Saturation tool to shift hue slightly
+      - **Direction**: Shift hue toward more printable color
+      - **Amount**: Small shifts usually sufficient
+      - **Selective**: Use masks to target specific areas
+      - **Professional Practice**: Small hue shifts often effective
+    - **Brightness Adjustment**: Adjust brightness to bring colors into range
+      - **Method**: Use Brightness-Contrast or Levels tool
+      - **Target**: Target out-of-gamut bright or dark areas
+      - **Amount**: Adjust just enough to bring into gamut
+      - **Selective**: Use masks to target specific areas
+      - **Professional Practice**: Brightness adjustment often effective
+    - **Selective Correction**: Use masks to correct specific problem areas
+      - **Mask Creation**: Create masks for out-of-gamut areas
+      - **Targeted Adjustment**: Apply adjustments only to masked areas
+      - **Precision**: Masks allow precise targeting
+      - **Professional Practice**: Masks provide most precise correction
+    - **Color Balance**: Adjust color balance to bring colors into gamut
+      - **Method**: Use Color Balance tool
+      - **Target**: Adjust color balance to shift colors toward gamut
+      - **Selective**: Use masks for selective adjustment
+      - **Professional Practice**: Color balance can be effective
+    - **Professional Practice**: Make subtle adjustments to preserve image appearance
+      - **Subtlety**: Make subtle adjustments to preserve image appearance
+      - **Preservation**: Preserve overall image appearance
+      - **Balance**: Balance gamut correction with image quality
+      - **Professional Practice**: Subtle corrections are best
+  - **Gamut-Aware Editing**: Editing with gamut in mind
+    - **Awareness**: Keep gamut limitations in mind while editing
+      - **Gamut Awareness**: Always be aware of gamut limitations
+      - **Color Selection**: Choose colors that are likely in-gamut
+      - **Editing Decisions**: Make editing decisions with gamut in mind
+      - **Professional Practice**: Gamut awareness prevents problems
+    - **Preview**: Regularly check gamut warning during editing
+      - **Regular Checks**: Check gamut warning regularly during editing
+      - **Early Detection**: Detect gamut issues early
+      - **Preventive Action**: Take action to prevent gamut issues
+      - **Professional Practice**: Regular checks are essential
+    - **Conservative Colors**: Use colors that are likely to be in-gamut
+      - **Color Selection**: Choose colors that are likely printable
+      - **Avoid Extremes**: Avoid very bright or very saturated colors
+      - **Professional Practice**: Conservative color choices prevent problems
+    - **Professional Insight**: Gamut-aware editing prevents problems later
+      - **Prevention**: Gamut-aware editing prevents problems
+      - **Workflow Efficiency**: Prevents need for later corrections
+      - **Quality**: Maintains image quality throughout workflow
+      - **Professional Practice**: Gamut awareness is essential skill
+- **Print Preparation Workflow**: Complete print preparation process
+  - **Workflow Steps**: Step-by-step print preparation
+    1. **Edit in RGB**: Complete all editing in RGB color space
+       - **Complete Editing**: Finish all editing in RGB before print preparation
+       - **Color Space**: Use Adobe RGB or ProPhoto RGB for editing
+       - **Editing Tools**: All editing tools work better in RGB
+       - **Professional Practice**: Complete all editing in RGB first
+    2. **Enable Soft Proofing**: Activate soft proofing with printer profile
+       - **Enable**: View → Show Color Management → Soft Proofing
+       - **Profile Selection**: Select exact printer/paper profile
+       - **Rendering Intent**: Choose rendering intent (usually Perceptual)
+       - **Visual Preview**: Preview how image will look when printed
+       - **Professional Practice**: Enable soft proofing early
+    3. **Check Gamut**: Enable gamut warning to identify problem areas
+       - **Enable**: View → Show Color Management → Gamut Warning
+       - **Profile**: Use same profile as soft proofing
+       - **Visual Identification**: Identify out-of-gamut areas
+       - **Problem Assessment**: Assess severity of gamut issues
+       - **Professional Practice**: Check gamut early in preparation
+    4. **Make Adjustments**: Adjust out-of-gamut colors as needed
+       - **Adjustment Methods**: Desaturate, shift hue, adjust brightness
+       - **Selective Correction**: Use masks for precise correction
+       - **Iterative Process**: Adjust, check, adjust again
+       - **Professional Practice**: Make adjustments based on gamut warning
+    5. **Final Review**: Review soft proof for final appearance
+       - **Visual Review**: Review soft proof carefully
+       - **Comparison**: Toggle soft proofing on/off to compare
+       - **Color Check**: Verify colors look correct
+       - **Detail Check**: Verify detail is preserved
+       - **Professional Practice**: Thorough review before conversion
+    6. **Convert to CMYK**: Convert to CMYK as final step
+       - **Method**: Colors → Color Management → Convert to Color Profile
+       - **Profile**: Select appropriate CMYK profile
+       - **Rendering Intent**: Use same intent as soft proofing
+       - **16-bit**: Use 16-bit for best quality
+       - **Professional Practice**: Convert only after all preparation complete
+    7. **Verify**: Check converted image matches soft proof
+       - **Visual Comparison**: Compare converted image to soft proof
+       - **Color Match**: Verify colors match soft proof
+       - **Quality Check**: Verify quality is maintained
+       - **Professional Practice**: Verification is essential step
+    - **Professional Practice**: Follow complete workflow for best results
+      - **Complete Workflow**: Follow all steps in order
+      - **No Shortcuts**: Don't skip steps
+      - **Quality**: Complete workflow ensures quality
+      - **Professional Practice**: Workflow discipline is essential
+  - **Quality Assurance**: Ensuring print quality
+    - **Soft Proof Accuracy**: Verify soft proof matches expectations
+      - **Visual Verification**: Visually verify soft proof
+      - **Color Accuracy**: Verify colors are accurate
+      - **Detail Preservation**: Verify detail is preserved
+      - **Professional Practice**: Verify soft proof before conversion
+    - **Gamut Coverage**: Ensure minimal out-of-gamut colors
+      - **Gamut Check**: Check gamut warning for out-of-gamut colors
+      - **Minimize Issues**: Minimize out-of-gamut colors before conversion
+      - **Critical Areas**: Ensure critical areas are in-gamut
+      - **Professional Practice**: Minimize gamut issues for best quality
+    - **Color Accuracy**: Verify critical colors are accurate
+      - **Critical Colors**: Identify critical colors in image
+      - **Color Check**: Verify critical colors are accurate in soft proof
+      - **Adjustments**: Make adjustments if needed
+      - **Professional Practice**: Critical colors must be accurate
+    - **Test Prints**: Make test prints to verify final results
+      - **Test Print**: Make test print before final print
+      - **Verification**: Verify test print matches expectations
+      - **Adjustments**: Make adjustments if needed
+      - **Professional Practice**: Test prints verify final quality
+    - **Professional Standard**: Quality assurance is essential for professional work
+      - **Quality Requirement**: Quality assurance is required
+      - **Workflow Integration**: Integrate quality assurance into workflow
+      - **Professional Practice**: Quality assurance is non-negotiable
+
 ### Monitor Calibration and Why It Matters
+
+- **Monitor Calibration Fundamentals**: Understanding monitor calibration
+  - **What Is Calibration**: Adjusting monitor to display colors accurately
+    - **Purpose**: Ensure monitor displays colors correctly and consistently
+    - **Process**: Measuring and adjusting monitor color response
+    - **Tools**: Hardware colorimeters or software calibration
+    - **Standards**: Calibrate to color space standards (sRGB, Adobe RGB)
+    - **Professional Essential**: Calibration is essential for color-accurate work
+  - **Why Calibration Matters**: Importance of calibrated displays
+    - **Color Accuracy**: See colors as they actually are
+    - **Consistency**: Consistent appearance across different sessions
+    - **Print Matching**: Match screen appearance to print output
+    - **Client Approval**: Clients see accurate colors for approval
+    - **Professional Standard**: Uncalibrated monitors are unacceptable in professional work
+    - **Cost of Errors**: Uncalibrated monitors lead to costly reprints and client dissatisfaction
+- **Calibration Process**: How to calibrate your monitor
+  - **Hardware Calibration**: Using colorimeter devices
+    - **Devices**: X-Rite i1Display, Datacolor Spyder, Calibrite ColorChecker
+      - **X-Rite i1Display**: Professional-grade colorimeter, high accuracy
+        - **Models**: i1Display Pro, i1Display Studio, i1Display Plus
+        - **Accuracy**: High accuracy, professional standard
+        - **Software**: i1Profiler software included
+        - **Price Range**: Mid to high-end professional devices
+        - **Professional Practice**: Industry standard for professional calibration
+      - **Datacolor Spyder**: Popular colorimeter, good accuracy
+        - **Models**: SpyderX, Spyder5, Spyder4
+        - **Accuracy**: Good accuracy for professional work
+        - **Software**: Datacolor software included
+        - **Price Range**: Mid-range professional devices
+        - **Professional Practice**: Good choice for professional calibration
+      - **Calibrite ColorChecker**: Colorimeter with color target
+        - **Models**: ColorChecker Display, ColorChecker Display Pro
+        - **Accuracy**: High accuracy, includes color target
+        - **Software**: Calibrite software included
+        - **Price Range**: Mid to high-end professional devices
+        - **Professional Practice**: Excellent choice for professional calibration
+    - **Process**: Device measures monitor, software creates calibration profile
+      - **Step 1**: Attach colorimeter to monitor screen
+      - **Step 2**: Launch calibration software
+      - **Step 3**: Follow software instructions (warm-up, measurements)
+      - **Step 4**: Software measures monitor color response
+      - **Step 5**: Software creates calibration profile (ICC profile)
+      - **Step 6**: Profile automatically loaded by operating system
+      - **Professional Practice**: Follow software instructions carefully
+    - **Accuracy**: Most accurate calibration method
+      - **Measurement Accuracy**: Hardware measurement is most accurate
+      - **Profile Quality**: Creates high-quality calibration profiles
+      - **Color Accuracy**: Provides best color accuracy
+      - **Professional Practice**: Hardware calibration is only acceptable method
+    - **Frequency**: Calibrate monthly or when display changes
+      - **Monthly Calibration**: Calibrate monthly for consistent results
+      - **After Changes**: Recalibrate after monitor settings changes
+      - **New Monitor**: Calibrate immediately when setting up new monitor
+      - **Professional Practice**: Regular calibration maintains accuracy
+    - **Professional Standard**: Hardware calibration is industry standard
+      - **Industry Requirement**: Hardware calibration is industry requirement
+      - **Quality Standard**: Quality standard for professional work
+      - **Professional Practice**: Hardware calibration is non-negotiable
+    - **Investment**: Hardware calibration is essential professional investment
+      - **Cost**: Colorimeters cost $100-$500+ (one-time investment)
+      - **Value**: Essential investment for professional color work
+      - **ROI**: Saves money on reprints and client dissatisfaction
+      - **Professional Practice**: Essential professional investment
+  - **Software Calibration**: Using software-only calibration
+    - **Method**: Visual calibration using software tools
+      - **Process**: Software displays test patterns, user adjusts visually
+      - **Tools**: Operating system calibration tools (Windows, macOS, Linux)
+      - **Limitations**: Relies on human visual perception
+      - **Accuracy**: Much less accurate than hardware calibration
+      - **Professional Practice**: Software calibration is not acceptable for professional work
+    - **Limitations**: Less accurate than hardware calibration
+      - **Visual Perception**: Human visual perception is subjective
+      - **Inconsistency**: Results vary between users and sessions
+      - **Accuracy**: Much lower accuracy than hardware calibration
+      - **Professional Practice**: Software calibration insufficient for professional work
+    - **Use Cases**: Basic calibration when hardware unavailable
+      - **Temporary Solution**: Only for temporary use until hardware available
+      - **Basic Work**: May be acceptable for very basic work
+      - **Not Professional**: Not acceptable for professional work
+      - **Professional Practice**: Use only as temporary solution
+    - **Professional Practice**: Software calibration is temporary solution
+      - **Temporary Only**: Use only until hardware calibration available
+      - **Upgrade Required**: Must upgrade to hardware calibration
+      - **Professional Practice**: Software calibration is not professional standard
+    - **Recommendation**: Upgrade to hardware calibration for professional work
+      - **Essential Upgrade**: Hardware calibration is essential upgrade
+      - **Professional Requirement**: Required for professional work
+      - **Investment**: Essential professional investment
+      - **Professional Practice**: Upgrade to hardware calibration immediately
+  - **Calibration Settings**: Key calibration parameters
+    - **White Point**: Target white point (typically D65 for sRGB, D50 for print)
+      - **D65 (6500K)**: Standard for sRGB and digital display work
+        - **Color Temperature**: 6500K (daylight white)
+        - **Use Case**: Standard for sRGB workflows
+        - **Professional Practice**: D65 standard for digital work
+      - **D50 (5000K)**: Standard for print viewing and proofing
+        - **Color Temperature**: 5000K (warm white)
+        - **Use Case**: Standard for print viewing and proofing
+        - **Professional Practice**: D50 standard for print work
+      - **Selection**: Choose based on workflow (D65 for digital, D50 for print)
+      - **Professional Practice**: Match white point to workflow
+    - **Gamma**: Gamma curve (typically 2.2 for Windows/Linux, 1.8 for macOS)
+      - **Gamma 2.2**: Standard for Windows and Linux
+        - **Use Case**: Standard for Windows and Linux systems
+        - **Professional Practice**: Gamma 2.2 standard for Windows/Linux
+      - **Gamma 1.8**: Traditional standard for macOS (now often 2.2)
+        - **Use Case**: Traditional macOS standard (now often 2.2)
+        - **Professional Practice**: Gamma 2.2 now more common for macOS
+      - **Selection**: Use 2.2 for most modern workflows
+      - **Professional Practice**: Gamma 2.2 is modern standard
+    - **Brightness**: Target brightness (typically 120 cd/m² for print, 80-100 for web)
+      - **Print Work (120 cd/m²)**: Standard for print viewing and proofing
+        - **Brightness Level**: 120 cd/m² (candelas per square meter)
+        - **Use Case**: Print viewing and proofing
+        - **Professional Practice**: 120 cd/m² standard for print work
+      - **Web Work (80-100 cd/m²)**: Standard for web and digital display work
+        - **Brightness Level**: 80-100 cd/m²
+        - **Use Case**: Web and digital display work
+        - **Professional Practice**: 80-100 cd/m² standard for web work
+      - **Selection**: Choose based on workflow
+      - **Professional Practice**: Match brightness to workflow
+    - **Color Temperature**: White point color temperature (6500K for sRGB)
+      - **6500K**: Standard for sRGB (D65)
+      - **5000K**: Standard for print viewing (D50)
+      - **Selection**: Match to white point setting
+      - **Professional Practice**: Match color temperature to workflow
+    - **Professional Practice**: Match calibration to workflow requirements
+      - **Workflow Matching**: Match all settings to workflow
+      - **Consistency**: Maintain consistent settings
+      - **Professional Practice**: Calibration must match workflow
+- **Calibration Best Practices**: Professional calibration techniques
+  - **Calibration Frequency**: How often to calibrate
+    - **New Monitors**: Calibrate immediately when setting up new monitor
+      - **Immediate Calibration**: Calibrate as soon as monitor is set up
+      - **Initial Setup**: Part of initial monitor setup process
+      - **Accuracy**: Ensures monitor is accurate from start
+      - **Professional Practice**: Never use uncalibrated monitor
+    - **Regular Calibration**: Calibrate monthly for consistent results
+      - **Monthly Schedule**: Calibrate once per month
+      - **Consistency**: Regular calibration maintains consistency
+      - **Drift Prevention**: Prevents calibration drift
+      - **Professional Practice**: Monthly calibration is standard
+    - **After Changes**: Recalibrate after monitor settings changes
+      - **Settings Changes**: Recalibrate after changing monitor settings
+      - **Hardware Changes**: Recalibrate after hardware changes
+      - **Professional Practice**: Recalibrate after any changes
+    - **Intensive Use**: More frequent calibration for intensive use
+      - **Heavy Use**: Calibrate more frequently with heavy use
+      - **Color-Critical Work**: More frequent calibration for color-critical work
+      - **Professional Practice**: Adjust frequency based on use
+    - **Professional Practice**: Regular calibration maintains accuracy
+      - **Maintenance**: Regular calibration is maintenance task
+      - **Accuracy**: Maintains color accuracy over time
+      - **Professional Practice**: Regular calibration is essential
+  - **Calibration Environment**: Optimal calibration conditions
+    - **Lighting**: Calibrate in consistent, appropriate lighting
+      - **Consistent Lighting**: Use consistent lighting conditions
+      - **Ambient Light**: Control ambient light in room
+      - **Avoid Direct Light**: Avoid direct sunlight on monitor
+      - **Professional Practice**: Consistent lighting is essential
+    - **Warm-up Time**: Allow monitor to warm up (30 minutes) before calibration
+      - **Warm-up Period**: Allow 30 minutes for monitor to warm up
+      - **Stability**: Ensures monitor is stable before calibration
+      - **Accuracy**: Warm-up improves calibration accuracy
+      - **Professional Practice**: Always allow warm-up time
+    - **Stable Conditions**: Calibrate in stable environmental conditions
+      - **Temperature**: Stable room temperature
+      - **Humidity**: Stable humidity conditions
+      - **Stability**: Avoid calibrating during temperature changes
+      - **Professional Practice**: Stable conditions ensure consistent calibration
+    - **Monitor Settings**: Set monitor to default/neutral settings before calibration
+      - **Reset Settings**: Reset monitor to default settings
+      - **Neutral Settings**: Use neutral color temperature and brightness
+      - **Professional Practice**: Start from neutral settings
+    - **Professional Practice**: Consistent conditions ensure consistent calibration
+      - **Consistency**: Consistent conditions ensure consistent results
+      - **Quality**: Better calibration quality with proper conditions
+      - **Professional Practice**: Proper conditions are essential
+  - **Profile Management**: Managing calibration profiles
+    - **Profile Loading**: Ensure calibration profile loads at system startup
+      - **Startup Loading**: Profile should load automatically at startup
+      - **Verification**: Verify profile loads correctly
+      - **Troubleshooting**: Fix loading issues if profile doesn't load
+      - **Professional Practice**: Profile must load at startup
+    - **Profile Verification**: Verify profile is active and correct
+      - **Active Check**: Verify profile is active in system
+      - **Correct Profile**: Verify correct profile is active
+      - **Regular Checks**: Check profile status regularly
+      - **Professional Practice**: Regular verification is essential
+    - **Multiple Monitors**: Calibrate each monitor separately
+      - **Separate Calibration**: Each monitor needs separate calibration
+      - **Separate Profiles**: Each monitor has separate profile
+      - **Profile Assignment**: Assign correct profile to each monitor
+      - **Professional Practice**: Each monitor must be calibrated separately
+    - **Profile Backup**: Backup calibration profiles
+      - **Backup**: Backup important calibration profiles
+      - **Storage**: Store backups in safe location
+      - **Recovery**: Backup allows recovery if profile is lost
+      - **Professional Practice**: Backup is good practice
+    - **Professional Practice**: Profile management ensures calibration effectiveness
+      - **Effectiveness**: Proper management ensures calibration works
+      - **Professional Practice**: Profile management is essential
+- **Monitor Types and Calibration**: Calibration for different monitor types
+  - **LCD Monitors**: Calibrating standard LCD displays
+    - **Standard Gamut**: Most LCDs cover sRGB gamut
+      - **Gamut Coverage**: Most standard LCDs cover ~100% of sRGB gamut
+      - **Color Range**: Limited to sRGB color range
+      - **Use Case**: Adequate for sRGB workflows
+      - **Professional Practice**: Standard LCDs adequate for sRGB work
+    - **Calibration**: Standard calibration process applies
+      - **Process**: Standard calibration process works for LCD monitors
+      - **Colorimeter**: Use standard colorimeter for calibration
+      - **Settings**: Standard calibration settings apply
+      - **Professional Practice**: Standard calibration process is sufficient
+    - **Limitations**: Limited color gamut compared to wide-gamut displays
+      - **Gamut Limitation**: Cannot display colors outside sRGB gamut
+      - **Adobe RGB**: Cannot display full Adobe RGB gamut
+      - **Professional Practice**: Limited for wide-gamut workflows
+    - **Professional Use**: Adequate for sRGB workflows
+      - **sRGB Work**: Perfect for sRGB-only workflows
+      - **Web Work**: Ideal for web graphics and digital work
+      - **Professional Practice**: Standard LCDs adequate for sRGB workflows
+  - **Wide-Gamut Monitors**: Calibrating wide-gamut displays
+    - **Extended Gamut**: Covers Adobe RGB or larger gamuts
+      - **Gamut Coverage**: Covers 99-100% of Adobe RGB gamut or larger
+      - **Color Range**: Extended color range beyond sRGB
+      - **Use Case**: Essential for Adobe RGB and ProPhoto RGB workflows
+      - **Professional Practice**: Wide-gamut essential for professional photography
+    - **Calibration**: Essential for accurate wide-gamut work
+      - **Calibration Required**: Calibration is essential, not optional
+      - **Accuracy**: Accurate calibration critical for wide-gamut work
+      - **Process**: Same calibration process, but more critical
+      - **Professional Practice**: Calibration is non-negotiable
+    - **Advantages**: See more colors, better for Adobe RGB workflows
+      - **More Colors**: Can display more colors than standard LCDs
+      - **Adobe RGB**: Can display full Adobe RGB gamut
+      - **Workflow**: Essential for Adobe RGB workflows
+      - **Professional Practice**: Wide-gamut provides significant advantages
+    - **Professional Standard**: Wide-gamut monitors standard for professional photography
+      - **Industry Standard**: Wide-gamut is industry standard for photography
+      - **Professional Requirement**: Required for professional photography work
+      - **Professional Practice**: Wide-gamut is professional standard
+  - **OLED Monitors**: Calibrating OLED displays
+    - **Advantages**: Excellent color accuracy, deep blacks
+      - **Color Accuracy**: Excellent color accuracy
+      - **Deep Blacks**: Perfect black levels (no backlight)
+      - **Contrast**: Excellent contrast ratio
+      - **Professional Practice**: OLED provides excellent quality
+    - **Calibration**: Standard calibration process applies
+      - **Process**: Standard calibration process works for OLED
+      - **Colorimeter**: Use standard colorimeter for calibration
+      - **Settings**: Standard calibration settings apply
+      - **Professional Practice**: Standard calibration process works
+    - **Professional Use**: High-end option for color-critical work
+      - **High-End**: High-end option for color-critical work
+      - **Quality**: Excellent quality for professional work
+      - **Investment**: Higher cost but excellent quality
+      - **Professional Practice**: OLED is high-end professional option
+  - **IPS Monitors**: Calibrating IPS (In-Plane Switching) displays
+    - **Color Accuracy**: Excellent color accuracy and consistency
+      - **Accuracy**: Excellent color accuracy
+      - **Consistency**: Consistent colors across viewing angles
+      - **Professional Practice**: IPS provides excellent color accuracy
+    - **Calibration**: Standard calibration process applies
+      - **Process**: Standard calibration process works for IPS
+      - **Professional Practice**: Standard calibration is sufficient
+    - **Professional Use**: Excellent for color-critical work
+      - **Color-Critical**: Excellent for color-critical work
+      - **Professional Practice**: IPS is excellent professional choice
+  - **VA Monitors**: Calibrating VA (Vertical Alignment) displays
+    - **Contrast**: Excellent contrast ratio
+      - **Contrast**: Better contrast than IPS
+      - **Professional Practice**: VA provides excellent contrast
+    - **Calibration**: Standard calibration process applies
+      - **Process**: Standard calibration process works for VA
+      - **Professional Practice**: Standard calibration is sufficient
+    - **Professional Use**: Good for color work, excellent contrast
+      - **Color Work**: Good for color work
+      - **Professional Practice**: VA is good professional choice
+- **Calibration Verification**: Verifying calibration accuracy
+  - **Visual Tests**: Visual verification of calibration
+    - **Test Images**: Use known test images to verify appearance
+      - **Test Images**: Use images with known color characteristics
+      - **Comparison**: Compare displayed colors to known colors
+      - **Regular Checks**: Regular visual checks catch calibration drift
+      - **Professional Practice**: Visual verification is essential
+    - **Color Charts**: Compare displayed colors to known color charts
+      - **Color Charts**: Use physical color charts (ColorChecker, etc.)
+      - **Comparison**: Compare displayed colors to physical chart
+      - **Accuracy**: Verify colors match physical chart
+      - **Professional Practice**: Color chart comparison is valuable
+    - **Grayscale Ramps**: Verify smooth grayscale transitions
+      - **Grayscale Test**: Display grayscale ramp
+      - **Smoothness**: Verify smooth transitions without banding
+      - **Accuracy**: Verify grayscale accuracy
+      - **Professional Practice**: Grayscale verification is important
+    - **Skin Tones**: Verify skin tone accuracy
+      - **Skin Tones**: Test with images containing skin tones
+      - **Accuracy**: Verify skin tones look natural and accurate
+      - **Professional Practice**: Skin tone accuracy is critical
+    - **Professional Practice**: Regular visual verification catches calibration drift
+      - **Regular Checks**: Regular visual checks are essential
+      - **Drift Detection**: Catches calibration drift early
+      - **Professional Practice**: Visual verification is ongoing process
+  - **Measurement Verification**: Hardware verification of calibration
+    - **Re-measurement**: Use colorimeter to verify calibration accuracy
+      - **Re-measurement**: Use colorimeter to re-measure monitor
+      - **Comparison**: Compare measurements to calibration targets
+      - **Accuracy**: Verify monitor meets calibration targets
+      - **Professional Practice**: Hardware verification is most accurate
+    - **Delta E**: Measure color accuracy (target: Delta E < 2)
+      - **Delta E**: Measure color difference (Delta E)
+      - **Target**: Target Delta E < 2 for professional work
+      - **Interpretation**: Lower Delta E = better accuracy
+      - **Professional Practice**: Delta E < 2 is professional standard
+    - **White Point Accuracy**: Verify white point accuracy
+      - **White Point**: Verify white point matches target (D65 or D50)
+      - **Accuracy**: White point should be within tolerance
+      - **Professional Practice**: White point accuracy is critical
+    - **Gamma Accuracy**: Verify gamma accuracy
+      - **Gamma**: Verify gamma matches target (2.2 or 1.8)
+      - **Accuracy**: Gamma should be within tolerance
+      - **Professional Practice**: Gamma accuracy is important
+    - **Professional Standard**: Regular measurement ensures calibration quality
+      - **Regular Measurement**: Regular hardware measurement is standard
+      - **Quality Assurance**: Ensures calibration quality
+      - **Professional Practice**: Regular measurement is essential
+  - **Workflow Integration**: Integrating calibration into workflow
+    - **Startup Check**: Verify calibration profile loads at startup
+      - **Startup Verification**: Check profile loads at system startup
+      - **Verification Method**: Check system color management settings
+      - **Troubleshooting**: Fix loading issues if profile doesn't load
+      - **Professional Practice**: Startup check is essential
+    - **Regular Monitoring**: Monitor calibration status regularly
+      - **Status Monitoring**: Monitor calibration status regularly
+      - **Drift Detection**: Detect calibration drift early
+      - **Professional Practice**: Regular monitoring maintains accuracy
+    - **Workflow Checks**: Integrate calibration checks into workflow
+      - **Workflow Integration**: Include calibration checks in workflow
+      - **Regular Checks**: Regular checks during work
+      - **Professional Practice**: Workflow integration ensures accuracy
+    - **Professional Practice**: Calibration is ongoing process, not one-time task
+      - **Ongoing Process**: Calibration is ongoing, not one-time
+      - **Maintenance**: Requires regular maintenance
+      - **Professional Practice**: Ongoing calibration is essential
 
 ### Importing and Exporting ICC Profiles
 
+- **Profile Import Process**: Adding ICC profiles to GIMP
+  - **Import Methods**: Ways to import ICC profiles
+    - **System Installation**: Install profiles system-wide (recommended)
+      - **Method**: Copy profile files to system profile directory
+      - **Access**: Requires administrator/root privileges
+      - **Visibility**: Available to all users and applications
+      - **Benefits**: Profiles available system-wide
+      - **Professional Practice**: System-wide installation is recommended
+    - **User Installation**: Install profiles in user directory
+      - **Method**: Copy profile files to user profile directory
+      - **Access**: No special privileges required
+      - **Visibility**: Available only to current user
+      - **Benefits**: User-specific profiles
+      - **Professional Practice**: Use for user-specific custom profiles
+    - **Profile Location**: Varies by operating system
+      - **Windows**: System: C:\Windows\System32\spool\drivers\color\, User: C:\Users\[Username]\AppData\Local\Microsoft\Windows\Color\
+      - **macOS**: System: /Library/ColorSync/Profiles/, User: ~/Library/ColorSync/Profiles/
+      - **Linux**: System: /usr/share/color/icc/ or /usr/local/share/color/icc/, User: ~/.local/share/color/icc/
+      - **Professional Practice**: Know profile locations for your operating system
+    - **GIMP Detection**: GIMP automatically detects installed profiles
+      - **Automatic**: GIMP automatically scans profile directories on startup
+      - **Refresh**: May need restart to detect newly installed profiles
+      - **Verification**: Check profile list in GIMP to verify detection
+      - **Professional Practice**: Verify profiles are detected after installation
+    - **Professional Practice**: Install profiles system-wide for all applications
+      - **Consistency**: System-wide installation ensures consistency
+      - **Accessibility**: Available to all color-managed applications
+      - **Professional Practice**: System-wide installation is standard practice
+  - **System-Wide Installation**: Installing profiles for all applications
+    - **Windows**: Copy to C:\Windows\System32\spool\drivers\color\
+      - **Path**: C:\Windows\System32\spool\drivers\color\
+      - **Access**: Requires administrator privileges
+      - **Method**: Copy .icc or .icm files to this directory
+      - **Verification**: Verify files are in directory
+      - **Professional Practice**: Install standard profiles system-wide
+    - **macOS**: Copy to /Library/ColorSync/Profiles/ (system) or ~/Library/ColorSync/Profiles/ (user)
+      - **System Path**: /Library/ColorSync/Profiles/ (requires admin)
+      - **User Path**: ~/Library/ColorSync/Profiles/ (no admin needed)
+      - **Method**: Copy .icc files to appropriate directory
+      - **Verification**: Verify files are in directory
+      - **Professional Practice**: Install standard profiles system-wide
+    - **Linux**: Copy to /usr/share/color/icc/ (system) or ~/.local/share/color/icc/ (user)
+      - **System Path**: /usr/share/color/icc/ or /usr/local/share/color/icc/ (requires root/sudo)
+      - **User Path**: ~/.local/share/color/icc/ or ~/.color/icc/ (no root needed)
+      - **Method**: Copy .icc files to appropriate directory
+      - **Verification**: Verify files are in directory
+      - **Professional Practice**: Install standard profiles system-wide
+    - **Benefits**: Available to all color-managed applications
+      - **Universal Access**: All applications can access system profiles
+      - **Consistency**: Consistent profiles across applications
+      - **Professional Practice**: System-wide installation provides best benefits
+    - **Professional Practice**: System-wide installation is standard practice
+      - **Standard Practice**: Industry standard for profile installation
+      - **Professional Practice**: Always install standard profiles system-wide
+  - **Profile Sources**: Where to obtain ICC profiles
+    - **Printer Manufacturers**: Download from printer manufacturer websites
+      - **Sources**: HP, Canon, Epson, Brother, etc. manufacturer websites
+      - **Profile Types**: Printer/paper combination profiles
+      - **Quality**: High-quality manufacturer profiles
+      - **Professional Practice**: Always check manufacturer websites first
+    - **Paper Manufacturers**: Obtain from paper manufacturer websites
+      - **Sources**: Paper manufacturer websites (Hahnemühle, Canson, etc.)
+      - **Profile Types**: Paper-specific profiles
+      - **Quality**: High-quality paper profiles
+      - **Professional Practice**: Check paper manufacturer websites
+    - **Camera Manufacturers**: Included with camera software
+      - **Sources**: Camera manufacturer software (Canon, Nikon, Sony, etc.)
+      - **Profile Types**: Camera-specific profiles
+      - **Installation**: Usually installed with camera software
+      - **Professional Practice**: Use camera manufacturer profiles
+    - **Standard Profiles**: sRGB, Adobe RGB available from ICC website
+      - **Source**: ICC website (color.org)
+      - **Profile Types**: Standard color space profiles (sRGB, Adobe RGB, etc.)
+      - **Quality**: Official standard profiles
+      - **Professional Practice**: Download standard profiles from ICC website
+    - **Custom Profiles**: Create custom profiles with profiling equipment
+      - **Creation**: Create using colorimeter and profiling software
+      - **Quality**: Highest quality, most accurate profiles
+      - **Equipment**: Requires professional profiling equipment
+      - **Professional Practice**: Custom profiles provide best accuracy
+    - **Professional Practice**: Use manufacturer profiles when available
+      - **Priority**: Use manufacturer profiles when available
+      - **Quality**: Manufacturer profiles are high quality
+      - **Professional Practice**: Manufacturer profiles are preferred
+- **Profile Export Process**: Exporting profiles from GIMP
+  - **Exporting Embedded Profiles**: Extracting profiles from images
+    - **Method**: Extract profile from image file
+      - **Image Properties**: Right-click image → Image → Properties
+      - **Profile Extraction**: Extract embedded profile from image
+      - **Export**: Save profile as .icc or .icm file
+      - **Professional Practice**: Extract profiles when needed
+    - **Use Cases**: Sharing profiles, archiving profiles, profile backup
+      - **Sharing**: Share profiles with colleagues or clients
+      - **Archiving**: Archive profiles for future use
+      - **Backup**: Backup important custom profiles
+      - **Professional Practice**: Export profiles for important use cases
+    - **File Format**: Export as .icc or .icm file
+      - **ICC Format**: .icc is standard ICC profile format
+      - **ICM Format**: .icm is Windows-specific format (same as .icc)
+      - **Compatibility**: Both formats are compatible
+      - **Professional Practice**: Use .icc format for maximum compatibility
+    - **Professional Practice**: Export profiles for sharing and backup
+      - **Sharing**: Export profiles when sharing with others
+      - **Backup**: Export important profiles for backup
+      - **Professional Practice**: Export profiles when needed
+  - **Profile Information**: Viewing profile details
+    - **Profile Properties**: View profile name, color space, version
+      - **Image Properties**: Right-click image → Image → Properties
+      - **Profile Field**: Check "Color Profile" field
+      - **Information**: View profile name, color space type, ICC version
+      - **Professional Practice**: Verify profile information regularly
+    - **Profile Description**: View profile description and metadata
+      - **Metadata**: Profile contains metadata and description
+      - **Viewing**: View metadata in profile properties
+      - **Information**: Includes profile description, creator, date
+      - **Professional Practice**: Review profile metadata when needed
+    - **Professional Practice**: Verify profile information before use
+      - **Verification**: Always verify profile information
+      - **Accuracy**: Verify profile matches intended use
+      - **Professional Practice**: Profile verification is essential
+- **Profile Management**: Managing ICC profile library
+  - **Profile Organization**: Organizing profile library
+    - **Naming Convention**: Use descriptive names for profiles
+      - **Descriptive Names**: Use names that clearly identify profile purpose
+      - **Examples**: "Epson_Photo_Glossy_2400dpi.icc", "Canon_Matte_1200dpi.icc"
+      - **Consistency**: Use consistent naming convention
+      - **Professional Practice**: Clear naming improves workflow efficiency
+    - **Folder Structure**: Organize profiles by type (RGB, CMYK, display, printer)
+      - **RGB Profiles**: Organize RGB profiles (sRGB, Adobe RGB, ProPhoto RGB)
+      - **CMYK Profiles**: Organize CMYK profiles by paper type (Coated, Uncoated, Newsprint)
+      - **Display Profiles**: Organize display/monitor profiles
+      - **Printer Profiles**: Organize printer profiles by printer model and paper
+      - **Professional Practice**: Organized structure improves profile management
+    - **Documentation**: Keep notes on profile sources and uses
+      - **Source Documentation**: Document where profile came from
+      - **Use Documentation**: Document when and how to use profile
+      - **Date Documentation**: Document when profile was obtained/created
+      - **Professional Practice**: Documentation helps maintain profile library
+    - **Professional Practice**: Organized profile library improves workflow efficiency
+      - **Efficiency**: Organized library saves time finding profiles
+      - **Workflow**: Improves workflow efficiency
+      - **Professional Practice**: Organization is essential for professional work
+  - **Profile Maintenance**: Maintaining profile library
+    - **Regular Updates**: Update profiles when new versions available
+      - **Check Sources**: Regularly check manufacturer websites for updates
+      - **Update Process**: Download and install updated profiles
+      - **Version Tracking**: Keep track of profile versions
+      - **Professional Practice**: Keep profiles up to date
+    - **Removal**: Remove outdated or unused profiles
+      - **Outdated Profiles**: Remove profiles that are no longer valid
+      - **Unused Profiles**: Remove profiles that are no longer needed
+      - **Cleanup**: Regular cleanup keeps library manageable
+      - **Professional Practice**: Regular removal maintains library quality
+    - **Backup**: Backup important custom profiles
+      - **Custom Profiles**: Backup all custom-created profiles
+      - **Backup Location**: Store backups in safe location
+      - **Backup Frequency**: Regular backups prevent loss
+      - **Professional Practice**: Backup is essential for custom profiles
+    - **Professional Practice**: Maintained profile library ensures workflow reliability
+      - **Reliability**: Maintained library ensures reliable workflow
+      - **Quality**: Maintained library maintains quality
+      - **Professional Practice**: Maintenance is ongoing responsibility
+  - **Profile Verification**: Verifying profile integrity
+    - **Profile Validity**: Verify profiles are valid ICC profiles
+      - **File Format**: Verify file is valid ICC format (.icc or .icm)
+      - **File Integrity**: Verify file is not corrupted
+      - **Profile Structure**: Verify profile has correct structure
+      - **Professional Practice**: Verify validity before use
+    - **Profile Compatibility**: Ensure profiles are compatible with GIMP
+      - **ICC Version**: Verify ICC version is compatible (v2 or v4)
+      - **GIMP Detection**: Verify GIMP can detect and use profile
+      - **Testing**: Test profile in GIMP before use
+      - **Professional Practice**: Compatibility verification is essential
+    - **Profile Accuracy**: Verify profile accuracy for intended use
+      - **Intended Use**: Verify profile is appropriate for intended use
+      - **Testing**: Test profile with known images
+      - **Verification**: Verify profile produces expected results
+      - **Professional Practice**: Accuracy verification is essential
+    - **Professional Practice**: Verify profiles before use in critical work
+      - **Critical Work**: Always verify profiles before critical work
+      - **Verification Process**: Complete verification process
+      - **Professional Practice**: Verification is non-negotiable
+- **Custom Profile Creation**: Creating custom ICC profiles
+  - **When to Create Custom Profiles**: Situations requiring custom profiles
+    - **Specific Printers**: Custom profiles for specific printer/paper combinations
+      - **Printer/Paper Specific**: Each printer/paper combination needs separate profile
+      - **Accuracy**: Custom profiles provide best accuracy for specific combinations
+      - **Use Case**: When manufacturer profiles are not available or insufficient
+      - **Professional Practice**: Custom printer profiles provide best print accuracy
+    - **Unique Displays**: Custom profiles for unique display setups
+      - **Unique Setups**: Displays with unique characteristics need custom profiles
+      - **Calibration**: Custom profiles created during calibration process
+      - **Accuracy**: Custom display profiles provide best display accuracy
+      - **Professional Practice**: Custom display profiles are standard practice
+    - **Special Requirements**: Custom profiles for special workflow requirements
+      - **Special Workflows**: Workflows with special requirements may need custom profiles
+      - **Color Matching**: Custom profiles for specific color matching requirements
+      - **Professional Practice**: Custom profiles for special requirements
+    - **Professional Practice**: Custom profiles provide best color accuracy
+      - **Best Accuracy**: Custom profiles provide best possible accuracy
+      - **Investment**: Requires investment in equipment and training
+      - **Professional Practice**: Custom profiles are worth investment for professional work
+  - **Profile Creation Tools**: Tools for creating custom profiles
+    - **Printer Profiling**: Use colorimeter and profiling software for printers
+      - **Colorimeter**: Hardware device for measuring colors (X-Rite, Datacolor, etc.)
+      - **Profiling Software**: Software for creating profiles (i1Profiler, ProfileMaker, etc.)
+      - **Color Targets**: Printed color targets for measurement
+      - **Process**: Print target, measure with colorimeter, software generates profile
+      - **Professional Practice**: Professional equipment required for printer profiling
+    - **Display Profiling**: Use colorimeter for display profiling
+      - **Colorimeter**: Hardware device for measuring display colors
+      - **Calibration Software**: Software for display calibration and profiling
+      - **Process**: Colorimeter measures display, software creates profile
+      - **Professional Practice**: Display profiling is standard calibration process
+    - **Camera Profiling**: Use color targets for camera profiling
+      - **Color Targets**: Physical color targets (ColorChecker, etc.)
+      - **Profiling Software**: Software for creating camera profiles
+      - **Process**: Photograph target, software analyzes and creates profile
+      - **Professional Practice**: Camera profiling improves color accuracy
+    - **Professional Equipment**: Requires professional profiling equipment
+      - **Colorimeter**: Essential hardware for profiling ($100-$500+)
+      - **Software**: Profiling software (often included with colorimeter)
+      - **Targets**: Color targets for printer/camera profiling
+      - **Investment**: Significant investment in equipment required
+      - **Professional Practice**: Professional equipment is essential investment
+    - **Professional Practice**: Custom profiles require investment in equipment and training
+      - **Equipment Investment**: Significant investment in equipment
+      - **Training**: Training required to use equipment properly
+      - **Time Investment**: Time required to create profiles
+      - **Professional Practice**: Investment is worth it for professional work
+  - **Profile Creation Process**: Steps for creating custom profiles
+    - **Target Printing**: Print color target with printer/paper combination
+      - **Color Target**: Print standard color target (IT8.7/3, etc.)
+      - **Printer Settings**: Use exact printer settings that will be used
+      - **Paper**: Use exact paper that profile will be for
+      - **Conditions**: Print in stable environmental conditions
+      - **Professional Practice**: Accurate target printing is essential
+    - **Measurement**: Measure target with colorimeter
+      - **Colorimeter**: Use colorimeter to measure printed target
+      - **Measurement Process**: Measure all color patches in target
+      - **Accuracy**: Accurate measurement is essential for good profile
+      - **Professional Practice**: Careful measurement is critical
+    - **Profile Generation**: Software generates custom profile
+      - **Software**: Use profiling software to generate profile
+      - **Input**: Software uses measurement data to generate profile
+      - **Output**: Software outputs custom ICC profile
+      - **Professional Practice**: Software generation is automated process
+    - **Verification**: Test profile accuracy with known images
+      - **Test Images**: Test profile with known images
+      - **Color Accuracy**: Verify colors are accurate
+      - **Print Testing**: Make test prints to verify profile
+      - **Adjustment**: Adjust profile if needed
+      - **Professional Practice**: Verification is essential step
+    - **Professional Practice**: Custom profile creation is specialized skill
+      - **Specialized Skill**: Requires specialized knowledge and skills
+      - **Training**: Training and experience required
+      - **Professional Practice**: Custom profiling is specialized professional skill
+
 ### Configuring Color Management Preferences
+
+- **Color Management Settings**: GIMP color management configuration
+  - **Accessing Preferences**: Opening color management preferences
+    - **Method**: Edit → Preferences → Color Management
+      - **Menu Path**: Main menu → Edit → Preferences → Color Management
+      - **Keyboard Shortcut**: Ctrl+, (Windows/Linux) or Cmd+, (macOS) opens Preferences, then select Color Management
+      - **Settings Panel**: Color Management settings panel appears
+      - **Professional Practice**: Access preferences before starting work
+    - **Settings Location**: Central location for all color management settings
+      - **Centralized**: All color management settings in one location
+      - **Organization**: Settings organized by category
+      - **Professional Practice**: Know where all settings are located
+    - **Professional Practice**: Configure color management before starting work
+      - **Initial Setup**: Configure color management as part of initial setup
+      - **Workflow Integration**: Configure before starting any color work
+      - **Professional Practice**: Proper configuration is essential
+  - **Display Mode Settings**: Configuring how GIMP displays colors
+    - **Color-Managed Display**: Enable color-managed display (recommended)
+      - **Setting**: Checkbox to enable/disable color-managed display
+      - **Default**: Should be enabled by default
+      - **Purpose**: Ensures GIMP uses monitor profile for accurate display
+      - **Professional Practice**: Always enable color-managed display
+    - **Display Profile**: Select monitor profile for color-managed display
+      - **Profile Selection**: Dropdown list of available display profiles
+      - **Profile Source**: Profiles from system calibration or manual selection
+      - **Accuracy**: Correct profile essential for accurate display
+      - **Professional Practice**: Select correct monitor profile
+    - **Rendering Intent**: Choose rendering intent for display (typically Perceptual)
+      - **Options**: Perceptual, Relative Colorimetric, Absolute Colorimetric, Saturation
+      - **Recommendation**: Perceptual is recommended for display
+      - **Impact**: Affects how colors are displayed on screen
+      - **Professional Practice**: Use Perceptual for display
+    - **Professional Essential**: Color-managed display is essential for accurate work
+      - **Requirement**: Color-managed display is required for professional work
+      - **Accuracy**: Essential for seeing accurate colors
+      - **Professional Practice**: Color-managed display is non-negotiable
+  - **Print Simulation Settings**: Configuring print simulation
+    - **Simulation Profile**: Select profile for print simulation
+      - **Profile Selection**: Select printer/paper profile for simulation
+      - **Purpose**: Profile used for soft proofing and print simulation
+      - **Accuracy**: Accurate profile essential for accurate simulation
+      - **Professional Practice**: Use exact printer/paper profile
+    - **Simulation Intent**: Choose rendering intent for simulation
+      - **Options**: Perceptual, Relative Colorimetric, Absolute Colorimetric, Saturation
+      - **Recommendation**: Match to conversion rendering intent
+      - **Impact**: Affects how print simulation appears
+      - **Professional Practice**: Match simulation intent to conversion intent
+    - **Black Point Compensation**: Enable black point compensation
+      - **Setting**: Checkbox to enable/disable black point compensation
+      - **Purpose**: Adjusts black point for better print matching
+      - **Recommendation**: Usually enabled for better results
+      - **Professional Practice**: Enable black point compensation
+    - **Professional Practice**: Configure simulation for your print workflow
+      - **Workflow Matching**: Configure simulation to match print workflow
+      - **Professional Practice**: Proper simulation configuration is essential
+- **Working Space Configuration**: Setting default color spaces
+  - **RGB Working Space**: Default RGB color space for new images
+    - **Options**: sRGB, Adobe RGB (1998), or custom profile
+      - **sRGB**: Standard RGB for web and general use
+        - **Gamut**: Smallest standard RGB gamut (~35% of visible spectrum)
+        - **Use Case**: Web graphics, social media, general digital work
+        - **Default**: GIMP default working space
+        - **Professional Practice**: Use sRGB for web/digital-only work
+      - **Adobe RGB (1998)**: Extended gamut for professional photography
+        - **Gamut**: Larger gamut (~50% of visible spectrum)
+        - **Use Case**: Professional photography, print preparation
+        - **Professional Practice**: Use Adobe RGB for photography work
+      - **Custom Profile**: Select custom RGB profile
+        - **Selection**: Choose from installed profiles
+        - **Use Case**: Special workflow requirements
+        - **Professional Practice**: Use custom profiles when needed
+    - **Recommendation**: sRGB for general work, Adobe RGB for photography
+      - **General Work**: sRGB recommended for web and general digital work
+      - **Photography**: Adobe RGB recommended for professional photography
+      - **Selection**: Choose based on workflow requirements
+      - **Professional Practice**: Match working space to workflow
+    - **Professional Practice**: Match working space to workflow type
+      - **Workflow Matching**: Match working space to intended workflow
+      - **Consistency**: Maintain consistent working space
+      - **Professional Practice**: Working space must match workflow
+  - **Grayscale Working Space**: Default grayscale color space
+    - **Options**: Gray Gamma 2.2, or custom grayscale profile
+      - **Gray Gamma 2.2**: Standard grayscale profile
+        - **Gamma**: 2.2 gamma curve
+        - **Standard**: Industry standard for grayscale
+        - **Use Case**: Standard grayscale work
+        - **Professional Practice**: Use Gray Gamma 2.2 as standard
+      - **Custom Grayscale Profile**: Select custom grayscale profile
+        - **Selection**: Choose from installed grayscale profiles
+        - **Use Case**: Special workflow requirements
+        - **Professional Practice**: Use custom profiles when needed
+    - **Standard**: Gray Gamma 2.2 is standard
+      - **Industry Standard**: Gray Gamma 2.2 is industry standard
+      - **Compatibility**: Works with all grayscale workflows
+      - **Professional Practice**: Gray Gamma 2.2 is standard choice
+    - **Professional Practice**: Use standard grayscale profile
+      - **Standard Choice**: Use Gray Gamma 2.2 unless special requirements
+      - **Professional Practice**: Standard profile is usually best
+  - **CMYK Working Space**: Default CMYK color space (if used)
+    - **Options**: Various CMYK profiles (Coated, Uncoated, etc.)
+      - **Coated Profiles**: Profiles for coated papers
+        - **Types**: Glossy Coated, Matte Coated
+        - **Use Case**: High-quality printing on coated papers
+        - **Professional Practice**: Use coated profiles for coated papers
+      - **Uncoated Profiles**: Profiles for uncoated papers
+        - **Types**: Uncoated, Book Paper
+        - **Use Case**: Printing on uncoated papers
+        - **Professional Practice**: Use uncoated profiles for uncoated papers
+      - **Newsprint Profiles**: Profiles for newspaper printing
+        - **Use Case**: Newspaper printing
+        - **Professional Practice**: Use newsprint profiles for newspapers
+      - **Custom CMYK Profiles**: Printer-specific profiles
+        - **Use Case**: Specific printer/paper combinations
+        - **Professional Practice**: Use custom profiles when available
+    - **Selection**: Choose based on typical print workflow
+      - **Workflow Analysis**: Analyze typical print workflow
+      - **Paper Type**: Consider typical paper type used
+      - **Printer Type**: Consider typical printer used
+      - **Professional Practice**: Select profile matching typical workflow
+    - **Professional Practice**: Configure if doing CMYK work
+      - **CMYK Work**: Only configure if doing CMYK work
+      - **RGB Work**: Not needed for RGB-only workflows
+      - **Professional Practice**: Configure CMYK working space only when needed
+- **Color Management Policies**: Setting color management behavior
+  - **Profile Mismatch Handling**: What to do when image profile doesn't match working space
+    - **Ask User**: Prompt user for each mismatch (recommended)
+      - **Behavior**: GIMP prompts user when image profile doesn't match working space
+      - **User Choice**: User chooses what to do (keep, convert, etc.)
+      - **Control**: Maximum user control over profile handling
+      - **Professional Practice**: Ask User is recommended for professional work
+      - **Workflow**: User makes informed decision for each image
+    - **Keep Embedded**: Keep embedded profile, don't convert
+      - **Behavior**: GIMP keeps embedded profile, doesn't convert
+      - **Use Case**: When image should remain in its original color space
+      - **Workflow**: Image stays in original color space
+      - **Professional Practice**: Use when image should stay in original space
+    - **Convert to Working Space**: Automatically convert to working space
+      - **Behavior**: GIMP automatically converts image to working space
+      - **Use Case**: When all images should be in working space
+      - **Workflow**: Automatic conversion, no user interaction
+      - **Professional Practice**: Use only when automatic conversion is desired
+    - **Professional Practice**: Ask User provides most control
+      - **Control**: Ask User provides maximum control
+      - **Flexibility**: Allows different handling for different images
+      - **Professional Practice**: Ask User is professional standard
+  - **Missing Profile Handling**: What to do when image has no profile
+    - **Ask User**: Prompt user to assign profile (recommended)
+      - **Behavior**: GIMP prompts user to assign profile when image has no profile
+      - **User Choice**: User chooses which profile to assign
+      - **Control**: Maximum user control over profile assignment
+      - **Professional Practice**: Ask User is recommended for professional work
+      - **Workflow**: User makes informed decision for each untagged image
+    - **Assume sRGB**: Assume sRGB for untagged images
+      - **Behavior**: GIMP automatically assumes sRGB for untagged images
+      - **Use Case**: When most untagged images are sRGB
+      - **Workflow**: Automatic sRGB assignment, no user interaction
+      - **Professional Practice**: Use only when most images are sRGB
+    - **Assume Working Space**: Assume working space profile
+      - **Behavior**: GIMP automatically assumes working space profile for untagged images
+      - **Use Case**: When all images should be in working space
+      - **Workflow**: Automatic working space assignment
+      - **Professional Practice**: Use only when all images should be in working space
+    - **Professional Practice**: Ask User ensures correct profile assignment
+      - **Accuracy**: Ask User ensures correct profile assignment
+      - **Control**: Maximum control over profile assignment
+      - **Professional Practice**: Ask User is professional standard
+  - **Profile Embedding**: Whether to embed profiles when saving
+    - **Embed Profiles**: Always embed profiles in saved images (recommended)
+      - **Setting**: Checkbox to enable/disable profile embedding
+      - **Default**: Should be enabled by default
+      - **Purpose**: Preserves color information in saved images
+      - **Professional Practice**: Always enable profile embedding
+    - **File Format Support**: JPEG, TIFF, PNG support profile embedding
+      - **JPEG**: Supports profile embedding (EXIF data)
+      - **TIFF**: Supports profile embedding (TIFF tags)
+      - **PNG**: Supports profile embedding (iCCP chunk)
+      - **Other Formats**: Other formats may or may not support embedding
+      - **Professional Practice**: Use formats that support profile embedding
+    - **Professional Practice**: Always embed profiles for color accuracy
+      - **Color Accuracy**: Profile embedding ensures color accuracy
+      - **Workflow**: Essential for color-managed workflows
+      - **Professional Practice**: Profile embedding is non-negotiable
+- **Advanced Color Management Settings**: Advanced configuration options
+  - **Color Management Module**: Color management engine settings
+    - **Engine**: GIMP uses LittleCMS color management engine
+      - **LittleCMS**: Little Color Management System (open-source CMS)
+      - **Quality**: High-quality color conversion engine
+      - **Accuracy**: Accurate color conversion with proper profiles
+      - **Performance**: Fast conversion even for large images
+      - **Professional Practice**: LittleCMS is industry-standard engine
+    - **Settings**: Advanced engine settings (typically default)
+      - **Default Settings**: Default settings work for most workflows
+      - **Advanced Options**: Advanced options available for experts
+      - **Modification**: Usually not necessary to modify
+      - **Professional Practice**: Use default settings unless expert knowledge
+    - **Professional Practice**: Default settings work for most workflows
+      - **Default Recommended**: Default settings recommended for most users
+      - **Expert Only**: Advanced settings for experts only
+      - **Professional Practice**: Use default settings unless necessary
+  - **Display Filters**: Optional display adjustments
+    - **Color Filters**: Optional color filters for display
+      - **Purpose**: Optional color filters for special display requirements
+      - **Use Cases**: Special accessibility or viewing requirements
+      - **Rarely Needed**: Rarely needed with proper calibration
+      - **Professional Practice**: Usually not needed
+    - **Use Cases**: Special display requirements
+      - **Accessibility**: Color filters for accessibility (color blindness, etc.)
+      - **Special Viewing**: Special viewing requirements
+      - **Rare Use**: Rarely used in professional workflows
+      - **Professional Practice**: Use only for special requirements
+    - **Professional Practice**: Typically not needed with proper calibration
+      - **Proper Calibration**: Proper calibration usually sufficient
+      - **Rarely Needed**: Filters rarely needed
+      - **Professional Practice**: Avoid filters unless necessary
+  - **Experimental Features**: Experimental color management features
+    - **Advanced Options**: Advanced experimental options
+      - **Experimental**: Features that are experimental or in development
+      - **Stability**: May be unstable or change in future versions
+      - **Professional Practice**: Avoid experimental features
+    - **Testing**: Use with caution, may change in future versions
+      - **Caution**: Use experimental features with caution
+      - **Future Changes**: May change or be removed in future versions
+      - **Professional Practice**: Avoid in production work
+    - **Professional Practice**: Avoid experimental features in production work
+      - **Production Work**: Never use experimental features in production
+      - **Testing Only**: Use only for testing, not production
+      - **Professional Practice**: Experimental features are not for production
+- **Color Management Workflow Configuration**: Configuring for specific workflows
+  - **Web Graphics Workflow**: Configuration for web work
+    - **Working Space**: sRGB
+      - **Setting**: Set RGB Working Space to sRGB
+      - **Reason**: sRGB is standard for web
+      - **Professional Practice**: sRGB is standard for web work
+    - **Display Mode**: Color-managed display with sRGB monitor profile
+      - **Enable**: Enable color-managed display
+      - **Profile**: Select sRGB monitor profile
+      - **Professional Practice**: Color-managed display essential
+    - **Embed Profiles**: Yes (for color-managed browsers)
+      - **Setting**: Enable profile embedding
+      - **Reason**: Color-managed browsers use embedded profiles
+      - **Professional Practice**: Always embed profiles
+    - **Professional Practice**: sRGB workflow is standard for web
+      - **Industry Standard**: sRGB is industry standard for web
+      - **Workflow**: Complete sRGB workflow for web work
+      - **Professional Practice**: sRGB workflow is standard
+  - **Photography Workflow**: Configuration for photography
+    - **Working Space**: Adobe RGB (1998)
+      - **Setting**: Set RGB Working Space to Adobe RGB (1998)
+      - **Reason**: Adobe RGB is standard for photography
+      - **Professional Practice**: Adobe RGB is standard for photography
+    - **Display Mode**: Color-managed display with wide-gamut monitor profile
+      - **Enable**: Enable color-managed display
+      - **Profile**: Select wide-gamut monitor profile (Adobe RGB capable)
+      - **Professional Practice**: Wide-gamut monitor essential for Adobe RGB
+    - **Embed Profiles**: Yes (always)
+      - **Setting**: Enable profile embedding
+      - **Reason**: Always embed profiles for color accuracy
+      - **Professional Practice**: Always embed profiles
+    - **Professional Practice**: Adobe RGB is standard for photography
+      - **Industry Standard**: Adobe RGB is industry standard for photography
+      - **Workflow**: Complete Adobe RGB workflow for photography
+      - **Professional Practice**: Adobe RGB workflow is standard
+  - **Print Workflow**: Configuration for print work
+    - **Working Space**: Adobe RGB or ProPhoto RGB
+      - **Setting**: Set RGB Working Space to Adobe RGB or ProPhoto RGB
+      - **Reason**: Large gamut preserves more colors for print
+      - **Selection**: Adobe RGB for most, ProPhoto RGB for maximum quality
+      - **Professional Practice**: Large gamut essential for print work
+    - **Display Mode**: Color-managed display with calibrated monitor
+      - **Enable**: Enable color-managed display
+      - **Profile**: Select calibrated monitor profile
+      - **Calibration**: Monitor must be calibrated
+      - **Professional Practice**: Calibrated monitor essential for print work
+    - **Soft Proofing**: Enable soft proofing with printer profile
+      - **Enable**: Enable soft proofing
+      - **Profile**: Select printer/paper profile for soft proofing
+      - **Professional Practice**: Soft proofing essential for print work
+    - **Professional Practice**: Print workflow requires careful configuration
+      - **Careful Setup**: Print workflow requires careful setup
+      - **All Settings**: All settings must be correct
+      - **Professional Practice**: Print workflow requires attention to detail
+- **Color Management Best Practices**: Professional color management setup
+  - **Initial Setup**: Setting up color management for first time
+    1. **Calibrate Monitor**: Calibrate monitor with colorimeter
+       - **Step 1**: Calibrate monitor using hardware colorimeter
+       - **Target**: Calibrate to appropriate standard (sRGB or Adobe RGB)
+       - **Verification**: Verify calibration profile is loaded
+       - **Professional Practice**: Calibration is first essential step
+    2. **Install Profiles**: Install necessary color profiles
+       - **Step 2**: Install standard profiles (sRGB, Adobe RGB) system-wide
+       - **Additional Profiles**: Install printer/paper profiles if doing print work
+       - **Verification**: Verify profiles are detected by GIMP
+       - **Professional Practice**: Install all necessary profiles
+    3. **Configure GIMP**: Set color management preferences
+       - **Step 3**: Configure GIMP color management preferences
+       - **Working Space**: Set appropriate working space
+       - **Display Mode**: Enable color-managed display
+       - **Policies**: Set profile handling policies
+       - **Professional Practice**: Complete configuration is essential
+    4. **Verify Settings**: Verify settings work correctly
+       - **Step 4**: Verify all settings are correct
+       - **Display**: Verify color-managed display works
+       - **Profiles**: Verify profiles are accessible
+       - **Professional Practice**: Verification ensures proper setup
+    5. **Test Workflow**: Test complete workflow with known images
+       - **Step 5**: Test complete workflow with known images
+       - **Test Images**: Use images with known color characteristics
+       - **Verification**: Verify colors appear correctly
+       - **Professional Practice**: Testing verifies complete setup
+    - **Professional Practice**: Complete setup ensures color accuracy
+      - **Complete Setup**: All steps must be completed
+      - **Color Accuracy**: Complete setup ensures color accuracy
+      - **Professional Practice**: Never skip setup steps
+  - **Ongoing Maintenance**: Maintaining color management setup
+    - **Regular Calibration**: Recalibrate monitor monthly
+      - **Frequency**: Recalibrate monitor monthly
+      - **Consistency**: Regular calibration maintains consistency
+      - **Professional Practice**: Monthly calibration is standard
+    - **Profile Updates**: Update profiles when available
+      - **Updates**: Update profiles when new versions available
+      - **Sources**: Check manufacturer websites for updates
+      - **Professional Practice**: Keep profiles up to date
+    - **Settings Review**: Review settings periodically
+      - **Review**: Review color management settings periodically
+      - **Changes**: Update settings if workflow changes
+      - **Professional Practice**: Regular review maintains accuracy
+    - **Professional Practice**: Maintenance ensures continued accuracy
+      - **Ongoing Process**: Maintenance is ongoing process
+      - **Accuracy**: Maintenance ensures continued accuracy
+      - **Professional Practice**: Regular maintenance is essential
+  - **Troubleshooting**: Common color management issues
+    - **Incorrect Colors**: Check monitor calibration and profile assignment
+      - **Problem**: Colors appear incorrect on screen
+      - **Check 1**: Verify monitor is calibrated
+      - **Check 2**: Verify correct monitor profile is selected
+      - **Check 3**: Verify image has correct profile assigned
+      - **Check 4**: Verify color-managed display is enabled
+      - **Professional Practice**: Systematic checking resolves most issues
+    - **Mismatched Display**: Verify display profile matches monitor
+      - **Problem**: Display colors don't match expectations
+      - **Check 1**: Verify display profile matches monitor
+      - **Check 2**: Verify profile is from current calibration
+      - **Check 3**: Recalibrate if profile is outdated
+      - **Professional Practice**: Correct profile is essential
+    - **Print Mismatches**: Verify soft proofing and printer profiles
+      - **Problem**: Print colors don't match screen
+      - **Check 1**: Verify soft proofing is enabled and configured correctly
+      - **Check 2**: Verify correct printer/paper profile is used
+      - **Check 3**: Verify monitor is calibrated
+      - **Check 4**: Verify rendering intent matches conversion
+      - **Professional Practice**: Print matching requires all settings correct
+    - **Profile Not Found**: Install missing profiles
+      - **Problem**: GIMP cannot find required profile
+      - **Solution**: Install missing profile
+      - **Verification**: Verify profile is detected by GIMP
+      - **Professional Practice**: Install all required profiles
+    - **Profile Mismatch Warnings**: Handle profile mismatches
+      - **Problem**: Frequent profile mismatch warnings
+      - **Solution**: Review profile handling policies
+      - **Adjustment**: Adjust policies if needed
+      - **Professional Practice**: Proper policies reduce warnings
+    - **Professional Practice**: Systematic troubleshooting resolves most issues
+      - **Systematic Approach**: Use systematic approach to troubleshooting
+      - **Check Each Item**: Check each item methodically
+      - **Professional Practice**: Systematic troubleshooting is most effective
 
 ## Palettes, Swatches, and Color Picking
 
