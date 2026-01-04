@@ -28274,33 +28274,2728 @@ Understanding how to cancel is important:
 
 ### What Are Layers and Why They Matter
 
+Layers are fundamental to non-destructive editing in GIMP and represent one of the most important concepts in digital image editing:
+
+- **What Are Layers**: Layers are transparent sheets stacked on top of each other
+  - **Transparency**: Each layer can have transparent areas where lower layers show through
+  - **Independence**: Each layer can be edited independently without affecting others
+  - **Pixel Storage**: Each layer stores its own pixel data separately
+  - **Professional Practice**: Understanding layers is essential for professional work
+
+- **Why Layers Matter**: Layers enable complex compositions and non-destructive workflows
+  - **Non-Destructive Editing**: Edit without affecting other layers, allowing unlimited experimentation
+  - **Flexibility**: Reorder, hide, or modify layers anytime without losing work
+  - **Complex Compositions**: Build complex images from multiple elements
+  - **Professional Practice**: Layers are the foundation of professional workflows
+
+- **Layer Concept**: Think of layers like sheets of glass or acetate
+  - **Stacking**: Layers stack from bottom to top in the Layers dock
+  - **Visibility**: Top layers obscure lower layers where they overlap
+  - **Transparency**: Transparent areas allow lower layers to show through
+  - **Professional Practice**: Visualize layers as transparent sheets for better understanding
+
+- **Benefits of Using Layers**: Layers provide numerous advantages over single-layer editing
+  - **Organization**: Organize complex projects into logical sections
+  - **Experimentation**: Try different effects safely without affecting original content
+  - **Reversibility**: Undo changes to individual layers without affecting others
+  - **Efficiency**: Work on different elements simultaneously
+  - **Professional Practice**: Always use layers for complex work, even simple projects benefit
+
+- **Layer Structure**: Understanding layer anatomy
+  - **Layer Content**: The actual pixel data stored in the layer
+  - **Layer Attributes**: Name, opacity, blend mode, visibility settings
+  - **Layer Mask**: Optional mask that controls layer visibility per pixel
+  - **Professional Practice**: Understand all layer components for advanced work
+
+- **When to Use Layers**: Appropriate situations for layer usage
+  - **Multi-Element Compositions**: Always use layers when combining multiple elements
+  - **Text Overlays**: Each text element should be on its own layer
+  - **Effects and Adjustments**: Apply effects on separate layers for flexibility
+  - **Photo Editing**: Use layers for non-destructive photo editing
+  - **Graphic Design**: Essential for graphic design projects
+  - **Digital Art**: Fundamental for digital painting and illustration
+  - **Professional Practice**: Use layers even for simple projects to maintain flexibility
+
+- **Layer Types in GIMP**: Understanding different layer types
+  - **Normal Layers**: Standard raster layers with pixel data
+  - **Text Layers**: Special layers for text (can be converted to normal layers)
+  - **Layer Groups**: Container layers that organize multiple layers
+  - **Professional Practice**: Understand different layer types and their uses
+
+- **Layer Memory and Performance**: Performance considerations
+  - **Memory Usage**: Each layer uses memory based on its size and content
+  - **Large Layers**: Large layers consume significant memory
+  - **Many Layers**: Many layers can slow down operations
+  - **Optimization**: Crop unnecessary areas, merge finalized layers
+  - **Professional Practice**: Balance layer count with performance needs
+
+- **Layer File Formats**: Format support for layers
+  - **XCF Format**: GIMP's native format, supports all layer features
+  - **PSD Format**: Photoshop format, good layer support
+  - **PDF Format**: Can preserve layers in some cases
+  - **Other Formats**: Most formats flatten layers on export
+  - **Professional Practice**: Save in XCF format to preserve all layer data
+
+- **Layer Workflow Philosophy**: Professional layer workflow
+  - **Start with Layers**: Begin projects with layer structure in mind
+  - **Organize Early**: Set up organization from the beginning
+  - **Name Immediately**: Name layers as you create them
+  - **Review Regularly**: Periodically review and optimize layer structure
+  - **Professional Practice**: Develop consistent layer workflow philosophy
+
+- **Layer Rendering Process**: How GIMP renders layers
+  - **Bottom to Top**: GIMP renders layers from bottom to top
+  - **Blend Calculation**: Each layer blends with composite of layers below
+  - **Real-Time Preview**: Canvas shows real-time composite of all visible layers
+  - **Performance Impact**: More layers = more calculations = slower rendering
+  - **Professional Practice**: Understand rendering process for optimization
+
+- **Layer Compositing Mathematics**: Technical compositing details
+  - **Alpha Compositing**: Uses alpha compositing formula for each pixel
+  - **Formula**: Result = (Foreground × Alpha) + (Background × (1 - Alpha))
+  - **Blend Modes**: Each blend mode uses different mathematical formula
+  - **Cumulative**: Each layer's effect is cumulative with layers below
+  - **Professional Practice**: Understanding math helps predict results
+
+- **Layer Data Structure**: How layer data is stored
+  - **Pixel Array**: Each layer stores 2D array of pixel data
+  - **Color Channels**: Each pixel has R, G, B, and Alpha channels
+  - **Memory Layout**: Data stored in memory for efficient access
+  - **File Format**: XCF format stores layer data efficiently
+  - **Professional Practice**: Understand data structure for optimization
+
+- **Layer vs Copy-Paste**: When to use layers vs copy-paste
+  - **Layers**: Use for permanent elements in composition
+  - **Copy-Paste**: Use for temporary content or testing
+  - **Flexibility**: Layers offer more flexibility than copy-paste
+  - **Professional Practice**: Choose appropriate method for each situation
+
+- **Layer Organization Strategies**: Different organization approaches
+  - **By Element**: Organize by visual elements (background, foreground, etc.)
+  - **By Function**: Organize by function (base, effects, adjustments, etc.)
+  - **By Process**: Organize by workflow process (sketch, color, details, etc.)
+  - **Hybrid**: Combine approaches for complex projects
+  - **Professional Practice**: Develop organization strategy that works for you
+
+- **Layer Naming Conventions**: Professional naming systems
+  - **Descriptive Names**: Use names that describe content ("Sky Background")
+  - **Numbered Sequences**: Use numbers for sequences ("Character_01", "Character_02")
+  - **Prefixes**: Use prefixes for categories ("FX_Glow", "TXT_Title")
+  - **Consistent Style**: Maintain consistent naming style throughout project
+  - **Professional Practice**: Develop and stick to naming convention
+
+- **Layer Visibility Strategy**: Strategic visibility management
+  - **Work Layers**: Hide layers you're not currently working on
+  - **Comparison**: Use visibility to compare different versions
+  - **Focus**: Hide distracting layers to focus on specific elements
+  - **Professional Practice**: Use visibility strategically for workflow efficiency
+
+- **Layer Performance Optimization**: Optimizing for performance
+  - **Crop Layers**: Crop layers to remove unnecessary transparent areas
+  - **Merge When Final**: Merge layers when editing is complete
+  - **Reduce Layer Count**: Keep layer count reasonable for performance
+  - **Use Groups**: Use groups to organize without performance penalty
+  - **Professional Practice**: Balance organization with performance
+
+- **Layer Backup Strategies**: Protecting your work
+  - **Save Frequently**: Save XCF files frequently during work
+  - **Version Control**: Keep multiple versions of important projects
+  - **Before Major Changes**: Save before major structural changes
+  - **Export Copies**: Export flattened copies for sharing
+  - **Professional Practice**: Never lose work due to lack of backups
+
+- **Layer Collaboration**: Working with others
+  - **Clear Naming**: Use clear names others can understand
+  - **Documentation**: Document layer structure for team members
+  - **Lock Finished**: Lock layers that are complete
+  - **Color Tags**: Use color tags to indicate status or ownership
+  - **Professional Practice**: Make layers understandable for collaboration
+
+- **Layer History and Versioning**: Tracking layer changes
+  - **Undo History**: GIMP maintains undo history per layer
+  - **Layer States**: Can save layer states for comparison
+  - **Version Control**: Use file versioning for major changes
+  - **Snapshots**: Create snapshots of layer states
+  - **Professional Practice**: Use history and versioning for complex projects
+
+- **Layer Metadata**: Understanding layer information
+  - **Layer Properties**: Each layer stores metadata
+  - **Creation Date**: Layers track creation information
+  - **Modification History**: GIMP tracks modification history
+  - **File Information**: Layer data includes file information
+  - **Professional Practice**: Understand metadata for organization
+
+- **Layer Compression**: File size optimization
+  - **XCF Compression**: XCF format uses compression
+  - **Layer Data**: Compressed layer data reduces file size
+  - **Lossless**: Compression is lossless, no quality loss
+  - **Performance Trade-off**: Compression affects save/load time
+  - **Professional Practice**: Balance file size with performance
+
+- **Layer Caching**: Performance optimization
+  - **Tile Cache**: GIMP uses tile-based caching for layers
+  - **Memory Management**: Caching optimizes memory usage
+  - **Rendering Cache**: Cached rendering improves performance
+  - **Cache Management**: GIMP manages cache automatically
+  - **Professional Practice**: Understand caching for optimization
+
+- **Layer Export Options**: Exporting individual layers
+  - **Export Layer**: Can export individual layers to separate files
+  - **Format Options**: Choose format for exported layer
+  - **Quality Settings**: Set quality for exported layer
+  - **Batch Export**: Export multiple layers at once
+  - **Professional Practice**: Use layer export for asset extraction
+
+- **Layer Import Workflows**: Importing layers efficiently
+  - **Open as Layers**: Import multiple files as layers
+  - **Paste as Layer**: Paste clipboard content as new layer
+  - **Drag and Drop**: Drag files into GIMP to import as layers
+  - **Batch Import**: Import multiple files efficiently
+  - **Professional Practice**: Master import workflows for efficiency
+
+- **Layer Templates**: Creating reusable layer structures
+  - **Template Creation**: Create layer templates for common structures
+  - **Reuse**: Reuse templates across projects
+  - **Customization**: Customize templates for specific needs
+  - **Time Saving**: Templates save setup time
+  - **Professional Practice**: Build library of layer templates
+
+- **Layer Scripting**: Automating layer operations
+  - **Script-Fu**: GIMP's scripting language for automation
+  - **Python-Fu**: Python scripting for advanced automation
+  - **Batch Operations**: Script layer operations for batch processing
+  - **Custom Scripts**: Create custom scripts for workflows
+  - **Professional Practice**: Use scripting for repetitive layer tasks
+
+- **Layer Troubleshooting Guide**: Comprehensive problem solving
+  - **Layer Not Visible**: Check visibility, opacity, and position
+  - **Layer Not Editing**: Check locks and layer selection
+  - **Performance Issues**: Check layer count and size
+  - **Memory Problems**: Reduce layer count or size
+  - **File Corruption**: Use backup files, check file integrity
+  - **Professional Practice**: Know troubleshooting steps for common issues
+
+- **Layer Best Practices Summary**: Complete best practices
+  - **Organization**: Always organize layers from the start
+  - **Naming**: Never use default names, always name descriptively
+  - **Backup**: Always maintain backups of layered files
+  - **Optimization**: Regularly optimize layer structure
+  - **Documentation**: Document complex layer structures
+  - **Professional Practice**: Make best practices automatic habits
+
+- **Layer Workflow Examples**: Real-world workflow examples
+  - **Photo Composite Workflow**: Background → Subject → Shadows → Text → Effects
+  - **Digital Painting Workflow**: Sketch → Base Colors → Shading → Highlights → Details
+  - **UI Design Workflow**: Wireframe → Base Design → Elements → Text → Polish
+  - **Photo Retouching Workflow**: Base → Corrections → Enhancements → Effects → Final
+  - **Professional Practice**: Study and adapt real-world workflows
+
+- **Layer Performance Benchmarks**: Understanding performance
+  - **Layer Count Impact**: Each layer adds rendering overhead
+  - **Size Impact**: Larger layers use more memory and processing
+  - **Blend Mode Impact**: Complex blend modes are slower
+  - **Optimization Targets**: Aim for reasonable layer counts
+  - **Professional Practice**: Monitor performance and optimize accordingly
+
+- **Layer Memory Calculation**: Estimating memory usage
+  - **Formula**: Memory = Width × Height × 4 bytes (RGBA) × Layer Count
+  - **Example**: 1920×1080 layer = ~8MB, 10 layers = ~80MB
+  - **Planning**: Calculate memory needs before creating many layers
+  - **Optimization**: Reduce size or count to manage memory
+  - **Professional Practice**: Understand memory usage for planning
+
+- **Layer Quality Considerations**: Maintaining quality
+  - **Resolution**: Start with appropriate resolution
+  - **Scaling**: Avoid excessive scaling to maintain quality
+  - **Interpolation**: Use appropriate interpolation methods
+  - **Bit Depth**: Consider bit depth for quality
+  - **Professional Practice**: Plan for quality from the start
+
+- **Layer Pixel Format Details**: Understanding pixel formats
+  - **RGB Format**: Standard RGB format with 8 bits per channel (24-bit color)
+  - **RGBA Format**: RGB with Alpha channel (32-bit with transparency)
+  - **Grayscale**: Single channel grayscale format
+  - **Indexed Color**: Palette-based color format
+  - **Professional Practice**: Understand pixel formats for proper layer creation
+
+- **Layer Coordinate System**: Understanding layer positioning
+  - **Canvas Coordinates**: Layers positioned relative to canvas (0,0 at top-left)
+  - **Layer Coordinates**: Internal layer coordinate system
+  - **Offset**: Layer can have offset from canvas origin
+  - **Boundaries**: Layer boundaries defined by size and position
+  - **Professional Practice**: Understand coordinate systems for precise positioning
+
+- **Layer Transformation Matrix**: Technical transformation details
+  - **Matrix Math**: Transformations use matrix mathematics
+  - **Translation**: Position changes use translation matrix
+  - **Rotation**: Rotation uses rotation matrix
+  - **Scale**: Scaling uses scale matrix
+  - **Combined**: Multiple transforms combined into single matrix
+  - **Professional Practice**: Understanding matrices helps with precise transforms
+
+- **Layer Compositing Pipeline**: Step-by-step compositing process
+  - **Step 1**: Start with bottom layer as base
+  - **Step 2**: For each layer above, apply blend mode calculation
+  - **Step 3**: Apply layer opacity to blend result
+  - **Step 4**: Apply layer mask if present
+  - **Step 5**: Composite result with layers below
+  - **Step 6**: Repeat for all layers from bottom to top
+  - **Professional Practice**: Understand pipeline for optimization
+
+- **Layer Cache Management**: Advanced caching details
+  - **Tile-Based Caching**: Layers cached in tiles for efficiency
+  - **Cache Invalidation**: Cache invalidated when layer changes
+  - **Memory Management**: GIMP manages cache memory automatically
+  - **Performance**: Larger cache improves performance but uses more memory
+  - **Professional Practice**: Understand caching for performance tuning
+
+- **Layer Undo System**: Understanding undo mechanism
+  - **Per-Layer Undo**: Each layer has its own undo history
+  - **Global Undo**: Global undo affects entire image
+  - **Undo Depth**: Configurable undo depth in preferences
+  - **Memory Impact**: More undo history uses more memory
+  - **Professional Practice**: Configure undo depth appropriately
+
+- **Layer Selection Mechanism**: How layer selection works
+  - **Active Layer**: One layer is active at a time
+  - **Selection Indicator**: Active layer highlighted in Layers dock
+  - **Multi-Selection**: Can select multiple layers for operations
+  - **Selection State**: Selection state affects tool behavior
+  - **Professional Practice**: Understand selection for efficient workflow
+
+- **Layer Thumbnail Generation**: Thumbnail system details
+  - **Automatic Thumbnails**: GIMP generates thumbnails automatically
+  - **Thumbnail Size**: Thumbnail size affects dock performance
+  - **Update Frequency**: Thumbnails update when layer changes
+  - **Memory Usage**: Thumbnails use additional memory
+  - **Professional Practice**: Balance thumbnail size with performance
+
+- **Layer Metadata Storage**: What metadata is stored
+  - **Creation Time**: When layer was created
+  - **Modification Time**: Last modification timestamp
+  - **Layer Properties**: All layer attributes stored as metadata
+  - **User Data**: Custom metadata can be attached
+  - **Professional Practice**: Understand metadata for organization
+
+- **Layer Export Formats Comparison**: Format capabilities
+  - **PNG**: Supports alpha channel, lossless compression
+  - **JPEG**: No alpha, lossy compression, smaller files
+  - **TIFF**: Supports alpha, lossless, larger files
+  - **WebP**: Modern format, supports alpha, good compression
+  - **Professional Practice**: Choose format based on needs
+
+- **Layer Import Workflow Details**: Step-by-step import process
+  - **Step 1**: Select source file or clipboard content
+  - **Step 2**: Choose import method (Open as Layer, Paste, etc.)
+  - **Step 3**: GIMP processes source data
+  - **Step 4**: Creates new layer with imported content
+  - **Step 5**: Positions layer appropriately
+  - **Professional Practice**: Understand import process for efficiency
+
+- **Layer Scripting API**: Programming layer operations
+  - **Script-Fu Functions**: Layer manipulation functions available
+  - **Python-Fu API**: Python interface for layer operations
+  - **Automation**: Script layer creation, modification, organization
+  - **Batch Processing**: Process multiple files with scripts
+  - **Professional Practice**: Use scripting for repetitive tasks
+
+- **Layer Performance Profiling**: Measuring performance
+  - **Layer Count Impact**: Measure impact of layer count
+  - **Size Impact**: Measure impact of layer size
+  - **Blend Mode Impact**: Measure impact of blend modes
+  - **Optimization Targets**: Identify optimization opportunities
+  - **Professional Practice**: Profile performance to optimize
+
+- **Layer Error Handling**: Error recovery mechanisms
+  - **Corruption Detection**: GIMP detects corrupted layer data
+  - **Recovery Options**: Options for recovering from errors
+  - **Backup Restoration**: Restore from backup files
+  - **Data Validation**: Validate layer data integrity
+  - **Professional Practice**: Know error recovery procedures
+
+- **Layer Version Control Integration**: Using with version control
+  - **XCF Files**: XCF files can be version controlled
+  - **Binary Files**: Treat as binary in version control
+  - **Backup Strategy**: Use version control as backup system
+  - **Collaboration**: Share files through version control
+  - **Professional Practice**: Integrate version control into workflow
+
+- **Layer Bit Depth Details**: Understanding bit depth
+  - **8-Bit Per Channel**: Standard 8 bits per color channel (24-bit RGB, 32-bit RGBA)
+  - **16-Bit Per Channel**: Higher precision, 16 bits per channel (48-bit RGB, 64-bit RGBA)
+  - **32-Bit Per Channel**: Floating point precision for HDR work
+  - **Bit Depth Impact**: Higher bit depth = more colors, larger files, better quality
+  - **Professional Practice**: Choose appropriate bit depth for project needs
+
+- **Layer Color Space Details**: Understanding color spaces
+  - **RGB Color Space**: Standard RGB color space (sRGB most common)
+  - **CMYK Color Space**: For print work (converted on export)
+  - **LAB Color Space**: Perceptual color space for advanced editing
+  - **Color Space Impact**: Affects color representation and accuracy
+  - **Professional Practice**: Understand color spaces for accurate color work
+
+- **Layer Resolution and DPI**: Resolution considerations
+  - **Pixel Dimensions**: Actual pixel width and height
+  - **DPI/PPI**: Dots per inch / Pixels per inch for print
+  - **Resolution Impact**: Higher resolution = better quality, larger files
+  - **Print vs Screen**: Different resolution needs for print vs screen
+  - **Professional Practice**: Set appropriate resolution from start
+
+- **Layer Tile System**: Understanding tile-based architecture
+  - **Tile Structure**: Layers divided into tiles for efficient processing
+  - **Tile Size**: Standard tile size (typically 64x64 or 128x128 pixels)
+  - **Memory Efficiency**: Only visible/active tiles loaded in memory
+  - **Performance**: Tile system enables efficient large image handling
+  - **Professional Practice**: Understand tiles for large image work
+
+- **Layer Processing Pipeline**: Complete processing details
+  - **Input Stage**: Layer data input and validation
+  - **Processing Stage**: Blend mode, opacity, mask application
+  - **Compositing Stage**: Alpha compositing with layers below
+  - **Output Stage**: Final composite to canvas
+  - **Optimization**: Pipeline optimized for performance
+  - **Professional Practice**: Understand pipeline for optimization
+
+- **Layer Memory Allocation**: Detailed memory management
+  - **Allocation Strategy**: Memory allocated per layer based on size
+  - **Deallocation**: Memory freed when layer deleted
+  - **Memory Pool**: GIMP uses memory pools for efficiency
+  - **Memory Limits**: System memory limits affect layer count/size
+  - **Professional Practice**: Monitor memory usage for large projects
+
+- **Layer File Format Internals**: XCF format details
+  - **File Structure**: Hierarchical structure storing layers
+  - **Compression**: Optional compression for layer data
+  - **Metadata Storage**: Layer properties stored as metadata
+  - **Compatibility**: XCF format version compatibility
+  - **Professional Practice**: Understand format for troubleshooting
+
+- **Layer Rendering Optimization**: Advanced optimization techniques
+  - **Culling**: Non-visible layers not rendered
+  - **LOD (Level of Detail)**: Lower detail for zoomed out views
+  - **Progressive Rendering**: Render progressively for better responsiveness
+  - **Cache Optimization**: Optimize cache usage for performance
+  - **Professional Practice**: Apply optimization techniques
+
+- **Layer Synchronization**: Multi-layer synchronization
+  - **Linked Layers**: Layers can be linked for synchronized operations
+  - **Group Operations**: Operations on groups affect all members
+  - **Synchronization Scope**: What operations are synchronized
+  - **Professional Practice**: Use synchronization for efficient workflow
+
+- **Layer State Management**: Managing layer states
+  - **State Snapshot**: Save layer state at any point
+  - **State Comparison**: Compare different layer states
+  - **State Restoration**: Restore layer to previous state
+  - **State History**: Track state changes over time
+  - **Professional Practice**: Use state management for complex projects
+
+- **Layer Dependency System**: Understanding layer dependencies
+  - **Parent-Child**: Layers can have dependency relationships
+  - **Mask Dependencies**: Masks depend on their layers
+  - **Group Dependencies**: Group members depend on group
+  - **Dependency Resolution**: GIMP resolves dependencies automatically
+  - **Professional Practice**: Understand dependencies for organization
+
+- **Layer Validation System**: Data validation and integrity
+  - **Data Validation**: GIMP validates layer data on load
+  - **Integrity Checks**: Checks for data corruption
+  - **Error Recovery**: Attempts to recover from errors
+  - **Validation Reports**: Reports validation issues
+  - **Professional Practice**: Understand validation for troubleshooting
+
+- **Layer Performance Metrics**: Measuring and monitoring
+  - **Render Time**: Time to render all layers
+  - **Memory Usage**: Memory consumed by layers
+  - **Cache Hit Rate**: Cache effectiveness metrics
+  - **Operation Speed**: Speed of layer operations
+  - **Professional Practice**: Monitor metrics for optimization
+
+- **Layer Advanced Compositing**: Advanced compositing techniques
+  - **Premultiplied Alpha**: Understanding premultiplied alpha compositing
+  - **Straight Alpha**: Understanding straight alpha compositing
+  - **Color Matting**: Advanced color matting techniques
+  - **Edge Blending**: Sophisticated edge blending methods
+  - **Professional Practice**: Master advanced compositing for professional work
+
+- **Layer Workflow Automation**: Complete automation guide
+  - **Script Creation**: Create scripts for layer operations
+  - **Batch Processing**: Process multiple files automatically
+  - **Template Application**: Apply templates automatically
+  - **Workflow Integration**: Integrate with other tools
+  - **Professional Practice**: Automate repetitive layer tasks
+
+- **Layer Quality Assurance**: QA processes for layers
+  - **Quality Checks**: Systematic quality checking
+  - **Standards Compliance**: Ensure standards compliance
+  - **Testing Procedures**: Test layer operations thoroughly
+  - **Documentation**: Document quality standards
+  - **Professional Practice**: Implement QA processes for consistency
+
 ### Creating, Duplicating, Deleting Layers
+
+Mastering layer management is essential for efficient workflow:
+
+- **Creating New Layers**: Create layers for different elements
+  - **Right-Click Menu**: Right-click in Layers dock → New Layer
+  - **Layer Menu**: Use Layer → New Layer (opens dialog)
+  - **Keyboard Shortcut**: Use Shift+Ctrl+N for quick new layer
+  - **Toolbar Button**: Click new layer button in Layers dock
+  - **Professional Practice**: Create layers for each major element
+
+- **New Layer Dialog**: Configure layer properties when creating
+  - **Layer Name**: Give meaningful, descriptive names immediately
+  - **Layer Size**: Set width and height (defaults to image size)
+  - **Fill Type**: Choose fill type - Transparent, Foreground Color, Background Color, White, or Pattern
+  - **Transparent Fill**: Most common choice for compositing work
+  - **Professional Practice**: Always name layers descriptively from the start
+
+- **Layer Size Options**: Understanding size settings
+  - **Image Size**: Default option matches canvas dimensions
+  - **Custom Size**: Enter specific width and height values
+  - **Larger Than Canvas**: Can create layers larger than canvas for flexibility
+  - **Smaller Than Canvas**: Can create smaller layers for specific elements
+  - **Professional Practice**: Use appropriate size for each layer's purpose
+
+- **Duplicating Layers**: Duplicate for variations or backups
+  - **Right-Click Menu**: Right-click layer → Duplicate Layer
+  - **Layer Menu**: Use Layer → Duplicate Layer
+  - **Keyboard Shortcut**: Use Shift+Ctrl+D for quick duplication
+  - **Drag Method**: Hold Alt and drag layer to duplicate
+  - **Professional Practice**: Duplicate before major changes as safety backup
+
+- **Duplication Behavior**: What gets duplicated
+  - **Layer Content**: All pixel data is copied exactly
+  - **Layer Attributes**: Name, opacity, blend mode, visibility are copied
+  - **Layer Mask**: Layer mask is also duplicated if present (with all mask data)
+  - **Position**: Duplicate appears in exact same position
+  - **Size**: Layer size and boundaries are duplicated
+  - **Color Tag**: Color tag is duplicated
+  - **Locks**: Lock states are duplicated
+  - **Professional Practice**: Understand what gets copied when duplicating
+
+- **Duplication Methods Comparison**: Comparing duplication methods
+  - **Menu Method**: Right-click → Duplicate (most reliable)
+  - **Keyboard Method**: Shift+Ctrl+D (fastest)
+  - **Drag Method**: Alt+Drag (visual, can position while duplicating)
+  - **Copy-Paste**: Copy layer, paste (creates new layer, more steps)
+  - **Professional Practice**: Choose method based on situation
+
+- **Duplication Use Cases**: When to duplicate layers
+  - **Before Major Changes**: Duplicate as backup before significant edits
+  - **Creating Variations**: Duplicate to try different effects
+  - **Building Up Effects**: Duplicate and modify for layered effects
+  - **Animation Frames**: Duplicate for frame-by-frame animation
+  - **Professional Practice**: Duplicate strategically, not excessively
+
+- **Duplication Performance**: Performance considerations
+  - **Memory Usage**: Duplication doubles memory usage for that layer
+  - **File Size**: Duplicated layers increase file size
+  - **Processing**: Duplication is fast but uses memory
+  - **Professional Practice**: Be mindful of memory when duplicating large layers
+
+- **Smart Duplication**: Intelligent duplication strategies
+  - **Duplicate Before Filters**: Always duplicate before applying destructive filters
+  - **Duplicate Before Merging**: Duplicate before merging to preserve originals
+  - **Duplicate for Testing**: Duplicate to test effects safely
+  - **Professional Practice**: Develop duplication strategy for safety
+
+- **Deletion Safety Measures**: Safe deletion practices
+  - **Verify First**: Always verify layer before deleting
+  - **Check Dependencies**: Ensure no other layers depend on it
+  - **Duplicate First**: Consider duplicating before deleting if unsure
+  - **Use Hide Instead**: Hide layer instead of deleting when possible
+  - **Professional Practice**: Develop safe deletion habits
+
+- **Deletion Recovery**: Recovering deleted layers
+  - **Undo Immediately**: Ctrl+Z works immediately after deletion
+  - **Undo History**: Can undo multiple deletions if within history limit
+  - **File Recovery**: Reopen saved file if undo not available
+  - **Backup Files**: Use backup files if available
+  - **Professional Practice**: Know recovery options before deleting
+
+- **Deletion Workflow**: Proper deletion workflow
+  - **Step 1**: Verify layer is correct one to delete
+  - **Step 2**: Check if layer is needed elsewhere
+  - **Step 3**: Consider hiding instead of deleting
+  - **Step 4**: Delete using preferred method
+  - **Step 5**: Verify deletion was correct
+  - **Professional Practice**: Follow workflow to avoid mistakes
+
+- **Batch Deletion**: Deleting multiple layers
+  - **Select Multiple**: Ctrl+Click to select multiple layers
+  - **Delete All**: Right-click → Delete Layers
+  - **Confirmation**: GIMP may ask for confirmation
+  - **Extra Caution**: Be extra careful with batch deletion
+  - **Professional Practice**: Double-check selection before batch deletion
+
+- **Deletion vs Hiding**: When to delete vs hide
+  - **Delete**: When layer is definitely not needed
+  - **Hide**: When layer might be needed later
+  - **File Size**: Hiding doesn't reduce file size, deletion does
+  - **Performance**: Hidden layers still use memory
+  - **Professional Practice**: Hide when uncertain, delete when certain
+
+- **Layer Deletion Best Practices**: Key principles
+  - **Never Delete Without Verification**: Always verify before deleting
+  - **Use Undo Liberally**: Don't hesitate to undo if mistake
+  - **Hide When Uncertain**: Hide instead of delete when unsure
+  - **Keep Backups**: Maintain backup files for important projects
+  - **Professional Practice**: Make safe deletion practices automatic
+
+- **Deleting Layers**: Remove unwanted layers
+  - **Right-Click Menu**: Right-click layer → Delete Layer
+  - **Layer Menu**: Use Layer → Delete Layer
+  - **Keyboard Shortcut**: Use Alt+Delete or Delete key
+  - **Drag to Trash**: Drag layer to trash icon in Layers dock
+  - **Professional Practice**: Delete carefully, use undo (Ctrl+Z) if needed
+
+- **Deletion Confirmation**: GIMP may ask for confirmation
+  - **Confirmation Dialog**: May appear for important layers
+  - **Undo Safety**: Can always undo deletion with Ctrl+Z
+  - **Professional Practice**: Be cautious when deleting, especially merged layers
+
+- **Layer Management Best Practices**: Organize effectively
+  - **Naming Convention**: Use clear, descriptive names (e.g., "Background", "Text Title", "Shadow")
+  - **Grouping**: Group related layers together in layer groups
+  - **Color Tagging**: Use color tags to categorize layers visually
+  - **Consistent Structure**: Maintain consistent layer organization across projects
+  - **Professional Practice**: Maintain organized layer structure from the start
+
+- **Layer Creation Workflow**: Efficient layer creation process
+  - **Plan Structure**: Plan layer structure before creating
+  - **Create as Needed**: Create layers as you work, not all at once
+  - **Name Immediately**: Name layers immediately upon creation
+  - **Professional Practice**: Develop consistent workflow for layer creation
+
+- **Fill Type Options Explained**: Understanding fill types
+  - **Transparent**: No fill, completely transparent (most common for compositing)
+  - **Foreground Color**: Fills with current foreground color from color picker
+  - **Background Color**: Fills with current background color from color picker
+  - **White**: Fills with white (useful for backgrounds)
+  - **Pattern**: Fills with selected pattern from pattern library
+  - **Professional Practice**: Choose fill type based on intended use
+
+- **Creating Layers from Selections**: Advanced layer creation
+  - **Copy Selection**: Edit → Copy, then Edit → Paste as New Layer
+  - **Cut Selection**: Edit → Cut, then Edit → Paste as New Layer
+  - **Float Selection**: Select → Float creates temporary layer
+  - **Anchor Float**: Anchor float to create new layer from selection
+  - **Professional Practice**: Use selection-based layer creation for precise control
+
+- **Creating Layers from Clipboard**: Paste as new layer
+  - **Paste as New Layer**: Edit → Paste as → New Layer
+  - **Automatic Sizing**: New layer sized to fit pasted content
+  - **Position**: Pasted content appears at cursor or center
+  - **Professional Practice**: Use paste as new layer for importing content
+
+- **Duplicating Multiple Layers**: Batch duplication
+  - **Select Multiple**: Hold Ctrl and click to select multiple layers
+  - **Duplicate All**: Right-click → Duplicate Layers
+  - **Maintains Order**: Duplicated layers maintain relative order
+  - **Professional Practice**: Duplicate multiple layers for variations
+
+- **Duplicating Layer Groups**: Duplicating entire groups
+  - **Select Group**: Click on group in Layers dock
+  - **Duplicate**: Right-click → Duplicate Layer Group
+  - **Nested Structure**: Entire group structure is duplicated
+  - **Professional Practice**: Duplicate groups for creating variations
+
+- **Layer Deletion Safety**: Safe deletion practices
+  - **Check Before Delete**: Always verify layer before deleting
+  - **Use Undo**: Remember Ctrl+Z works for deletions
+  - **Duplicate First**: Consider duplicating before deleting if unsure
+  - **Hide Instead**: Sometimes hiding is better than deleting
+  - **Professional Practice**: Develop safe deletion habits
+
+- **Deleting Multiple Layers**: Batch deletion
+  - **Select Multiple**: Hold Ctrl and click to select multiple layers
+  - **Delete All**: Right-click → Delete Layers or press Delete
+  - **Confirmation**: May ask for confirmation when deleting multiple
+  - **Professional Practice**: Be extra careful with batch deletion
+
+- **Layer Creation Shortcuts Summary**: Quick reference
+  - **New Layer**: Shift+Ctrl+N
+  - **Duplicate Layer**: Shift+Ctrl+D
+  - **Delete Layer**: Alt+Delete or Delete key
+  - **New from Visible**: Create new layer from all visible layers
+  - **Professional Practice**: Master keyboard shortcuts for efficiency
+
+- **Layer Creation from Images**: Importing as layers
+  - **Open as Layers**: File → Open as Layers
+  - **Multiple Files**: Can open multiple files as layers at once
+  - **Automatic Stacking**: Files become layers in order
+  - **Professional Practice**: Use open as layers for compositing multiple images
+
+- **Layer Creation Best Practices Summary**: Key principles
+  - **Always Name**: Never leave layers with default names
+  - **Plan Ahead**: Think about layer structure before creating
+  - **Create Strategically**: Create layers when needed, not preemptively
+  - **Organize Immediately**: Set up organization as you create
+  - **Professional Practice**: Make good layer creation habits automatic
+
+- **New Layer Dialog Advanced Options**: Advanced creation options
+  - **Color Space**: Choose color space (RGB, Grayscale, etc.)
+  - **Bit Depth**: Set bit depth if applicable
+  - **Fill with Pattern**: Select specific pattern from library
+  - **Custom Dimensions**: Enter exact pixel dimensions
+  - **Professional Practice**: Use advanced options when needed
+
+- **Creating Layers from Other Sources**: Various creation methods
+  - **From File**: File → Open as Layers (imports file as layer)
+  - **From Clipboard**: Edit → Paste as → New Layer
+  - **From Selection**: Select → Float, then anchor or paste
+  - **From Channel**: Create layer from channel data
+  - **Professional Practice**: Know all methods for creating layers
+
+- **Layer Creation Shortcuts Reference**: Complete shortcut list
+  - **New Layer**: Shift+Ctrl+N (opens dialog)
+  - **New from Visible**: Create layer from all visible layers
+  - **Duplicate**: Shift+Ctrl+D (quick duplicate)
+  - **Alt+Drag**: Duplicate by dragging with Alt key
+  - **Professional Practice**: Master all shortcuts for efficiency
+
+- **Layer Creation from Filters**: Creating layers via filters
+  - **Filter to New Layer**: Some filters can create new layers
+  - **Non-Destructive**: Keeps original layer intact
+  - **Experiment Safely**: Try filters without affecting original
+  - **Professional Practice**: Use filter-to-layer for experimentation
+
+- **Batch Layer Creation**: Creating multiple layers efficiently
+  - **Scripts**: Use scripts for batch layer creation
+  - **Templates**: Create layer templates for repeated structures
+  - **Automation**: Automate layer creation for repetitive tasks
+  - **Professional Practice**: Automate when creating many similar layers
+
+- **Layer Creation Workflow Examples**: Real-world scenarios
+  - **Photo Composite**: Background layer, subject layer, shadow layer, text layer
+  - **Digital Painting**: Sketch layer, base color layer, shading layer, highlights layer
+  - **UI Design**: Background layer, button layers, text layers, icon layers
+  - **Professional Practice**: Study real-world layer structures
+
+- **Layer Creation Troubleshooting**: Common creation issues
+  - **Layer Too Large**: Check dimensions, use appropriate size
+  - **Wrong Fill**: Verify fill type selection
+  - **Memory Issues**: Reduce layer size if memory problems
+  - **Professional Practice**: Know how to troubleshoot creation issues
+
+- **Layer Creation Performance**: Performance considerations
+  - **Large Layers**: Large layers take time to create
+  - **Many Layers**: Creating many layers can slow system
+  - **Optimization**: Create layers of appropriate size
+  - **Professional Practice**: Balance layer creation with performance
+
+- **Layer Creation from Text**: Text layer specifics
+  - **Text Tool**: Creates special text layer automatically
+  - **Convert to Layer**: Can convert text layer to normal layer
+  - **Text Properties**: Text layers have special properties
+  - **Professional Practice**: Understand text layer creation
+
+- **Layer Creation Best Practices Checklist**: Quick reference
+  - **✓ Name immediately**: Never use default names
+  - **✓ Choose right size**: Match purpose, not always canvas size
+  - **✓ Select fill type**: Choose appropriate fill
+  - **✓ Organize immediately**: Set up structure from start
+  - **✓ Color tag**: Assign color tag for visual organization
+  - **Professional Practice**: Use checklist for consistent creation
+
+- **Creating Layer Step-by-Step Tutorial**: Complete creation process
+  - **Step 1**: Open Layers dock (Windows → Dockable Dialogs → Layers)
+  - **Step 2**: Click "New Layer" button or press Shift+Ctrl+N
+  - **Step 3**: In dialog, enter descriptive name (e.g., "Background Sky")
+  - **Step 4**: Set layer size (width × height in pixels)
+  - **Step 5**: Choose fill type (usually Transparent for compositing)
+  - **Step 6**: Click OK to create layer
+  - **Step 7**: Assign color tag if using color organization system
+  - **Professional Practice**: Follow this process for every new layer
+
+- **Layer Creation from Selection Detailed Workflow**: Complete workflow
+  - **Step 1**: Make selection using any selection tool
+  - **Step 2**: Copy selection (Edit → Copy or Ctrl+C)
+  - **Step 3**: Create new layer (Shift+Ctrl+N, name it appropriately)
+  - **Step 4**: Paste into new layer (Edit → Paste or Ctrl+V)
+  - **Step 5**: Anchor floating selection (Layer → Anchor Layer or Ctrl+H)
+  - **Alternative**: Use Select → Float, then anchor float
+  - **Professional Practice**: Use this workflow for precise layer creation
+
+- **Layer Creation from Image File Workflow**: Importing images as layers
+  - **Step 1**: File → Open as Layers (or drag file into GIMP)
+  - **Step 2**: Select one or multiple image files
+  - **Step 3**: Each file becomes a separate layer
+  - **Step 4**: Layers appear in order files were selected
+  - **Step 5**: Rename layers immediately for organization
+  - **Step 6**: Organize layers into groups if needed
+  - **Professional Practice**: Use this for compositing multiple images
+
+- **Layer Creation from Clipboard Workflow**: Pasting as layer
+  - **Step 1**: Copy content to clipboard (from GIMP or other application)
+  - **Step 2**: In GIMP, use Edit → Paste as → New Layer
+  - **Step 3**: New layer created automatically sized to content
+  - **Step 4**: Layer appears at cursor position or center
+  - **Step 5**: Rename layer immediately
+  - **Step 6**: Position layer as needed with Move tool
+  - **Professional Practice**: Use this for importing content from other sources
+
+- **Layer Creation Error Prevention**: Avoiding common mistakes
+  - **Mistake 1**: Forgetting to name layer - Always name immediately
+  - **Mistake 2**: Wrong size - Check dimensions before creating
+  - **Mistake 3**: Wrong fill type - Choose appropriate fill
+  - **Mistake 4**: Creating too many layers - Plan structure first
+  - **Mistake 5**: Not organizing - Set up organization from start
+  - **Professional Practice**: Learn from common mistakes
+
+- **Layer Creation Keyboard Shortcuts Complete Reference**: All shortcuts
+  - **New Layer Dialog**: Shift+Ctrl+N (opens dialog)
+  - **New from Visible**: Create layer from all visible layers
+  - **Duplicate Layer**: Shift+Ctrl+D (quick duplicate)
+  - **Duplicate with Dialog**: Right-click → Duplicate Layer (for options)
+  - **Delete Layer**: Alt+Delete or Delete key
+  - **Professional Practice**: Master all shortcuts for efficiency
+
+- **Layer Creation Performance Tips**: Optimizing creation speed
+  - **Tip 1**: Use keyboard shortcuts instead of menus
+  - **Tip 2**: Create layers in batches when possible
+  - **Tip 3**: Use appropriate layer sizes (not always canvas size)
+  - **Tip 4**: Use transparent fill when possible (faster)
+  - **Tip 5**: Organize as you create to avoid reorganization later
+  - **Professional Practice**: Apply performance tips consistently
+
+- **Layer Creation for Different Project Types**: Project-specific creation
+  - **Photo Composite**: Background → Subject → Shadows → Text → Effects
+  - **Digital Painting**: Sketch → Base Colors → Shading → Highlights → Details
+  - **UI Design**: Wireframe → Base → Elements → Text → Polish
+  - **Photo Retouching**: Base → Corrections → Enhancements → Effects
+  - **Professional Practice**: Adapt layer structure to project type
+
+- **Layer Creation Troubleshooting Complete Guide**: All common issues
+  - **Issue**: Layer not appearing - Check visibility, position, size
+  - **Issue**: Layer too large - Check dimensions, reduce if needed
+  - **Issue**: Wrong fill - Recreate layer with correct fill
+  - **Issue**: Memory error - Reduce layer size or count
+  - **Issue**: Layer in wrong position - Use Move tool to reposition
+  - **Professional Practice**: Know solutions for all common issues
+
+- **Layer Creation Advanced Techniques**: Professional techniques
+  - **Technique 1**: Create layer structure template for reuse
+  - **Technique 2**: Use scripts to create multiple layers at once
+  - **Technique 3**: Import layer structure from template file
+  - **Technique 4**: Duplicate and modify existing layer structure
+  - **Technique 5**: Use layer groups to organize during creation
+  - **Professional Practice**: Master advanced techniques for efficiency
+
+- **Layer Creation Quality Checklist**: Quality assurance
+  - **✓ Properly named**: Descriptive, clear name
+  - **✓ Correct size**: Appropriate for purpose
+  - **✓ Right fill type**: Matches intended use
+  - **✓ Organized**: In appropriate group or position
+  - **✓ Color tagged**: If using color organization
+  - **✓ Documented**: Notes if needed for complex projects
+  - **Professional Practice**: Use checklist to ensure quality
+
+- **Layer Creation Workflow Optimization**: Streamlining process
+  - **Optimization 1**: Create naming convention template
+  - **Optimization 2**: Set up layer groups structure first
+  - **Optimization 3**: Use consistent fill types for similar layers
+  - **Optimization 4**: Create layers in logical order
+  - **Optimization 5**: Organize immediately, not later
+  - **Professional Practice**: Optimize workflow for your needs
+
+- **Layer Creation Best Practices Summary**: Complete best practices
+  - **Always Name**: Never leave default names
+  - **Plan Structure**: Think before creating
+  - **Organize Immediately**: Set up organization from start
+  - **Use Appropriate Size**: Match size to purpose
+  - **Choose Right Fill**: Select appropriate fill type
+  - **Color Tag**: Use color tags for visual organization
+  - **Document Complex**: Document complex layer structures
+  - **Professional Practice**: Make all best practices automatic habits
+
+- **Layer Creation Memory Optimization**: Optimizing memory usage
+  - **Right-Size Layers**: Create layers only as large as needed
+  - **Crop Early**: Crop unnecessary areas immediately
+  - **Avoid Oversizing**: Don't create layers larger than necessary
+  - **Merge When Done**: Merge finalized layers to reduce memory
+  - **Monitor Usage**: Keep track of memory usage
+  - **Professional Practice**: Optimize memory from layer creation
+
+- **Layer Creation Quality Assurance**: Ensuring quality
+  - **Check Dimensions**: Verify layer dimensions are correct
+  - **Verify Fill**: Confirm fill type is appropriate
+  - **Test Visibility**: Ensure layer is visible and positioned correctly
+  - **Validate Name**: Confirm layer has descriptive name
+  - **Check Organization**: Verify layer is in correct group/position
+  - **Professional Practice**: Quality check every layer creation
+
+- **Layer Creation from Multiple Sources**: Advanced import techniques
+  - **Multiple Files**: Import multiple files as layers simultaneously
+  - **File Selection**: Select multiple files in file dialog
+  - **Order Control**: Files imported in selection order
+  - **Batch Processing**: Process multiple imports efficiently
+  - **Professional Practice**: Master multi-file import for efficiency
+
+- **Layer Creation Error Prevention Advanced**: Advanced error prevention
+  - **Template Validation**: Validate templates before use
+  - **Size Limits**: Check system limits before creating large layers
+  - **Memory Checks**: Verify available memory before creation
+  - **Format Compatibility**: Ensure format compatibility
+  - **Professional Practice**: Prevent errors proactively
+
+- **Layer Creation Performance Benchmarking**: Measuring creation speed
+  - **Creation Time**: Measure time to create layers
+  - **Batch Performance**: Measure batch creation performance
+  - **Memory Impact**: Measure memory impact of creation
+  - **Optimization Targets**: Identify optimization opportunities
+  - **Professional Practice**: Benchmark to optimize workflow
+
+- **Layer Creation Workflow Templates**: Pre-built workflows
+  - **Photo Composite Template**: Template for photo composites
+  - **Digital Art Template**: Template for digital art projects
+  - **UI Design Template**: Template for UI design work
+  - **Custom Templates**: Create custom templates for your needs
+  - **Professional Practice**: Build and use workflow templates
+
+- **Layer Creation Automation Scripts**: Scripting layer creation
+  - **Script-Fu Scripts**: Create layers with Script-Fu
+  - **Python Scripts**: Advanced layer creation with Python
+  - **Batch Scripts**: Scripts for batch layer creation
+  - **Custom Automation**: Custom scripts for your workflow
+  - **Professional Practice**: Automate repetitive creation tasks
+
+- **Layer Creation Troubleshooting Advanced**: Advanced troubleshooting
+  - **Memory Errors**: Solutions for memory-related errors
+  - **Performance Issues**: Solutions for performance problems
+  - **Corruption Issues**: Solutions for data corruption
+  - **Compatibility Issues**: Solutions for format compatibility
+  - **Professional Practice**: Know advanced troubleshooting techniques
+
+- **Layer Creation Best Practices Advanced**: Advanced best practices
+  - **Predictive Creation**: Create layers based on project needs
+  - **Strategic Organization**: Organize strategically from start
+  - **Quality First**: Prioritize quality over speed
+  - **Documentation**: Document complex creation processes
+  - **Professional Practice**: Apply advanced practices consistently
+
+- **Layer Creation Workflow Optimization Advanced**: Advanced optimization
+  - **Workflow Analysis**: Analyze your creation workflow
+  - **Bottleneck Identification**: Identify workflow bottlenecks
+  - **Optimization Strategies**: Develop optimization strategies
+  - **Continuous Improvement**: Continuously improve workflow
+  - **Professional Practice**: Optimize workflow systematically
+
+- **Layer Creation Quality Metrics**: Measuring creation quality
+  - **Naming Compliance**: Measure naming convention compliance
+  - **Organization Quality**: Measure organization quality
+  - **Size Appropriateness**: Measure size appropriateness
+  - **Fill Type Correctness**: Measure fill type correctness
+  - **Professional Practice**: Use metrics to improve quality
+
+- **Layer Creation Documentation Standards**: Documentation requirements
+  - **Naming Standards**: Document naming conventions
+  - **Organization Standards**: Document organization standards
+  - **Size Standards**: Document size guidelines
+  - **Fill Standards**: Document fill type guidelines
+  - **Professional Practice**: Maintain documentation standards
+
+- **Layer Creation Training Materials**: Learning resources
+  - **Tutorial Videos**: Video tutorials for layer creation
+  - **Step-by-Step Guides**: Written step-by-step guides
+  - **Practice Exercises**: Exercises to practice creation
+  - **Reference Materials**: Reference materials for quick lookup
+  - **Professional Practice**: Use training materials to improve skills
+
+- **Layer Creation Expert Tips**: Professional expert tips
+  - **Tip 1**: Always plan layer structure before starting
+  - **Tip 2**: Use consistent naming from the beginning
+  - **Tip 3**: Organize as you create, not later
+  - **Tip 4**: Use appropriate sizes for efficiency
+  - **Tip 5**: Document complex structures
+  - **Tip 6**: Use templates for repeated structures
+  - **Tip 7**: Automate repetitive tasks
+  - **Professional Practice**: Apply expert tips consistently
 
 ### Adjusting Layer Opacity and Locking Options
 
+Control layer visibility and protection with precision:
+
+- **Adjusting Opacity**: Control layer transparency
+  - **Opacity Slider**: Use opacity slider in Layers dock (0-100%)
+  - **Range**: 0% (completely transparent) to 100% (completely opaque)
+  - **Precise Control**: Click slider and type exact percentage
+  - **Keyboard Control**: Can adjust with keyboard for precision
+  - **Professional Practice**: Use opacity for blending and effects
+
+- **Opacity Slider Location**: Finding the opacity control
+  - **Layers Dock**: Located at top of Layers dock panel
+  - **Visual Indicator**: Shows current opacity percentage
+  - **Interactive**: Drag slider or click to enter value
+  - **Professional Practice**: Know where opacity control is located
+
+- **Opacity Use Cases**: Common opacity applications
+  - **Blending**: Blend layers together for smooth transitions
+  - **Watermarks**: Create semi-transparent watermarks (typically 20-40%)
+  - **Effects**: Create subtle effects and overlays
+  - **Ghosting**: Create ghosting effects for before/after comparisons
+  - **Professional Practice**: Experiment with opacity for creative effects
+
+- **Opacity Workflow**: When to adjust opacity
+  - **During Composition**: Adjust while composing to see relationships
+  - **Final Adjustments**: Fine-tune opacity at end of workflow
+  - **Temporary Changes**: Lower opacity temporarily to see underlying layers
+  - **Professional Practice**: Adjust opacity throughout workflow as needed
+
+- **Opacity and Blend Modes**: Interaction between opacity and blend modes
+  - **Combined Effect**: Opacity affects blend mode strength
+  - **Reduced Opacity**: Lower opacity makes blend mode effect more subtle
+  - **Fine-Tuning**: Use opacity to fine-tune blend mode effects
+  - **Professional Practice**: Combine opacity with blend modes for precise control
+
+- **Opacity Animation**: Using opacity for animation
+  - **Fade In/Out**: Adjust opacity over time for fade effects
+  - **Layer Sequences**: Use opacity for layer-based animation
+  - **Professional Practice**: Use opacity for animation and transitions
+
+- **Opacity Keyboard Shortcuts**: Quick opacity adjustment
+  - **Direct Input**: Click opacity field and type percentage
+  - **Arrow Keys**: Some systems allow arrow key adjustment
+  - **Professional Practice**: Learn fastest method for your workflow
+
+- **Opacity Precision**: Achieving precise opacity values
+  - **Type Exact Value**: Click opacity field and type exact percentage
+  - **Decimal Values**: Some systems support decimal opacity
+  - **Professional Practice**: Use precise values for consistent results
+
+- **Opacity and Layer Masks**: Combining opacity with masks
+  - **Cumulative Effect**: Opacity multiplies with mask transparency
+  - **Fine Control**: Use both for maximum control
+  - **Professional Practice**: Combine opacity and masks for complex effects
+
+- **Locking Layers**: Protect layers from accidental changes
+  - **Lock Position**: Prevents moving layer with Move tool
+  - **Lock Pixels**: Prevents painting or editing pixel content
+  - **Lock Alpha Channel**: Prevents changing transparency (alpha channel)
+  - **Lock All**: Can lock all properties simultaneously
+  - **Professional Practice**: Lock layers when finished editing to prevent accidents
+
+- **Lock Icon Location**: Finding lock controls
+  - **Layers Dock**: Lock icon appears next to layer thumbnail
+  - **Visual Indicator**: Locked layers show lock icon
+  - **Multiple Locks**: Can have multiple lock types active
+  - **Professional Practice**: Understand lock icon location and meaning
+
+- **Lock Types Explained**: Understanding each lock type
+  - **Position Lock**: Layer cannot be moved, but can still be painted on
+  - **Pixel Lock**: Cannot paint or edit pixels, but can move layer
+  - **Alpha Lock**: Can only paint on existing opaque pixels, preserves transparency
+  - **Professional Practice**: Use appropriate lock type for your needs
+
+- **Alpha Lock Details**: Advanced alpha lock usage
+  - **Painting Restriction**: Can only paint where pixels already exist
+  - **Transparency Protection**: Prevents accidentally painting on transparent areas
+  - **Useful for**: Adding details to existing objects without expanding them
+  - **Professional Practice**: Use alpha lock when adding details to cut-out objects
+
+- **Lock Options**: Different lock configurations
+  - **Single Lock**: Lock one property (position, pixels, or alpha)
+  - **Multiple Locks**: Can lock multiple properties at once
+  - **Lock All**: Lock everything for maximum protection
+  - **Professional Practice**: Use locks to protect finished work appropriately
+
+- **Unlocking Layers**: Remove locks when needed
+  - **Click Lock Icon**: Click lock icon to toggle lock state
+  - **Right-Click Menu**: Right-click layer for lock options
+  - **Professional Practice**: Unlock only when necessary to maintain protection
+
+- **Lock Workflow**: When to use locks
+  - **After Completion**: Lock layers when editing is complete
+  - **During Complex Work**: Lock finished layers while working on others
+  - **Collaboration**: Lock layers when sharing files to prevent changes
+  - **Professional Practice**: Develop habit of locking finished layers
+
+- **Opacity Calculation Details**: Technical opacity details
+  - **Internal Storage**: Opacity stored as 0-255 integer value
+  - **Display Percentage**: Shown as 0-100% for user convenience
+  - **Blending Formula**: Final = (Layer × Opacity) + (Background × (1-Opacity))
+  - **Precision**: 256 levels of opacity precision
+  - **Professional Practice**: Understand opacity calculation for precise control
+
+- **Opacity Animation Techniques**: Advanced opacity animation
+  - **Keyframe Animation**: Set opacity at different frames
+  - **Smooth Transitions**: Create smooth opacity transitions
+  - **Layer Sequences**: Use multiple layers with different opacities
+  - **Professional Practice**: Master opacity animation for dynamic effects
+
+- **Opacity and Performance**: Performance impact
+  - **Calculation Overhead**: Opacity calculations add processing overhead
+  - **Many Layers**: Many opacity layers can slow rendering
+  - **Optimization**: Merge layers with final opacity when possible
+  - **Professional Practice**: Balance opacity usage with performance
+
+- **Opacity Troubleshooting**: Common opacity issues
+  - **No Effect**: Check if opacity is actually changed (not at 100%)
+  - **Too Subtle**: Increase opacity if effect too weak
+  - **Too Strong**: Decrease opacity if effect too strong
+  - **Unexpected Results**: Check blend mode interaction
+  - **Professional Practice**: Know how to troubleshoot opacity issues
+
+- **Lock Types Detailed Explanation**: Understanding each lock type
+  - **Position Lock**: Prevents Move tool from moving layer, but allows other tools
+  - **Pixel Lock**: Prevents all pixel editing (paint, filters, etc.), but allows moving
+  - **Alpha Lock**: Allows painting only on existing pixels, preserves transparency perfectly
+  - **Combined Locks**: Can combine lock types for different protection levels
+  - **Professional Practice**: Understand each lock type's specific behavior
+
+- **Lock State Indicators**: Visual lock feedback
+  - **Lock Icon**: Lock icon appears when layer is locked
+  - **Icon Type**: Different icons for different lock types
+  - **Visual Feedback**: Locked layers may appear differently in dock
+  - **Professional Practice**: Learn to recognize lock states visually
+
+- **Lock and Tool Interaction**: How locks affect tools
+  - **Move Tool**: Position lock prevents movement
+  - **Paint Tools**: Pixel lock prevents painting
+  - **Selection Tools**: Locks don't prevent selection
+  - **Transform Tools**: Position lock prevents transforms
+  - **Professional Practice**: Understand tool-lock interactions
+
+- **Lock Workflow Examples**: Real-world lock usage
+  - **Finished Background**: Lock background layer when complete
+  - **Reference Layer**: Lock reference layers to prevent accidental changes
+  - **Template Layers**: Lock template layers used as guides
+  - **Professional Practice**: Develop lock workflow for your projects
+
+- **Lock Best Practices**: Professional lock usage
+  - **Lock Early**: Lock layers as soon as editing is complete
+  - **Lock Strategically**: Lock layers you're not currently working on
+  - **Unlock When Needed**: Don't forget to unlock when editing needed
+  - **Professional Practice**: Make locking part of your workflow
+
+- **Opacity and Lock Combination**: Using opacity with locks
+  - **Locked Opacity**: Can still adjust opacity on locked layers
+  - **Locked Position**: Opacity adjustment doesn't require position unlock
+  - **Combined Control**: Use locks and opacity together for protection
+  - **Professional Practice**: Combine opacity and locks for maximum control
+
+- **Advanced Opacity Techniques**: Professional opacity methods
+  - **Gradient Opacity**: Use masks for gradient opacity effects
+  - **Selective Opacity**: Combine opacity with selections
+  - **Opacity Masks**: Use layer masks to control opacity per-pixel
+  - **Professional Practice**: Master advanced opacity techniques
+
+- **Lock Troubleshooting**: Common lock issues
+  - **Can't Edit**: Check if layer is locked
+  - **Can't Move**: Check if position is locked
+  - **Unexpected Behavior**: Verify which locks are active
+  - **Professional Practice**: Know how to troubleshoot lock issues
+
+- **Opacity Workflow Checklist**: Opacity workflow reference
+  - **✓ Set opacity during composition**: Adjust as you work
+  - **✓ Fine-tune at end**: Final opacity adjustments
+  - **✓ Combine with blend modes**: Use together for effects
+  - **✓ Test different values**: Experiment to find best opacity
+  - **Professional Practice**: Use checklist for consistent opacity workflow
+
+- **Lock Workflow Checklist**: Lock workflow reference
+  - **✓ Lock when complete**: Lock finished layers immediately
+  - **✓ Lock reference layers**: Lock layers used as guides
+  - **✓ Unlock when editing**: Remember to unlock for editing
+  - **✓ Check lock state**: Verify locks before attempting edits
+  - **Professional Practice**: Use checklist for consistent lock workflow
+
 ### Layer Visibility and Alpha Channel Concepts
+
+Understanding transparency and visibility is crucial for advanced compositing:
+
+- **Layer Visibility**: Control which layers are visible
+  - **Eye Icon**: Click eye icon in Layers dock to toggle visibility
+  - **Temporary Hide**: Hide without deleting layer
+  - **Toggle Multiple**: Shift-click eye icons to toggle multiple layers
+  - **Professional Practice**: Use visibility to compare versions and isolate elements
+
+- **Visibility Workflow**: When to hide/show layers
+  - **Comparison**: Hide layers to compare different compositions
+  - **Focus**: Hide distracting layers to focus on specific elements
+  - **Testing**: Hide layers to test different arrangements
+  - **Professional Practice**: Use visibility strategically throughout workflow
+
+- **Alpha Channel**: Stores transparency information per pixel
+  - **Transparency Data**: Alpha channel stores transparency value (0-255) for each pixel
+  - **Per-Pixel Transparency**: Each pixel can have different transparency level
+  - **8-Bit Channel**: Alpha channel is 8-bit, allowing 256 transparency levels
+  - **Professional Practice**: Understand alpha for advanced compositing work
+
+- **Alpha Channel Purpose**: Why alpha channel exists
+  - **Precise Transparency**: Allows precise control over transparency
+  - **Smooth Edges**: Enables smooth, anti-aliased edges
+  - **Complex Shapes**: Supports complex transparent shapes
+  - **Professional Practice**: Alpha channel is essential for professional compositing
+
+- **Alpha Channel Display**: Visualize transparency in GIMP
+  - **Checkerboard Pattern**: Transparent areas show checkerboard pattern
+  - **Pattern Color**: Checkerboard colors can be customized in preferences
+  - **Visual Reference**: Helps identify transparent vs opaque areas
+  - **Professional Practice**: Use checkerboard to understand transparency
+
+- **Viewing Alpha Channel**: See alpha channel directly
+  - **Channels Dialog**: View alpha channel in Channels dock
+  - **Isolate Alpha**: Click alpha channel to view it in grayscale
+  - **Edit Alpha**: Can paint directly on alpha channel
+  - **Professional Practice**: Use Channels dialog to inspect alpha channel
+
+- **Adding Alpha Channel**: Add transparency support to layer
+  - **Layer Menu**: Layer → Transparency → Add Alpha Channel
+  - **Right-Click**: Right-click layer → Add Alpha Channel
+  - **When Needed**: Required for layers without transparency
+  - **Professional Practice**: Add alpha when you need transparency
+
+- **Removing Alpha Channel**: Remove transparency support
+  - **Layer Menu**: Layer → Transparency → Remove Alpha Channel
+  - **Flattens Transparency**: Transparent areas become white or background color
+  - **Use Caution**: This is destructive operation
+  - **Professional Practice**: Only remove alpha when absolutely necessary
+
+- **Alpha Channel Operations**: Advanced alpha techniques
+  - **Alpha to Selection**: Select → From Alpha Channel (selects based on transparency)
+  - **Selection to Alpha**: Layer → Mask → Add Layer Mask → Selection
+  - **Threshold Alpha**: Adjust alpha channel threshold
+  - **Professional Practice**: Master alpha channel operations for advanced work
+
+- **Alpha to Selection Details**: Convert transparency to selection
+  - **Method**: Select → From Alpha Channel
+  - **Result**: Creates selection based on opaque pixels
+  - **Threshold**: Can adjust threshold for selection
+  - **Professional Practice**: Use alpha to selection for precise cut-outs
+
+- **Selection to Alpha Details**: Convert selection to transparency
+  - **Method**: Create selection, then Layer → Mask → Add Layer Mask
+  - **Alternative**: Use Layer → Transparency → Threshold Alpha Channel
+  - **Result**: Selection becomes transparency
+  - **Professional Practice**: Use selection to alpha for creating transparency
+
+- **Alpha Channel Editing**: Direct alpha channel manipulation
+  - **Channels Dialog**: Select alpha channel in Channels dock
+  - **Paint on Alpha**: Paint directly on alpha channel to modify transparency
+  - **Filters**: Apply filters to alpha channel
+  - **Professional Practice**: Edit alpha channel directly for precise control
+
+- **Alpha Channel Best Practices**: Working with alpha effectively
+  - **Preserve Alpha**: Be careful not to accidentally remove alpha channel
+  - **Check Alpha**: Regularly check alpha channel in Channels dialog
+  - **Smooth Edges**: Use feathering and anti-aliasing for smooth alpha edges
+  - **Professional Practice**: Develop workflow that preserves alpha channel integrity
+
+- **Alpha Channel Mathematics**: Understanding alpha values
+  - **0-255 Range**: Alpha values range from 0 (transparent) to 255 (opaque)
+  - **Percentage**: 0% = 0, 100% = 255, 50% = 128
+  - **Blending Formula**: Final color = (foreground × alpha) + (background × (1-alpha))
+  - **Professional Practice**: Understand alpha math for advanced compositing
+
+- **Alpha Channel and File Formats**: Format support
+  - **PNG**: Full alpha channel support
+  - **GIF**: Limited to binary transparency (on/off)
+  - **JPEG**: No alpha channel support
+  - **TIFF**: Alpha channel support
+  - **Professional Practice**: Choose formats that support alpha when needed
+
+- **Alpha Channel Editing Techniques**: Advanced editing
+  - **Paint on Alpha**: Select alpha channel and paint to modify transparency
+  - **Filters on Alpha**: Apply filters to alpha channel for effects
+  - **Gradient Alpha**: Create gradients on alpha channel
+  - **Professional Practice**: Master alpha channel editing for advanced work
+
+- **Alpha Channel Troubleshooting**: Common issues
+  - **Missing Alpha**: Add alpha channel if transparency not working
+  - **Jagged Edges**: Use anti-aliasing when creating selections
+  - **White Edges**: Use "Matting" filters to remove color fringing
+  - **Professional Practice**: Know how to troubleshoot alpha channel issues
+
+- **Alpha Channel Optimization**: Performance considerations
+  - **File Size**: Alpha channel increases file size
+  - **Memory**: Alpha channel uses additional memory
+  - **Processing**: Alpha calculations require processing power
+  - **Professional Practice**: Balance alpha usage with performance needs
+
+- **Alpha Channel Workflow**: Professional alpha workflow
+  - **Plan Transparency**: Plan where transparency is needed
+  - **Create Properly**: Use proper tools to create clean alpha
+  - **Edit Carefully**: Edit alpha channel with care
+  - **Test Export**: Test how alpha appears in final format
+  - **Professional Practice**: Develop systematic alpha channel workflow
 
 ### Understanding Layer Boundaries vs Canvas Size
 
+Layers can be different sizes than the canvas, providing flexibility in composition:
+
+- **Layer Size vs Canvas Size**: Layers can be larger or smaller than canvas
+  - **Independent Sizing**: Layer size is completely independent of canvas size
+  - **Positioning**: Layers can extend beyond canvas boundaries
+  - **Flexibility**: Allows repositioning without resizing canvas
+  - **Professional Practice**: Understand size relationships for advanced compositing
+
+- **Canvas Size**: The visible working area
+  - **Fixed Dimensions**: Canvas has fixed width and height
+  - **Export Size**: Canvas size determines final export dimensions
+  - **Clipping Boundary**: Canvas acts as clipping boundary for visible content
+  - **Professional Practice**: Canvas size is your final output size
+
+- **Layer Boundaries**: The actual extent of layer content
+  - **Layer Extent**: Layer extends to its defined boundaries (width x height)
+  - **Canvas Clipping**: Canvas clips visible area, but layer extends beyond
+  - **Visual Indicator**: Layer boundaries shown when layer is selected
+  - **Professional Practice**: Know where layer boundaries are relative to canvas
+
+- **Viewing Layer Boundaries**: See layer extent
+  - **Select Layer**: Click layer in Layers dock to see boundaries
+  - **Visual Outline**: GIMP shows outline of layer boundaries
+  - **Beyond Canvas**: Can see boundaries extending beyond canvas
+  - **Professional Practice**: Always check layer boundaries when positioning
+
+- **Larger Layers**: Layers can exceed canvas size
+  - **Extended Content**: Content beyond canvas is hidden but still exists
+  - **Panning**: Move layer to reveal hidden areas
+  - **Flexibility**: Allows repositioning without losing content
+  - **Professional Practice**: Use larger layers for flexibility in composition
+
+- **Benefits of Larger Layers**: Why use layers larger than canvas
+  - **Repositioning**: Easy to reposition without cropping
+  - **Animation**: Useful for animation where objects move
+  - **Flexibility**: Can adjust composition without recreating content
+  - **Professional Practice**: Use larger layers when repositioning is likely
+
+- **Smaller Layers**: Layers can be smaller than canvas
+  - **Partial Coverage**: Layer covers only part of canvas
+  - **Transparent Areas**: Areas outside layer boundaries are transparent
+  - **Specific Elements**: Perfect for specific elements like text or icons
+  - **Professional Practice**: Use smaller layers for specific elements
+
+- **Benefits of Smaller Layers**: Why use layers smaller than canvas
+  - **Efficiency**: Smaller file size for simple elements
+  - **Clarity**: Clear boundaries for specific elements
+  - **Organization**: Easier to understand layer purpose
+  - **Professional Practice**: Use smaller layers when appropriate
+
+- **Resizing Layers**: Change layer size independently
+  - **Layer to Image Size**: Layer → Layer to Image Size (expands to canvas)
+  - **Scale Layer**: Layer → Scale Layer (scales content)
+  - **Auto-Resize**: Some operations auto-resize layer
+  - **Professional Practice**: Resize layers as needed for your workflow
+
+- **Layer to Image Size**: Expand layer to match canvas
+  - **Method**: Layer → Layer to Image Size
+  - **Expands Layer**: Adds transparent area to match canvas size
+  - **Preserves Content**: Existing content remains in same position
+  - **Professional Practice**: Use when layer needs to match canvas dimensions
+
+- **Scale Layer**: Resize layer content
+  - **Method**: Layer → Scale Layer
+  - **Scales Content**: Actually scales the pixel content
+  - **Interpolation**: Choose interpolation method for quality
+  - **Professional Practice**: Use scale when you need to resize content
+
+- **Auto-Resize Operations**: Operations that resize layers
+  - **Paste**: Pasting may auto-resize layer if content is larger
+  - **Text Layers**: Text layers auto-resize to fit text
+  - **Filters**: Some filters may require layer resizing
+  - **Professional Practice**: Understand which operations affect layer size
+
+- **Size Management Workflow**: Best practices for layer sizing
+  - **Plan Ahead**: Consider layer size needs before creating
+  - **Adjust as Needed**: Resize layers when composition changes
+  - **Check Boundaries**: Regularly check layer boundaries
+  - **Professional Practice**: Develop workflow for managing layer sizes
+
 ### Layer Stacking Order and Its Impact
+
+Layer order affects final appearance and is fundamental to composition:
+
+- **Stacking Order**: Layers stack from bottom to top
+  - **Bottom Layer**: Bottom layer appears behind all others
+  - **Top Layer**: Top layer appears in front of all others
+  - **Z-Order**: Stacking order is like Z-axis in 3D space
+  - **Professional Practice**: Understand stacking order is critical for composition
+
+- **Visual Analogy**: Understanding stacking visually
+  - **Stack of Paper**: Like stack of transparent paper sheets
+  - **Bottom to Top**: Bottom sheet is background, top is foreground
+  - **Overlap**: Top layers cover lower layers where they overlap
+  - **Professional Practice**: Visualize as physical stack for better understanding
+
+- **Changing Layer Order**: Reorder layers as needed
+  - **Drag and Drop**: Click and drag layers in Layers dock to reorder
+  - **Layer Menu**: Use Layer → Stack submenu commands
+  - **Keyboard Shortcuts**: Use Ctrl+Page Up/Down for quick reordering
+  - **Multiple Selection**: Can reorder multiple selected layers
+  - **Professional Practice**: Reorder frequently to control visibility and composition
+
+- **Drag and Drop Method**: Most intuitive reordering
+  - **Click Layer**: Click on layer in Layers dock
+  - **Drag**: Drag layer up or down
+  - **Drop Zone**: Drop at desired position (shows insertion line)
+  - **Professional Practice**: Use drag and drop for visual reordering
+
+- **Stack Menu Commands**: Menu-based reordering
+  - **Raise Layer**: Layer → Stack → Raise Layer (moves up one position)
+  - **Lower Layer**: Layer → Stack → Lower Layer (moves down one position)
+  - **Raise to Top**: Layer → Stack → Raise to Top (moves to top)
+  - **Lower to Bottom**: Layer → Stack → Lower to Bottom (moves to bottom)
+  - **Professional Practice**: Use menu when precise control needed
+
+- **Impact of Order**: Order affects composition dramatically
+  - **Visibility**: Top layers obscure lower layers where they overlap
+  - **Blending**: Order affects blend mode results (blend modes work with layers below)
+  - **Composition**: Order determines what appears in front/behind
+  - **Professional Practice**: Experiment with order to find best composition
+
+- **Blend Mode Interaction**: How order affects blending
+  - **Blend Target**: Blend modes blend with layers below
+  - **Order Matters**: Changing order changes blend results
+  - **Experiment**: Try different orders with same blend modes
+  - **Professional Practice**: Understand order's impact on blend modes
+
+- **Common Ordering Patterns**: Typical layer arrangements
+  - **Background First**: Background layer always at bottom
+  - **Content Layers**: Main content layers in middle
+  - **Effects on Top**: Effects, adjustments, and overlays on top
+  - **Text Layers**: Text typically near top for readability
+  - **Professional Practice**: Follow logical ordering patterns
+
+- **Professional Layer Order**: Standard professional arrangement
+  - **Bottom**: Background/base layer
+  - **Lower Middle**: Main content elements
+  - **Upper Middle**: Secondary content, effects
+  - **Top**: Text, UI elements, final adjustments
+  - **Professional Practice**: Develop consistent ordering system
+
+- **Layer Order Shortcuts**: Quick reordering with keyboard
+  - **Raise Layer**: Ctrl+Page Up (moves up one position)
+  - **Lower Layer**: Ctrl+Page Down (moves down one position)
+  - **Raise to Top**: Shift+Ctrl+Page Up (moves to very top)
+  - **Lower to Bottom**: Shift+Ctrl+Page Down (moves to very bottom)
+  - **Professional Practice**: Master keyboard shortcuts for efficiency
+
+- **Reordering Workflow**: When and how to reorder
+  - **During Composition**: Reorder as you build composition
+  - **After Effects**: Reorder after applying effects to see results
+  - **Final Adjustments**: Final reordering pass before completion
+  - **Professional Practice**: Reorder throughout workflow, not just at end
+
+- **Order and Performance**: Performance considerations
+  - **Render Order**: GIMP renders from bottom to top
+  - **Complex Layers**: Complex layers on top render faster
+  - **Optimization**: Order can affect rendering performance
+  - **Professional Practice**: Consider performance when ordering complex projects
+
+- **Nested Ordering**: Order within groups
+  - **Group Order**: Groups themselves have stacking order
+  - **Within Groups**: Layers within groups have their own order
+  - **Hierarchical**: Order is hierarchical (group order, then layer order within)
+  - **Professional Practice**: Understand nested ordering for complex projects
 
 ### Using Layer Groups to Organize Projects
 
+Layer groups help manage complex projects and are essential for organization:
+
+- **What Are Layer Groups**: Groups organize multiple layers
+  - **Container**: Group acts as container for multiple layers
+  - **Organization**: Organize related layers together logically
+  - **Hierarchy**: Groups create hierarchical organization structure
+  - **Professional Practice**: Use groups for any project with more than a few layers
+
+- **Group Benefits**: Why use layer groups
+  - **Organization**: Keep related layers together
+  - **Efficiency**: Quickly show/hide entire sections
+  - **Clarity**: Makes complex projects easier to understand
+  - **Professional Practice**: Groups are essential for professional workflows
+
+- **Creating Layer Groups**: Create groups to organize
+  - **Right-Click Menu**: Right-click in Layers dock → New Layer Group
+  - **Layer Menu**: Use Layer → New Layer Group
+  - **Keyboard Shortcut**: Use Ctrl+G for quick group creation
+  - **Toolbar Button**: Click group button in Layers dock
+  - **Professional Practice**: Create groups for logical sections of project
+
+- **New Group Dialog**: Configure group when creating
+  - **Group Name**: Give descriptive name to group
+  - **Color Tag**: Assign color tag to group for visual organization
+  - **Mode**: Set blend mode for entire group
+  - **Professional Practice**: Always name groups descriptively
+
+- **Adding Layers to Groups**: Move layers into groups
+  - **Drag and Drop**: Drag layers into group (indent shows membership)
+  - **Multiple Layers**: Can drag multiple selected layers at once
+  - **Nested Groups**: Groups can contain other groups (hierarchical)
+  - **Professional Practice**: Organize hierarchically for complex projects
+
+- **Group Structure**: Understanding group hierarchy
+  - **Parent Group**: The container group
+  - **Child Layers**: Layers inside the group
+  - **Nested Groups**: Groups inside other groups
+  - **Professional Practice**: Understand hierarchy for effective organization
+
+- **Removing Layers from Groups**: Take layers out of groups
+  - **Drag Out**: Drag layer out of group to remove
+  - **Ungroup**: Can ungroup entire group (removes group, keeps layers)
+  - **Professional Practice**: Know how to reorganize when needed
+
+- **Group Operations**: Operate on entire groups
+  - **Visibility**: Toggle group visibility (eye icon) affects all layers in group
+  - **Opacity**: Apply opacity to entire group (affects all layers together)
+  - **Blend Modes**: Apply blend modes to groups (blends group as unit)
+  - **Transform**: Transform entire group together
+  - **Professional Practice**: Use group operations efficiently for batch changes
+
+- **Group Visibility**: Control visibility of entire sections
+  - **Toggle All**: Click group eye icon to show/hide all layers in group
+  - **Individual Control**: Can still control individual layer visibility
+  - **Workflow**: Hide groups to focus on other sections
+  - **Professional Practice**: Use group visibility for workflow efficiency
+
+- **Group Opacity**: Apply opacity to entire group
+  - **Unified Opacity**: All layers in group affected together
+  - **Cumulative**: Group opacity multiplies with individual layer opacities
+  - **Use Case**: Fade entire section of composition
+  - **Professional Practice**: Use group opacity for unified effects
+
+- **Group Blend Modes**: Apply blend modes to groups
+  - **Group Blending**: Entire group blends as single unit with layers below
+  - **Internal Blending**: Layers within group still blend with each other
+  - **Complex Effects**: Creates complex blending effects
+  - **Professional Practice**: Use group blend modes for advanced compositing
+
+- **Group Management**: Manage groups effectively
+  - **Naming**: Name groups descriptively (e.g., "Background", "Text Elements", "Effects")
+  - **Expanding/Collapsing**: Click arrow to expand/collapse group view
+  - **Color Coding**: Use color tags to visually organize groups
+  - **Professional Practice**: Keep groups organized from the start
+
+- **Expanding and Collapsing**: Control group view
+  - **Collapse**: Click arrow to collapse group (hides layers inside)
+  - **Expand**: Click arrow to expand group (shows layers inside)
+  - **Workflow**: Collapse finished groups to reduce clutter
+  - **Professional Practice**: Use collapse/expand to manage screen space
+
+- **Nested Groups**: Groups within groups
+  - **Hierarchy**: Create multi-level organization
+  - **Example**: "Characters" group containing "Character 1" and "Character 2" groups
+  - **Complex Projects**: Essential for very complex projects
+  - **Professional Practice**: Use nested groups for complex organization
+
+- **Group Workflow**: Best practices for using groups
+  - **Plan Structure**: Plan group structure before creating
+  - **Create Early**: Create groups early in project
+  - **Consistent Naming**: Use consistent naming conventions
+  - **Professional Practice**: Develop consistent group organization system
+
+- **Ungrouping**: Remove group structure
+  - **Method**: Right-click group → Ungroup
+  - **Result**: Removes group, layers remain at same level
+  - **Use Case**: When group organization no longer needed
+  - **Professional Practice**: Ungroup when structure becomes unnecessary
+
 ### Understanding and Using Blending Modes
+
+Blending modes control how layers combine and are essential for professional compositing:
+
+- **What Are Blending Modes**: Modes control layer interaction mathematically
+  - **Combination Method**: Each mode uses different mathematical formula to combine pixels
+  - **Visual Effects**: Create various visual effects from subtle to dramatic
+  - **Layer Interaction**: Blend mode layer interacts with all layers below it
+  - **Professional Practice**: Master blending modes for professional-quality work
+
+- **Accessing Blend Modes**: How to change blend mode
+  - **Layers Dock**: Dropdown menu at top of Layers dock
+  - **Layer Menu**: Layer → Layer Attributes → Mode
+  - **Right-Click**: Right-click layer → Layer Attributes → Mode
+  - **Professional Practice**: Know all ways to access blend modes
+
+- **Blend Mode Categories**: Understanding mode groups
+  - **Normal**: Standard blending (Normal, Dissolve)
+  - **Darken**: Darkening modes (Multiply, Darken, Color Burn, Linear Burn)
+  - **Lighten**: Lightening modes (Screen, Lighten, Color Dodge, Linear Dodge)
+  - **Contrast**: Contrast modes (Overlay, Soft Light, Hard Light, Vivid Light)
+  - **Inversion**: Inversion modes (Difference, Exclusion)
+  - **Component**: Component modes (Hue, Saturation, Color, Value)
+  - **Professional Practice**: Understand categories to choose appropriate mode
+
+- **Normal Mode**: Default blending mode
+  - **Standard Blending**: Standard layer combination, no special effect
+  - **Opacity Control**: Opacity controls visibility, no mathematical blending
+  - **Use Case**: Standard compositing, most common mode
+  - **Professional Practice**: Normal is default for most work, use other modes for effects
+
+- **Dissolve Mode**: Random pixel replacement
+  - **Effect**: Randomly replaces pixels based on opacity
+  - **Use Case**: Creates grainy, dithered effect
+  - **Opacity Dependent**: Effect strength depends on opacity
+  - **Professional Practice**: Use dissolve for texture effects
+
+- **Multiply Mode**: Darkens image by multiplying colors
+  - **Darkening Effect**: Multiplies base and blend colors, always darkens
+  - **Mathematical**: Result = Base × Blend (normalized to 0-255 range)
+  - **Shadows**: Perfect for shadows and darkening effects
+  - **Black Preserves**: Black areas remain black, white disappears
+  - **Professional Practice**: Use multiply for realistic shadows and darkening
+
+- **Darken Mode**: Keeps darker pixels
+  - **Comparison**: Compares base and blend, keeps darker value
+  - **Selective Darkening**: Only darkens where blend is darker
+  - **Use Case**: Selective darkening without overall darkening
+  - **Professional Practice**: Use darken for selective effects
+
+- **Color Burn Mode**: Intense darkening with color saturation
+  - **Effect**: Darkens and increases saturation
+  - **Intense**: More intense than multiply
+  - **Use Case**: Dramatic darkening with color boost
+  - **Professional Practice**: Use color burn for dramatic effects
+
+- **Linear Burn Mode**: Linear darkening
+  - **Effect**: Similar to multiply but uses linear calculation
+  - **Smoother**: Can produce smoother gradients
+  - **Use Case**: Alternative to multiply for smoother results
+  - **Professional Practice**: Try linear burn when multiply is too harsh
+
+- **Screen Mode**: Lightens image by inverting and multiplying
+  - **Lightening Effect**: Inverts, multiplies, inverts again (1 - (1-Base) × (1-Blend))
+  - **Highlights**: Perfect for highlights and lightening
+  - **White Preserves**: White areas remain white, black disappears
+  - **Professional Practice**: Use screen for highlights, glows, and lightening
+
+- **Lighten Mode**: Keeps lighter pixels
+  - **Comparison**: Compares base and blend, keeps lighter value
+  - **Selective Lightening**: Only lightens where blend is lighter
+  - **Use Case**: Selective lightening without overall lightening
+  - **Professional Practice**: Use lighten for selective effects
+
+- **Color Dodge Mode**: Intense lightening with color saturation
+  - **Effect**: Lightens and increases saturation
+  - **Intense**: More intense than screen
+  - **Use Case**: Dramatic lightening with color boost
+  - **Professional Practice**: Use color dodge for dramatic highlights
+
+- **Linear Dodge Mode**: Linear lightening
+  - **Effect**: Similar to screen but uses linear calculation
+  - **Smoother**: Can produce smoother gradients
+  - **Use Case**: Alternative to screen for smoother results
+  - **Professional Practice**: Try linear dodge when screen is too harsh
+
+- **Overlay Mode**: Combines multiply and screen based on base
+  - **Contrast Enhancement**: Increases contrast, darkens darks, lightens lights
+  - **Base Dependent**: Uses multiply on dark areas, screen on light areas
+  - **Versatile**: One of most versatile and commonly used modes
+  - **Professional Practice**: Overlay is very versatile, experiment with it
+
+- **Soft Light Mode**: Subtle lighting effect
+  - **Gentle Effect**: Softer version of overlay
+  - **Natural Look**: More natural appearance than overlay
+  - **Use Case**: Subtle contrast enhancement, natural lighting
+  - **Professional Practice**: Use soft light for subtle, natural effects
+
+- **Hard Light Mode**: Strong lighting effect
+  - **Strong Effect**: Stronger version of overlay
+  - **Dramatic**: Creates dramatic, high-contrast effects
+  - **Use Case**: Dramatic lighting, high-contrast effects
+  - **Professional Practice**: Use hard light for dramatic, high-impact effects
+
+- **Vivid Light Mode**: Extreme contrast effect
+  - **Effect**: Extreme version of overlay/soft light
+  - **Very Strong**: Very strong contrast enhancement
+  - **Use Case**: Extreme effects, high-impact images
+  - **Professional Practice**: Use vivid light sparingly for extreme effects
+
+- **Linear Light Mode**: Linear contrast effect
+  - **Effect**: Linear version of hard light
+  - **Smoother**: Smoother than hard light
+  - **Use Case**: Strong but smooth contrast enhancement
+  - **Professional Practice**: Use linear light when hard light is too harsh
+
+- **Pin Light Mode**: Replaces midtones
+  - **Effect**: Replaces midtones based on blend layer
+  - **Unique**: Creates unique posterization-like effects
+  - **Use Case**: Creative effects, posterization
+  - **Professional Practice**: Experiment with pin light for creative effects
+
+- **Hard Mix Mode**: Extreme posterization
+  - **Effect**: Creates extreme posterization, only pure colors
+  - **Use Case**: Extreme creative effects
+  - **Professional Practice**: Use hard mix for extreme artistic effects
+
+- **Difference Mode**: Inverts based on difference
+  - **Inversion Effect**: Subtracts blend from base, creates inversion
+  - **Mathematical**: Result = |Base - Blend|
+  - **Creative**: Useful for creative, abstract effects
+  - **Use Case**: Finding differences, creative inversions
+  - **Professional Practice**: Experiment with difference mode for creative work
+
+- **Exclusion Mode**: Softer version of difference
+  - **Effect**: Similar to difference but softer
+  - **Softer**: Less extreme than difference
+  - **Use Case**: Softer inversion effects
+  - **Professional Practice**: Use exclusion when difference is too extreme
+
+- **Subtract Mode**: Subtracts blend from base
+  - **Effect**: Subtracts blend color from base color
+  - **Darkening**: Always darkens result
+  - **Use Case**: Darkening effects, creative compositing
+  - **Professional Practice**: Use subtract for darkening and creative effects
+
+- **Grain Extract Mode**: Extracts grain/texture
+  - **Effect**: Extracts texture/grain from image
+  - **Use Case**: Texture extraction, grain removal
+  - **Professional Practice**: Use grain extract for texture work
+
+- **Grain Merge Mode**: Merges grain/texture
+  - **Effect**: Merges texture/grain into image
+  - **Use Case**: Adding texture, grain effects
+  - **Professional Practice**: Use grain merge for texture addition
+
+- **Divide Mode**: Divides base by blend
+  - **Effect**: Divides base color by blend color
+  - **Lightening**: Generally lightens result
+  - **Use Case**: Lightening effects, creative compositing
+  - **Professional Practice**: Use divide for lightening and creative effects
+
+- **Hue Mode**: Changes hue only
+  - **Effect**: Applies blend layer's hue to base layer
+  - **Preserves**: Preserves base layer's saturation and luminosity
+  - **Use Case**: Color changes without affecting brightness
+  - **Professional Practice**: Use hue mode for color adjustments
+
+- **Saturation Mode**: Changes saturation only
+  - **Effect**: Applies blend layer's saturation to base layer
+  - **Preserves**: Preserves base layer's hue and luminosity
+  - **Use Case**: Saturation adjustments without color shift
+  - **Professional Practice**: Use saturation mode for saturation control
+
+- **Color Mode**: Changes color (hue and saturation)
+  - **Effect**: Applies blend layer's hue and saturation to base layer
+  - **Preserves**: Preserves base layer's luminosity (brightness)
+  - **Use Case**: Color changes while preserving brightness
+  - **Professional Practice**: Use color mode for colorizing and color adjustments
+
+- **Value Mode**: Changes luminosity only
+  - **Effect**: Applies blend layer's luminosity to base layer
+  - **Preserves**: Preserves base layer's hue and saturation
+  - **Use Case**: Brightness adjustments without color shift
+  - **Professional Practice**: Use value mode for brightness control
+
+- **Blend Mode and Opacity**: Combining blend modes with opacity
+  - **Interaction**: Opacity affects blend mode strength
+  - **Fine-Tuning**: Lower opacity for subtler blend mode effects
+  - **Professional Practice**: Combine blend modes with opacity for precise control
+
+- **Blend Mode Workflow**: Best practices for using blend modes
+  - **Experiment**: Try different modes to see effects
+  - **Start Subtle**: Start with subtle modes (soft light, overlay)
+  - **Adjust Opacity**: Fine-tune with opacity slider
+  - **Professional Practice**: Develop workflow for testing and applying blend modes
+
+- **Blend Mode Selection Strategy**: Choosing the right mode
+  - **Darken Needs**: Use multiply, darken, color burn for darkening
+  - **Lighten Needs**: Use screen, lighten, color dodge for lightening
+  - **Contrast Needs**: Use overlay, soft light, hard light for contrast
+  - **Color Needs**: Use color, hue, saturation modes for color work
+  - **Professional Practice**: Learn which mode category fits your needs
+
+- **Blend Mode and Layer Order**: How order affects blending
+  - **Blend Target**: Blend modes blend with layers below
+  - **Order Matters**: Changing layer order changes blend results
+  - **Experiment**: Try different orders with same blend mode
+  - **Professional Practice**: Understand order's critical impact on blending
+
+- **Blend Mode Opacity Interaction**: Fine-tuning blend strength
+  - **Reduced Opacity**: Lower opacity makes blend mode more subtle
+  - **Full Opacity**: 100% opacity gives full blend mode effect
+  - **Fine Control**: Use opacity for precise blend mode control
+  - **Professional Practice**: Always adjust opacity to fine-tune blend modes
+
+- **Blend Mode Performance**: Performance considerations
+  - **Complex Modes**: Some modes are more computationally intensive
+  - **Many Layers**: Multiple blend mode layers can slow rendering
+  - **Optimization**: Merge finalized blend mode layers when possible
+  - **Professional Practice**: Balance blend mode usage with performance
+
+- **Blend Mode Troubleshooting**: Common issues
+  - **No Effect**: Check if layer has content and opacity
+  - **Wrong Result**: Verify layer order and blend mode selection
+  - **Too Strong**: Reduce opacity or try softer blend mode
+  - **Too Weak**: Increase opacity or try stronger blend mode
+  - **Professional Practice**: Know how to troubleshoot blend mode issues
+
+- **Blend Mode Combinations**: Using multiple blend modes
+  - **Layer Stacking**: Stack multiple blend mode layers for complex effects
+  - **Order Matters**: Order of blend mode layers affects final result
+  - **Experiment**: Try different combinations and orders
+  - **Professional Practice**: Master combining blend modes for advanced effects
+
+- **Blend Mode Presets**: Creating reusable blend mode setups
+  - **Save Combinations**: Note successful blend mode combinations
+  - **Document**: Document opacity values that work well
+  - **Reuse**: Apply similar setups to similar projects
+  - **Professional Practice**: Build library of effective blend mode combinations
+
+- **Blend Mode Mathematics**: Understanding the math (advanced)
+  - **Normalized Values**: Colors normalized to 0-1 range for calculations
+  - **Multiplication**: Multiply mode: result = base × blend
+  - **Screen**: Screen mode: result = 1 - (1-base) × (1-blend)
+  - **Overlay**: Overlay: if base < 0.5 then multiply, else screen
+  - **Professional Practice**: Understanding math helps predict results
+
+- **Blend Mode Color Theory**: Color theory behind blending
+  - **Additive**: Screen mode is additive (light + light = brighter)
+  - **Subtractive**: Multiply mode is subtractive (dark + dark = darker)
+  - **Contrast**: Overlay modes increase contrast
+  - **Professional Practice**: Understand color theory for better blend mode use
+
+- **Blend Mode Mathematical Formulas**: Complete formula reference
+  - **Normal**: result = blend (no calculation)
+  - **Multiply**: result = (base × blend) / 255
+  - **Screen**: result = 255 - ((255-base) × (255-blend)) / 255
+  - **Overlay**: result = base < 128 ? (2 × multiply) : (2 × screen - 255)
+  - **Soft Light**: result = base < 128 ? (base - (base × (255-2×blend) × (255-base)) / (255×255)) : (base + (base × (2×blend-255) × (255-base)) / (255×255))
+  - **Hard Light**: result = blend < 128 ? (2 × multiply) : (2 × screen - 255)
+  - **Difference**: result = |base - blend|
+  - **Professional Practice**: Understanding formulas helps predict results
+
+- **Blend Mode Channel Calculations**: Per-channel blending
+  - **RGB Channels**: Each channel (R, G, B) calculated separately
+  - **Alpha Channel**: Alpha compositing happens after blend mode
+  - **Independent**: Each color channel blends independently
+  - **Professional Practice**: Understand per-channel calculations
+
+- **Blend Mode Opacity Mathematics**: How opacity affects blending
+  - **Formula**: Final = (BlendResult × Opacity) + (Base × (1-Opacity))
+  - **Reduced Opacity**: Opacity reduces blend mode effect linearly
+  - **Combined**: Blend mode calculated first, then opacity applied
+  - **Professional Practice**: Understand opacity-blend mode interaction
+
+- **Blend Mode Performance Analysis**: Performance characteristics
+  - **Fast Modes**: Normal, multiply, screen (simple calculations)
+  - **Medium Modes**: Overlay, soft light (conditional calculations)
+  - **Slow Modes**: Complex modes with multiple operations
+  - **Optimization**: Use faster modes when possible
+  - **Professional Practice**: Consider performance when choosing modes
+
+- **Blend Mode Visual Comparison**: Comparing modes visually
+  - **Test Image**: Create test image with gradients
+  - **Side-by-Side**: Compare modes side-by-side
+  - **Documentation**: Document which modes work for your needs
+  - **Professional Practice**: Build visual reference of blend modes
+
+- **Blend Mode Workflow Optimization**: Efficient blend mode workflow
+  - **Quick Preview**: Use quick preview to test modes
+  - **Opacity Adjustment**: Fine-tune with opacity after choosing mode
+  - **Layer Duplication**: Duplicate layer to try different modes
+  - **Professional Practice**: Develop efficient testing workflow
+
+- **Blend Mode Advanced Techniques**: Professional techniques
+  - **Multiple Modes**: Stack multiple blend mode layers
+  - **Mode Combinations**: Combine modes for unique effects
+  - **Opacity Gradients**: Use masks for opacity gradients
+  - **Professional Practice**: Master advanced blend mode techniques
+
+- **Blend Mode Troubleshooting Guide**: Comprehensive troubleshooting
+  - **No Visible Effect**: Check opacity, layer content, blend mode selection
+  - **Unexpected Colors**: Check layer order, base layer colors
+  - **Too Strong/Weak**: Adjust opacity, try different mode
+  - **Performance Issues**: Reduce layer count, use faster modes
+  - **Professional Practice**: Know troubleshooting steps for all issues
+
+- **Blend Mode Reference Table**: Quick reference guide
+  - **Darkening Modes**: Multiply, Darken, Color Burn, Linear Burn
+  - **Lightening Modes**: Screen, Lighten, Color Dodge, Linear Dodge
+  - **Contrast Modes**: Overlay, Soft Light, Hard Light, Vivid Light
+  - **Inversion Modes**: Difference, Exclusion
+  - **Component Modes**: Hue, Saturation, Color, Value
+  - **Professional Practice**: Keep reference table for quick lookup
+
+- **Blend Mode Best Practices Summary**: Complete best practices
+  - **Experiment First**: Always experiment before committing
+  - **Start Subtle**: Begin with subtle modes and opacity
+  - **Fine-Tune**: Adjust opacity to perfect effect
+  - **Document**: Document successful combinations
+  - **Professional Practice**: Make experimentation and documentation habits
+
+- **Blend Mode Application Step-by-Step Tutorial**: Complete application process
+  - **Step 1**: Select layer to apply blend mode to
+  - **Step 2**: Open blend mode dropdown in Layers dock
+  - **Step 3**: Preview different modes by hovering (if supported)
+  - **Step 4**: Select desired blend mode
+  - **Step 5**: Adjust opacity slider to fine-tune effect
+  - **Step 6**: Compare result with original (toggle visibility)
+  - **Step 7**: Adjust opacity further if needed
+  - **Professional Practice**: Follow this process for every blend mode application
+
+- **Blend Mode Testing Workflow**: Systematic testing approach
+  - **Step 1**: Duplicate layer before testing blend modes
+  - **Step 2**: Try modes from appropriate category (darken, lighten, contrast)
+  - **Step 3**: Test each mode with different opacity values
+  - **Step 4**: Compare results side-by-side
+  - **Step 5**: Document which modes work best
+  - **Step 6**: Apply best mode to original layer
+  - **Step 7**: Delete test duplicates
+  - **Professional Practice**: Use systematic testing for best results
+
+- **Blend Mode Combination Tutorial**: Combining multiple blend modes
+  - **Step 1**: Start with base layer
+  - **Step 2**: Add first effect layer with blend mode (e.g., Multiply for shadows)
+  - **Step 3**: Adjust opacity of first effect layer
+  - **Step 4**: Add second effect layer with different blend mode (e.g., Screen for highlights)
+  - **Step 5**: Adjust opacity of second effect layer
+  - **Step 6**: Add third effect layer if needed (e.g., Overlay for contrast)
+  - **Step 7**: Fine-tune all opacities together
+  - **Professional Practice**: Layer blend modes for complex effects
+
+- **Blend Mode Real-World Examples**: Practical application examples
+  - **Example 1 - Photo Enhancement**: Base photo → Overlay layer (30% opacity) for contrast
+  - **Example 2 - Shadow Creation**: Object layer → Multiply shadow layer (40% opacity)
+  - **Example 3 - Glow Effect**: Object layer → Screen glow layer (25% opacity)
+  - **Example 4 - Color Grading**: Base → Color mode adjustment layer (50% opacity)
+  - **Example 5 - Texture Overlay**: Base → Overlay texture layer (60% opacity)
+  - **Professional Practice**: Study and adapt real-world examples
+
+- **Blend Mode Troubleshooting Step-by-Step**: Systematic problem solving
+  - **Problem**: No visible effect
+  - **Step 1**: Check layer has content (not empty)
+  - **Step 2**: Check opacity is not 0%
+  - **Step 3**: Check blend mode is not Normal
+  - **Step 4**: Check layer is visible (eye icon)
+  - **Step 5**: Check layer order (blend modes work with layers below)
+  - **Problem**: Effect too strong
+  - **Solution**: Reduce opacity, try softer blend mode
+  - **Problem**: Effect too weak
+  - **Solution**: Increase opacity, try stronger blend mode
+  - **Professional Practice**: Follow troubleshooting steps systematically
+
+- **Blend Mode Performance Optimization Guide**: Optimizing performance
+  - **Tip 1**: Use faster blend modes when possible (Normal, Multiply, Screen)
+  - **Tip 2**: Reduce layer count by merging finalized blend mode layers
+  - **Tip 3**: Use lower opacity to reduce calculation intensity
+  - **Tip 4**: Disable preview during testing to improve speed
+  - **Tip 5**: Merge blend mode layers when effect is finalized
+  - **Professional Practice**: Optimize performance without sacrificing quality
+
+- **Blend Mode Documentation Template**: Documenting successful combinations
+  - **Template Fields**: Mode name, opacity value, use case, result description
+  - **Example Entry**: "Overlay mode, 40% opacity, photo contrast enhancement, natural boost"
+  - **Organization**: Organize by category (darken, lighten, contrast, color)
+  - **Reference**: Build library of successful combinations
+  - **Professional Practice**: Document all successful blend mode uses
+
+- **Blend Mode Quick Reference Card**: At-a-glance reference
+  - **Darken Category**: Multiply, Darken, Color Burn, Linear Burn
+  - **Lighten Category**: Screen, Lighten, Color Dodge, Linear Dodge
+  - **Contrast Category**: Overlay, Soft Light, Hard Light, Vivid Light
+  - **Inversion Category**: Difference, Exclusion
+  - **Component Category**: Hue, Saturation, Color, Value
+  - **Professional Practice**: Keep reference card handy for quick lookup
+
+- **Blend Mode Advanced Techniques Tutorial**: Professional techniques
+  - **Technique 1 - Gradient Blend**: Use gradient mask with blend mode for smooth transitions
+  - **Technique 2 - Multiple Modes**: Stack multiple blend mode layers for complex effects
+  - **Technique 3 - Selective Blending**: Use masks to apply blend mode selectively
+  - **Technique 4 - Group Blending**: Apply blend mode to entire group
+  - **Technique 5 - Animation**: Animate blend mode opacity for transitions
+  - **Professional Practice**: Master advanced techniques for professional work
+
+- **Blend Mode Comparison Workflow**: Comparing modes effectively
+  - **Step 1**: Create test image with representative content
+  - **Step 2**: Duplicate base layer multiple times
+  - **Step 3**: Apply different blend modes to each duplicate
+  - **Step 4**: Arrange layers side-by-side or toggle visibility
+  - **Step 5**: Compare results visually
+  - **Step 6**: Document which modes work best for your content
+  - **Professional Practice**: Use comparison workflow to learn blend modes
+
+- **Blend Mode Opacity Fine-Tuning Guide**: Precise opacity adjustment
+  - **Method 1**: Use opacity slider for visual adjustment
+  - **Method 2**: Type exact percentage for precision
+  - **Method 3**: Use arrow keys if supported for fine increments
+  - **Method 4**: Test multiple opacity values (10%, 20%, 30%, etc.)
+  - **Method 5**: Compare opacity values side-by-side
+  - **Professional Practice**: Fine-tune opacity for perfect effect
+
+- **Blend Mode Workflow Checklist**: Complete workflow reference
+  - **✓ Duplicate layer**: Before testing blend modes
+  - **✓ Test categories**: Try modes from appropriate category
+  - **✓ Adjust opacity**: Fine-tune with opacity slider
+  - **✓ Compare results**: Toggle visibility to compare
+  - **✓ Document success**: Note successful combinations
+  - **✓ Apply to original**: Use best result on original layer
+  - **Professional Practice**: Use checklist for consistent workflow
 
 ### Practical Examples of Each Blend Mode
 
+See blending modes in action with real-world applications:
+
+- **Normal Mode Example**: Standard layer combination
+  - **Use Case**: Standard compositing, placing elements together
+  - **Workflow**: Place element on layer, use normal mode
+  - **Result**: Normal layer appearance, no special blending
+  - **Professional Practice**: Default for most work, use when no special effect needed
+
+- **Multiply Mode Example**: Darkening shadows
+  - **Use Case**: Add realistic shadow to object
+  - **Workflow**: Create shadow shape, fill with dark color, set to multiply
+  - **Result**: Darker, more realistic shadow that blends naturally
+  - **Opacity**: Often reduce opacity to 30-50% for realistic shadows
+  - **Professional Practice**: Multiply for realistic shadows, adjust opacity for subtlety
+
+- **Screen Mode Example**: Adding highlights and glows
+  - **Use Case**: Add glow, highlights, or light effects
+  - **Workflow**: Create highlight shape, fill with light color, set to screen
+  - **Result**: Brighter, glowing effect that lightens image
+  - **Opacity**: Often reduce opacity to 20-40% for subtle glows
+  - **Professional Practice**: Screen for light effects, glows, and highlights
+
+- **Overlay Mode Example**: Enhancing contrast and texture
+  - **Use Case**: Enhance texture, contrast, or add depth
+  - **Workflow**: Duplicate layer, apply overlay mode, adjust opacity
+  - **Result**: Increased contrast and depth, more vibrant image
+  - **Opacity**: Often use 30-70% opacity for subtle enhancement
+  - **Professional Practice**: Overlay for texture enhancement and contrast boost
+
+- **Soft Light Example**: Subtle color grading and enhancement
+  - **Use Case**: Subtle color adjustments, natural enhancement
+  - **Workflow**: Create adjustment layer, set to soft light, adjust opacity
+  - **Result**: Natural-looking enhancement without harshness
+  - **Opacity**: Often use 40-60% for natural look
+  - **Professional Practice**: Soft light for subtle, natural effects
+
+- **Hard Light Example**: Dramatic lighting and effects
+  - **Use Case**: Create dramatic lighting, high-contrast effects
+  - **Workflow**: Create light source layer, set to hard light
+  - **Result**: Strong, dramatic effect with high contrast
+  - **Opacity**: Often use 20-50% to avoid overdoing effect
+  - **Professional Practice**: Hard light for dramatic, high-impact looks
+
+- **Difference Example**: Creative inversions and effects
+  - **Use Case**: Create abstract effects, find differences between images
+  - **Workflow**: Place layer with different content, set to difference
+  - **Result**: Inverted, abstract appearance with unique colors
+  - **Use Case 2**: Compare two versions of same image to find changes
+  - **Professional Practice**: Difference for creative work and image comparison
+
+- **Color Mode Example**: Color adjustments and colorizing
+  - **Use Case**: Change object color while preserving brightness
+  - **Workflow**: Create colored layer, set to color mode, adjust opacity
+  - **Result**: Color changed, brightness and detail preserved
+  - **Opacity**: Use 50-100% depending on desired color strength
+  - **Professional Practice**: Color mode for colorizing and color changes
+
+- **Hue Mode Example**: Changing hue only
+  - **Use Case**: Change color hue without affecting saturation or brightness
+  - **Workflow**: Create layer with desired hue, set to hue mode
+  - **Result**: Hue changed, saturation and brightness unchanged
+  - **Professional Practice**: Use hue mode for precise hue adjustments
+
+- **Saturation Mode Example**: Adjusting saturation
+  - **Use Case**: Increase or decrease saturation without color shift
+  - **Workflow**: Create gray layer, set to saturation mode, adjust opacity
+  - **Result**: Saturation adjusted, hue and brightness unchanged
+  - **Professional Practice**: Use saturation mode for saturation control
+
+- **Value Mode Example**: Adjusting brightness
+  - **Use Case**: Adjust brightness without affecting color
+  - **Workflow**: Create light/dark layer, set to value mode
+  - **Result**: Brightness adjusted, hue and saturation unchanged
+  - **Professional Practice**: Use value mode for brightness control
+
+- **Multiply for Shadows Workflow**: Detailed shadow creation
+  - **Step 1**: Create new layer below object
+  - **Step 2**: Draw shadow shape with soft brush
+  - **Step 3**: Fill with dark color (not pure black)
+  - **Step 4**: Set blend mode to multiply
+  - **Step 5**: Adjust opacity to 30-50%
+  - **Step 6**: Apply Gaussian blur for soft edges
+  - **Professional Practice**: Follow this workflow for realistic shadows
+
+- **Screen for Glows Workflow**: Detailed glow creation
+  - **Step 1**: Duplicate layer or create new layer
+  - **Step 2**: Apply Gaussian blur to create glow
+  - **Step 3**: Set blend mode to screen
+  - **Step 4**: Adjust opacity to 20-40%
+  - **Step 5**: Fine-tune blur radius and opacity
+  - **Professional Practice**: Follow this workflow for realistic glows
+
+- **Overlay for Enhancement Workflow**: Contrast enhancement
+  - **Step 1**: Duplicate base layer
+  - **Step 2**: Set duplicate to overlay mode
+  - **Step 3**: Adjust opacity to 30-50%
+  - **Step 4**: Optionally apply sharpening or texture
+  - **Step 5**: Fine-tune for desired effect
+  - **Professional Practice**: Use this workflow for image enhancement
+
+- **Color Mode for Colorizing Workflow**: Colorizing grayscale
+  - **Step 1**: Start with grayscale image
+  - **Step 2**: Create new layer above
+  - **Step 3**: Paint with desired colors
+  - **Step 4**: Set layer to color mode
+  - **Step 5**: Adjust opacity for color strength
+  - **Professional Practice**: Use this workflow for colorizing photos
+
+- **Combining Blend Modes**: Using multiple blend modes together
+  - **Multiple Layers**: Use different blend modes on different layers
+  - **Layering Effects**: Stack effects for complex results
+  - **Example**: Multiply for shadows, screen for highlights, overlay for contrast
+  - **Professional Practice**: Combine blend modes for professional results
+
 ### Linked Layers: Moving and Transforming Together
+
+Link layers to transform them together, maintaining relationships:
+
+- **What Are Linked Layers**: Layers that move and transform together
+  - **Synchronized Movement**: All linked layers move together when one is moved
+  - **Synchronized Transform**: Transform operations affect all linked layers
+  - **Link Icon**: Link icon (chain link) appears in Layers dock when linked
+  - **Professional Practice**: Link related layers that should maintain relative positions
+
+- **Link Icon Location**: Finding the link control
+  - **Layers Dock**: Link icon appears between layer thumbnail and layer name
+  - **Visual Indicator**: Click to toggle link on/off
+  - **Multiple Links**: Each layer can be linked independently
+  - **Professional Practice**: Know where link icon is located
+
+- **Linking Layers**: Create links between layers
+  - **Click Link Icon**: Click empty link icon to create link
+  - **Multiple Links**: Link multiple layers together (all move together)
+  - **Select Multiple**: Can select multiple layers and link them all at once
+  - **Professional Practice**: Link layers that should move together as unit
+
+- **Linking Workflow**: How to link layers
+  - **Step 1**: Select layer(s) you want to link
+  - **Step 2**: Click link icon for each layer
+  - **Step 3**: All linked layers now move together
+  - **Professional Practice**: Link layers before positioning to maintain relationships
+
+- **Moving Linked Layers**: Move all linked layers together
+  - **Synchronized Movement**: Moving any linked layer moves all linked layers
+  - **Relative Position**: Linked layers maintain relative positions to each other
+  - **Transform Together**: Scale, rotate, and other transforms affect all
+  - **Professional Practice**: Use for grouped elements that should stay together
+
+- **Transforming Linked Layers**: Transform operations on linked layers
+  - **Scale**: Scaling one linked layer scales all
+  - **Rotate**: Rotating one linked layer rotates all
+  - **Move**: Moving one linked layer moves all
+  - **Professional Practice**: Transform linked layers as single unit
+
+- **Unlinking Layers**: Remove links when needed
+  - **Click Link Icon**: Click filled link icon to unlink
+  - **Independent Movement**: Layers move independently again after unlinking
+  - **Preserves Position**: Unlinking doesn't change current positions
+  - **Professional Practice**: Unlink when layers no longer need to move together
+
+- **Use Cases for Linking**: When to use linked layers
+  - **Text and Effects**: Link text layer with drop shadow or outline effects
+  - **Multiple Elements**: Link related elements that form single object
+  - **UI Elements**: Link UI elements that should move together
+  - **Character Parts**: Link character parts (head, body, limbs) for animation
+  - **Professional Practice**: Link logically related layers
+
+- **Text and Shadow Linking**: Common linking scenario
+  - **Scenario**: Text with drop shadow or outline
+  - **Solution**: Link text layer with shadow/outline layers
+  - **Benefit**: Move text and effects together as single unit
+  - **Professional Practice**: Always link text with its effects
+
+- **Linking vs Grouping**: Understanding the difference
+  - **Linking**: Layers move together but remain separate layers
+  - **Grouping**: Layers organized together but don't necessarily move together
+  - **Combination**: Can link layers within groups for complex organization
+  - **Professional Practice**: Use linking for movement, grouping for organization
+
+- **Link Limitations**: What linking doesn't do
+  - **Not Grouping**: Linking doesn't organize layers visually
+  - **Opacity Independent**: Opacity changes don't affect linked layers
+  - **Blend Mode Independent**: Blend mode changes don't affect linked layers
+  - **Professional Practice**: Understand linking only affects movement/transform
+
+- **Linking Workflow Best Practices**: Efficient linking
+  - **Link Early**: Link layers when you create related elements
+  - **Name Convention**: Name linked layers with related names
+  - **Test Movement**: Test linked movement before finalizing
+  - **Professional Practice**: Develop workflow for linking related elements
 
 ### Layer Attributes: Naming, Color Tagging
 
+Organize layers with attributes for efficient workflow:
+
+- **Naming Layers**: Give layers meaningful, descriptive names
+  - **Descriptive Names**: Use clear, descriptive names that indicate purpose
+  - **Right-Click Menu**: Right-click layer → Edit Layer Attributes
+  - **Double-Click**: Double-click layer name to rename quickly
+  - **Professional Practice**: Always name layers immediately upon creation
+
+- **Naming Conventions**: Best practices for naming
+  - **Be Specific**: Use specific names (e.g., "Background Sky" not "Layer 1")
+  - **Be Consistent**: Use consistent naming pattern across project
+  - **Include Purpose**: Include purpose in name (e.g., "Text Title", "Shadow Main")
+  - **Professional Practice**: Develop consistent naming convention
+
+- **Layer Attributes Dialog**: Configure layer properties
+  - **Access**: Right-click layer → Edit Layer Attributes, or double-click layer
+  - **Name Field**: Change layer name in text field
+  - **Color Tag**: Assign color tag from dropdown menu
+  - **Mode**: Can also change blend mode here
+  - **Opacity**: Can adjust opacity here
+  - **Professional Practice**: Use attributes dialog for comprehensive layer setup
+
+- **Color Tagging**: Use colors to organize layers visually
+  - **Visual Organization**: Colors help quickly identify layer categories
+  - **Color Options**: Choose from predefined color palette
+  - **Color Display**: Color appears as stripe next to layer name
+  - **Professional Practice**: Use colors for quick visual organization
+
+- **Color Tag Options**: Available color tags
+  - **No Tag**: No color (default)
+  - **Red, Blue, Green, Yellow**: Primary colors
+  - **Orange, Purple, Brown, Pink**: Secondary colors
+  - **Gray, Black**: Neutral colors
+  - **Professional Practice**: Choose colors that make sense for your workflow
+
+- **Color Tag Use Cases**: When to use color tags
+  - **Categories**: Tag by category (background=blue, text=red, effects=yellow)
+  - **Status**: Tag by status (finished=green, work in progress=orange)
+  - **Priority**: Tag by priority (important=red, secondary=blue)
+  - **Type**: Tag by type (photo=blue, vector=green, text=red)
+  - **Professional Practice**: Develop consistent tagging system
+
+- **Naming and Tagging Workflow**: Efficient organization
+  - **Name First**: Always name layer when creating
+  - **Tag Immediately**: Assign color tag when creating or organizing
+  - **Review Regularly**: Review and update names/tags as project evolves
+  - **Professional Practice**: Make naming and tagging part of creation workflow
+
+- **Layer Attributes Best Practices**: Organize effectively
+  - **Consistent Naming**: Use consistent naming convention throughout project
+  - **Logical Colors**: Use colors logically and consistently
+  - **Update as Needed**: Update names/tags as project changes
+  - **Professional Practice**: Maintain organized structure from start
+
+- **Renaming Multiple Layers**: Efficient renaming
+  - **One at a Time**: Currently must rename layers individually
+  - **Workflow**: Rename as you create to avoid bulk renaming
+  - **Professional Practice**: Rename immediately to avoid accumulation
+
+- **Color Tag Strategy**: Developing color system
+  - **Plan System**: Plan color system before starting project
+  - **Document**: Document your color system for consistency
+  - **Stick to It**: Stick to your color system throughout project
+  - **Professional Practice**: Develop and maintain consistent color tagging system
+
+- **Attributes and Workflow**: Integrating attributes into workflow
+  - **Creation Time**: Name and tag when creating layers
+  - **Organization Time**: Review and update attributes during organization
+  - **Maintenance**: Keep attributes updated as project evolves
+  - **Professional Practice**: Make attributes part of regular workflow
+
 ### Transforming Layers: Move, Rotate, Scale, Flip, Shear
+
+Transform layers to position, size, and orient them precisely:
+
+- **Moving Layers**: Reposition layers on canvas
+  - **Move Tool**: Use Move tool (M) to move layer
+  - **Click and Drag**: Click on layer and drag to new position
+  - **Arrow Keys**: Use arrow keys for precise pixel-by-pixel movement
+  - **Shift+Arrow**: Hold Shift for 10-pixel increments
+  - **Professional Practice**: Move tool is essential, master it
+
+- **Move Tool Options**: Configuring move tool
+  - **Tool Options**: Access tool options in Tool Options dock
+  - **Move**: Choose what to move (layer, selection, path)
+  - **Pick**: Choose layer or guide to move
+  - **Professional Practice**: Configure move tool for your workflow
+
+- **Rotating Layers**: Rotate layer content
+  - **Rotate Tool**: Use Rotate tool (Shift+R)
+  - **Rotation Handle**: Drag corner handle to rotate
+  - **Rotation Center**: Click to set rotation center point
+  - **Angle Input**: Enter exact angle in tool options
+  - **Professional Practice**: Rotate for proper orientation and composition
+
+- **Rotate Tool Options**: Configuring rotation
+  - **Angle**: Enter exact rotation angle
+  - **Center X/Y**: Set rotation center coordinates
+  - **Interpolation**: Choose interpolation method
+  - **Clipping**: Set clipping behavior
+  - **Professional Practice**: Use precise angles for professional work
+
+- **Scaling Layers**: Resize layer content
+  - **Scale Tool**: Use Scale tool (Shift+T)
+  - **Proportional Scaling**: Hold Shift while dragging for proportional scaling
+  - **Corner Handles**: Drag corner handles to scale
+  - **Edge Handles**: Drag edge handles for non-proportional scaling
+  - **Professional Practice**: Scale carefully to maintain quality
+
+- **Scale Tool Options**: Configuring scaling
+  - **Width/Height**: Enter exact dimensions
+  - **Proportional**: Lock aspect ratio checkbox
+  - **Interpolation**: Choose interpolation method (Cubic, Linear, None, Sinc)
+  - **Quality**: Higher interpolation = better quality but slower
+  - **Professional Practice**: Use appropriate interpolation for quality
+
+- **Interpolation Methods**: Understanding quality options
+  - **None**: No interpolation, fastest but lowest quality
+  - **Linear**: Fast, moderate quality
+  - **Cubic**: Slower, high quality (recommended)
+  - **Sinc (Lanczos)**: Slowest, highest quality
+  - **Professional Practice**: Use Cubic or Sinc for final work, Linear for previews
+
+- **Flipping Layers**: Mirror layer content
+  - **Flip Horizontally**: Layer → Transform → Flip Horizontally (mirrors left-right)
+  - **Flip Vertically**: Layer → Transform → Flip Vertically (mirrors top-bottom)
+  - **Both**: Apply both for 180-degree rotation effect
+  - **Professional Practice**: Flip for mirror effects and composition
+
+- **Flipping Use Cases**: When to flip layers
+  - **Composition**: Flip to improve composition
+  - **Symmetry**: Create symmetrical designs
+  - **Direction**: Change direction of objects or characters
+  - **Professional Practice**: Use flipping for composition and design
+
+- **Shearing Layers**: Skew layer content
+  - **Shear Tool**: Use Shear tool from Tools menu
+  - **Skew Effect**: Creates perspective-like skew effect
+  - **Horizontal Shear**: Drag horizontally to shear horizontally
+  - **Vertical Shear**: Drag vertically to shear vertically
+  - **Professional Practice**: Shear for perspective effects and distortion
+
+- **Shear Tool Options**: Configuring shearing
+  - **Magnitude**: Enter shear magnitude
+  - **Direction**: Choose horizontal or vertical shear
+  - **Interpolation**: Choose interpolation method
+  - **Professional Practice**: Use shear for perspective and creative effects
+
+- **Transform Preview**: Seeing transformations before applying
+  - **Live Preview**: See transformation in real-time
+  - **Commit**: Click Transform button or press Enter to apply
+  - **Cancel**: Press Escape to cancel transformation
+  - **Professional Practice**: Always preview before committing transformations
+
+- **Transform Commit**: Applying transformations
+  - **Transform Button**: Click Transform button in tool options
+  - **Enter Key**: Press Enter to commit transformation
+  - **Escape Key**: Press Escape to cancel
+  - **Professional Practice**: Commit carefully, use undo if needed
+
+- **Multiple Transforms**: Combining transformations
+  - **Sequential**: Apply transforms one after another
+  - **Order Matters**: Order of transforms affects final result
+  - **Workflow**: Plan transform order for desired result
+  - **Professional Practice**: Understand how transform order affects result
+
+- **Transform Workflow**: Best practices for transforming
+  - **Plan First**: Plan transformations before applying
+  - **Preview Always**: Always preview before committing
+  - **Use Appropriate Interpolation**: Choose quality based on needs
+  - **Professional Practice**: Develop efficient transform workflow
+
+- **Transform Quality Considerations**: Maintaining quality
+  - **Avoid Multiple Scales**: Each scale reduces quality, combine operations
+  - **Scale Up Carefully**: Scaling up reduces sharpness
+  - **Scale Down Better**: Scaling down generally maintains quality better
+  - **Professional Practice**: Minimize number of transforms to preserve quality
+
+- **Transform and Resolution**: Resolution considerations
+  - **High Resolution**: Higher resolution layers transform better
+  - **Scale Up**: Start with higher resolution if scaling up needed
+  - **Smart Objects**: Consider using high-res source for scaling
+  - **Professional Practice**: Plan resolution needs before transforming
+
+- **Transform Keyboard Shortcuts**: Quick transform access
+  - **Move**: M key
+  - **Rotate**: Shift+R
+  - **Scale**: Shift+T
+  - **Shear**: Shift+H (if available)
+  - **Professional Practice**: Master keyboard shortcuts for efficiency
+
+- **Transform Precision**: Achieving precise transforms
+  - **Numeric Input**: Use numeric input for exact values
+  - **Grid Snapping**: Use grid and guides for alignment
+  - **Arrow Keys**: Use arrow keys for fine adjustments
+  - **Professional Practice**: Use precise methods for professional work
+
+- **Transform Undo**: Reversing transformations
+  - **Undo**: Ctrl+Z undoes last transform
+  - **History**: Can undo multiple transforms
+  - **Before Commit**: Can cancel before committing
+  - **Professional Practice**: Know undo options before transforming
+
+- **Transform on Groups**: Transforming entire groups
+  - **Select Group**: Select group to transform all layers
+  - **Linked Layers**: Linked layers transform together
+  - **Maintains Relationships**: Relative positions maintained
+  - **Professional Practice**: Transform groups for efficient workflow
+
+- **Transform and Performance**: Performance considerations
+  - **Large Layers**: Large layers take longer to transform
+  - **Preview Speed**: Preview may be slower for large/complex layers
+  - **Commit Time**: Committing takes processing time
+  - **Professional Practice**: Be patient with large layer transforms
+
+- **Transform Troubleshooting**: Common transform issues
+  - **Layer Not Moving**: Check if layer is locked
+  - **Wrong Size**: Check if proportional scaling is enabled
+  - **Blurry Result**: Use better interpolation method
+  - **Wrong Position**: Check transform center point
+  - **Professional Practice**: Know how to troubleshoot transform issues
+
+- **Perspective Transform**: Advanced perspective correction
+  - **Perspective Tool**: Use perspective tool for perspective correction
+  - **Four Corners**: Adjust four corners independently
+  - **Use Case**: Correct perspective distortion in photos
+  - **Professional Practice**: Use perspective transform for photo correction
+
+- **Cage Transform**: Free-form deformation
+  - **Cage Tool**: Use cage transform for free-form deformation
+  - **Control Points**: Place control points around object
+  - **Deform**: Drag points to deform shape
+  - **Professional Practice**: Use cage transform for organic deformations
 
 ### Align and Distribute Tool
 
+Align and distribute layers precisely for professional layouts:
+
+- **Align Tool**: Align layers to each other or canvas
+  - **Tool Access**: Tools → Transform Tools → Align, or Q key
+  - **Alignment Options**: Various alignment options in tool options
+  - **Multiple Layers**: Can align multiple selected layers
+  - **Professional Practice**: Use align for precision in layouts
+
+- **Align Tool Interface**: Understanding the tool
+  - **Tool Options**: Alignment options appear in Tool Options dock
+  - **Visual Buttons**: Click buttons for different alignment types
+  - **Relative To**: Choose what to align relative to
+  - **Professional Practice**: Familiarize yourself with align tool interface
+
+- **Alignment Modes**: Different alignment methods
+  - **Align to Selection**: Align to active selection boundary
+  - **Align to First Item**: Align all to first selected layer
+  - **Align to Image**: Align to canvas edges
+  - **Align to Active Layer**: Align to currently active layer
+  - **Professional Practice**: Choose appropriate mode for your needs
+
+- **Horizontal Alignment Options**: Left, center, right alignment
+  - **Align Left**: Align left edges of layers
+  - **Align Center**: Align centers horizontally
+  - **Align Right**: Align right edges of layers
+  - **Professional Practice**: Use horizontal alignment for side-by-side elements
+
+- **Vertical Alignment Options**: Top, middle, bottom alignment
+  - **Align Top**: Align top edges of layers
+  - **Align Middle**: Align centers vertically
+  - **Align Bottom**: Align bottom edges of layers
+  - **Professional Practice**: Use vertical alignment for stacked elements
+
+- **Combined Alignment**: Using both horizontal and vertical
+  - **Both Axes**: Can align on both axes simultaneously
+  - **Center Both**: Center both horizontally and vertically
+  - **Professional Practice**: Use combined alignment for centered layouts
+
+- **Distribute Tool**: Distribute layers evenly
+  - **Distribution Options**: Even spacing options in tool options
+  - **Horizontal Distribution**: Distribute horizontally with even spacing
+  - **Vertical Distribution**: Distribute vertically with even spacing
+  - **Professional Practice**: Use distribute for even spacing
+
+- **Distribute Options**: Types of distribution
+  - **Distribute Horizontally**: Even horizontal spacing
+  - **Distribute Vertically**: Even vertical spacing
+  - **Spacing**: Automatically calculates even spacing
+  - **Professional Practice**: Use distribute for uniform spacing
+
+- **Align and Distribute Workflow**: Using tools together
+  - **Step 1**: Select layers to align/distribute
+  - **Step 2**: Choose alignment mode (selection, first item, image)
+  - **Step 3**: Click alignment buttons
+  - **Step 4**: Use distribute for even spacing if needed
+  - **Professional Practice**: Follow workflow for precise layouts
+
+- **Align and Distribute Use Cases**: When to use
+  - **UI Elements**: Align UI elements in interface design
+  - **Text Blocks**: Align text blocks for readability
+  - **Objects**: Align multiple objects in composition
+  - **Grid Layouts**: Create grid layouts with distribute
+  - **Professional Practice**: Essential for precise layouts
+
+- **UI Design Alignment**: Aligning interface elements
+  - **Buttons**: Align buttons in rows or columns
+  - **Text Fields**: Align form elements
+  - **Icons**: Align icons in grids
+  - **Professional Practice**: Use align for professional UI layouts
+
+- **Text Alignment**: Aligning text elements
+  - **Headings**: Align headings and subheadings
+  - **Body Text**: Align text blocks
+  - **Captions**: Align captions with images
+  - **Professional Practice**: Use align for typography layouts
+
+- **Object Alignment**: Aligning objects in composition
+  - **Multiple Objects**: Align multiple objects together
+  - **Relative Positioning**: Position objects relative to each other
+  - **Professional Practice**: Use align for object composition
+
+- **Alignment Shortcuts**: Quick alignment
+  - **Tool Access**: Q key for align tool
+  - **Quick Access**: Keep tool options visible for quick access
+  - **Professional Practice**: Master shortcuts for efficiency
+
+- **Alignment Best Practices**: Professional alignment
+  - **Plan Layout**: Plan alignment before aligning
+  - **Use Guides**: Combine with guides for precision
+  - **Check Results**: Always check alignment results
+  - **Professional Practice**: Develop systematic alignment workflow
+
 ### Layer to Image Size and Crop to Content
 
+Adjust layer size to fit needs and optimize composition:
+
+- **Layer to Image Size**: Resize layer to match canvas
+  - **Layer Menu**: Layer → Layer to Image Size
+  - **Expands Layer**: Expands layer boundaries to match canvas size
+  - **Preserves Content**: Existing content remains in same position
+  - **Adds Transparency**: Adds transparent area to fill canvas
+  - **Professional Practice**: Use when layer is smaller than canvas
+
+- **Layer to Image Size Details**: What happens
+  - **Boundary Expansion**: Layer boundaries expand to canvas size
+  - **Content Position**: Content position doesn't change
+  - **Transparent Fill**: New areas are transparent
+  - **No Scaling**: Content itself is not scaled, only boundaries expand
+  - **Professional Practice**: Understand this doesn't scale content
+
+- **When to Use Layer to Image Size**: Appropriate situations
+  - **Small Layers**: When layer is smaller than canvas and you need full coverage
+  - **Full Coverage**: When you need layer to cover entire canvas
+  - **Positioning**: When you want to position content relative to canvas edges
+  - **Professional Practice**: Use when expanding layer boundaries needed
+
+- **Crop to Content**: Remove transparent areas
+  - **Layer Menu**: Layer → Crop to Content
+  - **Removes Transparency**: Removes transparent edges around content
+  - **Minimizes Size**: Reduces layer to smallest size containing content
+  - **Preserves Content**: All content is preserved
+  - **Professional Practice**: Use to remove unnecessary transparent space
+
+- **Crop to Content Details**: What happens
+  - **Boundary Reduction**: Layer boundaries shrink to content bounds
+  - **Content Preserved**: All visible content is preserved
+  - **Transparency Removed**: Transparent edges are removed
+  - **Position May Change**: Layer position may shift to accommodate crop
+  - **Professional Practice**: Understand crop removes transparent areas
+
+- **When to Use Crop to Content**: Appropriate situations
+  - **Excess Transparency**: When layer has large transparent areas
+  - **Optimization**: To optimize layer size and file size
+  - **Cleanup**: To clean up layers with unnecessary space
+  - **Before Export**: Before exporting individual layers
+  - **Professional Practice**: Use to clean up and optimize layers
+
+- **Crop to Content Workflow**: Using crop effectively
+  - **Step 1**: Identify layers with excess transparency
+  - **Step 2**: Select layer to crop
+  - **Step 3**: Use Layer → Crop to Content
+  - **Step 4**: Verify content is preserved
+  - **Professional Practice**: Follow workflow for efficient cropping
+
+- **Size Adjustment Workflow**: Best practices
+  - **Assess Need**: Determine if size adjustment is needed
+  - **Choose Method**: Select appropriate method (expand or crop)
+  - **Consider Impact**: Consider how adjustment affects composition
+  - **Professional Practice**: Adjust size as needed throughout workflow
+
+- **Expanding vs Cropping**: Choosing the right method
+  - **Expand**: Use Layer to Image Size when you need larger boundaries
+  - **Crop**: Use Crop to Content when you need smaller boundaries
+  - **Opposite Operations**: These are opposite operations
+  - **Professional Practice**: Choose based on your needs
+
+- **Size Management**: Managing layer sizes effectively
+  - **Regular Review**: Regularly review layer sizes
+  - **Optimize**: Crop layers that have excess transparency
+  - **Expand**: Expand layers that need full canvas coverage
+  - **Professional Practice**: Maintain optimal layer sizes throughout project
+
+- **Size and Performance**: Performance considerations
+  - **File Size**: Larger layers increase file size
+  - **Memory**: Larger layers use more memory
+  - **Optimization**: Crop unnecessary areas to optimize
+  - **Professional Practice**: Balance size with needs for performance
+
 ### Merging and Flattening Layers
+
+Combine layers when appropriate, understanding the implications:
+
+- **Merging Layers**: Combine specific layers
+  - **Merge Down**: Layer → Merge Down (Ctrl+M) - merges with layer below
+  - **Merge Visible**: Layer → Merge Visible Layers - merges all visible layers
+  - **Merge Layer Group**: Merge entire layer group into single layer
+  - **Professional Practice**: Merge when layers are finalized and no longer need separate editing
+
+- **Merge Down**: Merge layer with layer below
+  - **Method**: Select layer, use Layer → Merge Down or Ctrl+M
+  - **Combines Two**: Combines current layer with layer directly below it
+  - **Result**: Creates single layer with combined content
+  - **Destructive**: Merging is destructive - cannot unmerge
+  - **Professional Practice**: Merge only when certain layers are finalized
+
+- **Merge Down Details**: What gets merged
+  - **Pixel Content**: All pixel content from both layers
+  - **Blend Modes**: Blend modes are applied during merge
+  - **Opacity**: Opacity values are applied during merge
+  - **Layer Masks**: Layer masks are applied during merge
+  - **Professional Practice**: Understand what gets combined
+
+- **Merge Visible**: Merge all visible layers
+  - **Method**: Layer → Merge Visible Layers
+  - **All Visible**: Combines all layers with eye icon visible
+  - **Hidden Preserved**: Hidden layers are not merged, remain separate
+  - **Useful**: Useful for creating composite while preserving hidden layers
+  - **Professional Practice**: Use for final composites while keeping backups
+
+- **Merge Visible Workflow**: Using merge visible effectively
+  - **Step 1**: Hide layers you want to preserve
+  - **Step 2**: Show only layers to merge
+  - **Step 3**: Use Merge Visible Layers
+  - **Step 4**: Hidden layers remain available
+  - **Professional Practice**: Use workflow to create composites safely
+
+- **Merge Layer Group**: Merge entire group
+  - **Method**: Right-click group → Merge Layer Group
+  - **Combines Group**: Merges all layers in group into single layer
+  - **Removes Group**: Group structure is removed
+  - **Use Case**: When group organization no longer needed
+  - **Professional Practice**: Merge groups when structure no longer useful
+
+- **Flattening Image**: Combine all layers into one
+  - **Image Menu**: Image → Flatten Image
+  - **Single Layer**: Creates single background layer
+  - **All Layers**: All layers are combined, regardless of visibility
+  - **Destructive**: Very destructive - removes all layer structure
+  - **Professional Practice**: Flatten only when project is completely finished
+
+- **Flattening Details**: What happens when flattening
+  - **All Layers**: All layers are merged into single background layer
+  - **Transparency**: Transparent areas become white or background color
+  - **Structure Lost**: All layer structure, names, groups are lost
+  - **Cannot Undo**: Cannot easily undo flattening
+  - **Professional Practice**: Understand flattening is very destructive
+
+- **When to Merge or Flatten**: Appropriate situations
+  - **Finalized Work**: When layers are finalized and won't need separate editing
+  - **File Size**: To reduce file size (merged files are smaller)
+  - **Export Preparation**: Before exporting to formats that don't support layers
+  - **Performance**: To improve performance with many layers
+  - **Professional Practice**: Merge/flatten carefully and only when necessary
+
+- **When NOT to Merge/Flatten**: Situations to avoid
+  - **Work in Progress**: Never merge/flatten work in progress
+  - **Need Flexibility**: Don't merge if you might need to edit layers separately
+  - **Complex Projects**: Don't flatten complex projects without backup
+  - **Professional Practice**: Preserve layers as long as possible
+
+- **Merging Considerations**: Important points
+  - **Destructive**: Merging is destructive - cannot unmerge
+  - **Backup**: Always keep backup of layered version before merging
+  - **Save As**: Use "Save As" to create flattened copy, keep original
+  - **Professional Practice**: Always keep layered version as backup
+
+- **Backup Strategy**: Protecting your work
+  - **Save Layered Version**: Always save .xcf file with all layers
+  - **Save As Flattened**: Use "Save As" to create flattened version
+  - **Version Control**: Keep both versions if possible
+  - **Professional Practice**: Never merge/flatten without backup
+
+- **Merge Workflow**: Best practices for merging
+  - **Step 1**: Ensure layers are finalized
+  - **Step 2**: Save layered version as backup
+  - **Step 3**: Use "Save As" to create new file
+  - **Step 4**: Merge or flatten in new file
+  - **Step 5**: Keep original layered file
+  - **Professional Practice**: Follow workflow to protect your work
+
+- **File Format Considerations**: Formats and layers
+  - **XCF Format**: GIMP's native format supports all layer features
+  - **PSD Format**: Photoshop format supports layers
+  - **Other Formats**: Most other formats don't support layers
+  - **Export**: Export flattened version for formats without layer support
+  - **Professional Practice**: Understand format limitations
+
+- **Merging vs Flattening**: Understanding the difference
+  - **Merging**: Combines specific layers, others remain
+  - **Flattening**: Combines ALL layers into one
+  - **Flexibility**: Merging preserves some structure, flattening removes all
+  - **Professional Practice**: Choose appropriate method based on needs
+
+- **Performance and Merging**: Performance considerations
+  - **Many Layers**: Many layers can slow down GIMP
+  - **Merge Strategically**: Merge layers that are finalized to improve performance
+  - **Keep Essential**: Keep layers you might need to edit
+  - **Professional Practice**: Balance performance with flexibility
+
+- **Merge Down Details**: Technical details of merge down
+  - **Blend Mode Applied**: Blend mode of top layer is applied during merge
+  - **Opacity Applied**: Opacity values are combined mathematically
+  - **Layer Masks Applied**: Layer masks are applied before merging
+  - **Result Layer**: Result takes name and properties of bottom layer
+  - **Professional Practice**: Understand what happens during merge
+
+- **Merge Visible Details**: Technical details of merge visible
+  - **Only Visible**: Only layers with eye icon are merged
+  - **Order Preserved**: Merging happens in layer order (bottom to top)
+  - **Blend Modes**: All blend modes are applied in order
+  - **Result Position**: Result appears at position of top visible layer
+  - **Professional Practice**: Understand merge visible behavior
+
+- **Flattening Process**: Step-by-step flattening process
+  - **Step 1**: All visible layers merged bottom to top
+  - **Step 2**: Hidden layers discarded (unless configured otherwise)
+  - **Step 3**: Transparent areas filled with background color
+  - **Step 4**: Single background layer created
+  - **Step 5**: All layer structure removed
+  - **Professional Practice**: Understand flattening process completely
+
+- **Merge and File Size**: File size impact
+  - **Layered Files**: XCF files with many layers are large
+  - **Merged Files**: Merged files are significantly smaller
+  - **Storage**: Merging reduces storage requirements
+  - **Professional Practice**: Consider file size when deciding to merge
+
+- **Merge and Undo History**: Undo considerations
+  - **Undo Limit**: Undo history has limits
+  - **After Merge**: Can undo merge if within undo limit
+  - **After Flatten**: Flattening may clear undo history
+  - **Professional Practice**: Save before major merge/flatten operations
+
+- **Selective Merging**: Strategic merging approach
+  - **Merge Sections**: Merge related layers in sections
+  - **Keep Structure**: Maintain some layer structure
+  - **Balance**: Balance between organization and performance
+  - **Professional Practice**: Use selective merging for optimal workflow
+
+- **Merge and Export**: Export considerations
+  - **Format Support**: Some formats require flattening
+  - **Export Options**: GIMP can flatten on export automatically
+  - **Keep Original**: Always keep original layered file
+  - **Professional Practice**: Use export flattening, keep layered original
+
+- **Merge Troubleshooting**: Common merge issues
+  - **Unexpected Results**: Check layer order and blend modes
+  - **Missing Content**: Verify all layers are visible
+  - **Wrong Colors**: Check blend modes and opacity
+  - **Professional Practice**: Know how to troubleshoot merge issues
+
+- **Merge Best Practices Summary**: Key principles
+  - **Always Backup**: Never merge without backup
+  - **Merge Strategically**: Only merge when necessary
+  - **Preserve Flexibility**: Keep layers as long as possible
+  - **Document Structure**: Document layer structure before merging
+  - **Professional Practice**: Make safe merging habits automatic
+
+- **Advanced Merge Techniques**: Professional merge strategies
+  - **Merge to New Layer**: Create new layer, merge visible to it
+  - **Merge Copies**: Duplicate layers before merging for safety
+  - **Merge Groups**: Merge groups to simplify structure
+  - **Professional Practice**: Use advanced techniques for complex projects
 
 ## Channels and Advanced Masking
 
