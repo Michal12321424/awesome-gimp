@@ -19607,19 +19607,2888 @@ The true power of GIMP's navigation system lies not in individual tools, but in 
 
 ## Palettes, Swatches, and Color Picking
 
+- **Introduction**: Understanding color management tools in GIMP
+  - **Overview**: Comprehensive color management in GIMP
+    - **Purpose**: Color tools enable efficient color selection and management
+    - **Scope**: Tools cover selection, organization, and conversion
+    - **Integration**: All tools work together seamlessly
+    - **Professional Practice**: Master color tools for efficient workflow
+  - **Color Tools**: GIMP provides comprehensive color selection and management tools
+    - **Color Picker**: Tool for sampling colors from images
+      - **Function**: Sample colors directly from images
+      - **Precision**: Multiple sampling modes for accuracy
+      - **Integration**: Works with all color tools
+      - **Professional Practice**: Master Color Picker for color sampling
+    - **Swatches**: Predefined color collections for quick access
+      - **Function**: Quick access to frequently used colors
+      - **Organization**: Organize colors for projects
+      - **Efficiency**: Faster than manual color selection
+      - **Professional Practice**: Build comprehensive swatch libraries
+    - **Palettes**: Organized color sets for projects
+      - **Function**: Save and load color collections
+      - **Organization**: Organize by project, brand, or style
+      - **Sharing**: Share palettes with team members
+      - **Professional Practice**: Create and maintain palette libraries
+    - **Color Editor**: Comprehensive color selection and editing
+      - **Function**: Precise color selection and editing
+      - **Methods**: Multiple selection methods (wheel, sliders, numeric)
+      - **Conversion**: Convert between color models
+      - **Professional Practice**: Master Color Editor for all color work
+    - **Color History**: Automatic tracking of recent colors
+      - **Function**: Remembers recently used colors
+      - **Efficiency**: Quick access to recent colors
+      - **Automatic**: No manual setup required
+      - **Professional Practice**: Use Color History for color reuse
+    - **Professional Practice**: Master color tools for efficient workflow
+      - **Learning**: Learn all color tools thoroughly
+      - **Integration**: Understand how tools work together
+      - **Professional Practice**: Master all tools for professional work
+  - **Workflow Integration**: Color tools integrate throughout GIMP workflow
+    - **Selection**: Choose colors for painting, filling, and effects
+      - **Painting**: Select colors for Brush tool
+        - **Method**: Select foreground color, use Brush tool
+          - **Step 1**: Select color using any color tool
+          - **Step 2**: Activate Brush tool
+          - **Step 3**: Paint with selected color
+          - **Professional Practice**: Integrate color selection into painting
+        - **Color Picker Integration**: Sample colors while painting
+          - **Method**: Press O to activate Color Picker, sample color
+          - **Efficiency**: Quick color sampling during painting
+          - **Professional Practice**: Use Color Picker during painting
+        - **Swatches Integration**: Quick color access while painting
+          - **Method**: Click swatch to change color, continue painting
+          - **Efficiency**: Fast color switching
+          - **Professional Practice**: Use swatches for painting
+        - **Professional Practice**: Integrate color selection into all work
+      - **Filling**: Select colors for Bucket Fill
+        - **Method**: Select foreground/background color, use Bucket Fill
+          - **Step 1**: Select fill color
+          - **Step 2**: Activate Bucket Fill tool
+          - **Step 3**: Click to fill area
+          - **Professional Practice**: Use color tools for filling
+        - **Color Matching**: Match colors for seamless fills
+          - **Method**: Use Color Picker to sample target color
+          - **Purpose**: Match existing colors for seamless fills
+          - **Professional Practice**: Match colors for fills
+        - **Gradient Fills**: Use foreground/background for gradients
+          - **Method**: Set foreground and background colors
+          - **Purpose**: Create gradients between colors
+          - **Professional Practice**: Use color tools for gradients
+      - **Effects**: Select colors for filters and effects
+        - **Color Filters**: Apply color-based filters
+          - **Method**: Select colors, apply color filters
+          - **Examples**: Colorize, Color Balance, etc.
+          - **Professional Practice**: Use color tools with filters
+        - **Layer Effects**: Apply color-based layer effects
+          - **Method**: Select colors for layer effects
+          - **Examples**: Drop shadows, glows with color
+          - **Professional Practice**: Use color tools for effects
+        - **Text Colors**: Select colors for text
+          - **Method**: Select foreground color, create text
+          - **Purpose**: Text uses foreground color
+          - **Professional Practice**: Use color tools for text
+      - **Selection Tools**: Colors for selection operations
+        - **Quick Mask**: Use colors in Quick Mask mode
+          - **Method**: Select color for mask painting
+          - **Purpose**: Paint selections with color
+          - **Professional Practice**: Use color tools with selections
+        - **Selection Visualization**: Colors for selection display
+          - **Method**: Colors show selection areas
+          - **Purpose**: Visual feedback for selections
+          - **Professional Practice**: Understand selection colors
+      - **Professional Practice**: Integrate color selection into all work
+        - **Universal**: Color tools work with all GIMP tools
+        - **Efficiency**: Integrated workflow is more efficient
+        - **Professional Practice**: Integrate color tools everywhere
+    - **Consistency**: Maintain color consistency across project
+      - **Palettes**: Use palettes for consistent colors
+      - **Swatches**: Save project colors to swatches
+      - **Documentation**: Document color choices
+      - **Professional Practice**: Maintain color consistency
+    - **Efficiency**: Quick access to frequently used colors
+      - **Swatches**: Quick access via swatches
+      - **History**: Quick access via color history
+      - **Shortcuts**: Use keyboard shortcuts
+      - **Professional Practice**: Optimize for efficiency
+    - **Professional Workflow**: Professional color workflow
+      - **Planning**: Plan color palette before starting
+        - **Step 1**: Define project color requirements
+          - **Brand Colors**: Identify brand colors if applicable
+          - **Color Scheme**: Choose color scheme (monochromatic, complementary, etc.)
+          - **Mood**: Define desired mood/atmosphere
+          - **Professional Practice**: Plan before starting
+        - **Step 2**: Create initial color palette
+          - **Method**: Use Color Editor to create colors
+          - **Organization**: Organize colors logically
+          - **Documentation**: Document color choices
+          - **Professional Practice**: Create organized palette
+        - **Step 3**: Save palette for project
+          - **Method**: Save as .gpl file
+          - **Naming**: Use descriptive name
+          - **Location**: Save in project folder
+          - **Professional Practice**: Save palettes for projects
+      - **Organization**: Organize colors as you work
+        - **During Work**: Add colors to swatches as you use them
+          - **Method**: Use "Add to Swatches" frequently
+          - **Naming**: Name swatches descriptively
+          - **Organization**: Keep swatches organized
+          - **Professional Practice**: Organize as you work
+        - **Color Libraries**: Build color libraries over time
+          - **Method**: Save palettes for reuse
+          - **Organization**: Organize by project, brand, style
+          - **Professional Practice**: Build comprehensive libraries
+        - **Regular Cleanup**: Clean up unused colors
+          - **Method**: Remove unused swatches
+          - **Frequency**: Regular cleanup maintains organization
+          - **Professional Practice**: Regular cleanup is essential
+      - **Documentation**: Document color choices
+        - **Color Names**: Use descriptive color names
+          - **Method**: Name all colors descriptively
+          - **Examples**: "Brand Primary Blue", "Button Hover State"
+          - **Professional Practice**: Always name colors
+        - **Color Values**: Document color values
+          - **Method**: Record RGB, HSV, HEX values
+          - **Format**: Document in style guide or palette file
+          - **Professional Practice**: Document all color values
+        - **Usage Notes**: Document color usage
+          - **Method**: Note where colors are used
+          - **Purpose**: Helps maintain consistency
+          - **Professional Practice**: Document usage
+      - **Workflow Examples**: Practical workflow examples
+        - **Example 1**: Web Design Project
+          - **Step 1**: Extract brand colors from logo
+          - **Step 2**: Create web-safe variations
+          - **Step 3**: Build complete palette
+          - **Step 4**: Save palette for team
+          - **Professional Practice**: Follow workflow for projects
+        - **Example 2**: Photo Editing Project
+          - **Step 1**: Sample key colors from photo
+          - **Step 2**: Create harmonious color palette
+          - **Step 3**: Use palette for adjustments
+          - **Step 4**: Save palette for future reference
+          - **Professional Practice**: Use workflow for photo work
+        - **Example 3**: Brand Identity Project
+          - **Step 1**: Define brand color requirements
+          - **Step 2**: Create primary and secondary palettes
+          - **Step 3**: Test colors in different contexts
+          - **Step 4**: Finalize and document palette
+          - **Professional Practice**: Use workflow for brand work
+      - **Professional Practice**: Develop professional color workflow
+        - **Consistency**: Consistent workflow improves quality
+        - **Efficiency**: Efficient workflow saves time
+        - **Professional Practice**: Develop and follow workflow
+    - **Professional Practice**: Color tools are essential for professional work
+      - **Essential**: Color tools are fundamental
+      - **Quality**: Proper use improves work quality
+      - **Efficiency**: Proper use improves efficiency
+      - **Professional Practice**: Master all color tools
+  - **Color Management Concepts**: Understanding color concepts
+    - **Color Models**: Understanding different color models
+      - **RGB**: Red, Green, Blue for digital work
+        - **Additive Model**: Colors add together (light-based)
+        - **Primary Colors**: Red, Green, Blue are primaries
+        - **Use Case**: Digital displays, digital images
+        - **Professional Practice**: Understand RGB model
+      - **HSV**: Hue, Saturation, Value for adjustments
+        - **Perceptual Model**: Matches human color perception
+        - **Components**: Hue (color type), Saturation (intensity), Value (brightness)
+        - **Use Case**: Color adjustments, perceptual work
+        - **Professional Practice**: Understand HSV model
+      - **HEX**: Hexadecimal for web work
+        - **Numeric Representation**: Hexadecimal representation of RGB
+        - **Format**: #RRGGBB (6 hex digits)
+        - **Use Case**: Web development, color codes
+        - **Professional Practice**: Understand HEX format
+      - **Model Relationships**: How models relate
+        - **RGB ↔ HEX**: Direct conversion (lossless)
+        - **RGB ↔ HSV**: Mathematical conversion (may have rounding)
+        - **Professional Practice**: Understand model relationships
+      - **Professional Practice**: Understand all color models
+        - **Knowledge**: Essential to understand all models
+        - **Usage**: Know when to use each model
+        - **Professional Practice**: Master all color models
+    - **Color Spaces**: Understanding color spaces
+      - **sRGB**: Standard RGB for web and general use
+        - **Gamut**: Smallest standard RGB gamut (~35% of visible spectrum)
+        - **Use Case**: Web graphics, general digital work
+        - **Compatibility**: Maximum compatibility
+        - **Professional Practice**: Use sRGB for web work
+      - **Adobe RGB**: Extended gamut for photography
+        - **Gamut**: Larger gamut (~50% of visible spectrum)
+        - **Use Case**: Professional photography, print preparation
+        - **Advantage**: More colors than sRGB
+        - **Professional Practice**: Use Adobe RGB for photography
+      - **Gamut**: Understanding color gamut limitations
+        - **Definition**: Range of colors a color space can represent
+        - **Limitation**: Cannot represent all visible colors
+        - **Impact**: Some colors may be out of gamut
+        - **Professional Practice**: Understand gamut limitations
+      - **Gamut Mapping**: Handling out-of-gamut colors
+        - **Problem**: Colors outside gamut cannot be displayed
+        - **Solution**: Gamut mapping algorithms
+        - **Methods**: Clipping, perceptual mapping
+        - **Professional Practice**: Understand gamut mapping
+      - **Professional Practice**: Understand color space impact
+        - **Impact**: Color space affects color representation
+        - **Selection**: Choose appropriate color space
+        - **Professional Practice**: Understand color space impact
+    - **Color Accuracy**: Ensuring color accuracy
+      - **Calibration**: Monitor calibration for accuracy
+        - **Purpose**: Ensures monitor displays colors accurately
+        - **Method**: Use colorimeter for calibration
+        - **Frequency**: Calibrate regularly (monthly recommended)
+        - **Professional Practice**: Calibrate monitor for accuracy
+      - **Color Management**: Color management settings
+        - **Settings**: Configure color management in GIMP
+        - **Working Space**: Set appropriate working space
+        - **Display Mode**: Enable color-managed display
+        - **Professional Practice**: Configure color management properly
+      - **Verification**: Verify colors when critical
+        - **Critical Work**: Verify for brand colors, print work
+        - **Methods**: Compare with reference, use color checker
+        - **Professional Practice**: Verify when accuracy critical
+      - **Color Consistency**: Maintaining color consistency
+        - **Workflow**: Use consistent color management
+        - **Documentation**: Document color choices
+        - **Professional Practice**: Maintain consistency
+      - **Professional Practice**: Ensure color accuracy
+        - **Accuracy**: Essential for professional work
+        - **Methods**: Calibration, color management, verification
+        - **Professional Practice**: Ensure accuracy always
+  - **Professional Practice**: Color management tools are fundamental skills
+    - **Fundamental Skills**: Color tools are fundamental to GIMP workflow
+      - **Essential**: Essential for all image work
+      - **Foundation**: Foundation for professional work
+      - **Professional Practice**: Master all color management tools
+    - **Efficiency**: Proper use improves workflow efficiency
+      - **Speed**: Faster color selection
+      - **Organization**: Better color organization
+      - **Professional Practice**: Optimize for efficiency
+    - **Quality**: Proper use improves work quality
+      - **Accuracy**: More accurate color work
+      - **Consistency**: Better color consistency
+      - **Professional Practice**: Quality comes from mastery
+    - **Mastery Path**: Path to mastery
+      - **Learning**: Learn each tool thoroughly
+      - **Practice**: Practice using tools together
+      - **Integration**: Integrate into workflow
+      - **Professional Practice**: Follow path to mastery
+
 ### Using the Color Picker Tool (Sample Size, Modes)
+
+- **Color Picker Tool**: Sampling colors from images
+  - **Access**: Tools → Color Picker, or press O key
+    - **Tool Selection**: Select Color Picker tool from toolbox
+      - **Location**: Color Picker tool in main toolbox
+      - **Icon**: Eyedropper icon in toolbox
+      - **Visual Identification**: Look for eyedropper icon
+      - **Professional Practice**: Familiarize with tool location
+    - **Keyboard Shortcut**: Press O to activate Color Picker
+      - **Shortcut**: O key activates Color Picker
+      - **Toggle**: Press O again to deactivate or switch tools
+      - **Efficiency**: Keyboard shortcut faster than mouse
+      - **Professional Practice**: Memorize keyboard shortcuts for speed
+    - **Cursor Change**: Cursor changes to eyedropper icon
+      - **Visual Feedback**: Cursor indicates tool is active
+      - **Hover**: Shows eyedropper when hovering over image
+      - **Confirmation**: Visual confirmation tool is ready
+      - **Professional Practice**: Watch cursor for tool state
+    - **Tool Options**: Access tool options for configuration
+      - **Access**: Tool options appear below toolbox when tool selected
+      - **Options**: Sample Size, Sample Merged, Use Info Window
+      - **Configuration**: Configure before or during use
+      - **Professional Practice**: Configure options before starting work
+    - **Professional Practice**: Learn keyboard shortcuts
+      - **Speed**: Keyboard shortcuts significantly improve speed
+      - **Workflow**: Faster tool switching improves workflow
+      - **Professional Practice**: Master all keyboard shortcuts
+  - **Basic Usage**: Click to sample color
+    - **Click to Sample**: Click on image to sample color at that point
+      - **Action**: Click on desired color in image
+        - **Method**: Single left-click on image
+        - **Location**: Click exactly on color you want
+        - **Immediate**: Color sampled immediately
+        - **Professional Practice**: Click precisely on desired color
+      - **Result**: Foreground color changes to sampled color
+        - **Update**: Foreground color indicator updates
+        - **Tool Ready**: Color ready for use with tools
+        - **Visual Feedback**: Immediate visual confirmation
+        - **Professional Practice**: Verify color change before using
+      - **Visual Feedback**: Color appears in foreground color indicator
+        - **Indicator**: Color box in toolbox shows new color
+        - **Confirmation**: Visual confirmation of color change
+        - **Professional Practice**: Always verify color selection
+      - **Workflow Integration**: Using sampled color immediately
+        - **Painting**: Use sampled color with Brush tool
+        - **Filling**: Use sampled color with Bucket Fill
+        - **Selection**: Color ready for any tool that uses foreground color
+        - **Professional Practice**: Integrate sampling into workflow
+      - **Multiple Samples**: Sampling multiple colors quickly
+        - **Workflow**: Sample, use, sample again
+        - **Efficiency**: Quick color switching
+        - **Professional Practice**: Master quick color sampling
+    - **Sample Background**: Hold Ctrl while clicking to sample background color
+      - **Modifier**: Hold Ctrl key while clicking
+        - **Method**: Hold Ctrl, then click
+        - **Timing**: Hold Ctrl before and during click
+        - **Professional Practice**: Use Ctrl modifier for background sampling
+      - **Result**: Background color changes to sampled color
+        - **Update**: Background color indicator updates
+        - **Tool Ready**: Background color ready for use
+        - **Visual Feedback**: Immediate visual confirmation
+        - **Professional Practice**: Verify background color change
+      - **Use Case**: Sample both foreground and background colors
+        - **Gradients**: Create gradients between two colors
+        - **Dual Colors**: Need both foreground and background
+        - **Workflow**: Sample both colors quickly
+        - **Professional Practice**: Use for gradient and dual-color work
+      - **Workflow Example**: Sampling both colors
+        - **Step 1**: Click to sample foreground color
+        - **Step 2**: Ctrl+Click to sample background color
+        - **Step 3**: Both colors ready for use
+        - **Professional Practice**: Master dual-color sampling
+    - **Sampling Techniques**: Advanced sampling techniques
+      - **Hover Preview**: Preview color before sampling
+        - **Feature**: Some versions show color on hover
+        - **Benefit**: Preview before committing
+        - **Professional Practice**: Use hover preview when available
+      - **Zoom for Precision**: Zoom in for precise sampling
+        - **Method**: Zoom in before sampling
+        - **Precision**: More precise color selection
+        - **Professional Practice**: Zoom for critical color work
+      - **Multiple Attempts**: Try multiple samples
+        - **Method**: Sample from multiple nearby points
+        - **Comparison**: Compare sampled colors
+        - **Professional Practice**: Sample multiple points for best color
+    - **Professional Practice**: Click precisely for accurate color sampling
+      - **Precision**: Click exactly on desired color pixel
+        - **Accuracy**: Precise clicking ensures accurate color sampling
+        - **Zoom**: Zoom in for better precision
+          - **Method**: Zoom in before sampling
+          - **Benefit**: See exact pixel for precise sampling
+          - **Professional Practice**: Zoom for critical color work
+        - **Professional Practice**: Precision is essential for color accuracy
+      - **Workflow**: Integrate sampling into workflow
+        - **Efficiency**: Quick sampling improves workflow
+        - **Practice**: Practice precise clicking
+        - **Professional Practice**: Master color sampling workflow
+      - **Practical Scenarios**: Real-world color sampling scenarios
+        - **Scenario 1**: Matching Brand Colors
+          - **Situation**: Need to match exact brand color from reference
+          - **Step 1**: Open brand color reference image
+          - **Step 2**: Zoom in on color area
+          - **Step 3**: Use Point Sample for precision
+          - **Step 4**: Sample color, verify in Color Editor
+          - **Step 5**: Save to swatches with brand name
+          - **Professional Practice**: Use precise sampling for brand colors
+        - **Scenario 2**: Creating Harmonious Color Palette
+          - **Situation**: Creating palette from reference image
+          - **Step 1**: Open reference image
+          - **Step 2**: Use 3x3 Average to reduce noise
+          - **Step 3**: Sample key colors from image
+          - **Step 4**: Add each color to swatches
+          - **Step 5**: Organize palette logically
+          - **Professional Practice**: Use sampling for palette creation
+        - **Scenario 3**: Color Correction Work
+          - **Situation**: Need to sample color for correction
+          - **Step 1**: Identify area needing correction
+          - **Step 2**: Sample current color from area
+          - **Step 3**: Sample target color from reference
+          - **Step 4**: Adjust current color to match target
+          - **Step 5**: Apply correction
+          - **Professional Practice**: Use sampling for color correction
+        - **Scenario 4**: Multi-layer Composition
+          - **Situation**: Sampling from layered composition
+          - **Step 1**: Enable Sample Merged
+          - **Step 2**: Sample color from final composition
+          - **Step 3**: Use sampled color for new elements
+          - **Professional Practice**: Use Sample Merged for compositions
+        - **Scenario 5**: Web Design Color Matching
+          - **Situation**: Matching colors from website
+          - **Step 1**: Screenshot website or open reference
+          - **Step 2**: Use Color Picker to sample colors
+          - **Step 3**: Note HEX values from Info Window
+          - **Step 4**: Use colors in design
+          - **Professional Practice**: Use sampling for web design
+      - **Advanced Techniques**: Advanced color sampling techniques
+        - **Multiple Samples**: Sampling multiple colors quickly
+          - **Method**: Sample, use, sample again in quick succession
+          - **Efficiency**: Fast color switching
+          - **Professional Practice**: Master quick sampling
+        - **Color Comparison**: Comparing sampled colors
+          - **Method**: Sample multiple colors, compare in Color Editor
+          - **Purpose**: Choose best color from options
+          - **Professional Practice**: Use comparison for selection
+        - **Color Analysis**: Analyzing color relationships
+          - **Method**: Sample colors, analyze in HSV mode
+          - **Purpose**: Understand color relationships
+          - **Professional Practice**: Use analysis for color work
+  - **Sample Size**: Control area used for color sampling
+    - **Purpose**: Determines how many pixels are averaged for color sample
+      - **Function**: Controls sampling area size
+      - **Impact**: Affects color accuracy and noise reduction
+      - **Selection**: Choose based on image characteristics
+      - **Professional Practice**: Understand sample size impact
+    - **Point Sample**: Sample single pixel (default)
+      - **Setting**: Sample Size set to Point Sample
+      - **Behavior**: Samples exact pixel clicked
+        - **Precision**: No averaging, exact pixel color
+        - **Accuracy**: Most precise but sensitive to noise
+        - **Use Case**: Precise color sampling from specific pixel
+        - **Professional Practice**: Use Point Sample for precise colors
+      - **When to Use**: High-quality images, precise color matching
+        - **High Quality**: Use with high-resolution, clean images
+        - **Precise Matching**: When exact pixel color needed
+        - **No Noise**: When image has no compression artifacts
+        - **Professional Practice**: Point Sample for professional photography
+      - **Limitations**: Sensitive to compression artifacts
+        - **Artifacts**: May pick up JPEG compression artifacts
+        - **Noise**: Sensitive to image noise
+        - **Professional Practice**: Be aware of artifact sensitivity
+    - **3x3 Average**: Average 3x3 pixel area
+      - **Setting**: Sample Size set to 3x3 Average
+      - **Behavior**: Averages colors from 3x3 pixel area
+        - **Area**: Samples 9 pixels total (3x3 grid)
+        - **Calculation**: Mathematical average of RGB values
+          - **Method**: Sum all RGB values, divide by pixel count
+          - **Formula**: Average = (Sum of all values) / 9 pixels
+          - **Result**: Smoother, less noisy color
+          - **Professional Practice**: Use 3x3 Average to reduce noise
+        - **Mathematical Details**: Understanding the averaging
+          - **RGB Components**: Each component averaged separately
+          - **Red Average**: (R1 + R2 + ... + R9) / 9
+          - **Green Average**: (G1 + G2 + ... + G9) / 9
+          - **Blue Average**: (B1 + B2 + ... + B9) / 9
+          - **Result**: Single RGB color from 9 pixels
+          - **Professional Practice**: Understand averaging process
+        - **Noise Reduction**: How averaging reduces noise
+          - **Random Noise**: Noise is random, averages out
+          - **Compression Artifacts**: Artifacts reduced by averaging
+          - **Smooth Result**: Smoother color than single pixel
+          - **Professional Practice**: Understand noise reduction
+      - **When to Use**: Moderate quality images, slight noise
+        - **Moderate Quality**: Good for most digital photos
+        - **Noise Reduction**: Reduces minor compression artifacts
+        - **Balance**: Good balance of precision and noise reduction
+        - **Professional Practice**: 3x3 is good default for most work
+      - **Advantages**: Reduces noise while maintaining precision
+        - **Noise**: Significantly reduces noise
+        - **Precision**: Still maintains good precision
+        - **Professional Practice**: 3x3 is versatile choice
+    - **5x5 Average**: Average 5x5 pixel area
+      - **Setting**: Sample Size set to 5x5 Average
+      - **Behavior**: Averages colors from 5x5 pixel area
+        - **Area**: Samples 25 pixels total (5x5 grid)
+        - **Calculation**: Mathematical average of RGB values
+          - **Method**: Sum all RGB values, divide by pixel count
+          - **Formula**: Average = (Sum of all values) / 25 pixels
+          - **Result**: Very smooth, noise-free color
+          - **Professional Practice**: Use 5x5 Average for smoother colors
+        - **Mathematical Details**: Understanding the averaging
+          - **RGB Components**: Each component averaged separately
+          - **Red Average**: (R1 + R2 + ... + R25) / 25
+          - **Green Average**: (G1 + G2 + ... + G25) / 25
+          - **Blue Average**: (B1 + B2 + ... + B25) / 25
+          - **Result**: Single RGB color from 25 pixels
+          - **Professional Practice**: Understand averaging process
+        - **Enhanced Noise Reduction**: Stronger noise reduction
+          - **More Pixels**: 25 pixels vs 9 pixels
+          - **Better Averaging**: More effective noise reduction
+          - **Smoother Result**: Very smooth color
+          - **Professional Practice**: Use for heavy noise
+        - **Trade-off Analysis**: Understanding the trade-off
+          - **Noise Reduction**: Excellent noise reduction
+          - **Precision Loss**: May lose fine color details
+          - **Balance**: Trade noise reduction for precision
+          - **Professional Practice**: Understand trade-offs
+      - **When to Use**: Low quality images, heavy compression
+        - **Low Quality**: Use with heavily compressed images
+        - **Artifacts**: Reduces compression artifacts effectively
+        - **Noisy Images**: Good for noisy or low-quality images
+        - **Professional Practice**: 5x5 for problematic images
+      - **Trade-offs**: May blur subtle color variations
+        - **Blur**: May average out subtle color differences
+        - **Precision**: Less precise than smaller samples
+        - **Professional Practice**: Balance noise reduction with precision
+    - **Selection**: Choose sample size in tool options
+      - **Tool Options**: Open Color Picker tool options
+        - **Location**: Tool options panel below toolbox
+        - **Access**: Automatically appears when tool selected
+        - **Professional Practice**: Keep tool options visible
+      - **Sample Size Dropdown**: Select desired sample size
+        - **Options**: Point Sample, 3x3 Average, 5x5 Average
+        - **Selection**: Click dropdown to choose
+        - **Change**: Can change during work session
+        - **Professional Practice**: Adjust based on current image
+      - **Consideration**: Larger sizes reduce noise but may blur colors
+        - **Noise vs Precision**: Trade-off between noise and precision
+        - **Image Quality**: Match to image quality
+        - **Professional Practice**: Choose sample size based on image quality
+      - **Real-time Preview**: See sample size effect immediately
+        - **Feedback**: Immediate visual feedback
+        - **Testing**: Test different sizes on same area
+        - **Professional Practice**: Test sample sizes to find best match
+    - **Professional Practice**: Use appropriate sample size for image quality
+      - **Image Quality**: Match sample size to image quality
+      - **Noise Reduction**: Larger samples reduce noise
+      - **Precision**: Smaller samples maintain precision
+      - **Professional Practice**: Balance precision and noise reduction
+  - **Sample Merged**: Sample from all visible layers
+    - **Concept**: Controls whether to sample from single layer or all layers
+      - **Function**: Determines sampling source
+      - **Impact**: Affects which colors are sampled
+      - **Understanding**: Critical for multi-layer work
+      - **Professional Practice**: Understand layer sampling behavior
+    - **Enable**: Check "Sample Merged" in tool options
+      - **Setting**: Enable Sample Merged checkbox
+      - **Behavior**: Samples from composite of all visible layers
+        - **Composite**: Samples from final rendered appearance
+        - **Visible Layers**: Only samples from visible layers
+        - **Blending**: Accounts for layer blending modes
+        - **Opacity**: Accounts for layer opacity
+        - **Professional Practice**: Use Sample Merged for composite colors
+      - **When to Use**: Sampling final appearance, color matching
+        - **Final Appearance**: When you need final composite color
+        - **Color Matching**: Matching colors from final image
+        - **Multi-layer Work**: Essential for multi-layer compositions
+        - **Professional Practice**: Enable for most color matching work
+      - **Example Scenarios**: Common use cases
+        - **Scenario 1**: Sample color from image with adjustment layers
+          - **Situation**: Image has color adjustment layers
+          - **Need**: Sample final adjusted color
+          - **Solution**: Enable Sample Merged
+          - **Professional Practice**: Always enable for adjusted images
+        - **Scenario 2**: Sample from layered design composition
+          - **Situation**: Multiple layers creating final design
+          - **Need**: Sample color from final design
+          - **Solution**: Enable Sample Merged
+          - **Professional Practice**: Enable for design compositions
+    - **Disable**: Sample only from active layer
+      - **Setting**: Disable Sample Merged checkbox
+      - **Behavior**: Samples only from active layer
+        - **Single Layer**: Only samples from currently active layer
+        - **No Blending**: Ignores other layers and blending
+        - **Isolation**: Isolates color from specific layer
+        - **Professional Practice**: Disable when sampling specific layer
+      - **When to Use**: Layer-specific color work, isolation
+        - **Layer Isolation**: When you need layer-specific color
+        - **Color Analysis**: Analyzing individual layer colors
+        - **Layer Editing**: Working with specific layer colors
+        - **Professional Practice**: Disable for layer-specific work
+      - **Example Scenarios**: Common use cases
+        - **Scenario 1**: Sample original color before adjustments
+          - **Situation**: Want original color before adjustment layers
+          - **Need**: Sample from base layer only
+          - **Solution**: Disable Sample Merged, select base layer
+          - **Professional Practice**: Disable to sample original colors
+        - **Scenario 2**: Analyze individual layer contribution
+          - **Situation**: Understanding what each layer contributes
+          - **Need**: Sample color from specific layer
+          - **Solution**: Disable Sample Merged, select target layer
+          - **Professional Practice**: Disable for layer analysis
+    - **Layer Visibility Impact**: How layer visibility affects sampling
+      - **Visible Layers**: Only visible layers affect Sample Merged
+        - **Visibility**: Hidden layers don't affect sampling
+        - **Control**: Hide layers to exclude from sampling
+        - **Professional Practice**: Control visibility for sampling
+      - **Layer Order**: Layer stacking order matters
+        - **Stacking**: Top layers affect bottom layers
+        - **Blending**: Blending modes affect final color
+        - **Professional Practice**: Understand layer stacking impact
+    - **Professional Practice**: Use Sample Merged for final appearance colors
+      - **Final Appearance**: Sample Merged shows final appearance
+      - **Layer-Specific**: Disable for layer-specific colors
+      - **Workflow**: Switch based on current task
+      - **Professional Practice**: Choose based on sampling needs
+  - **Use Info Window**: Display color information
+    - **Purpose**: Real-time color value display while sampling
+      - **Function**: Shows numeric color values as you sample
+      - **Benefit**: Immediate access to color data
+      - **Workflow**: Essential for precise color work
+      - **Professional Practice**: Enable for professional color work
+    - **Enable**: Check "Use Info Window" in tool options
+      - **Setting**: Enable Use Info Window checkbox
+      - **Behavior**: Displays color information window
+        - **Window**: Separate floating window appears
+        - **Updates**: Updates in real-time as you move cursor
+        - **Position**: Can be moved and positioned
+        - **Professional Practice**: Enable for color value reference
+      - **Window Behavior**: How info window works
+        - **Real-time**: Updates as cursor moves over image
+          - **Update Speed**: Updates instantly as cursor moves
+          - **Smooth**: Smooth updates without lag
+          - **Performance**: Efficient real-time calculation
+          - **Professional Practice**: Use hover to preview before sampling
+        - **Hover**: Shows values when hovering (not clicking)
+          - **Preview Mode**: Shows color values on hover
+          - **No Commitment**: Preview without sampling
+          - **Exploration**: Explore colors before sampling
+          - **Professional Practice**: Use hover for color exploration
+        - **Click**: Values update when clicking to sample
+          - **Sampling**: Values update when you click to sample
+          - **Confirmation**: Confirms sampled color values
+          - **Professional Practice**: Use click to confirm sampling
+        - **Window Persistence**: Window stays open
+          - **Stays Open**: Window remains open during session
+          - **Always Available**: Always available when enabled
+          - **Professional Practice**: Keep window open for efficiency
+        - **Window Positioning**: Positioning the info window
+          - **Movable**: Can be moved anywhere on screen
+          - **Positioning**: Position for easy viewing
+          - **Professional Practice**: Position for workflow efficiency
+    - **Color Values**: View exact color values
+      - **RGB Values**: Red, Green, Blue component values
+        - **Format**: R: 255, G: 128, B: 64 (example)
+          - **Display Format**: "R: value, G: value, B: value"
+          - **Example**: "R: 255, G: 128, B: 64"
+          - **Clarity**: Clear component identification
+          - **Professional Practice**: Use RGB for digital color matching
+        - **Range**: Each component 0-255
+          - **Minimum**: 0 (no color component)
+          - **Maximum**: 255 (full color component)
+          - **Total Steps**: 256 possible values
+          - **Professional Practice**: Understand RGB range
+        - **Precision**: Exact numeric values
+          - **Integer Values**: Whole numbers only
+          - **No Decimals**: No decimal precision
+          - **Exact Match**: Exact value matching
+          - **Professional Practice**: Use for precise matching
+        - **RGB Value Interpretation**: Understanding RGB values
+          - **Low Values (0-85)**: Dark colors
+          - **Mid Values (86-170)**: Medium colors
+          - **High Values (171-255)**: Bright colors
+          - **Professional Practice**: Understand value ranges
+      - **HSV Values**: Hue, Saturation, Value values
+        - **Format**: H: 240°, S: 50%, V: 75% (example)
+          - **Display Format**: "H: value°, S: value%, V: value%"
+          - **Example**: "H: 240°, S: 50%, V: 75%"
+          - **Units**: Degrees for hue, percentage for saturation/value
+          - **Professional Practice**: Use HSV for perceptual adjustments
+        - **Hue**: 0-360 degrees (color wheel position)
+          - **Range**: 0-360 degrees
+          - **Circular**: 360° = 0° (wraps around)
+          - **Precision**: Usually shown to nearest degree
+          - **Professional Practice**: Understand hue range
+        - **Saturation**: 0-100% (color intensity)
+          - **Range**: 0-100%
+          - **0%**: Grayscale (no color)
+          - **100%**: Full color intensity
+          - **Precision**: Usually shown to nearest percent
+          - **Professional Practice**: Understand saturation range
+        - **Value**: 0-100% (brightness)
+          - **Range**: 0-100%
+          - **0%**: Black
+          - **100%**: Full brightness
+          - **Precision**: Usually shown to nearest percent
+          - **Professional Practice**: Understand value range
+        - **HSV Value Interpretation**: Understanding HSV values
+          - **Hue**: Color type (red, blue, green, etc.)
+          - **Saturation**: Color intensity (muted to vibrant)
+          - **Value**: Brightness (dark to light)
+          - **Professional Practice**: Understand HSV components
+      - **HEX Code**: Hexadecimal color code
+        - **Format**: #FF8040 (example, no spaces)
+          - **Display Format**: "#RRGGBB" (6 hex digits)
+          - **Example**: "#FF8040" (orange color)
+          - **Case**: Usually uppercase, may be case-insensitive
+          - **Professional Practice**: HEX essential for web work
+        - **Structure**: # followed by 6 hex digits (RRGGBB)
+          - **# Symbol**: Hash symbol prefix
+          - **RR**: Red component (00-FF)
+          - **GG**: Green component (00-FF)
+          - **BB**: Blue component (00-FF)
+          - **Professional Practice**: Understand HEX structure
+        - **HEX to RGB Conversion**: Understanding conversion
+          - **Each Pair**: Each pair of hex digits = one RGB component
+          - **Example**: #FF8040 = R:255, G:128, B:64
+          - **Calculation**: FF(hex) = 255(dec), 80(hex) = 128(dec), 40(hex) = 64(dec)
+          - **Professional Practice**: Understand HEX conversion
+        - **Use Case**: Web development, CSS, HTML
+          - **CSS**: Use in CSS color properties
+          - **HTML**: Use in HTML color attributes
+          - **Design Tools**: Share colors with design tools
+          - **Professional Practice**: Use HEX for web work
+        - **HEX Advantages**: Why use HEX
+          - **Compact**: Short representation (6 characters)
+          - **Standard**: Web standard format
+          - **Easy Communication**: Easy to share
+          - **Professional Practice**: Use HEX for web communication
+      - **Alpha Channel**: Transparency value (if applicable)
+        - **Format**: A: 255 (example, 0-255 range)
+        - **Transparency**: 0 = fully transparent, 255 = fully opaque
+        - **Display**: May show if image has alpha channel
+        - **Professional Practice**: Note alpha for transparency work
+    - **Info Window Features**: Additional capabilities
+      - **Copy Values**: Can copy color values to clipboard
+        - **Method**: Right-click or use copy function
+        - **Use Case**: Paste values into other applications
+        - **Professional Practice**: Use copy for workflow integration
+      - **Window Persistence**: Window stays open during session
+        - **Behavior**: Remains open until manually closed
+        - **Convenience**: Always available when enabled
+        - **Professional Practice**: Keep window open for efficiency
+      - **Multiple Formats**: Shows all formats simultaneously
+        - **Display**: RGB, HSV, HEX all shown together
+        - **Convenience**: No need to switch between formats
+        - **Professional Practice**: Use all formats as needed
+    - **Workflow Integration**: Using info window in workflow
+      - **Color Matching**: Match colors from reference
+        - **Process**: Sample reference color, note values
+        - **Application**: Enter values in Color Editor
+        - **Professional Practice**: Use for precise color matching
+      - **Documentation**: Document colors for projects
+        - **Process**: Sample colors, record values
+        - **Use Case**: Create color style guides
+        - **Professional Practice**: Document colors for consistency
+      - **Communication**: Share color values with team
+        - **Process**: Sample colors, share HEX/RGB values
+        - **Use Case**: Team color coordination
+        - **Professional Practice**: Share values for team consistency
+    - **Professional Practice**: Info window provides valuable color data
+      - **Color Data**: Info window provides detailed color data
+      - **Reference**: Use for color matching and documentation
+      - **Essential**: Essential tool for professional color work
+      - **Professional Practice**: Enable when color values needed
+  - **Professional Practice**: Color Picker is essential for color selection
+    - **Essential Tool**: Color Picker is essential for color work
+    - **Efficiency**: Quick color sampling improves workflow
+    - **Professional Practice**: Master Color Picker for efficient workflow
 
 ### Swatches Dialog and Color History
 
+- **Swatches Dialog**: Access predefined color collections
+  - **Access**: Windows → Dockable Dialogs → Swatches
+    - **Menu**: Windows → Dockable Dialogs → Swatches
+      - **Location**: Main menu bar → Windows → Dockable Dialogs
+      - **Dialog List**: Swatches appears in dialog list
+      - **Toggle**: Can toggle dialog visibility
+      - **Professional Practice**: Learn menu location for quick access
+    - **Keyboard**: Press Ctrl+Shift+P (if assigned)
+      - **Shortcut**: Default keyboard shortcut (may vary)
+      - **Customization**: Can be customized in preferences
+      - **Efficiency**: Faster than menu access
+      - **Professional Practice**: Use keyboard shortcut for speed
+    - **Dockable**: Can be docked in dialog windows
+      - **Docking**: Can attach to other dialogs
+      - **Tabbed**: Can be tabbed with other dialogs
+      - **Organization**: Helps organize workspace
+      - **Professional Practice**: Dock for efficient workspace layout
+    - **Dialog Features**: Understanding dialog interface
+      - **Swatch Grid**: Grid display of color swatches
+        - **Layout**: Organized grid of color squares
+        - **Size**: Adjustable swatch size
+        - **Navigation**: Scroll to see all swatches
+        - **Professional Practice**: Familiarize with grid layout
+      - **Context Menu**: Right-click for options
+        - **Options**: Edit, Delete, Import, Export options
+        - **Access**: Right-click on swatch or dialog
+        - **Professional Practice**: Learn context menu options
+      - **Add Button**: Button to add new swatches
+        - **Location**: "+" button in dialog
+        - **Function**: Adds current foreground color
+        - **Professional Practice**: Use add button frequently
+    - **Professional Practice**: Keep Swatches dialog accessible
+      - **Accessibility**: Always keep dialog accessible
+      - **Workspace**: Include in standard workspace layout
+      - **Professional Practice**: Make swatches part of workflow
+  - **Default Swatches**: GIMP includes default swatch sets
+    - **Standard Swatches**: Basic color swatches included
+      - **Colors**: Common colors for quick access
+        - **Selection**: Basic color spectrum
+        - **Range**: Primary and secondary colors
+        - **Purpose**: Quick access to standard colors
+        - **Professional Practice**: Use default swatches for common colors
+      - **Color Range**: Typical color selection
+        - **Primaries**: Red, Green, Blue
+        - **Secondaries**: Cyan, Magenta, Yellow
+        - **Neutrals**: Black, White, Grays
+        - **Professional Practice**: Understand default color range
+      - **Use Case**: Quick access to standard colors
+        - **Speed**: Faster than manual color selection
+        - **Consistency**: Standard colors for consistency
+        - **Professional Practice**: Use for standard color needs
+    - **Web Safe Colors**: Web-safe color palette
+      - **Colors**: 216 web-safe colors
+        - **Definition**: Colors that display consistently across old displays
+        - **Range**: 6x6x6 color cube (216 combinations)
+        - **Purpose**: Ensures consistent display
+        - **Professional Practice**: Use web-safe palette for web work
+      - **Historical Context**: Why web-safe matters
+        - **Origin**: Designed for 256-color displays
+        - **Current**: Less critical with modern displays
+        - **Compatibility**: Still ensures maximum compatibility
+        - **Professional Practice**: Understand web-safe context
+      - **Use Case**: Web design work
+        - **Web Development**: Essential for web design
+        - **Compatibility**: Maximum browser compatibility
+        - **Professional Practice**: Use for web projects
+    - **Loading Default Palettes**: Accessing default palettes
+      - **Method**: Right-click in Swatches dialog → Import Palette
+      - **Location**: Default palettes in GIMP installation
+      - **Selection**: Choose from available default palettes
+      - **Professional Practice**: Load default palettes as needed
+    - **Professional Practice**: Default swatches provide starting point
+      - **Starting Point**: Default swatches provide good starting point
+      - **Customization**: Can be customized for specific needs
+      - **Foundation**: Use as foundation for custom palettes
+      - **Professional Practice**: Use defaults, customize as needed
+  - **Using Swatches**: Click to select colors
+    - **Select Foreground**: Click swatch to set foreground color
+      - **Action**: Click on swatch color
+        - **Method**: Single left-click on swatch
+        - **Immediate**: Color changes immediately
+        - **No Confirmation**: No dialog or confirmation needed
+        - **Professional Practice**: Click swatches for quick color selection
+      - **Result**: Foreground color changes to swatch color
+        - **Update**: Foreground color indicator updates
+        - **Tool Ready**: Color ready for use with tools
+        - **Visual Feedback**: Immediate visual confirmation
+        - **Professional Practice**: Verify color change before using
+      - **Visual Feedback**: Foreground color indicator updates
+        - **Indicator**: Color box in toolbox updates
+        - **Confirmation**: Visual confirmation of color change
+        - **Professional Practice**: Always verify color selection
+      - **Tool Integration**: Works with all painting tools
+        - **Compatibility**: Works with Brush, Bucket Fill, etc.
+        - **Immediate Use**: Color ready for immediate use
+        - **Professional Practice**: Swatches integrate seamlessly
+    - **Select Background**: Right-click swatch to set background color
+      - **Action**: Right-click on swatch color
+        - **Method**: Right-click (secondary click) on swatch
+        - **Context**: Opens context menu, also sets background
+        - **Alternative**: Can use context menu option
+        - **Professional Practice**: Right-click for background color
+      - **Result**: Background color changes to swatch color
+        - **Update**: Background color indicator updates
+        - **Tool Ready**: Background color ready for use
+        - **Visual Feedback**: Immediate visual confirmation
+        - **Professional Practice**: Verify background color change
+      - **Visual Feedback**: Background color indicator updates
+        - **Indicator**: Background color box in toolbox updates
+        - **Confirmation**: Visual confirmation of change
+        - **Professional Practice**: Always verify background selection
+      - **Use Cases**: When to set background color
+        - **Gradients**: Creating gradients between foreground/background
+        - **Erasers**: Eraser uses background color in some modes
+        - **Professional Practice**: Set background for specific operations
+    - **Hover Preview**: Preview color before selecting
+      - **Feature**: Some versions show color preview on hover
+      - **Benefit**: Preview before committing to selection
+      - **Professional Practice**: Use hover to preview colors
+    - **Multiple Selection**: Selecting multiple colors quickly
+      - **Workflow**: Click foreground, right-click background
+      - **Efficiency**: Set both colors quickly
+      - **Professional Practice**: Master quick color selection
+    - **Professional Practice**: Swatches provide quick color access
+      - **Quick Access**: Swatches provide instant color access
+      - **Efficiency**: Faster than manual color selection
+      - **Workflow**: Essential for efficient workflow
+      - **Professional Practice**: Use swatches for frequently used colors
+  - **Color History**: Recent colors used in session
+    - **Concept**: Automatic tracking of recently used colors
+      - **Function**: Remembers colors you've used
+      - **Benefit**: Quick access to recent colors
+      - **Automatic**: No manual setup required
+      - **Professional Practice**: Understand Color History value
+    - **Access**: Windows → Dockable Dialogs → Color History
+      - **Menu**: Windows → Dockable Dialogs → Color History
+        - **Location**: Main menu bar → Windows → Dockable Dialogs
+        - **Dialog List**: Color History in dialog list
+        - **Toggle**: Can toggle visibility
+        - **Professional Practice**: Learn menu location
+      - **Dockable**: Can be docked in dialog windows
+        - **Docking**: Can attach to other dialogs
+        - **Tabbed**: Can be tabbed with Swatches dialog
+        - **Organization**: Helps organize workspace
+        - **Professional Practice**: Dock with Swatches for efficiency
+      - **Dialog Layout**: Understanding Color History interface
+        - **Color Grid**: Grid of recent colors
+        - **Order**: Most recent first (or last, depending on version)
+        - **Size**: Adjustable color square size
+        - **Professional Practice**: Familiarize with layout
+    - **Automatic Tracking**: Tracks colors as you use them
+      - **Tracking**: Automatically tracks colors used
+        - **Trigger**: Tracks when color is used in tools
+        - **Methods**: Painting, filling, color selection
+        - **Automatic**: No manual intervention needed
+        - **Professional Practice**: Use Color History for recent colors
+      - **Recent Colors**: Shows recently used colors
+        - **Display**: Visual grid of recent colors
+        - **Order**: Chronological order (newest first or last)
+        - **Update**: Updates automatically as you work
+        - **Professional Practice**: Check history for quick reuse
+      - **What Gets Tracked**: Understanding tracking behavior
+        - **Foreground Colors**: Tracks foreground color usage
+        - **Background Colors**: May track background colors
+        - **Sampled Colors**: Tracks colors from Color Picker
+        - **Professional Practice**: Understand what gets tracked
+      - **Use Case**: Quick access to recently used colors
+        - **Reuse**: Quickly reuse colors from recent work
+        - **Consistency**: Maintain color consistency
+        - **Efficiency**: Faster than manual color selection
+        - **Professional Practice**: Use for color reuse workflow
+    - **Selecting Colors**: Click to reuse recent colors
+      - **Action**: Click on color in history
+        - **Method**: Single left-click on color square
+        - **Immediate**: Color changes immediately
+        - **Foreground**: Sets foreground color (typically)
+        - **Professional Practice**: Use Color History for color reuse
+      - **Result**: Foreground color changes to selected color
+        - **Update**: Foreground color indicator updates
+        - **Ready**: Color ready for immediate use
+        - **Visual Feedback**: Immediate confirmation
+        - **Professional Practice**: Verify color before using
+      - **Right-Click Options**: Additional context menu options
+        - **Menu**: Right-click for context menu
+        - **Options**: May include copy, delete options
+        - **Professional Practice**: Explore context menu options
+      - **Efficiency**: Quick access to recent colors
+        - **Speed**: Faster than manual selection
+        - **Convenience**: No need to remember exact values
+        - **Professional Practice**: Use history for speed
+    - **History Limit**: Configurable number of colors tracked
+      - **Setting**: Configure history limit in preferences
+        - **Location**: Edit → Preferences → Color History (or similar)
+        - **Option**: Maximum number of colors to track
+        - **Default**: Typically 12-20 colors
+        - **Professional Practice**: Adjust based on workflow needs
+      - **Default**: Typically 12-20 colors
+        - **Typical Range**: 12-20 colors is standard
+        - **Balance**: Balance between history and screen space
+        - **Professional Practice**: Default usually sufficient
+      - **Adjustment**: Increase for longer history
+        - **When**: If you need longer color history
+        - **Trade-off**: More colors = more screen space
+        - **Professional Practice**: Adjust if workflow requires it
+      - **History Management**: How history is managed
+        - **FIFO**: First In, First Out (oldest removed when limit reached)
+        - **Automatic**: Automatic management, no manual cleanup
+        - **Professional Practice**: Understand history management
+    - **Session Persistence**: History across sessions
+      - **Behavior**: History typically resets between sessions
+      - **Limitation**: Not saved between GIMP sessions
+      - **Workaround**: Save important colors to Swatches
+      - **Professional Practice**: Save important colors to Swatches
+    - **Professional Practice**: Color History improves workflow efficiency
+      - **Efficiency**: Color History saves time on color reuse
+      - **Workflow**: Integrates naturally into workflow
+      - **Essential**: Essential tool for color work
+      - **Professional Practice**: Use Color History regularly
+  - **Swatches Menu**: Additional swatch operations
+    - **Edit Swatch**: Modify existing swatch
+      - **Action**: Right-click swatch → Edit Swatch
+      - **Dialog**: Opens color editor for swatch
+      - **Use Case**: Adjust swatch colors
+      - **Professional Practice**: Edit swatches to match needs
+    - **Delete Swatch**: Remove swatch from palette
+      - **Action**: Right-click swatch → Delete Swatch
+      - **Confirmation**: May require confirmation
+      - **Use Case**: Remove unwanted swatches
+      - **Professional Practice**: Keep swatches organized
+    - **Professional Practice**: Swatch management maintains organization
+      - **Organization**: Regular swatch management maintains organization
+      - **Efficiency**: Organized swatches improve efficiency
+      - **Professional Practice**: Maintain organized swatch collections
+
 ### Creating and Saving Custom Swatches
+
+- **Creating Custom Swatches**: Add your own colors to swatch palette
+  - **Method 1**: Add from current foreground color
+    - **Step 1**: Set desired foreground color
+      - **Color Selection**: Use Color Picker or Color Editor to set color
+      - **Foreground**: Color must be in foreground color indicator
+      - **Professional Practice**: Select color before adding to swatches
+    - **Step 2**: Click "Add to Swatches" button
+      - **Button**: Click "+" button in Swatches dialog
+      - **Dialog**: Name dialog appears
+      - **Name**: Enter name for swatch (optional)
+      - **Professional Practice**: Use descriptive names for organization
+    - **Step 3**: Confirm addition
+      - **Confirmation**: Click OK to add swatch
+      - **Result**: Swatch appears in swatches palette
+      - **Professional Practice**: Verify swatch appears correctly
+    - **Professional Practice**: Add frequently used colors to swatches
+      - **Frequent Colors**: Add colors used frequently
+      - **Organization**: Organize swatches by project or purpose
+      - **Professional Practice**: Build custom swatch collections
+  - **Method 2**: Add from Color Editor
+    - **Step 1**: Open Color Editor
+      - **Access**: Click foreground/background color indicator
+      - **Dialog**: Color Editor dialog opens
+      - **Professional Practice**: Use Color Editor for precise color selection
+    - **Step 2**: Select desired color
+      - **Selection**: Choose color in Color Editor
+      - **Confirmation**: Color appears in preview
+      - **Professional Practice**: Verify color before adding
+    - **Step 3**: Add to swatches
+      - **Button**: Click "Add to Swatches" button in Color Editor
+      - **Dialog**: Name dialog appears
+      - **Name**: Enter name for swatch
+      - **Professional Practice**: Name swatches descriptively
+    - **Professional Practice**: Color Editor provides precise color selection
+      - **Precision**: Color Editor allows precise color selection
+      - **Control**: Full control over color values
+      - **Professional Practice**: Use Color Editor for custom colors
+  - **Organizing Swatches**: Arrange swatches for efficiency
+    - **Importance**: Organization is crucial for large palettes
+      - **Efficiency**: Organized palettes are more efficient
+      - **Findability**: Easy to find specific colors
+      - **Professional Practice**: Always organize swatches
+    - **Naming**: Use descriptive names
+      - **Descriptive Names**: Name swatches with descriptive names
+        - **Clarity**: Names should clearly describe color
+        - **Purpose**: Helps identify color purpose
+        - **Professional Practice**: Always name swatches descriptively
+      - **Examples**: "Brand Blue", "Skin Tone", "Background Gray"
+        - **Brand Colors**: "Brand Primary Blue", "Brand Secondary Red"
+        - **Functional**: "Button Hover", "Text Color", "Border"
+        - **Descriptive**: "Sky Blue", "Sunset Orange", "Forest Green"
+        - **Professional Practice**: Use consistent naming conventions
+      - **Naming Conventions**: Best practices for naming
+        - **Consistency**: Use consistent naming style
+        - **Hierarchy**: Use prefixes for organization (e.g., "Brand_", "UI_")
+        - **Clarity**: Avoid ambiguous names
+        - **Professional Practice**: Develop naming conventions
+      - **Organization**: Names help identify swatches
+        - **Search**: Easier to find colors by name
+        - **Understanding**: Names explain color purpose
+        - **Professional Practice**: Use names for organization
+      - **Color Value in Names**: Including values in names
+        - **Option**: May include RGB or HEX in name
+        - **Example**: "Brand Blue #003366"
+        - **Benefit**: Quick reference to color values
+        - **Professional Practice**: Include values when helpful
+    - **Grouping**: Organize by project or color family
+      - **Project Groups**: Group swatches by project
+        - **Method**: Create separate palettes per project
+        - **Organization**: "ProjectName_Colors.gpl"
+        - **Benefit**: Easy project-specific color access
+        - **Professional Practice**: Group swatches by project
+      - **Color Families**: Group by color family (blues, reds, etc.)
+        - **Method**: Organize colors by hue family
+        - **Organization**: Group related colors together
+        - **Benefit**: Easy to find color variations
+        - **Professional Practice**: Organize swatches logically
+      - **Functional Groups**: Group by function
+        - **Method**: Group by color purpose
+        - **Examples**: UI colors, brand colors, accent colors
+        - **Benefit**: Easy access to color types
+        - **Professional Practice**: Use functional grouping
+      - **Organization Methods**: Different organization approaches
+        - **Single Palette**: All colors in one palette
+          - **Pros**: Simple, all colors in one place
+          - **Cons**: Can become large and unwieldy
+          - **Use Case**: Small projects, limited colors
+          - **Professional Practice**: Use for small color sets
+        - **Multiple Palettes**: Separate palettes for different purposes
+          - **Pros**: Better organization, easier management
+          - **Cons**: Need to switch between palettes
+          - **Use Case**: Large projects, many colors
+          - **Professional Practice**: Use for large color sets
+        - **Hybrid Approach**: Combination of methods
+          - **Method**: Main palette + specialized palettes
+          - **Benefit**: Best of both approaches
+          - **Professional Practice**: Use hybrid approach for flexibility
+    - **Swatch Ordering**: Arranging swatches within palette
+      - **Logical Order**: Arrange in logical order
+        - **Hue Order**: Arrange by hue (rainbow order)
+        - **Luminance Order**: Arrange by brightness
+        - **Frequency Order**: Arrange by usage frequency
+        - **Professional Practice**: Choose ordering that helps workflow
+      - **Visual Organization**: Visual organization methods
+        - **Spacing**: Use spacing to group related colors
+        - **Placement**: Place important colors prominently
+        - **Professional Practice**: Use visual organization
+    - **Palette Structure**: Structuring large palettes
+      - **Sections**: Divide palette into sections
+        - **Method**: Use comments or spacing to create sections
+        - **Examples**: "Primary Colors", "Secondary Colors", "Accents"
+        - **Professional Practice**: Structure large palettes
+      - **Hierarchy**: Create color hierarchy
+        - **Primary**: Most important colors first
+        - **Secondary**: Secondary colors next
+        - **Accents**: Accent colors last
+        - **Professional Practice**: Use hierarchy for organization
+    - **Professional Practice**: Organization improves workflow efficiency
+      - **Efficiency**: Organized swatches improve efficiency
+        - **Speed**: Faster color selection
+        - **Workflow**: Smoother workflow
+        - **Professional Practice**: Maintain organized swatch collections
+      - **Workflow**: Faster color selection
+        - **Findability**: Easy to find colors
+        - **Consistency**: Consistent organization
+        - **Professional Practice**: Organization is essential
+      - **Maintenance**: Maintaining organization
+        - **Regular Review**: Review and reorganize regularly
+        - **Cleanup**: Remove unused colors
+        - **Professional Practice**: Maintain organization over time
+  - **Saving Swatch Palettes**: Save custom swatch collections
+    - **Purpose**: Preserve custom color collections for future use
+      - **Function**: Save current swatches to file
+      - **Benefit**: Reuse palettes across projects and sessions
+      - **Essential**: Essential for maintaining color libraries
+      - **Professional Practice**: Save all important palettes
+    - **Save Palette**: Swatches → Save Palette
+      - **Menu**: Right-click in Swatches dialog → Save Palette
+        - **Access**: Right-click anywhere in Swatches dialog
+        - **Context Menu**: Save Palette option in menu
+        - **Alternative**: May be in Swatches dialog menu
+        - **Professional Practice**: Learn menu location
+      - **Dialog**: Save dialog appears
+        - **Standard Dialog**: Standard file save dialog
+        - **Navigation**: Navigate to desired location
+        - **Filename**: Enter filename
+        - **Professional Practice**: Use organized file structure
+      - **Location**: Choose save location
+        - **Organization**: Use organized folder structure
+        - **Examples**: "Palettes/Project_Palettes/", "Palettes/Brand_Colors/"
+        - **Consistency**: Maintain consistent organization
+        - **Professional Practice**: Save palettes in organized locations
+      - **File Extension**: Ensure .gpl extension
+        - **Extension**: Must have .gpl extension
+        - **Auto-add**: May be added automatically
+        - **Verification**: Verify extension before saving
+        - **Professional Practice**: Always verify file extension
+    - **File Format**: GIMP Palette (.gpl) format
+      - **Format**: GIMP Palette format (.gpl)
+        - **Standard**: Industry-standard palette format
+          - **Industry Standard**: Widely recognized format
+          - **Adoption**: Used by many graphics applications
+          - **Professional Practice**: .gpl format is standard
+        - **Compatibility**: Works with GIMP and many other applications
+          - **GIMP**: Native GIMP format
+          - **Other Apps**: Compatible with Inkscape, Krita, etc.
+          - **Cross-platform**: Works across operating systems
+          - **Professional Practice**: .gpl ensures maximum compatibility
+        - **File Extension**: .gpl extension
+          - **Extension**: Must use .gpl extension
+          - **Recognition**: Recognized by applications
+          - **Professional Practice**: Always use .gpl extension
+      - **Text Format**: Plain text format, editable
+        - **Structure**: Human-readable text file
+          - **Readable**: Can be read in any text editor
+          - **Editable**: Can be edited manually
+          - **Professional Practice**: Understand .gpl file structure
+        - **Editing**: Can be edited in text editor
+          - **Text Editor**: Any text editor can open .gpl files
+          - **Manual Editing**: Can manually edit colors
+          - **Professional Practice**: Edit .gpl files when needed
+        - **Format**: Header + color definitions
+          - **Structure**: Structured text format
+          - **Lines**: Each line has specific purpose
+          - **Professional Practice**: Understand format structure
+      - **File Structure**: Understanding .gpl file format
+        - **Header Line**: "GIMP Palette" identifier
+          - **Format**: First line must be "GIMP Palette"
+          - **Purpose**: Identifies file as GIMP palette
+          - **Required**: Required for valid .gpl file
+          - **Professional Practice**: Always include header line
+        - **Name Line**: Palette name (Name: Palette Name)
+          - **Format**: "Name: Palette Name"
+          - **Optional**: May be optional in some versions
+          - **Purpose**: Names the palette
+          - **Professional Practice**: Always include palette name
+        - **Columns Line**: Column count (optional)
+          - **Format**: "Columns: N" (where N is number)
+          - **Optional**: Optional line
+          - **Purpose**: Specifies display columns
+          - **Professional Practice**: Include for display control
+        - **Color Lines**: RGB values and color names
+          - **Format**: "R G B ColorName" per line
+            - **R**: Red value (0-255)
+            - **G**: Green value (0-255)
+            - **B**: Blue value (0-255)
+            - **ColorName**: Optional color name
+            - **Example**: "255 0 0 Red" or "255 0 0"
+            - **Professional Practice**: Understand color line format
+          - **Multiple Colors**: One color per line
+            - **Structure**: Each line is one color
+            - **Order**: Order matters for display
+            - **Professional Practice**: Organize color lines logically
+        - **Comments**: Comment lines (optional)
+          - **Format**: Lines starting with "#"
+          - **Purpose**: Add notes or documentation
+          - **Professional Practice**: Use comments for documentation
+        - **Example .gpl File**: Complete example
+          ```
+          GIMP Palette
+          Name: Example Palette
+          Columns: 4
+          # This is a comment
+          255   0   0 Red
+          0   255   0 Green
+          0   0   255 Blue
+          ```
+          - **Structure**: Shows complete file structure
+          - **Professional Practice**: Use as template
+      - **File Validation**: Ensuring valid .gpl files
+        - **Format Check**: Verify file format
+          - **Header**: Must have "GIMP Palette" header
+          - **Structure**: Must follow structure
+          - **Professional Practice**: Validate before sharing
+        - **Error Handling**: Common errors
+          - **Missing Header**: File won't load without header
+          - **Invalid Values**: RGB values must be 0-255
+          - **Professional Practice**: Fix errors before sharing
+    - **Naming**: Use descriptive palette names
+      - **Naming**: Use descriptive names for palettes
+        - **Clarity**: Names should clearly describe palette purpose
+        - **Examples**: "Project_Colors.gpl", "Brand_Palette.gpl"
+        - **Consistency**: Use consistent naming conventions
+        - **Professional Practice**: Use consistent naming conventions
+      - **Naming Conventions**: Best practices for naming
+        - **Project Names**: Include project name (e.g., "Website_2024_Palette.gpl")
+        - **Brand Names**: Include brand name (e.g., "Company_Brand_Colors.gpl")
+        - **Date Stamps**: Include dates for versioning (e.g., "Palette_2024_01.gpl")
+        - **Descriptive**: Use descriptive terms (e.g., "Nature_Palette.gpl", "Sunset_Colors.gpl")
+        - **Professional Practice**: Develop consistent naming system
+      - **Organization**: Descriptive names help identify palettes
+        - **Identification**: Easy to identify palette purpose
+        - **Search**: Easier to find specific palettes
+        - **Team Work**: Helps team members understand palettes
+        - **Professional Practice**: Always use descriptive names
+    - **Palette Metadata**: Information stored with palette
+      - **Palette Name**: Name stored in file
+        - **Storage**: Stored in .gpl file header
+        - **Display**: May appear in palette dialogs
+        - **Professional Practice**: Use meaningful palette names
+      - **Color Names**: Individual color names stored
+        - **Storage**: Each color can have name
+        - **Benefit**: Names help identify colors
+        - **Professional Practice**: Always name colors in palettes
+    - **Professional Practice**: Save palettes for reuse across projects
+      - **Reuse**: Saved palettes can be reused across projects
+        - **Efficiency**: Saves time recreating colors
+        - **Consistency**: Maintains color consistency
+        - **Professional Practice**: Build library of saved palettes
+      - **Consistency**: Maintains color consistency
+        - **Projects**: Same colors across multiple projects
+        - **Team**: Team members use same colors
+        - **Professional Practice**: Use saved palettes for consistency
+      - **Library Building**: Build comprehensive palette library
+        - **Collection**: Collect palettes over time
+        - **Organization**: Organize by project, brand, style
+        - **Professional Practice**: Build comprehensive palette library
+  - **Loading Swatch Palettes**: Load saved swatch collections
+    - **Load Palette**: Swatches → Import Palette
+      - **Menu**: Right-click in Swatches dialog → Import Palette
+      - **Dialog**: Open dialog appears
+      - **Selection**: Select .gpl file to load
+      - **Professional Practice**: Load palettes as needed
+    - **Replace or Append**: Choose to replace or append
+      - **Replace**: Replace current swatches with loaded palette
+      - **Append**: Add loaded swatches to existing swatches
+      - **Selection**: Choose based on needs
+      - **Professional Practice**: Append to build comprehensive collections
+    - **Professional Practice**: Load palettes for project-specific colors
+      - **Project Colors**: Load project-specific palettes
+      - **Efficiency**: Quick access to project colors
+      - **Professional Practice**: Use palettes for project organization
+  - **Professional Practice**: Custom swatches improve workflow efficiency
+    - **Workflow Efficiency**: Custom swatches significantly improve efficiency
+    - **Color Consistency**: Maintains color consistency across projects
+    - **Professional Practice**: Build comprehensive swatch libraries
 
 ### Editing Colors with the Color Editor Dialog
 
+- **Color Editor Dialog**: Comprehensive color selection and editing
+  - **Overview**: Complete color selection and editing interface
+    - **Function**: Primary tool for color selection and editing
+    - **Comprehensive**: Provides all color selection methods
+    - **Essential**: Essential for professional color work
+    - **Professional Practice**: Master Color Editor for all color work
+  - **Access**: Click foreground/background color indicator
+    - **Foreground**: Click foreground color indicator
+      - **Location**: Foreground color box in toolbox
+      - **Visual**: Usually shows current foreground color
+      - **Action**: Single click opens Color Editor
+      - **Professional Practice**: Learn keyboard shortcuts for quick access
+    - **Background**: Click background color indicator
+      - **Location**: Background color box in toolbox (behind foreground)
+      - **Visual**: Usually shows current background color
+      - **Action**: Single click opens Color Editor for background
+      - **Professional Practice**: Use for background color editing
+    - **Dialog**: Color Editor dialog opens
+      - **Window**: Separate dialog window appears
+      - **Modal**: May be modal (blocks other actions) or non-modal
+      - **Position**: Can be moved and resized
+      - **Professional Practice**: Position dialog for efficient workflow
+    - **Keyboard Shortcuts**: Quick access methods
+      - **Shortcut**: May have keyboard shortcut (check preferences)
+      - **Efficiency**: Keyboard faster than mouse
+      - **Professional Practice**: Learn and use keyboard shortcuts
+    - **Alternative Access**: Other ways to open Color Editor
+      - **Menu**: May be accessible from menu
+      - **Context Menu**: May be in context menus
+      - **Professional Practice**: Learn all access methods
+  - **Color Selection Methods**: Multiple ways to select colors
+    - **Color Wheel**: Visual color selection
+      - **Wheel**: Circular color wheel for hue selection
+        - **Layout**: Circular hue wheel around perimeter
+        - **Hue Selection**: Click on wheel to select hue
+        - **Visual**: Intuitive visual color selection
+        - **Professional Practice**: Color wheel is intuitive for visual selection
+      - **Saturation/Value**: Square area for saturation and value
+        - **Square**: Inner square for saturation and value
+          - **Location**: Inner square area of color wheel
+          - **Function**: Controls saturation and value for selected hue
+          - **Interaction**: Click or drag within square
+          - **Professional Practice**: Master saturation/value square
+        - **Horizontal**: Saturation (left = desaturated, right = saturated)
+          - **Left Edge**: Grayscale (0% saturation)
+          - **Right Edge**: Full color (100% saturation)
+          - **Movement**: Horizontal movement changes saturation
+          - **Professional Practice**: Understand horizontal axis
+        - **Vertical**: Value/Brightness (bottom = dark, top = bright)
+          - **Bottom Edge**: Black (0% value)
+          - **Top Edge**: Full brightness (100% value)
+          - **Movement**: Vertical movement changes value
+          - **Professional Practice**: Understand vertical axis
+        - **Click/Drag**: Click or drag to adjust saturation and value
+          - **Click**: Single click sets saturation and value
+          - **Drag**: Drag for continuous adjustment
+          - **Real-time**: See changes in real-time
+          - **Professional Practice**: Use drag for smooth adjustments
+        - **Square Interaction**: How to use the square
+          - **Method 1**: Click on desired point
+            - **Action**: Single click on square
+            - **Result**: Sets saturation and value instantly
+            - **Use Case**: Quick color selection
+            - **Professional Practice**: Use click for quick selection
+          - **Method 2**: Drag for continuous adjustment
+            - **Action**: Click and drag within square
+            - **Result**: Continuous saturation/value adjustment
+            - **Use Case**: Fine-tuning colors
+            - **Professional Practice**: Use drag for fine-tuning
+          - **Method 3**: Click on edge for extremes
+            - **Action**: Click on edges of square
+            - **Result**: Maximum saturation, minimum value, etc.
+            - **Use Case**: Accessing color extremes
+            - **Professional Practice**: Use edges for extremes
+        - **Square Feedback**: Visual feedback in square
+          - **Color Display**: Square shows color range for current hue
+          - **Cursor Position**: Cursor shows current saturation/value
+          - **Preview**: Color preview updates as you move
+          - **Professional Practice**: Watch feedback for accuracy
+      - **Visual Selection**: Click or drag to select colors
+        - **Click**: Single click to set color
+        - **Drag**: Drag to continuously adjust color
+        - **Real-time**: See changes in real-time
+        - **Professional Practice**: Use drag for smooth color transitions
+      - **Color Wheel Advantages**: Why use color wheel
+        - **Intuitive**: Matches human color perception
+        - **Visual**: See all colors at once
+        - **Fast**: Quick color selection
+        - **Professional Practice**: Use wheel for visual color work
+      - **Color Wheel Limitations**: When not to use wheel
+        - **Precision**: Less precise than numeric entry
+        - **Specific Values**: Hard to match exact numeric values
+        - **Professional Practice**: Use numeric entry for precise values
+    - **Sliders**: Numeric color component sliders
+      - **Slider Interface**: Understanding slider controls
+        - **Visual**: Visual slider with numeric display
+          - **Appearance**: Visual slider bar with handle
+          - **Scale**: Shows value range visually
+          - **Position**: Handle position shows current value
+          - **Professional Practice**: Master slider controls
+        - **Drag**: Drag slider to adjust value
+          - **Method**: Click and drag slider handle
+          - **Precision**: Fine control by dragging slowly
+          - **Speed**: Quick adjustment by dragging quickly
+          - **Professional Practice**: Use drag for adjustments
+        - **Click**: Click on slider track to jump to value
+          - **Method**: Click anywhere on slider track
+          - **Result**: Handle jumps to clicked position
+          - **Use Case**: Quick value changes
+          - **Professional Practice**: Use click for quick changes
+        - **Numeric Display**: Shows current value
+          - **Display**: Numeric value shown next to slider
+          - **Format**: Shows value in appropriate format (0-255, 0-100%, etc.)
+          - **Update**: Updates in real-time as you adjust
+          - **Professional Practice**: Watch numeric display for precision
+        - **Slider Precision**: Achieving precise values
+          - **Fine Adjustment**: Drag slowly for fine control
+          - **Numeric Entry**: Use numeric field for exact values
+          - **Arrow Keys**: May support arrow key adjustment
+          - **Professional Practice**: Combine methods for precision
+        - **Multiple Sliders**: Working with multiple sliders
+          - **RGB**: Three sliders (Red, Green, Blue)
+          - **HSV**: Three sliders (Hue, Saturation, Value)
+          - **Coordination**: Adjust multiple sliders together
+          - **Professional Practice**: Master multi-slider coordination
+      - **RGB Sliders**: Red, Green, Blue component sliders
+        - **Red Slider**: Adjust red component (0-255)
+          - **Range**: 0 (no red) to 255 (full red)
+          - **Control**: Drag or click to adjust
+          - **Display**: Shows current red value
+          - **Professional Practice**: Use for RGB color adjustments
+        - **Green Slider**: Adjust green component (0-255)
+          - **Range**: 0 (no green) to 255 (full green)
+          - **Control**: Drag or click to adjust
+          - **Display**: Shows current green value
+          - **Professional Practice**: Use for RGB color adjustments
+        - **Blue Slider**: Adjust blue component (0-255)
+          - **Range**: 0 (no blue) to 255 (full blue)
+          - **Control**: Drag or click to adjust
+          - **Display**: Shows current blue value
+          - **Professional Practice**: Use for RGB color adjustments
+        - **RGB Slider Advantages**: When to use RGB sliders
+          - **Precise Control**: Exact numeric control
+          - **Digital Work**: Matches digital color model
+          - **Professional Practice**: Sliders provide precise numeric control
+        - **RGB Slider Workflow**: Using RGB sliders effectively
+          - **Method**: Adjust each component independently
+            - **Step 1**: Adjust red component to desired level
+            - **Step 2**: Adjust green component to desired level
+            - **Step 3**: Adjust blue component to desired level
+            - **Step 4**: Fine-tune all components as needed
+            - **Professional Practice**: Use for precise color matching
+          - **Precision**: Fine-tune individual components
+            - **Fine Control**: Adjust each component precisely
+            - **Independent**: Each component independent
+            - **Professional Practice**: Master component control
+          - **Practical Example**: Matching a specific color
+            - **Scenario**: Need to match RGB(180, 120, 80)
+            - **Step 1**: Set red slider to 180
+            - **Step 2**: Set green slider to 120
+            - **Step 3**: Set blue slider to 80
+            - **Result**: Exact color match
+            - **Professional Practice**: Use for exact color matching
+          - **Color Adjustment Strategies**: Strategies for RGB adjustments
+            - **Warmth Adjustment**: Increase red for warmth
+              - **Method**: Increase red component
+              - **Effect**: Makes color warmer
+              - **Professional Practice**: Use red for warmth
+            - **Coolness Adjustment**: Increase blue for coolness
+              - **Method**: Increase blue component
+              - **Effect**: Makes color cooler
+              - **Professional Practice**: Use blue for coolness
+            - **Brightness Adjustment**: Adjust all components equally
+              - **Method**: Increase/decrease all components by same amount
+              - **Effect**: Changes brightness without changing hue
+              - **Professional Practice**: Use for brightness control
+            - **Contrast Adjustment**: Increase difference between components
+              - **Method**: Increase dominant component, decrease others
+              - **Effect**: Increases color saturation
+              - **Professional Practice**: Use for saturation control
+      - **HSV Sliders**: Hue, Saturation, Value sliders
+        - **Hue Slider**: Adjust hue (0-360 degrees)
+          - **Range**: 0-360 degrees (color wheel position)
+          - **0/360**: Red
+          - **120**: Green
+          - **240**: Blue
+          - **Control**: Drag or click to adjust
+          - **Professional Practice**: Use hue for color shifts
+        - **Saturation Slider**: Adjust saturation (0-100%)
+          - **Range**: 0% (grayscale) to 100% (full color)
+          - **Control**: Drag or click to adjust
+          - **Effect**: Controls color intensity
+          - **Professional Practice**: Use saturation for color intensity
+        - **Value Slider**: Adjust brightness (0-100%)
+          - **Range**: 0% (black) to 100% (full brightness)
+          - **Control**: Drag or click to adjust
+          - **Effect**: Controls color brightness
+          - **Professional Practice**: Use value for brightness control
+        - **HSV Slider Advantages**: When to use HSV sliders
+          - **Perceptual**: Matches human color perception
+          - **Adjustments**: Intuitive for color adjustments
+          - **Professional Practice**: HSV sliders match color perception
+        - **HSV Workflow**: Using HSV for color adjustments
+          - **Hue Shift**: Change hue while keeping saturation/value
+            - **Method**: Adjust hue slider, keep saturation/value same
+            - **Effect**: Changes color type without changing intensity/brightness
+            - **Example**: Blue (240°) to green (120°) while keeping saturation/value
+            - **Professional Practice**: Use hue for color shifts
+          - **Desaturate**: Reduce saturation for muted colors
+            - **Method**: Decrease saturation slider
+            - **Effect**: Makes color less vibrant, more muted
+            - **Example**: Reduce saturation from 80% to 40% for muted look
+            - **Professional Practice**: Use saturation for color intensity
+          - **Darken/Lighten**: Adjust value for brightness
+            - **Method**: Decrease/increase value slider
+            - **Effect**: Makes color darker or lighter
+            - **Example**: Reduce value from 80% to 50% for darker color
+            - **Professional Practice**: Use value for brightness control
+          - **Practical Examples**: Real-world HSV adjustments
+            - **Example 1**: Making color more vibrant
+              - **Start**: H: 200°, S: 40%, V: 70% (muted blue)
+              - **Action**: Increase saturation to 80%
+              - **Result**: H: 200°, S: 80%, V: 70% (vibrant blue)
+              - **Professional Practice**: Use saturation for vibrancy
+            - **Example 2**: Shifting color hue
+              - **Start**: H: 0°, S: 70%, V: 80% (red)
+              - **Action**: Change hue to 30°
+              - **Result**: H: 30°, S: 70%, V: 80% (orange)
+              - **Professional Practice**: Use hue for color shifts
+            - **Example 3**: Lightening color
+              - **Start**: H: 180°, S: 60%, V: 40% (dark cyan)
+              - **Action**: Increase value to 70%
+              - **Result**: H: 180°, S: 60%, V: 70% (lighter cyan)
+              - **Professional Practice**: Use value for brightness
+            - **Example 4**: Creating color variations
+              - **Base**: H: 120°, S: 70%, V: 60% (green)
+              - **Variation 1**: H: 110°, S: 70%, V: 60% (yellow-green)
+              - **Variation 2**: H: 130°, S: 70%, V: 60% (blue-green)
+              - **Professional Practice**: Use hue for color families
+          - **HSV Adjustment Strategies**: Advanced strategies
+            - **Hue Shifts for Harmony**: Create harmonious color schemes
+              - **Method**: Shift hue by 30-60° for related colors
+              - **Effect**: Creates harmonious color palette
+              - **Professional Practice**: Use for color harmony
+            - **Saturation Gradients**: Create saturation variations
+              - **Method**: Keep hue/value, vary saturation
+              - **Effect**: Creates intensity variations
+              - **Professional Practice**: Use for color intensity work
+            - **Value Gradients**: Create brightness variations
+              - **Method**: Keep hue/saturation, vary value
+              - **Effect**: Creates brightness variations
+              - **Professional Practice**: Use for brightness work
+          - **Professional Practice**: Use HSV for perceptual adjustments
+            - **Intuitive**: HSV matches color perception
+            - **Efficient**: Faster than RGB for adjustments
+            - **Quality**: Better results for color work
+            - **Professional Practice**: Master HSV workflow
+      - **Alpha Slider**: Transparency control
+        - **Alpha Range**: Adjust transparency (0-255)
+          - **0**: Fully transparent (invisible)
+          - **255**: Fully opaque (solid)
+          - **Control**: Drag or click to adjust
+          - **Professional Practice**: Use alpha for transparent colors
+        - **Use Case**: Colors with transparency
+          - **Layers**: Creating semi-transparent layers
+          - **Effects**: Applying transparent color effects
+          - **Professional Practice**: Alpha essential for transparency work
+        - **Alpha Display**: How alpha is shown
+          - **Preview**: May show checkerboard pattern for transparency
+            - **Pattern**: Checkerboard indicates transparency
+            - **Visual**: Helps visualize transparency level
+            - **Professional Practice**: Understand alpha visualization
+          - **Indicator**: Alpha value displayed numerically
+            - **Format**: Usually shown as 0-255 or 0-100%
+            - **Display**: Shown alongside RGB/HSV values
+            - **Professional Practice**: Watch alpha value
+          - **Alpha Visualization**: Understanding alpha display
+            - **Opaque (255)**: Solid color, no transparency
+            - **Semi-transparent (128)**: 50% transparent
+            - **Transparent (0)**: Fully transparent, invisible
+            - **Professional Practice**: Understand alpha levels
+        - **Alpha Use Cases**: When to use alpha
+          - **Layer Transparency**: Creating transparent layers
+            - **Use Case**: Layers with transparency
+            - **Method**: Set alpha when creating layer colors
+            - **Professional Practice**: Use alpha for layers
+          - **Overlay Effects**: Creating overlay effects
+            - **Use Case**: Color overlays with transparency
+            - **Method**: Use semi-transparent colors
+            - **Professional Practice**: Use alpha for effects
+          - **Blending**: Creating blending effects
+            - **Use Case**: Colors that blend with underlying layers
+            - **Method**: Use appropriate alpha values
+            - **Professional Practice**: Use alpha for blending
+        - **Alpha Workflow**: Working with alpha
+          - **Setting Alpha**: How to set alpha value
+            - **Method 1**: Use alpha slider
+            - **Method 2**: Enter alpha value numerically
+            - **Professional Practice**: Master alpha control
+          - **Alpha Calculations**: Understanding alpha math
+            - **Blending**: Alpha affects color blending
+            - **Formula**: Final color = (color × alpha) + (background × (1-alpha))
+            - **Professional Practice**: Understand alpha blending
+          - **Professional Practice**: Alpha essential for transparency work
+            - **Transparency**: Essential for transparent effects
+            - **Layers**: Important for layer work
+            - **Professional Practice**: Master alpha for professional work
+    - **Numeric Entry**: Direct numeric value entry
+      - **Numeric Fields**: Text input fields for exact values
+        - **Location**: Next to sliders or in separate section
+        - **Input**: Type exact numeric values
+        - **Precision**: Most precise color selection method
+        - **Professional Practice**: Use numeric entry for precision
+      - **RGB Values**: Enter RGB values directly
+        - **Format**: Enter values 0-255 for each component
+          - **Red Field**: Enter red value (0-255)
+          - **Green Field**: Enter green value (0-255)
+          - **Blue Field**: Enter blue value (0-255)
+          - **Validation**: Values outside range may be clamped
+          - **Professional Practice**: Use numeric entry for precise matching
+        - **Precision**: Exact numeric control
+          - **Exact Values**: Enter exact numeric values
+          - **No Approximation**: No slider approximation
+          - **Professional Practice**: Use for exact color matching
+        - **Use Case**: Matching specific color values
+          - **Color Matching**: Match colors from specifications
+          - **Brand Colors**: Enter exact brand color values
+          - **Professional Practice**: Essential for brand color work
+        - **Input Methods**: Ways to enter values
+          - **Type**: Type values directly
+            - **Method**: Click field, type value, press Enter
+            - **Precision**: Exact value entry
+            - **Speed**: Fast for known values
+            - **Professional Practice**: Use typing for exact values
+          - **Arrow Keys**: Use arrow keys to increment/decrement
+            - **Method**: Click field, use up/down arrows
+            - **Increment**: Usually increments by 1
+            - **Precision**: Fine control with arrow keys
+            - **Professional Practice**: Use arrows for fine adjustments
+          - **Tab Navigation**: Tab between fields
+            - **Method**: Press Tab to move between fields
+            - **Efficiency**: Fast navigation between components
+            - **Workflow**: Enter all values quickly
+            - **Professional Practice**: Master Tab navigation
+          - **Mouse Wheel**: Scroll wheel adjustment (if supported)
+            - **Method**: Hover over field, scroll wheel
+            - **Increment**: Adjusts value by scrolling
+            - **Precision**: Fine control with wheel
+            - **Professional Practice**: Use wheel when available
+          - **Select All**: Select entire value for replacement
+            - **Method**: Double-click or Ctrl+A in field
+            - **Use Case**: Replace entire value quickly
+            - **Professional Practice**: Use select all for quick replacement
+          - **Professional Practice**: Master numeric input methods
+            - **Efficiency**: Master all input methods
+            - **Speed**: Faster color entry
+            - **Professional Practice**: Practice all methods
+      - **HSV Values**: Enter HSV values directly
+        - **Format**: Enter hue (0-360), saturation/value (0-100)
+          - **Hue Field**: Enter hue in degrees (0-360)
+          - **Saturation Field**: Enter saturation percentage (0-100)
+          - **Value Field**: Enter value percentage (0-100)
+          - **Professional Practice**: Use HSV for perceptual adjustments
+        - **Precision**: Exact numeric control
+          - **Exact Values**: Enter exact HSV values
+          - **Perceptual Control**: Control based on perception
+          - **Professional Practice**: Use for precise perceptual adjustments
+        - **Use Case**: Color adjustments based on perception
+          - **Hue Shifts**: Precise hue adjustments
+          - **Saturation Control**: Exact saturation control
+          - **Brightness Control**: Precise brightness adjustments
+          - **Professional Practice**: Use HSV for color adjustments
+      - **HEX Code**: Enter hexadecimal color code
+        - **Format**: Enter #RRGGBB format (e.g., #FF0000 for red)
+          - **Structure**: # followed by 6 hexadecimal digits
+          - **RR**: Red component (00-FF, 0-255 decimal)
+          - **GG**: Green component (00-FF, 0-255 decimal)
+          - **BB**: Blue component (00-FF, 0-255 decimal)
+          - **Case**: Usually case-insensitive (#ff0000 = #FF0000)
+          - **Professional Practice**: HEX entry is essential for web work
+        - **HEX Examples**: Common HEX codes
+          - **#000000**: Black (R=0, G=0, B=0)
+          - **#FFFFFF**: White (R=255, G=255, B=255)
+          - **#FF0000**: Red (R=255, G=0, B=0)
+          - **#00FF00**: Green (R=0, G=255, B=0)
+          - **#0000FF**: Blue (R=0, G=0, B=255)
+          - **Professional Practice**: Memorize common HEX codes
+        - **Use Case**: Web colors, color codes from other sources
+          - **Web Development**: Essential for CSS, HTML
+          - **Design Tools**: Import colors from other design tools
+          - **Color Specifications**: Use color codes from specifications
+          - **Professional Practice**: HEX is standard for web work
+        - **HEX Input Field**: Where to enter HEX
+          - **Location**: HEX input field in Color Editor
+          - **Input**: Type or paste HEX code
+          - **Auto-convert**: Automatically converts to RGB/HSV
+          - **Professional Practice**: Use HEX field for web colors
+        - **HEX Validation**: Understanding HEX input
+          - **Format Check**: Must be # followed by 6 hex digits
+          - **Invalid Input**: Invalid format may be rejected
+          - **Professional Practice**: Verify HEX format before entering
+    - **Professional Practice**: Multiple selection methods suit different needs
+      - **Method Selection**: Choose method based on task
+      - **Visual Work**: Color wheel for visual selection
+      - **Precise Work**: Numeric entry for precise matching
+      - **Professional Practice**: Master all selection methods
+  - **Color Preview**: See color before applying
+    - **Purpose**: Visual feedback for color selection
+      - **Function**: Shows color before applying to image
+      - **Benefit**: Prevents mistakes and allows fine-tuning
+      - **Essential**: Essential for accurate color work
+      - **Professional Practice**: Always use preview before applying
+    - **Current Color**: Shows currently selected color
+      - **Display**: Large color preview area
+        - **Size**: Usually large, prominent display
+        - **Location**: Typically at top or side of dialog
+        - **Visual**: Shows color in full size
+        - **Professional Practice**: Use large preview for accuracy
+      - **Update**: Updates as you adjust color
+        - **Real-time**: Updates immediately as you change values
+        - **Smooth**: Smooth updates without delay
+        - **Feedback**: Immediate visual feedback
+        - **Professional Practice**: Watch preview while adjusting
+      - **Preview Features**: Additional preview capabilities
+        - **Full Color**: Shows full selected color
+          - **Display**: Shows complete color as it will appear
+          - **Size**: Large enough to see color clearly
+          - **Professional Practice**: Use large preview for accuracy
+        - **Transparency**: May show transparency (checkerboard)
+          - **Pattern**: Checkerboard pattern for transparent areas
+          - **Visualization**: Helps see transparency effect
+          - **Professional Practice**: Understand transparency preview
+        - **Context**: May show color in context
+          - **Background**: May show color against different backgrounds
+          - **Comparison**: Compare color in different contexts
+          - **Professional Practice**: Use context preview when available
+        - **Multiple Previews**: Different preview modes
+          - **Single Color**: Preview single color
+          - **Color Comparison**: Compare multiple colors
+          - **Professional Practice**: Use appropriate preview mode
+        - **Preview Size**: Adjusting preview size
+          - **Large Preview**: Better for color evaluation
+          - **Small Preview**: Saves space
+          - **Professional Practice**: Use appropriate preview size
+        - **Professional Practice**: Understand all preview features
+          - **Features**: Learn all available preview features
+          - **Usage**: Use features appropriately
+          - **Professional Practice**: Master preview features
+      - **Professional Practice**: Always preview before applying
+        - **Verification**: Verify color is correct before applying
+        - **Fine-tuning**: Use preview to fine-tune color
+        - **Professional Practice**: Preview is essential step
+    - **Previous Color**: Compare with previous color
+      - **Display**: Shows previous color for comparison
+        - **Location**: Usually next to current color
+        - **Size**: May be smaller than current color
+        - **Purpose**: Reference for comparison
+        - **Professional Practice**: Use comparison for color adjustments
+      - **Comparison**: Side-by-side comparison
+        - **Layout**: Current and previous side by side
+        - **Benefit**: Easy to see differences
+        - **Use Case**: Compare adjustments
+        - **Professional Practice**: Use comparison to evaluate changes
+      - **When Previous Changes**: Understanding previous color
+        - **Update**: Previous updates when you apply color
+        - **History**: May show last applied color
+        - **Professional Practice**: Understand previous color behavior
+      - **Comparison Workflow**: Using comparison effectively
+        - **Step 1**: Note current color
+          - **Action**: Observe current color in preview
+          - **Purpose**: Establish baseline for comparison
+          - **Professional Practice**: Always note starting color
+        - **Step 2**: Make adjustment
+          - **Action**: Adjust color using any method
+          - **Purpose**: Create new color variation
+          - **Professional Practice**: Make intentional adjustments
+        - **Step 3**: Compare new vs previous
+          - **Action**: Compare side-by-side previews
+          - **Purpose**: Evaluate change
+          - **Professional Practice**: Use comparison for evaluation
+        - **Step 4**: Refine if needed
+          - **Action**: Make additional adjustments if needed
+          - **Purpose**: Fine-tune to desired result
+          - **Professional Practice**: Refine until satisfied
+        - **Advanced Comparison**: Advanced comparison techniques
+          - **Multiple Comparisons**: Compare multiple variations
+            - **Method**: Create several color variations
+            - **Compare**: Compare all variations
+            - **Select**: Choose best variation
+            - **Professional Practice**: Use for color selection
+          - **Context Comparison**: Compare in different contexts
+            - **Method**: Compare color against different backgrounds
+            - **Purpose**: See how color works in context
+            - **Professional Practice**: Use for context evaluation
+          - **Professional Practice**: Use comparison workflow
+            - **Workflow**: Make comparison part of workflow
+            - **Quality**: Improves color selection quality
+            - **Professional Practice**: Master comparison workflow
+    - **Preview Accuracy**: Understanding preview accuracy
+      - **Color Space**: Preview uses current color space
+        - **sRGB**: Preview in sRGB if that's working space
+        - **Adobe RGB**: Preview in Adobe RGB if that's working space
+        - **Professional Practice**: Understand color space impact
+      - **Monitor Calibration**: Preview depends on monitor
+        - **Calibration**: Calibrated monitor shows accurate preview
+        - **Uncalibrated**: Uncalibrated monitor may show inaccurate colors
+        - **Professional Practice**: Calibrate monitor for accurate preview
+      - **Display Mode**: Color-managed display affects preview
+        - **Color Management**: Color-managed display shows accurate colors
+        - **Settings**: Check color management settings
+        - **Professional Practice**: Enable color management for accuracy
+    - **Preview in Context**: Seeing color in image context
+      - **Feature**: Some versions show color in image
+        - **Preview**: May preview color applied to image
+        - **Temporary**: Temporary preview before applying
+        - **Professional Practice**: Use context preview when available
+      - **Workflow Integration**: Preview in workflow
+        - **Selection**: Select color with preview
+        - **Verification**: Verify color before applying
+        - **Application**: Apply when satisfied
+        - **Professional Practice**: Integrate preview into workflow
+    - **Professional Practice**: Preview ensures color accuracy
+      - **Accuracy**: Preview ensures correct color selection
+        - **Visual Check**: Visual verification before applying
+        - **Error Prevention**: Prevents color mistakes
+        - **Professional Practice**: Always use preview
+      - **Comparison**: Compare with previous color
+        - **Evaluation**: Evaluate color changes
+        - **Refinement**: Refine colors based on comparison
+        - **Professional Practice**: Use comparison for quality
+      - **Workflow**: Preview is essential workflow step
+        - **Step**: Always preview before applying
+        - **Quality**: Improves color work quality
+        - **Professional Practice**: Make preview part of workflow
+  - **Color Modes**: Switch between color models
+    - **Concept**: Different ways to represent and edit colors
+      - **Multiple Models**: Color Editor supports multiple color models
+      - **Switching**: Can switch between models seamlessly
+      - **Conversion**: Automatic conversion between models
+      - **Professional Practice**: Understand all available modes
+    - **RGB Mode**: Red, Green, Blue color model
+      - **Access**: Select RGB tab or mode in Color Editor
+        - **Tab**: Click RGB tab to switch to RGB mode
+        - **Interface**: Shows RGB sliders and input fields
+        - **Professional Practice**: Learn to switch modes quickly
+      - **Use Case**: Standard digital color model
+        - **Digital Displays**: How screens display colors
+        - **Digital Images**: Standard for digital image work
+        - **Software**: Most software uses RGB
+        - **Professional Practice**: RGB is standard for digital work
+      - **Components**: Red, Green, Blue components
+        - **Red Component**: 0-255 range
+        - **Green Component**: 0-255 range
+        - **Blue Component**: 0-255 range
+        - **Controls**: Sliders and numeric fields for each
+        - **Professional Practice**: Master RGB component control
+      - **RGB Mode Features**: What you can do in RGB mode
+        - **Precise Control**: Exact numeric control
+        - **Component Adjustment**: Adjust each component independently
+        - **Color Matching**: Match specific RGB values
+        - **Professional Practice**: Use RGB for precise color work
+      - **When to Use RGB**: Best use cases
+        - **Digital Work**: All digital image work
+        - **Color Matching**: Matching specific RGB values
+        - **Precise Control**: When you need precise numeric control
+        - **Professional Practice**: Use RGB for digital work
+    - **HSV Mode**: Hue, Saturation, Value color model
+      - **Access**: Select HSV tab or mode in Color Editor
+        - **Tab**: Click HSV tab to switch to HSV mode
+        - **Interface**: Shows HSV sliders and input fields
+        - **Professional Practice**: Learn to switch modes quickly
+      - **Use Case**: Perceptual color adjustments
+        - **Color Adjustments**: Adjusting colors based on perception
+        - **Hue Shifts**: Changing color while keeping brightness
+        - **Saturation Control**: Adjusting color intensity
+        - **Professional Practice**: HSV matches color perception
+      - **Components**: Hue, Saturation, Value components
+        - **Hue**: 0-360 degrees (color type)
+        - **Saturation**: 0-100% (color intensity)
+        - **Value**: 0-100% (brightness)
+        - **Controls**: Sliders and numeric fields for each
+        - **Professional Practice**: Master HSV component control
+      - **HSV Mode Features**: What you can do in HSV mode
+        - **Perceptual Adjustments**: Intuitive color adjustments
+        - **Hue Shifts**: Change color while keeping saturation/value
+        - **Saturation Control**: Adjust color intensity
+        - **Brightness Control**: Adjust brightness independently
+        - **Professional Practice**: Use HSV for color adjustments
+      - **When to Use HSV**: Best use cases
+        - **Color Adjustments**: Making perceptual color adjustments
+        - **Hue Changes**: Changing color type
+        - **Saturation Work**: Adjusting color intensity
+        - **Professional Practice**: Use HSV for adjustments
+    - **CMYK Mode**: Cyan, Magenta, Yellow, Black (if available)
+      - **Availability**: May not be available in all GIMP versions
+        - **Check**: Check if CMYK mode is available
+        - **Limitation**: GIMP primarily RGB-based
+        - **Professional Practice**: Check CMYK availability
+      - **Access**: Select CMYK tab or mode (if available)
+        - **Tab**: Click CMYK tab to switch to CMYK mode
+        - **Interface**: Shows CMYK sliders and input fields
+        - **Professional Practice**: Learn CMYK interface if available
+      - **Use Case**: Print color preparation
+        - **Print Work**: Preparing colors for print
+        - **CMYK Conversion**: Converting RGB to CMYK
+        - **Print Matching**: Matching print color specifications
+        - **Professional Practice**: Use CMYK for print work
+      - **Components**: CMYK components
+        - **Cyan**: 0-100% (cyan component)
+        - **Magenta**: 0-100% (magenta component)
+        - **Yellow**: 0-100% (yellow component)
+        - **Black (K)**: 0-100% (black component)
+        - **Controls**: Sliders and numeric fields for each
+        - **Professional Practice**: Understand CMYK components
+      - **CMYK Limitations**: Understanding CMYK in GIMP
+        - **RGB-Based**: GIMP is primarily RGB-based
+        - **Conversion**: CMYK may be converted from RGB
+        - **Gamut**: CMYK has smaller gamut than RGB
+        - **Professional Practice**: Understand CMYK limitations
+      - **When to Use CMYK**: Best use cases
+        - **Print Preparation**: When preparing for print
+        - **CMYK Specifications**: When working with CMYK specs
+        - **Professional Practice**: Use CMYK only when needed
+    - **Mode Switching**: How to switch between modes
+      - **Tabs**: Click tabs to switch modes
+        - **Method**: Click RGB, HSV, or CMYK tab
+          - **Location**: Tabs usually at top of Color Editor
+          - **Action**: Single click switches mode
+          - **Professional Practice**: Master mode switching
+        - **Instant**: Instant mode switching
+          - **Speed**: No delay in switching
+          - **Smooth**: Smooth transition between modes
+          - **Professional Practice**: Switch modes quickly
+        - **Conversion**: Automatic color conversion
+          - **Automatic**: Color converts automatically
+          - **Accurate**: Maintains color accuracy
+          - **Professional Practice**: Trust automatic conversion
+      - **Keyboard Shortcuts**: Quick mode switching (if available)
+        - **Shortcuts**: May have keyboard shortcuts for modes
+        - **Efficiency**: Faster than clicking tabs
+        - **Professional Practice**: Learn shortcuts if available
+      - **Automatic Conversion**: Colors convert automatically
+        - **Seamless**: Seamless conversion between modes
+          - **No Loss**: No color loss in conversion
+          - **Smooth**: Smooth conversion process
+          - **Professional Practice**: Trust automatic conversion
+        - **Accuracy**: Maintains color accuracy
+          - **Precise**: Precise conversion algorithms
+          - **Reliable**: Reliable conversion results
+          - **Professional Practice**: Trust conversion accuracy
+        - **Real-time**: Updates in real-time
+          - **Instant**: Instant conversion
+          - **No Delay**: No noticeable delay
+          - **Professional Practice**: Real-time conversion is seamless
+        - **Conversion Examples**: Understanding conversions
+          - **RGB to HSV**: RGB(255, 0, 0) → HSV(0°, 100%, 100%)
+            - **Red**: Pure red in both modes
+            - **Conversion**: Automatic, accurate
+            - **Professional Practice**: Understand conversion
+          - **HSV to RGB**: HSV(120°, 100%, 100%) → RGB(0, 255, 0)
+            - **Green**: Pure green in both modes
+            - **Conversion**: Automatic, accurate
+            - **Professional Practice**: Understand conversion
+      - **Preserving Values**: Understanding value preservation
+        - **Same Color**: Same color in different representation
+          - **Concept**: Color stays same, representation changes
+          - **Example**: Red is red in RGB and HSV
+          - **Professional Practice**: Understand value changes
+        - **Values Change**: Numeric values change, color stays same
+          - **RGB Values**: R=255, G=0, B=0 (red)
+          - **HSV Values**: H=0°, S=100%, V=100% (same red)
+          - **Professional Practice**: Values change, color same
+        - **Visual Consistency**: Color looks same in all modes
+          - **Appearance**: Color appearance doesn't change
+          - **Values**: Only numeric values change
+          - **Professional Practice**: Understand visual consistency
+      - **Mode Switching Workflow**: Efficient mode switching
+        - **Quick Switch**: Switch modes quickly as needed
+        - **Task-Based**: Switch based on current task
+        - **Professional Practice**: Master mode switching workflow
+    - **Professional Practice**: Choose mode based on workflow
+      - **Workflow Matching**: Match color mode to workflow
+        - **Task Analysis**: Analyze what you need to do
+        - **Mode Selection**: Choose appropriate mode
+        - **Professional Practice**: Match mode to task
+      - **Digital Work**: RGB for digital work
+        - **Standard**: RGB is standard for digital
+        - **Compatibility**: Maximum compatibility
+        - **Professional Practice**: Use RGB for digital work
+      - **Color Adjustments**: HSV for adjustments
+        - **Intuitive**: HSV more intuitive for adjustments
+        - **Perceptual**: Matches perception
+        - **Professional Practice**: Use HSV for adjustments
+      - **Print Work**: CMYK for print work
+        - **Print Preparation**: Use CMYK when preparing for print
+        - **Specifications**: Use CMYK for print specifications
+        - **Professional Practice**: Use CMYK for print work
+      - **Mode Mastery**: Master all modes
+        - **Flexibility**: Knowing all modes provides flexibility
+        - **Efficiency**: Use best mode for each task
+        - **Professional Practice**: Master all color modes
+  - **Advanced Options**: Additional color editing features
+    - **Overview**: Additional features beyond basic color selection
+      - **Function**: Enhance color editing capabilities
+      - **Integration**: Integrates with other GIMP tools
+      - **Professional Practice**: Learn all advanced features
+    - **Color Picker Integration**: Sample colors while dialog open
+      - **Feature**: Can use Color Picker while dialog open
+        - **Capability**: Color Picker tool works with dialog open
+        - **Workflow**: Sample colors without closing dialog
+        - **Efficiency**: Saves time in color selection
+        - **Professional Practice**: Use for color matching
+      - **How It Works**: Using Color Picker with dialog
+        - **Step 1**: Open Color Editor dialog
+        - **Step 2**: Activate Color Picker tool (press O)
+        - **Step 3**: Click on image to sample color
+        - **Step 4**: Color appears in Color Editor
+        - **Professional Practice**: Master integrated workflow
+      - **Use Case**: Sample colors from image
+        - **Color Matching**: Match colors from image
+        - **Reference Colors**: Sample reference colors
+        - **Workflow**: Efficient color sampling workflow
+        - **Professional Practice**: Use for color matching workflow
+      - **Advantages**: Benefits of integration
+        - **Efficiency**: No need to close dialog
+        - **Speed**: Faster color sampling
+        - **Workflow**: Seamless workflow
+        - **Professional Practice**: Use integration for efficiency
+    - **Add to Swatches**: Add color directly to swatches
+      - **Button**: "Add to Swatches" button in dialog
+        - **Location**: Usually in Color Editor dialog
+        - **Label**: May say "Add to Swatches" or show "+" icon
+        - **Access**: Click button to add color
+        - **Professional Practice**: Locate button in dialog
+      - **Action**: Adds current color to swatches
+        - **Process**: Adds color currently in Color Editor
+        - **Dialog**: May prompt for color name
+        - **Result**: Color appears in Swatches dialog
+        - **Professional Practice**: Build swatches from Color Editor
+      - **Workflow**: Using Add to Swatches
+        - **Step 1**: Select or create color in Color Editor
+        - **Step 2**: Click "Add to Swatches" button
+        - **Step 3**: Enter color name (if prompted)
+        - **Step 4**: Color added to swatches
+        - **Professional Practice**: Use for building swatch libraries
+      - **Use Cases**: When to add to swatches
+        - **Color Library**: Building color libraries
+        - **Project Colors**: Saving project colors
+        - **Brand Colors**: Saving brand colors
+        - **Professional Practice**: Add important colors to swatches
+    - **Color History Integration**: Integration with Color History
+      - **Automatic Tracking**: Colors automatically tracked
+        - **Tracking**: Colors used in Color Editor tracked
+        - **History**: Appear in Color History dialog
+        - **Professional Practice**: Understand tracking behavior
+      - **Workflow**: Using Color History with Color Editor
+        - **Method**: Select colors from Color History
+        - **Edit**: Edit colors from history in Color Editor
+        - **Professional Practice**: Integrate Color History workflow
+    - **Copy/Paste Color Values**: Copying color information
+      - **Copy Values**: Copy color values to clipboard
+        - **Feature**: May be able to copy color values
+        - **Format**: RGB, HSV, or HEX values
+        - **Use Case**: Share colors with other applications
+        - **Professional Practice**: Use copy for workflow integration
+      - **Paste Values**: Paste color values from clipboard
+        - **Feature**: May be able to paste color values
+        - **Format**: Accepts various color formats
+        - **Use Case**: Import colors from other sources
+        - **Professional Practice**: Use paste for color import
+    - **Color Presets**: Saving and loading color presets
+      - **Save Preset**: Save current color as preset
+        - **Feature**: May allow saving color presets
+        - **Use Case**: Save frequently used colors
+        - **Professional Practice**: Use presets for efficiency
+      - **Load Preset**: Load saved color preset
+        - **Feature**: May allow loading color presets
+        - **Use Case**: Quick access to saved colors
+        - **Professional Practice**: Use presets for quick access
+    - **Dialog Options**: Additional dialog options
+      - **Stay Open**: Keep dialog open after applying
+        - **Option**: May have option to keep dialog open
+        - **Use Case**: Continuous color editing
+        - **Professional Practice**: Use for multiple color edits
+      - **Auto-Update**: Auto-update preview
+        - **Option**: Automatic preview updates
+        - **Use Case**: Real-time color feedback
+        - **Professional Practice**: Enable for real-time feedback
+    - **Professional Practice**: Advanced options enhance workflow
+      - **Workflow Enhancement**: Advanced options improve workflow
+        - **Efficiency**: Save time with advanced features
+        - **Integration**: Better tool integration
+        - **Professional Practice**: Use all available features
+      - **Integration**: Integrates with other color tools
+        - **Swatches**: Integrates with Swatches dialog
+        - **Color History**: Integrates with Color History
+        - **Color Picker**: Integrates with Color Picker
+        - **Professional Practice**: Use integrated workflow
+      - **Feature Discovery**: Discovering all features
+        - **Exploration**: Explore all dialog options
+        - **Documentation**: Read feature documentation
+        - **Professional Practice**: Discover all available features
+      - **Mastery**: Master all advanced features
+        - **Learning**: Learn all advanced features
+        - **Practice**: Practice using advanced features
+        - **Professional Practice**: Master all features for efficiency
+  - **Professional Practice**: Color Editor is comprehensive color tool
+    - **Comprehensive Tool**: Color Editor provides complete color control
+    - **Essential**: Essential for precise color work
+    - **Professional Practice**: Master Color Editor for professional work
+
 ### Importing Palettes from Images
+
+- **Extracting Palettes**: Create palettes from existing images
+  - **Purpose**: Generate color palettes from images
+    - **Use Case**: Extract dominant colors from images
+    - **Workflow**: Create palettes based on image colors
+    - **Professional Practice**: Extract palettes for color matching
+  - **Method 1**: Using Color Picker manually
+    - **Process**: Sample colors manually from image
+      - **Step 1**: Open image with desired colors
+      - **Step 2**: Use Color Picker to sample key colors
+      - **Step 3**: Add each sampled color to swatches
+      - **Professional Practice**: Manual method provides control
+    - **Advantages**: Full control over color selection
+      - **Control**: Choose exactly which colors to include
+      - **Selection**: Select colors from specific areas
+      - **Professional Practice**: Manual method for precise palettes
+    - **Disadvantages**: Time-consuming for many colors
+      - **Time**: Takes time for many colors
+      - **Efficiency**: Less efficient for large palettes
+      - **Professional Practice**: Use for small, curated palettes
+  - **Method 2**: Using GIMP's palette extraction
+    - **Extract Palette**: Tools → Palette → Extract Palette
+      - **Menu**: Tools → Palette → Extract Palette
+        - **Location**: Main menu bar → Tools → Palette
+        - **Access**: Click menu item to open extraction dialog
+        - **Professional Practice**: Learn menu location
+      - **Dialog**: Extract Palette dialog opens
+        - **Interface**: Dialog with extraction options
+        - **Options**: Various extraction parameters
+        - **Professional Practice**: Use for automatic palette extraction
+      - **Prerequisites**: Before extracting palette
+        - **Image Open**: Must have image open
+        - **Selection**: May work on selection or entire image
+        - **Professional Practice**: Prepare image before extraction
+    - **Settings**: Configure extraction parameters
+      - **Number of Colors**: Set number of colors to extract
+        - **Setting**: Specify number of colors (typically 16-256)
+          - **Range**: Usually 2-256 colors
+          - **Default**: May default to 16 or 32 colors
+          - **Input**: Enter desired number
+          - **Professional Practice**: Start with 32-64 colors
+        - **Consideration**: More colors = more detailed palette
+          - **More Colors**: More accurate representation
+          - **Trade-off**: More colors = larger palette
+          - **Balance**: Balance accuracy with palette size
+          - **Professional Practice**: Choose appropriate color count
+        - **Color Count Guidelines**: Choosing color count
+          - **Simple Images**: 16-32 colors for simple images
+          - **Complex Images**: 64-128 colors for complex images
+          - **Detailed Work**: 128-256 colors for detailed work
+          - **Professional Practice**: Match count to image complexity
+      - **Color Quantization**: Choose quantization method
+        - **Methods**: Various quantization algorithms
+          - **Median Cut**: Common algorithm, good results
+          - **Octree**: Efficient algorithm
+          - **K-Means**: Advanced algorithm
+          - **Default**: Usually works well
+          - **Professional Practice**: Use default unless specific needs
+        - **Algorithm Selection**: Choosing algorithm
+          - **Default First**: Try default first
+          - **Comparison**: Compare results from different algorithms
+          - **Professional Practice**: Experiment with algorithms
+      - **Selection Scope**: What area to extract from
+        - **Entire Image**: Extract from entire image
+        - **Selection**: Extract from selected area only
+        - **Layer**: Extract from specific layer
+        - **Professional Practice**: Choose appropriate scope
+      - **Color Sorting**: How to sort extracted colors
+        - **Options**: By luminance, by frequency, etc.
+        - **Default**: May have default sorting
+        - **Professional Practice**: Choose sorting that helps workflow
+      - **Professional Practice**: Adjust settings based on image
+        - **Image Analysis**: Analyze image before extraction
+          - **Complexity**: Assess image complexity
+          - **Color Count**: Estimate color variety
+          - **Professional Practice**: Analyze before extracting
+        - **Color Count**: Estimate appropriate color count
+          - **Estimation**: Estimate based on image
+          - **Adjustment**: Adjust if needed
+          - **Professional Practice**: Match settings to image characteristics
+        - **Iteration**: Iterate to find best settings
+          - **Try Different**: Try different settings
+          - **Compare**: Compare results
+          - **Professional Practice**: Iterate for best results
+    - **Result**: Generated palette from image
+      - **Palette**: New palette created from image
+        - **Creation**: New palette automatically created
+        - **Naming**: May prompt for palette name
+        - **Storage**: Palette stored in Swatches dialog
+        - **Professional Practice**: Review and refine extracted palette
+      - **Colors**: Dominant colors from image
+        - **Selection**: Algorithm selects dominant colors
+        - **Representation**: Represents image color distribution
+        - **Quality**: Quality depends on settings
+        - **Professional Practice**: Review extracted colors
+      - **Review Process**: Reviewing extracted palette
+        - **Step 1**: Review all extracted colors
+        - **Step 2**: Identify useful colors
+        - **Step 3**: Remove unwanted colors
+        - **Step 4**: Add missing important colors
+        - **Professional Practice**: Always review extracted palettes
+    - **Extraction Quality**: Understanding extraction quality
+      - **Factors**: What affects extraction quality
+        - **Image Quality**: Higher quality images = better extraction
+        - **Color Count**: Appropriate color count improves quality
+        - **Algorithm**: Algorithm choice affects quality
+        - **Professional Practice**: Understand quality factors
+      - **Improving Quality**: How to improve extraction
+        - **Settings**: Adjust extraction settings
+        - **Pre-processing**: Pre-process image if needed
+        - **Selection**: Extract from specific areas
+        - **Professional Practice**: Improve extraction quality
+    - **Professional Practice**: Automatic extraction is efficient
+      - **Efficiency**: Automatic extraction saves time
+        - **Speed**: Much faster than manual extraction
+        - **Automation**: Automated process
+        - **Professional Practice**: Use automatic extraction for speed
+      - **Use Case**: Good for initial palette creation
+        - **Starting Point**: Good starting point for palettes
+        - **Refinement**: Refine manually after extraction
+        - **Professional Practice**: Use automatic extraction, refine manually
+      - **Workflow**: Integration into workflow
+        - **Step 1**: Extract palette automatically
+        - **Step 2**: Review and refine palette
+        - **Step 3**: Save refined palette
+        - **Professional Practice**: Integrate into workflow
+  - **Method 3**: Import from image file
+    - **Import Palette**: Swatches → Import Palette
+      - **Menu**: Right-click in Swatches dialog → Import Palette
+      - **Dialog**: Open dialog appears
+      - **File Types**: Can import from various image formats
+      - **Professional Practice**: Import palettes from image files
+    - **Supported Formats**: Various image formats supported
+      - **Formats**: PNG, JPEG, GIF, and others
+      - **Process**: GIMP extracts colors from image
+      - **Professional Practice**: Most common formats supported
+    - **Professional Practice**: Import provides quick palette creation
+      - **Quick Creation**: Import creates palettes quickly
+      - **Convenience**: Convenient for existing images
+      - **Professional Practice**: Use import for quick palette creation
+  - **Refining Imported Palettes**: Adjust extracted palettes
+    - **Review Colors**: Review extracted colors
+      - **Review**: Check all extracted colors
+      - **Quality**: Verify color quality and relevance
+      - **Professional Practice**: Always review extracted palettes
+    - **Remove Unwanted Colors**: Delete unnecessary colors
+      - **Action**: Right-click swatch → Delete Swatch
+      - **Selection**: Remove colors not needed
+      - **Professional Practice**: Keep only relevant colors
+    - **Add Missing Colors**: Add colors manually if needed
+      - **Method**: Use Color Picker to add additional colors
+      - **Completion**: Complete palette with missing colors
+      - **Professional Practice**: Refine palettes for completeness
+    - **Organize**: Arrange colors logically
+      - **Arrangement**: Arrange colors in logical order
+      - **Grouping**: Group related colors together
+      - **Professional Practice**: Organized palettes are more useful
+    - **Professional Practice**: Refinement improves palette quality
+      - **Quality**: Refinement significantly improves quality
+      - **Usability**: Well-refined palettes are more usable
+      - **Professional Practice**: Always refine extracted palettes
+  - **Use Cases**: When to import palettes from images
+    - **Color Matching**: Match colors from reference images
+      - **Reference**: Use reference images for color matching
+      - **Extraction**: Extract palette from reference
+      - **Professional Practice**: Extract palettes for color matching
+    - **Brand Colors**: Extract brand colors from logos
+      - **Logos**: Extract colors from brand logos
+      - **Consistency**: Maintain brand color consistency
+      - **Professional Practice**: Extract brand palettes for consistency
+    - **Artistic Inspiration**: Create palettes from artwork
+      - **Artwork**: Extract palettes from inspiring artwork
+      - **Inspiration**: Use for color inspiration
+      - **Professional Practice**: Extract palettes for inspiration
+    - **Professional Practice**: Import palettes for various creative purposes
+      - **Creative Purposes**: Import serves many creative purposes
+      - **Workflow**: Integrates into creative workflow
+      - **Professional Practice**: Use import for creative color work
+  - **Professional Practice**: Palette import is powerful workflow tool
+    - **Powerful Tool**: Palette import is powerful workflow enhancement
+    - **Efficiency**: Saves time in palette creation
+    - **Professional Practice**: Master palette import for efficient workflow
 
 ### Exporting and Sharing Custom Palettes
 
+- **Exporting Palettes**: Save palettes for sharing and reuse
+  - **Export Format**: GIMP Palette (.gpl) format
+    - **Format**: Standard GIMP Palette format
+      - **Extension**: .gpl file extension
+      - **Text Format**: Plain text, human-readable
+      - **Compatibility**: Compatible with GIMP and other applications
+      - **Professional Practice**: .gpl is standard format
+    - **File Structure**: Text file with color definitions
+      - **Header**: Palette name and metadata
+      - **Colors**: Color definitions with names
+      - **Format**: Simple, editable text format
+      - **Professional Practice**: Understand .gpl format structure
+  - **Export Process**: Steps to export palette
+    - **Step 1**: Prepare palette for export
+      - **Organization**: Organize swatches in desired order
+      - **Naming**: Ensure swatches have descriptive names
+      - **Review**: Review palette completeness
+      - **Professional Practice**: Prepare palette before export
+    - **Step 2**: Access export function
+      - **Menu**: Right-click in Swatches dialog → Save Palette
+      - **Dialog**: Save dialog appears
+      - **Professional Practice**: Use Save Palette for export
+    - **Step 3**: Choose save location and name
+      - **Location**: Select appropriate save location
+      - **Naming**: Use descriptive filename
+      - **Format**: Ensure .gpl extension
+      - **Professional Practice**: Use organized file structure
+    - **Step 4**: Confirm export
+      - **Confirmation**: Click Save to export
+      - **Verification**: Verify file is created
+      - **Professional Practice**: Verify export success
+    - **Professional Practice**: Follow export process systematically
+      - **Systematic Process**: Follow process step by step
+      - **Verification**: Always verify export success
+      - **Professional Practice**: Systematic approach ensures success
+  - **Sharing Palettes**: Distribute palettes to others
+    - **File Sharing**: Share .gpl files directly
+      - **Method**: Share .gpl file directly
+      - **Delivery**: Email, cloud storage, etc.
+      - **Compatibility**: Works with any GIMP installation
+      - **Professional Practice**: Direct file sharing is simplest
+    - **Team Collaboration**: Share palettes with team
+      - **Workflow**: Share palettes for team consistency
+      - **Consistency**: Maintains color consistency across team
+      - **Professional Practice**: Share palettes for team projects
+    - **Online Resources**: Share on palette sharing sites
+      - **Sites**: Various online palette sharing platforms
+      - **Community**: Share with GIMP community
+      - **Professional Practice**: Contribute to community resources
+    - **Professional Practice**: Sharing palettes improves collaboration
+      - **Collaboration**: Sharing improves team collaboration
+      - **Consistency**: Maintains color consistency
+      - **Professional Practice**: Share palettes for collaborative work
+  - **Importing Shared Palettes**: Load palettes from others
+    - **Receive File**: Get .gpl file from source
+      - **Source**: Receive from team member, download, etc.
+      - **Verification**: Verify file is .gpl format
+      - **Professional Practice**: Verify file before import
+    - **Import Process**: Load palette into GIMP
+      - **Step 1**: Access import function
+        - **Menu**: Right-click in Swatches dialog → Import Palette
+        - **Dialog**: Open dialog appears
+        - **Professional Practice**: Use Import Palette function
+      - **Step 2**: Select .gpl file
+        - **Selection**: Choose .gpl file to import
+        - **Location**: Navigate to file location
+        - **Professional Practice**: Select correct file
+      - **Step 3**: Choose import mode
+        - **Replace**: Replace current swatches
+        - **Append**: Add to existing swatches
+        - **Selection**: Choose based on needs
+        - **Professional Practice**: Usually append to keep existing swatches
+      - **Step 4**: Confirm import
+        - **Confirmation**: Click Open to import
+        - **Verification**: Verify palette appears
+        - **Professional Practice**: Verify import success
+    - **Professional Practice**: Import process is straightforward
+      - **Straightforward**: Import process is simple
+      - **Verification**: Always verify import success
+      - **Professional Practice**: Follow import process systematically
+  - **Palette Documentation**: Document palettes for others
+    - **Naming**: Use descriptive palette names
+      - **Descriptive**: Names should describe palette purpose
+      - **Examples**: "Brand_Colors_2024.gpl", "Nature_Palette.gpl"
+      - **Professional Practice**: Use clear, descriptive names
+    - **Swatch Names**: Name individual swatches
+      - **Naming**: Give each swatch descriptive name
+      - **Clarity**: Names help others understand colors
+      - **Professional Practice**: Always name swatches
+    - **Readme Files**: Include documentation if needed
+      - **Documentation**: Create readme for complex palettes
+      - **Information**: Include usage notes, color descriptions
+      - **Professional Practice**: Document complex palettes
+    - **Professional Practice**: Documentation improves usability
+      - **Usability**: Documentation makes palettes more usable
+      - **Clarity**: Clear documentation prevents confusion
+      - **Professional Practice**: Always document shared palettes
+  - **Version Control**: Manage palette versions
+    - **Versioning**: Use version numbers in filenames
+      - **Naming**: Include version in filename
+      - **Examples**: "Palette_v1.gpl", "Palette_v2.gpl"
+      - **Professional Practice**: Version palettes for tracking
+    - **Change Log**: Track palette changes
+      - **Logging**: Keep log of palette changes
+      - **History**: Maintain change history
+      - **Professional Practice**: Track changes for team palettes
+    - **Professional Practice**: Version control maintains organization
+      - **Organization**: Version control keeps palettes organized
+      - **Tracking**: Easy to track changes
+      - **Professional Practice**: Use version control for team palettes
+  - **Professional Practice**: Export and sharing are essential workflow tools
+    - **Essential Tools**: Export and sharing are essential
+    - **Collaboration**: Enables team collaboration
+    - **Efficiency**: Saves time through reuse
+    - **Professional Practice**: Master export and sharing for professional work
+
 ### Converting Colors Between Modes (HEX, RGB, HSV)
+
+- **Color Mode Conversion**: Understanding different color representations
+  - **Concept**: Same color, different representations
+    - **Fundamental**: All models represent same color space
+    - **Conversion**: Mathematical conversion between models
+    - **Lossless**: Conversion is lossless (no color loss)
+    - **Professional Practice**: Understand conversion is mathematical
+  - **Color Models**: Different ways to represent colors
+    - **RGB**: Red, Green, Blue additive model
+      - **Model Type**: Additive color model
+        - **Additive**: Colors add together to create new colors
+        - **Light**: Based on light emission (screens, displays)
+        - **Primary Colors**: Red, Green, Blue are primaries
+        - **Professional Practice**: RGB is standard for digital work
+      - **Use Case**: Standard digital color model
+        - **Digital Displays**: How screens display colors
+        - **Digital Images**: Standard for digital images
+        - **Software**: Most software uses RGB internally
+        - **Professional Practice**: RGB is foundation of digital work
+      - **Components**: Three components (0-255 each)
+        - **Red Component**: 0-255 (0 = no red, 255 = full red)
+        - **Green Component**: 0-255 (0 = no green, 255 = full green)
+        - **Blue Component**: 0-255 (0 = no blue, 255 = full blue)
+        - **Combinations**: 256 x 256 x 256 = 16.7 million colors
+        - **Professional Practice**: Understand RGB component ranges
+      - **RGB Color Space**: Understanding RGB color space
+        - **Gamut**: RGB color gamut (range of displayable colors)
+        - **Limitations**: Cannot display all visible colors
+        - **Standards**: sRGB, Adobe RGB are RGB color spaces
+        - **Professional Practice**: Understand RGB color space limitations
+    - **HSV**: Hue, Saturation, Value perceptual model
+      - **Model Type**: Perceptual color model
+        - **Perceptual**: Matches how humans perceive color
+        - **Intuitive**: More intuitive for color adjustments
+        - **Professional Practice**: HSV matches human color perception
+      - **Use Case**: Perceptual color adjustments
+        - **Color Adjustments**: Adjusting colors based on perception
+        - **Hue Shifts**: Changing color while keeping brightness
+        - **Saturation Control**: Adjusting color intensity
+        - **Professional Practice**: Use HSV for color adjustments
+      - **Components**: Hue (0-360°), Saturation (0-100%), Value (0-100%)
+        - **Hue**: Color type (0-360 degrees on color wheel)
+          - **0/360**: Red
+          - **60**: Yellow
+          - **120**: Green
+          - **180**: Cyan
+          - **240**: Blue
+          - **300**: Magenta
+          - **Professional Practice**: Understand hue wheel positions
+        - **Saturation**: Color intensity (0-100%)
+          - **0%**: Grayscale (no color)
+          - **100%**: Full color intensity
+          - **Professional Practice**: Use saturation for color intensity
+        - **Value**: Brightness (0-100%)
+          - **0%**: Black
+          - **100%**: Full brightness
+          - **Professional Practice**: Use value for brightness control
+      - **HSV Advantages**: Why use HSV
+        - **Intuitive**: Matches color perception
+        - **Adjustments**: Easier to make perceptual adjustments
+        - **Professional Practice**: HSV is powerful for color work
+    - **HEX**: Hexadecimal RGB representation
+      - **Model Type**: Numeric representation of RGB
+        - **Base**: Hexadecimal (base-16) number system
+        - **RGB Equivalent**: Direct representation of RGB values
+        - **Professional Practice**: HEX is standard for web work
+      - **Use Case**: Web development, color codes
+        - **Web Development**: CSS, HTML color codes
+        - **Design Tools**: Color codes in design tools
+        - **Communication**: Easy to communicate color values
+        - **Professional Practice**: HEX essential for web work
+      - **Format**: #RRGGBB (e.g., #FF0000 for red)
+        - **Structure**: # followed by 6 hexadecimal digits
+        - **RR**: Red in hex (00-FF = 0-255 decimal)
+        - **GG**: Green in hex (00-FF = 0-255 decimal)
+        - **BB**: Blue in hex (00-FF = 0-255 decimal)
+        - **Examples**: 
+          - **#000000**: Black (R=0, G=0, B=0)
+          - **#FFFFFF**: White (R=255, G=255, B=255)
+          - **#FF0000**: Red (R=255, G=0, B=0)
+        - **Professional Practice**: Master HEX format
+      - **HEX Advantages**: Why use HEX
+        - **Compact**: Short representation (6 characters)
+        - **Standard**: Web standard format
+        - **Easy Communication**: Easy to share and communicate
+        - **Professional Practice**: HEX is web standard
+    - **Professional Practice**: Understand all color models
+      - **Understanding**: Understanding all models is essential
+        - **RGB**: Foundation of digital color
+        - **HSV**: Perceptual color adjustments
+        - **HEX**: Web and communication
+        - **Professional Practice**: Master all color representations
+      - **Workflow**: Different models suit different workflows
+        - **Digital Work**: RGB for digital work
+        - **Color Adjustments**: HSV for adjustments
+        - **Web Work**: HEX for web development
+        - **Professional Practice**: Choose model based on task
+  - **Conversion in Color Editor**: Converting between modes
+    - **RGB to HSV**: Convert RGB values to HSV
+      - **Method**: Select HSV mode in Color Editor
+        - **Selection**: Choose HSV tab or mode
+        - **Automatic**: RGB values automatically convert
+        - **Display**: HSV values displayed
+        - **Professional Practice**: Switch modes to see conversions
+      - **Use Case**: Perceptual color adjustments
+        - **Adjustment**: Adjust colors based on perception
+        - **Hue**: Change hue while maintaining saturation/value
+        - **Professional Practice**: Use HSV for perceptual adjustments
+      - **Professional Practice**: RGB to HSV conversion is automatic
+        - **Automatic**: Conversion happens automatically
+        - **Seamless**: Seamless switching between modes
+        - **Professional Practice**: Use mode switching for conversions
+    - **HSV to RGB**: Convert HSV values to RGB
+      - **Method**: Select RGB mode in Color Editor
+        - **Selection**: Choose RGB tab or mode
+        - **Automatic**: HSV values automatically convert
+        - **Display**: RGB values displayed
+        - **Professional Practice**: Switch modes to see conversions
+      - **Use Case**: RGB output for digital work
+        - **Output**: Convert to RGB for digital use
+        - **Compatibility**: RGB is standard for digital
+        - **Professional Practice**: Convert to RGB for digital output
+      - **Professional Practice**: HSV to RGB conversion is automatic
+        - **Automatic**: Conversion happens automatically
+        - **Accuracy**: Accurate conversion maintained
+        - **Professional Practice**: Trust automatic conversions
+    - **HEX Entry**: Enter or view HEX codes
+      - **HEX Input**: Enter HEX code directly
+        - **Field**: HEX code input field in Color Editor
+        - **Format**: Enter #RRGGBB format
+        - **Conversion**: Automatically converts to RGB/HSV
+        - **Professional Practice**: Use HEX input for web colors
+      - **HEX Display**: View HEX code for current color
+        - **Display**: HEX code shown for current color
+        - **Copy**: Can copy HEX code
+        - **Use Case**: Share colors with web developers
+        - **Professional Practice**: Use HEX for web color communication
+      - **Professional Practice**: HEX is essential for web work
+        - **Web Work**: HEX is standard for web development
+        - **Communication**: HEX codes easy to communicate
+        - **Professional Practice**: Master HEX for web work
+  - **Practical Conversion Examples**: Common conversion scenarios
+    - **Web Color Matching**: Match colors from web sources
+      - **Scenario**: Need to match color from website
+        - **Source**: Color code from website (HEX)
+          - **Common Sources**: CSS files, HTML, design tools
+          - **Format**: Usually HEX format (#RRGGBB)
+          - **Extraction**: Copy HEX code from source
+          - **Professional Practice**: Use HEX input for web matching
+        - **Input**: Enter HEX code in Color Editor
+          - **Method**: Paste or type HEX code in HEX field
+          - **Auto-convert**: Automatically converts to RGB/HSV
+          - **Verification**: Verify color matches visually
+          - **Professional Practice**: Always verify color match
+        - **Result**: Color matches website
+          - **Accuracy**: Should match exactly (if same color space)
+          - **Verification**: Compare side-by-side if possible
+          - **Professional Practice**: Verify matches are accurate
+      - **Process**: Enter HEX, use RGB/HSV for adjustments
+        - **Step 1**: Enter HEX code
+          - **Action**: Enter HEX code in Color Editor
+          - **Conversion**: Automatically converts to RGB/HSV
+          - **Professional Practice**: Start with HEX for web colors
+        - **Step 2**: Switch to HSV for adjustments
+          - **Reason**: HSV easier for perceptual adjustments
+          - **Method**: Switch to HSV tab/mode
+          - **Professional Practice**: Use HSV for color adjustments
+        - **Step 3**: Adjust as needed
+          - **Hue**: Adjust hue if color needs shifting
+          - **Saturation**: Adjust saturation for intensity
+          - **Value**: Adjust value for brightness
+          - **Professional Practice**: Combine modes for best workflow
+        - **Step 4**: Convert back to HEX if needed
+          - **Output**: Get HEX code for final color
+          - **Use**: Use in CSS, HTML, etc.
+          - **Professional Practice**: Complete workflow cycle
+      - **Example Workflow**: Complete example
+        - **Start**: Website color #3A7BD5 (blue)
+        - **Enter**: Enter #3A7BD5 in Color Editor
+        - **Adjust**: Switch to HSV, increase saturation by 10%
+        - **Result**: New color, get new HEX code
+        - **Professional Practice**: Practice complete workflows
+      - **Professional Practice**: Web matching requires HEX knowledge
+        - **HEX Knowledge**: Essential for web work
+        - **Workflow**: HEX input, HSV adjustment, HEX output
+        - **Mastery**: Master complete web color workflow
+        - **Professional Practice**: Master web color workflow
+    - **Print Color Preparation**: Convert for print workflows
+      - **Scenario**: Prepare RGB colors for print
+        - **Source**: RGB colors from digital work
+        - **Conversion**: May need CMYK conversion (if available)
+        - **Adjustment**: Adjust for print characteristics
+        - **Professional Practice**: Understand print color conversion
+      - **Process**: RGB to print-optimized colors
+        - **Step 1**: Start with RGB colors
+        - **Step 2**: Convert to CMYK if needed
+        - **Step 3**: Adjust for print gamut
+        - **Professional Practice**: Follow print color workflow
+      - **Professional Practice**: Print conversion requires understanding
+        - **Understanding**: Understand print color limitations
+        - **Gamut**: Be aware of gamut differences
+        - **Professional Practice**: Master print color conversion
+    - **Color Adjustment Workflow**: Using HSV for adjustments
+      - **Scenario**: Adjust existing colors perceptually
+        - **Source**: Existing RGB color
+          - **Starting Point**: Have RGB color to adjust
+          - **Example**: RGB(200, 150, 100) - brownish color
+          - **Professional Practice**: HSV ideal for perceptual adjustments
+        - **Method**: Convert to HSV for adjustment
+          - **Conversion**: Switch to HSV mode in Color Editor
+          - **View**: See HSV values for color
+          - **Professional Practice**: Use HSV for adjustments
+        - **Adjustment**: Adjust hue, saturation, or value
+          - **Hue Shift**: Change color type (e.g., brown to orange)
+          - **Saturation Change**: Make more or less vibrant
+          - **Value Change**: Make lighter or darker
+          - **Professional Practice**: Adjust based on needs
+      - **Process**: RGB → HSV → Adjust → RGB
+        - **Step 1**: Start with RGB color
+          - **Input**: Enter RGB color in Color Editor
+          - **Example**: R=200, G=150, B=100
+          - **Professional Practice**: Start with RGB for digital work
+        - **Step 2**: Switch to HSV mode
+          - **Action**: Click HSV tab in Color Editor
+          - **View**: See HSV equivalent values
+          - **Example**: H=30°, S=50%, V=78%
+          - **Professional Practice**: Switch modes seamlessly
+        - **Step 3**: Adjust hue/saturation/value
+          - **Hue Adjustment**: Change hue (e.g., 30° to 45° for more orange)
+          - **Saturation Adjustment**: Change saturation (e.g., 50% to 70% for more vibrant)
+          - **Value Adjustment**: Change value (e.g., 78% to 85% for lighter)
+          - **Professional Practice**: Adjust based on desired result
+        - **Step 4**: Switch back to RGB to see result
+          - **Action**: Switch back to RGB mode
+          - **View**: See adjusted RGB values
+          - **Result**: New RGB color ready for use
+          - **Professional Practice**: Verify result in RGB mode
+      - **Practical Examples**: Real-world adjustment examples
+        - **Example 1**: Making color more vibrant
+          - **Start**: Dull color (low saturation)
+          - **Action**: Increase saturation in HSV
+          - **Result**: More vibrant color
+          - **Professional Practice**: Use saturation for vibrancy
+        - **Example 2**: Shifting color hue
+          - **Start**: Blue color (H=240°)
+          - **Action**: Change hue to 210° (cyan-blue)
+          - **Result**: Different color while keeping brightness
+          - **Professional Practice**: Use hue for color shifts
+        - **Example 3**: Lightening color
+          - **Start**: Dark color (low value)
+          - **Action**: Increase value in HSV
+          - **Result**: Lighter color
+          - **Professional Practice**: Use value for brightness
+        - **Example 4**: Creating color variations
+          - **Start**: Base color
+          - **Action**: Adjust hue slightly for variations
+          - **Result**: Related color family
+          - **Professional Practice**: Use HSV for color families
+      - **HSV Adjustment Strategies**: Strategies for adjustments
+        - **Hue Shifts**: Changing color type
+          - **Small Shifts**: ±10-30° for subtle changes
+          - **Large Shifts**: ±60-120° for dramatic changes
+          - **Professional Practice**: Adjust hue based on needs
+        - **Saturation Control**: Controlling color intensity
+          - **Desaturate**: Reduce saturation for muted colors
+          - **Saturate**: Increase saturation for vibrant colors
+          - **Professional Practice**: Control saturation for mood
+        - **Value Control**: Controlling brightness
+          - **Darken**: Reduce value for darker colors
+          - **Lighten**: Increase value for lighter colors
+          - **Professional Practice**: Control value for contrast
+      - **Professional Practice**: HSV workflow is powerful
+        - **Powerful**: HSV provides intuitive adjustments
+          - **Intuitive**: Matches color perception
+          - **Flexible**: Allows many adjustment types
+          - **Professional Practice**: Master HSV adjustment workflow
+        - **Workflow**: Natural workflow for color work
+          - **Efficiency**: Faster than RGB adjustments
+          - **Quality**: Better results for perceptual adjustments
+          - **Professional Practice**: Use HSV for color adjustments
+        - **Mastery**: Master all HSV adjustment techniques
+          - **Practice**: Practice different adjustments
+          - **Understanding**: Understand HSV relationships
+          - **Professional Practice**: Master HSV for professional work
+  - **Color Value Reference**: Understanding color value ranges
+    - **Purpose**: Knowing value ranges ensures accurate color work
+      - **Accuracy**: Correct ranges prevent errors
+      - **Understanding**: Understanding ranges helps color work
+      - **Professional Practice**: Memorize all value ranges
+    - **RGB Values**: 0-255 for each component
+      - **Range**: Each component 0-255
+        - **Minimum**: 0 (no color component)
+        - **Maximum**: 255 (full color component)
+        - **Total Steps**: 256 possible values per component
+        - **Professional Practice**: Understand RGB value ranges
+      - **Total Colors**: 16.7 million possible colors
+        - **Calculation**: 256 x 256 x 256 = 16,777,216 colors
+        - **Term**: "True Color" or "24-bit color"
+        - **Sufficient**: More than human eye can distinguish
+        - **Professional Practice**: Understand color count
+      - **RGB Value Examples**: Common RGB values
+        - **Black**: R=0, G=0, B=0
+        - **White**: R=255, G=255, B=255
+        - **Red**: R=255, G=0, B=0
+        - **Green**: R=0, G=255, B=0
+        - **Blue**: R=0, G=0, B=255
+        - **Gray (50%)**: R=128, G=128, B=128
+        - **Professional Practice**: Memorize common RGB values
+      - **RGB Value Interpretation**: Understanding RGB values
+        - **Low Values**: Dark colors (0-85)
+        - **Mid Values**: Medium colors (86-170)
+        - **High Values**: Bright colors (171-255)
+        - **Professional Practice**: Understand value interpretation
+    - **HSV Values**: Different ranges for each component
+      - **Hue**: 0-360 degrees (color wheel position)
+        - **Range**: 0-360 degrees
+        - **Circular**: 360° = 0° (wraps around)
+        - **Units**: Measured in degrees
+        - **Professional Practice**: Understand hue wheel positions
+        - **Hue Examples**: Common hue values
+          - **0/360°**: Red
+          - **30°**: Orange
+          - **60°**: Yellow
+          - **120°**: Green
+          - **180°**: Cyan
+          - **240°**: Blue
+          - **270°**: Purple
+          - **300°**: Magenta
+          - **Professional Practice**: Memorize hue positions
+      - **Saturation**: 0-100% (color intensity)
+        - **Range**: 0-100%
+        - **0%**: Grayscale (no color)
+        - **50%**: Moderate color intensity
+        - **100%**: Full color intensity
+        - **Professional Practice**: Understand saturation percentages
+        - **Saturation Examples**: Common saturation values
+          - **0%**: Pure grayscale
+          - **25%**: Muted colors
+          - **50%**: Moderate colors
+          - **75%**: Vibrant colors
+          - **100%**: Maximum saturation
+          - **Professional Practice**: Understand saturation levels
+      - **Value**: 0-100% (brightness)
+        - **Range**: 0-100%
+        - **0%**: Black (regardless of hue/saturation)
+        - **50%**: Medium brightness
+        - **100%**: Full brightness
+        - **Professional Practice**: Understand value percentages
+        - **Value Examples**: Common value levels
+          - **0%**: Black
+          - **25%**: Very dark
+          - **50%**: Medium dark
+          - **75%**: Medium bright
+          - **100%**: Maximum brightness
+          - **Professional Practice**: Understand value levels
+    - **HEX Values**: Two-digit hexadecimal (00-FF)
+      - **Range**: 00-FF for each component (0-255 decimal)
+        - **Minimum**: 00 (hex) = 0 (decimal)
+        - **Maximum**: FF (hex) = 255 (decimal)
+        - **Conversion**: Each hex digit = 4 bits, two digits = 8 bits
+        - **Professional Practice**: Understand HEX value format
+      - **Format**: #RRGGBB (six hex digits)
+        - **Structure**: # followed by 6 hexadecimal digits
+        - **RR**: Red component (00-FF)
+        - **GG**: Green component (00-FF)
+        - **BB**: Blue component (00-FF)
+        - **Professional Practice**: Master HEX format
+      - **HEX to Decimal**: Understanding conversion
+        - **Hex Digits**: 0-9, A-F (A=10, B=11, C=12, D=13, E=14, F=15)
+        - **Calculation**: First digit x 16 + second digit
+        - **Example**: FF = 15x16 + 15 = 240 + 15 = 255
+        - **Professional Practice**: Understand HEX conversion
+      - **HEX Value Examples**: Common HEX values
+        - **#000000**: Black (R=0, G=0, B=0)
+        - **#FFFFFF**: White (R=255, G=255, B=255)
+        - **#FF0000**: Red (R=255, G=0, B=0)
+        - **#00FF00**: Green (R=0, G=255, B=0)
+        - **#0000FF**: Blue (R=0, G=0, B=255)
+        - **#808080**: Gray (R=128, G=128, B=128)
+        - **Professional Practice**: Memorize common HEX codes
+    - **Value Range Quick Reference**: Quick reference table
+      - **RGB**: 0-255 per component (3 components)
+      - **HSV Hue**: 0-360 degrees
+      - **HSV Saturation**: 0-100%
+      - **HSV Value**: 0-100%
+      - **HEX**: 00-FF per component (6 hex digits total)
+      - **Professional Practice**: Create quick reference for yourself
+    - **Professional Practice**: Know value ranges for all modes
+      - **Knowledge**: Essential to know all value ranges
+        - **Accuracy**: Prevents input errors
+        - **Efficiency**: Faster color work
+        - **Professional Practice**: Memorize value ranges
+      - **Accuracy**: Ensures accurate color work
+        - **Error Prevention**: Knowing ranges prevents errors
+        - **Validation**: Can validate color values
+        - **Professional Practice**: Always verify value ranges
+  - **Conversion Accuracy**: Ensuring accurate conversions
+    - **Concept**: Understanding conversion accuracy
+      - **Mathematical**: Conversions are mathematical formulas
+      - **Lossless**: RGB ↔ HEX is lossless (exact)
+      - **Precision**: RGB ↔ HSV may have minor rounding
+      - **Professional Practice**: Understand conversion accuracy
+    - **Automatic Conversion**: GIMP handles conversions automatically
+      - **Reliability**: Automatic conversions are reliable
+        - **Algorithms**: Uses standard color conversion algorithms
+        - **Accuracy**: Industry-standard accuracy
+        - **Professional Practice**: Trust automatic conversions
+      - **Accuracy**: Maintains color accuracy
+        - **RGB ↔ HEX**: Exact conversion (no loss)
+        - **RGB ↔ HSV**: Very accurate (minor rounding possible)
+        - **Professional Practice**: Conversions maintain color accuracy
+      - **Real-time**: Conversions happen in real-time
+        - **Instant**: Immediate conversion as you work
+        - **Smooth**: No noticeable delay
+        - **Professional Practice**: Real-time conversion is seamless
+      - **Bidirectional**: Conversions work both ways
+        - **RGB to HSV**: Convert RGB to HSV
+        - **HSV to RGB**: Convert HSV to RGB
+        - **Professional Practice**: Conversions work in all directions
+    - **Rounding**: Be aware of rounding in conversions
+      - **Awareness**: Some rounding may occur
+        - **RGB ↔ HSV**: Minor rounding possible
+        - **Decimal Precision**: HSV uses decimal values
+        - **Impact**: Usually negligible (less than 1 unit)
+        - **Professional Practice**: Rounding rarely affects work
+      - **When Rounding Occurs**: Understanding rounding
+        - **HSV Calculations**: Hue, Saturation, Value calculations
+        - **Decimal Conversion**: Converting between integer and decimal
+        - **Professional Practice**: Understand when rounding occurs
+      - **Impact**: Usually negligible for most work
+        - **Visual Impact**: Usually not visually noticeable
+        - **Practical Impact**: Rarely affects practical work
+        - **Professional Practice**: Rounding rarely matters
+      - **Critical Work**: When rounding might matter
+        - **Scientific Work**: Very precise scientific color work
+        - **Color Matching**: Exact color matching requirements
+        - **Professional Practice**: Be aware for critical work
+    - **Verification**: Verify conversions when critical
+      - **Critical Work**: Verify for critical color matching
+        - **Brand Colors**: Verify brand color accuracy
+        - **Print Work**: Verify print color accuracy
+        - **Professional Practice**: Verify when color accuracy critical
+      - **Method**: Check values in multiple modes
+        - **Step 1**: Enter color in one mode (e.g., RGB)
+        - **Step 2**: Switch to another mode (e.g., HSV)
+        - **Step 3**: Convert back to original mode
+        - **Step 4**: Compare values (should match or be very close)
+        - **Professional Practice**: Verify conversions when critical
+      - **Verification Tools**: Tools for verification
+        - **Color Editor**: Use Color Editor to verify
+        - **Info Window**: Use Info Window to check values
+        - **Professional Practice**: Use available tools for verification
+      - **Tolerance**: Understanding acceptable differences
+        - **RGB Values**: ±1 unit usually acceptable
+        - **HSV Values**: ±0.1-0.5 units usually acceptable
+        - **Professional Practice**: Understand acceptable tolerances
+    - **Color Space Considerations**: Color space impact on conversion
+      - **Color Space**: Conversion depends on color space
+        - **sRGB**: Standard RGB color space
+        - **Adobe RGB**: Extended gamut color space
+        - **Professional Practice**: Understand color space impact
+      - **Gamut**: Color space gamut affects conversion
+        - **Limitations**: Some colors may be out of gamut
+        - **Clamping**: Colors may be clamped to gamut
+        - **Professional Practice**: Understand gamut limitations
+    - **Professional Practice**: Automatic conversions are reliable
+      - **Reliability**: GIMP conversions are reliable
+        - **Trustworthy**: Can trust automatic conversions
+        - **Standard**: Uses industry-standard algorithms
+        - **Professional Practice**: Use automatic conversions confidently
+      - **When to Verify**: When verification is needed
+        - **Critical Work**: Verify for critical color work
+        - **Brand Colors**: Verify for brand color accuracy
+        - **Print Work**: Verify for print color accuracy
+        - **Professional Practice**: Verify when accuracy is critical
+      - **Confidence**: Use conversions with confidence
+        - **Daily Work**: Trust conversions for daily work
+        - **Verification**: Verify only when critical
+        - **Professional Practice**: Balance trust with verification
+  - **Professional Practice**: Color mode conversion is essential skill
+    - **Essential Skill**: Conversion is essential for professional work
+    - **Workflow**: Different modes suit different workflows
+    - **Mastery**: Master all conversion methods
+    - **Professional Practice**: Color conversion mastery is professional requirement
 
 ## Selections and Masking Tools
 
