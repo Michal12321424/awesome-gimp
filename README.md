@@ -39016,111 +39016,2828 @@ Understanding auto adjustment tools enables efficient automated corrections—us
 
 ### Shadows-Highlights Recovery
 
-The Shadows-Highlights tool in GIMP enables recovery and enhancement of details in shadow and highlight areas, allowing you to reveal hidden details in dark areas, recover blown highlights, and improve visibility in high-contrast images. Shadows-Highlights adjustment is essential for processing images with challenging lighting conditions, recovering detail in underexposed shadows, restoring detail in overexposed highlights, and balancing high-contrast scenes. Understanding the Shadows-Highlights tool's recovery algorithms, shadow/highlight controls, and workflows enables effective detail recovery in GIMP projects.
+The Shadows-Highlights tool in GIMP enables recovery and enhancement of details in shadow and highlight areas. This allows you to reveal hidden details in dark areas, recover blown highlights, and improve visibility in high-contrast images. Shadows-Highlights adjustment is essential for processing images with challenging lighting conditions, recovering detail in underexposed shadows, restoring detail in overexposed highlights, and balancing high-contrast scenes.
 
-Shadows-Highlights operations: Shadows-Highlights adjustment uses sophisticated algorithms to selectively adjust shadows and highlights independently through localized, intelligent tone mapping, revealing hidden details while preserving midtone appearance and overall image quality. The adjustment algorithm operates differently from global tone adjustments (Brightness-Contrast, Levels)—instead of applying uniform changes to entire image, Shadows-Highlights analyzes local tonal regions (identifying shadow areas with low brightness values, highlight areas with high brightness values, midtone areas with moderate values) and applies targeted adjustments to specific regions while preserving other areas. Shadow recovery lightens dark areas (shadows, typically brightness values below 50-80 depending on threshold settings) while attempting to preserve contrast and avoid color shifts through intelligent processing—algorithm analyzes shadow regions (identifying pixels with low brightness values, determining shadow boundaries based on tonal thresholds), selectively brightens dark tones (increasing brightness values in shadow areas, bringing dark tones toward midtone range), enhances local contrast (increasing contrast within shadow regions to maintain detail structure, preventing flat appearance from brightness increase), and preserves color relationships (maintaining color ratios in shadow areas, preventing color shifts toward gray or color casts). The shadow recovery algorithm uses local contrast enhancement techniques (comparing pixels to surrounding areas, adjusting based on local context) to maintain detail structure while brightening shadows—this prevents shadows from becoming flat, featureless dark gray areas, instead maintaining texture and detail while improving visibility. Highlight recovery darkens bright areas (highlights, typically brightness values above 175-200 depending on threshold settings) while attempting to preserve contrast and avoid color shifts through intelligent processing—algorithm analyzes highlight regions (identifying pixels with high brightness values, determining highlight boundaries based on tonal thresholds), selectively darkens bright tones (decreasing brightness values in highlight areas, bringing bright tones toward midtone range), enhances local contrast (increasing contrast within highlight regions to maintain detail structure, preventing flat appearance from brightness decrease), and preserves color relationships (maintaining color ratios in highlight areas, preventing color shifts toward gray or color casts). The highlight recovery algorithm uses similar local contrast techniques to maintain detail structure while darkening highlights—this prevents highlights from becoming flat, featureless light gray areas, instead maintaining texture and detail while recovering blown highlights. Independent shadow and highlight controls enable separate adjustment without affecting each other—shadows can be lightened (increasing shadow recovery amount) while highlights remain unchanged (highlight recovery at 0), or highlights can be darkened (increasing highlight recovery amount) while shadows remain unchanged (shadow recovery at 0), enabling precise control over different tonal ranges independently. This independence is crucial for high-contrast scenes where shadows and highlights require different treatments—underexposed shadows need brightening, overexposed highlights need darkening, but midtones should remain balanced. Understanding independent recovery enables effective detail enhancement—by adjusting shadows and highlights separately, you can recover detail in both extremes simultaneously, balancing high-contrast scenes, and improving visibility in challenging lighting conditions without affecting midtone quality or creating unrealistic appearances.
+**Shadows-Highlights Operations**
 
-Shadow recovery: Shadow recovery lightens dark areas to reveal hidden details in shadows, improving visibility in underexposed regions. Shadow adjustment analyzes shadow regions (dark tones), selectively brightens these areas—increasing shadow lightness makes dark areas more visible, revealing details that were previously hidden in shadows. Shadow recovery attempts to preserve contrast within shadows—brightening shadows while maintaining relative differences between dark tones, preserving shadow detail structure. Shadow recovery attempts to preserve colors—brightening shadows without shifting colors toward gray or introducing color casts. Shadow recovery is useful for: underexposed images with dark shadows, high-contrast scenes with lost shadow detail, images requiring shadow visibility improvement, or scenes with important details in dark areas. Understanding shadow recovery enables effective detail enhancement.
+Shadows-Highlights adjustment uses sophisticated algorithms to selectively adjust shadows and highlights independently through localized, intelligent tone mapping. This reveals hidden details while preserving midtone appearance and overall image quality.
 
-Highlight recovery: Highlight recovery darkens bright areas to restore blown highlights and recover overexposed details. Highlight adjustment analyzes highlight regions (bright tones), selectively darkens these areas—decreasing highlight lightness makes bright areas more visible, recovering details that were previously lost in highlights. Highlight recovery attempts to preserve contrast within highlights—darkening highlights while maintaining relative differences between bright tones, preserving highlight detail structure. Highlight recovery attempts to preserve colors—darkening highlights without shifting colors toward gray or introducing color casts. Highlight recovery is useful for: overexposed images with blown highlights, high-contrast scenes with lost highlight detail, images requiring highlight detail restoration, or scenes with important details in bright areas. Understanding highlight recovery enables effective detail restoration.
+**How the Algorithm Works**
 
-Shadows-Highlights interface: The Shadows-Highlights tool provides interface with independent shadow and highlight controls. Access Shadows-Highlights tool through Colors > Shadows-Highlights menu, or use keyboard shortcut if available (varies by GIMP version). A Shadows-Highlights dialog appears with shadow controls: Shadow Amount slider (controls shadow lightening strength, typically 0-100% range, higher values lighten shadows more), Shadow Tonal Width slider (controls shadow range definition, typically 0-100% range, higher values affect wider shadow range), Shadow Radius slider (controls local contrast preservation, typically 0-250 pixels, higher values preserve larger-scale contrast). Highlight controls: Highlight Amount slider (controls highlight darkening strength, typically 0-100% range, higher values darken highlights more), Highlight Tonal Width slider (controls highlight range definition, typically 0-100% range, higher values affect wider highlight range), Highlight Radius slider (controls local contrast preservation, typically 0-250 pixels, higher values preserve larger-scale contrast). Color Correction slider adjusts color saturation in adjusted areas (typically -100% to +100%, negative values reduce saturation, positive values increase saturation). Midtone Contrast slider adjusts contrast in midtone areas (typically -100% to +100%, negative values reduce contrast, positive values increase contrast). Preview checkbox enables before/after comparison.
+The adjustment algorithm operates differently from global tone adjustments (Brightness-Contrast, Levels). Instead of applying uniform changes to the entire image, Shadows-Highlights:
 
-Shadows-Highlights workflow: Effective shadow-highlight recovery involves systematic approach and parameter strategy. Workflow 1: Shadow recovery—open Shadows-Highlights dialog (Colors > Shadows-Highlights), increase Shadow Amount slider (typically 20-50% for moderate recovery, 50-100% for strong recovery), adjust Shadow Tonal Width to define shadow range (typically 30-70%), adjust Shadow Radius for contrast preservation (typically 50-150 pixels), preview shadow recovery, adjust Color Correction if colors shift (typically +10% to +30%), confirm when satisfied. This workflow recovers shadow details. Workflow 2: Highlight recovery—open Shadows-Highlights dialog, increase Highlight Amount slider (typically 20-50% for moderate recovery, 50-100% for strong recovery), adjust Highlight Tonal Width to define highlight range (typically 30-70%), adjust Highlight Radius for contrast preservation (typically 50-150 pixels), preview highlight recovery, adjust Color Correction if colors shift, confirm. This workflow recovers highlight details. Workflow 3: Combined recovery—open Shadows-Highlights dialog, adjust Shadow Amount and Highlight Amount (typically 20-50% each), adjust Shadow/Highlight Tonal Width and Radius appropriately, adjust Midtone Contrast if needed (typically -20% to +20%), preview combined recovery, confirm. This workflow balances shadows and highlights simultaneously.
+1. **Analyzes local tonal regions**:
+   - Identifies shadow areas with low brightness values
+   - Identifies highlight areas with high brightness values
+   - Identifies midtone areas with moderate values
+2. **Applies targeted adjustments**: To specific regions while preserving other areas
 
-Parameter understanding: Understanding Shadows-Highlights parameters enables effective recovery control through informed parameter adjustment based on image characteristics and desired results. Amount sliders control adjustment strength—Shadow Amount slider (typically 0-100% range, default 0) controls shadow lightening intensity (higher values [50-100%] create stronger shadow recovery, brightening dark areas more dramatically, lower values [10-30%] create subtle shadow recovery, brightening dark areas gently), Highlight Amount slider (typically 0-100% range, default 0) controls highlight darkening intensity (higher values [50-100%] create stronger highlight recovery, darkening bright areas more dramatically, lower values [10-30%] create subtle highlight recovery, darkening bright areas gently). The Amount parameter directly controls recovery strength—moderate values (20-50%) typically provide natural-looking recovery, extreme values (80-100%) may create unrealistic appearances or artifacts. Tonal Width sliders control affected range—Shadow Tonal Width slider (typically 0-100% range, default 50%) controls shadow range definition (higher values [70-100%] affect wider tonal range, recovering more tones from dark through mid-dark, lower values [30-50%] affect narrower range, recovering only darkest tones selectively), Highlight Tonal Width slider (typically 0-100% range, default 50%) controls highlight range definition (higher values [70-100%] affect wider tonal range, recovering more tones from bright through mid-bright, lower values [30-50%] affect narrower range, recovering only brightest tones selectively). The Tonal Width parameter determines adjustment scope—wider values affect more tones (useful for broad recovery), narrower values affect fewer tones (useful for selective recovery without affecting midtones). Radius sliders control local contrast preservation—Shadow Radius slider (typically 0-250 pixels range, default 50 pixels) controls local contrast preservation in shadows (higher values [100-250 pixels] preserve larger-scale contrast, maintaining structure over larger areas, preventing flat appearance, lower values [20-50 pixels] preserve smaller-scale contrast, enhancing local detail, but may create artifacts), Highlight Radius slider (typically 0-250 pixels range, default 50 pixels) controls local contrast preservation in highlights (higher values [100-250 pixels] preserve larger-scale contrast, maintaining structure over larger areas, preventing flat appearance, lower values [20-50 pixels] preserve smaller-scale contrast, enhancing local detail, but may create artifacts). The Radius parameter controls detail preservation scale—larger values maintain smooth appearance (useful for portraits, smooth surfaces), smaller values enhance fine detail (useful for textures, fine structures). Color Correction slider adjusts saturation in adjusted areas (typically -100% to +100% range, default 0%)—positive values (10-30%) enhance colors in recovered areas (preventing color desaturation from brightness adjustments, maintaining color vibrancy), negative values (-10 to -30%) reduce saturation to prevent color shifts (avoiding oversaturated appearance from recovery, preventing color casts). Color Correction prevents color issues from recovery—recovery adjustments can affect color saturation, so Color Correction compensates by adjusting saturation appropriately. Midtone Contrast slider adjusts overall midtone contrast (typically -100% to +100% range, default 0%)—positive values (10-30%) enhance midtone contrast (improving definition in middle tones, compensating for contrast changes from shadow/highlight recovery), negative values (-10 to -30%) reduce midtone contrast for softer appearance (creating gentler midtone transitions, softening overall appearance). Midtone Contrast balances overall contrast after recovery—shadow/highlight recovery can affect overall contrast perception, so Midtone Contrast compensates by adjusting midtone contrast to maintain balanced appearance. Understanding parameters enables precise recovery control—adjusting Amount controls recovery strength, adjusting Tonal Width controls recovery scope, adjusting Radius controls detail preservation, adjusting Color Correction maintains color quality, adjusting Midtone Contrast balances overall contrast, enabling sophisticated, controlled recovery that achieves desired detail enhancement while maintaining image quality and natural appearance.
+**Shadow Recovery**
 
-Shadows-Highlights applications: Shadow-highlight recovery serves various practical applications. Detail recovery—revealing hidden details in underexposed shadows or recovering blown highlights in overexposed images. High-contrast scene processing—balancing high-contrast scenes where shadows and highlights require separate adjustment. Exposure correction—improving images with challenging exposure conditions (backlit scenes, mixed lighting, extreme dynamic range). Image enhancement—improving visibility in dark or bright areas while preserving overall image appearance. Professional processing—handling professional images requiring shadow/highlight detail preservation. Understanding applications enables purposeful recovery usage.
+Shadow recovery lightens dark areas (shadows, typically brightness values below 50-80 depending on threshold settings) while attempting to preserve contrast and avoid color shifts through intelligent processing.
 
-Shadows-Highlights versus Levels/Curves: Understanding difference between Shadows-Highlights and Levels/Curves enables appropriate tool selection. Shadows-Highlights provides local adjustment algorithms, independent shadow/highlight control, detail recovery capabilities, and automatic contrast preservation. Levels/Curves provide global tone mapping, histogram-based control, precise tone control, and manual contrast enhancement. Use Shadows-Highlights when: detail recovery is needed, local adjustment algorithms are preferred, independent shadow/highlight control is required, automatic contrast preservation is desired. Use Levels/Curves when: global tone mapping is sufficient, histogram visualization is helpful, precise tone control is needed, manual contrast control is preferred. Understanding distinctions enables choosing appropriate tool based on recovery needs and workflow preferences.
+**Shadow Recovery Process**
 
-Shadows-Highlights keyboard shortcuts: Efficient shadow-highlight recovery leverages keyboard shortcuts for quick access and control. Access through Colors > Shadows-Highlights menu (keyboard shortcut may vary by GIMP version). Within dialog, Tab key typically moves focus between controls. Arrow keys may adjust slider values when sliders are focused. Understanding available shortcuts (which vary by GIMP version) enables faster recovery workflows.
+The algorithm:
 
-Shadows-Highlights best practices: Effective shadow-highlight recovery follows principles that achieve desired results while preserving quality. First, adjust moderately—excessive shadow/highlight amounts can create unrealistic results or artifacts, so use moderate values (typically 20-50% for natural recovery). Second, adjust tonal width appropriately—defining appropriate shadow/highlight ranges ensures recovery affects correct tones without affecting other areas. Third, preserve contrast with radius—using appropriate radius values maintains image structure while recovering detail, preventing flat appearance. Fourth, correct colors if needed—shadow/highlight recovery can affect colors, so adjust Color Correction to maintain natural color appearance. Fifth, preview before confirming—preview checkbox enables before/after comparison, allowing quality assessment before applying recovery. Sixth, use for appropriate images—shadow-highlight recovery works best on images with recoverable detail in shadows/highlights, may be less effective on already well-exposed images. Following these practices ensures shadow-highlight recovery that achieves desired detail enhancement while maintaining image quality and natural appearance.
+1. **Analyzes shadow regions**:
+   - Identifies pixels with low brightness values
+   - Determines shadow boundaries based on tonal thresholds
+2. **Selectively brightens dark tones**:
+   - Increases brightness values in shadow areas
+   - Brings dark tones toward midtone range
+3. **Enhances local contrast**:
+   - Increases contrast within shadow regions to maintain detail structure
+   - Prevents flat appearance from brightness increase
+4. **Preserves color relationships**:
+   - Maintains color ratios in shadow areas
+   - Prevents color shifts toward gray or color casts
 
-Understanding the Shadows-Highlights tool enables effective detail recovery—use shadow controls to recover details in dark areas, use highlight controls to recover details in bright areas, adjust parameters (Amount, Tonal Width, Radius) for precise control, use Color Correction to maintain colors, use Midtone Contrast to balance overall contrast, preview recovery before confirming, understand tool advantages over global adjustments, and follow systematic approaches for consistent results. This systematic approach ensures shadow-highlight recovery that achieves desired detail enhancement while maintaining image quality and enabling sophisticated image processing in GIMP projects.
+**Local Contrast Enhancement**
+
+The shadow recovery algorithm uses local contrast enhancement techniques (comparing pixels to surrounding areas, adjusting based on local context) to maintain detail structure while brightening shadows. This prevents shadows from becoming flat, featureless dark gray areas, instead maintaining texture and detail while improving visibility.
+
+**Highlight Recovery**
+
+Highlight recovery darkens bright areas (highlights, typically brightness values above 175-200 depending on threshold settings) while attempting to preserve contrast and avoid color shifts through intelligent processing.
+
+**Highlight Recovery Process**
+
+The algorithm:
+
+1. **Analyzes highlight regions**:
+   - Identifies pixels with high brightness values
+   - Determines highlight boundaries based on tonal thresholds
+2. **Selectively darkens bright tones**:
+   - Decreases brightness values in highlight areas
+   - Brings bright tones toward midtone range
+3. **Enhances local contrast**:
+   - Increases contrast within highlight regions to maintain detail structure
+   - Prevents flat appearance from brightness decrease
+4. **Preserves color relationships**:
+   - Maintains color ratios in highlight areas
+   - Prevents color shifts toward gray or color casts
+
+**Highlight Recovery Benefits**
+
+The highlight recovery algorithm uses similar local contrast techniques to maintain detail structure while darkening highlights. This prevents highlights from becoming flat, featureless light gray areas, instead maintaining texture and detail while recovering blown highlights.
+
+**Independent Controls**
+
+Independent shadow and highlight controls enable separate adjustment without affecting each other:
+
+- **Shadows can be lightened**: Increasing shadow recovery amount while highlights remain unchanged (highlight recovery at 0)
+- **Highlights can be darkened**: Increasing highlight recovery amount while shadows remain unchanged (shadow recovery at 0)
+- **Precise control**: Enables precise control over different tonal ranges independently
+
+**Why Independence Matters**
+
+This independence is crucial for high-contrast scenes where shadows and highlights require different treatments. Underexposed shadows need brightening, overexposed highlights need darkening, but midtones should remain balanced.
+
+**Benefits of Independent Recovery**
+
+By adjusting shadows and highlights separately, you can:
+
+- **Recover detail in both extremes simultaneously**
+- **Balance high-contrast scenes**
+- **Improve visibility in challenging lighting conditions**
+- **Avoid affecting midtone quality**
+- **Prevent unrealistic appearances**
+
+**Shadow Recovery Details**
+
+Shadow recovery lightens dark areas to reveal hidden details in shadows, improving visibility in underexposed regions.
+
+**How Shadow Recovery Works**
+
+Shadow adjustment analyzes shadow regions (dark tones) and selectively brightens these areas. Increasing shadow lightness makes dark areas more visible, revealing details that were previously hidden in shadows.
+
+**Contrast Preservation**
+
+Shadow recovery attempts to preserve contrast within shadows. It brightens shadows while maintaining relative differences between dark tones, preserving shadow detail structure.
+
+**Color Preservation**
+
+Shadow recovery attempts to preserve colors. It brightens shadows without shifting colors toward gray or introducing color casts.
+
+**Use Cases for Shadow Recovery**
+
+Shadow recovery is useful for:
+
+- **Underexposed images**: With dark shadows
+- **High-contrast scenes**: With lost shadow detail
+- **Images requiring shadow visibility improvement**
+- **Scenes with important details**: In dark areas
+
+**Highlight Recovery Details**
+
+Highlight recovery darkens bright areas to restore blown highlights and recover overexposed details.
+
+**How Highlight Recovery Works**
+
+Highlight adjustment analyzes highlight regions (bright tones) and selectively darkens these areas. Decreasing highlight lightness makes bright areas more visible, recovering details that were previously lost in highlights.
+
+**Contrast Preservation**
+
+Highlight recovery attempts to preserve contrast within highlights. It darkens highlights while maintaining relative differences between bright tones, preserving highlight detail structure.
+
+**Color Preservation**
+
+Highlight recovery attempts to preserve colors. It darkens highlights without shifting colors toward gray or introducing color casts.
+
+**Use Cases for Highlight Recovery**
+
+Highlight recovery is useful for:
+
+- **Overexposed images**: With blown highlights
+- **High-contrast scenes**: With lost highlight detail
+- **Images requiring highlight detail restoration**
+- **Scenes with important details**: In bright areas
+
+**Shadows-Highlights Interface**
+
+The Shadows-Highlights tool provides an interface with independent shadow and highlight controls. Access the Shadows-Highlights tool through **Colors > Shadows-Highlights** menu, or use keyboard shortcut if available (varies by GIMP version).
+
+**Shadows-Highlights Dialog**
+
+A Shadows-Highlights dialog appears with the following controls:
+
+**Shadow Controls**
+
+- **Shadow Amount slider**: Controls shadow lightening strength (typically 0-100% range). Higher values lighten shadows more
+- **Shadow Tonal Width slider**: Controls shadow range definition (typically 0-100% range). Higher values affect wider shadow range
+- **Shadow Radius slider**: Controls local contrast preservation (typically 0-250 pixels). Higher values preserve larger-scale contrast
+
+**Highlight Controls**
+
+- **Highlight Amount slider**: Controls highlight darkening strength (typically 0-100% range). Higher values darken highlights more
+- **Highlight Tonal Width slider**: Controls highlight range definition (typically 0-100% range). Higher values affect wider highlight range
+- **Highlight Radius slider**: Controls local contrast preservation (typically 0-250 pixels). Higher values preserve larger-scale contrast
+
+**Additional Controls**
+
+- **Color Correction slider**: Adjusts color saturation in adjusted areas (typically -100% to +100%). Negative values reduce saturation, positive values increase saturation
+- **Midtone Contrast slider**: Adjusts contrast in midtone areas (typically -100% to +100%). Negative values reduce contrast, positive values increase contrast
+- **Preview checkbox**: Enables before/after comparison
+
+**Shadows-Highlights Workflows**
+
+Effective shadow-highlight recovery involves a systematic approach and parameter strategy.
+
+**Workflow 1: Shadow Recovery**
+
+1. Open Shadows-Highlights dialog (**Colors > Shadows-Highlights**)
+2. Increase Shadow Amount slider:
+   - Typically 20-50% for moderate recovery
+   - 50-100% for strong recovery
+3. Adjust Shadow Tonal Width to define shadow range (typically 30-70%)
+4. Adjust Shadow Radius for contrast preservation (typically 50-150 pixels)
+5. Preview shadow recovery
+6. Adjust Color Correction if colors shift (typically +10% to +30%)
+7. Confirm when satisfied
+
+This workflow recovers shadow details.
+
+**Workflow 2: Highlight Recovery**
+
+1. Open Shadows-Highlights dialog
+2. Increase Highlight Amount slider:
+   - Typically 20-50% for moderate recovery
+   - 50-100% for strong recovery
+3. Adjust Highlight Tonal Width to define highlight range (typically 30-70%)
+4. Adjust Highlight Radius for contrast preservation (typically 50-150 pixels)
+5. Preview highlight recovery
+6. Adjust Color Correction if colors shift
+7. Confirm
+
+This workflow recovers highlight details.
+
+**Workflow 3: Combined Recovery**
+
+1. Open Shadows-Highlights dialog
+2. Adjust Shadow Amount and Highlight Amount (typically 20-50% each)
+3. Adjust Shadow/Highlight Tonal Width and Radius appropriately
+4. Adjust Midtone Contrast if needed (typically -20% to +20%)
+5. Preview combined recovery
+6. Confirm
+
+This workflow balances shadows and highlights simultaneously.
+
+**Parameter Understanding**
+
+Understanding Shadows-Highlights parameters enables effective recovery control through informed parameter adjustment based on image characteristics and desired results.
+
+**Amount Sliders**
+
+Amount sliders control adjustment strength.
+
+**Shadow Amount Slider**
+
+- **Range**: Typically 0-100% (default 0)
+- **Controls**: Shadow lightening intensity
+- **Higher values** (50-100%): Create stronger shadow recovery, brightening dark areas more dramatically
+- **Lower values** (10-30%): Create subtle shadow recovery, brightening dark areas gently
+
+**Highlight Amount Slider**
+
+- **Range**: Typically 0-100% (default 0)
+- **Controls**: Highlight darkening intensity
+- **Higher values** (50-100%): Create stronger highlight recovery, darkening bright areas more dramatically
+- **Lower values** (10-30%): Create subtle highlight recovery, darkening bright areas gently
+
+**Amount Parameter Guidelines**
+
+The Amount parameter directly controls recovery strength:
+
+- **Moderate values** (20-50%): Typically provide natural-looking recovery
+- **Extreme values** (80-100%): May create unrealistic appearances or artifacts
+
+**Tonal Width Sliders**
+
+Tonal Width sliders control affected range.
+
+**Shadow Tonal Width Slider**
+
+- **Range**: Typically 0-100% (default 50%)
+- **Controls**: Shadow range definition
+- **Higher values** (70-100%): Affect wider tonal range, recovering more tones from dark through mid-dark
+- **Lower values** (30-50%): Affect narrower range, recovering only darkest tones selectively
+
+**Highlight Tonal Width Slider**
+
+- **Range**: Typically 0-100% (default 50%)
+- **Controls**: Highlight range definition
+- **Higher values** (70-100%): Affect wider tonal range, recovering more tones from bright through mid-bright
+- **Lower values** (30-50%): Affect narrower range, recovering only brightest tones selectively
+
+**Tonal Width Parameter Guidelines**
+
+The Tonal Width parameter determines adjustment scope:
+
+- **Wider values**: Affect more tones (useful for broad recovery)
+- **Narrower values**: Affect fewer tones (useful for selective recovery without affecting midtones)
+
+**Radius Sliders**
+
+Radius sliders control local contrast preservation.
+
+**Shadow Radius Slider**
+
+- **Range**: Typically 0-250 pixels (default 50 pixels)
+- **Controls**: Local contrast preservation in shadows
+- **Higher values** (100-250 pixels): Preserve larger-scale contrast, maintaining structure over larger areas, preventing flat appearance
+- **Lower values** (20-50 pixels): Preserve smaller-scale contrast, enhancing local detail, but may create artifacts
+
+**Highlight Radius Slider**
+
+- **Range**: Typically 0-250 pixels (default 50 pixels)
+- **Controls**: Local contrast preservation in highlights
+- **Higher values** (100-250 pixels): Preserve larger-scale contrast, maintaining structure over larger areas, preventing flat appearance
+- **Lower values** (20-50 pixels): Preserve smaller-scale contrast, enhancing local detail, but may create artifacts
+
+**Radius Parameter Guidelines**
+
+The Radius parameter controls detail preservation scale:
+
+- **Larger values**: Maintain smooth appearance (useful for portraits, smooth surfaces)
+- **Smaller values**: Enhance fine detail (useful for textures, fine structures)
+
+**Color Correction Slider**
+
+- **Range**: Typically -100% to +100% (default 0%)
+- **Controls**: Saturation in adjusted areas
+- **Positive values** (10-30%): Enhance colors in recovered areas, preventing color desaturation from brightness adjustments, maintaining color vibrancy
+- **Negative values** (-10 to -30%): Reduce saturation to prevent color shifts, avoiding oversaturated appearance from recovery, preventing color casts
+
+**Color Correction Purpose**
+
+Color Correction prevents color issues from recovery. Recovery adjustments can affect color saturation, so Color Correction compensates by adjusting saturation appropriately.
+
+**Midtone Contrast Slider**
+
+- **Range**: Typically -100% to +100% (default 0%)
+- **Controls**: Overall midtone contrast
+- **Positive values** (10-30%): Enhance midtone contrast, improving definition in middle tones, compensating for contrast changes from shadow/highlight recovery
+- **Negative values** (-10 to -30%): Reduce midtone contrast for softer appearance, creating gentler midtone transitions, softening overall appearance
+
+**Midtone Contrast Purpose**
+
+Midtone Contrast balances overall contrast after recovery. Shadow/highlight recovery can affect overall contrast perception, so Midtone Contrast compensates by adjusting midtone contrast to maintain balanced appearance.
+
+**Parameter Control Summary**
+
+Understanding parameters enables precise recovery control:
+
+- **Adjusting Amount**: Controls recovery strength
+- **Adjusting Tonal Width**: Controls recovery scope
+- **Adjusting Radius**: Controls detail preservation
+- **Adjusting Color Correction**: Maintains color quality
+- **Adjusting Midtone Contrast**: Balances overall contrast
+
+This enables sophisticated, controlled recovery that achieves desired detail enhancement while maintaining image quality and natural appearance.
+
+**Shadows-Highlights Applications**
+
+Shadow-highlight recovery serves various practical applications:
+
+- **Detail recovery**: Revealing hidden details in underexposed shadows or recovering blown highlights in overexposed images
+- **High-contrast scene processing**: Balancing high-contrast scenes where shadows and highlights require separate adjustment
+- **Exposure correction**: Improving images with challenging exposure conditions (backlit scenes, mixed lighting, extreme dynamic range)
+- **Image enhancement**: Improving visibility in dark or bright areas while preserving overall image appearance
+- **Professional processing**: Handling professional images requiring shadow/highlight detail preservation
+
+**Shadows-Highlights vs. Levels/Curves**
+
+Understanding the difference between Shadows-Highlights and Levels/Curves enables appropriate tool selection.
+
+**Shadows-Highlights Characteristics**
+
+- **Local adjustment algorithms**: Intelligent, localized processing
+- **Independent shadow/highlight control**: Separate adjustment of shadows and highlights
+- **Detail recovery capabilities**: Recovers lost detail in shadows and highlights
+- **Automatic contrast preservation**: Maintains contrast automatically
+
+**Levels/Curves Characteristics**
+
+- **Global tone mapping**: Affects entire image uniformly
+- **Histogram-based control**: Visual histogram representation
+- **Precise tone control**: Manual control over tone mapping
+- **Manual contrast enhancement**: Requires manual contrast adjustment
+
+**When to Use Each Tool**
+
+**Use Shadows-Highlights when:**
+- Detail recovery is needed
+- Local adjustment algorithms are preferred
+- Independent shadow/highlight control is required
+- Automatic contrast preservation is desired
+
+**Use Levels/Curves when:**
+- Global tone mapping is sufficient
+- Histogram visualization is helpful
+- Precise tone control is needed
+- Manual contrast control is preferred
+
+**Shadows-Highlights Keyboard Shortcuts**
+
+Efficient shadow-highlight recovery leverages keyboard shortcuts for quick access and control:
+
+- **Access**: Through **Colors > Shadows-Highlights** menu (keyboard shortcut may vary by GIMP version)
+- **Within dialog**: Tab key typically moves focus between controls
+- **Arrow keys**: May adjust slider values when sliders are focused
+
+Understanding available shortcuts (which vary by GIMP version) enables faster recovery workflows.
+
+**Shadows-Highlights Best Practices**
+
+Effective shadow-highlight recovery follows principles that achieve desired results while preserving quality:
+
+1. **Adjust moderately**: Excessive shadow/highlight amounts can create unrealistic results or artifacts. Use moderate values (typically 20-50% for natural recovery)
+
+2. **Adjust tonal width appropriately**: Defining appropriate shadow/highlight ranges ensures recovery affects correct tones without affecting other areas
+
+3. **Preserve contrast with radius**: Using appropriate radius values maintains image structure while recovering detail, preventing flat appearance
+
+4. **Correct colors if needed**: Shadow/highlight recovery can affect colors. Adjust Color Correction to maintain natural color appearance
+
+5. **Preview before confirming**: Preview checkbox enables before/after comparison, allowing quality assessment before applying recovery
+
+6. **Use for appropriate images**: Shadow-highlight recovery works best on images with recoverable detail in shadows/highlights. May be less effective on already well-exposed images
+
+Following these practices ensures shadow-highlight recovery that achieves desired detail enhancement while maintaining image quality and natural appearance.
+
+**Summary**
+
+The Shadows-Highlights tool enables effective detail recovery. Use shadow controls to recover details in dark areas, use highlight controls to recover details in bright areas, adjust parameters (Amount, Tonal Width, Radius) for precise control, use Color Correction to maintain colors, use Midtone Contrast to balance overall contrast, preview recovery before confirming, understand tool advantages over global adjustments, and follow systematic approaches for consistent results. This systematic approach ensures shadow-highlight recovery that achieves desired detail enhancement while maintaining image quality and enabling sophisticated image processing in GIMP projects.
 
 ### Selective Color Correction
 
-Selective color correction in GIMP enables targeted color adjustments to specific color ranges while preserving other colors, allowing you to enhance, correct, or modify particular colors without affecting entire image. Selective color correction is essential for precise color work, enhancing specific colors (sky blues, skin tones, foliage greens), correcting color issues in specific ranges, and creating artistic color effects. Understanding selective color correction techniques, color range selection, and workflows enables sophisticated color control in GIMP projects.
+Selective color correction in GIMP enables targeted color adjustments to specific color ranges while preserving other colors. This allows you to enhance, correct, or modify particular colors without affecting the entire image. Selective color correction is essential for precise color work, enhancing specific colors (sky blues, skin tones, foliage greens), correcting color issues in specific ranges, and creating artistic color effects.
 
-Selective color techniques: Selective color correction uses various techniques to target specific color ranges for adjustment while preserving other colors. Color range selection enables targeting specific colors—selecting color ranges (reds, yellows, greens, cyans, blues, magentas) restricts adjustments to those colors, other colors remain unchanged. Layer masks enable spatial selection—masking layers restricts adjustments to specific image areas, enabling both color range and spatial selection simultaneously. Multiple techniques can combine—using color range selection with layer masking enables precise, targeted corrections affecting specific colors in specific areas. Understanding selective techniques enables effective targeted corrections.
+**Selective Color Techniques**
 
-Hue-Saturation selective adjustment: The Hue-Saturation tool enables selective color range adjustment, allowing targeted corrections to specific colors. To adjust specific color range, open Hue-Saturation dialog (Colors > Hue-Saturation), select color range from color range selector (Reds, Yellows, Greens, Cyans, Blues, Magentas, or Master for all colors), adjust Hue, Saturation, or Lightness sliders for selected range only, preview adjustment, adjust other ranges if needed, confirm. Selective Hue-Saturation adjustment enables: enhancing sky blues without affecting other colors, correcting skin tones without affecting backgrounds, adjusting foliage greens while preserving other colors, or creating artistic color effects in specific ranges. Understanding selective Hue-Saturation enables targeted color adjustments.
+Selective color correction uses various techniques to target specific color ranges for adjustment while preserving other colors.
 
-Color Balance selective adjustment: Color Balance tool can create selective effects when applied to specific color ranges or masked layers, enabling targeted shadow/midtone/highlight corrections. To create selective Color Balance effect, create selection or layer mask defining target area, apply Color Balance (Colors > Color Balance) to masked layer or within selection, adjust shadow/midtone/highlight color balance for selected area, preview selective correction, confirm. Selective Color Balance enables: correcting color casts in specific areas, warming/cooling specific regions, or adjusting color balance in particular tonal ranges of specific areas. Understanding selective Color Balance enables targeted color corrections.
+**Color Range Selection**
 
-Curves per-channel selective adjustment: Curves tool enables selective color corrections through per-channel adjustment and layer masking. To create selective per-channel curve adjustment, create selection or layer mask defining target area, apply Curves (Colors > Curves) to masked layer or within selection, select color channel (Red, Green, Blue) for channel-specific adjustment, adjust curve for selected channel in selected area, preview selective correction, adjust other channels if needed, confirm. Selective per-channel curves enable: precise color corrections in specific areas, sophisticated color control, or creative color effects in targeted regions. Understanding selective curves enables advanced color control.
+Enables targeting specific colors. Selecting color ranges (reds, yellows, greens, cyans, blues, magentas) restricts adjustments to those colors. Other colors remain unchanged.
 
-Layer masking for spatial selection: Layer masks enable spatial selection, restricting adjustments to specific image areas regardless of color range. To create selective adjustment with layer mask, duplicate layer, apply adjustment to duplicate layer, add layer mask to duplicate layer, paint on mask with black/white/gray (black hides adjustment, white reveals adjustment, gray partially reveals adjustment), adjust mask to refine selection, preview selective effect, confirm. Layer masking enables: adjusting colors in specific image areas (e.g., adjusting sky colors in upper portion, adjusting skin tones in portrait areas), combining spatial and color range selection, or creating complex selective corrections. Understanding layer masking enables sophisticated spatial selection.
+**Layer Masks**
 
-Selection-based selective correction: Selections enable spatial selection, restricting adjustments to selected areas. To create selective adjustment with selection, create selection using selection tools (defining target area), apply color adjustment (Hue-Saturation, Color Balance, Curves, etc.) within selection or to selected area, preview selective correction, deselect if needed, confirm. Selection-based correction enables: adjusting colors in specific image areas, combining with color range selection for precise targeting, or creating quick selective corrections. Understanding selection-based correction enables efficient spatial selection.
+Enable spatial selection. Masking layers restricts adjustments to specific image areas, enabling both color range and spatial selection simultaneously.
 
-Combined selective techniques: Combining multiple selective techniques enables sophisticated, precise color corrections. Technique combination examples: using color range selection (Hue-Saturation targeting blues) with layer masking (masking sky area) creates selective sky blue enhancement affecting only sky blues in sky area. Using selection (selecting skin area) with Color Balance (warming midtones) creates selective skin tone warming affecting only midtones in selected skin area. Using layer masking (masking background) with per-channel curves (adjusting blue channel) creates selective background color correction. Understanding technique combination enables sophisticated selective corrections.
+**Combined Techniques**
 
-Selective color correction workflow: Effective selective color correction involves systematic approach and technique selection. Workflow 1: Color range selective adjustment—open Hue-Saturation dialog (Colors > Hue-Saturation), identify target color requiring adjustment (e.g., sky blues), select color range (Blues), adjust Hue/Saturation/Lightness for selected range, preview selective adjustment, adjust other ranges if needed, confirm. This workflow adjusts specific color ranges. Workflow 2: Spatial selective adjustment—create selection or layer mask defining target area, apply color adjustment (Hue-Saturation, Color Balance, Curves) to masked layer or within selection, preview selective adjustment, refine mask/selection if needed, confirm. This workflow adjusts colors in specific areas. Workflow 3: Combined selective adjustment—create selection or layer mask defining target area, apply selective color adjustment (e.g., Hue-Saturation with color range selection) to masked layer, preview combined selective effect, refine mask and adjustment if needed, confirm. This workflow combines spatial and color range selection.
+Multiple techniques can combine. Using color range selection with layer masking enables precise, targeted corrections affecting specific colors in specific areas.
 
-Selective color applications: Selective color correction serves various practical applications. Color enhancement—enhancing specific colors (sky blues, foliage greens, skin tones) while preserving other colors. Color correction—correcting color issues in specific color ranges or areas without affecting other colors. Artistic effects—creating artistic color effects in specific colors or areas (selective desaturation, color shifts, split-toning). Professional color work—precise color corrections required in professional photography or design work. Problem solving—targeting specific color issues without global adjustments affecting entire image. Understanding applications enables purposeful selective corrections.
+**Hue-Saturation Selective Adjustment**
 
-Selective versus global adjustments: Understanding difference between selective and global adjustments enables appropriate technique selection. Selective adjustments target specific color ranges or areas, preserving other colors/areas, enabling precise corrections, and requiring technique selection. Global adjustments affect entire image uniformly, simpler application, but affect all colors/areas simultaneously. Use selective adjustments when: specific colors/areas require adjustment, precise corrections are needed, other colors/areas should remain unchanged. Use global adjustments when: overall adjustments are sufficient, simple corrections are needed, entire image requires same adjustment. Understanding distinctions enables choosing appropriate technique based on correction needs.
+The Hue-Saturation tool enables selective color range adjustment, allowing targeted corrections to specific colors.
 
-Selective color correction best practices: Effective selective color correction follows principles that achieve desired results while maintaining natural appearance. First, select appropriate technique—choosing color range selection, spatial selection, or combined techniques based on correction needs enables effective targeting. Second, refine selections/masks carefully—precise selections or masks ensure adjustments affect only intended colors/areas, preventing unwanted adjustments. Third, adjust moderately—selective adjustments should appear natural, so use moderate values and preview results carefully. Fourth, preview before confirming—previewing selective adjustments enables quality assessment before applying corrections. Fifth, use multiple techniques when needed—combining color range selection with spatial selection enables sophisticated targeting. Sixth, preserve other colors/areas—selective corrections should preserve unchanged colors/areas, maintaining overall image appearance. Following these practices ensures selective color corrections that achieve desired results while maintaining natural appearance and image quality.
+**Technique:**
 
-Understanding selective color correction enables sophisticated color control—use color range selection for targeting specific colors, use layer masking or selections for spatial targeting, combine techniques for precise corrections, adjust moderately for natural appearance, preview adjustments before confirming, understand technique advantages and applications, and follow systematic approaches for consistent results. This systematic approach ensures selective color corrections that achieve desired enhancements while maintaining image quality and enabling precise color control in GIMP projects.
+1. Open Hue-Saturation dialog (**Colors > Hue-Saturation**)
+2. Select color range from color range selector:
+   - Reds, Yellows, Greens, Cyans, Blues, Magentas
+   - Or Master for all colors
+3. Adjust Hue, Saturation, or Lightness sliders for selected range only
+4. Preview adjustment
+5. Adjust other ranges if needed
+6. Confirm
+
+**Selective Hue-Saturation Applications**
+
+Selective Hue-Saturation adjustment enables:
+
+- **Enhancing sky blues**: Without affecting other colors
+- **Correcting skin tones**: Without affecting backgrounds
+- **Adjusting foliage greens**: While preserving other colors
+- **Creating artistic color effects**: In specific ranges
+
+**Color Balance Selective Adjustment**
+
+Color Balance tool can create selective effects when applied to specific color ranges or masked layers, enabling targeted shadow/midtone/highlight corrections.
+
+**Technique:**
+
+1. Create selection or layer mask defining target area
+2. Apply Color Balance (**Colors > Color Balance**) to masked layer or within selection
+3. Adjust shadow/midtone/highlight color balance for selected area
+4. Preview selective correction
+5. Confirm
+
+**Selective Color Balance Applications**
+
+Selective Color Balance enables:
+
+- **Correcting color casts**: In specific areas
+- **Warming/cooling**: Specific regions
+- **Adjusting color balance**: In particular tonal ranges of specific areas
+
+**Curves Per-Channel Selective Adjustment**
+
+Curves tool enables selective color corrections through per-channel adjustment and layer masking.
+
+**Technique:**
+
+1. Create selection or layer mask defining target area
+2. Apply Curves (**Colors > Curves**) to masked layer or within selection
+3. Select color channel (Red, Green, Blue) for channel-specific adjustment
+4. Adjust curve for selected channel in selected area
+5. Preview selective correction
+6. Adjust other channels if needed
+7. Confirm
+
+**Selective Per-Channel Curves Applications**
+
+Selective per-channel curves enable:
+
+- **Precise color corrections**: In specific areas
+- **Sophisticated color control**: Advanced color manipulation
+- **Creative color effects**: In targeted regions
+
+**Layer Masking for Spatial Selection**
+
+Layer masks enable spatial selection, restricting adjustments to specific image areas regardless of color range.
+
+**Technique:**
+
+1. Duplicate layer
+2. Apply adjustment to duplicate layer
+3. Add layer mask to duplicate layer
+4. Paint on mask with black/white/gray:
+   - Black hides adjustment
+   - White reveals adjustment
+   - Gray partially reveals adjustment
+5. Adjust mask to refine selection
+6. Preview selective effect
+7. Confirm
+
+**Layer Masking Applications**
+
+Layer masking enables:
+
+- **Adjusting colors in specific image areas**: For example, adjusting sky colors in upper portion, adjusting skin tones in portrait areas
+- **Combining spatial and color range selection**: For precise targeting
+- **Creating complex selective corrections**: Advanced color work
+
+**Selection-Based Selective Correction**
+
+Selections enable spatial selection, restricting adjustments to selected areas.
+
+**Technique:**
+
+1. Create selection using selection tools (defining target area)
+2. Apply color adjustment (Hue-Saturation, Color Balance, Curves, etc.) within selection or to selected area
+3. Preview selective correction
+4. Deselect if needed
+5. Confirm
+
+**Selection-Based Correction Applications**
+
+Selection-based correction enables:
+
+- **Adjusting colors in specific image areas**: Quick spatial targeting
+- **Combining with color range selection**: For precise targeting
+- **Creating quick selective corrections**: Efficient workflow
+
+**Combined Selective Techniques**
+
+Combining multiple selective techniques enables sophisticated, precise color corrections.
+
+**Technique Combination Examples**
+
+- **Color range selection with layer masking**: Using color range selection (Hue-Saturation targeting blues) with layer masking (masking sky area) creates selective sky blue enhancement affecting only sky blues in sky area
+
+- **Selection with Color Balance**: Using selection (selecting skin area) with Color Balance (warming midtones) creates selective skin tone warming affecting only midtones in selected skin area
+
+- **Layer masking with per-channel curves**: Using layer masking (masking background) with per-channel curves (adjusting blue channel) creates selective background color correction
+
+**Selective Color Correction Workflows**
+
+Effective selective color correction involves a systematic approach and technique selection.
+
+**Workflow 1: Color Range Selective Adjustment**
+
+1. Open Hue-Saturation dialog (**Colors > Hue-Saturation**)
+2. Identify target color requiring adjustment (e.g., sky blues)
+3. Select color range (Blues)
+4. Adjust Hue/Saturation/Lightness for selected range
+5. Preview selective adjustment
+6. Adjust other ranges if needed
+7. Confirm
+
+This workflow adjusts specific color ranges.
+
+**Workflow 2: Spatial Selective Adjustment**
+
+1. Create selection or layer mask defining target area
+2. Apply color adjustment (Hue-Saturation, Color Balance, Curves) to masked layer or within selection
+3. Preview selective adjustment
+4. Refine mask/selection if needed
+5. Confirm
+
+This workflow adjusts colors in specific areas.
+
+**Workflow 3: Combined Selective Adjustment**
+
+1. Create selection or layer mask defining target area
+2. Apply selective color adjustment (e.g., Hue-Saturation with color range selection) to masked layer
+3. Preview combined selective effect
+4. Refine mask and adjustment if needed
+5. Confirm
+
+This workflow combines spatial and color range selection.
+
+**Selective Color Applications**
+
+Selective color correction serves various practical applications:
+
+- **Color enhancement**: Enhancing specific colors (sky blues, foliage greens, skin tones) while preserving other colors
+- **Color correction**: Correcting color issues in specific color ranges or areas without affecting other colors
+- **Artistic effects**: Creating artistic color effects in specific colors or areas (selective desaturation, color shifts, split-toning)
+- **Professional color work**: Precise color corrections required in professional photography or design work
+- **Problem solving**: Targeting specific color issues without global adjustments affecting entire image
+
+**Selective vs. Global Adjustments**
+
+Understanding the difference between selective and global adjustments enables appropriate technique selection.
+
+**Selective Adjustments Characteristics**
+
+- **Target specific color ranges or areas**: Precise targeting
+- **Preserve other colors/areas**: Maintains unchanged areas
+- **Enable precise corrections**: Fine-tuned adjustments
+- **Require technique selection**: Need to choose appropriate method
+
+**Global Adjustments Characteristics**
+
+- **Affect entire image uniformly**: Consistent application
+- **Simpler application**: Easier to use
+- **Affect all colors/areas simultaneously**: No selective targeting
+
+**When to Use Each Approach**
+
+**Use selective adjustments when:**
+- Specific colors/areas require adjustment
+- Precise corrections are needed
+- Other colors/areas should remain unchanged
+
+**Use global adjustments when:**
+- Overall adjustments are sufficient
+- Simple corrections are needed
+- Entire image requires same adjustment
+
+**Selective Color Correction Best Practices**
+
+Effective selective color correction follows principles that achieve desired results while maintaining natural appearance:
+
+1. **Select appropriate technique**: Choosing color range selection, spatial selection, or combined techniques based on correction needs enables effective targeting
+
+2. **Refine selections/masks carefully**: Precise selections or masks ensure adjustments affect only intended colors/areas, preventing unwanted adjustments
+
+3. **Adjust moderately**: Selective adjustments should appear natural. Use moderate values and preview results carefully
+
+4. **Preview before confirming**: Previewing selective adjustments enables quality assessment before applying corrections
+
+5. **Use multiple techniques when needed**: Combining color range selection with spatial selection enables sophisticated targeting
+
+6. **Preserve other colors/areas**: Selective corrections should preserve unchanged colors/areas, maintaining overall image appearance
+
+Following these practices ensures selective color corrections that achieve desired results while maintaining natural appearance and image quality.
+
+**Summary**
+
+Selective color correction enables sophisticated color control. Use color range selection for targeting specific colors, use layer masking or selections for spatial targeting, combine techniques for precise corrections, adjust moderately for natural appearance, preview adjustments before confirming, understand technique advantages and applications, and follow systematic approaches for consistent results. This systematic approach ensures selective color corrections that achieve desired enhancements while maintaining image quality and enabling precise color control in GIMP projects.
 
 ### Using Sample Points for Accuracy
 
-Sample points in GIMP enable precise color and value measurement at specific image locations, providing numerical feedback (RGB values, brightness, color information) that guides accurate color adjustments, corrections, and technical image processing. Sample points are essential for professional color work, technical accuracy, scientific image analysis, and precise color corrections where numerical values matter more than visual perception. Understanding sample points, their measurement capabilities, and workflows enables accurate, data-driven image adjustments in GIMP projects.
+Sample points in GIMP enable precise color and value measurement at specific image locations. They provide numerical feedback (RGB values, brightness, color information) that guides accurate color adjustments, corrections, and technical image processing. Sample points are essential for professional color work, technical accuracy, scientific image analysis, and precise color corrections where numerical values matter more than visual perception.
 
-Sample point operations: Sample points measure color and brightness values at specific pixel locations through precise numerical analysis, providing numerical feedback (RGB values typically 0-255 range for 8-bit images, 0-65535 for 16-bit images, brightness values calculated from RGB values, color information in various color models) that indicates exact color characteristics at measurement locations, enabling data-driven corrections based on objective measurements rather than subjective visual assessment. Sample points function as measurement tools—they analyze pixel data at specific coordinates (X, Y position on canvas), extract color information from those pixels (reading RGB channel values, calculating brightness, determining color characteristics), and display measured values numerically (showing exact numbers rather than visual approximations), providing precise feedback for corrections requiring accuracy. Sample points are placed at specific image coordinates—clicking with sample point tool (Color Picker tool [keyboard shortcut O] in sample mode, or dedicated sample point tool if available in GIMP version) places measurement point at that location (X, Y coordinate on canvas), with point remaining visible (typically as small crosshair [two perpendicular lines intersecting at measurement point], circle icon [small circle marking measurement location], or numbered icon [numbered marker for multiple sample points]) and displaying current values at that location (showing RGB values, brightness, or other color information in Info dialog or tooltip). Sample points can be placed at multiple locations simultaneously (typically 1-4 sample points depending on GIMP version, enabling measurement at multiple locations for comprehensive analysis), each point measuring independently (each point analyzes its specific location, providing separate measurements for different image areas), enabling comparison between different image regions (comparing shadow values with highlight values, comparing color values in different areas, analyzing tonal distribution across image). Sample points update dynamically in real-time—as adjustments are applied (using Levels, Curves, Color Balance, or other adjustment tools), sample point values update immediately (reflecting changes in pixel values caused by adjustments, showing how adjustments affect measured locations), showing how adjustments affect measured locations (enabling visual feedback on adjustment impact, allowing iterative adjustment based on measured values). This dynamic updating enables iterative correction workflow—place sample points at target locations (areas requiring specific values, such as neutral grays for color correction, shadows/highlights for exposure correction), apply adjustments while monitoring sample point values (watching values change as adjustments are made), continue adjusting until sample point values reach target values (adjusting until RGB values or brightness values match desired targets), enabling precise, data-driven corrections. Sample points enable accurate corrections through objective measurement—using measured values to guide adjustments (knowing exact RGB values or brightness values at specific locations) ensures corrections target specific color characteristics (adjusting to achieve specific target values rather than guessing based on visual appearance) rather than visual approximation (relying on subjective visual assessment which may vary between displays, lighting conditions, or observer perception), enabling consistent, reproducible corrections based on numerical targets. Understanding sample point operations enables data-driven adjustments—sample points provide objective feedback (numerical values independent of display calibration or visual perception), enable precise targeting (knowing exact values allows targeting specific goals, such as neutral grays [RGB 128,128,128] for color correction, or specific brightness values for exposure correction), and facilitate iterative refinement (monitoring values during adjustment enables fine-tuning to exact targets), making sample points essential for professional color work requiring accuracy and consistency.
+**Sample Point Operations**
 
-Sample point interface: Sample points provide interface with measurement display and point management. Access sample points through Color Picker tool (keyboard shortcut O, or Tools > Color Picker), with sample mode enabled in Tool Options (Sample Merged option affects whether sample points measure single layer or merged visible layers). Sample points appear as visible markers on canvas (typically small crosshairs, circles, or icons) at measurement locations. Sample point values display in Info dialog (Windows > Dockable Dialogs > Info, or View > Info), showing RGB values (Red, Green, Blue channels, 0-255 range), brightness values, or other color information for each sample point. Sample points can be moved (clicking and dragging sample point markers), added (clicking with Color Picker tool in sample mode), or removed (varies by GIMP version, may require Info dialog or right-clicking point). Understanding interface enables effective sample point usage.
+Sample points measure color and brightness values at specific pixel locations through precise numerical analysis. They provide numerical feedback that indicates exact color characteristics at measurement locations, enabling data-driven corrections based on objective measurements rather than subjective visual assessment.
 
-Color measurement: Sample points measure color values providing precise color information at measurement locations. RGB values display Red, Green, Blue channel values (typically 0-255 range for 8-bit images, 0-65535 for 16-bit images)—pure red displays as (255,0,0), pure green as (0,255,0), pure blue as (0,0,255), white as (255,255,255), black as (0,0,0), with mixed colors showing various combinations. Brightness values display perceived lightness (typically 0-100% or 0-255 range), calculated from RGB values using standard formulas (often weighted average: 0.299×R + 0.587×G + 0.114×B). Color information may include: HSV values (Hue, Saturation, Value), CMYK values (for print), or hexadecimal color codes. Understanding color measurement enables accurate color analysis.
+**Measurement Capabilities**
 
-Brightness measurement: Sample points measure brightness values indicating perceived lightness at measurement locations. Brightness measurement helps identify: exposure issues (brightness values too high indicate overexposure, too low indicate underexposure), contrast relationships (brightness differences indicate contrast between areas), tonal distribution (brightness values across image reveal tonal characteristics), or correction targets (specific brightness values guide correction goals). Brightness measurement enables accurate exposure corrections—adjusting image to achieve target brightness values at sample points ensures corrections target specific brightness characteristics. Understanding brightness measurement enables precise exposure control.
+Sample points provide:
 
-Sample Merged option: Sample Merged option controls whether sample points measure single active layer or merged visible layers, affecting measurement accuracy and relevance. When Sample Merged is disabled (default), sample points measure only active layer—values reflect single layer colors, ignoring layers below, useful for measuring specific layer content. When Sample Merged is enabled, sample points measure merged visible layers—values reflect composite appearance including all visible layers, useful for measuring final image appearance. Sample Merged affects correction relevance—for adjustments affecting entire image, use Sample Merged to measure final appearance, for layer-specific adjustments, disable Sample Merged to measure layer content. Understanding Sample Merged enables appropriate measurement context.
+- **RGB values**: Typically 0-255 range for 8-bit images, 0-65535 for 16-bit images
+- **Brightness values**: Calculated from RGB values
+- **Color information**: Available in various color models
 
-Sample point workflow: Effective sample point usage involves systematic approach and measurement strategy. Workflow 1: Exposure correction with brightness measurement—place sample point in important shadow area (e.g., subject shadow), place sample point in important highlight area (e.g., subject highlight), check brightness values (shadow should be 10-30%, highlight should be 70-90% for typical images), apply brightness/levels adjustment to achieve target values, monitor sample point values during adjustment, confirm when values reach targets. This workflow uses brightness measurement for accurate exposure correction. Workflow 2: Color correction with color measurement—place sample point in neutral gray area (should measure equal RGB values, e.g., 128,128,128), check RGB values, if values are unequal (e.g., 140,130,125 indicating color cast), apply color correction (Color Balance, Curves) to equalize values, monitor sample point values during adjustment, confirm when RGB values are balanced. This workflow uses color measurement for accurate color correction. Workflow 3: Technical measurement—place sample points at measurement locations, record RGB/brightness values for analysis, use values for technical documentation, scientific analysis, or quality control. This workflow uses sample points for technical measurement.
+**How Sample Points Function**
 
-Multiple sample points: Using multiple sample points enables comprehensive measurement and monitoring across different image areas. Place sample points at key locations—important shadow areas, important highlight areas, neutral gray areas (for color correction), skin tones (for portrait work), or measurement targets. Monitor multiple points simultaneously—Info dialog displays values for all sample points, enabling comparison and monitoring of different areas during adjustments. Multiple points guide comprehensive corrections—ensuring corrections achieve desired values at multiple locations ensures overall correction quality. Understanding multiple sample point usage enables comprehensive measurement and correction guidance.
+Sample points function as measurement tools:
 
-Sample points for color correction: Sample points enable accurate color corrections by providing numerical feedback that guides adjustments. Neutral gray measurement—placing sample point in neutral gray area (should measure equal RGB values) identifies color casts (unequal RGB values indicate casts) and guides correction (adjusting to equalize values corrects casts). Skin tone measurement—placing sample points in skin tone areas (target RGB ratios vary by skin tone, typically warmer ratios like R>G>B) guides portrait color corrections. White point measurement—placing sample point in white area (should measure high RGB values, typically 240-255 range) guides white balance corrections. Black point measurement—placing sample point in black area (should measure low RGB values, typically 0-30 range) guides shadow corrections. Understanding sample point color correction enables accurate color work.
+1. **Analyze pixel data**: At specific coordinates (X, Y position on canvas)
+2. **Extract color information**: Reading RGB channel values, calculating brightness, determining color characteristics
+3. **Display measured values numerically**: Showing exact numbers rather than visual approximations
 
-Sample points for exposure correction: Sample points enable accurate exposure corrections by providing brightness feedback that guides adjustments. Shadow measurement—placing sample point in shadow area (target brightness 10-30% for typical images) identifies underexposure and guides shadow lightening. Highlight measurement—placing sample point in highlight area (target brightness 70-90% for typical images) identifies overexposure and guides highlight darkening. Midtone measurement—placing sample point in midtone area (target brightness 40-60% for typical images) guides overall exposure adjustment. Multiple point monitoring—monitoring brightness at multiple points ensures balanced exposure across image. Understanding sample point exposure correction enables precise exposure control.
+This provides precise feedback for corrections requiring accuracy.
 
-Sample point applications: Sample points serve various practical applications. Color correction—measuring neutral grays, skin tones, or color targets to guide accurate color corrections. Exposure correction—measuring shadows, highlights, or midtones to guide accurate exposure corrections. Technical measurement—recording RGB/brightness values for scientific analysis, quality control, or documentation. Professional color work—ensuring corrections achieve specific target values for professional standards. Problem diagnosis—identifying color casts, exposure issues, or technical problems through numerical analysis. Understanding applications enables purposeful sample point usage.
+**Placing Sample Points**
 
-Sample points versus visual assessment: Understanding difference between sample point measurement and visual assessment enables appropriate approach selection. Sample points provide numerical feedback—precise RGB/brightness values, objective measurement, data-driven corrections, but require understanding target values. Visual assessment provides subjective feedback—perceived appearance, artistic judgment, intuitive corrections, but lacks numerical precision. Use sample points when: numerical accuracy is required, technical standards must be met, objective measurement is preferred, specific target values are needed. Use visual assessment when: artistic appearance is sufficient, intuitive corrections are preferred, numerical precision isn't necessary. Both approaches are valuable—sample points provide accuracy, visual assessment provides artistic judgment—combining both enables corrections that are both accurate and visually appealing.
+Sample points are placed at specific image coordinates:
 
-Sample point keyboard shortcuts: Efficient sample point usage leverages keyboard shortcuts for quick access and placement. Press O to activate Color Picker tool (keyboard shortcut may vary by GIMP version). Toggle Sample Merged option in Tool Options dialog (checkbox or option, varies by version). Access Info dialog through Windows > Dockable Dialogs > Info menu (keyboard shortcut may vary). Understanding available shortcuts (which vary by GIMP version) enables faster sample point workflows.
+- **Access tool**: Color Picker tool (keyboard shortcut **O**) in sample mode, or dedicated sample point tool if available in GIMP version
+- **Placement**: Clicking places measurement point at that location (X, Y coordinate on canvas)
+- **Visual markers**: Point remains visible as:
+  - Small crosshair (two perpendicular lines intersecting at measurement point)
+  - Circle icon (small circle marking measurement location)
+  - Numbered icon (numbered marker for multiple sample points)
+- **Value display**: Shows RGB values, brightness, or other color information in Info dialog or tooltip
 
-Sample point best practices: Effective sample point usage follows principles that achieve accurate measurements and corrections. First, place points at meaningful locations—measurement locations should represent areas requiring correction or monitoring (shadows, highlights, neutrals, skin tones). Second, understand target values—knowing desired RGB/brightness values enables accurate correction guidance (neutral grays should be equal RGB, shadows typically 10-30% brightness, highlights typically 70-90% brightness). Third, use Sample Merged appropriately—enable Sample Merged for final image appearance measurement, disable for layer-specific measurement. Fourth, monitor multiple points—using multiple sample points enables comprehensive monitoring and balanced corrections. Fifth, use measurement to guide corrections—sample point values should guide adjustments, enabling data-driven corrections rather than visual approximation. Sixth, combine with visual assessment—using sample points with visual assessment combines accuracy with artistic judgment. Following these practices ensures sample point usage that achieves accurate measurements and corrections while maintaining image quality and visual appeal.
+**Multiple Sample Points**
 
-Understanding sample points enables accurate, data-driven image adjustments—use sample points to measure color and brightness values at specific locations, use RGB/brightness values to guide corrections, place points at meaningful locations (shadows, highlights, neutrals), use Sample Merged option appropriately, monitor multiple points for comprehensive measurement, understand target values for accurate corrections, and follow systematic approaches for consistent results. This systematic approach ensures sample point usage that achieves accurate measurements and corrections while enabling precise, data-driven image processing in GIMP projects.
+Sample points can be placed at multiple locations simultaneously:
+
+- **Quantity**: Typically 1-4 sample points depending on GIMP version
+- **Independent measurement**: Each point analyzes its specific location, providing separate measurements for different image areas
+- **Comparison capability**: Enables comparison between different image regions:
+  - Comparing shadow values with highlight values
+  - Comparing color values in different areas
+  - Analyzing tonal distribution across image
+
+**Dynamic Updating**
+
+Sample points update dynamically in real-time:
+
+- **As adjustments are applied**: Using Levels, Curves, Color Balance, or other adjustment tools
+- **Immediate value updates**: Reflecting changes in pixel values caused by adjustments
+- **Visual feedback**: Showing how adjustments affect measured locations
+- **Iterative adjustment**: Allowing iterative adjustment based on measured values
+
+**Iterative Correction Workflow**
+
+Dynamic updating enables iterative correction workflow:
+
+1. **Place sample points at target locations**: Areas requiring specific values (neutral grays for color correction, shadows/highlights for exposure correction)
+2. **Apply adjustments while monitoring**: Watch sample point values change as adjustments are made
+3. **Continue adjusting until target values are reached**: Adjust until RGB values or brightness values match desired targets
+
+This enables precise, data-driven corrections.
+
+**Objective Measurement Benefits**
+
+Sample points enable accurate corrections through objective measurement:
+
+- **Using measured values to guide adjustments**: Knowing exact RGB values or brightness values at specific locations
+- **Targeting specific color characteristics**: Adjusting to achieve specific target values rather than guessing based on visual appearance
+- **Avoiding visual approximation**: Not relying on subjective visual assessment which may vary between displays, lighting conditions, or observer perception
+- **Consistent, reproducible corrections**: Based on numerical targets
+
+**Key Advantages**
+
+Sample points provide:
+
+- **Objective feedback**: Numerical values independent of display calibration or visual perception
+- **Precise targeting**: Knowing exact values allows targeting specific goals (neutral grays [RGB 128,128,128] for color correction, or specific brightness values for exposure correction)
+- **Iterative refinement**: Monitoring values during adjustment enables fine-tuning to exact targets
+
+This makes sample points essential for professional color work requiring accuracy and consistency.
+
+**Sample Point Interface**
+
+Sample points provide an interface with measurement display and point management.
+
+**Accessing Sample Points**
+
+- **Color Picker tool**: Keyboard shortcut **O**, or **Tools > Color Picker**
+- **Sample mode**: Enabled in Tool Options
+- **Sample Merged option**: Affects whether sample points measure single layer or merged visible layers
+
+**Visual Markers**
+
+Sample points appear as visible markers on canvas (typically small crosshairs, circles, or icons) at measurement locations.
+
+**Value Display**
+
+Sample point values display in Info dialog (**Windows > Dockable Dialogs > Info**, or **View > Info**), showing:
+
+- **RGB values**: Red, Green, Blue channels (0-255 range)
+- **Brightness values**: Perceived lightness
+- **Other color information**: For each sample point
+
+**Point Management**
+
+Sample points can be:
+
+- **Moved**: Clicking and dragging sample point markers
+- **Added**: Clicking with Color Picker tool in sample mode
+- **Removed**: Varies by GIMP version (may require Info dialog or right-clicking point)
+
+**Color Measurement**
+
+Sample points measure color values, providing precise color information at measurement locations.
+
+**RGB Values**
+
+Display Red, Green, Blue channel values:
+
+- **8-bit images**: Typically 0-255 range
+- **16-bit images**: 0-65535 range
+- **Examples**:
+  - Pure red: (255,0,0)
+  - Pure green: (0,255,0)
+  - Pure blue: (0,0,255)
+  - White: (255,255,255)
+  - Black: (0,0,0)
+  - Mixed colors: Various combinations
+
+**Brightness Values**
+
+Display perceived lightness:
+
+- **Range**: Typically 0-100% or 0-255 range
+- **Calculation**: Calculated from RGB values using standard formulas (often weighted average: 0.299×R + 0.587×G + 0.114×B)
+
+**Additional Color Information**
+
+May include:
+
+- **HSV values**: Hue, Saturation, Value
+- **CMYK values**: For print
+- **Hexadecimal color codes**: For web use
+
+**Brightness Measurement**
+
+Sample points measure brightness values indicating perceived lightness at measurement locations.
+
+**What Brightness Measurement Helps Identify**
+
+- **Exposure issues**: Brightness values too high indicate overexposure, too low indicate underexposure
+- **Contrast relationships**: Brightness differences indicate contrast between areas
+- **Tonal distribution**: Brightness values across image reveal tonal characteristics
+- **Correction targets**: Specific brightness values guide correction goals
+
+**Exposure Correction Benefits**
+
+Brightness measurement enables accurate exposure corrections. Adjusting image to achieve target brightness values at sample points ensures corrections target specific brightness characteristics.
+
+**Sample Merged Option**
+
+The Sample Merged option controls whether sample points measure single active layer or merged visible layers, affecting measurement accuracy and relevance.
+
+**When Sample Merged is Disabled (Default)**
+
+Sample points measure only active layer:
+
+- **Values reflect**: Single layer colors, ignoring layers below
+- **Use case**: Useful for measuring specific layer content
+
+**When Sample Merged is Enabled**
+
+Sample points measure merged visible layers:
+
+- **Values reflect**: Composite appearance including all visible layers
+- **Use case**: Useful for measuring final image appearance
+
+**Correction Relevance**
+
+Sample Merged affects correction relevance:
+
+- **For adjustments affecting entire image**: Use Sample Merged to measure final appearance
+- **For layer-specific adjustments**: Disable Sample Merged to measure layer content
+
+**Sample Point Workflows**
+
+Effective sample point usage involves a systematic approach and measurement strategy.
+
+**Workflow 1: Exposure Correction with Brightness Measurement**
+
+1. Place sample point in important shadow area (e.g., subject shadow)
+2. Place sample point in important highlight area (e.g., subject highlight)
+3. Check brightness values:
+   - Shadow should be 10-30%
+   - Highlight should be 70-90% for typical images
+4. Apply brightness/levels adjustment to achieve target values
+5. Monitor sample point values during adjustment
+6. Confirm when values reach targets
+
+This workflow uses brightness measurement for accurate exposure correction.
+
+**Workflow 2: Color Correction with Color Measurement**
+
+1. Place sample point in neutral gray area (should measure equal RGB values, e.g., 128,128,128)
+2. Check RGB values
+3. If values are unequal (e.g., 140,130,125 indicating color cast):
+   - Apply color correction (Color Balance, Curves) to equalize values
+4. Monitor sample point values during adjustment
+5. Confirm when RGB values are balanced
+
+This workflow uses color measurement for accurate color correction.
+
+**Workflow 3: Technical Measurement**
+
+1. Place sample points at measurement locations
+2. Record RGB/brightness values for analysis
+3. Use values for:
+   - Technical documentation
+   - Scientific analysis
+   - Quality control
+
+This workflow uses sample points for technical measurement.
+
+**Multiple Sample Points**
+
+Using multiple sample points enables comprehensive measurement and monitoring across different image areas.
+
+**Placement Strategy**
+
+Place sample points at key locations:
+
+- **Important shadow areas**: For exposure correction
+- **Important highlight areas**: For exposure correction
+- **Neutral gray areas**: For color correction
+- **Skin tones**: For portrait work
+- **Measurement targets**: Specific areas requiring correction
+
+**Simultaneous Monitoring**
+
+Info dialog displays values for all sample points, enabling:
+
+- **Comparison**: Between different areas
+- **Monitoring**: Of different areas during adjustments
+
+**Comprehensive Corrections**
+
+Multiple points guide comprehensive corrections. Ensuring corrections achieve desired values at multiple locations ensures overall correction quality.
+
+**Sample Points for Color Correction**
+
+Sample points enable accurate color corrections by providing numerical feedback that guides adjustments.
+
+**Neutral Gray Measurement**
+
+Placing sample point in neutral gray area (should measure equal RGB values):
+
+- **Identifies color casts**: Unequal RGB values indicate casts
+- **Guides correction**: Adjusting to equalize values corrects casts
+
+**Skin Tone Measurement**
+
+Placing sample points in skin tone areas:
+
+- **Target RGB ratios**: Vary by skin tone, typically warmer ratios like R>G>B
+- **Guides portrait color corrections**: Ensures natural skin tone appearance
+
+**White Point Measurement**
+
+Placing sample point in white area (should measure high RGB values, typically 240-255 range):
+
+- **Guides white balance corrections**: Ensures proper white balance
+
+**Black Point Measurement**
+
+Placing sample point in black area (should measure low RGB values, typically 0-30 range):
+
+- **Guides shadow corrections**: Ensures proper shadow values
+
+**Sample Points for Exposure Correction**
+
+Sample points enable accurate exposure corrections by providing brightness feedback that guides adjustments.
+
+**Shadow Measurement**
+
+Placing sample point in shadow area (target brightness 10-30% for typical images):
+
+- **Identifies underexposure**: Low brightness values indicate underexposure
+- **Guides shadow lightening**: Adjusts to achieve target brightness
+
+**Highlight Measurement**
+
+Placing sample point in highlight area (target brightness 70-90% for typical images):
+
+- **Identifies overexposure**: High brightness values indicate overexposure
+- **Guides highlight darkening**: Adjusts to achieve target brightness
+
+**Midtone Measurement**
+
+Placing sample point in midtone area (target brightness 40-60% for typical images):
+
+- **Guides overall exposure adjustment**: Ensures balanced exposure
+
+**Multiple Point Monitoring**
+
+Monitoring brightness at multiple points ensures balanced exposure across image.
+
+**Sample Point Applications**
+
+Sample points serve various practical applications:
+
+- **Color correction**: Measuring neutral grays, skin tones, or color targets to guide accurate color corrections
+- **Exposure correction**: Measuring shadows, highlights, or midtones to guide accurate exposure corrections
+- **Technical measurement**: Recording RGB/brightness values for scientific analysis, quality control, or documentation
+- **Professional color work**: Ensuring corrections achieve specific target values for professional standards
+- **Problem diagnosis**: Identifying color casts, exposure issues, or technical problems through numerical analysis
+
+**Sample Points vs. Visual Assessment**
+
+Understanding the difference between sample point measurement and visual assessment enables appropriate approach selection.
+
+**Sample Points Characteristics**
+
+- **Numerical feedback**: Precise RGB/brightness values
+- **Objective measurement**: Data-driven corrections
+- **Requires**: Understanding target values
+
+**Visual Assessment Characteristics**
+
+- **Subjective feedback**: Perceived appearance
+- **Artistic judgment**: Intuitive corrections
+- **Lacks**: Numerical precision
+
+**When to Use Each Approach**
+
+**Use sample points when:**
+- Numerical accuracy is required
+- Technical standards must be met
+- Objective measurement is preferred
+- Specific target values are needed
+
+**Use visual assessment when:**
+- Artistic appearance is sufficient
+- Intuitive corrections are preferred
+- Numerical precision isn't necessary
+
+**Combining Approaches**
+
+Both approaches are valuable. Sample points provide accuracy, visual assessment provides artistic judgment. Combining both enables corrections that are both accurate and visually appealing.
+
+**Sample Point Keyboard Shortcuts**
+
+Efficient sample point usage leverages keyboard shortcuts for quick access and placement:
+
+- **Press O**: Activate Color Picker tool (keyboard shortcut may vary by GIMP version)
+- **Toggle Sample Merged**: In Tool Options dialog (checkbox or option, varies by version)
+- **Access Info dialog**: Through **Windows > Dockable Dialogs > Info** menu (keyboard shortcut may vary)
+
+Understanding available shortcuts (which vary by GIMP version) enables faster sample point workflows.
+
+**Sample Point Best Practices**
+
+Effective sample point usage follows principles that achieve accurate measurements and corrections:
+
+1. **Place points at meaningful locations**: Measurement locations should represent areas requiring correction or monitoring (shadows, highlights, neutrals, skin tones)
+
+2. **Understand target values**: Knowing desired RGB/brightness values enables accurate correction guidance:
+   - Neutral grays should be equal RGB
+   - Shadows typically 10-30% brightness
+   - Highlights typically 70-90% brightness
+
+3. **Use Sample Merged appropriately**: Enable Sample Merged for final image appearance measurement, disable for layer-specific measurement
+
+4. **Monitor multiple points**: Using multiple sample points enables comprehensive monitoring and balanced corrections
+
+5. **Use measurement to guide corrections**: Sample point values should guide adjustments, enabling data-driven corrections rather than visual approximation
+
+6. **Combine with visual assessment**: Using sample points with visual assessment combines accuracy with artistic judgment
+
+Following these practices ensures sample point usage that achieves accurate measurements and corrections while maintaining image quality and visual appeal.
+
+**Summary**
+
+Sample points enable accurate, data-driven image adjustments. Use sample points to measure color and brightness values at specific locations, use RGB/brightness values to guide corrections, place points at meaningful locations (shadows, highlights, neutrals), use Sample Merged option appropriately, monitor multiple points for comprehensive measurement, understand target values for accurate corrections, and follow systematic approaches for consistent results. This systematic approach ensures sample point usage that achieves accurate measurements and corrections while enabling precise, data-driven image processing in GIMP projects.
 
 ## Retouching and Restoration
 
 ### Using Clone Tool for Removal and Duplication
 
+The Clone tool in GIMP copies pixels from one area to another. This enables you to remove unwanted objects, duplicate elements, repair damaged areas, and seamlessly blend source pixels into destination areas. Clone tool retouching is essential for image restoration, object removal, texture duplication, and seamless patching where exact pixel copying achieves natural results.
+
+**Clone Tool Operations**
+
+The Clone tool copies pixels from a source area to a destination area through a sampling and painting process. This enables seamless pixel transfer that can remove objects, duplicate elements, or repair damage.
+
+The tool functions as a pixel copier. It samples pixels from a source location (defined by a source point, typically marked with a crosshair) and paints those pixels at the destination location (brush cursor position). This copies pixel values (RGB and alpha channel) from source to destination, enabling exact pixel duplication.
+
+**Source Point Definition**
+
+The source point defines the sampling location. To set a source point, press and hold the Ctrl key (Option key on macOS) and click at the desired source location. The source point appears as a crosshair or cross icon and remains visible during cloning. As you move the brush cursor, the source area moves relative to the cursor position, maintaining an offset between source and destination. This enables continuous sampling from the source region.
+
+**Offset Relationship**
+
+The offset relationship enables aligned cloning. The source and destination maintain a fixed offset (distance and direction between the source point and initial brush position). When you move the brush in one direction, the source sampling moves in the same direction, maintaining alignment for texture continuation or pattern duplication.
+
+**Source Modes**
+
+The Clone tool can use different source modes:
+
+- **Active layer only** (default mode): Samples pixels from the currently active layer, ignoring other layers.
+- **Merged visible layers** (Sample Merged option enabled): Samples the composite appearance including all visible layers. This is useful for cloning from multiple layers.
+- **Pattern source** (Pattern source mode): Clones from a pattern texture instead of the image, enabling texture application.
+
+The sampling mode affects cloning behavior. Layer-only sampling enables layer-specific cloning, merged sampling enables final appearance cloning, and pattern sampling enables texture application.
+
+**Brush Behavior**
+
+Brush behavior controls painting application. The Clone tool uses brush presets (brush shape, size, hardness, spacing, dynamics), applying sampled pixels through brush strokes. Brush opacity controls cloning strength—lower opacity creates partial cloning, blending source with destination. Brush blending mode controls pixel blending—Normal mode replaces destination pixels, while other modes blend source with destination.
+
+**Source Point Selection**
+
+Source point selection defines the sampling location for cloning, determining which pixels will be copied. To set a source point, press the Ctrl key (Option on macOS) and click at the desired source location. The source point appears as a crosshair marker at the clicked location, indicating the sampling position. The source point remains active until changed.
+
+**Source Point Placement Guidelines**
+
+Source point placement requires careful consideration:
+
+- **Match destination characteristics**: Choose a source area that matches the destination area characteristics (similar texture, lighting, color, and pattern).
+- **Select nearby areas**: When possible, select a source area close to the destination. Nearby areas typically match better than distant areas.
+- **Avoid unwanted elements**: Select a clean source area to avoid copying defects to the destination.
+
+**Specific Use Cases**
+
+- **Texture continuation**: Place the source point adjacent to the destination. Clicking the source point near the destination edge enables seamless texture continuation, maintaining pattern alignment across boundaries.
+
+- **Object removal**: Select a source area that matches the background. Choose a background area similar to the area behind the object. The source should match the lighting, texture, and color of the destination area.
+
+- **Duplication**: Select the element to duplicate. Choose the element or pattern to copy, enabling duplication elsewhere in the image.
+
+**Quality Considerations**
+
+Source point selection directly affects cloning quality. Appropriate source selection creates seamless results, while inappropriate source selection creates visible cloning artifacts. Choosing appropriate source locations ensures natural pixel transfer. Matching source and destination characteristics creates seamless blending. Careful source placement prevents cloning artifacts.
+
+**Clone Tool Interface**
+
+The Clone tool provides an interface with source selection, brush controls, and sampling options. Access the Clone tool through **Tools > Paint Tools > Clone**, or use the keyboard shortcut **C**.
+
+**Tool Options Dialog**
+
+The Tool Options dialog provides:
+
+- **Brush presets**: Brush selection, size, hardness, and opacity controls
+- **Clone Mode selector**: 
+  - Image source mode: For sampling from the image
+  - Pattern source mode: For sampling from a pattern
+- **Sample Merged checkbox**: When checked, enables sampling from merged visible layers. When unchecked, samples only the active layer
+- **Alignment mode selector**: Controls source point behavior (see Alignment Modes below)
+- **Opacity slider**: Controls cloning strength (typically 0-100%). Lower values create partial cloning
+- **Brush mode selector**: Normal mode replaces pixels; other modes blend cloned pixels with destination
+
+The source point is set by Ctrl-clicking (Option-clicking on macOS) at the desired location. The source point appears as a crosshair marker.
+
+**Alignment Modes**
+
+Clone tool alignment modes control source point behavior during cloning, affecting how the source area moves relative to the brush cursor.
+
+- **None alignment mode**: Uses a fixed source point. The source point remains at a fixed location regardless of brush movement. Each brush stroke samples from the same source location. This is useful for texture stamping or repeated element application.
+
+- **Aligned alignment mode**: Maintains the offset relationship. The source point maintains a fixed offset from the brush cursor position. Moving the brush moves the source sampling proportionally, maintaining alignment for texture continuation or pattern duplication. The source point moves with the brush, enabling continuous sampling along the brush path.
+
+- **Registered alignment mode**: Uses image registration. The source point uses a predefined registration point. This is useful for cloning between registered images or aligned layers.
+
+**Mode Selection Guidelines**
+
+- Use **None mode** for repeated sampling from the same location
+- Use **Aligned mode** for texture continuation and pattern duplication
+- Use **Registered mode** for registered cloning between aligned images or layers
+
+**Clone Tool Workflows**
+
+Effective cloning involves a systematic approach and source selection strategy.
+
+**Workflow 1: Object Removal**
+
+1. Identify the object to remove
+2. Identify a clean background area matching the area behind the object
+3. Set the source point by Ctrl-clicking (Option-clicking on macOS) on the clean background area
+4. Position the brush cursor at the edge of the object to remove
+5. Paint over the object with brush strokes (use appropriate brush size, maintain texture alignment)
+6. Continue cloning until the object is removed
+7. Refine edges if needed
+8. Confirm the result
+
+This workflow removes unwanted objects.
+
+**Workflow 2: Texture Duplication**
+
+1. Identify the texture to duplicate
+2. Set the source point by Ctrl-clicking on the texture area
+3. Position the brush cursor at the destination location
+4. Paint to duplicate the texture (use Aligned mode for texture continuation)
+5. Continue cloning to extend the texture
+6. Confirm the result
+
+This workflow duplicates textures or patterns.
+
+**Workflow 3: Damage Repair**
+
+1. Identify the damaged area
+2. Identify an undamaged area matching the damaged area characteristics
+3. Set the source point by Ctrl-clicking on the undamaged area
+4. Paint over the damaged area with brush strokes
+5. Refine blending if needed
+6. Confirm the result
+
+This workflow repairs damage.
+
+**Clone Tool Applications**
+
+The Clone tool serves various practical applications:
+
+- **Object removal**: Removing unwanted objects, people, or elements from images by cloning background pixels over objects
+- **Damage repair**: Repairing scratches, tears, or damage in photographs by cloning from undamaged areas
+- **Texture duplication**: Duplicating textures, patterns, or surfaces for seamless extension or repetition
+- **Element duplication**: Copying elements or objects to other image locations
+- **Background cleanup**: Cleaning backgrounds by removing debris, spots, or unwanted elements
+- **Image restoration**: Restoring old or damaged photographs by cloning from preserved areas
+
+**Clone Tool vs. Heal Tool**
+
+Understanding the difference between Clone and Heal tools enables appropriate tool selection.
+
+**Clone Tool Characteristics**
+
+- Provides exact pixel copying
+- Copies pixels exactly from source
+- Maintains texture precisely
+- Requires careful source selection
+- May create visible seams if source doesn't match perfectly
+
+**Heal Tool Characteristics**
+
+- Provides intelligent blending
+- Analyzes destination area
+- Blends source pixels intelligently
+- Adapts source to match destination
+- Creates seamless results automatically
+
+**When to Use Each Tool**
+
+**Use Clone tool when:**
+- Exact pixel copying is needed
+- Texture preservation is critical
+- Precise control is required
+- Source matches destination well
+
+**Use Heal tool when:**
+- Seamless blending is needed
+- Source may not match perfectly
+- Automatic adaptation is preferred
+- Natural blending is required
+
+**Clone Tool Best Practices**
+
+Effective cloning follows principles that achieve seamless results:
+
+1. **Choose appropriate source area**: Select a source that matches destination characteristics (texture, lighting, color, pattern) to ensure natural results.
+
+2. **Set source point carefully**: Place the source point at an appropriate location relative to the destination to enable proper alignment.
+
+3. **Use appropriate brush size**: Use a brush size that matches the texture scale to ensure natural appearance.
+
+4. **Use moderate opacity when needed**: Using lower opacity (50-80%) for gradual blending creates smoother transitions.
+
+5. **Work in small strokes**: Using short brush strokes enables better control and alignment.
+
+6. **Match source and destination**: Ensure the source area matches the destination area characteristics to prevent visible cloning artifacts.
+
+Following these practices ensures cloning that achieves seamless pixel transfer while maintaining natural appearance and image quality.
+
+**Summary**
+
+The Clone tool enables effective removal and duplication. Set the source point by Ctrl-clicking at the sampling location, use the appropriate alignment mode for the cloning type, choose a source area that matches the destination, use appropriate brush size and opacity, work in controlled strokes, understand tool advantages over other retouching tools, and follow systematic approaches for consistent results. This systematic approach ensures cloning that achieves seamless pixel transfer while enabling effective object removal, duplication, and repair in GIMP projects.
+
 ### Heal Tool for Seamless Patching
+
+The Heal tool in GIMP enables intelligent patching that automatically blends source pixels with the destination area. This allows you to remove blemishes, repair damage, and seamlessly patch areas where automatic blending creates natural results. Heal tool retouching is essential for seamless patching, blemish removal, skin retouching, and damage repair where intelligent blending achieves better results than simple cloning.
+
+**Heal Tool Operations**
+
+The Heal tool performs intelligent patching through sophisticated blending algorithms that analyze destination area characteristics and adapt source pixels to match. This enables seamless patching that blends naturally with surrounding pixels.
+
+**How the Tool Functions**
+
+The tool functions as an intelligent patcher:
+
+1. **Samples pixels from source area**: Defined by a source point, similar to the Clone tool
+2. **Analyzes destination area characteristics**: Examines texture, lighting, color gradients, and patterns
+3. **Adapts source pixels**: Adjusts source pixels to match destination characteristics
+4. **Paints adapted pixels**: Applies adapted pixels at the destination location (brush cursor position), creating seamless results
+
+**Intelligent Blending Algorithm**
+
+The intelligent blending algorithm operates differently from the Clone tool. Instead of copying pixels exactly, the Heal tool:
+
+- **Analyzes local area around destination**: Examines texture patterns, color gradients, and lighting characteristics in surrounding pixels
+- **Adapts source pixels**: Adjusts source pixel values to blend with the destination area appearance
+- **Blends adapted pixels seamlessly**: Creates natural transitions without visible seams
+
+**Adaptation Benefits**
+
+This adaptation enables seamless results even when the source area doesn't match the destination perfectly:
+
+- Source pixels are modified to match destination characteristics
+- Texture is preserved from source while adapting to destination
+- Lighting is adjusted to match the destination area
+- Color gradients are maintained from the destination area
+
+The intelligent blending makes the Heal tool superior to the Clone tool for areas where a perfect source match isn't available. Blemishes can be removed by sampling nearby skin areas even if an exact match isn't available. Damage can be repaired by sampling nearby areas that may have slight differences. Seamless patching works even when source area characteristics don't match the destination exactly.
+
+**Source Point Selection**
+
+Source point selection works similarly to the Clone tool. Ctrl-clicking (Option-clicking on macOS) sets the source point at the clicked location. The source point appears as a crosshair marker, and the source area follows cursor movement, maintaining an offset relationship.
+
+The source area should be similar to the destination area, but a perfect match isn't required. The Heal tool adapts the source to match the destination, enabling more flexible source selection than the Clone tool.
+
+**Brush Behavior**
+
+Brush behavior controls healing application. The Heal tool uses brush presets (brush shape, size, hardness, spacing, dynamics), applying adapted pixels through brush strokes. Brush opacity controls healing strength—lower opacity creates partial healing, blending adapted source with destination gradually. Brush blending mode typically uses Normal mode (other modes may not work as effectively with the healing algorithm).
+
+**Heal Tool Interface**
+
+The Heal tool provides an interface with source selection, brush controls, and sampling options. Access the Heal tool through **Tools > Paint Tools > Heal**, or use the keyboard shortcut **H** (may vary by GIMP version).
+
+**Tool Options Dialog**
+
+The Tool Options dialog provides:
+
+- **Brush presets**: Brush selection, size, hardness, and opacity controls
+- **Sample Merged checkbox**: When checked, enables sampling from merged visible layers. When unchecked, samples only the active layer
+- **Alignment mode selector**: 
+  - None mode: Uses a fixed source point
+  - Aligned mode: Maintains offset relationship
+- **Opacity slider**: Controls healing strength (typically 0-100%). Lower values create gradual healing
+- **Brush mode selector**: Normal mode is recommended; other modes may affect the healing algorithm
+
+The source point is set by Ctrl-clicking (Option-clicking on macOS) at the desired location. The source point appears as a crosshair marker.
+
+**Heal Tool Workflows**
+
+Effective healing involves a systematic approach and source selection strategy.
+
+**Workflow 1: Blemish Removal**
+
+1. Identify the blemish to remove
+2. Identify a nearby clean area (preferably similar skin/texture area)
+3. Set the source point by Ctrl-clicking on the clean area
+4. Position the brush cursor over the blemish
+5. Paint over the blemish with brush strokes (use brush size slightly larger than blemish)
+6. The Heal tool adapts the source to match the surrounding area
+7. Continue healing until the blemish is removed
+8. Refine if needed
+9. Confirm the result
+
+This workflow removes blemishes seamlessly.
+
+**Workflow 2: Damage Repair**
+
+1. Identify the damaged area
+2. Identify a nearby undamaged area
+3. Set the source point by Ctrl-clicking on the undamaged area
+4. Paint over the damaged area with brush strokes
+5. The Heal tool adapts the source to match surrounding characteristics
+6. Refine blending if needed
+7. Confirm the result
+
+This workflow repairs damage seamlessly.
+
+**Workflow 3: Skin Retouching**
+
+1. Identify the skin area requiring retouching
+2. Set the source point by Ctrl-clicking on a clean skin area
+3. Paint over the area needing retouching
+4. The Heal tool blends the source seamlessly with skin texture
+5. Confirm the result
+
+This workflow retouches skin naturally.
+
+**Heal Tool Applications**
+
+The Heal tool serves various practical applications:
+
+- **Blemish removal**: Removing spots, pimples, or skin blemishes by intelligently blending nearby skin areas
+- **Skin retouching**: Retouching skin texture while maintaining natural appearance
+- **Damage repair**: Repairing scratches, tears, or damage by seamlessly blending nearby areas
+- **Spot removal**: Removing dust spots, sensor spots, or unwanted marks
+- **Wrinkle reduction**: Reducing wrinkles by blending surrounding skin areas naturally
+- **Texture patching**: Patching textures seamlessly even when source doesn't match perfectly
+
+**Heal Tool vs. Clone Tool**
+
+Understanding the difference between Heal and Clone tools enables appropriate tool selection.
+
+**Heal Tool Characteristics**
+
+- Provides intelligent blending
+- Adapts source pixels to match destination
+- Creates seamless results automatically
+- Works even when source doesn't match perfectly
+- Analyzes destination characteristics
+
+**Clone Tool Characteristics**
+
+- Provides exact pixel copying
+- Copies pixels exactly from source
+- Requires careful source matching
+- Maintains texture precisely
+- May create visible seams if source doesn't match
+
+**When to Use Each Tool**
+
+**Use Heal tool when:**
+- Seamless blending is needed
+- Source may not match perfectly
+- Automatic adaptation is preferred
+- Natural blending is required
+
+**Use Clone tool when:**
+- Exact pixel copying is needed
+- Texture preservation is critical
+- Precise control is required
+- Source matches destination well
+
+**Heal Tool Best Practices**
+
+Effective healing follows principles that achieve seamless results:
+
+1. **Choose nearby source area**: Selecting a source area close to the destination typically produces better results. Nearby areas share similar characteristics.
+
+2. **Use appropriate brush size**: Using a brush size that covers the blemish or damage area ensures complete removal. Slightly larger than the target area works well.
+
+3. **Work in controlled strokes**: Using short brush strokes enables better blending. Avoid dragging long strokes.
+
+4. **Let tool adapt naturally**: Allowing the Heal tool to adapt the source automatically creates the best results. Don't try to force exact matching.
+
+5. **Sample from similar areas**: Choosing source areas with similar texture and lighting improves results.
+
+6. **Use moderate opacity for gradual healing**: Using lower opacity (70-90%) for gradual blending creates smoother transitions.
+
+Following these practices ensures healing that achieves seamless patching while maintaining natural appearance and image quality.
+
+**Summary**
+
+The Heal tool enables effective seamless patching. Set the source point by Ctrl-clicking at the sampling location, use an appropriate brush size, allow the tool to adapt the source automatically, work in controlled strokes, understand tool advantages over the Clone tool, and follow systematic approaches for consistent results. This systematic approach ensures healing that achieves seamless patching while enabling effective blemish removal, damage repair, and skin retouching in GIMP projects.
 
 ### Red Eye Removal Tool
 
+The Red Eye Removal tool in GIMP enables automatic detection and correction of red eye effects in photographs. This allows you to remove red eye artifacts caused by camera flash reflection in subject eyes and restore natural eye appearance. Red eye removal is essential for portrait photography, flash photography correction, and image restoration where red eye effects need quick correction.
+
+**Red Eye Effect**
+
+The red eye effect occurs when camera flash light reflects from the subject's retina (blood vessels in the back of the eye), creating a red appearance in the pupil area.
+
+**Characteristics of Red Eye**
+
+- **Appearance**: Red or orange-red coloration in the pupil area (center dark area of the eye)
+- **Symmetry**: Typically affects both eyes symmetrically
+- **Occurrence**: Appears in flash photographs taken in low light conditions
+- **Cause**: Flash light enters the eye and reflects from the retina
+- **Location**: Visible in the pupil area only (not affecting the iris or surrounding eye area)
+
+Understanding the red eye effect enables effective correction. Red eye appears in a specific location (pupil area), has a characteristic red color, typically affects both eyes, and occurs in flash photography.
+
+**Red Eye Removal Tool Operations**
+
+The Red Eye Removal tool detects and corrects red eye through an automated process that identifies red areas in the eye region and replaces them with a natural dark pupil appearance.
+
+**How the Tool Functions**
+
+The tool functions as an automated corrector:
+
+1. **Analyzes image**: Detects red eye areas by identifying red coloration in eye regions and detecting circular or elliptical red areas in typical eye locations
+2. **Selects red eye areas automatically**: Selects detected red regions in pupil areas
+3. **Corrects red coloration**: Replaces red pixels with appropriate dark colors (typically dark gray or black for natural pupil appearance)
+4. **Restores natural eye appearance**: Creates a dark pupil that looks natural
+
+**Detection Algorithm**
+
+The detection algorithm operates by:
+
+- **Identifying red coloration**: Searches for areas with high red channel values relative to other channels (identifying red or orange-red pixels)
+- **Detecting shapes**: Detects circular or elliptical shapes in typical eye locations (recognizing pupil-like shapes)
+- **Automatic selection**: Selects red eye areas automatically
+
+**Correction Algorithm**
+
+The correction algorithm replaces red pixels with dark colors:
+
+- Red pixels are replaced with dark gray or black values appropriate for natural pupil appearance
+- Color replacement maintains appropriate contrast with the iris
+- Correction blends with the surrounding eye area, creating a natural dark pupil
+
+**Automated Process Benefits**
+
+The automated process enables quick correction. The tool detects red eye automatically, corrects red coloration, requires minimal user input, and provides fast red eye removal. Automated detection identifies red eye areas, correction replaces red with natural dark colors, and the process creates natural eye appearance quickly.
+
+**Red Eye Removal Tool Interface**
+
+The Red Eye Removal tool provides an interface with detection and correction controls. Access the Red Eye Removal tool through **Tools > Enhance > Red Eye Removal**, or use **Filters > Enhance > Red Eye Removal** menu (exact location may vary by GIMP version).
+
+**Red Eye Removal Dialog**
+
+A Red Eye Removal dialog appears with:
+
+- **Threshold slider**: Controls red color detection sensitivity (typically 0-100 range). Higher values detect stronger red coloration, lower values detect subtle red coloration
+- **Pupil size slider or option**: Controls pupil size for correction area (typically small/medium/large options). Affects correction area size
+- **Correction method selector**: Automatic correction or Manual correction options
+- **Preview checkbox**: Enables before/after comparison
+
+**Red Eye Removal Workflows**
+
+Effective red eye removal involves a systematic approach and parameter adjustment.
+
+**Workflow 1: Automatic Correction**
+
+1. Open image with red eye
+2. Access Red Eye Removal tool (**Tools > Enhance > Red Eye Removal** or **Filters > Enhance > Red Eye Removal**)
+3. Tool automatically detects red eye areas
+4. Adjust Threshold slider if detection misses or over-detects:
+   - Higher threshold for strong red eye
+   - Lower threshold for subtle red eye
+5. Adjust Pupil size if needed to match actual pupil size
+6. Preview correction
+7. If correction looks natural, confirm
+8. If correction needs refinement, adjust parameters and preview again
+9. Confirm when satisfied
+
+This workflow provides automatic red eye correction.
+
+**Workflow 2: Manual Selection and Correction**
+
+1. Open image with red eye
+2. If automatic detection doesn't work, use selection tools to select eye area manually
+3. Access Red Eye Removal tool
+4. Tool applies correction to selected area
+5. Adjust parameters if needed
+6. Preview correction
+7. Confirm
+
+This workflow provides manual red eye correction when automatic detection fails.
+
+**Red Eye Removal Applications**
+
+The Red Eye Removal tool serves various practical applications:
+
+- **Portrait photography**: Correcting red eye in portrait photographs taken with flash
+- **Flash photography**: Removing red eye artifacts from flash photographs
+- **Image restoration**: Correcting red eye in scanned or old photographs
+- **Quick correction**: Providing fast red eye removal without manual retouching
+- **Batch processing**: Correcting red eye in multiple images efficiently (if batch processing available)
+
+**Red Eye Removal vs. Manual Retouching**
+
+Understanding the difference between the Red Eye Removal tool and manual retouching enables appropriate approach selection.
+
+**Red Eye Removal Tool Characteristics**
+
+- Provides automated correction
+- Automatic detection
+- Fast correction
+- Minimal user input
+- May not work on all red eye cases
+
+**Manual Retouching Characteristics**
+
+- Provides precise control
+- Uses Clone tool, Heal tool, or painting tools to manually correct red eye
+- Full control over correction
+- Works on all cases
+- Requires more time and skill
+
+**When to Use Each Approach**
+
+**Use Red Eye Removal tool when:**
+- Red eye is a typical case
+- Automatic detection works
+- Quick correction is needed
+
+**Use manual retouching when:**
+- Automatic detection fails
+- Precise control is needed
+- Red eye has unusual characteristics
+
+**Red Eye Removal Limitations**
+
+The Red Eye Removal tool has limitations compared to manual retouching:
+
+- **Detection dependency**: Tool relies on automatic detection that may miss or incorrectly detect red eye areas
+- **Limited control**: Tool provides limited parameter control compared to manual retouching
+- **Works best on typical cases**: Tool works best on standard red eye cases, may not work on unusual red eye characteristics
+
+Understanding limitations enables appropriate tool selection and expectation management.
+
+**Red Eye Removal Best Practices**
+
+Effective red eye removal follows principles that achieve natural correction:
+
+1. **Use appropriate threshold**: Adjusting the Threshold slider appropriately ensures correct detection (higher for strong red eye, lower for subtle red eye)
+
+2. **Match pupil size**: Adjusting Pupil size to match actual pupil size ensures appropriate correction area
+
+3. **Preview before confirming**: Previewing correction enables quality assessment before applying
+
+4. **Use for appropriate cases**: Red Eye Removal tool works best on typical red eye cases with standard characteristics
+
+5. **Use manual retouching when needed**: If automatic tool doesn't work, use Clone tool or Heal tool for manual correction
+
+Following these practices ensures red eye removal that achieves natural correction while maintaining eye appearance and image quality.
+
+**Summary**
+
+The Red Eye Removal tool enables effective red eye correction. Use automatic detection for quick correction, adjust Threshold and Pupil size parameters appropriately, preview correction before confirming, understand tool limitations and applications, use manual retouching when automatic tool doesn't work, and follow systematic approaches for consistent results. This systematic approach ensures red eye removal that achieves natural correction while enabling efficient red eye correction in GIMP projects.
+
 ### Dodge and Burn for Light Painting
+
+Dodge and Burn tools in GIMP enable selective lightening and darkening of specific image areas. This allows you to enhance highlights, deepen shadows, sculpt forms, and create sophisticated lighting effects through controlled light painting. Dodge and Burn techniques are essential for portrait retouching, form enhancement, lighting enhancement, and artistic light painting where selective lightening and darkening create depth and dimension.
+
+**Dodge and Burn Operations**
+
+Dodge and Burn tools perform selective lightening and darkening through localized brush-based adjustments that target specific tonal ranges. This enables precise control over image lighting.
+
+**Dodge Tool**
+
+The Dodge tool lightens areas by increasing brightness values selectively. Applying dodge brush strokes increases brightness in painted areas, lightening highlights, midtones, or shadows depending on the range setting. This creates enhanced highlights and lifted shadows.
+
+**Burn Tool**
+
+The Burn tool darkens areas by decreasing brightness values selectively. Applying burn brush strokes decreases brightness in painted areas, darkening shadows, midtones, or highlights depending on the range setting. This creates deeper shadows and enhanced contrast.
+
+**Selective Nature**
+
+The selective nature enables targeted adjustments:
+
+- **Dodging highlights**: Enhances bright areas without affecting shadows
+- **Burning shadows**: Deepens dark areas without affecting highlights
+- **Independent control**: Enables independent control over different tonal ranges
+
+**Brush-Based Application**
+
+The brush-based application enables precise control:
+
+- **Brush presets**: Uses brush shape, size, hardness, opacity, and dynamics
+- **Brush strokes**: Applies adjustments through brush strokes
+- **Opacity control**: Brush opacity controls adjustment strength—lower opacity creates subtle adjustments, enabling gradual light painting
+- **Size control**: Brush size controls adjustment area—larger brush for broad areas, smaller brush for precise areas
+
+**Dodge and Burn Interface**
+
+Dodge and Burn tools provide an interface with range controls, exposure settings, and brush options. Access the Dodge tool through **Tools > Paint Tools > Dodge/Burn > Dodge** (or similar menu path, varies by GIMP version). Access the Burn tool through **Tools > Paint Tools > Dodge/Burn > Burn**.
+
+**Tool Options Dialog**
+
+The Tool Options dialog provides:
+
+- **Brush presets**: Brush selection, size, hardness, and opacity controls
+- **Range selector**: 
+  - Highlights mode: Affects bright areas primarily
+  - Midtones mode: Affects midtone areas
+  - Shadows mode: Affects dark areas
+- **Exposure slider**: Controls adjustment strength (typically 0-100% range). Lower values create subtle adjustments, higher values create stronger adjustments
+- **Brush mode selector**: Normal mode is recommended; other modes may affect adjustment
+
+**Range Settings**
+
+Range settings control which tonal ranges are affected by Dodge and Burn adjustments, enabling targeted enhancement.
+
+**Highlights Range Mode**
+
+Primarily affects bright areas:
+
+- **Dodging highlights**: Enhances bright areas by increasing brightness in already bright regions
+- **Burning highlights**: Darkens bright areas by decreasing brightness in bright regions
+- **Use cases**: Highlight enhancement or highlight control
+
+**Midtones Range Mode**
+
+Primarily affects midtone areas:
+
+- **Dodging midtones**: Lightens middle tones, enhancing midtone areas
+- **Burning midtones**: Darkens middle tones, deepening midtone areas
+- **Use cases**: Form sculpting and midtone enhancement
+
+**Shadows Range Mode**
+
+Primarily affects dark areas:
+
+- **Dodging shadows**: Lightens dark areas, lifting shadows
+- **Burning shadows**: Darkens dark areas, deepening shadows
+- **Use cases**: Shadow enhancement and shadow control
+
+Selecting the appropriate range ensures adjustments affect intended tonal ranges, enabling precise light painting control.
+
+**Dodge and Burn Workflows**
+
+Effective dodge and burn involves a systematic approach and range strategy.
+
+**Workflow 1: Portrait Light Painting**
+
+1. Open portrait image
+2. Create new layer (**Layer > New Layer**)
+3. Set blending mode to Overlay or Soft Light
+4. Fill with 50% gray for non-destructive dodge and burn
+5. Use Dodge tool on new layer:
+   - Set Range to Highlights
+   - Set Exposure to 10-20%
+   - Use brush size appropriate for area
+6. Paint over highlights to enhance them (cheekbones, nose bridge, forehead highlights)
+7. Use Burn tool:
+   - Set Range to Shadows
+   - Set Exposure to 10-20%
+8. Paint over shadows to deepen them (cheek hollows, eye sockets, jawline shadows)
+9. Adjust layer opacity if needed
+10. Confirm
+
+This workflow enhances portrait lighting.
+
+**Workflow 2: Form Sculpting**
+
+1. Open image
+2. Create new layer (Overlay or Soft Light mode, 50% gray fill)
+3. Use Dodge tool (Range: Highlights, Exposure: 10-20%)
+4. Paint over areas that should be brighter (high points, raised areas)
+5. Use Burn tool (Range: Shadows, Exposure: 10-20%)
+6. Paint over areas that should be darker (low points, recessed areas)
+7. Adjust opacity
+8. Confirm
+
+This workflow sculpts forms through lighting.
+
+**Dodge and Burn Applications**
+
+Dodge and Burn serve various practical applications:
+
+- **Portrait retouching**: Enhancing facial lighting, sculpting facial features, improving portrait appearance
+- **Form enhancement**: Sculpting forms through lighting, adding dimension to flat images
+- **Lighting enhancement**: Enhancing highlights and shadows, improving overall lighting
+- **Contrast enhancement**: Selective contrast enhancement through targeted lightening and darkening
+- **Artistic light painting**: Creating artistic lighting effects, dramatic lighting enhancement
+
+**Non-Destructive Dodge and Burn**
+
+Using Dodge and Burn non-destructively enables flexible, reversible adjustments.
+
+**Technique:**
+
+1. Create new layer (**Layer > New Layer**)
+2. Set blending mode to Overlay or Soft Light:
+   - Overlay provides stronger effect
+   - Soft Light provides gentler effect
+3. Fill layer with 50% gray:
+   - **Edit > Fill with FG Color** if foreground is 50% gray, or
+   - Use **Colors > Levels** to set layer to 50% gray
+4. Use Dodge and Burn tools on this layer (painting normally; tools handle lightening/darkening)
+5. Adjust layer opacity to control effect strength
+6. Mask layer if needed to restrict effect to specific areas
+
+**Benefits of Non-Destructive Technique:**
+
+- **Reversible adjustments**: Adjusting layer opacity or deleting layer removes effect
+- **Flexible refinement**: Editing brush strokes, adjusting parameters without affecting original
+- **Layer masking**: Enables selective application
+- **Opacity control**: Controls effect strength
+
+**Dodge and Burn Best Practices**
+
+Effective dodge and burn follows principles that achieve natural enhancement:
+
+1. **Use low exposure values**: Using low exposure (10-20%) creates subtle adjustments that build up gradually, avoiding harsh, unnatural effects
+
+2. **Work on separate layer**: Using a new layer with Overlay or Soft Light mode enables non-destructive, reversible adjustments
+
+3. **Use appropriate range settings**: Selecting range (Highlights, Midtones, Shadows) ensures adjustments affect intended tonal ranges
+
+4. **Build up gradually**: Applying multiple light strokes creates natural results, avoiding single heavy strokes
+
+5. **Use appropriate brush size**: Using a brush size that matches the area ensures precise control
+
+6. **Preserve natural appearance**: Dodge and burn should enhance, not dramatically alter, maintaining natural image appearance
+
+Following these practices ensures dodge and burn that achieves natural enhancement while maintaining image quality and realistic appearance.
+
+**Summary**
+
+Dodge and Burn tools enable effective light painting. Use the Dodge tool to lighten areas selectively, use the Burn tool to darken areas selectively, adjust Range settings for targeted enhancement, use low exposure values for subtle effects, work on separate layers for non-destructive workflow, understand tool applications and advantages, and follow systematic approaches for consistent results. This systematic approach ensures dodge and burn that achieves sophisticated lighting enhancement while enabling effective portrait retouching, form enhancement, and artistic light painting in GIMP projects.
 
 ### Frequency Separation for Portrait Retouching
 
+Frequency Separation in GIMP enables separation of texture and color/tonal information into different layers. This allows you to retouch texture independently from color/tones and color/tones independently from texture, creating sophisticated portrait retouching workflows. Frequency Separation is essential for professional portrait retouching, skin texture preservation, color correction without affecting texture, and texture enhancement without affecting color.
+
+**Frequency Separation Concept**
+
+Frequency Separation separates image information into frequency components:
+
+- **High frequency**: Fine detail, texture, edges
+- **Low frequency**: Color, tone, smooth gradients
+
+This separation enables independent retouching of texture and color.
+
+**High Frequency Components**
+
+High frequency contains fine detail:
+
+- **Texture information**: Skin texture, fine details, surface patterns
+- **Edge information**: Sharp edges, boundaries
+- **Fine structures**: Small-scale patterns
+
+This enables texture retouching without affecting color.
+
+**Low Frequency Components**
+
+Low frequency contains color and tone:
+
+- **Color information**: Color gradients, color variations
+- **Tonal information**: Brightness gradients, smooth transitions
+- **Large-scale patterns**: Broad color areas
+
+This enables color retouching without affecting texture.
+
+**Benefits of Separation**
+
+Separating frequencies enables independent retouching:
+
+- **Texture retouching on high-frequency layer**: Doesn't affect color. Texture can be smoothed while preserving color gradients
+- **Color retouching on low-frequency layer**: Doesn't affect texture. Color can be corrected while preserving texture detail
+- **Natural appearance**: Enables sophisticated portrait retouching that preserves natural appearance
+
+Understanding the Frequency Separation concept enables effective separation. High frequency contains texture, low frequency contains color/tones, and separation enables independent retouching, creating professional portrait retouching workflows.
+
+**Frequency Separation Technique**
+
+Frequency Separation uses layer duplication and blur filtering to create high-frequency and low-frequency layers.
+
+**Technique Overview**
+
+1. Duplicate original layer twice (creating two copies)
+2. Blur one copy significantly (creating low-frequency layer with color/tones but no fine detail)
+3. Subtract blurred layer from original (creating high-frequency layer with texture but no color variation)
+4. Use high-frequency layer for texture retouching
+5. Use low-frequency layer for color/tonal retouching
+6. Combine layers for final result
+
+**Low-Frequency Layer Creation**
+
+1. Duplicate original layer (**Layer > Duplicate Layer**)
+2. Apply Gaussian Blur filter (**Filters > Blur > Gaussian Blur**) with significant radius:
+   - Typically 5-15 pixels depending on image size
+   - Blur radius determines separation point—larger radius separates more detail into high frequency
+3. The blurred layer contains color and tonal information but lacks fine detail
+4. This is the low-frequency layer
+
+**High-Frequency Layer Creation**
+
+1. Duplicate original layer again (creating second copy)
+2. Use Layer mode subtraction to create high-frequency layer:
+   - Copy original layer
+   - Position it above low-frequency layer
+   - Set layer mode to Subtract or use appropriate blending mode
+   - Adjust opacity if needed
+   - This extracts high-frequency detail
+
+**Alternative Technique**
+
+Apply Apply Image or use Channel calculations to subtract low frequency from original, creating high-frequency layer with texture detail.
+
+**Combining Layers**
+
+1. Position high-frequency layer above low-frequency layer
+2. Set high-frequency layer mode to Linear Light or Overlay:
+   - Linear Light provides accurate reconstruction
+   - Overlay provides softer reconstruction
+3. Adjust opacity if needed
+4. Combine layers to reconstruct original appearance with separated frequencies
+
+Understanding the technique enables effective Frequency Separation. Blurring creates the low-frequency layer, subtracting creates the high-frequency layer, and combining reconstructs appearance, enabling independent retouching.
+
+**Frequency Separation Workflows**
+
+Effective Frequency Separation involves a systematic approach and layer management.
+
+**Workflow 1: Basic Frequency Separation**
+
+1. Open portrait image
+2. Duplicate original layer (**Layer > Duplicate Layer**, name as "Low Frequency")
+3. Apply Gaussian Blur to low-frequency layer (**Filters > Blur > Gaussian Blur**, radius 8-12 pixels typically)
+4. Duplicate original layer again (name as "High Frequency")
+5. Position high-frequency layer above low-frequency layer
+6. Set high-frequency layer mode to Linear Light or Overlay
+7. Adjust high-frequency layer opacity if needed (typically 50-100% for Linear Light, 100% for Overlay)
+8. Group layers if needed for organization
+
+This workflow creates a basic Frequency Separation setup.
+
+**Workflow 2: Retouching with Frequency Separation**
+
+1. After creating Frequency Separation setup, retouch color/tones on low-frequency layer:
+   - Use Clone tool, Heal tool, or paint tools
+   - Retouch color, blemishes, color variations on low-frequency layer without affecting texture
+2. Retouch texture on high-frequency layer:
+   - Use Clone tool, Heal tool, or filters
+   - Retouch texture, smooth skin texture, enhance texture detail on high-frequency layer without affecting color
+3. Combine layers for final result
+4. Confirm
+
+This workflow enables independent retouching of texture and color.
+
+**Frequency Separation Applications**
+
+Frequency Separation serves various practical applications:
+
+- **Portrait retouching**: Retouching skin texture and color independently for natural results
+- **Skin smoothing**: Smoothing skin texture while preserving color gradients
+- **Color correction**: Correcting color issues without affecting texture detail
+- **Blemish removal**: Removing blemishes on color layer without affecting texture, or smoothing texture without affecting color
+- **Professional portrait work**: Sophisticated portrait retouching workflows for professional photography
+
+**Frequency Separation Advantages**
+
+Frequency Separation provides advantages over standard retouching:
+
+- **Independent retouching**: Retouching texture and color independently enables precise control
+- **Texture preservation**: Retouching color doesn't affect texture detail, preserving natural skin texture
+- **Color preservation**: Retouching texture doesn't affect color gradients, preserving natural color variation
+- **Natural results**: Separating retouching tasks creates more natural appearance than combined retouching
+- **Professional workflow**: Frequency Separation is a standard technique in professional portrait retouching
+
+**Frequency Separation Limitations**
+
+Frequency Separation has limitations and considerations:
+
+- **Complexity**: Technique requires multiple layers and careful management
+- **Setup time**: Creating Frequency Separation setup takes time compared to direct retouching
+- **Learning curve**: Technique requires understanding of layer modes and separation concepts
+- **Not always necessary**: Simple retouching may not require Frequency Separation
+
+Understanding limitations enables appropriate technique selection.
+
+**Frequency Separation Best Practices**
+
+Effective Frequency Separation follows principles that achieve natural results:
+
+1. **Use appropriate blur radius**: Selecting blur radius (typically 5-15 pixels) determines separation point. Larger radius for more texture separation
+
+2. **Use appropriate layer modes**: Using Linear Light or Overlay for high-frequency layer enables proper reconstruction
+
+3. **Retouch carefully**: Retouching on appropriate layer (color on low frequency, texture on high frequency) ensures independent retouching
+
+4. **Preserve natural appearance**: Retouching should enhance, not dramatically alter, maintaining natural skin appearance
+
+5. **Use moderate adjustments**: Using subtle retouching creates natural results, avoiding over-retouching
+
+6. **Organize layers**: Naming layers and grouping them enables clear workflow management
+
+Following these practices ensures Frequency Separation that achieves natural portrait retouching while maintaining image quality and realistic appearance.
+
+**Summary**
+
+Frequency Separation enables effective portrait retouching. Separate image into high-frequency (texture) and low-frequency (color/tones) layers, retouch texture on high-frequency layer independently, retouch color/tones on low-frequency layer independently, combine layers for final result, use appropriate blur radius and layer modes, understand technique advantages and applications, and follow systematic approaches for consistent results. This systematic approach ensures Frequency Separation that achieves professional portrait retouching while enabling sophisticated texture and color control in GIMP projects.
+
 ### Skin Smoothing Techniques
+
+Skin smoothing techniques in GIMP enable reduction of skin texture irregularities, pores, fine lines, and imperfections while preserving natural skin appearance. This allows you to create smooth, polished skin while maintaining a realistic look. Skin smoothing is essential for portrait retouching, beauty photography, and image enhancement where smooth skin appearance improves image quality without over-processing.
+
+**Skin Smoothing Approaches**
+
+Skin smoothing uses various techniques to reduce texture irregularities while preserving natural appearance.
+
+**Blur-Based Smoothing**
+
+Uses Gaussian Blur or other blur filters to reduce fine detail. Applying blur to skin areas reduces texture visibility, creating smoother appearance. Often combined with layer masking for selective application.
+
+**Heal Tool Smoothing**
+
+Uses Heal tool to blend texture variations. Painting over texture irregularities with Heal tool blends variations naturally, creating smooth appearance.
+
+**Frequency Separation Smoothing**
+
+Uses Frequency Separation technique. Smoothing texture on high-frequency layer while preserving color gradients, enabling natural smooth appearance.
+
+**Clone Tool Smoothing**
+
+Uses Clone tool to copy smooth skin areas. Cloning from smooth skin areas over rough areas creates smooth appearance.
+
+**Selective Gaussian Blur**
+
+Uses blur filter with layer masking. Applying Gaussian Blur to duplicate layer, masking layer to reveal blur only on skin areas, adjusting opacity for subtle smoothing.
+
+Different approaches provide different results. Technique selection depends on desired effect and image characteristics.
+
+**Gaussian Blur Smoothing**
+
+Gaussian Blur smoothing uses blur filter to reduce skin texture detail, creating smooth appearance.
+
+**Technique:**
+
+1. Duplicate portrait layer (**Layer > Duplicate Layer**)
+2. Apply Gaussian Blur to duplicate layer (**Filters > Blur > Gaussian Blur**):
+   - Radius typically 2-5 pixels for subtle smoothing
+   - Radius 5-10 pixels for moderate smoothing
+3. Add layer mask to blurred layer (**Layer > Mask > Add Layer Mask**, initialize to black to hide blur)
+4. Paint on mask with white brush to reveal blur on skin areas:
+   - Use soft brush
+   - Paint over skin areas excluding eyes, eyebrows, hair, lips, nostrils
+5. Adjust layer opacity to control smoothing strength (typically 30-70% for natural appearance)
+6. Confirm
+
+This technique creates smooth skin appearance with selective application. Blur reduces detail, masking enables selective application, and opacity controls effect strength, creating natural smooth appearance.
+
+**Heal Tool Smoothing**
+
+Heal tool smoothing uses Heal tool to blend texture variations naturally, creating smooth appearance.
+
+**Technique:**
+
+1. Identify rough skin areas
+2. Identify smooth skin areas nearby
+3. Use Heal tool (**Tools > Paint Tools > Heal**)
+4. Set source point by Ctrl-clicking on smooth skin area
+5. Paint over rough skin areas with Heal tool brush strokes:
+   - Use appropriate brush size
+   - Work in small strokes
+6. Heal tool blends texture variations naturally
+7. Continue smoothing until desired smoothness achieved
+8. Confirm
+
+This technique creates natural smooth appearance through intelligent blending. Heal tool adapts source to destination, blending variations naturally, creating smooth appearance without visible seams.
+
+**Frequency Separation Smoothing**
+
+Frequency Separation smoothing uses Frequency Separation technique to smooth texture while preserving color.
+
+**Technique:**
+
+1. Create Frequency Separation setup (separating image into high-frequency texture layer and low-frequency color layer)
+2. Work on high-frequency layer
+3. Use Clone tool or Heal tool to smooth texture on high-frequency layer (smoothing texture without affecting color), or
+4. Apply slight blur to high-frequency layer (reducing texture detail while preserving color gradients)
+5. Combine layers for final result
+
+This technique enables texture smoothing independent from color, creating natural smooth appearance. Separating texture from color enables independent smoothing, preserving natural color variation while reducing texture.
+
+**Selective Smoothing Workflows**
+
+Effective skin smoothing involves a systematic approach and selective application.
+
+**Workflow 1: Selective Gaussian Blur**
+
+1. Open portrait image
+2. Duplicate layer (**Layer > Duplicate Layer**)
+3. Apply Gaussian Blur to duplicate (**Filters > Blur > Gaussian Blur**, radius 3-6 pixels)
+4. Add layer mask to blurred layer (**Layer > Mask > Add Layer Mask**, initialize to black)
+5. Use white brush to paint blur on skin areas (soft brush, paint over face skin excluding features)
+6. Adjust layer opacity (40-60% for natural appearance)
+7. Refine mask edges if needed
+8. Confirm
+
+This workflow creates selective skin smoothing.
+
+**Workflow 2: Heal Tool Smoothing**
+
+1. Open portrait image
+2. Use Heal tool (**Tools > Paint Tools > Heal**)
+3. Identify smooth skin reference areas
+4. Set source point by Ctrl-clicking on smooth area
+5. Paint over rough skin areas systematically (forehead, cheeks, chin)
+6. Work in small strokes
+7. Continue until desired smoothness
+8. Confirm
+
+This workflow creates natural skin smoothing.
+
+**Skin Smoothing Applications**
+
+Skin smoothing serves various practical applications:
+
+- **Portrait retouching**: Smoothing skin texture in portrait photographs for polished appearance
+- **Beauty photography**: Creating smooth skin appearance in beauty and fashion photography
+- **Image enhancement**: Improving skin appearance while maintaining natural look
+- **Professional retouching**: Sophisticated skin smoothing for professional portrait work
+
+**Skin Smoothing Considerations**
+
+Skin smoothing requires careful application to maintain natural appearance:
+
+- **Avoid over-smoothing**: Excessive smoothing creates plastic, unnatural appearance. Use moderate smoothing that preserves some texture
+- **Preserve facial features**: Avoid smoothing areas that should remain sharp (eyes, eyebrows, hair, lips, nostrils, edges), maintaining feature definition
+- **Maintain color variation**: Preserving natural color variation in skin creates realistic appearance, avoiding flat, uniform color
+- **Use selective application**: Applying smoothing selectively to skin areas creates natural results, avoiding global smoothing that affects entire image
+
+**Skin Smoothing Best Practices**
+
+Effective skin smoothing follows principles that achieve natural results:
+
+1. **Use moderate smoothing**: Using subtle to moderate smoothing (30-60% opacity, small blur radius) creates natural appearance, avoiding over-smoothing
+
+2. **Apply selectively**: Using layer masking or careful brush work to apply smoothing only to skin areas, preserving facial features and edges
+
+3. **Preserve texture variation**: Maintaining some texture variation creates realistic appearance, avoiding completely flat appearance
+
+4. **Preserve color variation**: Maintaining natural color gradients in skin creates realistic appearance, avoiding uniform color
+
+5. **Work in small areas**: Applying smoothing gradually to small areas enables better control and natural results
+
+6. **Preview frequently**: Previewing smoothing effect enables quality assessment before finalizing
+
+Following these practices ensures skin smoothing that achieves polished appearance while maintaining natural, realistic skin look.
+
+**Summary**
+
+Skin smoothing techniques enable effective portrait enhancement. Use Gaussian Blur with selective masking for texture reduction, use Heal tool for natural texture blending, use Frequency Separation for sophisticated texture control, apply smoothing selectively to skin areas, use moderate smoothing for natural appearance, preserve facial features and color variation, understand technique advantages and applications, and follow systematic approaches for consistent results. This systematic approach ensures skin smoothing that achieves polished portrait appearance while maintaining natural, realistic skin look in GIMP projects.
 
 ### Blemish and Wrinkle Removal
 
+Blemish and wrinkle removal in GIMP enables elimination of skin imperfections, spots, pimples, wrinkles, and fine lines while maintaining natural skin appearance. This allows you to create clean, polished skin without over-processing. Blemish and wrinkle removal is essential for portrait retouching, beauty photography, and image restoration where clean skin appearance improves image quality.
+
+**Blemish Removal Techniques**
+
+Blemish removal uses various techniques to eliminate skin imperfections while maintaining natural appearance.
+
+**Heal Tool Removal**
+
+Uses Heal tool for seamless blemish elimination. Samples clean skin area nearby, paints over blemish with Heal tool. Tool adapts source to blend seamlessly, removing blemish naturally.
+
+**Clone Tool Removal**
+
+Uses Clone tool for precise blemish elimination. Samples clean skin area, clones over blemish area, removing blemish through exact pixel copying.
+
+**Spot Removal Workflow**
+
+Uses systematic approach: identifying blemishes, sampling nearby clean areas, painting over blemishes systematically, removing all imperfections.
+
+Heal tool provides seamless blending, Clone tool provides precise copying, and systematic approach ensures complete removal.
+
+**Heal Tool Blemish Removal**
+
+Heal tool provides seamless blemish removal through intelligent blending.
+
+**Technique:**
+
+1. Identify blemish to remove
+2. Identify clean skin area nearby (preferably similar skin tone and texture)
+3. Use Heal tool (**Tools > Paint Tools > Heal**)
+4. Set source point by Ctrl-clicking on clean skin area
+5. Position brush cursor over blemish
+6. Paint over blemish with brush stroke (use brush size slightly larger than blemish)
+7. Heal tool adapts source to blend seamlessly with surrounding skin, removing blemish naturally
+8. Continue for other blemishes
+
+This technique creates seamless blemish removal. Intelligent blending adapts source to destination, creating natural removal without visible seams.
+
+**Clone Tool Blemish Removal**
+
+Clone tool provides precise blemish removal through exact pixel copying.
+
+**Technique:**
+
+1. Identify blemish to remove
+2. Identify clean skin area matching blemish area characteristics (similar texture, lighting, color)
+3. Use Clone tool (**Tools > Paint Tools > Clone**)
+4. Set source point by Ctrl-clicking on clean skin area
+5. Position brush cursor over blemish
+6. Paint over blemish with brush strokes (use appropriate brush size, maintain texture alignment)
+7. Clone tool copies pixels exactly from source, removing blemish
+8. Continue for other blemishes
+
+This technique creates precise blemish removal when source matches well. Exact pixel copying removes blemishes precisely when source matches destination well.
+
+**Wrinkle Removal Techniques**
+
+Wrinkle removal uses various techniques to reduce or eliminate wrinkles while maintaining natural appearance.
+
+**Heal Tool Wrinkle Removal**
+
+Uses Heal tool to blend wrinkle areas. Samples smooth skin areas, paints over wrinkles with Heal tool. Tool blends wrinkles naturally, reducing or eliminating wrinkles.
+
+**Clone Tool Wrinkle Removal**
+
+Uses Clone tool to copy smooth skin over wrinkles. Samples smooth skin areas, clones over wrinkle areas, removing wrinkles through pixel copying.
+
+**Frequency Separation Wrinkle Removal**
+
+Uses Frequency Separation technique. Retouching wrinkles on high-frequency or low-frequency layer depending on wrinkle characteristics, enabling independent texture and color retouching.
+
+**Selective Blur Wrinkle Removal**
+
+Uses blur filter with masking. Applying blur to wrinkle areas selectively, reducing wrinkle visibility.
+
+Different techniques work for different wrinkle types. Technique selection depends on wrinkle characteristics.
+
+**Heal Tool Wrinkle Removal**
+
+Heal tool provides natural wrinkle reduction through intelligent blending.
+
+**Technique:**
+
+1. Identify wrinkles to reduce or remove
+2. Identify smooth skin areas nearby
+3. Use Heal tool (**Tools > Paint Tools > Heal**)
+4. Set source point by Ctrl-clicking on smooth skin area
+5. Paint over wrinkles with brush strokes:
+   - Use brush size appropriate for wrinkle width
+   - Work along wrinkle lines
+6. Heal tool blends wrinkles naturally, reducing or eliminating wrinkles
+7. Continue for other wrinkles
+
+This technique creates natural wrinkle reduction. Intelligent blending creates natural results, preserving skin texture while reducing wrinkles.
+
+**Selective Wrinkle Reduction**
+
+Selective wrinkle reduction uses controlled approach to reduce wrinkles while maintaining natural appearance.
+
+**Technique:**
+
+1. Identify wrinkles requiring reduction
+2. Use Heal tool or Clone tool on selected wrinkles only (avoiding over-retouching that creates unnatural appearance)
+3. Work on individual wrinkles systematically
+4. Reduce wrinkles moderately (preserving some natural skin character)
+5. Maintain facial expression and character
+6. Confirm
+
+This technique maintains natural appearance while reducing wrinkles. Moderate reduction preserves natural appearance, and selective application maintains facial character.
+
+**Blemish and Wrinkle Removal Workflows**
+
+Effective blemish and wrinkle removal involves a systematic approach and tool selection.
+
+**Workflow 1: Complete Skin Cleanup**
+
+1. Open portrait image
+2. Zoom in to appropriate level for detail work
+3. Use Heal tool for blemish removal:
+   - Identify blemishes
+   - Sample clean skin areas
+   - Paint over blemishes systematically
+4. Use Heal tool for wrinkle reduction:
+   - Identify wrinkles
+   - Sample smooth skin areas
+   - Paint over wrinkles moderately
+5. Review entire face for missed imperfections
+6. Refine removal if needed
+7. Confirm
+
+This workflow provides comprehensive skin cleanup.
+
+**Workflow 2: Selective Removal**
+
+1. Open portrait image
+2. Identify specific blemishes or wrinkles requiring removal
+3. Use appropriate tool (Heal tool for most cases, Clone tool when exact match available)
+4. Remove selected imperfections only
+5. Maintain natural appearance
+6. Confirm
+
+This workflow provides selective, natural removal.
+
+**Blemish and Wrinkle Removal Applications**
+
+Blemish and wrinkle removal serves various practical applications:
+
+- **Portrait retouching**: Removing blemishes and reducing wrinkles in portrait photographs
+- **Beauty photography**: Creating clean, polished skin appearance in beauty photography
+- **Image restoration**: Removing blemishes and damage in old photographs
+- **Professional retouching**: Sophisticated skin cleanup for professional portrait work
+
+**Natural Appearance Preservation**
+
+Blemish and wrinkle removal requires careful application to maintain natural appearance:
+
+- **Avoid over-retouching**: Excessive removal creates plastic, unnatural appearance. Use moderate removal that preserves natural skin character
+- **Preserve skin texture**: Maintaining natural skin texture creates realistic appearance, avoiding completely smooth, featureless skin
+- **Preserve facial character**: Maintaining natural facial expression and character creates realistic appearance, avoiding over-processed look
+- **Maintain appropriate detail**: Preserving some natural skin detail creates realistic appearance, avoiding flat, uniform appearance
+
+**Blemish and Wrinkle Removal Best Practices**
+
+Effective blemish and wrinkle removal follows principles that achieve natural results:
+
+1. **Use appropriate tool**: Using Heal tool for most cases (seamless blending), Clone tool when exact match available (precise copying)
+
+2. **Sample from nearby areas**: Choosing source areas close to blemishes/wrinkles ensures matching characteristics
+
+3. **Use appropriate brush size**: Using brush size that matches blemish/wrinkle size ensures natural removal
+
+4. **Work systematically**: Removing blemishes and wrinkles systematically ensures complete cleanup
+
+5. **Use moderate removal**: Removing blemishes completely but reducing wrinkles moderately maintains natural appearance
+
+6. **Preserve natural character**: Maintaining natural skin texture and facial character creates realistic results
+
+Following these practices ensures blemish and wrinkle removal that achieves clean, polished appearance while maintaining natural, realistic skin look.
+
+**Summary**
+
+Blemish and wrinkle removal enables effective skin cleanup. Use Heal tool for seamless blemish and wrinkle removal, use Clone tool when exact match available, sample from nearby clean areas, use appropriate brush sizes, work systematically for complete cleanup, use moderate removal for natural appearance, preserve natural skin texture and facial character, understand technique advantages and applications, and follow systematic approaches for consistent results. This systematic approach ensures blemish and wrinkle removal that achieves clean, polished skin appearance while maintaining natural, realistic look in GIMP projects.
+
 ### Teeth Whitening and Eye Enhancement
+
+Teeth whitening and eye enhancement in GIMP enable selective improvement of teeth brightness and eye appearance. This allows you to brighten teeth, enhance eye color, improve eye clarity, and create polished portrait appearance through targeted adjustments. Teeth whitening and eye enhancement are essential for portrait retouching, beauty photography, and image enhancement where selective feature improvement improves overall portrait quality.
+
+**Teeth Whitening Techniques**
+
+Teeth whitening uses various techniques to brighten teeth while maintaining natural appearance.
+
+**Hue-Saturation Whitening**
+
+Uses Hue-Saturation tool with selective color range. Selects yellow color range, reduces saturation and increases lightness for teeth areas, brightening teeth while maintaining natural color.
+
+**Selective Color Adjustment**
+
+Uses color adjustment tools with masking. Applies brightness/levels adjustments to teeth areas selectively through layer masking, brightening teeth.
+
+**Heal Tool Whitening**
+
+Uses Heal tool to blend bright teeth areas. Samples bright teeth areas, paints over darker teeth areas, blending brightness naturally.
+
+**Clone Tool Whitening**
+
+Uses Clone tool to copy bright teeth. Samples bright teeth areas, clones over darker teeth areas, brightening teeth through pixel copying.
+
+Different techniques provide different results. Method selection depends on teeth characteristics and desired effect.
+
+**Hue-Saturation Teeth Whitening**
+
+Hue-Saturation tool provides selective teeth whitening through color range adjustment.
+
+**Technique:**
+
+1. Open portrait image
+2. Create selection around teeth area (using Lasso tool or Quick Mask), or use layer mask for non-destructive workflow
+3. Open Hue-Saturation dialog (**Colors > Hue-Saturation**)
+4. Select Yellow color range (teeth typically have yellow coloration)
+5. Reduce Saturation slider (typically -20 to -40 to reduce yellow saturation)
+6. Increase Lightness slider (typically +10 to +30 to brighten teeth)
+7. Preview adjustment
+8. Refine if needed
+9. Confirm
+
+This technique brightens teeth while maintaining natural appearance. Color range selection targets yellow teeth coloration, saturation reduction removes yellow cast, and lightness increase brightens teeth, creating natural white appearance.
+
+**Selective Brightness Teeth Whitening**
+
+Selective brightness adjustment uses brightness/levels tools with masking for teeth whitening.
+
+**Technique:**
+
+1. Open portrait image
+2. Create selection around teeth area (using Lasso tool or Quick Mask)
+3. Create adjustment layer or duplicate layer with mask (for non-destructive workflow)
+4. Apply brightness adjustment:
+   - **Colors > Brightness-Contrast**, increase Brightness slider typically +10 to +30, or
+   - **Colors > Levels**, lightening midtones
+5. Apply adjustment to selected area or masked layer
+6. Preview adjustment
+7. Refine mask if needed
+8. Adjust opacity if needed
+9. Confirm
+
+This technique brightens teeth through selective brightness adjustment. Selective application targets teeth area, brightness adjustment lightens teeth, and masking enables precise control.
+
+**Eye Enhancement Techniques**
+
+Eye enhancement uses various techniques to improve eye appearance including color enhancement, clarity improvement, and brightness adjustment.
+
+**Color Enhancement**
+
+Uses color adjustment tools to enhance eye color. Increases saturation for eye color, adjusts hue for color enhancement, creating vibrant eye appearance.
+
+**Clarity Enhancement**
+
+Uses sharpening or clarity techniques. Applies sharpening to eye areas, improving eye detail and clarity, creating sharp, clear eyes.
+
+**Brightness Enhancement**
+
+Uses brightness adjustment. Lightens eye areas selectively, improving eye visibility, creating bright, clear eyes.
+
+Color enhancement creates vibrant eyes, clarity enhancement creates sharp eyes, and brightness enhancement creates bright eyes.
+
+**Eye Color Enhancement**
+
+Eye color enhancement uses color adjustment tools to improve eye color vibrancy.
+
+**Technique:**
+
+1. Open portrait image
+2. Create selection around eyes (using Lasso tool or Quick Mask), or use layer mask for non-destructive workflow
+3. Apply Hue-Saturation adjustment (**Colors > Hue-Saturation**)
+4. Select eye color range (adjusting color range selector to match eye color)
+5. Increase Saturation slider (typically +10 to +30 to enhance color vibrancy)
+6. Adjust Hue slider if needed for color shift
+7. Preview adjustment
+8. Refine mask if needed
+9. Confirm
+
+This technique enhances eye color vibrancy. Selective saturation increase enhances color vibrancy, color range selection targets eye color, creating vibrant eye appearance.
+
+**Eye Clarity Enhancement**
+
+Eye clarity enhancement uses sharpening techniques to improve eye detail.
+
+**Technique:**
+
+1. Open portrait image
+2. Create selection around eyes (using Lasso tool or Quick Mask), or use layer mask for non-destructive workflow
+3. Apply sharpening filter (**Filters > Enhance > Unsharp Mask**, or **Filters > Enhance > Sharpen**)
+4. Adjust sharpening parameters:
+   - Amount: 50-150%
+   - Radius: 0.5-2 pixels typically
+5. Preview sharpening
+6. Refine mask if needed
+7. Confirm
+
+This technique improves eye clarity and detail. Sharpening enhances detail, selective application targets eye areas, creating sharp, clear eyes.
+
+**Eye Brightness Enhancement**
+
+Eye brightness enhancement uses brightness adjustment to lighten eye areas.
+
+**Technique:**
+
+1. Open portrait image
+2. Create selection around eyes (using Lasso tool or Quick Mask), or use layer mask for non-destructive workflow
+3. Apply brightness adjustment:
+   - **Colors > Brightness-Contrast**, increase Brightness slider typically +5 to +20, or
+   - **Colors > Levels**, lightening midtones slightly
+4. Preview adjustment
+5. Refine mask if needed
+6. Adjust opacity if needed
+7. Confirm
+
+This technique brightens eye areas for improved visibility. Brightness adjustment lightens eyes, selective application targets eye areas, creating bright, clear eyes.
+
+**Teeth Whitening and Eye Enhancement Workflows**
+
+Effective teeth whitening and eye enhancement involves a systematic approach and selective application.
+
+**Workflow 1: Complete Feature Enhancement**
+
+1. Open portrait image
+2. Zoom in to appropriate level for detail work
+3. Create selection around teeth (using Lasso tool or Quick Mask)
+4. Apply teeth whitening (Hue-Saturation or brightness adjustment)
+5. Refine mask if needed
+6. Create selection around eyes (using Lasso tool or Quick Mask)
+7. Apply eye color enhancement (Hue-Saturation adjustment)
+8. Apply eye clarity enhancement (sharpening filter)
+9. Apply eye brightness enhancement (brightness adjustment)
+10. Refine all adjustments
+11. Confirm
+
+This workflow provides comprehensive feature enhancement.
+
+**Workflow 2: Selective Enhancement**
+
+1. Open portrait image
+2. Identify specific features requiring enhancement
+3. Apply selective enhancement to each feature individually
+4. Use appropriate technique for each feature
+5. Maintain natural appearance
+6. Confirm
+
+This workflow provides selective, natural enhancement.
+
+**Teeth Whitening and Eye Enhancement Applications**
+
+Teeth whitening and eye enhancement serve various practical applications:
+
+- **Portrait retouching**: Enhancing teeth and eyes in portrait photographs for polished appearance
+- **Beauty photography**: Creating bright teeth and vibrant eyes in beauty photography
+- **Professional retouching**: Sophisticated feature enhancement for professional portrait work
+- **Image enhancement**: Improving portrait appearance through selective feature improvement
+
+**Natural Appearance Preservation**
+
+Teeth whitening and eye enhancement require careful application to maintain natural appearance:
+
+- **Avoid over-enhancement**: Excessive whitening or enhancement creates unnatural, artificial appearance. Use moderate enhancement that preserves natural character
+- **Maintain natural color**: Preserving natural tooth and eye colors creates realistic appearance, avoiding artificial, over-saturated colors
+- **Preserve detail**: Maintaining natural detail in teeth and eyes creates realistic appearance, avoiding flat, featureless appearance
+- **Use selective application**: Applying enhancement selectively to feature areas creates natural results, avoiding global enhancement that affects entire image
+
+**Teeth Whitening and Eye Enhancement Best Practices**
+
+Effective teeth whitening and eye enhancement follows principles that achieve natural results:
+
+1. **Use selective application**: Creating selections or masks to apply enhancement only to teeth and eye areas, preserving surrounding areas
+
+2. **Use moderate enhancement**: Using subtle to moderate adjustments creates natural appearance, avoiding over-enhancement
+
+3. **Use appropriate techniques**: Using Hue-Saturation for color-based enhancement, brightness adjustment for brightness enhancement, sharpening for clarity enhancement
+
+4. **Preserve natural character**: Maintaining natural tooth and eye characteristics creates realistic appearance, avoiding artificial look
+
+5. **Work systematically**: Enhancing teeth first, then eyes, enables organized workflow
+
+6. **Preview frequently**: Previewing enhancement effect enables quality assessment before finalizing
+
+Following these practices ensures teeth whitening and eye enhancement that achieves polished appearance while maintaining natural, realistic look.
+
+**Summary**
+
+Teeth whitening and eye enhancement enable effective feature improvement. Use Hue-Saturation for teeth whitening and eye color enhancement, use brightness adjustment for teeth and eye brightness enhancement, use sharpening for eye clarity enhancement, apply enhancement selectively to feature areas, use moderate enhancement for natural appearance, preserve natural character and detail, understand technique advantages and applications, and follow systematic approaches for consistent results. This systematic approach ensures teeth whitening and eye enhancement that achieves polished portrait appearance while maintaining natural, realistic look in GIMP projects.
 
 ### Color Correction on Specific Facial Features
 
+Color correction on specific facial features in GIMP enables targeted color adjustments to individual facial features (skin tones, lips, eyes, hair) while preserving other areas. This allows you to correct color issues, enhance feature colors, and create balanced portrait appearance through selective color work. Feature-specific color correction is essential for professional portrait retouching, color balance improvement, and image enhancement where individual features require separate color treatment.
+
+**Feature-Specific Color Correction Approaches**
+
+Feature-specific color correction uses various techniques to target individual facial features for color adjustment.
+
+**Selection-Based Correction**
+
+Uses selections to isolate features. Creates selections around specific features (skin areas, lips, eyes, hair), applies color adjustments to selected areas only, enabling targeted color correction.
+
+**Layer Masking Correction**
+
+Uses layer masks for non-destructive workflow. Creates duplicate layers with adjustments, masks layers to reveal adjustments only on specific features, enabling flexible, reversible color correction.
+
+**Color Range Selection**
+
+Uses color range tools. Selects color ranges (skin tones, lip colors, eye colors), applies adjustments to selected color ranges, enabling color-based targeting.
+
+**Combined Techniques**
+
+Uses multiple approaches together. Combines selections with color range selection, uses layer masking with color adjustments, enabling sophisticated targeting.
+
+Different approaches provide different targeting precision. Technique selection depends on feature characteristics and workflow preferences.
+
+**Skin Tone Color Correction**
+
+Skin tone color correction targets skin areas for color adjustment while preserving other features.
+
+**Technique:**
+
+1. Open portrait image
+2. Create selection around skin areas (using Lasso tool, Quick Mask, or color range selection for skin tones), or use layer mask for non-destructive workflow
+3. Apply Color Balance adjustment (**Colors > Color Balance**):
+   - Adjust color balance for skin tones (warming or cooling skin tones by adjusting red/cyan, green/magenta, blue/yellow sliders), or
+4. Apply Curves adjustment (**Colors > Curves**):
+   - Adjust curves per-channel for skin tone correction (adjusting red, green, blue channels individually for precise skin tone correction)
+5. Preview adjustment
+6. Refine mask if needed
+7. Confirm
+
+This technique corrects skin tone color while preserving other features. Selective application targets skin areas, color adjustment corrects skin tones, preserving other feature colors.
+
+**Lip Color Correction**
+
+Lip color correction targets lip areas for color adjustment.
+
+**Technique:**
+
+1. Open portrait image
+2. Create selection around lips (using Lasso tool or Quick Mask), or use layer mask for non-destructive workflow
+3. Apply Hue-Saturation adjustment (**Colors > Hue-Saturation**)
+4. Select color range matching lip color (adjusting color range selector to match lip color)
+5. Adjust Hue slider for color shift (changing lip color hue if needed)
+6. Adjust Saturation slider for color vibrancy (increasing saturation for vibrant lips, decreasing for subtle lips)
+7. Adjust Lightness slider if needed
+8. Preview adjustment
+9. Refine mask if needed
+10. Confirm
+
+This technique corrects lip color selectively. Selective application targets lips, color adjustment corrects lip color, preserving other feature colors.
+
+**Eye Color Correction**
+
+Eye color correction targets eye areas for color adjustment.
+
+**Technique:**
+
+1. Open portrait image
+2. Create selection around eyes (using Lasso tool or Quick Mask), or use layer mask for non-destructive workflow
+3. Apply Hue-Saturation adjustment (**Colors > Hue-Saturation**)
+4. Select color range matching eye color (adjusting color range selector to match eye color)
+5. Adjust Hue slider for color shift (enhancing or changing eye color)
+6. Adjust Saturation slider for color vibrancy (increasing saturation for vibrant eyes)
+7. Adjust Lightness slider if needed
+8. Preview adjustment
+9. Refine mask if needed
+10. Confirm
+
+This technique corrects eye color selectively. Selective application targets eyes, color adjustment corrects eye color, preserving other feature colors.
+
+**Hair Color Correction**
+
+Hair color correction targets hair areas for color adjustment.
+
+**Technique:**
+
+1. Open portrait image
+2. Create selection around hair (using Lasso tool, Quick Mask, or color range selection for hair color), or use layer mask for non-destructive workflow
+3. Apply Color Balance adjustment (**Colors > Color Balance**):
+   - Adjust color balance for hair color (warming or cooling hair tones, adjusting color balance sliders), or
+4. Apply Hue-Saturation adjustment (**Colors > Hue-Saturation**):
+   - Select color range matching hair color
+   - Adjust Hue/Saturation/Lightness for hair color correction
+5. Preview adjustment
+6. Refine mask if needed
+7. Confirm
+
+This technique corrects hair color selectively. Selective application targets hair, color adjustment corrects hair color, preserving other feature colors.
+
+**Feature-Specific Color Correction Workflows**
+
+Effective feature-specific color correction involves a systematic approach and feature targeting.
+
+**Workflow 1: Complete Feature Color Correction**
+
+1. Open portrait image
+2. Create selection around skin areas (using Lasso tool or Quick Mask)
+3. Apply skin tone color correction (Color Balance or Curves)
+4. Refine mask if needed
+5. Create selection around lips
+6. Apply lip color correction (Hue-Saturation)
+7. Refine mask if needed
+8. Create selection around eyes
+9. Apply eye color correction (Hue-Saturation)
+10. Refine mask if needed
+11. Create selection around hair
+12. Apply hair color correction (Color Balance or Hue-Saturation)
+13. Refine mask if needed
+14. Review all corrections
+15. Confirm
+
+This workflow provides comprehensive feature color correction.
+
+**Workflow 2: Selective Feature Correction**
+
+1. Open portrait image
+2. Identify specific features requiring color correction
+3. Apply color correction to each feature individually using appropriate technique
+4. Use layer masks for non-destructive workflow
+5. Maintain natural appearance
+6. Confirm
+
+This workflow provides selective, natural color correction.
+
+**Feature-Specific Color Correction Applications**
+
+Feature-specific color correction serves various practical applications:
+
+- **Portrait retouching**: Correcting color issues in specific facial features for balanced portrait appearance
+- **Color balance improvement**: Balancing color across different features for harmonious appearance
+- **Professional retouching**: Sophisticated color correction for professional portrait work
+- **Image enhancement**: Improving portrait appearance through selective feature color correction
+
+**Natural Appearance Preservation**
+
+Feature-specific color correction requires careful application to maintain natural appearance:
+
+- **Avoid over-correction**: Excessive color correction creates unnatural, artificial appearance. Use moderate corrections that preserve natural character
+- **Preserve color relationships**: Maintaining natural color relationships between features creates realistic appearance, avoiding disconnected, artificial colors
+- **Maintain feature definition**: Preserving feature boundaries and detail creates realistic appearance, avoiding flat, featureless areas
+- **Use selective application**: Applying corrections selectively to feature areas creates natural results, avoiding global corrections that affect entire image
+
+**Feature-Specific Color Correction Best Practices**
+
+Effective feature-specific color correction follows principles that achieve natural results:
+
+1. **Use selective application**: Creating selections or masks to apply corrections only to specific features, preserving other areas
+
+2. **Use appropriate tools**: Using Color Balance for tonal color correction, Hue-Saturation for hue/saturation correction, Curves for precise color correction
+
+3. **Use moderate corrections**: Using subtle to moderate adjustments creates natural appearance, avoiding over-correction
+
+4. **Preserve color relationships**: Maintaining natural color relationships between features creates realistic appearance
+
+5. **Work systematically**: Correcting features individually enables organized workflow and better control
+
+6. **Preview frequently**: Previewing correction effect enables quality assessment before finalizing
+
+Following these practices ensures feature-specific color correction that achieves balanced portrait appearance while maintaining natural, realistic look.
+
+**Summary**
+
+Feature-specific color correction enables effective color work. Use selections or layer masks to target individual features, use Color Balance for tonal corrections, use Hue-Saturation for hue/saturation corrections, use Curves for precise corrections, apply corrections selectively to feature areas, use moderate corrections for natural appearance, preserve color relationships and feature definition, understand technique advantages and applications, and follow systematic approaches for consistent results. This systematic approach ensures feature-specific color correction that achieves balanced portrait appearance while maintaining natural, realistic look in GIMP projects.
+
 ### Restoring Old Photographs
+
+Restoring old photographs in GIMP enables repair of damage, correction of deterioration, and enhancement of faded images. This allows you to restore historical photographs, fix physical damage, correct color fading, and preserve photographic heritage through comprehensive restoration techniques. Old photograph restoration is essential for historical preservation, family photo restoration, and image rehabilitation where damaged or deteriorated photographs need comprehensive restoration.
+
+**Restoration Challenges**
+
+Old photograph restoration faces various challenges requiring different techniques.
+
+**Physical Damage**
+
+Includes scratches, tears, creases, stains, and holes:
+
+- **Scratches**: Create linear damage across image
+- **Tears**: Create missing areas or misaligned sections
+- **Creases**: Create fold lines and wrinkles
+- **Stains**: Create discolored areas
+- **Holes**: Create missing image areas
+
+**Color Deterioration**
+
+Includes fading, yellowing, and color shifts:
+
+- **Fading**: Reduces overall contrast and color saturation
+- **Yellowing**: Creates yellow color cast
+- **Color shifts**: Create incorrect color balance
+
+**Image Quality Issues**
+
+Include grain, noise, and loss of detail:
+
+- **Grain**: Creates textured appearance
+- **Noise**: Creates random pixel variations
+- **Loss of detail**: Reduces image sharpness
+
+Different challenges require different restoration approaches. Comprehensive restoration addresses multiple issues.
+
+**Damage Repair Techniques**
+
+Damage repair uses various techniques to fix physical damage in old photographs.
+
+**Scratch Removal**
+
+Uses Clone tool or Heal tool. Identifies scratches, samples nearby undamaged areas, clones or heals over scratches, removing linear damage.
+
+**Tear Repair**
+
+Uses Clone tool or Heal tool with alignment. Identifies torn areas, samples matching areas from other side of tear or similar areas, clones or heals over tears, aligning torn sections if needed.
+
+**Crease Removal**
+
+Uses Heal tool or Clone tool. Identifies crease lines, samples smooth areas nearby, heals or clones over creases, removing fold lines.
+
+**Stain Removal**
+
+Uses color correction with Clone tool or Heal tool. Identifies stained areas, uses color correction to reduce color cast, uses Clone tool or Heal tool to remove remaining stain texture.
+
+**Hole Repair**
+
+Uses Clone tool or Heal tool. Identifies holes (missing image areas), samples surrounding areas or similar areas elsewhere in image, clones or heals over holes, reconstructing missing content.
+
+Different damage types require different approaches. Systematic repair addresses all damage.
+
+**Clone Tool Damage Repair**
+
+Clone tool provides precise damage repair through exact pixel copying.
+
+**Technique:**
+
+1. Open old photograph
+2. Zoom in to appropriate level for detail work
+3. Identify damage (scratches, tears, creases, stains, holes)
+4. Identify matching undamaged areas (areas with similar texture, lighting, color)
+5. Use Clone tool (**Tools > Paint Tools > Clone**)
+6. Set source point by Ctrl-clicking on undamaged area
+7. Position brush cursor over damage
+8. Paint over damage with brush strokes (use appropriate brush size, maintain texture alignment)
+9. Clone tool copies pixels exactly from source, removing damage
+10. Continue for other damage
+11. Confirm
+
+This technique repairs damage through precise pixel copying. Exact pixel copying repairs damage precisely when source matches well.
+
+**Heal Tool Damage Repair**
+
+Heal tool provides seamless damage repair through intelligent blending.
+
+**Technique:**
+
+1. Open old photograph
+2. Zoom in to appropriate level for detail work
+3. Identify damage (scratches, tears, creases, stains, holes)
+4. Identify nearby undamaged areas
+5. Use Heal tool (**Tools > Paint Tools > Heal**)
+6. Set source point by Ctrl-clicking on undamaged area
+7. Paint over damage with brush strokes (use appropriate brush size, work systematically)
+8. Heal tool adapts source to blend seamlessly, removing damage naturally
+9. Continue for other damage
+10. Confirm
+
+This technique repairs damage through seamless blending. Intelligent blending creates seamless repair even when source doesn't match perfectly.
+
+**Color Correction for Faded Images**
+
+Color correction addresses color deterioration in old photographs.
+
+**Fading Correction**
+
+Uses contrast and saturation adjustment:
+
+- **Apply Levels or Curves**: To restore contrast (expanding tonal range)
+- **Apply Hue-Saturation**: To restore color saturation (increasing saturation to compensate for fading)
+- **Restore overall image appearance**
+
+**Yellowing Correction**
+
+Uses color balance adjustment:
+
+- **Apply Color Balance adjustment** (**Colors > Color Balance**):
+  - Reduce yellow cast by adjusting blue/yellow slider (increasing blue, decreasing yellow), or
+- **Use Curves per-channel adjustment**:
+  - Adjust blue channel to reduce yellow cast
+- **Correct yellow color cast**
+
+**Color Shift Correction**
+
+Uses color balance or curves:
+
+- **Identify color shifts**
+- **Apply Color Balance or Curves adjustment**: To correct color balance
+- **Restore natural colors**
+
+Contrast adjustment restores tonal range, saturation adjustment restores color vibrancy, and color balance correction removes color casts, restoring faded photograph appearance.
+
+**Old Photograph Restoration Workflows**
+
+Effective old photograph restoration involves a systematic approach and comprehensive repair.
+
+**Workflow 1: Complete Restoration**
+
+1. Open old photograph
+2. Assess damage and deterioration (identifying scratches, tears, creases, stains, fading, yellowing)
+3. Repair physical damage systematically:
+   - Use Clone tool or Heal tool to remove scratches, tears, creases, stains, holes
+4. Correct color deterioration:
+   - Apply Levels or Curves for contrast restoration
+   - Apply Hue-Saturation for saturation restoration
+   - Apply Color Balance for yellowing correction
+5. Enhance image quality if needed:
+   - Apply slight sharpening for detail enhancement
+   - Reduce grain if excessive
+6. Review restoration result
+7. Refine if needed
+8. Confirm
+
+This workflow provides comprehensive photograph restoration.
+
+**Workflow 2: Damage-Focused Restoration**
+
+1. Open old photograph
+2. Focus on physical damage repair:
+   - Use Clone tool or Heal tool systematically to remove all damage
+3. Apply basic color correction if needed
+4. Confirm
+
+This workflow focuses on damage repair primarily.
+
+**Restoration Applications**
+
+Old photograph restoration serves various practical applications:
+
+- **Historical preservation**: Restoring historical photographs for archival purposes
+- **Family photo restoration**: Restoring family photographs for personal preservation
+- **Image rehabilitation**: Repairing damaged or deteriorated photographs for reuse
+- **Heritage preservation**: Preserving photographic heritage through restoration
+
+**Restoration Best Practices**
+
+Effective old photograph restoration follows principles that achieve natural restoration:
+
+1. **Work systematically**: Repairing damage systematically ensures complete restoration, addressing all damage and deterioration
+
+2. **Use appropriate tools**: Using Clone tool for precise repair, Heal tool for seamless repair, color adjustment tools for color correction
+
+3. **Preserve original character**: Maintaining original photograph character creates authentic restoration, avoiding over-processing
+
+4. **Work at appropriate zoom level**: Zooming in for detail work enables precise repair, zooming out for overall assessment enables quality evaluation
+
+5. **Use moderate color correction**: Using subtle to moderate color corrections creates natural restoration, avoiding over-correction
+
+6. **Document restoration**: Documenting restoration steps enables understanding of changes made
+
+Following these practices ensures restoration that achieves natural, authentic results while preserving photograph character.
+
+**Summary**
+
+Old photograph restoration enables effective image rehabilitation. Assess damage and deterioration comprehensively, repair physical damage systematically using Clone tool or Heal tool, correct color deterioration using Levels, Curves, Color Balance, and Hue-Saturation, enhance image quality if needed, work systematically for complete restoration, preserve original photograph character, understand technique advantages and applications, and follow systematic approaches for consistent results. This systematic approach ensures old photograph restoration that achieves natural, authentic restoration while preserving photographic heritage in GIMP projects.
 
 ## Filters, Effects, and Artistic Rendering
 
